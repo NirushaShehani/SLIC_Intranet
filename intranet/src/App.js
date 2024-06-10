@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import Home from './components/Home';
+import Home from './Components/Home';
 
 const App =() => {
   return (
