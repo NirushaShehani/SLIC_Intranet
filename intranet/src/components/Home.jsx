@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="home">
       <div className="home-column1">
-        <BranchPerformance />
+        <KnowledgeBase />
       </div>
       <hr />
       <div className="home-column2">
@@ -17,11 +17,11 @@ const Home = () => {
       </div>
       <hr />
       <div className="home-column3">
-        <KnowledgeBase />
+        <LifeGWP />         
       </div>
       <hr />
       <div className="home-column4">
-        <LifeGWP />
+        <BranchPerformance />
       </div>
     </div>
   );
