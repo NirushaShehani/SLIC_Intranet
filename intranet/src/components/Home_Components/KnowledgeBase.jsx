@@ -17,7 +17,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
-import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
+import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
+import Chip from "@mui/material/Chip";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+import { styled } from "@mui/material/styles";
 
 const KnowledgeBase = () => {
   const [state, setState] = React.useState({
@@ -45,7 +48,7 @@ const KnowledgeBase = () => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-    {/** User Details */}
+      {/** User Details */}
       <List>
         <ListItem>
           <ListItemAvatar>
@@ -79,9 +82,9 @@ const KnowledgeBase = () => {
           />
         </ListItem>
       </List>
-    {/** User Details */}
+      {/** User Details */}
       <Divider />
-    {/** Dashboard */}
+      {/** Dashboard */}
       <List>
         <ListItem disablePadding>
           <ListItemButton>
@@ -139,16 +142,17 @@ const KnowledgeBase = () => {
               <HelpOutlineOutlinedIcon fontSize="small" />
             </ListItemIcon>
             <ListItemText
-              primary={<Typography
-                sx={{ display: "inline" }}
-                component="span"
-                variant="body1"
-                fontWeight="bold"
-                fontSize="0.8rem"
-                color="text.primary"
-              >
-                Help
-              </Typography>
+              primary={
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body1"
+                  fontWeight="bold"
+                  fontSize="0.8rem"
+                  color="text.primary"
+                >
+                  Help
+                </Typography>
               }
             />
           </ListItemButton>
@@ -180,11 +184,26 @@ const KnowledgeBase = () => {
       </List>
     </Box>
   );
+  //Custom chip design for Knowledge Base,Sales Leads,Contact lists
+  const CustomChip = styled(Chip)(({ theme }) => ({
+    display: "flex",
+    justifyContent: "space-between",
+    backgroundColor: "#795548",
+    color: "white",
+    borderRadius: "5px",
+    paddingRight: theme.spacing(1),
+    margin: "15px 11px",
+    height: "50px",
+    width: "325px",
+  }));
 
   return (
-    <div className="KnowledgeBase">
-      <div className="Navbar">
-        <MenuIcon onClick={toggleDrawer("left", true)} />
+    <div>
+      <div className="Navbar" style={styles.navbar}>
+        <MenuIcon
+          style={styles.menuIcon}
+          onClick={toggleDrawer("left", true)}
+        />
         <Drawer
           anchor={"left"}
           open={state["left"]}
@@ -193,16 +212,24 @@ const KnowledgeBase = () => {
           {list("left")}
         </Drawer>
       </div>
-      <h2>KnowledgeBase</h2>
-      {/* Add your content here */}
-      <p>
-        we are going to develop an intranet for our office. there are five
-        members in our developing group. we divided the four sections among us
-        as the image i provide . we decided to make four components for each
-        other and after that call all components in home page. can you help me
-        for this . i don't know how to call those four components in home page .
-        can you give me home page code and other four component
-      </p>
+      <div style={styles.chipContainer}>
+        {/*Knowledge Base Chip*/}
+        <CustomChip style={styles.label}
+          label="Knowledge base"
+          deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
+          onDelete={() => {}}
+        />
+        <CustomChip style={styles.label}
+          label="Knowledge base"
+          deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
+          onDelete={() => {}}
+        />
+        <CustomChip style={styles.label}
+          label="Knowledge base"
+          deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
+          onDelete={() => {}}
+        />
+      </div>
     </div>
   );
 };
@@ -210,6 +237,23 @@ const KnowledgeBase = () => {
 export default KnowledgeBase;
 
 const styles = {
+  navbar: {
+    position: "relative",
+    backgroundColor: "transparent",
+    padding: "10px",
+    display: 'flex',
+    flexDirection: 'column', 
+    alignItems: 'flex-start',
+  },
+  menuIcon: {
+    color: 'white',
+    backgroundColor: 'transparent',
+    marginBottom: '-10px',
+  },
+  chipContainer: {
+    display: 'flex',
+    flexDirection: 'column', 
+  },
   container: {
     display: "flex",
     height: "600px",
@@ -224,4 +268,7 @@ const styles = {
     minHeight: "25px",
     minWidth: "32px",
   },
+  label: {
+    fontSize: "30px"
+  }
 };
