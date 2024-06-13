@@ -314,7 +314,7 @@ const KnowledgeBase = () => {
       <Slider {...settings} style={styles.slideshow}>
         {images.map((image, index) => (
           <div key={index}>
-            <img src={image} alt={`Slide ${index + 1}`} style={{ width: '290px', height: '500px', borderRadius: '15px' }} />
+            <img src={image} alt={`Slide ${index + 1}`} style={{ width: '290px', height: '400px', borderRadius: '15px' }} />
           </div>
         ))}
       </Slider>

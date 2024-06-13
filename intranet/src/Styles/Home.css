@@ -1,43 +1,44 @@
 .home {
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-    background-image: url('../assets/bgimage.png');
-    background-size: cover; 
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; 
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background-image: url('../assets/bgimage.png');
+  background-size: cover; 
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; 
 }
 
 .home-column1 {
-    padding: 10px;
-    border-radius: 5px;
-    width: 65%;
-    display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  width: 25%;
+  display: flex;
   flex-direction: column;
-  }
-  .home-column2 {
-    padding: 10px;
-    border-radius: 5px;
-    width: 80%;
-    display: flex;
-  flex-direction: column;
-  }
+}
 
-  .home-column3 {
-    padding: 10px;
-    border-radius: 5px;
-    width: 65%;
-    display: flex;
+.home-column2 {
+  padding: 10px;
+  border-radius: 5px;
+  width: 30%;
+  display: flex;
   flex-direction: column;
-  }
-  
-  .home-column4 {
-    padding: 10px;
-    border-radius: 5px;
-    width: 50%;
-    display: flex;
+}
+
+.home-column3 {
+  padding: 10px;
+  border-radius: 5px;
+  width: 25%;
+  display: flex;
   flex-direction: column;
-  }
+}
+
+.home-column4 {
+  padding: 10px;
+  border-radius: 5px;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
 
 .column {
   display: flex;
@@ -51,9 +52,9 @@
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-.Navbar{
+
+.Navbar {
   display: flex;
   background-color: white;
   padding: 10px;
 }
-
