@@ -1,13 +1,32 @@
 import React from 'react';
+import image1 from '../../assets/image1.jpg';
+import image2 from '../../assets/image2.jpg';
+import image3 from '../../assets/image3.jpg';
+import '../../Styles/CompanyEvents.css';
+import { Link } from 'react-router-dom';
 
 const CompanyEvents = () => {
   return (
     <div className="CompanyEvents">
-            <h2>CompanyEvents</h2>
-            {/* Add your content here */}
-            <p>we are going to develop an intranet for our office. there are five members in our developing group. we divided the four sections among us as the image i provide . we decided to make four components for each other and after that call all components in home page. can you help me for this . i don't know how to call those four components  in home page . can you give me home page code and other four component</p>
-            
-        </div>
+      <h2 className="notice-head">CompanyEvents & News</h2>
+      <div className="image-container">
+        <img src={image1} alt="Image 1" className="image image1" />
+        <img src={image2} alt="Image 2" className="image image2" />
+        <img src={image3} alt="Image 3" className="image image3" />
+      </div>
+      <h2 className="notice-head">HR Notices</h2>
+      <p className="sub-notice-head">SLICL Suba Pathum scholarship awards 2023</p>
+      <p className='notice'>Lorem Ipsum has been the industry's standard when it dummy text ever since 1500s when an unknown have took a galley of type.</p>
+      <hr />
+      <p className="sub-notice-head">SLICL Suba Pathum scholarship awards 2023</p>
+      <p className='notice'>Lorem Ipsum has been the industry's standard car van dummy text ever since 1500s when an unknown when took a galley of type.</p>
+      <hr />
+      <p className="sub-notice-head">SLICL Suba Pathum scholarship awards 2023</p>
+      <p className='notice'>Lorem Ipsum has been the industry's standard when it dummy text ever since 1500s when an unknown have took a galley of type.</p>
+      <div className="link-container">
+        <Link to="/full-notices" className="read-more-link">Read more...</Link>
+      </div>
+    </div>
   );
 };
 
