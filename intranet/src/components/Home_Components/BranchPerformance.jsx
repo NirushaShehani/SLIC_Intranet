@@ -14,6 +14,8 @@ const branches = [
   { name: 'Aluthgama', value: 2500000, target: 2000000 },
   { name: 'Akurassa', value: 1700000, target: 1800000 },
   { name: 'Dehiwala', value: 1000000, target: 1200000 },
+  { name: 'Matale', value: 3400000, target: 3200000 },
+
 ];
 
 // Separate branches into two lists: achieved and not achieved
