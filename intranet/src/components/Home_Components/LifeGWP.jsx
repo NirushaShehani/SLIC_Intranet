@@ -1,4 +1,4 @@
-// Import necessary libraries
+
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { Card, CardContent, Typography, Box, Grid, Avatar } from '@mui/material';
