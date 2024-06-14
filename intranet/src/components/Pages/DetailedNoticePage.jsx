@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import KnowledgeBase from '../Home_Components/KnowledgeBase';
 import BranchPerformance from '../Home_Components/BranchPerformance';
-import '../../Styles/FullNoticesPage.css';
+import '../../Styles/DetailedNoticePage.css';
 import noticesData from '../Sub_Components/noticesData';
 import NoticeContent from '../Sub_Components/NoticeContent'; 
 
