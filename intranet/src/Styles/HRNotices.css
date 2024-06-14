@@ -51,6 +51,25 @@
   position: relative;
 }
 
+.notice-button {
+  background-color: white;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 10px 15px;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.notice-button:focus {
+  outline: none;
+}
+
+/* .notice-button:hover {
+  background-color: #f0f0f0;
+} */
+
 .notice-item::after {
   content: '';
   position: absolute;
