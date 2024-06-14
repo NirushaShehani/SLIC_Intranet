@@ -11,7 +11,7 @@
   .full-notices-column1 {
     padding: 10px;
     border-radius: 5px;
-    width: 30%; /* Adjust this value as needed */
+    width: 30%; 
     display: flex;
     flex-direction: column;
   }
@@ -19,7 +19,7 @@
   .full-notices-column2 {
     padding: 10px;
     border-radius: 5px;
-    flex-grow: 1; /* Allow this column to take the remaining space */
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
   }
@@ -27,7 +27,7 @@
   .full-notices-column4 {
     padding: 10px;
     border-radius: 5px;
-    width: 26%; /* Adjust this value as needed */
+    width: 28.1% !important; 
     display: flex;
     flex-direction: column;
   }
