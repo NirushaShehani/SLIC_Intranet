@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 // eslint-disable-next-line
 import Container from '@mui/material/Container';
 // eslint-disable-next-line
@@ -6,23 +7,26 @@ import Box from '@mui/material/Box';
 import '../../Styles/HRNotices.css';
 
 const HRNotices = () => {
+  const navigate = useNavigate();
 
   const todayNotices = [
-    { topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' },
-    { topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' }
+    { id: 1, topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' },
+    { id: 2, topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' }
   ];
 
   const restOfWeekNotices = [
-    { topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' },
-    { topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' }
+    { id: 3, topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' },
+    { id: 4, topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' }
   ];
 
   const lastWeekNotices = [
-    { topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' }
+    { id: 5, topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' }
   ];
 
+  const handleNoticeClick = (id) => {
+    navigate(`/detailed-notice/${id}`);
+  };
 
-  
   return (
     <div>
       <h2 className="hr-notice-head">HR Notices</h2>
@@ -31,30 +35,36 @@ const HRNotices = () => {
           <div className="aa">
             <h2 className="sub-notice-head">Today :</h2>
             <ul className="notice-list">
-              {todayNotices.map((notice, index) => (
-                <li key={index} className="notice-item">
-                  <h3 className="notice-topic">{notice.topic}</h3>
-                  <p className="notice-content">{notice.content}</p>
+              {todayNotices.map((notice) => (
+                <li key={notice.id} className="notice-item">
+                  <button className="notice-button" onClick={() => handleNoticeClick(notice.id)}>
+                    <h3 className="notice-topic">{notice.topic}</h3>
+                    <p className="notice-content">{notice.content}</p>
+                  </button>
                 </li>
               ))}
             </ul>
 
             <h2 className="sub-notice-head">Rest of Week :</h2>
             <ul className="notice-list">
-              {restOfWeekNotices.map((notice, index) => (
-                <li key={index} className="notice-item">
-                  <h3 className="notice-topic">{notice.topic}</h3>
-                  <p className="notice-content">{notice.content}</p>
+              {restOfWeekNotices.map((notice) => (
+                <li key={notice.id} className="notice-item">
+                  <button className="notice-button" onClick={() => handleNoticeClick(notice.id)}>
+                    <h3 className="notice-topic">{notice.topic}</h3>
+                    <p className="notice-content">{notice.content}</p>
+                  </button>
                 </li>
               ))}
             </ul>
 
             <h2 className="sub-notice-head">Last Week :</h2>
             <ul className="notice-list">
-              {lastWeekNotices.map((notice, index) => (
-                <li key={index} className="notice-item">
-                  <h3 className="notice-topic">{notice.topic}</h3>
-                  <p className="notice-content">{notice.content}</p>
+              {lastWeekNotices.map((notice) => (
+                <li key={notice.id} className="notice-item">
+                  <button className="notice-button" onClick={() => handleNoticeClick(notice.id)}>
+                    <h3 className="notice-topic">{notice.topic}</h3>
+                    <p className="notice-content">{notice.content}</p>
+                  </button>
                 </li>
               ))}
             </ul>

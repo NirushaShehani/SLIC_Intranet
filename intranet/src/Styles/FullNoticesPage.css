@@ -27,13 +27,13 @@
   .full-notices-column4 {
     padding: 10px;
     border-radius: 5px;
-    width: 25%; /* Adjust this value as needed */
+    width: 26%; /* Adjust this value as needed */
     display: flex;
     flex-direction: column;
   }
   
   hr {
-    margin: 20px 0;
+    margin: 20px 0; 
   }
   
   .column {
