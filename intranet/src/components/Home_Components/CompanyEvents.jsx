@@ -10,9 +10,17 @@ const CompanyEvents = () => {
     <div className="CompanyEvents">
       <h2 className="notice-hd">CompanyEvents & News</h2>
       <div className="image-container">
-        <img src={image1} alt="Image 1" className="image image1" />
-        <img src={image2} alt="Image 2" className="image image2" />
-        <img src={image3} alt="Image 3" className="image image3" />
+        <Link to="/full-events">
+          <img src={image1} alt="Image 1" className="image image1" />
+        </Link>
+        <Link to="/full-events">
+          <img src={image2} alt="Image 2" className="image image2" />
+        </Link>
+        <div className="image image3-container">
+          <Link to="/full-events">
+            <img src={image3} alt="Image 3" className="image image3" />
+          </Link>
+        </div>
       </div>
       <h2 className="notice-head">HR Notices</h2>
       <p className="sub-notice-hd">SLICL Suba Pathum scholarship awards 2023</p>
