@@ -4,6 +4,7 @@ import { Text, View } from "react";
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from 'react-router-dom';
 //MUI Imports
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -135,7 +136,7 @@ const KnowledgeBase = () => {
       {/** Upload Branch Event */}
       <List>
         <ListItem disablePadding>
-          <ListItemButton>
+        <ListItemButton component={Link} to="/full-media">
             <ListItemIcon style={styles.btnsizeup}>
               <FileUploadOutlinedIcon />
             </ListItemIcon>

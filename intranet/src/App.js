@@ -6,6 +6,7 @@ import Home from './components/Home';
 import FullNoticesPage from './components/Pages/FullNoticesPage';
 import DetailedNoticePage from './components/Pages/DetailedNoticePage';
 import EventsPage from './components/Pages/EventsPage';
+import FullMedia from './components/Pages/FullMedia';
 
 const App =() => {
   return (
@@ -15,6 +16,7 @@ const App =() => {
         <Route path="/full-notices" element={<FullNoticesPage />} />
         <Route path="/detailed-notice/:id" element={<DetailedNoticePage />} />
         <Route path="/full-events" element={<EventsPage />} />
+        <Route path="/full-media" element={<FullMedia />} />
       </Routes>
     </Router>
   );
