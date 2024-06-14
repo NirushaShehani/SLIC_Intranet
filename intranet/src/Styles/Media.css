@@ -1,0 +1,154 @@
+.media-head {
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-left: 3px;
+}
+
+.branch-event-upload-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px;
+    margin: auto;
+}
+
+.media-upload-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.media-upload-subtitle {
+    color: gray;
+    margin-bottom: 30px;
+    margin-top: -15px !important;
+}
+
+.media-upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    gap: 10px;
+}
+
+.form-group-date {
+    margin-left: 15px;
+    margin-right: 90px !important;
+}
+
+.form-group-date date-date {
+    margin-left: 30px;
+}
+
+.form-group label {  
+    width: 150px; 
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+}
+
+
+.file-upload-section {
+    border: 1px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    border-radius: 5px;
+}
+
+.file-upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.file-upload-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.file-upload-or {
+    margin: 10px 0;
+    font-size: 15px;
+    color: grey;
+}
+
+.file-upload-button {
+    padding: 10px 20px;
+    background-color: white;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.file-upload-button:hover {
+    background-color: #b0d4fa;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-upload-info {
+    color: gray;
+    font-size: 12px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.submit-button,
+.cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-button {
+    background-color: blue;
+    color: white;
+}
+
+.submit-button:hover {
+    background-color: darkblue;
+}
+
+.cancel-button {
+    background-color: #fff;
+    border: 1px solid #808080;
+    color: #000;
+    
+}
+
+.cancel-button:hover {
+    background-color: rgb(207, 205, 205);
+}
