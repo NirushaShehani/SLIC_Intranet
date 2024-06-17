@@ -1,0 +1,42 @@
+
+  .transparent-notice-container {
+    background-color: transparent; 
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .box-notice-content {
+    background-color: rgba(248, 243, 243, 0.938);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: -30px;
+    width: 589px;
+  }
+  
+  .notice-content-head {
+    text-align: left;
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 4px;
+  }
+  
+  .aaa {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .notice-detail-image {
+    max-width: 90%;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+  .aaa h2 {
+    margin-top: -10px;
+    margin-bottom: 20px; 
+    font-family: Goock;
+}

@@ -1,6 +1,10 @@
 import React from "react";
 import usericon from "../../assets/person.jpg";
 import { Text, View } from "react";
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Link } from 'react-router-dom';
 //MUI Imports
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -21,6 +25,26 @@ import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import Chip from "@mui/material/Chip";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { styled } from "@mui/material/styles";
+//Image Imports
+const imageUrl1 = require('../../assets/image2.jpg');
+const imageUrl2 = require('../../assets/image3.jpg');
+//For image slider
+const imageUrl01 = require('../../assets/sliderimgs/img1.jpg');
+const imageUrl02 = require('../../assets/sliderimgs/img2.jpg');
+const imageUrl03 = require('../../assets/sliderimgs/img3.jpg');
+
+const images = [imageUrl01, imageUrl02, imageUrl03];
+
+  const settings = {
+    dots: true,                
+    infinite: true,            
+    speed: 500,                
+    slidesToShow: 1,           
+    slidesToScroll: 1,         
+    autoplay: true,            
+    autoplaySpeed: 3000,     
+    arrows: false,  
+  };
 
 const KnowledgeBase = () => {
   const [state, setState] = React.useState({
@@ -112,7 +136,7 @@ const KnowledgeBase = () => {
       {/** Upload Branch Event */}
       <List>
         <ListItem disablePadding>
-          <ListItemButton>
+        <ListItemButton component={Link} to="/full-media">
             <ListItemIcon style={styles.btnsizeup}>
               <FileUploadOutlinedIcon />
             </ListItemIcon>
@@ -192,9 +216,43 @@ const KnowledgeBase = () => {
     color: "white",
     borderRadius: "5px",
     paddingRight: theme.spacing(1),
-    margin: "15px 11px",
-    height: "50px",
-    width: "325px",
+    margin: "8px 11px",
+    height: "40px",
+    width: "290px",
+  }));
+
+  //Custom chip design for Services
+  const CustomChip2 = styled(Chip)(({ theme }) => ({
+    display: "flex",
+    justifyContent: "space-between",
+    backgroundColor: "",
+    color: "white",
+    borderRadius: "5px",
+    paddingRight: theme.spacing(1),
+    margin: "30px 11px",
+    height: "80px",
+    width: "290px",
+    backgroundImage: `url(${imageUrl1})`, 
+    backgroundSize: "cover", 
+    backgroundPosition: "center", 
+    backgroundRepeat: "no-repeat" 
+  }));
+
+   //Custom chip design for Idea Hub
+   const CustomChip3 = styled(Chip)(({ theme }) => ({
+    display: "flex",
+    justifyContent: "space-between",
+    backgroundColor: "",
+    color: "white",
+    borderRadius: "5px",
+    paddingRight: theme.spacing(1),
+    margin: "8px 11px",
+    height: "80px",
+    width: "290px",
+    backgroundImage: `url(${imageUrl2})`, 
+    backgroundSize: "cover", 
+    backgroundPosition: "center", 
+    backgroundRepeat: "no-repeat" 
   }));
 
   return (
@@ -219,17 +277,49 @@ const KnowledgeBase = () => {
           deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
           onDelete={() => {}}
         />
+        {/*Sales List Chip*/}
         <CustomChip style={styles.label}
-          label="Knowledge base"
+          label="Sales List"
+          deleteIcon={<BookmarkIcon style={ { color: "white" }} />}
+          onDelete={() => {}}
+        />
+        {/*Contact List Chip*/}
+        <CustomChip style={styles.label}
+          label="Contact List"
           deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
           onDelete={() => {}}
         />
-        <CustomChip style={styles.label}
-          label="Knowledge base"
-          deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
-          onDelete={() => {}}
+        {/*Services Chip*/}
+        <CustomChip2 style={styles.label}
+          label="Services"
+        />
+        {/*Idea Hub Chip*/}
+        <CustomChip3 style={styles.label}
+          label="Idea Hub"
         />
       </div>
+      <div >
+      <style>
+      {`
+        .slick-dots li button:before {
+          color: grey; 
+          font-size: 8px;
+        }
+
+        .slick-dots li.slick-active button:before {
+          color: white; 
+          font-size: 8px;
+        }
+      `}
+    </style>
+      <Slider {...settings} style={styles.slideshow}>
+        {images.map((image, index) => (
+          <div key={index}>
+            <img src={image} alt={`Slide ${index + 1}`} style={{ width: '290px', height: '400px', borderRadius: '15px' }} />
+          </div>
+        ))}
+      </Slider>
+    </div>
     </div>
   );
 };
@@ -269,6 +359,11 @@ const styles = {
     minWidth: "32px",
   },
   label: {
-    fontSize: "30px"
+    fontSize: "19px"
+  },
+  slideshow: {
+    width: "290px",
+    margin: "15px 10px 10px"
   }
+  
 };

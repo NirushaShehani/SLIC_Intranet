@@ -16,9 +16,9 @@ const Home = () => {
         <CompanyEvents />
       </div>
       <hr />
-      <div className="home-column3">
-        <LifeGWP />         
-      </div>
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
+      < LifeGWP/>
+    </div>
       <hr />
       <div className="home-column4">
         <BranchPerformance />

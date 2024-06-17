@@ -1,20 +1,19 @@
 import React from 'react';
-import KnowledgeBase from '../Home_Components/KnowledgeBase';
-import CompanyEvents from '../Sub_Components/HRNotices';
-import BranchPerformance from '../Home_Components/BranchPerformance';
+import DrawerMenu from '../Sub_Components/DrawerMenu';
 import '../../Styles/FullNoticesPage.css';
+import BranchPerformance from '../Home_Components/BranchPerformance';
 
-const FullNoticesPage = () => {
+const EventsPage = () => {
   return (
     <div className="full-notices-page">
       <div className="full-notices-column1">
-        <KnowledgeBase />
+        <DrawerMenu />
       </div>
-      <hr />
+      
       <div className="full-notices-column2">
-        <CompanyEvents />
+        
       </div>
-      <hr />
+      
       <div className="full-notices-column4">
         <BranchPerformance />
       </div>
@@ -22,4 +21,5 @@ const FullNoticesPage = () => {
   );
 };
 
-export default FullNoticesPage;
+export default EventsPage;
+
