@@ -1,71 +1,101 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
-import { Card, CardContent, Typography, Box, Grid, Avatar } from '@mui/material';
+import { CardContent, Typography, Box } from '@mui/material';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { styled } from '@mui/system';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const GWPChart = () => {
-  // Data for the chart
-  const data = {
+const FlippingCard = styled(Box)(({ showBack }) => ({
+  width: 300,
+  height: 400,
+  perspective: 1000,
+  '& .inner': {
+    position: 'relative',
+    width: '100%',
+    height: '100%',
+    textAlign: 'center',
+    transition: 'transform 1s',
+    transformStyle: 'preserve-3d',
+    transform: showBack ? 'rotateY(180deg)' : 'rotateY(0deg)',
+  },
+  '& .front, & .back': {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    backfaceVisibility: 'hidden',
+    backgroundColor: '#E3F2FD',
+    borderRadius: 8,
+  },
+  '& .back': {
+    transform: 'rotateY(180deg)',
+  },
+}));
+
+const GWPChart = ({ title, data }) => (
+  <Box sx={{ width: 300, padding: 2 }}>
+    <CardContent>
+      <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginBottom: 2 }}>
+        {title}
+      </Typography>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Doughnut data={data} options={{ cutout: '70%' }} />
+      </Box>
+      <Box sx={{ textAlign: 'center', marginTop: 2 }}>
+        <Typography variant="body2" color="textSecondary">
+          GWP Meter
+        </Typography>
+      </Box>
+    </CardContent>
+  </Box>
+);
+
+const GWPChartsContainer = () => {
+  const [showBranch, setShowBranch] = useState(false);
+
+  const handleClick = () => {
+    setShowBranch(prev => !prev);
+  };
+
+  const dataLife = {
     labels: ['Current month', 'Last month', 'Cumulative'],
     datasets: [
       {
-        data: [30, 10, 60], // Example data
-        backgroundColor: ['#FFB74D', '#4DB6AC', '#42A5F5'], // Colors matching the chart
+        data: [30, 10, 60],
+        backgroundColor: ['#FFB74D', '#4DB6AC', '#42A5F5'],
         hoverBackgroundColor: ['#FFB74D', '#4DB6AC', '#42A5F5'],
       },
     ],
   };
 
-  // Options for the chart
-  const options = {
-    plugins: {
-      legend: {
-        display: false, // Hide the legend
+  const dataBranch = {
+    labels: ['Current month', 'Last month', 'Cumulative'],
+    datasets: [
+      {
+        data: [10, 30, 60],
+        backgroundColor: ['#FFB74D', '#4DB6AC', '#42A5F5'],
+        hoverBackgroundColor: ['#FFB74D', '#4DB6AC', '#42A5F5'],
       },
-    },
-    cutout: '70%', // This will make the doughnut chart hollow in the center
+    ],
   };
 
-  // Legend data
-  const legendItems = [
-    { label: 'Current month', color: '#FFB74D' },
-    { label: 'Last month', color: '#4DB6AC' },
-    { label: 'Cumulative', color: '#42A5F5' },
-  ];
-
   return (
-    <Card sx={{ width: 300, backgroundColor: '#E3F2FD' }}>
-      <CardContent>
-        <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginBottom: 2 }}>
-          LIFE - GWP
-        </Typography>
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Doughnut data={data} options={options} />
-        </Box>
-        <Box sx={{ textAlign: 'center', marginTop: 2 }}>
-          <Typography variant="body2" color="textSecondary">
-            GWP Meter
-          </Typography>
-        </Box>
-        <Grid container spacing={1} sx={{ marginTop: 2 }}>
-          {legendItems.map((item, index) => (
-            <Grid item xs={4} key={index} sx={{ textAlign: 'center' }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Avatar
-                  sx={{ bgcolor: item.color, width: 24, height: 24, marginRight: 1 }}
-                  variant="rounded"
-                />
-                <Typography variant="body2">{item.label}</Typography>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
-      </CardContent>
-    </Card>
+    <Box
+      sx={{ textAlign: 'center', padding: 2, display: 'flex', justifyContent: 'center' }}
+      onClick={handleClick}
+    >
+      <FlippingCard showBack={showBranch}>
+        <div className="inner">
+          <div className="front">
+            <GWPChart title="LIFE - GWP" data={dataLife} />
+          </div>
+          <div className="back">
+            <GWPChart title="Branch - GWP" data={dataBranch} />
+          </div>
+        </div>
+      </FlippingCard>
+    </Box>
   );
 };
 
-export default GWPChart;
+export default GWPChartsContainer;
