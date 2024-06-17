@@ -1,5 +1,4 @@
-import React from 'react';
-import { Carousel } from 'react-responsive-carousel';
+import React, { useState, useEffect } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../../Styles/BranchPerformance.css';
 import image1 from '../../assets/Event1.jpg';
@@ -20,7 +19,19 @@ const branches = [
 const achievedBranches = branches.filter(branch => branch.value >= branch.target).sort((a, b) => b.value - a.value);
 const notAchievedBranches = branches.filter(branch => branch.value < branch.target).sort((a, b) => b.value - a.value);
 
+const images = [image1, image2, image3];
+
 const BranchPerformance = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div>
       <div className="branch-performance">
@@ -40,22 +51,14 @@ const BranchPerformance = () => {
               <span>Rs. {branch.value.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
             </div>
           ))}
-          </div>
+        </div>
         <div className="read-more">Read more...</div>
       </div>
       <div className="branch-event">
         <h2>Branch Event</h2>
-        <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false} showArrows={false} interval={3000} showIndicators={false}>
-          <div>
-            <img src={image1} alt="Event 1" />
-          </div>
-          <div>
-            <img src={image2} alt="Event 2" />
-          </div>
-          <div>
-            <img src={image3} alt="Event 3" />
-          </div>
-        </Carousel>
+        <div className="images-container">
+          <img src={images[currentImageIndex]} alt={`Event ${currentImageIndex + 1}`} />
+        </div>
       </div>
     </div>
   );
