@@ -4,6 +4,7 @@ import '../../Styles/BranchPerformance.css';
 import image1 from '../../assets/Event1.jpg';
 import image2 from '../../assets/Event2.jpg';
 import image3 from '../../assets/Event3.jpg';
+import { Link } from 'react-router-dom';
 
 const branches = [
   { name: 'Kandy', value: 5000000, target: 4500000 },
@@ -52,7 +53,10 @@ const BranchPerformance = () => {
             </div>
           ))}
         </div>
-        <div className="read-more">Read more...</div>
+        {/* <div className="read-more">Read more...</div> */}
+        <div className="link-contain">
+        <Link to="/full-branch-performance" className="read-more">Read more...</Link>
+      </div>
       </div>
       <div className="branch-event">
         <h2>Branch Event</h2>

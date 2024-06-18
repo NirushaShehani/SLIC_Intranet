@@ -1,0 +1,112 @@
+.full-branch {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  min-height: 100vh;
+  border-radius: 4px;
+  width: 635px;
+  position: relative;
+}
+
+.performance-head {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #fff;
+  margin-left: -430px;
+  margin-top: 10px;
+}
+
+.search-input {
+  width: 250px;
+  padding: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.table-container {
+  max-height: 600px;
+  overflow-y: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.table-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+thead {
+  background-color: #f0f0f0;
+  position: sticky;
+  top: 0;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-size: 16px;
+  font-weight:500;
+  font-family: Arial;
+  text-align: center;
+}
+
+td {
+  font-size: 14px;
+  padding: 20px;
+  text-align: center;
+}
+
+.achieve-box {
+  background-color: #93ecae;
+  color: rgb(12, 97, 19);
+  padding: 4px 8px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.not-achieve-box {
+  background-color: #c4c0c0;
+  color: rgb(14, 13, 13);
+  padding: 4px 8px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination span {
+  font-size: 14px;
+}
