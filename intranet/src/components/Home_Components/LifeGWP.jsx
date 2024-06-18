@@ -6,9 +6,44 @@ import { styled } from '@mui/system';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+// Custom plugin to render labels within the chart box
+const customLabelsPlugin = {
+  id: 'customLabels',
+  afterDatasetsDraw(chart) {
+    const { ctx, data, chartArea: { top, bottom, left, right } } = chart;
+    ctx.save();
+
+    const labels = data.labels;
+    const colors = data.datasets[0].backgroundColor;
+
+    const labelBoxSize = 10;
+    const labelPadding = 5;
+    const labelFontSize = 12;
+    const labelTotalHeight = labels.length * (labelBoxSize + labelPadding);
+
+    const positionX = (left + right) / 2;
+    let positionY = bottom + 20;
+
+    if (positionY + labelTotalHeight > chart.canvas.height) {
+      positionY = bottom - labelTotalHeight - 20;
+    }
+
+    labels.forEach((label, index) => {
+      const yPos = positionY + index * (labelBoxSize + labelPadding);
+      ctx.fillStyle = colors[index];
+      ctx.fillRect(positionX - 50, yPos, labelBoxSize, labelBoxSize);
+      ctx.font = `${labelFontSize}px Arial`;
+      ctx.fillStyle = '#000';
+      ctx.fillText(label, positionX - 50 + labelBoxSize + labelPadding, yPos + labelBoxSize);
+    });
+
+    ctx.restore();
+  }
+};
+
 const FlippingCard = styled(Box)(({ showBack }) => ({
   width: 300,
-  height: 400,
+  height: 450, // Increase height to accommodate labels
   perspective: 1000,
   '& .inner': {
     position: 'relative',
@@ -32,19 +67,24 @@ const FlippingCard = styled(Box)(({ showBack }) => ({
   },
 }));
 
-const GWPChart = ({ title, data }) => (
+const GWPChart = ({ title, data, customLabels }) => (
   <Box sx={{ width: 300, padding: 2 }}>
     <CardContent>
       <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginBottom: 2 }}>
         {title}
       </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Doughnut data={data} options={{ cutout: '70%' }} />
+      <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
+        <Doughnut data={data} options={{ cutout: '70%' }} plugins={[customLabelsPlugin]} />
       </Box>
       <Box sx={{ textAlign: 'center', marginTop: 2 }}>
         <Typography variant="body2" color="textSecondary">
           GWP Meter
         </Typography>
+        {customLabels && customLabels.map((label, index) => (
+          <Typography key={index} variant="body2" color="textSecondary">
+            {label}
+          </Typography>
+        ))}
       </Box>
     </CardContent>
   </Box>
@@ -79,6 +119,12 @@ const GWPChartsContainer = () => {
     ],
   };
 
+  const branchLabels = [
+    'NOP: 485',
+    'AMP: 150',
+    'FYP: Rs.15000'
+  ];
+
   return (
     <Box
       sx={{ textAlign: 'center', padding: 2, display: 'flex', justifyContent: 'center' }}
@@ -90,7 +136,7 @@ const GWPChartsContainer = () => {
             <GWPChart title="LIFE - GWP" data={dataLife} />
           </div>
           <div className="back">
-            <GWPChart title="Branch - GWP" data={dataBranch} />
+            <GWPChart title="Branch - GWP" data={dataBranch} customLabels={branchLabels} />
           </div>
         </div>
       </FlippingCard>
