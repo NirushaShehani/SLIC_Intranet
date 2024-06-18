@@ -1,0 +1,52 @@
+.full-branch-performance {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    background-image: url('../assets/bgimage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .full-branch-performance-column1 {
+    padding: 10px;
+    border-radius: 5px;
+    width: 30%; /* Adjust this value as needed */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .full-branch-performance-column2 {
+    padding: 10px;
+    border-radius: 5px;
+    flex-grow: 1; /* Allow this column to take the remaining space */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .full-branch-performance-column4 {
+    padding: 10px;
+    border-radius: 5px;
+    width: 25%; /* Adjust this value as needed */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  hr {
+    margin: 20px 0;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .column > div {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+ 
