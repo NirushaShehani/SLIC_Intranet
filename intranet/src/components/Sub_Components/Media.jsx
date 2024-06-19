@@ -42,11 +42,11 @@ const Media = () => {
                                 
                             </select>
                         </div>
-                        <div className="form-group">
-                            <div className='form-group-date'>
+                        <div className="form-group form-group-date">
+                            <div className='date'>
                             <label htmlFor="date">Date</label>
-                            <input type="date" id="date" className = 'date-date'value={date} onChange={(e) => setDate(e.target.value)} />
                             </div>
+                            <input type="date" id="date" className="date-date" value={date} onChange={(e) => setDate(e.target.value)} />
                         </div>
                     </div>
                     <div className="form-group">
