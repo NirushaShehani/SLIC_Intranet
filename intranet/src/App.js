@@ -8,6 +8,7 @@ import DetailedNoticePage from './components/Pages/DetailedNoticePage';
 import EventsPage from './components/Pages/EventsPage';
 import FullMedia from './components/Pages/FullMedia';
 import FullBranchPerformance from './components/Pages/FullBranchPerformance';
+import ContactListPage from './components/Pages/ContactListPage';
 
 const App =() => {
   return (
@@ -19,6 +20,7 @@ const App =() => {
         <Route path="/full-events" element={<EventsPage />} />
         <Route path="/full-media" element={<FullMedia />} />
         <Route path="/full-branch-performance" element={<FullBranchPerformance />} /> 
+        <Route path="/contact-list" element={<ContactListPage/>}/>
       </Routes>
     </Router>
   );
