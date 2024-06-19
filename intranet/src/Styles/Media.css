@@ -17,6 +17,7 @@
 }
 
 .media-upload-title {
+    margin-top: -9px;
     font-size: 20px;
     font-weight: bold;
 }
@@ -25,6 +26,7 @@
     color: gray;
     margin-bottom: 30px;
     margin-top: -15px !important;
+    font-size: 13px;
 }
 
 .media-upload-form {
@@ -49,12 +51,7 @@
 }
 
 .form-group-date {
-    margin-left: 15px;
-    margin-right: 90px !important;
-}
-
-.form-group-date date-date {
-    margin-left: 30px;
+    margin-left: 80px;   
 }
 
 .form-group label {  
@@ -64,7 +61,7 @@
 .form-group input,
 .form-group select,
 .form-group textarea {
-    padding: 10px;
+    padding: 6px;
     border: 1px solid #ccc;
     border-radius: 4px;
     flex: 1;
@@ -87,7 +84,7 @@
 }
 
 .file-upload-text {
-    font-size: 14px;
+    font-size: 13px;
     margin-bottom: 10px;
 }
 
@@ -98,11 +95,11 @@
 }
 
 .file-upload-button {
-    padding: 10px 20px;
+    padding: 7px 20px;
     background-color: white;
     color: #007bff;
     border: 1px solid #007bff;
-    border-radius: 10px;
+    border-radius: 6px;
     cursor: pointer;
 }
 
@@ -152,3 +149,4 @@
 .cancel-button:hover {
     background-color: rgb(207, 205, 205);
 }
+
