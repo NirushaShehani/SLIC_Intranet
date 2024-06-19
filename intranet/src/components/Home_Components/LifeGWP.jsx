@@ -111,26 +111,26 @@ const AchieversCard = () => (
       <Typography variant="body2" color="textSecondary" sx={{ textAlign: 'center' }}>
         Achieved
       </Typography>
-      <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginTop: 2 }}>
+      <Typography variant="h6" component="div" sx={{ textAlign: 'left', marginTop: 2 }}>
         Top Achievers
       </Typography>
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 2 }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'left', marginTop: 2 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
-          <Avatar alt="A. R. C. Perera" src="https://via.placeholder.com/40" />
+          <Avatar alt="A. R. C. Perera" src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
           <Box sx={{ marginLeft: 2, textAlign: 'left' }}>
             <Typography variant="body1">A. R. C. Perera</Typography>
             <Typography variant="body2" color="textSecondary">Bandarawela</Typography>
           </Box>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
-          <Avatar alt="K. Dhanushka Silva" src="https://via.placeholder.com/40" />
+          <Avatar alt="K. Dhanushka Silva" src="https://img.freepik.com/free-photo/smiley-man-holding-camera-front-view_23-2149915895.jpg" />
           <Box sx={{ marginLeft: 2, textAlign: 'left' }}>
             <Typography variant="body1">K. Dhanushka Silva</Typography>
             <Typography variant="body2" color="textSecondary">Dehiwala</Typography>
           </Box>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
-          <Avatar alt="N. K. Wijesiri" src="https://via.placeholder.com/40" />
+          <Avatar alt="N. K. Wijesiri" src="https://media.istockphoto.com/id/1369508766/photo/beautiful-successful-latin-woman-smiling.jpg?s=612x612&w=0&k=20&c=LoznG6eGT42_rs9G1dOLumOTlAveLpuOi_U755l_fqI=" />
           <Box sx={{ marginLeft: 2, textAlign: 'left' }}>
             <Typography variant="body1">N. K. Wijesiri</Typography>
             <Typography variant="body2" color="textSecondary">Colombo 04</Typography>
