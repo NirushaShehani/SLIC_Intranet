@@ -26,8 +26,8 @@ import Chip from "@mui/material/Chip";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { styled } from "@mui/material/styles";
 //Image Imports
-const imageUrl1 = require('../../assets/image2.jpg');
-const imageUrl2 = require('../../assets/image3.jpg');
+const imageUrl1 = require('../../assets/Services.png');
+const imageUrl2 = require('../../assets/Ideahub.png');
 //For image slider
 const imageUrl01 = require('../../assets/sliderimgs/img1.jpg');
 const imageUrl02 = require('../../assets/sliderimgs/img2.jpg');

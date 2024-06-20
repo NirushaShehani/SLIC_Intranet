@@ -14,7 +14,9 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
-
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import { Link } from 'react-router-dom';
 const DrawerMenu = () => {
   const [state, setState] = React.useState({
     left: false,
@@ -29,11 +31,12 @@ const DrawerMenu = () => {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: 250 }}
+      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+      {/** User Details */}
       <List>
         <ListItem>
           <ListItemAvatar>
@@ -41,28 +44,51 @@ const DrawerMenu = () => {
           </ListItemAvatar>
           <ListItemText
             primary={
-              <Typography component="span" variant="body1" color="#00bfff" display="block">
-                Vikashini
-              </Typography>
+              <React.Fragment>
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body1"
+                  color="#00bfff"
+                >
+                  Vikashini
+                </Typography>
+              </React.Fragment>
             }
             secondary={
-              <Typography component="span" variant="body2" color="text.primary" display="block">
-                Vikashini@gmail.com
-              </Typography>
+              <React.Fragment>
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body2"
+                  color="text.primary"
+                >
+                  Vikashini@gmail.com
+                </Typography>
+              </React.Fragment>
             }
           />
         </ListItem>
       </List>
+      {/** User Details */}
       <Divider />
+      {/** Dashboard */}
       <List>
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemIcon>
+            <ListItemIcon style={styles.btnsizeup}>
               <DashboardOutlinedIcon />
             </ListItemIcon>
             <ListItemText
               primary={
-                <Typography component="span" variant="body1" fontWeight="bold" fontSize="0.9rem" color="text.primary">
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body1"
+                  fontWeight="bold"
+                  fontSize="0.9rem"
+                  color="text.primary"
+                >
                   Dashboard
                 </Typography>
               }
@@ -70,15 +96,24 @@ const DrawerMenu = () => {
           </ListItemButton>
         </ListItem>
       </List>
+      {/** Dashboard */}
+      {/** Upload Branch Event */}
       <List>
         <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
+        <ListItemButton component={Link} to="/full-media">
+            <ListItemIcon style={styles.btnsizeup}>
               <FileUploadOutlinedIcon />
             </ListItemIcon>
             <ListItemText
               primary={
-                <Typography component="span" variant="body1" fontWeight="bold" fontSize="0.9rem" color="text.primary">
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body1"
+                  fontWeight="bold"
+                  fontSize="0.9rem"
+                  color="text.primary"
+                >
                   Upload Branch Event
                 </Typography>
               }
@@ -86,17 +121,108 @@ const DrawerMenu = () => {
           </ListItemButton>
         </ListItem>
       </List>
+      {/** Upload Branch Event */}
+      {/** Help */}
+      <List style={styles.container}>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon style={styles.btnsize}>
+              <HelpOutlineOutlinedIcon fontSize="small" />
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body1"
+                  fontWeight="bold"
+                  fontSize="0.8rem"
+                  color="text.primary"
+                >
+                  Help
+                </Typography>
+              }
+            />
+          </ListItemButton>
+        </ListItem>
+        {/** Help */}
+        {/** Logout */}
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon style={styles.btnsize}>
+              <LogoutOutlinedIcon fontSize="small" sx={{ color: "#ff0000" }} />
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body1"
+                  fontWeight="bold"
+                  fontSize="0.8rem"
+                  color="#ff0000"
+                >
+                  Logout Account
+                </Typography>
+              }
+            />
+          </ListItemButton>
+        </ListItem>
+        {/** Logout */}
+      </List>
     </Box>
   );
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-      <MenuIcon style={{ color: 'black', marginBottom: '-10px' }} onClick={toggleDrawer('left', true)} />
-      <Drawer anchor="left" open={state.left} onClose={toggleDrawer('left', false)}>
-        {list('left')}
-      </Drawer>
+    <div>
+      <div className="Navbar" style={styles.navbar}>
+        <MenuIcon
+          style={styles.menuIcon}
+          onClick={toggleDrawer("left", true)}
+        />
+        <Drawer
+          anchor={"left"}
+          open={state["left"]}
+          onClose={toggleDrawer("left", false)}
+        >
+          {list("left")}
+        </Drawer>
+      </div>
     </div>
   );
 };
 
 export default DrawerMenu;
+
+const styles = {
+  navbar: {
+    position: "relative",
+    backgroundColor: "transparent",
+    padding: "10px",
+    display: 'flex',
+    flexDirection: 'column', 
+    alignItems: 'flex-start',
+  },
+  menuIcon: {
+    color: 'white',
+    backgroundColor: 'transparent',
+    marginBottom: '-10px',
+  },
+  container: {
+    display: "flex",
+    height: "600px",
+    flexWrap: "wrap",
+    alignContent: "flex-end",
+  },
+  btnsize: {
+    minHeight: "15px",
+    minWidth: "32px",
+  },
+  btnsizeup: {
+    minHeight: "25px",
+    minWidth: "32px",
+  },
+  label: {
+    fontSize: "19px"
+  },
+}
