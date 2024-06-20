@@ -21,22 +21,17 @@ const customLabelsPlugin = {
     const labelBoxSize = 10;
     const labelPadding = 5;
     const labelFontSize = 12;
-    const labelTotalHeight = labels.length * (labelBoxSize + labelPadding);
 
-    const positionX = (left + right) / 2;
-    let positionY = bottom + 20;
-
-    if (positionY + labelTotalHeight > chart.canvas.height) {
-      positionY = bottom - labelTotalHeight - 20;
-    }
+    const positionX = right + 20;
+    let positionY = top + 20;
 
     labels.forEach((label, index) => {
       const yPos = positionY + index * (labelBoxSize + labelPadding);
       ctx.fillStyle = colors[index];
-      ctx.fillRect(positionX - 50, yPos, labelBoxSize, labelBoxSize);
+      ctx.fillRect(positionX, yPos, labelBoxSize, labelBoxSize);
       ctx.font = `${labelFontSize}px Arial`;
       ctx.fillStyle = '#000';
-      ctx.fillText(label, positionX - 50 + labelBoxSize + labelPadding, yPos + labelBoxSize);
+      ctx.fillText(label, positionX + labelBoxSize + labelPadding, yPos + labelBoxSize);
     });
 
     ctx.restore();
@@ -77,13 +72,13 @@ const DigitalNumber = styled(Typography)(({ theme }) => ({
 }));
 
 const GWPChart = ({ title, data, customLabels }) => (
-  <Box sx={{ width: 300, padding: 2 , marginTop:'-35px'}}>
+  <Box sx={{ width: 300, padding: 2, marginTop: '-35px' }}>
     <CardContent>
       <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginBottom: 2 }}>
         {title}
       </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
-        <Doughnut data={data} options={{ cutout: '70%' }} plugins={[customLabelsPlugin]} />
+      <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', marginLeft: '-25px'}}>
+        <Doughnut data={data} options={{ cutout: '70%', plugins: { legend: { display: false } } }} plugins={[customLabelsPlugin]} />
       </Box>
       <Box sx={{ textAlign: 'center', marginTop: 2 }}>
         <Typography variant="body2" color="textSecondary">
@@ -100,7 +95,7 @@ const GWPChart = ({ title, data, customLabels }) => (
 );
 
 const AchieversCard = () => (
-  <Box sx={{ width: 300, padding: 2 }}>
+  <Box sx={{ width: 300, padding: 2, marginTop: '-35px' }}>
     <CardContent>
       <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginBottom: 2 }}>
         MDRT Achievers
@@ -157,12 +152,12 @@ const EventCard = () => {
     : { date: 'June 22-25, 2025', location: 'Miami Beach, Florida, USA' };
 
   return (
-    <Box sx={{ width: 300, padding: 2 }}>
+    <Box sx={{ width: 300, padding: 2, marginTop: '-35px' }}>
       <CardContent>
         <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', height: '390px' }}>
-          <img src={currentImage} alt="Event" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 8, margin: '-33px', width: '300px', marginLeft: '-66px', marginRight: '-34px' }} />
+          <img src={currentImage} alt="Event" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 8, margin: '2px', width: '300px', marginLeft: '-66px', marginRight: '-34px' }} />
         </Box>
-        <Box sx={{ textAlign: 'left', marginTop: -2 }}>
+        <Box sx={{ textAlign: 'left', marginTop: 2 }}>
           <Typography variant="body2" color="textSecondary" fontWeight={'bold'}>
             {eventInfo.date}
           </Typography>
