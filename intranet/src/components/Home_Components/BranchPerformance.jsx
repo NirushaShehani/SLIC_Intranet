@@ -61,7 +61,9 @@ const BranchPerformance = () => {
       <div className="branch-event">
         <h2>Branch Event</h2>
         <div className="images-container">
+          <Link to="/full-branch-events">
           <img src={images[currentImageIndex]} alt={`Event ${currentImageIndex + 1}`} />
+          </Link>
         </div>
       </div>
     </div>

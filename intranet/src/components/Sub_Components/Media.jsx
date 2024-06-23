@@ -3,6 +3,7 @@ import '../../Styles/Media.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import uploadSuccessImage from '../../assets/Success.PNG'; 
 import uploadErrorImage from '../../assets/error popup.png'; 
+
 const Media = () => {
     const [branch, setBranch] = useState('Kandy');
     const [date, setDate] = useState('');
