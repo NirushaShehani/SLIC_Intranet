@@ -1,19 +1,18 @@
-/* src/SplitScreen.css */
 .container {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-  }
-  
-  .left-pane {
-    flex: 0 0 25%;
-    background-color: #f0f0f0;
-    /* additional styles if needed */
-  }
-  
-  .right-pane {
-    flex: 0 0 75%;
-    background-color: #e0e0e0;
-    /* additional styles if needed */
-  }
-  
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+}
+
+.left {
+  flex: 3; /* 75% of the width */
+  background-color: #f0f0f0; /* Light grey background for the left side */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.right {
+  flex: 1; /* 25% of the width */
+  background-color: #c0c0c0; /* Darker grey background for the right side */
+  padding: 20px;
+  box-sizing: border-box;
+}
