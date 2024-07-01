@@ -1,7 +1,7 @@
 import React from 'react';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import '../../Styles/FullNoticesPage.css';
-import BranchPerformance from '../Home_Components/BranchPerformance';
+import CompanyEvents from '../Sub_Components/CompanyEvents';
 
 const EventsPage = () => {
   return (
@@ -10,13 +10,10 @@ const EventsPage = () => {
         <DrawerMenu />
       </div>
       
-      <div className="full-notices-column2">
-        
+      <div>
+        <CompanyEvents />
       </div>
       
-      <div className="full-notices-column4">
-        <BranchPerformance />
-      </div>
     </div>
   );
 };
