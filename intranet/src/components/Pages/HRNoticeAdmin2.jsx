@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import '../../Styles/HRNoticeAdmin2.css'; // Ensure to create and link this CSS file
+import uploadIcon1 from '../../assets/upload_icon.png';
 
 function HRNoticeAdmin2() {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ function HRNoticeAdmin2() {
         </div>
         <div className="form-group upload-group">
           <div className="upload-area">
-            <img src="upload-icon.png" className="upload-icon" /> {/* Use an appropriate icon */}
+            <img src={uploadIcon1} className="upload-icon" /> {/* Use an appropriate icon */}
             <p>Files uploaded:</p>
             {formData?.files && Array.from(formData.files).map((file, index) => (
               <p key={index}>{file.name}</p>

@@ -171,7 +171,7 @@ function PCnumberForm() {
         <input 
           type="text" 
           value={PCno}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => PCno(e.target.value)}
           placeholder="Type your computer number here..."  // Add placeholder text
           style={inputStyle}/>
       </label>
