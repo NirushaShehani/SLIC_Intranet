@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../Styles/UploadEvents.css';
+import uploadIcon from '../../assets/upload_icon.png';
 
 const MediaUpload = () => {
   const [department, setDepartment] = useState('');
@@ -29,19 +30,23 @@ const MediaUpload = () => {
   return (
     <div className="media-upload-container">
       <h2>Media Upload</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Department</label>
-          <select value={department} onChange={(e) => setDepartment(e.target.value)}>
-            <option value="ICT">ICT</option>
-            <option value="HR">HR</option>
-            <option value="Finance">Finance</option>
-            {/* Add more options as needed */}
-          </select>
-        </div>
-        <div className="form-group">
-          <label>Date</label>
-          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+      <p className="form-description">Add your Files and details here</p>
+      <form onSubmit={handleSubmit} className="media-upload-form">
+        <div className="form-group-row">
+          <div className="form-group">
+            <label>Department</label>
+            <select value={department} onChange={(e) => setDepartment(e.target.value)}>
+              <option value="">Select Department</option>
+              <option value="ICT">ICT</option>
+              <option value="HR">HR</option>
+              <option value="Finance">Finance</option>
+              {/* Add more options as needed */}
+            </select>
+          </div>
+          <div className="form-group date-group">
+            <label style={{ marginBottom: '2px', marginRight:'-50px' }}>Date</label>
+            <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+          </div>
         </div>
         <div className="form-group">
           <label>Uploader Name</label>
@@ -55,14 +60,17 @@ const MediaUpload = () => {
           <label>Description</label>
           <textarea value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
         </div>
-        <div className="form-group">
-          <label>File Upload</label>
-          <input type="file" onChange={handleFileChange} />
-          <div className="file-upload-info">
+        <div className="form-group upload-group">
+          <div className="upload-area">
+            <img src={uploadIcon} className="upload-icon" /> {/* Use an appropriate icon */}
             <p>Drag your file(s) to start uploading</p>
-            <button type="button" onClick={() => document.querySelector('input[type="file"]').click()}>Browse Files</button>
-            <p>Only support jpg, png, svg and zip files</p>
+            <p>----- OR -----</p>
+            <button type="button" onClick={() => document.getElementById('file-upload').click()}>Browse files</button>
+            <input type="file" id="file-upload" name="file-upload" multiple style={{ display: 'none' }} />
           </div>
+        </div>
+        <div className="form-group file-support">
+          <p>Only support .jpg, .png, .svg and .zip files</p>
         </div>
         <button type="submit" className="next-button">Next</button>
       </form>
