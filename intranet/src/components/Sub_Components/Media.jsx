@@ -65,36 +65,36 @@ const Media = () => {
 
     return (
         <div>
-            <h2 className="media-head">Branch Event Upload</h2>
-            <div className="branch-event-upload-box">
-                <h1 className="media-upload-title">Media Upload</h1>
-                <p className="media-upload-subtitle">Add your Files and details here</p>
-                <div className="close-icon" onClick={handleCancel}>&times;</div>
+            <h2 className="media-head-xx">Branch Event Upload</h2>
+            <div className="branch-event-upload-box-xx">
+                <h1 className="media-upload-title-xx">Media Upload</h1>
+                <p className="media-upload-subtitle-xx">Add your Files and details here</p>
+                <div className="close-icon-xx" onClick={handleCancel}>&times;</div>
                 {showPreview ? (
-                    <div className="media-preview">
-                        <div className="form-row">
-                            <div className="form-group">
+                    <div className="media-preview-xx">
+                        <div className="form-row-xx">
+                            <div className="form-group-xx">
                                 <label>Branch</label>
-                                <div className="preview-box">{branch}</div>
+                                <div className="preview-box-xx">{branch}</div>
                             </div>
-                            <div className="form-group form-group-date">
-                                <div className='date'>
+                            <div className="form-group form-group-date-xx">
+                                <div className='date-xx'>
                                     <label>Date</label>
                                 </div>
-                                <div className="preview-box">{date}</div>
+                                <div className="preview-box-xx">{date}</div>
                             </div>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group-xx">
                             <label>Uploader Name</label>
-                            <div className="preview-box">{uploaderName}</div>
+                            <div className="preview-box-xx">{uploaderName}</div>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group-xx">
                             <label>Description</label>
-                            <div className="preview-box">{description}</div>
+                            <div className="preview-box-xx">{description}</div>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group-xx">
                             <label>Files</label>
-                            <div className="preview-box">
+                            <div className="preview-box-xx">
                                 <ul>
                                     {files && files.length > 0 ? (
                                         files.map((file, index) => (
@@ -108,37 +108,37 @@ const Media = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="form-buttons">
-                            <button type="button" onClick={handleEdit} className="edit-button">Back</button>
-                            <button type="button" onClick={handleFinalSubmit} className="submit-button">Submit</button>
+                        <div className="form-buttons-xx">
+                            <button type="button" onClick={handleEdit} className="edit-button-xx">Back</button>
+                            <button type="button" onClick={handleFinalSubmit} className="submit-button-xx">Submit</button>
                         </div>
                     </div>
                 ) : (
-                    <form onSubmit={handleSubmit} className="media-upload-form">
-                        <div className="form-row">
-                            <div className="form-group">
+                    <form onSubmit={handleSubmit} className="media-upload-form-xx">
+                        <div className="form-row-xx">
+                            <div className="form-group-xx">
                                 <label htmlFor="branch">Branch</label>
                                 <select id="branch" value={branch} onChange={(e) => setBranch(e.target.value)}>
                                     <option value="Kandy">Kandy</option>
                                     <option value="Colombo">Colombo</option>
                                 </select>
                             </div>
-                            <div className="form-group form-group-date">
-                                <div className='date'>
+                            <div className="form-group-xx form-group-date-xx">
+                                <div className='date-xx'>
                                     <label htmlFor="date">Date</label>
                                 </div>
                                 <input type="date" id="date" value={date} onChange={(e) => setDate(e.target.value)} />
                             </div>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group-xx">
                             <label htmlFor="uploaderName">Uploader Name</label>
                             <input type="text" id="uploaderName" value={uploaderName} onChange={(e) => setUploaderName(e.target.value)} placeholder="John Doe" />
                         </div>
-                        <div className="form-group">
+                        <div className="form-group-xx">
                             <label htmlFor="description">Description</label>
                             <textarea
                                 id="description"
-                                className="description"
+                                className="description-xx"
                                 value={description}
                                 onChange={handleDescriptionChange}
                                 placeholder="Write something here about the event"
@@ -146,36 +146,36 @@ const Media = () => {
                                 style={{ overflow: 'hidden' }}
                             />
                         </div>
-                        <div className="file-upload-section">
-                            <label htmlFor="fileUpload" className="file-upload-label">
+                        <div className="file-upload-section-xx">
+                            <label htmlFor="fileUpload" className="file-upload-label-xx">
                                 <i className="fas fa-cloud-upload-alt file-upload-icon"></i>
-                                <div className="file-upload-text">Drag your file(s) to start uploading</div>
-                                <input type="file" id="fileUpload" multiple onChange={handleFileChange} className="file-input" />
-                                <div className="file-upload-or">-------OR-------</div>
-                                <button type="button" onClick={() => document.getElementById('fileUpload').click()} className="file-upload-button">Browse files</button>
+                                <div className="file-upload-text-xx">Drag your file(s) to start uploading</div>
+                                <input type="file" id="fileUpload" multiple onChange={handleFileChange} className="file-input-xx" />
+                                <div className="file-upload-or-xx">-------OR-------</div>
+                                <button type="button" onClick={() => document.getElementById('fileUpload').click()} className="file-upload-button-xx">Browse files</button>
                             </label>
                         </div>
-                        <div className="file-upload-info">
+                        <div className="file-upload-info-xx">
                             <p>Only support .jpg, .png and .svg and zip files</p>
                         </div>
-                        <div className="form-buttons">
-                            <button type="button" onClick={handleCancel} className="cancel-button">Cancel</button>
-                            <button type="submit" className="submit-button">Next</button>
+                        <div className="form-buttons-xx">
+                            <button type="button" onClick={handleCancel} className="cancel-button-xx">Cancel</button>
+                            <button type="submit" className="submit-button-xx">Next</button>
                         </div>
                     </form>
                 )}
             </div>
             {showSuccessPopup && (
                 <div className="popup-overlay">
-                    <div className="popup-box">
+                    <div className="popup-box-xx">
                         <img src={uploadSuccessImage} alt="Success" />
-                        <button onClick={handleContinue} className="continue-button">Continue</button>
+                        <button onClick={handleContinue} className="continue-button-xx">Continue</button>
                     </div>
                 </div>
             )}
             {showErrorPopup && (
-                <div className="popup-overlay">
-                    <div className="popup-box">
+                <div className="popup-overlay-xx">
+                    <div className="popup-box-xx">
                         <img src={uploadErrorImage} alt="Error" />
                         <button onClick={handleTryAgain} className="try-again-button">Try Again</button>
                     </div>

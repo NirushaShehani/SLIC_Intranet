@@ -1,4 +1,4 @@
-.media-head {
+.media-head-xx {
     margin-left: 30px;
     font-size: 20px;
     font-weight: bold;
@@ -8,7 +8,7 @@
     margin-left: 3px;
 }
 
-.branch-event-upload-box {
+.branch-event-upload-box-xx {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -17,7 +17,7 @@
     position: relative;
 }
 
-.close-icon {
+.close-icon-xx {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -25,33 +25,33 @@
     cursor: pointer;
 }
 
-.media-upload-title {
+.media-upload-title-xx {
     margin-top: -9px;
     font-size: 20px;
     font-weight: bold;
 }
 
-.media-upload-subtitle {
+.media-upload-subtitle-xx {
     color: gray;
     margin-bottom: 30px;
     margin-top: -15px !important;
     font-size: 13px;
 }
 
-.media-upload-form,
-.media-preview {
+.media-upload-form-xx,
+.media-preview-xx {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.form-row {
+.form-row-xx {
     display: flex;
     justify-content: space-between;
     gap: 10px;
 }
 
-.form-group {
+.form-group-xx {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -60,38 +60,38 @@
     gap: 10px;
 }
 
-.description {
+.description-xx {
     padding: 20px !important;
     resize: none;
     overflow: hidden;
     min-height: 50px; /* Ensures textarea has a minimum height */
 }
 
-.form-group-date {
+.form-group-date-xx {
     margin-left: 80px;   
 }
 
-.form-group label {  
+.form-group-xx label {  
     width: 150px; 
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.form-group-xx input,
+.form-group-xx select,
+.form-group-xx textarea {
     padding: 6px;
     border: 1px solid #ccc;
     border-radius: 4px;
     flex: 1;
 }
 
-.preview-box {
+.preview-box-xx {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 6px;
     flex: 1;
 }
 
-.file-upload-section {
+.file-upload-section-xx {
     border: 1px dashed #ccc;
     padding: 20px;
     text-align: center;
@@ -99,25 +99,25 @@
     border-radius: 5px;
 }
 
-.file-upload-label {
+.file-upload-label-xx {
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
 }
 
-.file-upload-text {
+.file-upload-text-xx {
     font-size: 13px;
     margin-bottom: 10px;
 }
 
-.file-upload-or {
+.file-upload-or-xx {
     margin: 10px 0;
     font-size: 15px;
     color: grey;
 }
 
-.file-upload-button {
+.file-upload-button-xx {
     padding: 7px 20px;
     background-color: white;
     color: #007bff;
@@ -126,58 +126,58 @@
     cursor: pointer;
 }
 
-.file-upload-button:hover {
+.file-upload-button-xx:hover {
     background-color: #b0d4fa;
 }
 
-.file-input {
+.file-input-xx {
     display: none;
 }
 
-.file-upload-info {
+.file-upload-info-xx {
     color: gray;
     font-size: 12px;
 }
 
-.form-buttons {
+.form-buttons-xx {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
 }
 
-.submit-button,
-.cancel-button,
-.edit-button {
+.submit-button-xx,
+.cancel-button-xx,
+.edit-button-xx {
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.submit-button {
+.submit-button-xx {
     background-color: #007bff;
     color: white;
 }
 
-.submit-button:hover {
+.submit-button-xx:hover {
     background-color: #0056b3;
 }
 
-.cancel-button {
+.cancel-button-xx {
     background-color: #6c757d;
     color: white;
 }
 
-.cancel-button:hover {
+.cancel-button-xx:hover {
     background-color: #5a6268;
 }
 
-.edit-button {
+.edit-button-xx {
     background-color: #6c757d;
     color: white;
 }
 
-.edit-button:hover {
+.edit-button-xx:hover {
     background-color: #5a6268;
 }
 
@@ -209,7 +209,7 @@ ul li i {
     z-index: 1000;
 }
 
-.popup-box {
+.popup-box-xx {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -220,12 +220,12 @@ ul li i {
     align-items: center;
 }
 
-.popup-box img {
+.popup-box-xx img {
     max-width: 100%;
     height: auto;
 }
 
-.continue-button {
+.continue-button-xx {
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
@@ -235,19 +235,19 @@ ul li i {
     margin-top: 20px;
 }
 
-.continue-button:hover {
+.continue-button-xx:hover {
     background-color: #0056b3;
 }
 
-.try-again-button {
+.try-again-button-xx {
     background-color: #dc3545;
 }
 
-.try-again-button:hover {
+.try-again-button-xx:hover {
     background-color: #c82333;
 }
 
-.try-again-button {
+.try-again-button-xx {
     padding: 10px 20px;
     color: white;
     border: none;
