@@ -93,6 +93,17 @@ const ContactListPage = () => {
     marginTop: '20px',
   };
 
+  const formContainerStyle = {
+    padding: '20px',
+    backgroundColor: '#F4F4F4',
+    width: '100%'
+  };
+  
+  const contentStyle = {
+    display: 'flex',
+    flex: 1,
+  };
+
   return (
     <div style={{ display: 'flex', ...containerStyle }}>
       <div style={leftStyle}>
@@ -129,7 +140,12 @@ const ContactListPage = () => {
       <div style={rightStyle}>
       <div style={{ display: 'flex', ...container }}>
           <div style={up2}>
-            hi
+            <div style={contentStyle}>
+              <div style={formContainerStyle}>
+                <PhoneBookForm inputStyle={inputStyle} selectStyle={selectStyle} buttonStyle={buttonStyle} />
+                <BranchForm selectStyle={selectStyle} buttonStyle={buttonStyle}/>
+              </div>
+            </div>
           </div>
           <div style={Down}>
           </div>
@@ -139,22 +155,47 @@ const ContactListPage = () => {
   );
 };
 
+const selectStyle = {
+  padding: '10px',
+  borderRadius: '10px',
+  border: '1px solid #ccc',
+  width: '200px',
+  marginRight: '10px',
+  outline: 'none'
+};
+
 const inputStyle = {
   padding: '10px',
   borderRadius: '10px',
   border: '1px solid #ccc',
   width: '250px',
   marginBottom: '10px',
+  marginLeft: '18px',
+  marginTop: '20px',
+  outline: 'none'
+};
+
+const inputStyle2 = {
+  padding: '10px',
+  borderRadius: '10px',
+  border: '1px solid #ccc',
+  width: '250px',
+  marginBottom: '10px',
+  marginLeft: '18px',
+  marginTop: '10px',
   outline: 'none'
 };
 
 const buttonStyle = {
-  backgroundColor: '#1A73E8',  // Blue color for the button
-  color: 'white',
+  backgroundColor: '#2F5BDA',  // Blue color for the button
+  color: '#FFFFFF',
   padding: '10px 20px',
   border: 'none',
   borderRadius: '5px',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  marginLeft: '18px',
+  height: '37px',
+  width: '171px'
 };
 
 function PCnumberForm() {
@@ -171,12 +212,79 @@ function PCnumberForm() {
         <input 
           type="text" 
           value={PCno}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Type your computer number here..."  // Add placeholder text
+          onChange={(e) => setPCno(e.target.value)}
+          placeholder="Type your computer number here..."  
           style={inputStyle}/>
       </label>
       <br />  
       <input type="submit" style={buttonStyle} value="Submit" />
+    </form>
+  );
+}
+
+function PhoneBookForm({ inputStyle, selectStyle, buttonStyle }) {
+  const [inputs, setInputs] = useState({});
+  const [Floor, setFloor] = useState("All Floors");
+  const [Department, setDepartment] = useState("All Departments");
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({...values, [name]: value}));
+    if (name === "Floor") setFloor(value);
+    if (name === "Department") setDepartment(value);
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(inputs);
+  }
+
+  return (
+    <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <label>Name</label>
+      <input 
+        type="text" 
+        name="username" 
+        value={inputs.username || ""} 
+        onChange={handleChange}
+        placeholder="P.S. Perera"
+        style={inputStyle2}
+      />
+      <label>Floor</label>
+      <select name="Floor" value={Floor} onChange={handleChange} style={selectStyle}>
+        <option value="All Floors">All Floors</option>
+        <option value="Volvo">Volvo</option>
+        <option value="Fiat">Fiat</option>
+      </select>
+      <label>Department</label>
+      <select name="Department" value={Department} onChange={handleChange} style={selectStyle}>
+        <option value="All Departments">All Departments</option>
+        <option value="Volvo">Volvo</option>
+        <option value="Fiat">Fiat</option>
+      </select>
+        <input type="submit" style={buttonStyle} value="Submit"/>
+    </form>
+  )
+}
+
+function BranchForm({ selectStyle, buttonStyle }) {
+  const [Branchno, setBranchno] = useState("Select the Branch");
+
+  const handleChange = (event) => {
+    setBranchno(event.target.value);
+  }
+
+ 
+
+  return (
+    <form style={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
+      <select value={Branchno} onChange={handleChange} style={selectStyle}>
+        <option value="Select the Branch">Select the Branch</option>
+        <option value="Volvo">Volvo</option>
+        <option value="Fiat">Fiat</option>
+      </select>
+      <input type="submit" style={buttonStyle} value="Find" />
     </form>
   );
 }
