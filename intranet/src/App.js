@@ -13,6 +13,7 @@ import FullBranchEvent from './components/Pages/FullBranchEvent';
 import UploadEvent from './components/Pages/UploadEvent';
 import HRNoticeAdmin1 from './components/Pages/HRNoticeAdmin1';
 import HRNoticeAdmin2 from './components/Pages/HRNoticeAdmin2';
+import MediaUploadDetails from './components/Pages/MediaUploadDetails';
 
 const App =() => {
   return (
@@ -27,8 +28,10 @@ const App =() => {
         <Route path="/contact-list" element={<ContactListPage/>}/>
         <Route path="/full-branch-events" element={<FullBranchEvent />} />
         <Route path="/upload-event" element={<UploadEvent />} />
+        <Route path="/media-upload-details" element={<MediaUploadDetails />} />
         <Route path="/hr-notice-admin1" element={<HRNoticeAdmin1 />} />
         <Route path="/hr-notice-admin2" element={<HRNoticeAdmin2 />} />
+       
 
       </Routes>
     </Router>
