@@ -10,6 +10,7 @@ import FullMedia from './components/Pages/FullMedia';
 import FullBranchPerformance from './components/Pages/FullBranchPerformance';
 import ContactListPage from './components/Pages/ContactListPage';
 import FullBranchEvent from './components/Pages/FullBranchEvent';
+import UploadEvent from './components/Pages/UploadEvent';
 
 const App =() => {
   return (
@@ -23,6 +24,7 @@ const App =() => {
         <Route path="/full-branch-performance" element={<FullBranchPerformance />} /> 
         <Route path="/contact-list" element={<ContactListPage/>}/>
         <Route path="/full-branch-events" element={<FullBranchEvent />} />
+        <Route path="/upload-event" element={<UploadEvent />} />
 
       </Routes>
     </Router>
