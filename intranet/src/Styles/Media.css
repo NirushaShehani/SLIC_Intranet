@@ -1,4 +1,4 @@
-media-head-xx {
+.media-head-xx {
     margin-left: 30px;
     font-size: 20px;
     font-weight: bold;
@@ -196,7 +196,7 @@ ul li i {
     margin-right: 10px;
 }
 
-.popup-overlay {
+.popup-overlay-xx {
     position: fixed;
     top: 0;
     left: 0;
