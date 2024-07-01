@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../Styles/UploadEvents.css';
 import uploadIcon from '../../assets/upload_icon.png';
 
@@ -9,6 +10,7 @@ const MediaUpload = () => {
   const [subject, setSubject] = useState('');
   const [description, setDescription] = useState('');
   const [file, setFile] = useState(null);
+  const navigate = useNavigate();
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -16,14 +18,16 @@ const MediaUpload = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log({
-      department,
-      date,
-      uploaderName,
-      subject,
-      description,
-      file,
+    // Redirect to the details page
+    navigate('/media-upload-details', {
+      state: {
+        department,
+        date,
+        uploaderName,
+        subject,
+        description,
+        file,
+      },
     });
   };
 
@@ -62,11 +66,11 @@ const MediaUpload = () => {
         </div>
         <div className="form-group upload-group">
           <div className="upload-area">
-            <img src={uploadIcon} className="upload-icon" /> {/* Use an appropriate icon */}
+            <img src={uploadIcon} className="upload-icon" alt="upload icon" /> {/* Use an appropriate icon */}
             <p>Drag your file(s) to start uploading</p>
             <p>----- OR -----</p>
             <button type="button" onClick={() => document.getElementById('file-upload').click()}>Browse files</button>
-            <input type="file" id="file-upload" name="file-upload" multiple style={{ display: 'none' }} />
+            <input type="file" id="file-upload" name="file-upload" multiple style={{ display: 'none' }} onChange={handleFileChange} />
           </div>
         </div>
         <div className="form-group file-support">
