@@ -77,7 +77,7 @@ const Media = () => {
                                 <label>Branch</label>
                                 <div className="preview-box-xx">{branch}</div>
                             </div>
-                            <div className="form-group form-group-date-xx">
+                            <div className="form-group-xx form-group-date-xx">
                                 <div className='date-xx'>
                                     <label>Date</label>
                                 </div>
@@ -166,7 +166,7 @@ const Media = () => {
                 )}
             </div>
             {showSuccessPopup && (
-                <div className="popup-overlay">
+                <div className="popup-overlay-xx">
                     <div className="popup-box-xx">
                         <img src={uploadSuccessImage} alt="Success" />
                         <button onClick={handleContinue} className="continue-button-xx">Continue</button>
@@ -177,7 +177,7 @@ const Media = () => {
                 <div className="popup-overlay-xx">
                     <div className="popup-box-xx">
                         <img src={uploadErrorImage} alt="Error" />
-                        <button onClick={handleTryAgain} className="try-again-button">Try Again</button>
+                        <button onClick={handleTryAgain} className="try-again-button-xx">Try Again</button>
                     </div>
                 </div>
             )}
