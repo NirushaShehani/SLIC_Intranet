@@ -122,6 +122,131 @@ const DrawerMenu = () => {
         </ListItem>
       </List>
       {/** Upload Branch Event */}
+      {/** Upload HR Notices */}
+      <List>
+        <ListItem disablePadding>
+        <ListItemButton component={Link} to="/full-media">
+            <ListItemIcon style={styles.btnsizeup}>
+              <FileUploadOutlinedIcon sx={{ color: "#00FF00" }}/>
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body1"
+                  fontWeight="bold"
+                  fontSize="0.9rem"
+                  color="#00FF00"
+                >
+                  Upload HR Notices
+                </Typography>
+              }
+            />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      {/** Upload HR Notices */}
+      {/** Upload Company Events */}
+      <List>
+        <ListItem disablePadding>
+        <ListItemButton component={Link} to="/full-media">
+            <ListItemIcon style={styles.btnsizeup}>
+              <FileUploadOutlinedIcon sx={{ color: "#0000FF" }}/>
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body1"
+                  fontWeight="bold"
+                  fontSize="0.9rem"
+                  color="#0000FF"
+                >
+                  Upload Company Events
+                </Typography>
+              }
+            />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      {/** Upload Company Events */}
+      {/** Marketing Products Upload */}
+      <List>
+        <ListItem disablePadding>
+        <ListItemButton component={Link} to="/full-media">
+            <ListItemIcon style={styles.btnsizeup}>
+              <FileUploadOutlinedIcon sx={{ color: "#0000FF" }}/>
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body1"
+                  fontWeight="bold"
+                  fontSize="0.9rem"
+                  color="#0000FF"
+                >
+                  Marketing Products Upload
+                </Typography>
+              }
+            />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      {/** Marketing Products Upload */}
+      {/** MDRT Event Upload */}
+      <List>
+        <ListItem disablePadding>
+        <ListItemButton component={Link} to="/full-media">
+            <ListItemIcon style={styles.btnsizeup}>
+              <FileUploadOutlinedIcon sx={{ color: "#0000FF" }}/>
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body1"
+                  fontWeight="bold"
+                  fontSize="0.9rem"
+                  color="#0000FF"
+                >
+                  MDRT Event Upload
+                </Typography>
+              }
+            />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      {/** MDRT Event Upload */}
+      {/** Branch Event Approve */}
+      <List>
+        <ListItem disablePadding>
+        <ListItemButton component={Link} to="/full-media">
+            <ListItemIcon style={styles.btnsizeup}>
+              <FileUploadOutlinedIcon sx={{ color: "#0000FF" }}/>
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body1"
+                  fontWeight="bold"
+                  fontSize="0.9rem"
+                  color="#0000FF"
+                >
+                  Branch Event Approve
+                </Typography>
+              }
+            />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      {/** Branch Event Approve */}
       {/** Help */}
       <List style={styles.container}>
         <ListItem disablePadding>
@@ -225,4 +350,5 @@ const styles = {
   label: {
     fontSize: "19px"
   },
+  
 }

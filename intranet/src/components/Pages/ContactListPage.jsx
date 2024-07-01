@@ -1,27 +1,37 @@
-import React from 'react'
-import '../../Styles/contactList.css';
+import React from 'react';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 
+
 const ContactListPage = () => {
+  const containerStyle = {
+    width: '100%',
+    height: '100vh'
+  };
+
+  const leftStyle = {
+    flex: 1,
+    backgroundColor: '#f0f0f0',
+    padding: '20px',
+    boxSizing: 'border-box'
+  };
+
+  const rightStyle = {
+    flex: 3,
+    backgroundColor: '#c0c0c0',
+    padding: '20px',
+    boxSizing: 'border-box'
+  };
+
   return (
-    <div className="container">
-      <div className="left-pane">
-        <DrawerMenu />
-        <h2> Contact List</h2>
-        <h3>ADD NAMES TO YOUR PHONE BOOK </h3>
-        <p>You can add the numbers you need most to you Personal Phone Book by clicking the link 
-          "Add" next to the name in the SLIC phone directory. 
-          Now your Personal Phone Book is ready to give your most needed numbers instantly.</p>
-        <h3>LOCATE YOUR PHONE BOOK</h3>
-        <p>If you are away from your own computer, by typing your Computer No. 
-          (IP No.) you can still access your address book from any other computer.</p>
+    <div style={{ display: 'flex', ...containerStyle }}>
+      <div style={leftStyle}>
+        <DrawerMenu/>
       </div>
-      <div className="right-pane">
-        Right Pane (75%)
+      <div style={rightStyle}>
+        {/* Content for the right side */}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default ContactListPage;
-
