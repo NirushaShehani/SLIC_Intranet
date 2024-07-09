@@ -28,6 +28,11 @@ const MediaUploadDetails = () => {
     setFiles(newFiles);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+    navigate('/full-events'); // Navigate to the desired URL
+  };
+
   return (
     <div className="media-upload-details-container">
       <h2>Media Upload</h2>
@@ -72,7 +77,7 @@ const MediaUploadDetails = () => {
         )}
         <div className="action-buttons">
           <button type="button" className="back-button" onClick={handleBackClick}>Back</button>
-          <button type="submit" className="submit-button">Submit</button>
+          <button type="submit" className="submit-button" onClick={handleSubmit}>Submit</button>
         </div>
       </form>
     </div>
