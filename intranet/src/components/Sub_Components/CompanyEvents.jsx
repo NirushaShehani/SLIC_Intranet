@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../Styles/CompanyEventscard.css';
 
 const eventsData = [
@@ -53,10 +54,12 @@ const eventsData = [
   // Add more event data here...
 ];
 
-const EventCard = ({ image, title, likes, onLike }) => {
+const EventCard = ({ id, image, title, likes, onLike }) => {
   return (
     <div className="event-card">
-      <img src={image} alt={title} className="event-image" />
+      <Link to={`/detailed-events/${id}`}>
+        <img src={image} alt={title} className="event-image" />
+      </Link>
       <div className="event-info">
         <p className="event-title">{title}</p>
         <div className="event-likes">
