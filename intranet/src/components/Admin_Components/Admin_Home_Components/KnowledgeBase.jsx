@@ -3,17 +3,17 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
-import DrawerMenu from '../Sub_Components/DrawerMenu';
+import DrawerMenu from '../../Sub_Components/DrawerMenu';
 import Chip from "@mui/material/Chip";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { styled } from "@mui/material/styles";
 //Image Imports
-const imageUrl1 = require('../../assets/Services.png');
-const imageUrl2 = require('../../assets/Ideahub.png');
+const imageUrl1 = require('../../../assets/Services.png');
+const imageUrl2 = require('../../../assets/Ideahub.png');
 //For image slider
-const imageUrl01 = require('../../assets/sliderimgs/img1.jpg');
-const imageUrl02 = require('../../assets/sliderimgs/img2.jpg');
-const imageUrl03 = require('../../assets/sliderimgs/img3.jpg');
+const imageUrl01 = require('../../../assets/sliderimgs/img1.jpg');
+const imageUrl02 = require('../../../assets/sliderimgs/img2.jpg');
+const imageUrl03 = require('../../../assets/sliderimgs/img3.jpg');
 
 const images = [imageUrl01, imageUrl02, imageUrl03];
 

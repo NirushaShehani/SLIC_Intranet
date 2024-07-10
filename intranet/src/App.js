@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
+import Admin from './components/Admin'
 import FullNoticesPage from './components/Pages/FullNoticesPage';
 import DetailedEventsPage from './components/Pages/DetailedEventsPage';
 import DetailedNoticePage from './components/Pages/DetailedNoticePage';
@@ -22,6 +23,7 @@ const App =() => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="/full-notices" element={<FullNoticesPage />} />
         <Route path="/detailed-notice/:id" element={<DetailedNoticePage />} />
         <Route path="/detailed-events/:id" element={<DetailedEventsPage />} />
