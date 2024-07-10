@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import '../../Styles/BranchPerformance.css';
-import image1 from '../../assets/Event1.jpg';
-import image2 from '../../assets/Event2.jpg';
-import image3 from '../../assets/Event3.jpg';
+import '../../../Styles/BranchPerformance.css';
+import image1 from '../../../assets/Event1.jpg';
+import image2 from '../../../assets/Event2.jpg';
+import image3 from '../../../assets/Event3.jpg';
 import { Link } from 'react-router-dom';
 
 const branches = [

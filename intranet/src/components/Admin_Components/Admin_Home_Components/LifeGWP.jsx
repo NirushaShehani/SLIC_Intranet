@@ -4,8 +4,8 @@ import { CardContent, Typography, Box, Avatar } from '@mui/material';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { styled } from '@mui/system';
 
-const rec1 = require('../../assets/Rectangle1.png');
-const rec2 = require('../../assets/Rectangle2.png');
+const rec1 = require('../../../assets/Rectangle1.png');
+const rec2 = require('../../../assets/Rectangle2.png');
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
