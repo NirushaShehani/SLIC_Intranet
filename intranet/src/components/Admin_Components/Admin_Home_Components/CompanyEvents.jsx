@@ -10,14 +10,14 @@ const CompanyEvents = () => {
     <div className="CompanyEvents">
       <h2 className="notice-hd">CompanyEvents & News</h2>
       <div className="image-container">
-        <Link to="/full-events">
+        <Link to="/events-admin">
           <img src={image1} alt="Image 1" className="image image1" />
         </Link>
-        <Link to="/full-events">
+        <Link to="/events-admin">
           <img src={image2} alt="Image 2" className="image image2" />
         </Link>
         <div className="image image3-container">
-          <Link to="/full-events">
+          <Link to="/events-admin">
             <img src={image3} alt="Image 3" className="image image3" />
           </Link>
         </div>
