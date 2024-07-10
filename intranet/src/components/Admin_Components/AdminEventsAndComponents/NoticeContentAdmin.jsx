@@ -13,10 +13,9 @@ const NoticeContentAdmin = ({ notice }) => {
              <h2>{notice.topic}</h2>
              <img src={notice.image} alt={notice.topic} className="notice-detail-image" />
               <p>
-                This year we are ready to offer 300 Suba Pathum Scholarships for the children of 
-                Sri Lanka Insurance Life Policyholders.
+                Aaaa heartfelt congratulations to all our MDRT Achievers and Producers of SLICLife!
               <br></br>
-                75 Suba Pathum Scholarships for top achievers 
+                67 Suba Pathum Scholarships for top achievers 
                 at the 2021 G.C.E. Ordinary Level examination.225 Suba Pathum Scholarships for top achievers 
                 at the 2022 Grade 5 Scholarship, G.C.E. Ordinary Level and Advanced Level examinations.
               </p>

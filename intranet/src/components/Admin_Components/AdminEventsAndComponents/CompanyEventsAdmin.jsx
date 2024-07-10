@@ -2,35 +2,36 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../../Styles/CompanyEventscard.css';
 import deleteIcon from '../../../assets/delete-icon.png';
+import event1Img from '../../../assets/evnt1.jpg';
 
 const eventsData = [
   {
     id: 1,
-    image: require('../../../assets/image2.jpg'),
+    image: require('../../../assets/evnt1.jpg'),
     title: 'A heartfelt congratulations to all our MDRT Achievers and Producers of SLICLife!',
     likes: 26,
   },
   {
     id: 2,
-    image: require('../../../assets/image2.jpg'),
+    image: require('../../../assets/image1.jpg'),
     title: 'Any mechanical keyboard enthusiasts in design?',
     likes: 85,
   },
   {
     id: 3,
-    image: require('../../../assets/image2.jpg'),
+    image: require('../../../assets/image3.jpg'),
     title: 'Understanding color theory: the color wheel and finding',
     likes: 85,
   },
   {
     id: 4,
-    image: require('../../../assets/image2.jpg'),
+    image: require('../../../assets/Services.png'),
     title: 'How to design a product that can grow itself 10x in year:',
     likes: 85,
   },
   {
     id: 5,
-    image: require('../../../assets/image2.jpg'),
+    image: require('../../../assets/image 18.png'),
     title: 'The More Important the Work, the More Important the Rest',
     likes: 85,
   },
@@ -42,7 +43,7 @@ const eventsData = [
   },
   {
     id: 7,
-    image: require('../../../assets/image2.jpg'),
+    image: require('../../../assets/image1.jpg'),
     title: 'How to design a product that can grow itself 10x in year:',
     likes: 85,
   },

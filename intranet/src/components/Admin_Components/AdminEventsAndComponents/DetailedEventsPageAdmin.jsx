@@ -3,13 +3,12 @@ import { useParams } from 'react-router-dom';
 import KnowledgeBase from '../../Home_Components/KnowledgeBase';
 import BranchPerformance from '../../Home_Components/BranchPerformance';
 import '../../../Styles/DetailedNoticePage.css';
-import noticesData from '../../Sub_Components/noticesData';
-import NoticeContent from './NoticeContentAdmin'; 
+import noticeDataAdmin from './noticeDataAdmin';
 import NoticeContentAdmin from './NoticeContentAdmin';
 
-const DetailedEventsPage = () => {
+const DetailedEventsPageAdmin = () => {
   const { id } = useParams();
-  const notice = noticesData.find(notice => notice.id === parseInt(id));
+  const notice = noticeDataAdmin.find(notice => notice.id === parseInt(id));
 
   if (!notice) {
     return <div>Notice not found</div>;
@@ -34,5 +33,5 @@ const DetailedEventsPage = () => {
   );
 };
 
-export default DetailedEventsPage;
+export default DetailedEventsPageAdmin;
 
