@@ -14,7 +14,7 @@ function HRNoticeAdmin2() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/full-notices');
+    navigate('/full-notices', { state: { formData } });
   };
 
   return (

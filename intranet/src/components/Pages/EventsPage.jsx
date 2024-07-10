@@ -6,11 +6,11 @@ import CompanyEvents from '../Sub_Components/CompanyEvents';
 const EventsPage = () => {
   return (
     <div className="full-notices-page">
-      <div className="full-notices-column1">
+      <div>
         <DrawerMenu />
       </div>
       
-      <div>
+      <div className="company-events-container">
         <CompanyEvents />
       </div>
       

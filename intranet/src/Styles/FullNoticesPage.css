@@ -9,9 +9,9 @@
   }
   
   .full-notices-column1 {
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
-    width: 30%; 
+    width: 10%; 
     display: flex;
     flex-direction: column;
   }
@@ -55,3 +55,6 @@
     padding: 10px;
   }
   
+.company-events-container {
+  margin-top: 25px;
+}
