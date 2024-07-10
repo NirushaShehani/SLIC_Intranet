@@ -1,10 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import KnowledgeBase from '../Home_Components/KnowledgeBase';
-import BranchPerformance from '../Home_Components/BranchPerformance';
-import '../../Styles/DetailedNoticePage.css';
-import noticesData from '../Sub_Components/noticesData';
-import NoticeContent from '../Sub_Components/NoticeContent'; 
+import KnowledgeBase from '../../Home_Components/KnowledgeBase';
+import BranchPerformance from '../../Home_Components/BranchPerformance';
+import '../../../Styles/DetailedNoticePage.css';
+import noticesData from '../../Sub_Components/noticesData';
+import NoticeContent from './NoticeContentAdmin'; 
+import NoticeContentAdmin from './NoticeContentAdmin';
 
 const DetailedEventsPage = () => {
   const { id } = useParams();
@@ -23,7 +24,7 @@ const DetailedEventsPage = () => {
       </div>
       <hr />
       <div className="full-notices-column2">
-        <NoticeContent notice={notice} /> {/* Use NoticeContent component */}
+        <NoticeContentAdmin notice={notice} /> {/* Use NoticeContent component */}
       </div>
       <hr />
       <div className="full-notices-column4">

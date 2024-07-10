@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import Admin from './components/Admin'
 import FullNoticesPage from './components/Pages/FullNoticesPage';
-import DetailedEventsPage from './components/Pages/DetailedEventsPage';
+import DetailedEventsPageAdmin from './components/Admin_Components/AdminEventsAndComponents/DetailedEventsPageAdmin';
 import DetailedNoticePage from './components/Pages/DetailedNoticePage';
 import EventsPage from './components/Pages/EventsPage';
 import FullMedia from './components/Pages/FullMedia';
@@ -27,7 +27,6 @@ const App =() => {
         <Route path="/admin" element={<Admin />} />
         <Route path="/full-notices" element={<FullNoticesPage />} />
         <Route path="/detailed-notice/:id" element={<DetailedNoticePage />} />
-        <Route path="/detailed-events/:id" element={<DetailedEventsPage />} />
         <Route path="/full-events" element={<EventsPage />} />
         <Route path="/full-media" element={<FullMedia />} />
         <Route path="/full-branch-performance" element={<FullBranchPerformance />} /> 
@@ -40,6 +39,7 @@ const App =() => {
         <Route path="/hr-notice-admin1" element={<HRNoticeAdmin1 />} />
         <Route path="/hr-notice-admin2" element={<HRNoticeAdmin2 />} />
         <Route path="/upload-event" element={<UploadEvent />} />
+        <Route path="/detailed-events-admin/:id" element={<DetailedEventsPageAdmin />} />
 
       </Routes>
     </Router>

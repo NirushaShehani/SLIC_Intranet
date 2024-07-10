@@ -58,7 +58,7 @@ const eventsData = [
 const EventCard = ({ id, image, title, likes, onLike, onDelete }) => {
   return (
     <div className="event-card">
-      <Link to={`/detailed-events/${id}`}>
+      <Link to={`/detailed-events-admin/${id}`}>
         <img src={image} alt={title} className="event-image" />
       </Link>
       <div className="event-info">
