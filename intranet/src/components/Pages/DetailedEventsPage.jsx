@@ -34,4 +34,3 @@ const DetailedEventsPage = () => {
 };
 
 export default DetailedEventsPage;
-

@@ -1,0 +1,102 @@
+.sub-notice-head {
+    margin-left: 5px;
+    text-align: left;
+    font-size: 15px;
+    color: white;
+    margin-top: 1px; 
+    margin-bottom: 1px; 
+  }
+  
+  .transparent-container {
+    background-color: transparent; 
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .box-content {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: -30px;
+  }
+  
+  .hr-notice-head {
+    text-align: left;
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 4px;
+  }
+  
+  .aa {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .notice-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .notice-item {
+    background-color: white;
+    margin: 10px 0;
+    padding: 2px 15px; /* Adjust padding to avoid overflow */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .notice-button {
+    background-color: white;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .notice-button:focus {
+    outline: none;
+  }
+  
+  /* .notice-button:hover {
+    background-color: #f0f0f0;
+  } */
+  
+  .notice-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5%; 
+    height: 100%;
+    background-color: #A5A5A5; 
+    border-radius: 0 10px 10px 0;
+  }
+  
+  .notice-topic {
+    margin-top: 5px; 
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  
+  .notice-content {
+    padding-right: 60px;
+    font-size: 14px;
+  }
+  
+  .notice-item .delete-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 20px; /* Adjust icon size */
+    height: 20px; /* Adjust icon size */
+    cursor: pointer;
+    z-index: 10; /* Ensure it is above other elements */
+  }
