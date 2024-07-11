@@ -32,7 +32,7 @@ const CompanyEvents = () => {
       <p className="sub-notice-hd">SLICL Suba Pathum scholarship awards 2023</p>
       <p className='notice'>Lorem Ipsum has been the industry's standard when it dummy text ever since 1500s when an unknown have took a galley of type.</p>
       <div className="link-container">
-        <Link to="/full-notices" className="read-more-link">Read more...</Link>
+        <Link to="/full-notices-admin" className="read-more-link">Read more...</Link>
       </div>
     </div>
   );
