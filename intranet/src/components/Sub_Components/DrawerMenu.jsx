@@ -81,6 +81,7 @@ const DrawerMenu = () => {
             </ListItemIcon>
             <ListItemText
               primary={
+                <Link to="/" style={{ cursor: 'pointer' }}>
                 <Typography
                   sx={{ display: "inline" }}
                   component="span"
@@ -91,6 +92,7 @@ const DrawerMenu = () => {
                 >
                   Dashboard
                 </Typography>
+                </Link>
               }
             />
           </ListItemButton>

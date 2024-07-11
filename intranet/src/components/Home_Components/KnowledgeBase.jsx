@@ -89,9 +89,9 @@ const KnowledgeBase = () => {
           deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
           onDelete={() => {}}
         />
-        {/*Sales List Chip*/}
+        {/*Sales Lead Chip*/}
         <CustomChip style={styles.label}
-          label="Sales List"
+          label="Sales Lead"
           deleteIcon={<BookmarkIcon style={ { color: "white" }} />}
           onDelete={() => {}}
         />
@@ -104,9 +104,11 @@ const KnowledgeBase = () => {
         />
         </Link>
         {/*Services Chip*/}
+        <Link to="/services-page" style={{ cursor: 'pointer' }}>
         <CustomChip2 style={styles.label}
           label="Services"
         />
+        </Link>
         {/*Idea Hub Chip*/}
         <CustomChip3 style={styles.label}
           label="Idea Hub"
