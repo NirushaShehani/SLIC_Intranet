@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import Box from '@mui/material/Box'; 
+import Button from '@mui/material/Button';
 import '../../../Styles/CompanyEventscard.css';
 import deleteIcon from '../../../assets/delete-icon.png';
-import event1Img from '../../../assets/evnt1.jpg';
 
 const eventsData = [
   {
@@ -56,7 +61,7 @@ const eventsData = [
   // Add more event data here...
 ];
 
-const EventCard = ({ id, image, title, likes, onLike, onDelete }) => {
+const EventCard = ({ id, image, title, likes, onLike, onDeleteClick }) => {
   return (
     <div className="event-card">
       <Link to={`/detailed-events-admin/${id}`}>
@@ -70,7 +75,7 @@ const EventCard = ({ id, image, title, likes, onLike, onDelete }) => {
           <img 
             src={deleteIcon} 
             className="delete-icon" 
-            onClick={onDelete} 
+            onClick={onDeleteClick} 
           />
         </div>
       </div>
@@ -80,6 +85,9 @@ const EventCard = ({ id, image, title, likes, onLike, onDelete }) => {
 
 const CompanyEventsAdmin = () => {
   const [events, setEvents] = useState(eventsData);
+  const [open, setOpen] = useState(false);
+  const [successOpen, setSuccessOpen] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
 
   const handleLike = (id) => {
     const updatedEvents = events.map(event => {
@@ -91,9 +99,24 @@ const CompanyEventsAdmin = () => {
     setEvents(updatedEvents);
   };
 
-  const handleDelete = (id) => {
-    const updatedEvents = events.filter(event => event.id !== id);
+  const handleDeleteClick = (id) => {
+    setSelectedId(id);
+    setOpen(true);
+  };
+
+  const handleDeleteConfirm = () => {
+    const updatedEvents = events.filter(event => event.id !== selectedId);
     setEvents(updatedEvents);
+    setOpen(false);
+    setSuccessOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleSuccessClose = () => {
+    setSuccessOpen(false);
   };
 
   return (
@@ -103,9 +126,49 @@ const CompanyEventsAdmin = () => {
           key={event.id}
           {...event}
           onLike={() => handleLike(event.id)}
-          onDelete={() => handleDelete(event.id)}
+          onDeleteClick={() => handleDeleteClick(event.id)}
         />
       ))}
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+      >
+        <DialogContent>
+          <DialogContentText>
+            Are you sure you want to delete this event?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Button onClick={handleClose} sx={{ backgroundColor: 'red', color: 'white', mx: 4, '&:hover': { backgroundColor: 'red' } }}>
+            No
+          </Button>
+          <Button onClick={handleDeleteConfirm} sx={{ backgroundColor: 'blue', color: 'white', mx: 4, '&:hover': { backgroundColor: 'blue' } }}>
+            Yes
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      <Dialog
+        open={successOpen}
+        onClose={handleSuccessClose}
+      >
+        <DialogContent>
+          <Box sx={{ textAlign: 'center' }}>
+            <DialogContentText>
+              Thank you for your request.
+            </DialogContentText>
+            <DialogContentText>
+              The event has been successfully deleted.
+            </DialogContentText>
+          </Box>
+        </DialogContent>
+        <DialogActions sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Button onClick={handleSuccessClose} sx={{ backgroundColor: 'blue', color: 'white', mx: 10, '&:hover': { backgroundColor: 'blue' } }}>
+            Continue
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };
