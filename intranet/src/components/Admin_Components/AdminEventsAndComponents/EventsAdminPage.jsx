@@ -1,9 +1,9 @@
 import React from 'react';
-import DrawerMenu from '../Sub_Components/DrawerMenu';
-import '../../Styles/FullNoticesPage.css';
-import CompanyEvents from '../Sub_Components/CompanyEvents';
+import DrawerMenu from '../../Sub_Components/DrawerMenu';
+import '../../../Styles/FullNoticesPage.css';
+import CompanyEvents from './CompanyEventsAdmin';
 
-const EventsPage = () => {
+const EventsAdminPage = () => {
   return (
     <div className="full-notices-page">
       <div>
@@ -18,5 +18,5 @@ const EventsPage = () => {
   );
 };
 
-export default EventsPage;
+export default EventsAdminPage;
 

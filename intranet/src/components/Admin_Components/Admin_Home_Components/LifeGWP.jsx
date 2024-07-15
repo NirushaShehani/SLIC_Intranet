@@ -4,8 +4,8 @@ import { CardContent, Typography, Box, Avatar } from '@mui/material';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { styled } from '@mui/system';
 
-const rec1 = require('../../assets/Rectangle1.png');
-const rec2 = require('../../assets/Rectangle2.png');
+const rec1 = require('../../../assets/Rectangle1.png');
+const rec2 = require('../../../assets/Rectangle2.png');
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -94,7 +94,7 @@ const GWPChart = ({ title, data, customLabels }) => (
   </Box>
 );
 
-const AchieversCard = () => (
+const AchieversCard = ({ achievers }) => (
   <Box sx={{ width: 300, padding: 2, marginTop: '-35px' }}>
     <CardContent>
       <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginBottom: 2 }}>
@@ -107,30 +107,18 @@ const AchieversCard = () => (
         Achieved
       </Typography>
       <Typography variant="h6" component="div" sx={{ textAlign: 'left', marginTop: 2 }}>
-        Top Achievers
+        {achievers.title}
       </Typography>
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'left', marginTop: 2 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
-          <Avatar alt="A. R. C. Perera" src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-          <Box sx={{ marginLeft: 2, textAlign: 'left' }}>
-            <Typography variant="body1">A. R. C. Perera</Typography>
-            <Typography variant="body2" color="textSecondary">Bandarawela</Typography>
+        {achievers.list.map((achiever, index) => (
+          <Box key={index} sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
+            <Avatar alt={achiever.name} src={achiever.image} />
+            <Box sx={{ marginLeft: 2, textAlign: 'left' }}>
+              <Typography variant="body1">{achiever.name}</Typography>
+              <Typography variant="body2" color="textSecondary">{achiever.location}</Typography>
+            </Box>
           </Box>
-        </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
-          <Avatar alt="K. Dhanushka Silva" src="https://img.freepik.com/free-photo/smiley-man-holding-camera-front-view_23-2149915895.jpg" />
-          <Box sx={{ marginLeft: 2, textAlign: 'left' }}>
-            <Typography variant="body1">K. Dhanushka Silva</Typography>
-            <Typography variant="body2" color="textSecondary">Dehiwala</Typography>
-          </Box>
-        </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
-          <Avatar alt="N. K. Wijesiri" src="https://media.istockphoto.com/id/1369508766/photo/beautiful-successful-latin-woman-smiling.jpg?s=612x612&w=0&k=20&c=LoznG6eGT42_rs9G1dOLumOTlAveLpuOi_U755l_fqI=" />
-          <Box sx={{ marginLeft: 2, textAlign: 'left' }}>
-            <Typography variant="body1">N. K. Wijesiri</Typography>
-            <Typography variant="body2" color="textSecondary">Colombo 04</Typography>
-          </Box>
-        </Box>
+        ))}
       </Box>
     </CardContent>
   </Box>
@@ -173,6 +161,7 @@ const EventCard = () => {
 const GWPChartsContainer = () => {
   const [showBranch, setShowBranch] = useState(false);
   const [currentCard, setCurrentCard] = useState('achievers'); // Initialize with 'achievers'
+  const [achieverList, setAchieverList] = useState(0); // 0 for Top, 1 for Branch, 2 for Regional
 
   const handleClickBranch = () => {
     setShowBranch(prev => !prev);
@@ -180,6 +169,10 @@ const GWPChartsContainer = () => {
 
   const handleCardClick = () => {
     setCurrentCard(prev => (prev === 'achievers' ? 'event' : 'achievers')); // Toggle between 'achievers' and 'event'
+  };
+
+  const handleAchieverClick = () => {
+    setAchieverList(prev => (prev + 1) % 3); // Cycle through Top, Branch, Regional achievers
   };
 
   const dataLife = {
@@ -210,6 +203,35 @@ const GWPChartsContainer = () => {
     'FYP: Rs.15000'
   ];
 
+  const topAchievers = {
+    title: 'National Top Achievers',
+    list: [
+      { name: 'A. R. C. Perera', location: 'Bandarawela', image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
+      { name: 'K. Dhanushka Silva', location: 'Dehiwala', image: 'https://img.freepik.com/free-photo/smiley-man-holding-camera-front-view_23-2149915895.jpg' },
+      { name: 'N. K. Wijesiri', location: 'Colombo 04', image: 'https://media.istockphoto.com/id/1369508766/photo/beautiful-successful-latin-woman-smiling.jpg?s=612x612&w=0&k=20&c=LoznG6eGT42_rs9G1dOLumOTlAveLpuOi_U755l_fqI=' }
+    ]
+  };
+
+  const branchAchievers = {
+    title: 'Branch Top Achievers',
+    list: [
+      { name: 'A. B. C. Fernando', location: 'Galle', image: 'https://images.pexels.com/photos/38554/office-two-business-businessmen-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
+      { name: 'D. E. F. Gamage', location: 'Kandy', image: 'https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
+      { name: 'H. I. J. Silva', location: 'Negombo', image: 'https://images.pexels.com/photos/769888/pexels-photo-769888.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' }
+    ]
+  };
+
+  const regionalAchievers = {
+    title: 'Regional Top Achievers',
+    list: [
+      { name: 'K. L. M. Perera', location: 'Jaffna', image: 'https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
+      { name: 'N. O. P. Jayasinghe', location: 'Batticaloa', image: 'https://images.pexels.com/photos/3748221/pexels-photo-3748221.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
+      { name: 'Q. R. S. Senanayake', location: 'Trincomalee', image: 'https://images.pexels.com/photos/1181649/pexels-photo-1181649.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' }
+    ]
+  };
+
+  const achieversList = [topAchievers, branchAchievers, regionalAchievers];
+
   return (
     <Box sx={{ textAlign: 'center', padding: 2 }}>
       <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 2 }} onClick={handleClickBranch}>
@@ -225,10 +247,10 @@ const GWPChartsContainer = () => {
         </FlippingCard>
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 2 }} onClick={handleCardClick}>
-        <FlippingCard showBack={false}>
+        <FlippingCard showBack={false} onClick={handleAchieverClick}>
           <div className="inner">
             <div className="front">
-              {currentCard === 'achievers' ? <AchieversCard /> : <EventCard />}
+              {currentCard === 'achievers' ? <AchieversCard achievers={achieversList[achieverList]} /> : <EventCard />}
             </div>
           </div>
         </FlippingCard>

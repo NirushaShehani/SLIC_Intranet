@@ -1,0 +1,24 @@
+/* Add your CSS styling for the FullNotices component here */
+.full-notices {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+  }
+  
+  .full-notices h2 {
+    color: #333;
+  }
+  
+  .full-notices p {
+    margin: 10px 0;
+  }
+  
+  .full-notices h3 {
+    margin-top: 20px;
+  }
+  
+  .full-notices p {
+    margin: 5px 0;
+  }
+  
