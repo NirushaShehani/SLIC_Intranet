@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import '../../../Styles/CompanyEventscard.css';
 import deleteIcon from '../../../assets/delete-icon.png';
+import Vector from '../../../assets/Vector.png';
 
 const eventsData = [
   {
@@ -135,9 +136,12 @@ const CompanyEventsAdmin = () => {
         onClose={handleClose}
       >
         <DialogContent>
+        <Box sx={{ textAlign: 'center' }}>
+          <img src={Vector} style={{ width: '50px', height: '50px', margin: '0 auto 10px auto', display: 'block' }} />
           <DialogContentText>
-            Are you sure you want to delete this event?
+            Are you sure you want to delete this notice?
           </DialogContentText>
+          </Box>
         </DialogContent>
         <DialogActions sx={{ display: 'flex', justifyContent: 'center' }}>
           <Button onClick={handleClose} sx={{ backgroundColor: 'red', color: 'white', mx: 4, '&:hover': { backgroundColor: 'red' } }}>
