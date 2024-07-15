@@ -10,6 +10,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
 import '../../../Styles/HRNoticesAdmin.css';
 import deleteIcon from '../../../assets/delete-icon2.png'; // Adjust the path as necessary
+import Vector from '../../../assets/Vector.png';
 
 const HRNoticesAdmin = () => {
   const navigate = useNavigate();
@@ -123,9 +124,12 @@ const HRNoticesAdmin = () => {
         onClose={handleClose}
       >
         <DialogContent>
+        <Box sx={{ textAlign: 'center' }}>
+          <img src={Vector} style={{ width: '50px', height: '50px', margin: '0 auto 10px auto', display: 'block' }} />
           <DialogContentText>
             Are you sure you want to delete this notice?
           </DialogContentText>
+          </Box>
         </DialogContent>
         <DialogActions sx={{ display: 'flex', justifyContent: 'center' }}>
           <Button onClick={handleClose} sx={{ backgroundColor: 'red', color: 'white', mx: 4, '&:hover': { backgroundColor: 'red' } }}>

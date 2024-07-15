@@ -14,11 +14,8 @@ import FullBranchPerformance from './components/Pages/FullBranchPerformance';
 import ContactListPage from './components/Pages/ContactListPage';
 import FullBranchEvent from './components/Pages/FullBranchEvent';
 import UploadEvent from './components/Pages/UploadEvent';
-import HRNoticeAdmin1 from './components/Pages/HRNoticeAdmin1';
-import HRNoticeAdmin2 from './components/Pages/HRNoticeAdmin2';
 import ServicesPage from './components/Pages/Services'
 import MediaUploadDetails from './components/Pages/MediaUploadDetails';
-import ServicesPage from './components/Pages/Services';
 import HRNoticeAdmin1 from './components/Admin_Components/HRNoticeAdmin1';
 import HRNoticeAdmin2 from './components/Admin_Components/HRNoticeAdmin2';
 import AllNotices from './components/Pages/AllNotices';
