@@ -21,6 +21,7 @@ import HRNoticeAdmin2 from './components/Admin_Components/HRNoticeAdmin2';
 import AllNotices from './components/Pages/AllNotices';
 import EventsAdminPage from './components/Admin_Components/AdminEventsAndComponents/EventsAdminPage';
 import FullNoticesAdmin from './components/Admin_Components/AdminHRNotices/FullNoticesAdmin';
+import SalesLead from './components/Pages/SalesLeadPage';
 
 const App =() => {
   return (
@@ -40,7 +41,8 @@ const App =() => {
         <Route path="/upload-event" element={<UploadEvent />} />
         <Route path="/media-upload-details" element={<MediaUploadDetails />} />
         <Route path="/all-notices" element={<AllNotices />} />
-
+        <Route path="/sales-Lead" element={<SalesLead />} />
+        {/* admin side */}
         <Route path="/events-admin" element={<EventsAdminPage />} />
         <Route path="/hr-notice-admin1" element={<HRNoticeAdmin1 />} />
         <Route path="/hr-notice-admin2" element={<HRNoticeAdmin2 />} />

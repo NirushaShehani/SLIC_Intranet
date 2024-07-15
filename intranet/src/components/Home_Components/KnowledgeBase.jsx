@@ -97,11 +97,13 @@ const KnowledgeBase = () => {
           onDelete={() => {}}
         />
         {/*Sales Lead Chip*/}
+        <Link to="/sales-Lead" style={{ cursor: 'pointer' }}>
         <CustomChip style={styles.label}
           label="Sales Lead"
           deleteIcon={<BookmarkIcon style={ { color: "white" }} />}
           onDelete={() => {}}
         />
+        </Link>
         {/*Contact List Chip*/}
         <Link to="/contact-list" style={{ cursor: 'pointer' }}>
         <CustomChip style={styles.label}
