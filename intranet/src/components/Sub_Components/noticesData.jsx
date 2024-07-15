@@ -7,7 +7,7 @@ const noticesData = [
     { id: 2, topic: 'SLICL Suba Pathum scholarship awards 2023', image: notice1Image },
     { id: 3, topic: 'SLICL Suba Pathum scholarship awards 2023', image: notice3Image },
     { id: 4, topic: 'SLICL Suba Pathum scholarship awards 2023', image: notice1Image },
-    { id: 5, topic: 'SLICL Suba Pathum scholarship awards 2023', image: notice1Image }
+    { id: 6, topic: 'SLICL Suba Pathum scholarship awards 2023', image: notice1Image }
   ];
   
   export default noticesData;
