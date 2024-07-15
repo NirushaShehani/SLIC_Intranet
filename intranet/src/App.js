@@ -39,8 +39,6 @@ const App =() => {
         <Route path="/full-branch-events" element={<FullBranchEvent />} />
         <Route path="/upload-event" element={<UploadEvent />} />
         <Route path="/media-upload-details" element={<MediaUploadDetails />} />
-        <Route path="/hr-notice-admin1" element={<HRNoticeAdmin1 />} />
-        <Route path="/hr-notice-admin2" element={<HRNoticeAdmin2 />} />
         <Route path="/all-notices" element={<AllNotices />} />
 
         <Route path="/events-admin" element={<EventsAdminPage />} />
