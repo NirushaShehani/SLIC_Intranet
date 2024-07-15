@@ -1,5 +1,5 @@
 import React from 'react';
-import usericon from '../../assets/person.jpg';
+import usericon from '../../assets/Sri_Lanka_Insurance_new_logo.jpg';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -39,35 +39,7 @@ const DrawerMenu = () => {
       {/** User Details */}
       <List>
         <ListItem>
-          <ListItemAvatar>
-            <Avatar alt="Vikashini" src={usericon} />
-          </ListItemAvatar>
-          <ListItemText
-            primary={
-              <React.Fragment>
-                <Typography
-                  sx={{ display: "inline" }}
-                  component="span"
-                  variant="body1"
-                  color="#00bfff"
-                >
-                  Vikashini
-                </Typography>
-              </React.Fragment>
-            }
-            secondary={
-              <React.Fragment>
-                <Typography
-                  sx={{ display: "inline" }}
-                  component="span"
-                  variant="body2"
-                  color="text.primary"
-                >
-                  Vikashini@gmail.com
-                </Typography>
-              </React.Fragment>
-            }
-          />
+          <img src={usericon} alt="Logo" style={{ width: '90%', height: '90%', alignItems: 'center', justifyContent: 'center' }} />
         </ListItem>
       </List>
       {/** User Details */}
@@ -81,6 +53,7 @@ const DrawerMenu = () => {
             </ListItemIcon>
             <ListItemText
               primary={
+                <Link to="/" style={{ cursor: 'pointer' }}>
                 <Typography
                   sx={{ display: "inline" }}
                   component="span"
@@ -91,37 +64,13 @@ const DrawerMenu = () => {
                 >
                   Dashboard
                 </Typography>
+                </Link>
               }
             />
           </ListItemButton>
         </ListItem>
       </List>
       {/** Dashboard */}
-      {/** Upload Branch Event */}
-      <List>
-        <ListItem disablePadding>
-        <ListItemButton component={Link} to="/full-media">
-            <ListItemIcon style={styles.btnsizeup}>
-              <FileUploadOutlinedIcon />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Typography
-                  sx={{ display: "inline" }}
-                  component="span"
-                  variant="body1"
-                  fontWeight="bold"
-                  fontSize="0.9rem"
-                  color="text.primary"
-                >
-                  Upload Branch Event
-                </Typography>
-              }
-            />
-          </ListItemButton>
-        </ListItem>
-      </List>
-      {/** Upload Branch Event */}
       {/** Help */}
       <List style={styles.container}>
         <ListItem disablePadding>
@@ -146,29 +95,6 @@ const DrawerMenu = () => {
           </ListItemButton>
         </ListItem>
         {/** Help */}
-        {/** Logout */}
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon style={styles.btnsize}>
-              <LogoutOutlinedIcon fontSize="small" sx={{ color: "#ff0000" }} />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Typography
-                  sx={{ display: "inline" }}
-                  component="span"
-                  variant="body1"
-                  fontWeight="bold"
-                  fontSize="0.8rem"
-                  color="#ff0000"
-                >
-                  Logout Account
-                </Typography>
-              }
-            />
-          </ListItemButton>
-        </ListItem>
-        {/** Logout */}
       </List>
     </Box>
   );

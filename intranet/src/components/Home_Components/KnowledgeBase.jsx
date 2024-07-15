@@ -7,6 +7,7 @@ import DrawerMenu from '../Sub_Components/DrawerMenu';
 import Chip from "@mui/material/Chip";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { styled } from "@mui/material/styles";
+import logo from '../../assets/slicLIfe_New_1.png';
 //Image Imports
 const imageUrl1 = require('../../assets/Services.png');
 const imageUrl2 = require('../../assets/Ideahub.png');
@@ -14,6 +15,8 @@ const imageUrl2 = require('../../assets/Ideahub.png');
 const imageUrl01 = require('../../assets/sliderimgs/img1.jpg');
 const imageUrl02 = require('../../assets/sliderimgs/img2.jpg');
 const imageUrl03 = require('../../assets/sliderimgs/img3.jpg');
+
+
 
 const images = [imageUrl01, imageUrl02, imageUrl03];
 
@@ -81,7 +84,11 @@ const KnowledgeBase = () => {
     <div>
       <div className="Navbar" style={styles.navbar}>
       <DrawerMenu/>
+      <div className="logo" style={styles.logo}>
+      <img src={logo} alt="Logo" style={{ width: '170px', height: '20%', marginLeft: '10px'}} />
       </div>
+      </div>
+      
       <div style={styles.chipContainer}>
         {/*Knowledge Base Chip*/}
         <CustomChip style={styles.label}
@@ -89,9 +96,9 @@ const KnowledgeBase = () => {
           deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
           onDelete={() => {}}
         />
-        {/*Sales List Chip*/}
+        {/*Sales Lead Chip*/}
         <CustomChip style={styles.label}
-          label="Sales List"
+          label="Sales Lead"
           deleteIcon={<BookmarkIcon style={ { color: "white" }} />}
           onDelete={() => {}}
         />
@@ -104,9 +111,11 @@ const KnowledgeBase = () => {
         />
         </Link>
         {/*Services Chip*/}
+        <Link to="/services-page" style={{ cursor: 'pointer' }}>
         <CustomChip2 style={styles.label}
           label="Services"
         />
+        </Link>
         {/*Idea Hub Chip*/}
         <CustomChip3 style={styles.label}
           label="Idea Hub"
@@ -144,10 +153,10 @@ const styles = {
   navbar: {
     position: "relative",
     backgroundColor: "transparent",
-    padding: "1px",
-    display: 'flex',
-    flexDirection: 'column', 
-    alignItems: 'flex-start',
+    padding: "5px",
+    display: 'flex-start',
+    flexDirection: 'row', 
+    alignItems: 'center',
   },
   menuIcon: {
     color: 'white',
