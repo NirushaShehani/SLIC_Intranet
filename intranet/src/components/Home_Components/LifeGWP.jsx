@@ -212,8 +212,16 @@ const GWPChartsContainer = () => {
     ]
   };
 
-  const branchAchievers = {
-    title: 'Branch Top Achievers',
+  const cotAchievers = {
+    title: 'COT  Achievers',
+    list: [
+      { name: 'A. B. C. Fernando', location: 'Galle', image: 'https://images.pexels.com/photos/38554/office-two-business-businessmen-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
+      { name: 'D. E. F. Gamage', location: 'Kandy', image: 'https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
+      { name: 'H. I. J. Silva', location: 'Negombo', image: 'https://images.pexels.com/photos/769888/pexels-photo-769888.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' }
+    ]
+  };
+  const TOTAchievers = {
+    title: 'TOT  Achievers',
     list: [
       { name: 'A. B. C. Fernando', location: 'Galle', image: 'https://images.pexels.com/photos/38554/office-two-business-businessmen-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
       { name: 'D. E. F. Gamage', location: 'Kandy', image: 'https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
@@ -230,7 +238,7 @@ const GWPChartsContainer = () => {
     ]
   };
 
-  const achieversList = [topAchievers, branchAchievers, regionalAchievers];
+  const achieversList = [topAchievers, cotAchievers, TOTAchievers, regionalAchievers];
 
   return (
     <Box sx={{ textAlign: 'center', padding: 2 }}>
