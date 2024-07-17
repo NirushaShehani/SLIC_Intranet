@@ -7,13 +7,8 @@ import image3 from '../../assets/Event3.jpg';
 import { Link } from 'react-router-dom';
 
 const branches = [
-  { name: 'Kandy', value: 5000000, target: 4500000 },
-  { name: 'Panadura', value: 4600000, target: 4000000 },
-  { name: 'Galle', value: 4000000, target: 3000000 },
-  { name: 'Bandarawela', value: 3000000, target: 3500000 },
-  { name: 'Aluthgama', value: 2500000, target: 2000000 },
-  { name: 'Akurassa', value: 1700000, target: 1800000 },
-  { name: 'Dehiwala', value: 1000000, target: 1200000 },
+ 
+ 
 ];
 
 // Separate branches into two lists: achieved and not achieved
