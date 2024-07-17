@@ -31,6 +31,15 @@
     display: flex;
     flex-direction: column;
   }
+
+  .full-branch-performance-column3 {
+    padding: 10px;
+    border-radius: 5px;
+    width: 70%; /* Adjust this value as needed */
+    flex-grow: 1; /* Allow this column to take the remaining space */
+    display: flex;
+    flex-direction: column;
+  }
   
   hr {
     margin: 20px 0;
