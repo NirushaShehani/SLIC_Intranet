@@ -40,15 +40,27 @@ const SalesLeadPage = () => {
     width: '80%',
     height: '95vh',
     display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'column',
     alignItems: 'center',
-    margin: '10px'
+    margin: '10px',
+    padding: '20px',
   };
 
   const container = {
     display: 'flex',
     flexDirection: 'column',
     height: 'auto',
+  };
+
+  const formContainerStyle = {
+    padding: '20px',
+    backgroundColor: '#F4F4F4',
+    width: '100%'
+  };
+
+  const contentStyle = {
+    display: 'flex',
+    flex: 1,
   };
 
   const up = {
@@ -100,14 +112,50 @@ const SalesLeadPage = () => {
   const logoStyle = {
     width: '240px',
     height: 'auto',
-    marginBottom: '-30px',
+    marginBottom: '10px',
   };
 
   const titleStyle = {
     fontSize: '20px',
     fontWeight: 'bold',
-    marginBottom: '600px',
-    marginLeft: '40px'
+    marginBottom: '20px',
+    textAlign: 'center',
+  };
+
+  const inputStyle = {
+    padding: '10px',
+    borderRadius: '10px',
+    border: '1px solid #ccc',
+    width: '100%',
+    marginBottom: '10px',
+    outline: 'none',
+    boxSizing: 'border-box'
+  };
+
+  const buttonStyle = {
+    backgroundColor: '#2F5BDA',  // Blue color for the button
+    color: '#FFFFFF',
+    padding: '10px 20px',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    height: '37px',
+    width: '171px',
+  };
+
+  const formRowStyle = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginBottom: '20px',
+    width: '100%',
+  };
+
+  const formColumnStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    flex: 1,
+    marginLeft: '10px',
+    marginRight: '10px',
   };
 
   return (
@@ -149,99 +197,58 @@ const SalesLeadPage = () => {
             <img src={logo} alt="Logo" style={logoStyle} />
             <h3 style={titleStyle}>Sales Contact Form</h3>
           </div>
+          {/* Form area */}
+          <div style={formContainerStyle}>
+            <form>
+              <div style={formColumnStyle}>
+                <label>Name of the client:</label>
+                <input type="text" placeholder="Enter your name.." style={inputStyle} />
+              </div>
+              <div style={formRowStyle}>
+                <div style={formColumnStyle}>
+                  <label>Contact No 1:</label>
+                  <input type="text" placeholder="0704561233" style={inputStyle} />
+                </div>
+                <div style={formColumnStyle}>
+                  <label>Contact No 2:</label>
+                  <input type="text" placeholder="0785642350" style={inputStyle} />
+                </div>
+              </div>
+              <div style={formRowStyle}>
+                <div style={formColumnStyle}>
+                  <h4>SLIC Contact :</h4>
+                </div>
+              </div>
+              <div style={formRowStyle}>
+                <div style={formColumnStyle}>
+                  <label>Name:</label>
+                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
+                </div>
+                <div style={formColumnStyle}>
+                  <label>Mobile number:</label>
+                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
+                </div>
+              </div>
+              <div style={formRowStyle}>
+                <div style={formColumnStyle}>
+                  <label>Extension:</label>
+                  <input type="text" placeholder="Enter company name ..." style={inputStyle} />
+                </div>
+                <div style={formColumnStyle}>
+                  <label>Department:</label>
+                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
+                </div>
+              </div>
+              <div>
+                <button type="submit" style={buttonStyle}>Submit</button>
+              </div>
+            </form>
+          </div>
+          {/* Form area */}
         </div>
       </div>
     </div>
   );
 };
-
-const selectStyle = {
-  padding: '10px',
-  borderRadius: '10px',
-  border: '1px solid #ccc',
-  width: '200px',
-  marginRight: '10px',
-  outline: 'none'
-};
-
-const inputStyle = {
-  padding: '10px',
-  borderRadius: '10px',
-  border: '1px solid #ccc',
-  width: '250px',
-  marginBottom: '10px',
-  marginLeft: '18px',
-  marginTop: '20px',
-  outline: 'none'
-};
-
-const inputStyle2 = {
-  padding: '10px',
-  borderRadius: '10px',
-  border: '1px solid #ccc',
-  width: '250px',
-  marginBottom: '10px',
-  marginLeft: '18px',
-  marginTop: '10px',
-  outline: 'none'
-};
-
-const buttonStyle = {
-  backgroundColor: '#2F5BDA',  // Blue color for the button
-  color: '#FFFFFF',
-  padding: '10px 20px',
-  border: 'none',
-  borderRadius: '5px',
-  cursor: 'pointer',
-  marginLeft: '18px',
-  height: '37px',
-  width: '171px'
-};
-
-function PhoneBookForm({ inputStyle, selectStyle, buttonStyle }) {
-  const [inputs, setInputs] = useState({});
-  const [Floor, setFloor] = useState("All Floors");
-  const [Department, setDepartment] = useState("All Departments");
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}));
-    if (name === "Floor") setFloor(value);
-    if (name === "Department") setDepartment(value);
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(inputs);
-  }
-
-  return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      <label>Name</label>
-      <input 
-        type="text" 
-        name="username" 
-        value={inputs.username || ""} 
-        onChange={handleChange}
-        placeholder="P.S. Perera"
-        style={inputStyle2}
-      />
-      <label>Floor</label>
-      <select name="Floor" value={Floor} onChange={handleChange} style={selectStyle}>
-        <option value="All Floors">All Floors</option>
-        <option value="Volvo">Volvo</option>
-        <option value="Fiat">Fiat</option>
-      </select>
-      <label>Department</label>
-      <select name="Department" value={Department} onChange={handleChange} style={selectStyle}>
-        <option value="All Departments">All Departments</option>
-        <option value="Volvo">Volvo</option>
-        <option value="Fiat">Fiat</option>
-      </select>
-        <input type="submit" style={buttonStyle} value="Submit"/>
-    </form>
-  )
-}
 
 export default SalesLeadPage;
