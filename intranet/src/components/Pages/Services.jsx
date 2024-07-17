@@ -1,5 +1,6 @@
 import React from 'react'
 import DrawerMenu from '../Sub_Components/DrawerMenu';
+import '../../Styles/services.css';
 const Services = () => {
     const containerStyle = {
         width: '100%',
@@ -21,9 +22,12 @@ const Services = () => {
     
       const rightStyle = {
         flex: 4,
-        backgroundColor: '#c0c0c0',
+        backgroundColor: '#F4F4F4',
         padding: '20px',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
       };
     
       const container = {
@@ -134,20 +138,26 @@ const Services = () => {
       </div>
       <div style={verticalLineStyle}></div>
       <div style={rightStyle}>
-      <div style={{ display: 'flex', ...container }}>
-          <div style={up2}>
-            <div style={contentStyle}>
-              <div style={formContainerStyle}>
-                
-              </div>
-            </div>
-          </div>
-          <div style={Down}>
-          </div>
-        </div>
+      <div className="home-container">
+      <div className="grid-container">
+        <button className="grid-item">B-Life</button>
+        <button className="grid-item">B-MIS</button>
+        <button className="grid-item">Cashbook</button>
+        <button className="grid-item">B-Commission</button>
+        <button className="grid-item">B-Advisor</button>
+        <button className="grid-item highlighted">HRIS</button>
+      </div>
+      <hr />
+      <div className="grid-container">
+        <button className="grid-item">Documents</button>
+        <button className="grid-item">Common Forms</button>
+        <button className="grid-item">ICT Forms</button>
+      </div>
+    </div>
       </div>
     </div>
   )
 }
 
 export default Services
+
