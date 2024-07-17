@@ -36,7 +36,7 @@ const BranchPerformance = () => {
   return (
     <div>
       <div className="branch-performance">
-        <h2>Branch Performance</h2>
+        <h2>Cost Center</h2>
         <div className="branch-list">
           {achievedBranches.map((branch, index) => (
             <div key={index} className="branch-item achieved">

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const CompanyEvents = () => {
   return (
     <div className="CompanyEvents">
-      <h2 className="notice-hd">CompanyEvents & News</h2>
+      <h2 className="notice-hd">Company Events & News</h2>
       <div className="image-container">
         <Link to="/full-events">
           <img src={image1} alt="Image 1" className="image image1" />

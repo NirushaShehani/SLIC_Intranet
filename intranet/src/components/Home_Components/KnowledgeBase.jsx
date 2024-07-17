@@ -99,7 +99,7 @@ const KnowledgeBase = () => {
         {/*Sales Lead Chip*/}
         <Link to="/sales-Lead" style={{ cursor: 'pointer' }}>
         <CustomChip style={styles.label}
-          label="Sales Lead"
+          label="New Customer Request"
           deleteIcon={<BookmarkIcon style={ { color: "white" }} />}
           onDelete={() => {}}
         />
