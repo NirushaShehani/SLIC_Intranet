@@ -116,10 +116,10 @@ const SalesLeadPage = () => {
         <div style={container}>
           <div style={up}>
             <DrawerMenu />
-            <div style={contactList}>Sales Leads</div>
+            <div style={contactList}>New Customer Request</div>
           </div>
           <div style={down}>
-            <div style={subtitle}>Welcome to SLIC's Sales Leads Form</div>
+            <div style={subtitle}>Welcome to SLIC's New Customer Request Form</div>
             <div style={paragraph}>
               <p>
                 Thank you for your interest in Sri Lanka Insurance Corporation (SLIC). To help us understand your
