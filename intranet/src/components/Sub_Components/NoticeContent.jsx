@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 const NoticeContent = ({ notice }) => {
   return (
     <div>
-      <h2 className="notice-content-head">HR Notices</h2>
+      <h2 className="notice-content-head">Notices</h2>
       <Container className="transparent-notice-container">
         <Box className="box-notice-content">
           <div className="aaa">
