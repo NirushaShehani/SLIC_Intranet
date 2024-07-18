@@ -1,7 +1,11 @@
 import React from 'react'
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import '../../Styles/services.css';
+import { useNavigate } from 'react-router-dom';
 const Services = () => {
+
+  const navigate = useNavigate();
+
     const containerStyle = {
         width: '100%',
         height: '100vh'
@@ -140,18 +144,18 @@ const Services = () => {
       <div style={rightStyle}>
       <div className="home-container">
       <div className="grid-container">
-        <button className="grid-item">B-Life</button>
-        <button className="grid-item">B-MIS</button>
-        <button className="grid-item">Cashbook</button>
-        <button className="grid-item">B-Commission</button>
-        <button className="grid-item">B-Advisor</button>
-        <button className="grid-item highlighted">HRIS</button>
+        <button className="grid-item" onClick={() => navigate('/b-life')}>B-Life</button>
+        <button className="grid-item" onClick={() => navigate('/b-mis')}>B-MIS</button>
+        <button className="grid-item" onClick={() => navigate('/cashbook')}>Cashbook</button>
+        <button className="grid-item" onClick={() => navigate('/b-commission')}>B-Commission</button>
+        <button className="grid-item" onClick={() => navigate('/b-advisor')}>B-Advisor</button>
+        <button className="grid-item highlighted" onClick={() => navigate('/hris')}>HRIS</button>
       </div>
       <hr />
       <div className="grid-container">
-        <button className="grid-item">Documents</button>
-        <button className="grid-item">Common Forms</button>
-        <button className="grid-item">ICT Forms</button>
+        <button className="grid-item" onClick={() => navigate('/documents')}>Documents</button>
+        <button className="grid-item" onClick={() => navigate('/common-forms')}>Common Forms</button>
+        <button className="grid-item" onClick={() => navigate('/ict-forms')}>ICT Forms</button>
       </div>
     </div>
       </div>
