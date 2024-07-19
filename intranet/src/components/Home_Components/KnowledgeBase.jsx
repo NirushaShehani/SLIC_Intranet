@@ -119,9 +119,11 @@ const KnowledgeBase = () => {
         />
         </Link>
         {/*Idea Hub Chip*/}
+        <Link to="/Idea-Hub" style={{ cursor: 'pointer' }}>
         <CustomChip3 style={styles.label}
           label="Idea Hub"
         />
+        </Link>
       </div>
       <div >
       <style>

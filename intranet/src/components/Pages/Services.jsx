@@ -4,6 +4,9 @@ import '../../Styles/services.css';
 import { useNavigate } from 'react-router-dom';
 const Services = () => {
 
+  const openInNewWindow = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+};
   const navigate = useNavigate();
 
     const containerStyle = {
@@ -144,11 +147,12 @@ const Services = () => {
       <div style={rightStyle}>
       <div className="home-container">
       <div className="grid-container">
-        <button className="grid-item" onClick={() => navigate('/b-life')}>B-Life</button>
+        <button className="grid-item" onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>B-Life</button>
         <button className="grid-item" onClick={() => navigate('/b-mis')}>B-MIS</button>
         <button className="grid-item" onClick={() => navigate('/cashbook')}>Cashbook</button>
         <button className="grid-item" onClick={() => navigate('/b-commission')}>B-Commission</button>
         <button className="grid-item" onClick={() => navigate('/b-advisor')}>B-Advisor</button>
+        <button className="grid-item highlighted" onClick={() => navigate('/hris')}>HRIS</button>
         <button className="grid-item highlighted" onClick={() => navigate('/hris')}>HRIS</button>
       </div>
       <hr />
