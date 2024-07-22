@@ -4,6 +4,13 @@ import ReactDOM from 'react-dom/client';
 import logo from '../../assets/slicLIfe_New_1.png';
 
 const IdeaHub = () => {
+
+  const [text, setText] = useState('');
+  
+  const handleChange = (event) => {
+      setText(event.target.value);
+  };
+
     const containerStyle = {
         width: '100%',
         height: '100vh',
@@ -169,20 +176,10 @@ const IdeaHub = () => {
             <div style={subtitle}>Welcome to SLIC's Idea Hub</div>
             <div style={paragraph}>
               <p>
-                As a Company We always value your New Ideas.
-                Feel free to drop your new Ideas, Which will help to enhanse our company environment for all.  
+              We believe that your idea holds significant value for our company, enhancing our image and core values. 
+              Moreover, it promises to boost employee well-being, ultimately benefiting both our overall company uplift and individual growth. 
+              Your contribution is crucial to our collective success, and we encourage everyone to share innovative ideas that drive positive change.
               </p>
-            </div>
-            <br />
-            <br />
-            <div style={subtitle}>Why Fill Out This Form?</div>
-            <div style={paragraph}>
-              <p>
-                Personalized Service: By providing us with your information, we can tailor our services to meet your
-                specific insurance needs.
-              </p>
-              <p>Expert Advice: Our experienced team will contact you to discuss the best insurance options available to you.</p>
-              <p>Convenience: Save time by letting us reach out to you at your preferred contact method and time.</p>
             </div>
           </div>
         </div>
@@ -192,50 +189,45 @@ const IdeaHub = () => {
         <div style={border}>
           <div className="logo">
             <img src={logo} alt="Logo" style={logoStyle} />
-            <h3 style={titleStyle}>Sales Contact Form</h3>
+            <h3 style={titleStyle}>IdeaHub Form</h3>
           </div>
           {/* Form area */}
           <div style={formContainerStyle}>
             <form>
-              <div style={formColumnStyle}>
-                <label>Name of the client:</label>
-                <input type="text" placeholder="Enter your name.." style={inputStyle} />
+            <div style={formRowStyle}>
+                <div style={formColumnStyle}>
+                  <h4>User Details :</h4>
+                </div>
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
-                  <label>Contact No 1:</label>
-                  <input type="text" placeholder="0704561233" style={inputStyle} />
+                  <label>User EPF :</label>
+                  <input type="text" placeholder="L1234" style={inputStyle} />
                 </div>
                 <div style={formColumnStyle}>
-                  <label>Contact No 2:</label>
+                  <label>Department/Branch :</label>
+                  <input type="text" placeholder="eg: Colombo" style={inputStyle} />
+                </div>
+                <div style={formColumnStyle}>
+                  <label>Date :</label>
                   <input type="text" placeholder="0785642350" style={inputStyle} />
                 </div>
               </div>
-              <div style={formRowStyle}>
-                <div style={formColumnStyle}>
-                  <h4>SLIC Contact :</h4>
-                </div>
+              <div style={formColumnStyle}>
+                <label>Name of the User :</label>
+                <input type="text" placeholder="Enter your name.." style={inputStyle} />
               </div>
-              <div style={formRowStyle}>
-                <div style={formColumnStyle}>
-                  <label>Name:</label>
-                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
+              <div style={formColumnStyle}>
+                  <label>User Idea :</label>
+                  <textarea
+                    value={text}
+                    onChange={handleChange}
+                    placeholder="Type your Idea here..."
+                    rows="10"
+                    cols="50"
+                    style={inputStyle} />
+                    <p>Your Idea: {text}</p>
                 </div>
-                <div style={formColumnStyle}>
-                  <label>Mobile number:</label>
-                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
-                </div>
-              </div>
-              <div style={formRowStyle}>
-                <div style={formColumnStyle}>
-                  <label>Extension:</label>
-                  <input type="text" placeholder="Enter company name ..." style={inputStyle} />
-                </div>
-                <div style={formColumnStyle}>
-                  <label>Department:</label>
-                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
-                </div>
-              </div>
               <div>
                 <button type="submit" style={buttonStyle}>Submit</button>
               </div>

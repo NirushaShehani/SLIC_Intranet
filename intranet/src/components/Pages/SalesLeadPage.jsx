@@ -3,7 +3,15 @@ import DrawerMenu from '../Sub_Components/DrawerMenu';
 import ReactDOM from 'react-dom/client';
 import logo from '../../assets/slicLIfe_New_1.png';
 
+
 const SalesLeadPage = () => {
+
+  const [text, setText] = useState('');
+  
+  const handleChange = (event) => {
+      setText(event.target.value);
+  };
+
   const containerStyle = {
     width: '100%',
     height: '100vh',
@@ -164,28 +172,18 @@ const SalesLeadPage = () => {
         <div style={container}>
           <div style={up}>
             <DrawerMenu />
-            <div style={contactList}>New Customer Request</div>
+            <div style={contactList}>Internal Sales Lead</div>
           </div>
           <div style={down}>
             <div style={subtitle}>Welcome to SLIC's New Customer Request Form</div>
             <div style={paragraph}>
               <p>
-                Thank you for your interest in Sri Lanka Insurance Corporation (SLIC). To help us understand your
-                insurance needs and provide you with the best service possible, please fill out the form below with your
-                contact details and the type of insurance you are interested in. Your information will be used by our
-                sales team to get in touch with you and offer personalized assistance.
+              Thank you for your interest in introducing our extensive range of customized solutions to prospective clients.
+              Our products not only add color to people's lives but also provide ultimate protection. 
+              By bringing in new business, you are not just serving the company but also contributing to the nation. 
+              Take pride in offering essential protection to those who truly need it, making a meaningful impact through your dedication and expertise. 
+              Together, we are creating a safer and more vibrant future for all.
               </p>
-            </div>
-            <br />
-            <br />
-            <div style={subtitle}>Why Fill Out This Form?</div>
-            <div style={paragraph}>
-              <p>
-                Personalized Service: By providing us with your information, we can tailor our services to meet your
-                specific insurance needs.
-              </p>
-              <p>Expert Advice: Our experienced team will contact you to discuss the best insurance options available to you.</p>
-              <p>Convenience: Save time by letting us reach out to you at your preferred contact method and time.</p>
             </div>
           </div>
         </div>
@@ -214,9 +212,20 @@ const SalesLeadPage = () => {
                   <input type="text" placeholder="0785642350" style={inputStyle} />
                 </div>
               </div>
+              <div style={formColumnStyle}>
+                  <label>Client's Requirement</label>
+                  <textarea
+                    value={text}
+                    onChange={handleChange}
+                    placeholder="Type your requirement here..."
+                    rows="10"
+                    cols="50"
+                    style={inputStyle} />
+                    <p>Client Requirement: {text}</p>
+              </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
-                  <h4>SLIC Contact :</h4>
+                  <h4>Your Contact :</h4>
                 </div>
               </div>
               <div style={formRowStyle}>
@@ -235,7 +244,7 @@ const SalesLeadPage = () => {
                   <input type="text" placeholder="Enter company name ..." style={inputStyle} />
                 </div>
                 <div style={formColumnStyle}>
-                  <label>Department:</label>
+                  <label>Department/Branch:</label>
                   <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
                 </div>
               </div>

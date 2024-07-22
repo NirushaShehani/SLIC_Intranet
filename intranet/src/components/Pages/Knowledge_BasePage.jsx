@@ -2,11 +2,12 @@ import React from 'react'
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import '../../Styles/services.css';
 import { useNavigate } from 'react-router-dom';
-const Services = () => {
+const Knowledge_BasePage = () => {
 
   const openInNewWindow = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
 };
+
   const navigate = useNavigate();
 
     const containerStyle = {
@@ -118,15 +119,15 @@ const Services = () => {
           <div style={up}>
             <DrawerMenu/>
             <div style={ContactList}>
-              Services
+              Knowledge Base
             </div>
           </div>
           <div style={Down}>
               <div style={subtitle}>
-              THIS IS YOUR SERVICES PAGE
+              THIS IS YOUR KNOWLEDGE BASE PAGE
               </div>
               <div style={paragraph}>
-              In here You can access to the Slic Services provided by clicking the provided buttons. 
+              In here You can access to the manuals, request forms provided by SLIC clicking the provided buttons. 
               </div>
           </div>
         </div>
@@ -155,5 +156,4 @@ const Services = () => {
   )
 }
 
-export default Services
-
+export default Knowledge_BasePage
