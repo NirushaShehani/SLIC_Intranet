@@ -24,6 +24,9 @@ import FullNoticesAdmin from './components/Admin_Components/AdminHRNotices/FullN
 import SalesLead from './components/Pages/SalesLeadPage';
 import CostCenter from './components/Pages/Cost_Center';
 import IdeaHub from './components/Pages/IdeaHub';
+import KnowledgeBase from './components/Pages/Knowledge_BasePage';
+import Knowledge_BasePage from './components/Pages/Knowledge_BasePage';
+
 const App =() => {
   return (
     <Router>
@@ -45,6 +48,8 @@ const App =() => {
         <Route path="/sales-Lead" element={<SalesLead />} />
         <Route path="/Cost-Center" element={<CostCenter/>}/>
         <Route path="/Idea-Hub" element={<IdeaHub/>}/>
+        <Route path="/Knowledge-Base" element={<Knowledge_BasePage/>}/>
+        
         {/* admin side */}
         <Route path="/events-admin" element={<EventsAdminPage />} />
         <Route path="/hr-notice-admin1" element={<HRNoticeAdmin1 />} />
