@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import ReactDOM from 'react-dom/client';
 import logo from '../../assets/slicLIfe_New_1.png';
@@ -6,7 +6,14 @@ import logo from '../../assets/slicLIfe_New_1.png';
 const IdeaHub = () => {
 
   const [text, setText] = useState('');
-  
+  const [currentDate, setCurrentDate] = useState('');
+
+  useEffect(() => {
+    const date = new Date();
+    const formattedDate = date.toLocaleDateString('en-GB'); // Format date as dd/mm/yyyy
+    setCurrentDate(formattedDate);
+  }, []);
+
   const handleChange = (event) => {
       setText(event.target.value);
   };
@@ -210,7 +217,7 @@ const IdeaHub = () => {
                 </div>
                 <div style={formColumnStyle}>
                   <label>Date :</label>
-                  <input type="text" placeholder="0785642350" style={inputStyle} />
+                  <input type="text" value={currentDate} readOnly style={inputStyle} />
                 </div>
               </div>
               <div style={formColumnStyle}>
