@@ -19,16 +19,17 @@ router.post('/submit', async (req, res) => {
       connectString: '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=172.24.90.20)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=BEELIFE)))'
     });
 
-    const { clientName, contact1, contact2, slicContactName, slicMobile, slicExtension, slicDepartment } = req.body;
+    const { clientName, contact1, contact2, slicRequirement, slicContactName, slicMobile, slicExtension, slicDepartment } = req.body;
 
     console.log('Executing Insert Query');
     const result = await connection.execute(
-      `INSERT INTO SLI_APPS.CLIENT_CONTACT_DATA (CLIENTNAME, CONTACTNO1, CONTACTNO2, STAFFMEMBERNAME, STAFFCONTACTNO, EXTENSION, DEPARTMENT) 
-       VALUES (:clientName, :contact1, :contact2, :slicContactName, :slicMobile, :slicExtension, :slicDepartment)`,
+      `INSERT INTO SLI_APPS.CLIENT_CONTACT_DATA (CLIENTNAME, CONTACTNO1, CONTACTNO2, SLICREQUIREMENT, STAFFMEMBERNAME, STAFFCONTACTNO, EXTENSION, DEPARTMENT) 
+       VALUES (:clientName, :contact1, :contact2, :slicRequirement, :slicContactName, :slicMobile, :slicExtension, :slicDepartment)`,
       { 
         clientName: clientName,
         contact1: contact1,
         contact2: contact2,
+        slicRequirement: slicRequirement,
         slicContactName: slicContactName,
         slicMobile: slicMobile,
         slicExtension: slicExtension,
