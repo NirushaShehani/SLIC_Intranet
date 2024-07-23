@@ -1,15 +1,38 @@
 import React, { useState } from 'react';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import ReactDOM from 'react-dom/client';
+import axios from 'axios';
 import logo from '../../assets/slicLIfe_New_1.png';
 
 
 const SalesLeadPage = () => {
 
-  const [text, setText] = useState('');
+  const [formData, setFormData] = useState({
+    clientName: '',
+    contact1: '',
+    contact2: '',
+    slicRequirement: '',
+    slicContactName: '',
+    slicMobile: '',
+    slicExtension: '',
+    slicDepartment: ''
+  });
+
+  
   
   const handleChange = (event) => {
-      setText(event.target.value);
+      const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3000/api/salesLead/submit', formData);
+      console.log('Response:', response.data);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
 
   const containerStyle = {
@@ -197,31 +220,34 @@ const SalesLeadPage = () => {
           </div>
           {/* Form area */}
           <div style={formContainerStyle}>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div style={formColumnStyle}>
                 <label>Name of the client:</label>
-                <input type="text" placeholder="Enter your name.." style={inputStyle} />
+                <input type="text" name="clientName" placeholder="Enter your name.." style={inputStyle} value={formData.clientName}
+                  onChange={handleChange}/>
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Contact No 1:</label>
-                  <input type="text" placeholder="0704561233" style={inputStyle} />
+                  <input type="text" name="contact1" placeholder="0704561233" style={inputStyle} value={formData.contact1}
+                    onChange={handleChange}/>
                 </div>
                 <div style={formColumnStyle}>
                   <label>Contact No 2:</label>
-                  <input type="text" placeholder="0785642350" style={inputStyle} />
+                  <input type="text" name="contact2" placeholder="0785642350" style={inputStyle} value={formData.contact2}
+                    onChange={handleChange}/>
                 </div>
               </div>
               <div style={formColumnStyle}>
                   <label>Client's Requirement</label>
                   <textarea
-                    value={text}
+                    name="slicRequirement"
+                    value={formData.slicRequirement}
                     onChange={handleChange}
                     placeholder="Type your requirement here..."
                     rows="10"
                     cols="50"
                     style={inputStyle} />
-                    <p>Client Requirement: {text}</p>
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
@@ -231,21 +257,25 @@ const SalesLeadPage = () => {
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Name:</label>
-                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
+                  <input type="text" name="slicContactName" placeholder="xxxxxxxxx" style={inputStyle} value={formData.slicContactName}
+                    onChange={handleChange}/>
                 </div>
                 <div style={formColumnStyle}>
                   <label>Mobile number:</label>
-                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
+                  <input type="text" name="slicMobile" placeholder="xxxxxxxxx" style={inputStyle} value={formData.slicMobile}
+                    onChange={handleChange}/>
                 </div>
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Extension:</label>
-                  <input type="text" placeholder="Enter company name ..." style={inputStyle} />
+                  <input type="text" name="slicExtension" placeholder="Enter company name ..." style={inputStyle} value={formData.slicExtension}
+                    onChange={handleChange}/>
                 </div>
                 <div style={formColumnStyle}>
                   <label>Department/Branch:</label>
-                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
+                  <input type="text" name="slicDepartment" placeholder="xxxxxxxxx" style={inputStyle} value={formData.slicDepartment}
+                    onChange={handleChange}/>
                 </div>
               </div>
               <div>
