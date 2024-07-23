@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const CompanyEvents = () => {
   return (
     <div className="CompanyEvents">
-      <h2 className="notice-hd">Company Events & News</h2>
+      <h2 className="notice-hd">Events Gallery</h2>
       <div className="image-container">
         <Link to="/full-events">
           <img src={image1} alt="Image 1" className="image image1" />
@@ -22,7 +22,7 @@ const CompanyEvents = () => {
           </Link>
         </div>
       </div>
-      <h2 className="notice-head">Notices</h2>
+      <h2 className="notice-head">Company Notices</h2>
       <p className="sub-notice-hd">SLICL Suba Pathum scholarship awards 2023</p>
       <p className='notice'>Lorem Ipsum has been the industry's standard when it dummy text ever since 1500s when an unknown have took a galley of type.</p>
       <hr />
