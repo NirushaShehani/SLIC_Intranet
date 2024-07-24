@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors'); // Import the cors package
 // const salesLeadRoutes = require('./Route\/salesLeads'); // Import the routes
 const salesLeadRoutes = require('./Route/salesLeads');
+const ideaHubRoutes = require('./Route/ideaHub');
 
 const app = express();
 const port = 3000;
@@ -33,6 +34,7 @@ async function initialize() {
 
 // Use the routes
 app.use('/api/salesLead', salesLeadRoutes); // Use the salesLead routes
+app.use('/api/ideaHub', ideaHubRoutes);
 
 // Start the server
 app.listen(port, () => {
