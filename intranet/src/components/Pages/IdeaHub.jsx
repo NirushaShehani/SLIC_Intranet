@@ -227,7 +227,7 @@ const IdeaHub = () => {
                 </div>
                 <div style={formColumnStyle}>
                   <label>Date :</label>
-                  <input type="date" name="date" style={inputStyle} value={formData.ideadate} onChange={handleChange} />
+                  <input type="date" name="ideadate" style={inputStyle} value={formData.ideadate} onChange={handleChange} />
                 </div>
               </div>
               <div style={formColumnStyle}>
