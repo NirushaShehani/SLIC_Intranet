@@ -29,7 +29,7 @@ const HRNotices = () => {
 
   return (
     <div>
-      <h2 className="hr-notice-head">HR Notices</h2>
+      <h2 className="hr-notice-head">Notices</h2>
       <Container className="transparent-container">
         <Box className="box-content">
           <div className="aa">
