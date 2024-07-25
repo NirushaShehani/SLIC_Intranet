@@ -3,11 +3,9 @@ import DrawerMenu from '../Sub_Components/DrawerMenu';
 import ReactDOM from 'react-dom/client';
 import logo from '../../assets/slicLIfe_New_1.png';
 
-
 const SalesLeadPage = () => {
-
   const [text, setText] = useState('');
-  
+
   const handleChange = (event) => {
       setText(event.target.value);
   };
@@ -16,6 +14,7 @@ const SalesLeadPage = () => {
     width: '100%',
     height: '100vh',
     display: 'flex',
+    overflow: 'hidden',  // Ensure no overflow
   };
 
   const leftStyle = {
@@ -23,6 +22,10 @@ const SalesLeadPage = () => {
     backgroundColor: '#f0f0f0',
     padding: '20px',
     boxSizing: 'border-box',
+    overflowY: 'scroll',  // Ensure scroll if content overflows
+    // Hide scrollbar
+    scrollbarWidth: 'none',  // Firefox
+    '-ms-overflow-style': 'none',  // IE and Edge
   };
 
   const verticalLineStyle = {
@@ -39,6 +42,10 @@ const SalesLeadPage = () => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    overflowY: 'scroll',  // Ensure scroll if content overflows
+    // Hide scrollbar
+    scrollbarWidth: 'none',  // Firefox
+    '-ms-overflow-style': 'none',  // IE and Edge
   };
 
   const border = {
@@ -52,6 +59,10 @@ const SalesLeadPage = () => {
     alignItems: 'center',
     margin: '10px',
     padding: '20px',
+    overflowY: 'scroll',  // Ensure scroll if content overflows
+    // Hide scrollbar
+    scrollbarWidth: 'none',  // Firefox
+    '-ms-overflow-style': 'none',  // IE and Edge
   };
 
   const container = {
@@ -63,7 +74,8 @@ const SalesLeadPage = () => {
   const formContainerStyle = {
     padding: '20px',
     backgroundColor: '#F4F4F4',
-    width: '100%'
+    width: '100%',
+    boxSizing: 'border-box',  // Include padding in width calculations
   };
 
   const contentStyle = {
@@ -168,7 +180,7 @@ const SalesLeadPage = () => {
 
   return (
     <div style={containerStyle}>
-      <div style={leftStyle}>
+      <div style={leftStyle} className="hide-scrollbar">
         <div style={container}>
           <div style={up}>
             <DrawerMenu />
@@ -189,8 +201,8 @@ const SalesLeadPage = () => {
         </div>
       </div>
       <div style={verticalLineStyle}></div>
-      <div style={rightStyle}>
-        <div style={border}>
+      <div style={rightStyle} className="hide-scrollbar">
+        <div style={border} className="hide-scrollbar">
           <div className="logo">
             <img src={logo} alt="Logo" style={logoStyle} />
             <h3 style={titleStyle}>Sales Contact Form</h3>
@@ -259,5 +271,18 @@ const SalesLeadPage = () => {
     </div>
   );
 };
+
+// Global CSS for hiding scrollbar
+const style = document.createElement('style');
+style.innerHTML = `
+  .hide-scrollbar {
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
+  }
+`;
+document.head.appendChild(style);
 
 export default SalesLeadPage;
