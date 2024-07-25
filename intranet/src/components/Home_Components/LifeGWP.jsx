@@ -162,6 +162,25 @@ const GWPChartsContainer = () => {
   const [showBranch, setShowBranch] = useState(false);
   const [currentCard, setCurrentCard] = useState('achievers'); // Initialize with 'achievers'
   const [achieverList, setAchieverList] = useState(0); // 0 for Top, 1 for Branch, 2 for Regional
+  const [isHovering, setIsHovering] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isHovering) {
+        setShowBranch(prev => !prev);
+      }
+    }, 3000); // Flip every 30 seconds if not hovering
+
+    return () => clearInterval(interval);
+  }, [isHovering]);
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
 
   const handleClickBranch = () => {
     setShowBranch(prev => !prev);
@@ -242,7 +261,9 @@ const GWPChartsContainer = () => {
 
   return (
     <Box sx={{ textAlign: 'center', padding: 2 }}>
-      <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 2 }} onClick={handleClickBranch}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 2 }} 
+           onMouseEnter={handleMouseEnter} 
+           onMouseLeave={handleMouseLeave}>
         <FlippingCard showBack={showBranch}>
           <div className="inner">
             <div className="front">
