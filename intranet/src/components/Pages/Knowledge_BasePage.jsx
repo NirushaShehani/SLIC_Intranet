@@ -2,6 +2,9 @@ import React from 'react'
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import '../../Styles/services.css';
 import { useNavigate } from 'react-router-dom';
+//hr tag styles
+import '../../Styles/knowledgebase.css';
+
 const Knowledge_BasePage = () => {
 
   const openInNewWindow = (url) => {
@@ -116,12 +119,14 @@ const Knowledge_BasePage = () => {
     <div style={{ display: 'flex', ...containerStyle }}>
       <div style={leftStyle}>
         <div style={{ display: 'flex', ...container }}>
+          {/* Upper Left Section */}
           <div style={up}>
             <DrawerMenu/>
             <div style={ContactList}>
               Knowledge Base
             </div>
           </div>
+          {/* Lower Left Section */}
           <div style={Down}>
               <div style={subtitle}>
               THIS IS YOUR KNOWLEDGE BASE PAGE
@@ -134,23 +139,54 @@ const Knowledge_BasePage = () => {
       </div>
       <div style={verticalLineStyle}></div>
       <div style={rightStyle}>
-      <div className="home-container">
-      <div className="grid-container">
-        <button className="grid-item" onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>B-Life</button>
-        <button className="grid-item" onClick={() => navigate('/b-mis')}>B-MIS</button>
-        <button className="grid-item" onClick={() => navigate('/cashbook')}>Cashbook</button>
-        <button className="grid-item" onClick={() => navigate('/b-commission')}>B-Commission</button>
-        <button className="grid-item" onClick={() => navigate('/b-advisor')}>B-Advisor</button>
-        <button className="grid-item highlighted" onClick={() => navigate('/hris')}>HRIS</button>
-        <button className="grid-item highlighted" onClick={() => navigate('/hris')}>HRIS</button>
-      </div>
-      <hr />
-      <div className="grid-container">
-        <button className="grid-item" onClick={() => navigate('/documents')}>Documents</button>
-        <button className="grid-item" onClick={() => navigate('/common-forms')}>Common Forms</button>
-        <button className="grid-item" onClick={() => navigate('/ict-forms')}>ICT Forms</button>
-      </div>
-    </div>
+        {/* Right Section */}
+        <div className="home-container">
+        {/* Life-U/W Forms section */}
+        <div className="hrContainer">
+            <span className="hrLine"></span><span className="hrDot"></span>
+              <span className="hrText">Life-U/W Forms</span>
+            <span className="hrDot"></span><span className="hrLine"></span>
+            </div>
+          <div className="grid-container">
+            <button className="grid-item" onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>B-Life</button>
+            <button className="grid-item" onClick={() => navigate('/b-mis')}>B-MIS</button>
+            <button className="grid-item" onClick={() => navigate('/cashbook')}>Cashbook</button>
+            <button className="grid-item" onClick={() => navigate('/b-commission')}>B-Commission</button>
+            <button className="grid-item" onClick={() => navigate('/b-advisor')}>B-Advisor</button>
+            <button className="grid-item highlighted" onClick={() => navigate('/hris')}>HRIS</button>
+          </div>
+          {/* Life-U/W Forms section */}
+          {/* Life-Circulars Form section */}
+          <div className="hrContainer">
+            <span className="hrLine"></span><span className="hrDot"></span>
+              <span className="hrText">Life-Circulars Forms</span>
+            <span className="hrDot"></span><span className="hrLine"></span>
+            </div>
+          <div className="grid-container">
+            <button className="grid-item" onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>B-Life</button>
+            <button className="grid-item" onClick={() => navigate('/b-mis')}>B-MIS</button>
+            <button className="grid-item" onClick={() => navigate('/cashbook')}>Cashbook</button>
+            <button className="grid-item" onClick={() => navigate('/b-commission')}>B-Commission</button>
+            <button className="grid-item" onClick={() => navigate('/b-advisor')}>B-Advisor</button>
+            <button className="grid-item highlighted" onClick={() => navigate('/hris')}>HRIS</button>
+          </div>
+          {/* Life-Circulars Form section */}
+          {/* ICT Forms section */}
+          <div className="hrContainer">
+            <span className="hrLine"></span><span className="hrDot"></span>
+              <span className="hrText">ICT Forms</span>
+            <span className="hrDot"></span><span className="hrLine"></span>
+            </div>
+          <div className="grid-container">
+            <button className="grid-item" onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>B-Life</button>
+            <button className="grid-item" onClick={() => navigate('/b-mis')}>B-MIS</button>
+            <button className="grid-item" onClick={() => navigate('/cashbook')}>Cashbook</button>
+            <button className="grid-item" onClick={() => navigate('/b-commission')}>B-Commission</button>
+            <button className="grid-item" onClick={() => navigate('/b-advisor')}>B-Advisor</button>
+            <button className="grid-item highlighted" onClick={() => navigate('/hris')}>HRIS</button>
+          </div>
+          {/* ICT Forms section */}
+        </div>
       </div>
     </div>
   )
