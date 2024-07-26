@@ -19,21 +19,18 @@ router.post('/submit', async (req, res) => {
       connectString: '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=172.24.90.20)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=BEELIFE)))'
     });
 
-    const { clientName, contact1, contact2, slicRequirement, slicContactName, slicMobile, slicExtension, slicDepartment } = req.body;
+    const { userEPF, deptOrBranch, ideadate, name, userIdea } = req.body;
 
     console.log('Executing Insert Query');
     const result = await connection.execute(
-      `INSERT INTO SLI_APPS.CLIENT_CONTACT_DATA (ID, CLIENTNAME, CONTACTNO1, CONTACTNO2, SLICREQUIREMENT, STAFFMEMBERNAME, STAFFCONTACTNO, EXTENSION, DEPARTMENT) 
-       VALUES (SLI_APPS.CLIENT_CONTACT_SEQ.NEXTVAL, :clientName, :contact1, :contact2, :slicRequirement, :slicContactName, :slicMobile, :slicExtension, :slicDepartment)`,
+      `INSERT INTO SLI_APPS.IDEA_HUB_TBL (ID, USEREPF, DEPTORBRANCH, IDEADATE, NAME, USERIDEA) 
+       VALUES (SLI_APPS.IDEA_HUB_TBL_SEQ.NEXTVAL,:userEPF, :deptOrBranch, TO_DATE(:ideadate, 'YYYY-MM-DD'), :name, :userIdea)`,
       { 
-        clientName: clientName,
-        contact1: contact1,
-        contact2: contact2,
-        slicRequirement: slicRequirement,
-        slicContactName: slicContactName,
-        slicMobile: slicMobile,
-        slicExtension: slicExtension,
-        slicDepartment: slicDepartment 
+        userEPF: userEPF,
+        deptOrBranch: deptOrBranch,
+        ideadate: ideadate, // Ensure the date is in 'YYYY-MM-DD' format
+        name: name,
+        userIdea: userIdea
       },
       { autoCommit: true }
     );
