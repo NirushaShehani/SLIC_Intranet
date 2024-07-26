@@ -4,7 +4,7 @@ import '../../Styles/services.css';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
-//hr tag styles
+// hr tag styles
 import '../../Styles/serviceshrtag.css';
 
 const Services = () => {
@@ -18,30 +18,32 @@ const Services = () => {
   const containerStyle = {
     width: '100%',
     height: '100vh',
-    display: 'flex'
+    display: 'flex',
+    overflow: 'hidden'
   };
 
   const leftStyle = {
-    flex: 1,
+    flex: '0 0 300px',
     backgroundColor: '#f0f0f0',
     padding: '20px',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    position: 'relative'
   };
 
   const verticalLineStyle = {
     width: '3px',
     backgroundColor: '#646464',
-    margin: '-1px'
   };
 
   const rightStyle = {
-    flex: 4,
+    flex: 1,
     backgroundColor: '#F4F4F4',
     padding: '20px',
     boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    overflowY: 'auto' // This will enable vertical scrolling
   };
 
   const container = {
@@ -101,6 +103,7 @@ const Services = () => {
     display: 'flex',
     flexWrap: 'wrap',
     width: '100%',
+    justifyContent: 'space-between'
   };
 
   const listItemStyle = {
@@ -110,7 +113,8 @@ const Services = () => {
     padding: '10px',
     margin: '10px 0',
     borderBottom: '1px solid #e0e0e0',
-    width: 'calc(50% - 20px)'  // Adjusting the width to fit two columns
+    width: 'calc(50% - 10px)',  // Adjusting the width to fit two columns with space in between
+    boxSizing: 'border-box'
   };
 
   const iconStyle = {
@@ -138,7 +142,7 @@ const Services = () => {
       </div>
       <div style={verticalLineStyle}></div>
       <div style={rightStyle}>
-      <div className="home-container">
+        <div className="home-container">
           <div className="hrContainer">
             <span className="hrLine"></span><span className="hrDot"></span>
             <span className="hrText">Services</span>
@@ -181,11 +185,10 @@ const Services = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>PEGI Online</span>
             </div>
-            <div style={listItemStyle} onClick={() => openInNewWindow(' https://apps.srilankainsurance.com/agenworks/Signin.asp')}>
+            <div style={listItemStyle} onClick={() => openInNewWindow('https://apps.srilankainsurance.com/agenworks/Signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>B-Advisor</span>
             </div>
-            
           </div>
 
           <div className="hrContainer">
@@ -251,6 +254,9 @@ const Services = () => {
               <span>HRIS</span>
             </div>
           </div>
+
+          
+
         </div>
       </div>
     </div>
