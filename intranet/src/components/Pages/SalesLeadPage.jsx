@@ -1,13 +1,74 @@
 import React, { useState } from 'react';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
-import ReactDOM from 'react-dom/client';
 import logo from '../../assets/slicLIfe_New_1.png';
 
 const SalesLeadPage = () => {
-  const [text, setText] = useState('');
+  const [formData, setFormData] = useState({
+    clientName: '',
+    contactNo1: '',
+    contactNo2: '',
+    clientRequirement: '',
+    yourName: '',
+    mobileNumber: '',
+    extension: '',
+    department: '',
+  });
+
+  const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
-      setText(event.target.value);
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const validateForm = () => {
+    let formErrors = {};
+
+    if (!/^[a-zA-Z\s]+$/.test(formData.clientName)) {
+      formErrors.clientName = 'Client name should only contain letters and spaces.';
+    }
+
+    if (!/^\d{10}$/.test(formData.contactNo1)) {
+      formErrors.contactNo1 = 'Contact No 1 should only contain 10 digits.';
+    }
+
+    if (!/^\d{10}$/.test(formData.contactNo2)) {
+      formErrors.contactNo2 = 'Contact No 2 should only contain 10 digits.';
+    }
+
+    if (!/^[a-zA-Z\s]{0,120}$/.test(formData.clientRequirement)) {
+      formErrors.clientRequirement = 'Client requirement should only contain letters and be up to 120 characters.';
+    }
+
+    if (!/^[a-zA-Z\s]+$/.test(formData.yourName)) {
+      formErrors.yourName = 'Your name should only contain letters and spaces.';
+    }
+
+    if (!/^\d{10}$/.test(formData.mobileNumber)) {
+      formErrors.mobileNumber = 'Mobile number should only contain 10 digits.';
+    }
+
+    if (!/^\d{1,6}$/.test(formData.extension)) {
+      formErrors.extension = 'Extension should only contain up to 6 digits.';
+    }
+
+    if (!/^[a-zA-Z\s]{0,120}$/.test(formData.department)) {
+      formErrors.department = 'Department/Branch should only contain letters and be up to 120 characters.';
+    }
+
+    setErrors(formErrors);
+    return Object.keys(formErrors).length === 0;
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (validateForm()) {
+      // Form is valid, handle the submit logic here
+      console.log('Form data:', formData);
+    }
   };
 
   const containerStyle = {
@@ -209,31 +270,58 @@ const SalesLeadPage = () => {
           </div>
           {/* Form area */}
           <div style={formContainerStyle}>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div style={formColumnStyle}>
                 <label>Name of the client:</label>
-                <input type="text" placeholder="Enter your name.." style={inputStyle} />
+                <input
+                  type="text"
+                  name="clientName"
+                  value={formData.clientName}
+                  onChange={handleChange}
+                  placeholder="Enter your name.."
+                  style={inputStyle}
+                />
+                {errors.clientName && <p style={{color: 'red'}}>{errors.clientName}</p>}
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Contact No 1:</label>
-                  <input type="text" placeholder="0704561233" style={inputStyle} />
+                  <input
+                    type="text"
+                    name="contactNo1"
+                    value={formData.contactNo1}
+                    onChange={handleChange}
+                    placeholder="0704561233"
+                    style={inputStyle}
+                  />
+                  {errors.contactNo1 && <p style={{color: 'red'}}>{errors.contactNo1}</p>}
                 </div>
                 <div style={formColumnStyle}>
                   <label>Contact No 2:</label>
-                  <input type="text" placeholder="0785642350" style={inputStyle} />
+                  <input
+                    type="text"
+                    name="contactNo2"
+                    value={formData.contactNo2}
+                    onChange={handleChange}
+                    placeholder="0785642350"
+                    style={inputStyle}
+                  />
+                  {errors.contactNo2 && <p style={{color: 'red'}}>{errors.contactNo2}</p>}
                 </div>
               </div>
               <div style={formColumnStyle}>
                   <label>Client's Requirement</label>
                   <textarea
-                    value={text}
+                    name="clientRequirement"
+                    value={formData.clientRequirement}
                     onChange={handleChange}
                     placeholder="Type your requirement here..."
                     rows="10"
                     cols="50"
-                    style={inputStyle} />
-                    <p>Client Requirement: {text}</p>
+                    style={inputStyle}
+                  />
+                  {errors.clientRequirement && <p style={{color: 'red'}}>{errors.clientRequirement}</p>}
+                  <p>Client Requirement: {formData.clientRequirement}</p>
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
@@ -243,21 +331,53 @@ const SalesLeadPage = () => {
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Name:</label>
-                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
+                  <input
+                    type="text"
+                    name="yourName"
+                    value={formData.yourName}
+                    onChange={handleChange}
+                    placeholder="xxxxxxxxx"
+                    style={inputStyle}
+                  />
+                  {errors.yourName && <p style={{color: 'red'}}>{errors.yourName}</p>}
                 </div>
                 <div style={formColumnStyle}>
                   <label>Mobile number:</label>
-                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
+                  <input
+                    type="text"
+                    name="mobileNumber"
+                    value={formData.mobileNumber}
+                    onChange={handleChange}
+                    placeholder="xxxxxxxxx"
+                    style={inputStyle}
+                  />
+                  {errors.mobileNumber && <p style={{color: 'red'}}>{errors.mobileNumber}</p>}
                 </div>
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Extension:</label>
-                  <input type="text" placeholder="Enter company name ..." style={inputStyle} />
+                  <input
+                    type="text"
+                    name="extension"
+                    value={formData.extension}
+                    onChange={handleChange}
+                    placeholder="Enter company name ..."
+                    style={inputStyle}
+                  />
+                  {errors.extension && <p style={{color: 'red'}}>{errors.extension}</p>}
                 </div>
                 <div style={formColumnStyle}>
                   <label>Department/Branch:</label>
-                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
+                  <input
+                    type="text"
+                    name="department"
+                    value={formData.department}
+                    onChange={handleChange}
+                    placeholder="xxxxxxxxx"
+                    style={inputStyle}
+                  />
+                  {errors.department && <p style={{color: 'red'}}>{errors.department}</p>}
                 </div>
               </div>
               <div>
