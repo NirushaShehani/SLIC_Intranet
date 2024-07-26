@@ -43,24 +43,24 @@ const KnowledgeBase = () => {
     paddingRight: theme.spacing(1),
     margin: "8px 11px",
     height: "40px",
-    width: "290px",
+    width: "300px",
   }));
 
   //Custom chip design for Services
   const CustomChip2 = styled(Chip)(({ theme }) => ({
     display: "flex",
     justifyContent: "space-between",
-    backgroundColor: "",
+    backgroundColor: "#795548",
     color: "white",
     borderRadius: "5px",
     paddingRight: theme.spacing(1),
     margin: "30px 11px",
     height: "80px",
-    width: "290px",
-    backgroundImage: `url(${imageUrl1})`, 
-    backgroundSize: "cover", 
-    backgroundPosition: "center", 
-    backgroundRepeat: "no-repeat" 
+    width: "300px",
+    // backgroundImage: `url(${imageUrl1})`, 
+    // backgroundSize: "cover", 
+    // backgroundPosition: "center", 
+    // backgroundRepeat: "no-repeat" 
   }));
 
    //Custom chip design for Idea Hub
@@ -73,7 +73,7 @@ const KnowledgeBase = () => {
     paddingRight: theme.spacing(1),
     margin: "8px 11px",
     height: "80px",
-    width: "290px",
+    width: "300px",
     backgroundImage: `url(${imageUrl2})`, 
     backgroundSize: "cover", 
     backgroundPosition: "center", 
@@ -90,6 +90,14 @@ const KnowledgeBase = () => {
       </div>
       
       <div style={styles.chipContainer}>
+        {/*Services Chip*/}
+        <Link to="/services-page" style={{ cursor: 'pointer' }}>
+        <CustomChip style={styles.label}
+          label="Policy Services & Forms"
+          deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
+          onDelete={() => {}}
+        />
+        </Link>
         {/*Knowledge Base Chip*/}
         <Link to="/Knowledge-Base" style={{ cursor: 'pointer' }}>
         <CustomChip style={styles.label}
@@ -101,7 +109,7 @@ const KnowledgeBase = () => {
         {/*Sales Lead Chip*/}
         <Link to="/sales-Lead" style={{ cursor: 'pointer' }}>
         <CustomChip style={styles.label}
-          label="Internal Sales Lead"
+          label="Internal Sales Canvassing"
           deleteIcon={<BookmarkIcon style={ { color: "white" }} />}
           onDelete={() => {}}
         />
@@ -112,12 +120,6 @@ const KnowledgeBase = () => {
           label="Contact List"
           deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
           onDelete={() => {}}
-        />
-        </Link>
-        {/*Services Chip*/}
-        <Link to="/services-page" style={{ cursor: 'pointer' }}>
-        <CustomChip2 style={styles.label}
-          label="Services"
         />
         </Link>
         {/*Idea Hub Chip*/}
