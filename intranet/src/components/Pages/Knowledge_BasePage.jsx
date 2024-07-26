@@ -16,30 +16,32 @@ const Knowledge_BasePage = () => {
   const containerStyle = {
     width: '100%',
     height: '100vh',
-    display: 'flex'
+    display: 'flex',
+    overflow: 'hidden'
   };
 
   const leftStyle = {
-    flex: 1,
+    flex: '0 0 300px',
     backgroundColor: '#f0f0f0',
     padding: '20px',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    position: 'relative'
   };
 
   const verticalLineStyle = {
     width: '3px',
     backgroundColor: '#646464',
-    margin: '-1px'
   };
 
   const rightStyle = {
-    flex: 4,
+    flex: 1,
     backgroundColor: '#F4F4F4',
     padding: '20px',
     boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    overflowY: 'auto' // This will enable vertical scrolling
   };
 
   const container = {
@@ -99,6 +101,7 @@ const Knowledge_BasePage = () => {
     display: 'flex',
     flexWrap: 'wrap',
     width: '100%',
+    justifyContent: 'space-between'
   };
 
   const listItemStyle = {
@@ -108,7 +111,8 @@ const Knowledge_BasePage = () => {
     padding: '10px',
     margin: '10px 0',
     borderBottom: '1px solid #e0e0e0',
-    width: 'calc(50% - 20px)'  // Adjusting the width to fit two columns
+    width: 'calc(50% - 10px)',  // Adjusting the width to fit two columns with space in between
+    boxSizing: 'border-box'
   };
 
   const iconStyle = {
@@ -297,7 +301,7 @@ const Knowledge_BasePage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Knowledge_BasePage;
