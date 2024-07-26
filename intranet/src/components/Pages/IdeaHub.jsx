@@ -4,7 +4,6 @@ import axios from 'axios';
 import logo from '../../assets/slicLIfe_New_1.png';
 
 const IdeaHub = () => {
-
   const [formData, setFormData] = useState({
     userEPF: '',
     deptOrBranch: '',
@@ -13,18 +12,49 @@ const IdeaHub = () => {
     userIdea: ''
   });
 
+  const [errors, setErrors] = useState({});
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const validateForm = () => {
+    let formErrors = {};
+
+    if (!/^[a-zA-Z0-9]{1,6}$/.test(formData.userEPF)) {
+      formErrors.userEPF = 'User EPF should only contain letters and numbers, and not longer than 6 characters.';
+    }
+
+    if (!/^[a-zA-Z\s]{1,120}$/.test(formData.deptOrBranch)) {
+      formErrors.deptOrBranch = 'Department/Branch should only contain letters and be up to 120 characters.';
+    }
+
+    if (!formData.ideadate) {
+      formErrors.ideadate = 'Date is required.';
+    }
+
+    if (!/^[a-zA-Z\s]{1,120}$/.test(formData.name)) {
+      formErrors.name = 'Name of the User should only contain letters and be up to 120 characters.';
+    }
+
+    if (!/^[a-zA-Z\s]{1,120}$/.test(formData.userIdea)) {
+      formErrors.userIdea = 'User Idea should only contain letters and be up to 120 characters.';
+    }
+
+    setErrors(formErrors);
+    return Object.keys(formErrors).length === 0;
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:3000/api/ideaHub/submit', formData);
-      console.log('Response:', response.data);
-    } catch (error) {
-      console.error('Error submitting form:', error);
+    if (validateForm()) {
+      try {
+        const response = await axios.post('http://localhost:3000/api/ideaHub/submit', formData);
+        console.log('Response:', response.data);
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
     }
   };
 
@@ -220,19 +250,23 @@ const IdeaHub = () => {
                 <div style={formColumnStyle}>
                   <label>User EPF :</label>
                   <input type="text" name="userEPF" placeholder="L1234" style={inputStyle} value={formData.userEPF} onChange={handleChange} />
+                  {errors.userEPF && <p style={{ color: 'red' }}>{errors.userEPF}</p>}
                 </div>
                 <div style={formColumnStyle}>
                   <label>Department/Branch :</label>
                   <input type="text" name="deptOrBranch" placeholder="eg: Colombo" style={inputStyle} value={formData.deptOrBranch} onChange={handleChange} />
+                  {errors.deptOrBranch && <p style={{ color: 'red' }}>{errors.deptOrBranch}</p>}
                 </div>
                 <div style={formColumnStyle}>
                   <label>Date :</label>
                   <input type="date" name="ideadate" style={inputStyle} value={formData.ideadate} onChange={handleChange} />
+                  {errors.ideadate && <p style={{ color: 'red' }}>{errors.ideadate}</p>}
                 </div>
               </div>
               <div style={formColumnStyle}>
                 <label>Name of the User :</label>
                 <input type="text" name="name" placeholder="Enter your name.." style={inputStyle} value={formData.name} onChange={handleChange} />
+                {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
               </div>
               <div style={formColumnStyle}>
                 <label>User Idea :</label>
@@ -244,6 +278,7 @@ const IdeaHub = () => {
                   rows="10"
                   cols="50"
                   style={inputStyle} />
+                {errors.userIdea && <p style={{ color: 'red' }}>{errors.userIdea}</p>}
               </div>
               <div>
                 <button type="submit" style={buttonStyle}>Submit</button>
