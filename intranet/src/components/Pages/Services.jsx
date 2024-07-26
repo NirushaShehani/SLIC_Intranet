@@ -2,6 +2,8 @@ import React from 'react';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import '../../Styles/services.css';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 //hr tag styles
 import '../../Styles/serviceshrtag.css';
 
@@ -16,19 +18,20 @@ const Services = () => {
   const containerStyle = {
     width: '100%',
     height: '100vh',
+    display: 'flex'
   };
 
   const leftStyle = {
     flex: 1,
     backgroundColor: '#f0f0f0',
     padding: '20px',
-    boxSizing: 'border-box',
+    boxSizing: 'border-box'
   };
 
   const verticalLineStyle = {
     width: '3px',
-    backgroundColor: '#646464', // You can change the color of the line
-    margin: '-1px', // Adjust spacing as needed
+    backgroundColor: '#646464',
+    margin: '-1px'
   };
 
   const rightStyle = {
@@ -37,7 +40,7 @@ const Services = () => {
     padding: '20px',
     boxSizing: 'border-box',
     display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'column',
     alignItems: 'center',
   };
 
@@ -58,19 +61,8 @@ const Services = () => {
     height: 'auto',
   };
 
-  const up2 = {
-    flex: '0 0 15%',
-    backgroundColor: '#F4F4F4',
-    padding: '10px',
-    marginLeft: '-20px',
-    marginRight: '-20px',
-    marginTop: '-20px',
-    width: 'auto',
-    height: 'auto',
-  };
-
   const Down = {
-    flex: 1,
+    flex: '1',
     backgroundColor: '#FFFFFF',
     padding: '10px',
     marginLeft: '-20px',
@@ -96,14 +88,6 @@ const Services = () => {
     marginTop: '20px',
   };
 
-  const title = {
-    fontFamily: '"Onest", sans-serif',
-    fontSize: '17px',
-    fontStyle: 'normal',
-    color: '#161616',
-    marginRight: '500px',
-  };
-
   const paragraph = {
     fontFamily: '"Onest", sans-serif',
     fontSize: '15px',
@@ -113,21 +97,31 @@ const Services = () => {
     marginTop: '20px',
   };
 
-  const formContainerStyle = {
-    padding: '20px',
-    backgroundColor: '#F4F4F4',
+  const listContainer = {
+    display: 'flex',
+    flexWrap: 'wrap',
     width: '100%',
   };
 
-  const contentStyle = {
+  const listItemStyle = {
     display: 'flex',
-    flex: 1,
+    alignItems: 'center',
+    cursor: 'pointer',
+    padding: '10px',
+    margin: '10px 0',
+    borderBottom: '1px solid #e0e0e0',
+    width: 'calc(50% - 20px)'  // Adjusting the width to fit two columns
+  };
+
+  const iconStyle = {
+    marginRight: '10px',
+    color: '#31769F',
   };
 
   return (
-    <div style={{ display: 'flex', ...containerStyle }}>
+    <div style={containerStyle}>
       <div style={leftStyle}>
-        <div style={{ display: 'flex', ...container }}>
+        <div style={container}>
           {/* Upper Left Section */}
           <div style={up}>
             <DrawerMenu />
@@ -144,53 +138,126 @@ const Services = () => {
       </div>
       <div style={verticalLineStyle}></div>
       <div style={rightStyle}>
-        {/* Right Section */}
-        <div className="home-container">
-          {/* Life-U/W Forms section */}
-            <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-              <span className="hrText">Life-U/W Forms</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-            </div>
-          <div className="grid-container">
-            <button className="grid-item" onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>B-Life</button>
-            <button className="grid-item" onClick={() => navigate('/b-mis')}>B-MIS</button>
-            <button className="grid-item" onClick={() => navigate('/cashbook')}>Cashbook</button>
-            <button className="grid-item" onClick={() => navigate('/b-commission')}>B-Commission</button>
-            <button className="grid-item" onClick={() => navigate('/b-advisor')}>B-Advisor</button>
-            <button className="grid-item highlighted" onClick={() => navigate('/hris')}>HRIS</button>
-          </div>
-          {/* Life-U/W Forms section */}
-          {/* Life-Circulars Form section */}
+      <div className="home-container">
           <div className="hrContainer">
             <span className="hrLine"></span><span className="hrDot"></span>
-              <span className="hrText">Life-Circulars Forms</span>
+            <span className="hrText">Company Policies</span>
             <span className="hrDot"></span><span className="hrLine"></span>
-            </div>
-          <div className="grid-container">
-            <button className="grid-item" onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>B-Life</button>
-            <button className="grid-item" onClick={() => navigate('/b-mis')}>B-MIS</button>
-            <button className="grid-item" onClick={() => navigate('/cashbook')}>Cashbook</button>
-            <button className="grid-item" onClick={() => navigate('/b-commission')}>B-Commission</button>
-            <button className="grid-item" onClick={() => navigate('/b-advisor')}>B-Advisor</button>
-            <button className="grid-item highlighted" onClick={() => navigate('/hris')}>HRIS</button>
           </div>
-          {/* Life-Circulars Form section */}
-          {/* ICT Forms section */}
+          <div style={listContainer}>
+            <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-Life</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/b-mis')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-MIS</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/cashbook')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Cashbook</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/b-commission')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-Commission</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-Advisor</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>HRIS</span>
+            </div>
+            <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-Life</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/b-mis')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-MIS</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/cashbook')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Cashbook</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/b-commission')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-Commission</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-Advisor</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>HRIS</span>
+            </div>
+          </div>
+
           <div className="hrContainer">
             <span className="hrLine"></span><span className="hrDot"></span>
-              <span className="hrText">ICT Forms</span>
+            <span className="hrText">Life-Circulars Forms</span>
             <span className="hrDot"></span><span className="hrLine"></span>
-            </div>
-          <div className="grid-container">
-            <button className="grid-item" onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>B-Life</button>
-            <button className="grid-item" onClick={() => navigate('/b-mis')}>B-MIS</button>
-            <button className="grid-item" onClick={() => navigate('/cashbook')}>Cashbook</button>
-            <button className="grid-item" onClick={() => navigate('/b-commission')}>B-Commission</button>
-            <button className="grid-item" onClick={() => navigate('/b-advisor')}>B-Advisor</button>
-            <button className="grid-item highlighted" onClick={() => navigate('/hris')}>HRIS</button>
           </div>
-          {/* ICT Forms section */}
+          <div style={listContainer}>
+            <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-Life</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/b-mis')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-MIS</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/cashbook')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Cashbook</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/b-commission')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-Commission</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-Advisor</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>HRIS</span>
+            </div>
+          </div>
+
+          <div className="hrContainer">
+            <span className="hrLine"></span><span className="hrDot"></span>
+            <span className="hrText">ICT Forms</span>
+            <span className="hrDot"></span><span className="hrLine"></span>
+          </div>
+          <div style={listContainer}>
+            <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-Life</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/b-mis')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-MIS</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/cashbook')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Cashbook</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/b-commission')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-Commission</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>B-Advisor</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>HRIS</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
