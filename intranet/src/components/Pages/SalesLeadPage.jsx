@@ -1,44 +1,20 @@
 import React, { useState } from 'react';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import ReactDOM from 'react-dom/client';
-import axios from 'axios';
 import logo from '../../assets/slicLIfe_New_1.png';
 
-
 const SalesLeadPage = () => {
+  const [text, setText] = useState('');
 
-  const [formData, setFormData] = useState({
-    clientName: '',
-    contact1: '',
-    contact2: '',
-    slicRequirement: '',
-    slicContactName: '',
-    slicMobile: '',
-    slicExtension: '',
-    slicDepartment: ''
-  });
-
-  
-  
   const handleChange = (event) => {
-      const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:3000/api/salesLead/submit', formData);
-      console.log('Response:', response.data);
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    }
+      setText(event.target.value);
   };
 
   const containerStyle = {
     width: '100%',
     height: '100vh',
     display: 'flex',
+    overflow: 'hidden',  // Ensure no overflow
   };
 
   const leftStyle = {
@@ -46,6 +22,10 @@ const SalesLeadPage = () => {
     backgroundColor: '#f0f0f0',
     padding: '20px',
     boxSizing: 'border-box',
+    overflowY: 'scroll',  // Ensure scroll if content overflows
+    // Hide scrollbar
+    scrollbarWidth: 'none',  // Firefox
+    '-ms-overflow-style': 'none',  // IE and Edge
   };
 
   const verticalLineStyle = {
@@ -62,6 +42,10 @@ const SalesLeadPage = () => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    overflowY: 'scroll',  // Ensure scroll if content overflows
+    // Hide scrollbar
+    scrollbarWidth: 'none',  // Firefox
+    '-ms-overflow-style': 'none',  // IE and Edge
   };
 
   const border = {
@@ -75,6 +59,10 @@ const SalesLeadPage = () => {
     alignItems: 'center',
     margin: '10px',
     padding: '20px',
+    overflowY: 'scroll',  // Ensure scroll if content overflows
+    // Hide scrollbar
+    scrollbarWidth: 'none',  // Firefox
+    '-ms-overflow-style': 'none',  // IE and Edge
   };
 
   const container = {
@@ -86,7 +74,8 @@ const SalesLeadPage = () => {
   const formContainerStyle = {
     padding: '20px',
     backgroundColor: '#F4F4F4',
-    width: '100%'
+    width: '100%',
+    boxSizing: 'border-box',  // Include padding in width calculations
   };
 
   const contentStyle = {
@@ -191,7 +180,7 @@ const SalesLeadPage = () => {
 
   return (
     <div style={containerStyle}>
-      <div style={leftStyle}>
+      <div style={leftStyle} className="hide-scrollbar">
         <div style={container}>
           <div style={up}>
             <DrawerMenu />
@@ -212,42 +201,39 @@ const SalesLeadPage = () => {
         </div>
       </div>
       <div style={verticalLineStyle}></div>
-      <div style={rightStyle}>
-        <div style={border}>
+      <div style={rightStyle} className="hide-scrollbar">
+        <div style={border} className="hide-scrollbar">
           <div className="logo">
             <img src={logo} alt="Logo" style={logoStyle} />
             <h3 style={titleStyle}>Sales Contact Form</h3>
           </div>
           {/* Form area */}
           <div style={formContainerStyle}>
-            <form onSubmit={handleSubmit}>
+            <form>
               <div style={formColumnStyle}>
                 <label>Name of the client:</label>
-                <input type="text" name="clientName" placeholder="Enter your name.." style={inputStyle} value={formData.clientName}
-                  onChange={handleChange}/>
+                <input type="text" placeholder="Enter your name.." style={inputStyle} />
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Contact No 1:</label>
-                  <input type="text" name="contact1" placeholder="0704561233" style={inputStyle} value={formData.contact1}
-                    onChange={handleChange}/>
+                  <input type="text" placeholder="0704561233" style={inputStyle} />
                 </div>
                 <div style={formColumnStyle}>
                   <label>Contact No 2:</label>
-                  <input type="text" name="contact2" placeholder="0785642350" style={inputStyle} value={formData.contact2}
-                    onChange={handleChange}/>
+                  <input type="text" placeholder="0785642350" style={inputStyle} />
                 </div>
               </div>
               <div style={formColumnStyle}>
                   <label>Client's Requirement</label>
                   <textarea
-                    name="slicRequirement"
-                    value={formData.slicRequirement}
+                    value={text}
                     onChange={handleChange}
                     placeholder="Type your requirement here..."
                     rows="10"
                     cols="50"
                     style={inputStyle} />
+                    <p>Client Requirement: {text}</p>
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
@@ -257,25 +243,21 @@ const SalesLeadPage = () => {
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Name:</label>
-                  <input type="text" name="slicContactName" placeholder="xxxxxxxxx" style={inputStyle} value={formData.slicContactName}
-                    onChange={handleChange}/>
+                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
                 </div>
                 <div style={formColumnStyle}>
                   <label>Mobile number:</label>
-                  <input type="text" name="slicMobile" placeholder="xxxxxxxxx" style={inputStyle} value={formData.slicMobile}
-                    onChange={handleChange}/>
+                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
                 </div>
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Extension:</label>
-                  <input type="text" name="slicExtension" placeholder="Enter company name ..." style={inputStyle} value={formData.slicExtension}
-                    onChange={handleChange}/>
+                  <input type="text" placeholder="Enter company name ..." style={inputStyle} />
                 </div>
                 <div style={formColumnStyle}>
                   <label>Department/Branch:</label>
-                  <input type="text" name="slicDepartment" placeholder="xxxxxxxxx" style={inputStyle} value={formData.slicDepartment}
-                    onChange={handleChange}/>
+                  <input type="text" placeholder="xxxxxxxxx" style={inputStyle} />
                 </div>
               </div>
               <div>
@@ -289,5 +271,18 @@ const SalesLeadPage = () => {
     </div>
   );
 };
+
+// Global CSS for hiding scrollbar
+const style = document.createElement('style');
+style.innerHTML = `
+  .hide-scrollbar {
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
+  }
+`;
+document.head.appendChild(style);
 
 export default SalesLeadPage;
