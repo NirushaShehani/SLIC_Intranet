@@ -31,6 +31,30 @@ const BranchPerformance = () => {
   return (
     <div>
       <div className="branch-performance">
+
+        {/*  */}
+        <h2>Branch Performance</h2>
+        <div className="branch-list">
+          {achievedBranches.map((branch, index) => (
+            <div key={index} className="branch-item achieved">
+              <span>{branch.name}</span>
+              <span>Rs. {branch.value.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
+            </div>
+          ))}
+        </div>
+        <div className="branch-list">
+          {notAchievedBranches.map((branch, index) => (
+            <div key={index} className="branch-item">
+              <span>{branch.name}</span>
+              <span>Rs. {branch.value.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
+            </div>
+          ))}
+        </div>
+        {/* <div className="read-more">Read more...</div> */}
+        <div className="link-contain">
+        <Link to="/full-branch-performance" className="read-more">Read more...</Link>
+      </div>
+        {/*  */}
         <h2>Cost Center</h2>
         <div className="branch-list">
           {achievedBranches.map((branch, index) => (
