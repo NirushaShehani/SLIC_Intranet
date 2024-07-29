@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
+import Procurement from '../Pages/Services_Pages/Procurement';
+import ICT from '../Pages/Services_Pages/ICT';
+import Life from '../Pages/Services_Pages/Life';
+import HR from '../Pages/Services_Pages/HR';
+import Finance from '../Pages/Services_Pages/Finance';
+import Sales from '../Pages/Services_Pages/Sales';
+import Transport from '../Pages/Services_Pages/Transport';
 import '../../Styles/services.css';
-import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 // hr tag styles
 import '../../Styles/serviceshrtag.css';
 
 const Services = () => {
-  const openInNewWindow = (url) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
-  const navigate = useNavigate();
+  const [selectedDept, setSelectedDept] = useState(''); // State to track the selected department
 
   // Styles
   const containerStyle = {
@@ -27,7 +27,8 @@ const Services = () => {
     backgroundColor: '#f0f0f0',
     padding: '20px',
     boxSizing: 'border-box',
-    position: 'relative'
+    position: 'relative',
+    overflowY: 'auto', // Enable scrolling if content is too long
   };
 
   const verticalLineStyle = {
@@ -90,6 +91,16 @@ const Services = () => {
     marginTop: '20px',
   };
 
+  const Depttitle = {
+    fontFamily: '"Onest", sans-serif',
+    fontSize: '17px',
+    fontStyle: 'normal',
+    color: '#161616',
+    margin: '20px 0',
+    textAlign: 'center', // Center the title
+    fontWeight: 'bold', // Make the title bold
+  };
+
   const paragraph = {
     fontFamily: '"Onest", sans-serif',
     fontSize: '15px',
@@ -99,27 +110,39 @@ const Services = () => {
     marginTop: '20px',
   };
 
-  const listContainer = {
-    display: 'flex',
-    flexWrap: 'wrap',
+  const buttonStyle = {
+    display: 'block',
     width: '100%',
-    justifyContent: 'space-between'
-  };
-
-  const listItemStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    cursor: 'pointer',
     padding: '10px',
     margin: '10px 0',
-    borderBottom: '1px solid #e0e0e0',
-    width: 'calc(50% - 10px)',  // Adjusting the width to fit two columns with space in between
-    boxSizing: 'border-box'
+    backgroundColor: '#31769F',
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    textAlign: 'center',
+    fontSize: '16px',
   };
 
-  const iconStyle = {
-    marginRight: '10px',
-    color: '#31769F',
+  const renderContent = () => {
+    switch (selectedDept) {
+      case 'Procurement':
+        return <Procurement />;
+      case 'ICT':
+        return <ICT />;
+      case 'Life':
+        return <Life />;
+      case 'HR':
+        return <HR />;
+      case 'Finance':
+        return <Finance />;
+      case 'Sales':
+        return <Sales />;
+      case 'Transport':
+        return <Transport />;
+      default:
+        return ;
+    }
   };
 
   return (
@@ -135,129 +158,27 @@ const Services = () => {
           <div style={Down}>
             <div style={subtitle}>THIS IS YOUR SERVICES PAGE</div>
             <div style={paragraph}>
-              In here You can access the Slic Services provided by clicking the provided buttons.
+              In here You can select the department types you want and go to the Slic Services provided by clicking the provided buttons.
             </div>
+            {/* Department type section */}
+            <hr className="styledHr" />
+            <div style={Depttitle}>
+              Department Types
+            </div>
+            {/* Button section */}
+            <button style={buttonStyle} onClick={() => setSelectedDept('Procurement')}>Procurement</button>
+            <button style={buttonStyle} onClick={() => setSelectedDept('ICT')}>ICT</button>
+            <button style={buttonStyle} onClick={() => setSelectedDept('Life')}>Life</button>
+            <button style={buttonStyle} onClick={() => setSelectedDept('HR')}>HR</button>
+            <button style={buttonStyle} onClick={() => setSelectedDept('Finance')}>Finance</button>
+            <button style={buttonStyle} onClick={() => setSelectedDept('Sales')}>Sales</button>
+            <button style={buttonStyle} onClick={() => setSelectedDept('Transport')}>Transport</button>
           </div>
         </div>
       </div>
       <div style={verticalLineStyle}></div>
       <div style={rightStyle}>
-        <div className="home-container">
-          <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">Services</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-          </div>
-          <div style={listContainer}>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Life</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate(' http://insurance-app/secworks/signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Insurance</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('http://blife-comm/UI/Home.aspx')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Commission Life</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('http://callc-app/secworks/signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Call center</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('http://blife-edomas.slic1.com/Secworks/Signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>E-Domas Life </span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('http://blife-mis-agent/Secworks/Signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-MIS </span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('https://cognoslife.srilankainsurance.com:9300/bi/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Cognos Analytics</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate(' http://blife-app.slic1.com/cashbook_web/Login.aspx')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>CashBook</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('http://slic.intranet.com/PGIWORKS/signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>PEGI Online</span>
-            </div>
-            <div style={listItemStyle} onClick={() => openInNewWindow('https://apps.srilankainsurance.com/agenworks/Signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Advisor</span>
-            </div>
-          </div>
-
-          <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">Life-Circulars Forms</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-          </div>
-          <div style={listContainer}>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Life</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-mis')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-MIS</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/cashbook')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Cashbook</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-commission')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Commission</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Advisor</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>HRIS</span>
-            </div>
-          </div>
-
-          <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">ICT Forms</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-          </div>
-          <div style={listContainer}>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Life</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-mis')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-MIS</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/cashbook')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Cashbook</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-commission')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Commission</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Advisor</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>HRIS</span>
-            </div>
-          </div>
-
-          
-
-        </div>
+        {renderContent()}
       </div>
     </div>
   );
