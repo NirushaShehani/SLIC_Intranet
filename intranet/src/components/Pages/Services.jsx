@@ -7,6 +7,8 @@ import HR from '../Pages/Services_Pages/HR';
 import Finance from '../Pages/Services_Pages/Finance';
 import Sales from '../Pages/Services_Pages/Sales';
 import Transport from '../Pages/Services_Pages/Transport';
+import Life_Contact from '../Pages/Services_Pages/Life_Contact_Center';
+
 import '../../Styles/services.css';
 // hr tag styles
 import '../../Styles/serviceshrtag.css';
@@ -140,6 +142,8 @@ const Services = () => {
         return <Sales />;
       case 'Transport':
         return <Transport />;
+      case 'Life_Contact':
+        return <Life_Contact />;
       default:
         return ;
     }
@@ -173,6 +177,7 @@ const Services = () => {
             <button style={buttonStyle} onClick={() => setSelectedDept('Finance')}>Finance</button>
             <button style={buttonStyle} onClick={() => setSelectedDept('Sales')}>Sales</button>
             <button style={buttonStyle} onClick={() => setSelectedDept('Transport')}>Transport</button>
+            <button style={buttonStyle} onClick={() => setSelectedDept('Life_Contact')}>Life Contact Center</button>
           </div>
         </div>
       </div>
