@@ -176,12 +176,6 @@ const KnowledgeBase = () => {
           label="Book Hub"
         />
         </Link>
-        {/*Book Hub Chip*/}
-        <CustomChip style={styles.label}
-          label="Complain Management"
-          deleteIcon={<BookmarkIcon style={ { color: "white" }} />}
-          onDelete={() => {}}
-        />
       </div>
     </div>
   );

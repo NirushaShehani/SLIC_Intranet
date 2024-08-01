@@ -16,6 +16,10 @@ import '../../Styles/serviceshrtag.css';
 const Services = () => {
   const [selectedDept, setSelectedDept] = useState(''); // State to track the selected department
 
+  const openInNewWindow = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+  
   // Styles
   const containerStyle = {
     width: '100%',
@@ -167,9 +171,10 @@ const Services = () => {
             {/* Department type section */}
             <hr className="styledHr" />
             <div style={Depttitle}>
-              Department Types
+              
             </div>
             {/* Button section */}
+            <button style={buttonStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>Complaint Management Center</button>
             <button style={buttonStyle} onClick={() => setSelectedDept('Procurement')}>Procurement</button>
             <button style={buttonStyle} onClick={() => setSelectedDept('ICT')}>ICT</button>
             <button style={buttonStyle} onClick={() => setSelectedDept('Life')}>Life</button>
