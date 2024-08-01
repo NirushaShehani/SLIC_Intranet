@@ -3,6 +3,7 @@ import '../../../Styles/services.css';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 // hr tag styles
 import '../../../Styles/serviceshrtag.css';
 
@@ -163,9 +164,11 @@ const Life = () => {
             <span className="hrDot"></span><span className="hrLine"></span>
           </div>
           <div style={listContainer}>
-          <div style={listItemStyle} onClick={() => openInNewWindow('/isoForms')}>
+          <div style={listItemStyle} >
+          <Link to="/ISO-Forms" style={{ cursor: 'pointer' }}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>ISO Forms</span>
+            </Link>
             </div>
             <div style={listItemStyle} onClick={() => openInNewWindow('/ict')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />

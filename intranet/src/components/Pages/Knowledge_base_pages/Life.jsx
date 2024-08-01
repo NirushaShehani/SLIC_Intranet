@@ -71,12 +71,16 @@ const Life = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>AML Module</span>
             </div>
+            <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>About SLIC</span>
+            </div>
             
           </div>
 
           <div className="hrContainer">
             <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">Manuals</span>
+            <span className="hrText">MANUALS</span>
             <span className="hrDot"></span><span className="hrLine"></span>
           </div>
           <div style={listContainer}>
@@ -197,10 +201,206 @@ const Life = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>Job Role of a Call Center Agent</span>
             </div>
+            
           </div>
           {/* CONTACT CENTER PROCEDURES */}
 
           
+{/* PRODUCTS AND SERVICES */}
+<div className="hrContainer">
+            <span className="hrLine"></span><span className="hrDot"></span>
+            <span className="hrText"> PRODUCTS AND SERVICES</span>
+            <span className="hrDot"></span><span className="hrLine"></span>
+          </div>
+          <div style={listContainer}>
+            <div style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-bonus-system-training/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Life Bonus system Training</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/workmens-compensation/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Workmen’s Compensation</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sri-lanka-insurance-health-plus/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Sri Lanka Insurance Health Plus</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/protect-group-term-life-policy/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Protect – Group Term Life POLICY</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/marine-cargo-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Marine Cargo Insurance</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/marine-hull-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Marine Hull Insurance</span>
+            </div>
+            <div style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/leasing-all-risk-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Leasing All Risk Insurance</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/machinery-loss-of-profits-insurance-mlop/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Machinery Loss of Profits Insurance (MLOP)</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/deterioration-of-stock-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Deterioration of Stock Insurance</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/contractors-plant-and-machinery-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Contractor’s Plant and Machinery Insurance </span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/machinery-breakdown-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Machinery Breakdown Insurance</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/electronic-equipment-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Electronic Equipment Insurance</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/erection-all-risks-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Erection All Risks Insurance</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/contractors-all-risks-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Contractors’ All Risks Insurance</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/hoteliers-comprehensive-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Hoteliers Comprehensive Insurance</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/tea-factory-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Tea Factory Insurance</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/trade-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Trade Insurance</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/insurance-for-industrial-business-premises/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Insurance for Industrial / Business Premises </span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/suraksha-health-policy-for-school-children/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Suraksha Health Policy For School Children</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/personal-accident/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Personal Accident</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sri-lanka-insurance-gaurawa/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Sri Lanka Insurance Gaurawa</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/globe-trotter-travel-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Globe Trotter Travel Insurance</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/home-protect/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Home Protect</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/home-protect-lite/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Home Protect Lite</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/burglary-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Burglary Insurance</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-suba-pathum-scholarship/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Life Suba pathum Scholarship</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/mortgage-protection-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Mortgage Protection Plan</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/minimuthu-parithyaga/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Minimuthu Parithyaga</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/minimuthu-childrens-policy/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Minimuthu – Children’s Policy</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/minimuthu-daayada/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Minimuthu Daayada</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-hospital-cash-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>SLI Hospital Cash Plan</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-overseas-comprehensive-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>SLI Overseas Comprehensive Plan </span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-comprehensive-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>SLI Comprehensive Plan</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-surgical-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>SLI Surgical Plan</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('- http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-medi-life/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>SLI Medi-Life</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-annual-medical-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>SLI Annual Medical Plan</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/freedom-retirement-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Freedom – Retirement Plan</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/jana-diri-two-year-relief-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Jana Diri Two Year Relief Plan </span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate(' http://172.24.60.66/knowledgebase/index.php/knowledge-base/swarna-dhaja/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Swarna Dhaja</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/yasa-isuru-advance-benefit-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Yasa Isuru – Advance Benefit Plan</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/praguna-high-returns-policy/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Praguna – High Returns Policy</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/divi-thilina-protection-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Divi Thilina – Protection Plan</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate(' http://172.24.60.66/knowledgebase/index.php/knowledge-base/slic-products/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>SLIC Products</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/annual-medical-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Annual Medical Plan</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/motor-plus-motor-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Motor Plus – Motor Insurance</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/fire-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Fire Insurance </span>
+            </div>
+           
+
+          </div>
+          {/* CONTACT CENTER PROCEDURES */}
 
           
 
