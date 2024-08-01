@@ -26,7 +26,7 @@ import CostCenter from './components/Pages/Cost_Center';
 import IdeaHub from './components/Pages/IdeaHub';
 import Knowledge_BasePage from './components/Pages/Knowledge_BasePage';
 import BookHub from './components/Pages/BookHub';
-
+import ISOForms from './components/Pages/ISO_Forms';
 const App =() => {
   return (
     <Router>
@@ -50,7 +50,7 @@ const App =() => {
         <Route path="/Idea-Hub" element={<IdeaHub/>}/>
         <Route path="/Knowledge-Base" element={<Knowledge_BasePage/>}/>
         <Route path="/Book-Hub" element={<BookHub/>}/>
-        
+        <Route path="/ISO-Forms" element={<ISOForms/>}/>
         {/* admin side */}
         <Route path="/events-admin" element={<EventsAdminPage />} />
         <Route path="/hr-notice-admin1" element={<HRNoticeAdmin1 />} />
