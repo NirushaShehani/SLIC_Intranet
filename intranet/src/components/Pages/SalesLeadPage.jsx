@@ -1,73 +1,32 @@
 import React, { useState } from 'react';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
+import axios from 'axios';
 import logo from '../../assets/slicLIfe_New_1.png';
 
 const SalesLeadPage = () => {
   const [formData, setFormData] = useState({
     clientName: '',
-    contactNo1: '',
-    contactNo2: '',
-    clientRequirement: '',
-    yourName: '',
-    mobileNumber: '',
-    extension: '',
-    department: '',
+    contact1: '',
+    contact2: '',
+    slicRequirement: '',
+    slicContactName: '',
+    slicMobile: '',
+    slicExtension: '',
+    slicDepartment: ''
   });
-
-  const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
-  const validateForm = () => {
-    let formErrors = {};
-
-    if (!/^[a-zA-Z\s]+$/.test(formData.clientName)) {
-      formErrors.clientName = 'Client name should only contain letters and spaces.';
-    }
-
-    if (!/^\d{10}$/.test(formData.contactNo1)) {
-      formErrors.contactNo1 = 'Contact No 1 should only contain 10 digits.';
-    }
-
-    if (!/^\d{10}$/.test(formData.contactNo2)) {
-      formErrors.contactNo2 = 'Contact No 2 should only contain 10 digits.';
-    }
-
-    if (!/^[a-zA-Z\s]{0,120}$/.test(formData.clientRequirement)) {
-      formErrors.clientRequirement = 'Client requirement should only contain letters and be up to 120 characters.';
-    }
-
-    if (!/^[a-zA-Z\s]+$/.test(formData.yourName)) {
-      formErrors.yourName = 'Your name should only contain letters and spaces.';
-    }
-
-    if (!/^\d{10}$/.test(formData.mobileNumber)) {
-      formErrors.mobileNumber = 'Mobile number should only contain 10 digits.';
-    }
-
-    if (!/^\d{1,6}$/.test(formData.extension)) {
-      formErrors.extension = 'Extension should only contain up to 6 digits.';
-    }
-
-    if (!/^[a-zA-Z\s]{0,120}$/.test(formData.department)) {
-      formErrors.department = 'Department/Branch should only contain letters and be up to 120 characters.';
-    }
-
-    setErrors(formErrors);
-    return Object.keys(formErrors).length === 0;
-  };
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    if (validateForm()) {
-      // Form is valid, handle the submit logic here
-      console.log('Form data:', formData);
+    try {
+      const response = await axios.post('http://localhost:3000/api/salesLead/submit', formData);
+      console.log('Response:', response.data);
+    } catch (error) {
+      console.error('Error submitting form:', error);
     }
   };
 
@@ -75,7 +34,6 @@ const SalesLeadPage = () => {
     width: '100%',
     height: '100vh',
     display: 'flex',
-    overflow: 'hidden',  // Ensure no overflow
   };
 
   const leftStyle = {
@@ -83,10 +41,6 @@ const SalesLeadPage = () => {
     backgroundColor: '#f0f0f0',
     padding: '20px',
     boxSizing: 'border-box',
-    overflowY: 'scroll',  // Ensure scroll if content overflows
-    // Hide scrollbar
-    scrollbarWidth: 'none',  // Firefox
-    '-ms-overflow-style': 'none',  // IE and Edge
   };
 
   const verticalLineStyle = {
@@ -103,10 +57,6 @@ const SalesLeadPage = () => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    overflowY: 'scroll',  // Ensure scroll if content overflows
-    // Hide scrollbar
-    scrollbarWidth: 'none',  // Firefox
-    '-ms-overflow-style': 'none',  // IE and Edge
   };
 
   const border = {
@@ -120,10 +70,6 @@ const SalesLeadPage = () => {
     alignItems: 'center',
     margin: '10px',
     padding: '20px',
-    overflowY: 'scroll',  // Ensure scroll if content overflows
-    // Hide scrollbar
-    scrollbarWidth: 'none',  // Firefox
-    '-ms-overflow-style': 'none',  // IE and Edge
   };
 
   const container = {
@@ -135,8 +81,7 @@ const SalesLeadPage = () => {
   const formContainerStyle = {
     padding: '20px',
     backgroundColor: '#F4F4F4',
-    width: '100%',
-    boxSizing: 'border-box',  // Include padding in width calculations
+    width: '100%'
   };
 
   const contentStyle = {
@@ -241,7 +186,7 @@ const SalesLeadPage = () => {
 
   return (
     <div style={containerStyle}>
-      <div style={leftStyle} className="hide-scrollbar">
+      <div style={leftStyle}>
         <div style={container}>
           <div style={up}>
             <DrawerMenu />
@@ -251,19 +196,19 @@ const SalesLeadPage = () => {
             <div style={subtitle}>Welcome to SLIC's New Customer Request Form</div>
             <div style={paragraph}>
               <p>
-              Thank you for your interest in introducing our extensive range of customized solutions to prospective clients.
-              Our products not only add color to people's lives but also provide ultimate protection. 
-              By bringing in new business, you are not just serving the company but also contributing to the nation. 
-              Take pride in offering essential protection to those who truly need it, making a meaningful impact through your dedication and expertise. 
-              Together, we are creating a safer and more vibrant future for all.
+                Thank you for your interest in introducing our extensive range of customized solutions to prospective clients.
+                Our products not only add color to people's lives but also provide ultimate protection. 
+                By bringing in new business, you are not just serving the company but also contributing to the nation. 
+                Take pride in offering essential protection to those who truly need it, making a meaningful impact through your dedication and expertise. 
+                Together, we are creating a safer and more vibrant future for all.
               </p>
             </div>
           </div>
         </div>
       </div>
       <div style={verticalLineStyle}></div>
-      <div style={rightStyle} className="hide-scrollbar">
-        <div style={border} className="hide-scrollbar">
+      <div style={rightStyle}>
+        <div style={border}>
           <div className="logo">
             <img src={logo} alt="Logo" style={logoStyle} />
             <h3 style={titleStyle}>Sales Contact Form</h3>
@@ -273,55 +218,31 @@ const SalesLeadPage = () => {
             <form onSubmit={handleSubmit}>
               <div style={formColumnStyle}>
                 <label>Name of the client:</label>
-                <input
-                  type="text"
-                  name="clientName"
-                  value={formData.clientName}
-                  onChange={handleChange}
-                  placeholder="Enter your name.."
-                  style={inputStyle}
-                />
-                {errors.clientName && <p style={{color: 'red'}}>{errors.clientName}</p>}
+                <input type="text" name="clientName" placeholder="Enter your name.." style={inputStyle} value={formData.clientName}
+                  onChange={handleChange} />
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Contact No 1:</label>
-                  <input
-                    type="text"
-                    name="contactNo1"
-                    value={formData.contactNo1}
-                    onChange={handleChange}
-                    placeholder="0704561233"
-                    style={inputStyle}
-                  />
-                  {errors.contactNo1 && <p style={{color: 'red'}}>{errors.contactNo1}</p>}
+                  <input type="text" name="contact1" placeholder="0704561233" style={inputStyle} value={formData.contact1}
+                    onChange={handleChange} />
                 </div>
                 <div style={formColumnStyle}>
                   <label>Contact No 2:</label>
-                  <input
-                    type="text"
-                    name="contactNo2"
-                    value={formData.contactNo2}
-                    onChange={handleChange}
-                    placeholder="0785642350"
-                    style={inputStyle}
-                  />
-                  {errors.contactNo2 && <p style={{color: 'red'}}>{errors.contactNo2}</p>}
+                  <input type="text" name="contact2" placeholder="0785642350" style={inputStyle} value={formData.contact2}
+                    onChange={handleChange} />
                 </div>
               </div>
               <div style={formColumnStyle}>
-                  <label>Client's Requirement</label>
-                  <textarea
-                    name="clientRequirement"
-                    value={formData.clientRequirement}
-                    onChange={handleChange}
-                    placeholder="Type your requirement here..."
-                    rows="10"
-                    cols="50"
-                    style={inputStyle}
-                  />
-                  {errors.clientRequirement && <p style={{color: 'red'}}>{errors.clientRequirement}</p>}
-                  <p>Client Requirement: {formData.clientRequirement}</p>
+                <label>Client's Requirement</label>
+                <textarea
+                  name="slicRequirement"
+                  value={formData.slicRequirement}
+                  onChange={handleChange}
+                  placeholder="Type your requirement here..."
+                  rows="10"
+                  cols="50"
+                  style={inputStyle} />
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
@@ -331,53 +252,25 @@ const SalesLeadPage = () => {
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Name:</label>
-                  <input
-                    type="text"
-                    name="yourName"
-                    value={formData.yourName}
-                    onChange={handleChange}
-                    placeholder="xxxxxxxxx"
-                    style={inputStyle}
-                  />
-                  {errors.yourName && <p style={{color: 'red'}}>{errors.yourName}</p>}
+                  <input type="text" name="slicContactName" placeholder="xxxxxxxxx" style={inputStyle} value={formData.slicContactName}
+                    onChange={handleChange} />
                 </div>
                 <div style={formColumnStyle}>
                   <label>Mobile number:</label>
-                  <input
-                    type="text"
-                    name="mobileNumber"
-                    value={formData.mobileNumber}
-                    onChange={handleChange}
-                    placeholder="xxxxxxxxx"
-                    style={inputStyle}
-                  />
-                  {errors.mobileNumber && <p style={{color: 'red'}}>{errors.mobileNumber}</p>}
+                  <input type="text" name="slicMobile" placeholder="xxxxxxxxx" style={inputStyle} value={formData.slicMobile}
+                    onChange={handleChange} />
                 </div>
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Extension:</label>
-                  <input
-                    type="text"
-                    name="extension"
-                    value={formData.extension}
-                    onChange={handleChange}
-                    placeholder="Enter company name ..."
-                    style={inputStyle}
-                  />
-                  {errors.extension && <p style={{color: 'red'}}>{errors.extension}</p>}
+                  <input type="text" name="slicExtension" placeholder="Enter company name ..." style={inputStyle} value={formData.slicExtension}
+                    onChange={handleChange} />
                 </div>
                 <div style={formColumnStyle}>
                   <label>Department/Branch:</label>
-                  <input
-                    type="text"
-                    name="department"
-                    value={formData.department}
-                    onChange={handleChange}
-                    placeholder="xxxxxxxxx"
-                    style={inputStyle}
-                  />
-                  {errors.department && <p style={{color: 'red'}}>{errors.department}</p>}
+                  <input type="text" name="slicDepartment" placeholder="xxxxxxxxx" style={inputStyle} value={formData.slicDepartment}
+                    onChange={handleChange} />
                 </div>
               </div>
               <div>
@@ -391,18 +284,5 @@ const SalesLeadPage = () => {
     </div>
   );
 };
-
-// Global CSS for hiding scrollbar
-const style = document.createElement('style');
-style.innerHTML = `
-  .hide-scrollbar {
-    scrollbar-width: none;  /* Firefox */
-  }
-
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari, Opera */
-  }
-`;
-document.head.appendChild(style);
 
 export default SalesLeadPage;
