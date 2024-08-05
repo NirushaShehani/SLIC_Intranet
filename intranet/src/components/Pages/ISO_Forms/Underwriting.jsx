@@ -103,14 +103,31 @@ const Services = () => {
     minWidth: '150px', // Ensure buttons are wide enough for longer names
   };
 
+  const getButtonStyle = (dept) => {
+    return {
+      ...buttonStyle,
+      backgroundColor: selectedDept === dept ? '#0056b3' : '#31769F',
+    };
+  };
+
+  const handleDownload = (url) => {
+    if (window.confirm('Do you want to download this file?')) {
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = url.split('/').pop();
+      link.click();
+    }
+  };
+
   const renderContent = () => {
     switch (selectedDept) {
       case '1':
          {/* Proposal Forms Section */}
-        return <div style={containerStyle}>
+        return (
+        <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                    <div style={listItemStyle} onClick={() => openInNewWindow('/Life Proposal Form (Sinhala)')}>
+                    <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span>Life Proposal Form (Sinhala)</span>
                     </div>
@@ -170,19 +187,15 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span>School Fee Protector Proposal Form (English)</span>
                     </div>
-                    
-                    
-                    
-                    
-                    
-
                 </div>
             </div>
-        </div>;
+        </div>
+        );
         {/* Proposal Forms Section */}
       case '2':
         {/* Policy Schedules Section */}
-        return <div style={containerStyle}>
+        return (
+        <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
                     <div style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/b-net-new/Company%20Profile%20-%20SLIC.pdf')}>
@@ -203,11 +216,13 @@ const Services = () => {
                     </div>
                 </div>
             </div>
-        </div>;
+        </div>
+        );
         {/* Policy Schedules Section */}
       case '3':
         {/* Policy Books Section */}
-        return <div style={containerStyle}>
+        return (
+        <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
                 <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
@@ -236,11 +251,13 @@ const Services = () => {
                     </div>
                 </div>
             </div>
-        </div>;
+        </div>
+        );
         {/* Policy Books Section */}
       case '4':
         {/* Human Resources Section */}
-        return <div style={containerStyle}>
+        return (
+        <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
                 <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
@@ -265,11 +282,13 @@ const Services = () => {
                     </div>
                 </div>
             </div>
-        </div>;
+        </div>
+        );
         {/* Human Resources Section */}
       case '5':
         {/* Finance Letters and General Forms Section */}
-        return <div style={containerStyle}>
+        return (
+        <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
                 <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
@@ -453,11 +472,13 @@ const Services = () => {
                     </div>
                 </div>
             </div>
-        </div>;
+        </div>
+        );
         {/* Finance Letters and General Forms Section */}
       case '6':
         {/* Endorsements Section */}
-        return <div style={containerStyle}>
+        return (
+        <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
                 <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
@@ -491,11 +512,13 @@ const Services = () => {
                     
                 </div>
             </div>
-        </div>;
+        </div>
+        );
         {/* Endorsements Section */}
       case '7':
         {/* Medical Forms & Questionnaire Section */}
-        return <div style={containerStyle}>
+        return (
+        <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
                 <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
@@ -673,11 +696,13 @@ const Services = () => {
                   
                 </div>
             </div>
-        </div>;
+        </div>
+        );
         {/* Medical Forms & Questionnaire Section */}
       case '8':
         {/* Documents & Letters to Other Institutions Section */}
-        return <div style={containerStyle}>
+        return (
+        <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
                 <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
@@ -782,11 +807,13 @@ const Services = () => {
                     </div>
                 </div>
             </div>
-        </div>;
+        </div>
+        );
         {/* Documents & Letters to Other Institutions Section */}
       case '9':
         {/* General Forms to the Policyholder Section */}
-        return <div style={containerStyle}>
+        return (
+        <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
                 <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
@@ -795,7 +822,8 @@ const Services = () => {
                     </div>
                 </div>
             </div>
-        </div>;
+        </div>
+        );
         {/* General Forms to the Policyholder Section */}
       default:
         return <div>Select a department to see content here.</div>;
@@ -807,15 +835,15 @@ const Services = () => {
       {/* Upper Horizontal Section */}
       <div style={topStyle}>
         <div style={buttonContainerStyle}>
-          <button style={buttonStyle} onClick={() => setSelectedDept('1')}>Proposal Forms</button>
-          <button style={buttonStyle} onClick={() => setSelectedDept('2')}>Policy Schedules</button>
-          <button style={buttonStyle} onClick={() => setSelectedDept('3')}>Policy Books</button>
-          <button style={buttonStyle} onClick={() => setSelectedDept('4')}>Human Resources</button>
-          <button style={buttonStyle} onClick={() => setSelectedDept('5')}>Finance Letters and General Forms (To Customer)</button>
-          <button style={buttonStyle} onClick={() => setSelectedDept('6')}>Endorsements</button>
-          <button style={buttonStyle} onClick={() => setSelectedDept('7')}>Medical Forms & Questionnaire</button>
-          <button style={buttonStyle} onClick={() => setSelectedDept('8')}>Documents & Letters to Other Institutions (To Bank & Funds)</button>
-          <button style={buttonStyle} onClick={() => setSelectedDept('9')}>General Forms to the Policyholder</button>
+          <button style={getButtonStyle('1')} onClick={() => setSelectedDept('1')}>Proposal Forms</button>
+          <button style={getButtonStyle('2')} onClick={() => setSelectedDept('2')}>Policy Schedules</button>
+          <button style={getButtonStyle('3')} onClick={() => setSelectedDept('3')}>Policy Books</button>
+          <button style={getButtonStyle('4')} onClick={() => setSelectedDept('4')}>Human Resources</button>
+          <button style={getButtonStyle('5')} onClick={() => setSelectedDept('5')}>Finance Letters and General Forms (To Customer)</button>
+          <button style={getButtonStyle('6')} onClick={() => setSelectedDept('6')}>Endorsements</button>
+          <button style={getButtonStyle('7')} onClick={() => setSelectedDept('7')}>Medical Forms & Questionnaire</button>
+          <button style={getButtonStyle('8')} onClick={() => setSelectedDept('8')}>Documents & Letters to Other Institutions (To Bank & Funds)</button>
+          <button style={getButtonStyle('9')} onClick={() => setSelectedDept('9')}>General Forms to the Policyholder</button>
         </div>
       </div>
       {/* Lower Horizontal Section */}
