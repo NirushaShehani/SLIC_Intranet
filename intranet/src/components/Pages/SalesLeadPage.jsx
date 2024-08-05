@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
-import axios from 'axios';
 import logo from '../../assets/slicLIfe_New_1.png';
 
 const SalesLeadPage = () => {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     clientName: '',
     contact1: '',
     contact2: '',
@@ -13,20 +12,79 @@ const SalesLeadPage = () => {
     slicMobile: '',
     slicExtension: '',
     slicDepartment: ''
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+  const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const validateForm = () => {
+    let formErrors = {};
+
+    if (!/^[a-zA-Z\s]+$/.test(formData.clientName)) {
+      formErrors.clientName = 'Client name should only contain letters and spaces.';
+    }
+
+    if (!/^\d{10}$/.test(formData.contact1)) {
+      formErrors.contactNo1 = 'Contact No 1 should only contain 10 digits.';
+    }
+
+    if (!/^\d{10}$/.test(formData.contact2)) {
+      formErrors.contactNo2 = 'Contact No 2 should only contain 10 digits.';
+    }
+
+    if (!/^[a-zA-Z\s]{1,120}$/.test(formData.slicRequirement)) {
+      formErrors.clientRequirement = 'Client requirement should only contain letters and be up to 120 characters.';
+    }
+
+    if (!/^[a-zA-Z\s]+$/.test(formData.slicContactName)) {
+      formErrors.yourName = 'Your name should only contain letters and spaces.';
+    }
+
+    if (!/^\d{10}$/.test(formData.slicMobile)) {
+      formErrors.mobileNumber = 'Mobile number should only contain 10 digits.';
+    }
+
+    if (!/^\d{1,6}$/.test(formData.slicExtension)) {
+      formErrors.extension = 'Extension should only contain up to 6 digits.';
+    }
+
+    if (!/^[a-zA-Z\s]{0,120}$/.test(formData.slicDepartment)) {
+      formErrors.department = 'Department/Branch should only contain letters and be up to 120 characters.';
+    }
+
+    setErrors(formErrors);
+    return Object.keys(formErrors).length === 0;
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:3000/api/salesLead/submit', formData);
-      console.log('Response:', response.data);
-    } catch (error) {
-      console.error('Error submitting form:', error);
+    if (validateForm()) {
+      try {
+        const response = await fetch('http://localhost:3000/api/salesLead/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+  
+        const responseText = await response.text();
+  
+        if (response.ok) {
+          console.log('Data inserted successfully:', responseText);
+          setFormData(initialFormData);
+          setErrors({});
+        } else {
+          console.error('Failed to insert data:', responseText);
+        }
+      } catch (error) {
+        console.error('Error inserting data:', error);
+      }
     }
   };
 
@@ -196,11 +254,11 @@ const SalesLeadPage = () => {
             <div style={subtitle}>Welcome to SLIC's New Customer Request Form</div>
             <div style={paragraph}>
               <p>
-                Thank you for your interest in introducing our extensive range of customized solutions to prospective clients.
-                Our products not only add color to people's lives but also provide ultimate protection. 
-                By bringing in new business, you are not just serving the company but also contributing to the nation. 
-                Take pride in offering essential protection to those who truly need it, making a meaningful impact through your dedication and expertise. 
-                Together, we are creating a safer and more vibrant future for all.
+              Thank you for your interest in introducing our extensive range of customized solutions to prospective clients.
+              Our products not only add color to people's lives but also provide ultimate protection. 
+              By bringing in new business, you are not just serving the company but also contributing to the nation. 
+              Take pride in offering essential protection to those who truly need it, making a meaningful impact through your dedication and expertise. 
+              Together, we are creating a safer and more vibrant future for all.
               </p>
             </div>
           </div>
@@ -219,30 +277,35 @@ const SalesLeadPage = () => {
               <div style={formColumnStyle}>
                 <label>Name of the client:</label>
                 <input type="text" name="clientName" placeholder="Enter your name.." style={inputStyle} value={formData.clientName}
-                  onChange={handleChange} />
+                  onChange={handleChange}/>
+                  {errors.clientName && <p style={{color: 'red'}}>{errors.clientName}</p>}
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Contact No 1:</label>
                   <input type="text" name="contact1" placeholder="0704561233" style={inputStyle} value={formData.contact1}
-                    onChange={handleChange} />
+                    onChange={handleChange}/>
+                    {errors.contactNo1 && <p style={{color: 'red'}}>{errors.contactNo1}</p>}
                 </div>
                 <div style={formColumnStyle}>
                   <label>Contact No 2:</label>
                   <input type="text" name="contact2" placeholder="0785642350" style={inputStyle} value={formData.contact2}
-                    onChange={handleChange} />
+                    onChange={handleChange}/>
+                    {errors.contactNo2 && <p style={{color: 'red'}}>{errors.contactNo2}</p>}
                 </div>
               </div>
               <div style={formColumnStyle}>
-                <label>Client's Requirement</label>
-                <textarea
-                  name="slicRequirement"
-                  value={formData.slicRequirement}
-                  onChange={handleChange}
-                  placeholder="Type your requirement here..."
-                  rows="10"
-                  cols="50"
-                  style={inputStyle} />
+                  <label>Client's Requirement</label>
+                  <textarea
+                    name="slicRequirement"
+                    value={formData.slicRequirement}
+                    onChange={handleChange}
+                    placeholder="Type your requirement here..."
+                    rows="10"
+                    cols="50"
+                    style={inputStyle} />
+                    {errors.clientRequirement && <p style={{color: 'red'}}>{errors.clientRequirement}</p>}
+                    <p>Client Requirement: {formData.slicRequirement}</p>
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
@@ -253,24 +316,28 @@ const SalesLeadPage = () => {
                 <div style={formColumnStyle}>
                   <label>Name:</label>
                   <input type="text" name="slicContactName" placeholder="xxxxxxxxx" style={inputStyle} value={formData.slicContactName}
-                    onChange={handleChange} />
+                    onChange={handleChange}/>
+                    {errors.yourName && <p style={{color: 'red'}}>{errors.yourName}</p>}
                 </div>
                 <div style={formColumnStyle}>
                   <label>Mobile number:</label>
                   <input type="text" name="slicMobile" placeholder="xxxxxxxxx" style={inputStyle} value={formData.slicMobile}
-                    onChange={handleChange} />
+                    onChange={handleChange}/>
+                    {errors.mobileNumber && <p style={{color: 'red'}}>{errors.mobileNumber}</p>}
                 </div>
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Extension:</label>
                   <input type="text" name="slicExtension" placeholder="Enter company name ..." style={inputStyle} value={formData.slicExtension}
-                    onChange={handleChange} />
+                    onChange={handleChange}/>
+                    {errors.extension && <p style={{color: 'red'}}>{errors.extension}</p>}
                 </div>
                 <div style={formColumnStyle}>
                   <label>Department/Branch:</label>
                   <input type="text" name="slicDepartment" placeholder="xxxxxxxxx" style={inputStyle} value={formData.slicDepartment}
-                    onChange={handleChange} />
+                    onChange={handleChange}/>
+                    {errors.department && <p style={{color: 'red'}}>{errors.department}</p>}
                 </div>
               </div>
               <div>
