@@ -104,10 +104,7 @@ const Life = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>HRIS User Manual</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/b-net-new/Hris-Document/SLIC_ClaimsOne_User_Manual_V1.0.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>ClaimsOne User Manual</span>
-            </div>
+           
            
           </div>
           {/* CONTACT CENTER PROCEDURES */}
