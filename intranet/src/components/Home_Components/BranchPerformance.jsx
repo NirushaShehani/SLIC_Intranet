@@ -7,8 +7,7 @@ import image3 from '../../assets/Event3.jpg';
 import { Link } from 'react-router-dom';
 
 const branches = [
- 
- 
+  // Define your branches here
 ];
 
 // Separate branches into two lists: achieved and not achieved
@@ -16,6 +15,17 @@ const achievedBranches = branches.filter(branch => branch.value >= branch.target
 const notAchievedBranches = branches.filter(branch => branch.value < branch.target).sort((a, b) => b.value - a.value);
 
 const images = [image1, image2, image3];
+
+// Define strings as key-value pairs
+const strings = [
+  { key: "Q 1", value: "10%" },
+  { key: "Q 2", value: "10%" },
+  { key: "Q 3", value: "10%" },
+  { key: "Q 4", value: "10%" }
+];
+
+// Filter strings array to include only updated values
+const updatedStrings = strings.filter(item => item.value !== "");
 
 const BranchPerformance = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -31,8 +41,6 @@ const BranchPerformance = () => {
   return (
     <div>
       <div className="branch-performance">
-
-        {/*  */}
         <h2>Branch Performance</h2>
         <div className="branch-list">
           {achievedBranches.map((branch, index) => (
@@ -50,11 +58,10 @@ const BranchPerformance = () => {
             </div>
           ))}
         </div>
-        {/* <div className="read-more">Read more...</div> */}
         <div className="link-contain">
-        <Link to="/full-branch-performance" className="read-more">Read more...</Link>
-      </div>
-        {/*  */}
+          <Link to="/full-branch-performance" className="read-more">Read more...</Link>
+        </div>
+
         <h2>Cost Center</h2>
         <div className="branch-list">
           {achievedBranches.map((branch, index) => (
@@ -72,17 +79,42 @@ const BranchPerformance = () => {
             </div>
           ))}
         </div>
-        {/* <div className="read-more">Read more...</div> */}
         <div className="link-contain">
-        <Link to="/full-branch-performance" className="read-more">Read more...</Link>
+          <Link to="/full-branch-performance" className="read-more">Read more...</Link>
+        </div>
       </div>
-      </div>
+
       <div className="branch-event">
         <h2>Branch Event</h2>
         <div className="images-container">
           <Link to="/full-branch-events">
-          <img src={images[currentImageIndex]} alt={`Event ${currentImageIndex + 1}`} />
+            <img src={images[currentImageIndex]} alt={`Event ${currentImageIndex + 1}`} />
           </Link>
+        </div>
+      </div>
+
+      <div className="incentive-criteria">
+        <div className="table-container">
+          <div className="incentive-container">
+            <h2>Life Total Incentive</h2>
+            <table>
+              <tbody>
+                <tr>
+                  {updatedStrings.map((item, index) => (
+                    <td key={index}>{item.key}</td>
+                  ))}
+                </tr>
+                <tr>
+                  {updatedStrings.map((item, index) => (
+                    <td key={index}>{item.value}</td>
+                  ))}
+                </tr>
+              </tbody>
+            </table>
+            <div className="link-contain">
+              <Link to="/incentive-critaria-page" className="read-more">Read more...</Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>
