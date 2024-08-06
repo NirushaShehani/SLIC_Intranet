@@ -14,16 +14,13 @@ const branches = [
   { name: 'Aluthgama', value: 2500000, target: 2000000 },
   { name: 'Akurassa', value: 1700000, target: 1800000 },
   { name: 'Dehiwala', value: 1000000, target: 1200000 },
-  // Define your branches here
 ];
 
-// Separate branches into two lists: achieved and not achieved
 const achievedBranches = branches.filter(branch => branch.value >= branch.target).sort((a, b) => b.value - a.value);
 const notAchievedBranches = branches.filter(branch => branch.value < branch.target).sort((a, b) => b.value - a.value);
 
 const images = [image1, image2, image3];
 
-// Define strings as key-value pairs
 const strings = [
   { key: "Q 1", value: "10%" },
   { key: "Q 2", value: "10%" },
@@ -31,7 +28,6 @@ const strings = [
   { key: "Q 4", value: "10%" }
 ];
 
-// Filter strings array to include only updated values
 const updatedStrings = strings.filter(item => item.value !== "");
 
 const BranchPerformance = () => {
@@ -49,30 +45,6 @@ const BranchPerformance = () => {
     <div>
       <div className="branch-performance">
         <h2>Branch Performance</h2>
-        <div className="branch-list">
-          {achievedBranches.map((branch, index) => (
-            <div key={index} className="branch-item achieved">
-              <span>{branch.name}</span>
-              <span>Rs. {branch.value.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
-            </div>
-          ))}
-        </div>
-        <div className="branch-list">
-          {notAchievedBranches.map((branch, index) => (
-            <div key={index} className="branch-item">
-              <span>{branch.name}</span>
-              <span>Rs. {branch.value.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
-            </div>
-          ))}
-        </div>
-        <div className="link-contain">
-        <Link to="/full-branch-performance" className="read-more">Read more...</Link>
-      </div>
-        {/*  */}
-          <Link to="/full-branch-performance" className="read-more">Read more...</Link>
-        </div>
-
-        <h2>Cost Center</h2>
         <div className="branch-list">
           {achievedBranches.map((branch, index) => (
             <div key={index} className="branch-item achieved">
