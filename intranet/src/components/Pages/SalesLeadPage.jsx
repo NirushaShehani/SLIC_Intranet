@@ -248,17 +248,16 @@ const SalesLeadPage = () => {
         <div style={container}>
           <div style={up}>
             <DrawerMenu />
-            <div style={contactList}>Internal Sales Lead</div>
+            <div style={contactList}>new customer Introducing</div>
           </div>
           <div style={down}>
-            <div style={subtitle}>Welcome to SLIC's New Customer Request Form</div>
+            <div style={subtitle}>Thank you for introducing new customers to us !</div>
             <div style={paragraph}>
               <p>
-              Thank you for your interest in introducing our extensive range of customized solutions to prospective clients.
-              Our products not only add color to people's lives but also provide ultimate protection. 
-              By bringing in new business, you are not just serving the company but also contributing to the nation. 
-              Take pride in offering essential protection to those who truly need it, making a meaningful impact through your dedication and expertise. 
-              Together, we are creating a safer and more vibrant future for all.
+              As the nation’s first choice for Risk Protection and Life Investment, this initiative not only helps our customers and their loved ones but also contributes significantly to the growth of our company. 
+Your efforts enable us to achieve our goals and ensure that we can all share in the benefits and accomplishments of our company’s success. 
+One of our sales team members will contact them soon. 
+Keep up the great work!
               </p>
             </div>
           </div>
