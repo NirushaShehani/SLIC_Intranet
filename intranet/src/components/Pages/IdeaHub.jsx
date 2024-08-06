@@ -221,12 +221,13 @@ const IdeaHub = () => {
             <div style={contactList}>Idea Hub</div>
           </div>
           <div style={down}>
-            <div style={subtitle}>Welcome to SLIC's Idea Hub</div>
+            <div style={subtitle}>Welcome to the Idea Hub !!!</div>
             <div style={paragraph}>
               <p>
-                We believe that your idea holds significant value for our company, enhancing our image and core values. 
-                Moreover, it promises to boost employee well-being, ultimately benefiting both our overall company uplift and individual growth. 
-                Your contribution is crucial to our collective success, and we encourage everyone to share innovative ideas that drive positive change.
+              We believe your ideas are invaluable for improving our services and enhancing our company's value. 
+Your suggestions drive positive change, fostering a culture of innovation and making this a great place to work. 
+At our Idea Hub, we welcome your creative insights to help us grow and better serve our customers. 
+Thank you for your dedication and inspiration; we look forward to your valuable input.
               </p>
             </div>
           </div>
