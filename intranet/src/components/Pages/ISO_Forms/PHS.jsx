@@ -143,6 +143,10 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span>Surrender Form ( Form No.1423)</span>
                     </div>
+                    <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Surrender Form ( Form No.1526)</span>
+                    </div>
                     <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span>Affidavit for Lost Policy ( Form No.1677)  </span>
@@ -183,6 +187,7 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span>Bonus Surrender Form ( Form No.1612)</span>
                     </div>
+                    
                     <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span>Loan Bond ( Form No.1595) </span>
@@ -191,11 +196,23 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span>Loan Application ( Form No.1728)  </span>
                     </div>
+                  
                     <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span>Declaration of Continued Good Health- child (Form No 9C/E) </span>
                     </div>
-                    
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Voucher (Form No.7124)  </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Adjustment Voucher ( Form No.312)  </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Direct Adjustment ( Form No.1752)   </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -296,9 +313,13 @@ const Services = () => {
         <div style={rightStyle}>
                 <div style={listContainer}>
                 <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Adjustment Voucher</span>
-                    </div>
+                  <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                  <span>Letter of authority-form no 155R</span>
+                  </div>
+                  <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                  <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                  <span>Adjustment Voucher</span>
+                  </div>
                   
                 </div>
             </div>

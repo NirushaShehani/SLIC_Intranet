@@ -128,10 +128,7 @@ const Services = () => {
         <div style={rightStyle}>
                 <div style={listContainer}>
                     
-                    <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Requirement calling Letter</span>
-                    </div>
+                    
                     <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span>Arogya Claim Form </span>
