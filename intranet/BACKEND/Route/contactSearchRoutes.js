@@ -1,4 +1,5 @@
 
+const db = require('../db');
 const express = require('express');
 const oracledb = require('oracledb');
 const router = express.Router();
@@ -16,41 +17,31 @@ oracledb.initOracleClient({ libDir: 'D:/oracle/instantclient_19_23' }); // Updat
 console.log('Oracle Client Version:', oracledb.oracleClientVersion); // 0 means Thin mode, >0 means Thick mode
 
 router.post('/search', async (req, res) => {
-  const { username, floor, department } = req.body;
+  const { username, floor, department, select } = req.body;
   console.log('Search Request Body:', req.body); // Log request body
 
   let connection;
 
   try {
-    connection = await oracledb.getConnection(dbConfig);
+    connection = await db.getConnection();
     console.log('Connected to Oracle DB');
 
     let query = `
       SELECT T1DPNM AS Dept, T1DESG AS Designation, T1NAME AS Name, T1NWEX AS Extension, T1FXNM AS FaxNumber, T1MBNM AS MobileNumber
       FROM SLI_APPS.TELCHANG
-      WHERE T1NAME LIKE '%' || :username || '%'
+      WHERE T1FLNM LIKE :varFloor
+        AND T1NAME LIKE :varName
+        AND T1DPNM LIKE :varDip
+      ORDER BY T1NMSQ, ${select || 'T1FLNM'}
     `;
 
-    let queryParams = { username };
+    // SQL query parameters
+    const queryParams = {
+      varFloor: floor && floor !== 'All' ? floor : '%',
+      varName: username ? '%' + username + '%' : '%',
+      varDip: department && department !== 'All' ? department : '%'
+    };
 
-    // Adjust the floor condition to ensure it matches expected format
-    if (floor && floor !== 'All Floors') {
-      if (floor === 'Ground Floor' || floor === 'Mezzanine Floor') {
-        query += ` AND T1FLNM = :floor`;
-        queryParams.floor = floor;
-      } else {
-        query += ` AND T1FLNM = :floor`;
-        queryParams.floor = floor.padStart(2, '0'); // Ensure floor is in '01', '02', etc. format
-      }
-    } else {
-      query += ` AND (T1FLNM IN ('Ground Floor', 'Mezzanine Floor') OR T1FLNM BETWEEN '01' AND '14')`;
-    }
-
-    // Include department filter only if it is provided
-    if (department && department !== 'All Departments') {
-      query += ` AND T1DPNM = :department`;
-      queryParams.department = department;
-    }
 
     // Log the constructed query and parameters
     console.log('Constructed Query:', query);
@@ -77,5 +68,3 @@ router.post('/search', async (req, res) => {
 });
 
 module.exports = router;
-
-
