@@ -333,7 +333,7 @@ const Services = () => {
               <div style={listContainer}>
                 <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                  <span>CMedical Report- Disability</span>
+                  <span>Medical Report- Disability</span>
                 </div>
                 <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
