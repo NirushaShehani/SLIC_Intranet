@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import ReactDOM from 'react-dom/client';
-
+import axios from 'axios';
 
 const ContactListPage = () => {
   const containerStyle = {
@@ -224,8 +224,9 @@ function PCnumberForm() {
 
 function PhoneBookForm({ inputStyle, selectStyle, buttonStyle }) {
   const [inputs, setInputs] = useState({});
-  const [Floor, setFloor] = useState("All Floors");
-  const [Department, setDepartment] = useState("All Departments");
+  const [Floor, setFloor] = useState("");
+  const [Department, setDepartment] = useState("");
+  const [results, setResults] = useState([]);
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -235,12 +236,23 @@ function PhoneBookForm({ inputStyle, selectStyle, buttonStyle }) {
     if (name === "Department") setDepartment(value);
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(inputs);
+    try {
+      const response = await axios.post('http://localhost:3000/api/contactSearch/search', {
+        username: inputs.username || "",
+        floor: Floor,
+        department: Department,
+        select: "T1NAME"
+      });
+      setResults(response.data);
+    } catch (error) {
+      console.error('Error fetching data', error);
+    }
   }
 
   return (
+    <div>
     <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
       <label>Name</label>
       <input 
@@ -253,28 +265,28 @@ function PhoneBookForm({ inputStyle, selectStyle, buttonStyle }) {
       />
       <label>Floor</label>
       <select name="Floor" value={Floor} onChange={handleChange} style={selectStyle}>
-        <option value="All Floors">All Floors</option>
-        <option value="All Floors">Basement</option>
-        <option value="All Floors">Ground Floor</option>
-        <option value="All Floors">Mezzanine Floor</option>
-        <option value="Volvo">Floor 1</option>
-        <option value="Fiat">Floor 2</option>
-        <option value="Fiat">Floor 3</option>
-        <option value="Fiat">Floor 4</option>
-        <option value="Fiat">Floor 5</option>
-        <option value="Fiat">Floor 6</option>
-        <option value="Fiat">Floor 7</option>
-        <option value="Fiat">Floor 8</option>
-        <option value="Fiat">Floor 9</option>
-        <option value="Fiat">Floor 10</option>
-        <option value="Fiat">Floor 11</option>
-        <option value="Fiat">Floor 12</option>
-        <option value="Fiat">Floor 13</option>
-        <option value="Fiat">Floor 14</option>
+        <option value="">All Floors</option>
+        <option value="Basement">Basement</option>
+        <option value="Ground">Ground Floor</option>
+        <option value="Mezzanine">Mezzanine Floor</option>
+        <option value="01">Floor 1</option>
+        <option value="02">Floor 2</option>
+        <option value="03">Floor 3</option>
+        <option value="04">Floor 4</option>
+        <option value="05">Floor 5</option>
+        <option value="06">Floor 6</option>
+        <option value="07">Floor 7</option>
+        <option value="08">Floor 8</option>
+        <option value="09">Floor 9</option>
+        <option value="10">Floor 10</option>
+        <option value="11">Floor 11</option>
+        <option value="12">Floor 12</option>
+        <option value="13">Floor 13</option>
+        <option value="14">Floor 14</option>
       </select>
       <label>Department</label>
       <select name="Department" value={Department} onChange={handleChange} style={selectStyle}>
-        <option value="All Departments">All Departments</option>
+        <option value="">All Departments</option>
         <option value="288-Trans.Workshop">288-Trans.Workshop</option>
         <option value="Abans">Abans</option>
         <option value="Actuarial & Risk Mgt">Actuarial & Risk Mgt</option>
@@ -394,6 +406,21 @@ function PhoneBookForm({ inputStyle, selectStyle, buttonStyle }) {
       </select>
         <input type="submit" style={buttonStyle} value="Submit"/>
     </form>
+      <div>
+        {results.length > 0 && (
+            <div>
+              <h2>Search Results:</h2>
+              <ul>
+                {results.map((result, index) => (
+                  <li key={index}>
+                    {result.Name} - {result.T1DPNM} - {result.Designation} - {result.Extension} - {result.FaxNumber} - {result.MobileNumber}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+      </div>
+    </div>
   )
 }
 

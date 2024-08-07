@@ -5,7 +5,6 @@ const cors = require('cors');
 const db = require('./db');
 const salesLeadRoutes = require('./Route/salesLeads');
 const ideaHubRoutes = require('./Route/ideaHub');
-const contactRoutes = require('./Route/contactRoutes');
 const contactSearchRoutes = require('./Route/contactSearchRoutes'); // Import the new routes
 
 const app = express();
@@ -19,7 +18,6 @@ app.use(cors()); // Use the cors middleware
 // Use the routes
 app.use('/api/salesLead', salesLeadRoutes); // Use the salesLead routes
 app.use('/api/ideaHub', ideaHubRoutes);
-app.use('/api/contact', contactRoutes);
 app.use('/api/contactSearch', contactSearchRoutes); // Use the new contactSearch routes
 
 app.listen(port, async () => {
