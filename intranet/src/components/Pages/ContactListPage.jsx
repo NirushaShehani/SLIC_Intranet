@@ -245,7 +245,18 @@ function PhoneBookForm({ inputStyle, selectStyle, buttonStyle }) {
         department: Department,
         select: "T1NAME"
       });
-      setResults(response.data);
+      // Convert the array of arrays to an array of objects
+    const formattedResults = response.data.map(result => ({
+      Dept: result[0],
+      Designation: result[1],
+      Name: result[2],
+      Extension: result[3],
+      FaxNumber: result[4],
+      MobileNumber: result[5]
+    }));
+    setResults(formattedResults);
+      // console.log(response.data);
+      // setResults(response.data);
     } catch (error) {
       console.error('Error fetching data', error);
     }
@@ -406,20 +417,37 @@ function PhoneBookForm({ inputStyle, selectStyle, buttonStyle }) {
       </select>
         <input type="submit" style={buttonStyle} value="Submit"/>
     </form>
-      <div>
-        {results.length > 0 && (
-            <div>
-              <h2>Search Results:</h2>
-              <ul>
-                {results.map((result, index) => (
-                  <li key={index}>
-                    {result.Name} - {result.T1DPNM} - {result.Designation} - {result.Extension} - {result.FaxNumber} - {result.MobileNumber}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-      </div>
+    <div>
+      {results.length > 0 && (
+        <div>
+          <h2>Search Results:</h2>
+          <table style={{ width: '100%', borderCollapse: 'collapse', margin: '20px 0', fontSize: '18px', textAlign: 'left' }}>
+            <thead>
+              <tr>
+                <th style={{ padding: '12px 15px', backgroundColor: '#2F5BDA', color: 'white', border: '1px solid #ddd' }}>Dept</th>
+                <th style={{ padding: '12px 15px', backgroundColor: '#2F5BDA', color: 'white', border: '1px solid #ddd' }}>Designation</th>
+                <th style={{ padding: '12px 15px', backgroundColor: '#2F5BDA', color: 'white', border: '1px solid #ddd' }}>Name</th>
+                <th style={{ padding: '12px 15px', backgroundColor: '#2F5BDA', color: 'white', border: '1px solid #ddd' }}>Extension</th>
+                <th style={{ padding: '12px 15px', backgroundColor: '#2F5BDA', color: 'white', border: '1px solid #ddd' }}>Mobile No</th>
+                <th style={{ padding: '12px 15px', backgroundColor: '#2F5BDA', color: 'white', border: '1px solid #ddd' }}>Fax No</th>
+              </tr>
+            </thead>
+            <tbody>
+              {results.map((result, index) => (
+                <tr key={index} style={{ border: '1px solid #ddd', backgroundColor: index % 2 === 0 ? '#f2f2f2' : 'white' }}>
+                  <td style={{ padding: '12px 15px', border: '1px solid #ddd' }}>{result.Dept}</td>
+                  <td style={{ padding: '12px 15px', border: '1px solid #ddd' }}>{result.Designation}</td>
+                  <td style={{ padding: '12px 15px', border: '1px solid #ddd' }}>{result.Name}</td>
+                  <td style={{ padding: '12px 15px', border: '1px solid #ddd' }}>{result.Extension}</td>
+                  <td style={{ padding: '12px 15px', border: '1px solid #ddd' }}>{result.MobileNumber}</td>
+                  <td style={{ padding: '12px 15px', border: '1px solid #ddd' }}>{result.FaxNumber}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
     </div>
   )
 }

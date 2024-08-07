@@ -35,13 +35,22 @@ router.post('/search', async (req, res) => {
       ORDER BY T1NMSQ, ${select || 'T1FLNM'}
     `;
 
+    // Adjust the floor condition to ensure it matches expected format
+    let varFloor;
+    if (!floor || floor === 'All Floors') {
+      varFloor = '%';
+    } else if (floor === 'BASEMENT' || floor === 'GROUND' || floor === 'Mezz' || floor === 'MEZZ') {
+      varFloor = floor;
+    } else {
+      varFloor = floor.padStart(2, '0'); // Ensure floor is in '01', '02', etc. format
+    }
+
     // SQL query parameters
     const queryParams = {
-      varFloor: floor && floor !== 'All' ? floor : '%',
-      varName: username ? '%' + username + '%' : '%',
-      varDip: department && department !== 'All' ? department : '%'
+      varFloor: `%${varFloor}%`,
+      varName: username ? `%${username}%` : '%',
+      varDip: department && department !== 'All Departments' ? department : '%'
     };
-
 
     // Log the constructed query and parameters
     console.log('Constructed Query:', query);
