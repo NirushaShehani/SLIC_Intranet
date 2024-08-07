@@ -164,39 +164,52 @@ const Life = () => {
             <span className="hrDot"></span><span className="hrLine"></span>
           </div>
           <div style={listContainer}>
-          <div style={listItemStyle} >
-          <Link to="/ISO-Forms" style={{ cursor: 'pointer' }}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>ISO Forms</span>
-            </Link>
+          <div style={listItemStyle}>
+              <Link to="/LIFE-Forms" style={{ cursor: 'pointer' }}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                <span>Life Forms</span>
+              </Link>
             </div>
-            <div style={listItemStyle} onClick={() => openInNewWindow('/ict')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>ICT</span>
+            <div style={listItemStyle} >
+              <Link to="/ISO-Forms" style={{ cursor: 'pointer' }}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                <span>ISO Forms</span>
+              </Link>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/procurement')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Procurement</span>
+            <div style={listItemStyle}>
+              <Link to="/ICT-Forms" style={{ cursor: 'pointer' }}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                <span>ICT Forms</span>
+              </Link>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/sales')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Sales</span>
+            <div style={listItemStyle}>
+              <Link to="/Sales-Forms" style={{ cursor: 'pointer' }}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                <span>Sales Forms</span>
+              </Link>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/membership')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Membership</span>
+            <div style={listItemStyle}>
+              <Link to="/Common-Forms" style={{ cursor: 'pointer' }}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                <span>Common Forms</span>
+              </Link>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/common')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Common</span>
+            <div style={listItemStyle}>
+              <Link to="/Membership-Forms" style={{ cursor: 'pointer' }}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                <span>Membership Forms</span>
+              </Link>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/securityDepartment')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Security Department</span>
+            <div style={listItemStyle}>
+              <Link to="/Security-Department-Forms" style={{ cursor: 'pointer' }}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                <span>Security Department Forms</span>
+              </Link>
             </div>
+           
           </div>
 
-          
+
 
         </div>
       </div>

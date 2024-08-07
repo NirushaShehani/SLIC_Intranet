@@ -169,7 +169,6 @@ const ICT = () => {
             </div>
           </div>
 
-          
 
         </div>
       </div>
