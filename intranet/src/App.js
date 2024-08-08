@@ -27,7 +27,7 @@ import Common_Forms from './components/Pages/Forms_pages/Common';
 import Membership_Forms from './components/Pages/Forms_pages/Membership';
 import Sales_Forms from './components/Pages/Forms_pages/Sales';
 import Security_department_Forms from './components/Pages/Forms_pages/Security_department';
-
+import Life from './components/Pages/Services_Pages/Life';
 
 
 const App =() => {
@@ -59,6 +59,7 @@ const App =() => {
         <Route path="/Membership-Forms" element={<Membership_Forms/>}/>
         <Route path="/Sales-Forms" element={<Sales_Forms/>}/>
         <Route path="/Security-Department-Forms" element={<Security_department_Forms/>}/>
+        <Route path="/Services-Life" element={<Life/>}/>
       </Routes>
     </Router>
   );

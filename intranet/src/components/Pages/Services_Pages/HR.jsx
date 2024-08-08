@@ -59,45 +59,37 @@ const HR = () => {
         <div className="home-container">
           <div className="hrContainer">
             <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">Policies</span>
+            <span className="hrText">Services</span>
             <span className="hrDot"></span><span className="hrLine"></span>
           </div>
           <div style={listContainer}>
-          <div style={listItemStyle} onClick={() => openInNewWindow('Disciplinary Policy.pdf')}>
+            <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Approved Professional Courses</span>
-            </div>
-            <div style={listItemStyle} onClick={() => openInNewWindow('Disciplinary Policy.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Code of Business Conduct & Ethics</span>
-            </div>
-            <div style={listItemStyle} onClick={() => openInNewWindow('Disciplinary Policy.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Disciplinary Policy</span>
+              <span>B-Life</span>
             </div>
             <div style={listItemStyle} onClick={() => navigate(' http://insurance-app/secworks/signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Corporate E-mail Policy</span>
+              <span>B-Insurance</span>
             </div>
             <div style={listItemStyle} onClick={() => navigate('http://blife-comm/UI/Home.aspx')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Dress Code Policy - English</span>
+              <span>B-Commission Life</span>
             </div>
             <div style={listItemStyle} onClick={() => navigate('http://callc-app/secworks/signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Dress Code Policy - Sinhala</span>
+              <span>B-Call center</span>
             </div>
             <div style={listItemStyle} onClick={() => navigate('http://blife-edomas.slic1.com/Secworks/Signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Vehicle Loan Policy</span>
+              <span>E-Domas Life </span>
             </div>
             <div style={listItemStyle} onClick={() => navigate('http://blife-mis-agent/Secworks/Signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Whistle Blowing Policy - English</span>
+              <span>B-MIS </span>
             </div>
             <div style={listItemStyle} onClick={() => navigate('https://cognoslife.srilankainsurance.com:9300/bi/')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Whistle Blowing Policy - Sinhala</span>
+              <span>Cognos Analytics</span>
             </div>
             <div style={listItemStyle} onClick={() => navigate(' http://blife-app.slic1.com/cashbook_web/Login.aspx')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
@@ -115,25 +107,25 @@ const HR = () => {
 
           <div className="hrContainer">
             <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">Forms</span>
+            <span className="hrText">HR Forms</span>
             <span className="hrDot"></span><span className="hrLine"></span>
           </div>
           <div style={listContainer}>
             <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Life</span>
+              <span>18 Months Loan Covering Letter</span>
             </div>
             <div style={listItemStyle} onClick={() => navigate('/b-mis')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-MIS</span>
+              <span>18 Months Loan/One month Loan Application</span>
             </div>
             <div style={listItemStyle} onClick={() => navigate('/cashbook')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Cashbook</span>
+              <span>BOC Loan Application Form</span>
             </div>
             <div style={listItemStyle} onClick={() => navigate('/b-commission')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Commission</span>
+              <span>Booking of SLIC Bus</span>
             </div>
             <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
@@ -141,45 +133,45 @@ const HR = () => {
             </div>
             <div style={listItemStyle} onClick={() => navigate('/hris')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>HRIS</span>
-            </div>
-          </div>
-
-          <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">Circulars</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-          </div>
-          <div style={listContainer}>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Life</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-mis')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-MIS</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/cashbook')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Cashbook</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-commission')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Commission</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Advisor</span>
+              <span>Service Extension - Employee Application (Sinhala)	</span>
             </div>
             <div style={listItemStyle} onClick={() => navigate('/hris')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>HRIS</span>
+              <span>Service Extension - Recommendation of HOD (Branch)	</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Service Extension - Recommendation of HOD (H/O)</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Travel Overseas - Official</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Travel Overseas - Private</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Vehicle Loan - Application</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Vehicle Loan - Guarantor''s Statement</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Visting Card Application</span>
+            </div>
+            <div style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Weddings and Funerals - Bus booking & Leave form</span>
             </div>
           </div>
 
           <div className="hrContainer">
             <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">Recruitment</span>
+            <span className="hrText">ICT Forms</span>
             <span className="hrDot"></span><span className="hrLine"></span>
           </div>
           <div style={listContainer}>

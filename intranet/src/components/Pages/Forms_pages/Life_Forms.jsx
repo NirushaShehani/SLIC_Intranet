@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import DrawerMenu from '../../Sub_Components/DrawerMenu';
-import Procurement from '../Services_Pages/Procurement';
-import ICT from '../Services_Pages/ICT';
-import Life from '../Services_Pages/Life';
-import HR from '../Services_Pages/HR';
-import Finance from '../Services_Pages/Finance';
-import Sales from '../Services_Pages/Sales';
-import Transport from '../Services_Pages/Transport';
-import Life_Contact from '../Services_Pages/Life_Contact_Center';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import '../../../Styles/services.css';
@@ -20,7 +13,7 @@ const Life_Forms = () => {
   const openInNewWindow = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
-  
+
   // Styles
   const containerStyle = {
     width: '100%',
@@ -154,30 +147,9 @@ const Life_Forms = () => {
       link.download = url.split('/').pop();
       link.click();
     }
-  }; 
-
-  const renderContent = () => {
-    switch (selectedDept) {
-      case 'Procurement':
-        return <Procurement />;
-      case 'ICT':
-        return <ICT />;
-      case 'Life':
-        return <Life />;
-      case 'HR':
-        return <HR />;
-      case 'Finance':
-        return <Finance />;
-      case 'Sales':
-        return <Sales />;
-      case 'Transport':
-        return <Transport />;
-      case 'Life_Contact':
-        return <Life_Contact />;
-      default:
-        return ;
-    }
   };
+
+  
 
   return (
     <div style={containerStyle}>
@@ -197,32 +169,31 @@ const Life_Forms = () => {
             {/* Department type section */}
             <hr className="styledHr" />
             <div style={Depttitle}>
-              
+
             </div>
             {/* Button section */}
-            <button style={buttonStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>Complaint Management Center</button>
-            <button style={buttonStyle} onClick={() => setSelectedDept('Procurement')}>Procurement</button>
-            <button style={buttonStyle} onClick={() => setSelectedDept('ICT')}>ICT</button>
-            <button style={buttonStyle} onClick={() => setSelectedDept('Life')}>Life</button>
-            <button style={buttonStyle} onClick={() => setSelectedDept('HR')}>HR</button>
-            <button style={buttonStyle} onClick={() => setSelectedDept('Finance')}>Finance</button>
-            <button style={buttonStyle} onClick={() => setSelectedDept('Sales')}>Sales</button>
-            <button style={buttonStyle} onClick={() => setSelectedDept('Transport')}>Transport</button>
-            <button style={buttonStyle} onClick={() => setSelectedDept('Life_Contact')}>Life Contact Center</button>
+            <Link to="/services-page" style={{ cursor: 'pointer' }}>
+            {/* <Link to="/services-Life" style={{ cursor: 'pointer' }}> */}
+            <button style={buttonStyle}>Back To Services Page</button>
+            </Link>
           </div>
         </div>
       </div>
       <div style={verticalLineStyle}></div>
       <div style={rightStyle}>
-      <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-                  <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                  <span>Jana Rekuma Death Claim Form</span>
-                </div>
-                <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-                  <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                  <span>Jana Rekuma Hospitalization Claim Form</span>
-                </div>
+        <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+          <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+          <span>Jana Rekuma Death Claim Form</span>
+        </div>
+        <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+          <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+          <span>Jana Rekuma Hospitalization Claim Form</span>
+        </div>
+        <div>
+        
+        </div>
       </div>
+
     </div>
   );
 };
