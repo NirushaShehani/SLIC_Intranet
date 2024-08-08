@@ -43,24 +43,24 @@ const KnowledgeBase = () => {
     paddingRight: theme.spacing(1),
     margin: "8px 11px",
     height: "40px",
-    width: "290px",
+    width: "300px",
   }));
 
   //Custom chip design for Services
   const CustomChip2 = styled(Chip)(({ theme }) => ({
     display: "flex",
     justifyContent: "space-between",
-    backgroundColor: "",
+    backgroundColor: "#795548",
     color: "white",
     borderRadius: "5px",
     paddingRight: theme.spacing(1),
     margin: "30px 11px",
     height: "80px",
-    width: "290px",
-    backgroundImage: `url(${imageUrl1})`, 
-    backgroundSize: "cover", 
-    backgroundPosition: "center", 
-    backgroundRepeat: "no-repeat" 
+    width: "300px",
+    // backgroundImage: `url(${imageUrl1})`, 
+    // backgroundSize: "cover", 
+    // backgroundPosition: "center", 
+    // backgroundRepeat: "no-repeat" 
   }));
 
    //Custom chip design for Idea Hub
@@ -73,7 +73,24 @@ const KnowledgeBase = () => {
     paddingRight: theme.spacing(1),
     margin: "8px 11px",
     height: "80px",
-    width: "290px",
+    width: "300px",
+    backgroundImage: `url(${imageUrl2})`, 
+    backgroundSize: "cover", 
+    backgroundPosition: "center", 
+    backgroundRepeat: "no-repeat" 
+  }));
+
+  //Custom chip design for Book Hub
+  const CustomChip4 = styled(Chip)(({ theme }) => ({
+    display: "flex",
+    justifyContent: "space-between",
+    backgroundColor: "",
+    color: "white",
+    borderRadius: "5px",
+    paddingRight: theme.spacing(1),
+    margin: "8px 11px",
+    height: "70px",
+    width: "300px",
     backgroundImage: `url(${imageUrl2})`, 
     backgroundSize: "cover", 
     backgroundPosition: "center", 
@@ -83,17 +100,25 @@ const KnowledgeBase = () => {
   return (
     <div>
       <div className="Navbar" style={styles.navbar}>
-      <DrawerMenu/>
-      <div className="logo" style={styles.logo}>
-      <img src={logo} alt="Logo" style={{ width: '170px', height: '20%', marginLeft: '10px'}} />
-      </div>
+        <DrawerMenu/>
+        <div className="logo" style={styles.logo}>
+        <img src={logo} alt="Logo" style={{ width: '170px', height: '20%', marginLeft: '10px'}} />
+        </div>
       </div>
       
       <div style={styles.chipContainer}>
+        {/*Services Chip*/}
+        <Link to="/services-page" style={{ cursor: 'pointer' }}>
+        <CustomChip style={styles.label}
+          label="Policy Services & Forms"
+          deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
+          onDelete={() => {}}
+        />
+        </Link>
         {/*Knowledge Base Chip*/}
         <Link to="/Knowledge-Base" style={{ cursor: 'pointer' }}>
         <CustomChip style={styles.label}
-          label="Our Knowledge base"
+          label="Our Knowledge Base"
           deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
           onDelete={() => {}}
         />
@@ -101,7 +126,7 @@ const KnowledgeBase = () => {
         {/*Sales Lead Chip*/}
         <Link to="/sales-Lead" style={{ cursor: 'pointer' }}>
         <CustomChip style={styles.label}
-          label="Internal Sales Lead"
+          label="Introduce a New Customer"
           deleteIcon={<BookmarkIcon style={ { color: "white" }} />}
           onDelete={() => {}}
         />
@@ -114,12 +139,6 @@ const KnowledgeBase = () => {
           onDelete={() => {}}
         />
         </Link>
-        {/*Services Chip*/}
-        <Link to="/services-page" style={{ cursor: 'pointer' }}>
-        <CustomChip2 style={styles.label}
-          label="Services"
-        />
-        </Link>
         {/*Idea Hub Chip*/}
         <Link to="/Idea-Hub" style={{ cursor: 'pointer' }}>
         <CustomChip3 style={styles.label}
@@ -128,27 +147,36 @@ const KnowledgeBase = () => {
         </Link>
       </div>
       <div >
-      <style>
-      {`
-        .slick-dots li button:before {
-          color: grey; 
-          font-size: 8px;
-        }
+        <style>
+        {`
+          .slick-dots li button:before {
+            color: grey; 
+            font-size: 8px;
+          }
 
-        .slick-dots li.slick-active button:before {
-          color: white; 
-          font-size: 8px;
-        }
-      `}
-    </style>
-      <Slider {...settings} style={styles.slideshow}>
-        {images.map((image, index) => (
-          <div key={index}>
-            <img src={image} alt={`Slide ${index + 1}`} style={{ width: '290px', height: '400px', borderRadius: '15px' }} />
-          </div>
-        ))}
-      </Slider>
-    </div>
+          .slick-dots li.slick-active button:before {
+            color: white; 
+            font-size: 8px;
+          }
+        `}
+        </style>
+        <Slider {...settings} style={styles.slideshow}>
+          {images.map((image, index) => (
+            <div key={index}>
+              <img src={image} alt={`Slide ${index + 1}`} style={{ width: '290px', height: '400px', borderRadius: '15px' }} />
+            </div>
+          ))}
+        </Slider>
+      </div>
+      <br/>
+      <div style={styles.chipContainer}>
+        {/*Book Hub Chip*/}
+        <Link to="/Book-Hub" style={{ cursor: 'pointer' }}>
+        <CustomChip4 style={styles.label}
+          label="Book Hub"
+        />
+        </Link>
+      </div>
     </div>
   );
 };

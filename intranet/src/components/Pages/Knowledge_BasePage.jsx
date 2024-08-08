@@ -1,195 +1,168 @@
-import React from 'react'
+import React, { useState } from 'react';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
+import Life from '../Pages/Knowledge_base_pages/Life';
+import HR from '../Pages/Knowledge_base_pages/HR';
+
 import '../../Styles/services.css';
-import { useNavigate } from 'react-router-dom';
-//hr tag styles
-import '../../Styles/knowledgebase.css';
+// hr tag styles
+import '../../Styles/serviceshrtag.css';
 
 const Knowledge_BasePage = () => {
+  const [selectedDept, setSelectedDept] = useState(''); // State to track the selected department
 
-  const openInNewWindow = (url) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-};
+  // Styles
+  const containerStyle = {
+    width: '100%',
+    height: '100vh',
+    display: 'flex',
+    overflow: 'hidden'
+  };
 
-  const navigate = useNavigate();
+  const leftStyle = {
+    flex: '0 0 300px',
+    backgroundColor: '#f0f0f0',
+    padding: '20px',
+    boxSizing: 'border-box',
+    position: 'relative',
+    overflowY: 'auto', // Enable scrolling if content is too long
+  };
 
-    const containerStyle = {
-        width: '100%',
-        height: '100vh'
-      };
-    
-      const leftStyle = {
-        flex: 1,
-        backgroundColor: '#f0f0f0',
-        padding: '20px',
-        boxSizing: 'border-box'
-      };
-    
-      const verticalLineStyle = {
-        width: '3px',
-        backgroundColor: '#646464', // You can change the color of the line
-        margin: '-1px' // Adjust spacing as needed
-      };
-    
-      const rightStyle = {
-        flex: 4,
-        backgroundColor: '#F4F4F4',
-        padding: '20px',
-        boxSizing: 'border-box',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      };
-    
-      const container = {
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100vh',
-      };
-    
-      const up = {
-        flex: '0 0 15%',
-        backgroundColor: '#31769F',
-        padding: '10px',
-        marginLeft: '-20px',
-        marginRight: '-20px',
-        marginTop: '-20px',
-        width: 'auto',
-        height: 'auto',
-      };
-    
-      const up2 = {
-        flex: '0 0 15%',
-        backgroundColor: '#F4F4F4',
-        padding: '10px',
-        marginLeft: '-20px',
-        marginRight: '-20px',
-        marginTop: '-20px',
-        width: 'auto',
-        height: 'auto',
-      };
-    
-      const Down = {
-        flex: '1',
-        backgroundColor: '#FFFFFF',
-        padding: '1p0x',
-        marginLeft: '-20px',
-        marginRight: '-20px',
-      };
-    
-      const ContactList = {
-        fontFamily: '"Gloock", serif',
-        fontWeight: 500,
-        fontSize: '48px',
-        fontStyle: 'normal',
-        color: 'white',
-        marginLeft: '30px',
-        marginTop: '10px',
-      };
-    
-      const subtitle = {
-        fontFamily: '"Onest", sans-serif',
-        fontSize: '17px',
-        fontStyle: 'normal',
-        color: '#161616',
-        marginLeft: '18px',
-        marginTop: '20px',
-      };
-    
-      const paragraph = {
-        fontFamily: '"Onest", sans-serif',
-        fontSize: '15px',
-        fontStyle: 'normal',
-        color: '#585858',
-        marginLeft: '18px',
-        marginTop: '20px',
-      };
-    
-      const formContainerStyle = {
-        padding: '20px',
-        backgroundColor: '#F4F4F4',
-        width: '100%'
-      };
-      
-      const contentStyle = {
-        display: 'flex',
-        flex: 1,
-      };
+  const verticalLineStyle = {
+    width: '3px',
+    backgroundColor: '#646464',
+  };
+
+  const rightStyle = {
+    flex: 1,
+    backgroundColor: '#F4F4F4',
+    padding: '20px',
+    boxSizing: 'border-box',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    overflowY: 'auto' // This will enable vertical scrolling
+  };
+
+  const container = {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100vh',
+  };
+
+  const up = {
+    flex: '0 0 15%',
+    backgroundColor: '#31769F',
+    padding: '10px',
+    marginLeft: '-20px',
+    marginRight: '-20px',
+    marginTop: '-20px',
+    width: 'auto',
+    height: 'auto',
+  };
+
+  const Down = {
+    flex: '1',
+    backgroundColor: '#FFFFFF',
+    padding: '10px',
+    marginLeft: '-20px',
+    marginRight: '-20px',
+  };
+
+  const ContactList = {
+    fontFamily: '"Gloock", serif',
+    fontWeight: 500,
+    fontSize: '48px',
+    fontStyle: 'normal',
+    color: 'white',
+    marginLeft: '30px',
+    marginTop: '10px',
+  };
+
+  const subtitle = {
+    fontFamily: '"Onest", sans-serif',
+    fontSize: '17px',
+    fontStyle: 'normal',
+    color: '#161616',
+    marginLeft: '18px',
+    marginTop: '20px',
+  };
+
+  const Depttitle = {
+    fontFamily: '"Onest", sans-serif',
+    fontSize: '17px',
+    fontStyle: 'normal',
+    color: '#161616',
+    margin: '20px 0',
+    textAlign: 'center', // Center the title
+    fontWeight: 'bold', // Make the title bold
+  };
+
+  const paragraph = {
+    fontFamily: '"Onest", sans-serif',
+    fontSize: '15px',
+    fontStyle: 'normal',
+    color: '#585858',
+    marginLeft: '18px',
+    marginTop: '20px',
+  };
+
+  const buttonStyle = {
+    display: 'block',
+    width: '100%',
+    padding: '10px',
+    margin: '10px 0',
+    backgroundColor: '#31769F',
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    textAlign: 'center',
+    fontSize: '16px',
+  };
+
+  const renderContent = () => {
+    switch (selectedDept) {
+      case 'Life':
+        return <Life />;
+      case 'HR':
+        return <HR />;
+      default:
+        return ;
+    }
+  };
+
   return (
-    <div style={{ display: 'flex', ...containerStyle }}>
+    <div style={containerStyle}>
       <div style={leftStyle}>
-        <div style={{ display: 'flex', ...container }}>
+        <div style={container}>
           {/* Upper Left Section */}
           <div style={up}>
-            <DrawerMenu/>
-            <div style={ContactList}>
-              Knowledge Base
-            </div>
+            <DrawerMenu />
+            <div style={ContactList}>Knowledge Base</div>
           </div>
           {/* Lower Left Section */}
           <div style={Down}>
-              <div style={subtitle}>
-              THIS IS YOUR KNOWLEDGE BASE PAGE
-              </div>
-              <div style={paragraph}>
-              In here You can access to the manuals, request forms provided by SLIC clicking the provided buttons. 
-              </div>
+            <div style={subtitle}>THIS IS YOUR KNOWLEDGE BASE PAGE</div>
+            <div style={paragraph}>
+            In here You can access to the manuals, request forms provided by SLIC clicking the provided buttons.
+            </div>
+            {/* Department type section */}
+            <hr className="styledHr" />
+            <div style={Depttitle}>
+              Department Types
+            </div>
+            {/* Button section */}
+            <button style={buttonStyle} onClick={() => setSelectedDept('Life')}>Life</button>
+            <button style={buttonStyle} onClick={() => setSelectedDept('HR')}>HR</button>
           </div>
         </div>
       </div>
       <div style={verticalLineStyle}></div>
       <div style={rightStyle}>
-        {/* Right Section */}
-        <div className="home-container">
-        {/* Life-U/W Forms section */}
-        <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-              <span className="hrText">Life-U/W Forms</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-            </div>
-          <div className="grid-container">
-            <button className="grid-item" onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>B-Life</button>
-            <button className="grid-item" onClick={() => navigate('/b-mis')}>B-MIS</button>
-            <button className="grid-item" onClick={() => navigate('/cashbook')}>Cashbook</button>
-            <button className="grid-item" onClick={() => navigate('/b-commission')}>B-Commission</button>
-            <button className="grid-item" onClick={() => navigate('/b-advisor')}>B-Advisor</button>
-            <button className="grid-item highlighted" onClick={() => navigate('/hris')}>HRIS</button>
-          </div>
-          {/* Life-U/W Forms section */}
-          {/* Life-Circulars Form section */}
-          <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-              <span className="hrText">Life-Circulars Forms</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-            </div>
-          <div className="grid-container">
-            <button className="grid-item" onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>B-Life</button>
-            <button className="grid-item" onClick={() => navigate('/b-mis')}>B-MIS</button>
-            <button className="grid-item" onClick={() => navigate('/cashbook')}>Cashbook</button>
-            <button className="grid-item" onClick={() => navigate('/b-commission')}>B-Commission</button>
-            <button className="grid-item" onClick={() => navigate('/b-advisor')}>B-Advisor</button>
-            <button className="grid-item highlighted" onClick={() => navigate('/hris')}>HRIS</button>
-          </div>
-          {/* Life-Circulars Form section */}
-          {/* ICT Forms section */}
-          <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-              <span className="hrText">ICT Forms</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-            </div>
-          <div className="grid-container">
-            <button className="grid-item" onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>B-Life</button>
-            <button className="grid-item" onClick={() => navigate('/b-mis')}>B-MIS</button>
-            <button className="grid-item" onClick={() => navigate('/cashbook')}>Cashbook</button>
-            <button className="grid-item" onClick={() => navigate('/b-commission')}>B-Commission</button>
-            <button className="grid-item" onClick={() => navigate('/b-advisor')}>B-Advisor</button>
-            <button className="grid-item highlighted" onClick={() => navigate('/hris')}>HRIS</button>
-          </div>
-          {/* ICT Forms section */}
-        </div>
+        {renderContent()}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Knowledge_BasePage
+export default Knowledge_BasePage;
