@@ -1,0 +1,26 @@
+.hover-container {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .hover-icon, .hover-text {
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .hover-container:hover .hover-icon, .hover-container:hover .hover-text {
+    background-color: #333; /* Change this to your desired background color */
+    color: #fff; /* Change this to your desired text color */
+  }
+  
+  .hover-icon {
+    padding: 4px;
+    border-radius: 4px; /* Optional: to make the background rounded */
+  }
+  
+  .hover-text {
+    font-size: 20px; /* Increase the text size */
+    padding: 4px;
+    border-radius: 4px; /* Optional: to make the background rounded */
+  }
+  
