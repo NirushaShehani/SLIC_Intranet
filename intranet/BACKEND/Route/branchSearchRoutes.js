@@ -31,9 +31,9 @@ router.post('/searchBranch', async (req, res) => {
              SMEMAIL AS SMmail, BRAOEM AS AdminMail, RMMGRL AS RMLife, RMEMIL AS RMLmail, RMMGRG AS RMGeneral, RMEMIG AS RMGmail,
              BMMGRL AS ManagerLife, BMEMIL AS ManagerLifeMail, BMMGRG AS ManagerGeneral, BMEMIG AS ManagerGeneralMail,
              BRTEL2 AS FAX, BRINT AS Intercom, BRTEL1 AS Telephone, SMMOBIL AS SMmobile, BAO_MOB_PHONE_NOS AS BAOmobie, RMMLMO AS RMLmobile,
-             RMMGMO AS RMGmobile, BMMLMO AS MLmobile, BMMGMO AS MGmobile
+             RMMGMO AS RMGmobile, BMMLMO AS MLmobile, BMMGMO AS MGmobile, BRMGR AS AdminOfficer
 
-      FROM SLI_APPS.BRANCH_DETAILS
+      FROM TELEDIR.BRANFILE
       WHERE BRNAME LIKE :varBranch
     `;
 
