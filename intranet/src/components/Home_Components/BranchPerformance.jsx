@@ -112,7 +112,7 @@ const BranchPerformance = () => {
               </tbody>
             </table>
             <div className="link-contain">
-              <Link to="/incentive-critaria-page" className="read-more">Read more...</Link>
+              <Link to="/Incentive-Criteria-page" className="read-more">Read more...</Link>
             </div>
           </div>
         </div>

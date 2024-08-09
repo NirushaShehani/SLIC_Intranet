@@ -20,6 +20,7 @@ import CostCenter from './components/Pages/Cost_Center';
 import IdeaHub from './components/Pages/IdeaHub';
 import Knowledge_BasePage from './components/Pages/Knowledge_BasePage';
 import BookHub from './components/Pages/BookHub';
+import Incentive_Criteria from './components/Pages/Incentive_Criteria';
 
 
 const App =() => {
@@ -44,6 +45,7 @@ const App =() => {
         <Route path="/Idea-Hub" element={<IdeaHub/>}/>
         <Route path="/Knowledge-Base" element={<Knowledge_BasePage/>}/>
         <Route path="/Book-Hub" element={<BookHub/>}/>
+        <Route path="/Incentive-Criteria-page" element={<Incentive_Criteria/>}/>
       </Routes>
     </Router>
   );
