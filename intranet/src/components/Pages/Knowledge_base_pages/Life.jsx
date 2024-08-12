@@ -71,13 +71,8 @@ const Life = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>AML Module</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>About SLIC</span>
-            </div>
-            
           </div>
-
+           {/*MANUALS*/}
           <div className="hrContainer">
             <span className="hrLine"></span><span className="hrDot"></span>
             <span className="hrText">MANUALS</span>
@@ -104,12 +99,9 @@ const Life = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>HRIS User Manual</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/b-net-new/Hris-Document/SLIC_ClaimsOne_User_Manual_V1.0.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>ClaimsOne User Manual</span>
-            </div>
-           
           </div>
+          {/*MANUALS*/}
+
           {/* CONTACT CENTER PROCEDURES */}
           <div className="hrContainer">
             <span className="hrLine"></span><span className="hrDot"></span>
@@ -400,7 +392,7 @@ const Life = () => {
            
 
           </div>
-          {/* CONTACT CENTER PROCEDURES */}
+          {/* PRODUCTS AND SERVICES */}
 
           
 

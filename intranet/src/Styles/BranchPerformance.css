@@ -6,7 +6,6 @@
   max-width: 300px;
   margin-top: 18px;  
   font-family: Arial, sans-serif;
-  
 }
 
 .branch-performance h2 {
@@ -14,7 +13,7 @@
   font-size: 18px;
   margin-bottom: 20px;
   margin-top: 1px;
-  color:#fff;
+  color: #fff;
 }
 
 .branch-item {
@@ -68,6 +67,24 @@
   margin-right: 100px;
 }
 
+.incentive-criteria {
+  margin-top: 22px;
+  padding-top: 1px;
+  background-color: #31769F;
+  border-radius: 8px;
+  max-width: 300px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.incentive-criteria h2 {
+  font-size: 14px;
+  margin-bottom: 5px; 
+  margin-top: 5px;
+  margin-right: 100px;
+}
+
 .image-container {
   width: 100%;
   max-width: 280px;
@@ -75,7 +92,6 @@
   padding: -2px;
   border-radius: 8px;
   margin-left: 0;
-  
 }
 
 .images-container img {
@@ -85,3 +101,62 @@
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+
+/* New CSS for horizontal table */
+.incentive-criteria .table-container {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.incentive-criteria table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  background-color: #fff;
+  color: #000;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.incentive-criteria table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.incentive-criteria table tr:nth-child(1) {
+  background-color: #31769F;
+  color: #fff;
+}
+
+.incentive-criteria table tr:nth-child(2) {
+  background-color: #fff;
+  color: #000;
+}
+.incentive-criteria .link-contain {
+  overflow: hidden;
+}
+
+.incentive-criteria .link-contain .read-more {
+  position: relative;
+  display: inline-block;
+  right: -100%;
+  white-space: nowrap;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 12px;
+  transition: right 1s ease-in-out;
+  border-radius: 4px;
+}
+
+.incentive-criteria .table-container:hover .link-contain .read-more {
+  right: 0;
+}
+
+.incentive-container-content td{
+  color: #000;
+  font-weight: 700;
+}
+
+

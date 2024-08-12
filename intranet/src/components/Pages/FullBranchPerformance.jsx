@@ -3,7 +3,6 @@ import KnowledgeBase from '../Home_Components/KnowledgeBase';
 import CompanyEvents from '../Sub_Components/Performance';
 import BranchPerformance from '../Home_Components/BranchPerformance';
 import '../../Styles/FullBranchPerformance.css';
-import CostCenter from '../Sub_Components/Cost_Center';
 const FullBranchPerformance = () => {
   return (
     <div className="full-branch-performance">
@@ -12,7 +11,7 @@ const FullBranchPerformance = () => {
       </div>
       <hr />
       <div className="full-branch-performance-column3">
-        <CostCenter />
+        <CompanyEvents />
       </div>
       
     </div>

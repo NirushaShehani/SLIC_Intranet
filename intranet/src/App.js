@@ -20,6 +20,16 @@ import CostCenter from './components/Pages/Cost_Center';
 import IdeaHub from './components/Pages/IdeaHub';
 import Knowledge_BasePage from './components/Pages/Knowledge_BasePage';
 import BookHub from './components/Pages/BookHub';
+import ISO_Forms from './components/Pages/ISO_Forms';
+import LIFE_Forms from './components/Pages/Forms_pages/Life_Forms';
+import ICT_Forms from './components/Pages/Forms_pages/ICT';
+import Common_Forms from './components/Pages/Forms_pages/Common';
+import Membership_Forms from './components/Pages/Forms_pages/Membership';
+import Sales_Forms from './components/Pages/Forms_pages/Sales';
+import Security_department_Forms from './components/Pages/Forms_pages/Security_department';
+import Life from './components/Pages/Services_Pages/Life';
+import Incentive_Criteria from './components/Pages/Incentive_Criteria';
+
 
 const App =() => {
   return (
@@ -43,6 +53,19 @@ const App =() => {
         <Route path="/Idea-Hub" element={<IdeaHub/>}/>
         <Route path="/Knowledge-Base" element={<Knowledge_BasePage/>}/>
         <Route path="/Book-Hub" element={<BookHub/>}/>
+
+        <Route path="/ISO-Forms" element={<ISO_Forms/>}/>
+        <Route path="/LIFE-Forms" element={<LIFE_Forms/>}/>
+        <Route path="/ICT-Forms" element={<ICT_Forms/>}/>
+        <Route path="/Common-Forms" element={<Common_Forms/>}/>
+        <Route path="/Membership-Forms" element={<Membership_Forms/>}/>
+        <Route path="/Sales-Forms" element={<Sales_Forms/>}/>
+        <Route path="/Security-Department-Forms" element={<Security_department_Forms/>}/>
+        <Route path="/Services-Life" element={<Life/>}/>
+
+        <Route path="/Incentive-Criteria-page" element={<Incentive_Criteria/>}/>
+
+
       </Routes>
     </Router>
   );
