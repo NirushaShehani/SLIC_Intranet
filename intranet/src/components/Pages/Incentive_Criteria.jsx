@@ -96,9 +96,9 @@ const Incentive_Criteria = () => {
                 </thead>
                 <tbody>
                   {table.rows.slice(1).map((row, rowIndex) => (
-                    <tr key={rowIndex} className="custom-row" style={{ backgroundColor: rowColors[rowIndex % rowColors.length] }}>
-                      <td>{row[0]}</td>
-                      <td>{row[1]}</td>
+                    <tr key={rowIndex} className="custom-row" style={{ backgroundColor: rowColors[rowIndex % rowColors.length], }}>
+                      <td className="custom-row-content">{row[0]}</td>
+                      <td className="custom-row-content">{row[1]}</td>
                     </tr>
                   ))}
                 </tbody>

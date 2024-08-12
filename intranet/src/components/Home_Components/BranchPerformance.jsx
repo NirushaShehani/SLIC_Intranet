@@ -99,12 +99,12 @@ const BranchPerformance = () => {
             <h2>Life Total Incentive</h2>
             <table>
               <tbody>
-                <tr>
+                <tr className="incentive-container-content">
                   {updatedStrings.map((item, index) => (
                     <td key={index}>{item.key}</td>
                   ))}
                 </tr>
-                <tr>
+                <tr className="incentive-container-content">
                   {updatedStrings.map((item, index) => (
                     <td key={index}>{item.value}</td>
                   ))}
