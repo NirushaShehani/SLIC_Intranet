@@ -28,6 +28,7 @@ import Membership_Forms from './components/Pages/Forms_pages/Membership';
 import Sales_Forms from './components/Pages/Forms_pages/Sales';
 import Security_department_Forms from './components/Pages/Forms_pages/Security_department';
 import Life from './components/Pages/Services_Pages/Life';
+import Incentive_Criteria from './components/Pages/Incentive_Criteria';
 
 
 const App =() => {
@@ -52,6 +53,7 @@ const App =() => {
         <Route path="/Idea-Hub" element={<IdeaHub/>}/>
         <Route path="/Knowledge-Base" element={<Knowledge_BasePage/>}/>
         <Route path="/Book-Hub" element={<BookHub/>}/>
+
         <Route path="/ISO-Forms" element={<ISO_Forms/>}/>
         <Route path="/LIFE-Forms" element={<LIFE_Forms/>}/>
         <Route path="/ICT-Forms" element={<ICT_Forms/>}/>
@@ -60,6 +62,10 @@ const App =() => {
         <Route path="/Sales-Forms" element={<Sales_Forms/>}/>
         <Route path="/Security-Department-Forms" element={<Security_department_Forms/>}/>
         <Route path="/Services-Life" element={<Life/>}/>
+
+        <Route path="/Incentive-Criteria-page" element={<Incentive_Criteria/>}/>
+
+
       </Routes>
     </Router>
   );
