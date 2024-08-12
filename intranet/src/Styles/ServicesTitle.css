@@ -1,0 +1,27 @@
+.hrLine {
+    display: inline-block;
+    width: 50px;
+    height: 15px;
+    background-color: red; /* Change this color to your desired HR line color */
+    vertical-align: middle;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.hrDot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: red; /* Change this color to your desired dot color */
+    border-radius: 50%;
+    margin-top: 5px;
+    vertical-align: center;
+}
+
+.hrText {
+    display: inline-block;
+    font-size: 24px; /* Increase this value to make the text larger */
+    color: blue; /* Change this color to your desired text color */
+    vertical-align: middle;
+    margin: 0 10px; /* Adjust the space around the text if needed */
+}

@@ -7,7 +7,7 @@ import '../../../Styles/services.css';
 // hr tag styles
 import '../../../Styles/serviceshrtag.css';
 
-const ICT_Forms = () => {
+const Life_Forms = () => {
   const [selectedDept, setSelectedDept] = useState(''); // State to track the selected department
 
   const openInNewWindow = (url) => {
@@ -158,7 +158,7 @@ const ICT_Forms = () => {
           {/* Upper Left Section */}
           <div style={up}>
             <DrawerMenu />
-            <div style={ContactList}>ICT Forms</div>
+            <div style={ContactList}>Life Forms</div>
           </div>
           {/* Lower Left Section */}
           <div style={Down}>
@@ -183,43 +183,11 @@ const ICT_Forms = () => {
       <div style={rightStyle}>
         <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
           <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-          <span>Device Access Request Form</span>
+          <span>Jana Rekuma Death Claim Form</span>
         </div>
         <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
           <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-          <span>Direct Dial out Facility Access Request Form</span>
-        </div>
-        <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-          <span>E-Mail Facility Access Request Form</span>
-        </div>
-        <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-          <span>Internet Access Request Form New</span>
-        </div>
-        <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-          <span>Multifunction Printer Facility Request Form</span>
-        </div>
-        <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-          <span>Secure Intranet Access Request Form</span>
-        </div>
-        <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-          <span>Tsplus Form</span>
-        </div>
-        <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-          <span>User Account Application Form</span>
-        </div>
-        <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-          <span>User Backup Shared Folder Access Request Form</span>
-        </div>
-        <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-          <span>VPN Request Form</span>
+          <span>Jana Rekuma Hospitalization Claim Form</span>
         </div>
         <div>
         
@@ -230,4 +198,4 @@ const ICT_Forms = () => {
   );
 };
 
-export default ICT_Forms;
+export default Life_Forms;
