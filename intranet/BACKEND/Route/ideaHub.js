@@ -23,7 +23,7 @@ router.post('/submit', async (req, res) => {
 
     console.log('Executing Insert Query');
     const result = await connection.execute(
-      `INSERT INTO SLI_APPS.IDEA_HUB_TBL (ID, USEREPF, DEPTORBRANCH, IDEADATE, NAME, USERIDEA) 
+      `INSERT INTO INTRANET.IDEA_HUB_TBL (ID, USEREPF, DEPTORBRANCH, IDEADATE, NAME, USERIDEA) 
        VALUES (SLI_APPS.IDEA_HUB_TBL_SEQ.NEXTVAL,:userEPF, :deptOrBranch, TO_DATE(:ideadate, 'YYYY-MM-DD'), :name, :userIdea)`,
       { 
         userEPF: userEPF,

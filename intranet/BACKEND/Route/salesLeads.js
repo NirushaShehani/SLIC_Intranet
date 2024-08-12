@@ -23,7 +23,7 @@ router.post('/submit', async (req, res) => {
 
     console.log('Executing Insert Query');
     const result = await connection.execute(
-      `INSERT INTO SLI_APPS.CLIENT_CONTACT_DATA (ID, CLIENTNAME, CONTACTNO1, CONTACTNO2, SLICREQUIREMENT, STAFFMEMBERNAME, STAFFCONTACTNO, EXTENSION, DEPARTMENT) 
+      `INSERT INTO INTRANET.CLIENT_CONTACT_DATA (ID, CLIENTNAME, CONTACTNO1, CONTACTNO2, SLICREQUIREMENT, STAFFMEMBERNAME, STAFFCONTACTNO, EXTENSION, DEPARTMENT) 
        VALUES (SLI_APPS.CLIENT_CONTACT_SEQ.NEXTVAL, :clientName, :contact1, :contact2, :slicRequirement, :slicContactName, :slicMobile, :slicExtension, :slicDepartment)`,
       { 
         clientName: clientName,
