@@ -52,4 +52,39 @@ router.post('/submit', async (req, res) => {
   }
 });
 
+// GET request to fetch all records
+router.get('/fetchideas', async (req, res) => {
+  let connection;
+  try {
+    connection = await oracledb.getConnection({
+      user: 'ais',
+      password: 'ais',
+      connectString: '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=172.24.90.20)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=BEELIFE)))'
+    });
+
+    console.log('Executing Select Query');
+    const result = await connection.execute(
+       `SELECT USEREPF, DEPTORBRANCH, TO_CHAR(IDEADATE, 'YYYY-MM-DD') AS IDEADATE, NAME, USERIDEA
+       FROM INTRANET.IDEA_HUB_TBL
+       ORDER BY IDEADATE DESC`
+    );
+
+    console.log('Select Result:', result.rows);
+
+    res.status(200).json(result.rows);
+  } catch (err) {
+    console.error('Error fetching data:', err);
+    res.status(500).send('Error fetching data: ' + err.message);
+  } finally {
+    if (connection) {
+      try {
+        await connection.close();
+      } catch (err) {
+        console.error('Error closing connection:', err);
+      }
+    }
+  }
+});
+
+
 module.exports = router;
