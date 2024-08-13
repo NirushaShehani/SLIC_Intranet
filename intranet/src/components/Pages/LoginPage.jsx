@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
   
+    const queryParams = new URLSearchParams(location.search);
+    const redirectPath = queryParams.get('redirect') || '/';
+
     const handleLogin = (e) => {
-      e.preventDefault();
-      // Directly navigate to the admin view page
-      navigate('/Idea_Hub_Admin_View');
+        e.preventDefault();
+        // Simulate login process and redirect to the target page
+        // (Replace this with actual login logic)
+        navigate(redirectPath);
     };
   
     return (

@@ -16,8 +16,9 @@ const IdeaHub = () => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  const handleNavigateAdmin = () => {
-    navigate('/login');
+  const handleNavigateToLogin = () => {
+    // Navigate to the login page with a source query parameter
+    navigate('/login?redirect=/Idea_Hub_Admin_View');
   };
 
   const handleChange = (event) => {
@@ -290,7 +291,7 @@ Thank you for your dedication and inspiration; we look forward to your valuable
               </div>
               <div>
                 <button type="submit" style={buttonStyle}>Submit</button>
-                <button onClick={handleNavigateAdmin} style={buttonStyle}>Navigate Admin</button>
+                <button onClick={handleNavigateToLogin} style={buttonStyle}>Navigate Admin</button>
               </div>
             </form>
           </div>

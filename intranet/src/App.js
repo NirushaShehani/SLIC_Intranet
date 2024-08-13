@@ -23,6 +23,7 @@ import BookHub from './components/Pages/BookHub';
 import ISO_Forms from './components/Pages/ISO_Forms';
 import Login_Page from './components/Pages/LoginPage';
 import Idea_Hub_Admin_View from './components/Pages/Admin/IdeaHub_Admin_View';
+import SalesLead_Admin_View from './components/Pages/Admin/SalesLead_Admin_View';
 
 const App =() => {
   return (
@@ -49,6 +50,7 @@ const App =() => {
         <Route path="/ISO-Forms" element={<ISO_Forms/>}/>
         <Route path="/login" element={<Login_Page/>}/>
         <Route path="/Idea_Hub_Admin_View" element={<Idea_Hub_Admin_View/>}/>
+        <Route path="/SalesLead_Admin_View" element={<SalesLead_Admin_View/>}/>
       </Routes>
     </Router>
   );
