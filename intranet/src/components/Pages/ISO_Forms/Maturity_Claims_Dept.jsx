@@ -226,6 +226,10 @@ const Services = () => {
                     </div>
                     <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Payment Memo - 3S</span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span>Payment Voucher - 3S </span>
                     </div>
                     <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
@@ -376,10 +380,10 @@ const Services = () => {
           <button style={getButtonStyle('1')} onClick={() => setSelectedDept('1')}>Maturity Claim Forms</button>
           <button style={getButtonStyle('2')} onClick={() => setSelectedDept('2')}>COMMON FORMS</button>
           <button style={getButtonStyle('3')} onClick={() => setSelectedDept('3')}>Stage Claim Forms</button>
-          <button style={getButtonStyle('3')} onClick={() => setSelectedDept('4')}>Yashtiya Claim forms ISO numbers</button>
-          <button style={getButtonStyle('4')} onClick={() => setSelectedDept('5')}>Freedom Claim forms ISO numbers</button>
-          <button style={getButtonStyle('5')} onClick={() => setSelectedDept('6')}>Mindada Claim forms ISO numbers</button>
-          <button style={getButtonStyle('6')} onClick={() => setSelectedDept('7')}>Swarna Jayanthi Claim forms ISO numbers</button>
+          <button style={getButtonStyle('4')} onClick={() => setSelectedDept('4')}>Yashtiya Claim forms ISO numbers</button>
+          <button style={getButtonStyle('5')} onClick={() => setSelectedDept('5')}>Freedom Claim forms ISO numbers</button>
+          <button style={getButtonStyle('6')} onClick={() => setSelectedDept('6')}>Mindada Claim forms ISO numbers</button>
+          <button style={getButtonStyle('7')} onClick={() => setSelectedDept('7')}>Swarna Jayanthi Claim forms ISO numbers</button>
           
           
         </div>
