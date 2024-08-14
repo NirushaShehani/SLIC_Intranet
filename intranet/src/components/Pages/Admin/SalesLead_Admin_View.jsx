@@ -23,6 +23,17 @@ function AdminSalesLead() {
       fetchData();
     }, []); // Empty dependency array means this useEffect runs once when the component mounts
   
+    const handleDelete = async (id) => {
+      try {
+        await axios.delete(`http://localhost:3000/api/salesLead/deleteSalesLead/${id}`);
+        setSalesLeads(salesLeads.filter(lead => lead.ID !== id));
+      } catch (err) {
+        console.error("Error deleting sales lead:", err);
+        setError('Failed to delete sales lead');
+      }
+    };
+
+
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
   
@@ -53,7 +64,11 @@ function AdminSalesLead() {
                 <td>{lead.STAFFCONTACTNO}</td>
                 <td>{lead.EXTENSION}</td>
                 <td>{lead.DEPARTMENT}</td>
-                <td>DELETE</td>
+                <td>
+                  <button onClick={() => handleDelete(lead.ID)} className="delete-button">
+                    DELETE
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
