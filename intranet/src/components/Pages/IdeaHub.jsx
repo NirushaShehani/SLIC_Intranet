@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import axios from 'axios';
 import logo from '../../assets/slicLIfe_New_1.png';
@@ -13,11 +14,18 @@ const IdeaHub = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
+
+  const handleNavigateToLogin = () => {
+    // Navigate to the login page with a source query parameter
+    navigate('/login?redirect=/Idea_Hub_Admin_View');
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
+  
 
   const validateForm = () => {
     let formErrors = {};
@@ -283,6 +291,7 @@ Thank you for your dedication and inspiration; we look forward to your valuable
               </div>
               <div>
                 <button type="submit" style={buttonStyle}>Submit</button>
+                <button onClick={handleNavigateToLogin} style={buttonStyle}>Navigate Admin</button>
               </div>
             </form>
           </div>

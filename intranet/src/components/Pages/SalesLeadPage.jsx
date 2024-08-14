@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import logo from '../../assets/slicLIfe_New_1.png';
 
@@ -16,6 +17,12 @@ const SalesLeadPage = () => {
 
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
+
+  const handleNavigateToLogin = () => {
+    // Navigate to the login page with a source query parameter
+    navigate('/login?redirect=/SalesLead_Admin_View');
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -341,6 +348,7 @@ Keep up the great work!
               </div>
               <div>
                 <button type="submit" style={buttonStyle}>Submit</button>
+                <button onClick={handleNavigateToLogin} style={buttonStyle}>Navigate Admin</button>
               </div>
             </form>
           </div>

@@ -21,6 +21,11 @@ import IdeaHub from './components/Pages/IdeaHub';
 import Knowledge_BasePage from './components/Pages/Knowledge_BasePage';
 import BookHub from './components/Pages/BookHub';
 import ISO_Forms from './components/Pages/ISO_Forms';
+
+import Login_Page from './components/Pages/LoginPage';
+import Idea_Hub_Admin_View from './components/Pages/Admin/IdeaHub_Admin_View';
+import SalesLead_Admin_View from './components/Pages/Admin/SalesLead_Admin_View';
+
 import LIFE_Forms from './components/Pages/Forms_pages/Life_Forms';
 import ICT_Forms from './components/Pages/Forms_pages/ICT';
 import Common_Forms from './components/Pages/Forms_pages/Common';
@@ -29,6 +34,7 @@ import Sales_Forms from './components/Pages/Forms_pages/Sales';
 import Security_department_Forms from './components/Pages/Forms_pages/Security_department';
 import Life from './components/Pages/Services_Pages/Life';
 import Incentive_Criteria from './components/Pages/Incentive_Criteria';
+
 
 
 const App =() => {
@@ -55,6 +61,11 @@ const App =() => {
         <Route path="/Book-Hub" element={<BookHub/>}/>
 
         <Route path="/ISO-Forms" element={<ISO_Forms/>}/>
+
+        <Route path="/login" element={<Login_Page/>}/>
+        <Route path="/Idea_Hub_Admin_View" element={<Idea_Hub_Admin_View/>}/>
+        <Route path="/SalesLead_Admin_View" element={<SalesLead_Admin_View/>}/>
+
         <Route path="/LIFE-Forms" element={<LIFE_Forms/>}/>
         <Route path="/ICT-Forms" element={<ICT_Forms/>}/>
         <Route path="/Common-Forms" element={<Common_Forms/>}/>
@@ -64,6 +75,7 @@ const App =() => {
         <Route path="/Services-Life" element={<Life/>}/>
 
         <Route path="/Incentive-Criteria-page" element={<Incentive_Criteria/>}/>
+
 
 
       </Routes>

@@ -1,43 +1,41 @@
 
-
 const express = require('express');
-const oracledb = require('oracledb');
 const bodyParser = require('body-parser');
-const cors = require('cors'); // Import the cors package
-// const salesLeadRoutes = require('./Route\/salesLeads'); // Import the routes
+const cors = require('cors');
+const db = require('./db');
 const salesLeadRoutes = require('./Route/salesLeads');
 const ideaHubRoutes = require('./Route/ideaHub');
+const contactSearchRoutes = require('./Route/contactSearchRoutes'); // Import the new routes
+const branchSearchRoutes = require('./Route/branchSearchRoutes');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.json());
 app.use(cors()); // Use the cors middleware
 
-// Oracle DB connection configuration
-const dbConfig = {
-  user: 'ais',                          // User ID
-  password: 'ais',                      // Password
-  connectString: '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=172.24.90.20)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=BEELIFE)))' // Connection string
-};
-
-// Connect to Oracle DB
-async function initialize() {
-  try {
-    await oracledb.createPool(dbConfig);
-    console.log('Connection pool started');
-  } catch (err) {
-    console.error('init() error: ' + err.message);
-  }
-}
 
 // Use the routes
 app.use('/api/salesLead', salesLeadRoutes); // Use the salesLead routes
 app.use('/api/ideaHub', ideaHubRoutes);
+app.use('/api/contactSearch', contactSearchRoutes); // Use the new contactSearch routes
+app.use('/api/branchSearch', branchSearchRoutes);
 
-// Start the server
-app.listen(port, () => {
+app.listen(port, async () => {
   console.log(`Server running on http://localhost:${port}`);
-  initialize();
+  await db.initialize(); // Initialize Oracle DB connection pool
+});
+
+// Graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('Shutting down gracefully...');
+  try {
+    await db.close();
+    console.log('Connection pool closed');
+    process.exit(0);
+  } catch (err) {
+    console.error('Error during pool close: ' + err.message);
+    process.exit(1);
+  }
 });
