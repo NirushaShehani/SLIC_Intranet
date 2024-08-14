@@ -1,11 +1,36 @@
-/* Ensure that the full-notices-page doesn't exceed the viewport width */
-.full-notices-page {
+.incentive-page {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background-image: url('../assets/bgimage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.incentive-column1 {
+  padding: 10px;
+  border-radius: 5px;
+  width: 30%; /* Adjust this value as needed */
+  display: flex;
+  flex-direction: column;
+}
+
+.incentive-column2 {
+  padding: 10px;
+  border-radius: 5px;
+  flex-grow: 1; /* Allow this column to take the remaining space */
+  display: flex;
+  flex-direction: column;
+}
+/* Ensure that the incentive-page doesn't exceed the viewport width */
+.incentive-page {
   display: flex;
   overflow-x: hidden;
 }
 
-/* Adjust full-notices-column2 to take up available space and allow table scrolling */
-.full-notices-column2 {
+/* Adjust incentive-column2 to take up available space and allow table scrolling */
+.incentive-column2 {
   flex-grow: 1;
   overflow-x: auto;
 }
