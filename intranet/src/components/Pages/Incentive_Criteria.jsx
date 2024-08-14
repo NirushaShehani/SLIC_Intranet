@@ -31,11 +31,11 @@ const Incentive_Criteria = () => {
   const rowColors = ["#789ea6", "#73bbab", "#85a7c4"];
 
   return (
-    <div className="full-notices-page">
-      <div className="full-notices-column1">
+    <div className="incentive-page">
+      <div className="incentive-column1">
         <DrawerMenu />
       </div>
-      <div className="full-notices-column2">
+      <div className="incentive-column2">
         <div className="scrollable-tables-container">
           {/* Scrollable Tables */}
           <div className="scrollable-tables">
