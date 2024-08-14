@@ -69,7 +69,9 @@ router.get('/fetchSalesLeads', async (req, res) => {
     const result = await connection.execute(
       `SELECT CLIENTNAME, CONTACTNO1, CONTACTNO2, SLICREQUIREMENT, STAFFMEMBERNAME, STAFFCONTACTNO, EXTENSION, DEPARTMENT 
        FROM INTRANET.CLIENT_CONTACT_DATA
-       ORDER BY ID DESC`
+       ORDER BY ID DESC`,
+      [],
+      { outFormat: oracledb.OUT_FORMAT_OBJECT } // Add this option
     );
 
     console.log('Select Result:', result.rows);
