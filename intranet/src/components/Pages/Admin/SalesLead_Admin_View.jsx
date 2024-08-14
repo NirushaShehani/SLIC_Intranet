@@ -12,6 +12,7 @@ function AdminSalesLead() {
       const fetchData = async () => {
         try {
           const response = await axios.get('http://localhost:3000/api/salesLead/fetchSalesLeads');
+          console.log('API response:', response.data); 
           setSalesLeads(response.data);
           setLoading(false);
         } catch (err) {
@@ -24,15 +25,31 @@ function AdminSalesLead() {
     }, []); // Empty dependency array means this useEffect runs once when the component mounts
   
     const handleDelete = async (id) => {
+      // Confirm before deleting
+      const isConfirmed = window.confirm('Are you sure you want to delete this sales lead?');
+      
+      if (!isConfirmed) {
+        console.log('Deletion canceled');
+        return;
+      }
+    
+      console.log('Deleting sales lead with ID:', id);
+      
+      if (!id) {
+        console.error('No ID provided for deletion');
+        return;
+      }
+    
       try {
         await axios.delete(`http://localhost:3000/api/salesLead/deleteSalesLead/${id}`);
-        setSalesLeads(salesLeads.filter(lead => lead.ID !== id));
-      } catch (err) {
-        console.error("Error deleting sales lead:", err);
-        setError('Failed to delete sales lead');
+        // Optionally, update the salesLeads state to remove the deleted item from the list
+        setSalesLeads(salesLeads.filter(lead => lead.ID !== id && lead.id !== id));
+        console.log(id, 'Sales lead deleted successfully');
+      } catch (error) {
+        console.error('Error deleting sales lead:', error);
       }
     };
-
+    
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
@@ -51,11 +68,14 @@ function AdminSalesLead() {
               <th>Staff Contact No</th>
               <th>Extension</th>
               <th>Department</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {salesLeads.map((lead, index) => (
-              <tr key={index}>
+          {salesLeads.map((lead) => {
+            console.log('Lead:',lead); // Check the structure of each lead object
+            return (
+              <tr key={lead.ID || lead.id}>
                 <td>{lead.CLIENTNAME}</td>
                 <td>{lead.CONTACTNO1}</td>
                 <td>{lead.CONTACTNO2}</td>
@@ -65,13 +85,14 @@ function AdminSalesLead() {
                 <td>{lead.EXTENSION}</td>
                 <td>{lead.DEPARTMENT}</td>
                 <td>
-                  <button onClick={() => handleDelete(lead.ID)} className="delete-button">
+                  <button onClick={() => handleDelete(lead.ID || lead.id)} className="delete-button">
                     DELETE
                   </button>
                 </td>
               </tr>
-            ))}
-          </tbody>
+            );
+          })}
+        </tbody>
         </table>
       </div>
     );
