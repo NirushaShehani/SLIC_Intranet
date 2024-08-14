@@ -23,8 +23,8 @@ const Incentive_Criteria = () => {
         additionalDataTopics: [["For 2nd Quarter 2024"], ["Incentive %"]],
         additionalData: [["Life (10% x 3)"], ["30%"]],
       },
-      
-      
+
+
     ],
   });
 
@@ -37,7 +37,6 @@ const Incentive_Criteria = () => {
       </div>
       <div className="incentive-column2">
         <div className="scrollable-tables-container">
-          {/* Scrollable Tables */}
           <div className="scrollable-tables">
             <div className="table-wrapper static-table-wrapper">
               <table className="static-table">
@@ -62,7 +61,7 @@ const Incentive_Criteria = () => {
                   <tr>
                     <td className='Payout-ratio-row-data'>51%</td>
                     <td className='Payout-ratio-row-data'>2.5%</td>
-                   
+
                   </tr>
                   <tr>
                     <td className='Payout-ratio-row-data'>&lt;48%</td>
@@ -94,8 +93,8 @@ const Incentive_Criteria = () => {
                     <td className='Total-Shareholder-surplus-row-data'>4500Mn</td>
                     <td className='Total-Shareholder-surplus-row-data'>4.0%</td>
                   </tr>
-              <br></br>
-              <br></br>
+                  <br></br>
+             
                   <tr>
                     <td colSpan="4" className='Life-Eligible-Incentive'>Life Eligible Incentive</td>
                   </tr>
@@ -123,7 +122,7 @@ const Incentive_Criteria = () => {
                         <td className="custom-row-content">{row[1]}</td>
                       </tr>
                     ))}
-                   <br></br>
+                    <br></br>
                     {table.additionalDataTopics.length > 0 && (
                       <>
                         <tr>
@@ -131,7 +130,7 @@ const Incentive_Criteria = () => {
                             <th key={topicIndex}>{topic}</th>
                           ))}
                         </tr>
-                        <tr className="custom-row-content1">
+                        <tr className="custom-row-content-2">
                           {table.additionalData.map((dataItem, dataIndex) => (
                             <td key={dataIndex}>{dataItem}</td>
                           ))}
