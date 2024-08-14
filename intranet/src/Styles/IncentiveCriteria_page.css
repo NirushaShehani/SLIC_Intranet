@@ -151,7 +151,7 @@ th {
 }
 
 .column > div {
-  background: rgb(24, 131, 68);
+  background: #0077b6;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
