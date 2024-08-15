@@ -64,7 +64,7 @@ router.get('/fetchideas', async (req, res) => {
 
     console.log('Executing Select Query');
     const result = await connection.execute(
-       `SELECT USEREPF, DEPTORBRANCH, TO_CHAR(IDEADATE, 'YYYY-MM-DD') AS IDEADATE, NAME, USERIDEA
+       `SELECT ID, USEREPF, DEPTORBRANCH, TO_CHAR(IDEADATE, 'YYYY-MM-DD') AS IDEADATE, NAME, USERIDEA
        FROM INTRANET.IDEA_HUB_TBL
        ORDER BY IDEADATE DESC`
     );
@@ -86,5 +86,35 @@ router.get('/fetchideas', async (req, res) => {
   }
 });
 
+router.delete('/deleteIdeaHub/:id', async (req, res) => {
+  let connection;
+  try {
+    connection = await oracledb.getConnection({
+      user: 'ais',
+      password: 'ais',
+      connectString: '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=172.24.90.20)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=BEELIFE)))'
+    });
+
+    const { id } = req.params;
+    const result = await connection.execute(
+      `DELETE FROM INTRANET.IDEA_HUB_TBL WHERE ID = :id`,
+      [id],
+      { autoCommit: true }
+    );
+
+    res.status(200).send('Idea deleted successfully');
+  } catch (err) {
+    console.error('Error deleting data:', err);
+    res.status(500).send('Error deleting data: ' + err.message);
+  } finally {
+    if (connection) {
+      try {
+        await connection.close();
+      } catch (err) {
+        console.error('Error closing connection:', err);
+      }
+    }
+  }
+});
 
 module.exports = router;

@@ -67,7 +67,7 @@ router.get('/fetchSalesLeads', async (req, res) => {
 
     console.log('Executing Select Query');
     const result = await connection.execute(
-      `SELECT CLIENTNAME, CONTACTNO1, CONTACTNO2, SLICREQUIREMENT, STAFFMEMBERNAME, STAFFCONTACTNO, EXTENSION, DEPARTMENT 
+      `SELECT ID, CLIENTNAME, CONTACTNO1, CONTACTNO2, SLICREQUIREMENT, STAFFMEMBERNAME, STAFFCONTACTNO, EXTENSION, DEPARTMENT 
        FROM INTRANET.CLIENT_CONTACT_DATA
        ORDER BY ID DESC`,
       [],
@@ -91,5 +91,35 @@ router.get('/fetchSalesLeads', async (req, res) => {
   }
 });
 
+router.delete('/deleteSalesLead/:id', async (req, res) => {
+  let connection;
+  try {
+    connection = await oracledb.getConnection({
+      user: 'ais',
+      password: 'ais',
+      connectString: '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=172.24.90.20)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=BEELIFE)))'
+    });
+
+    const { id } = req.params;
+    const result = await connection.execute(
+      `DELETE FROM INTRANET.CLIENT_CONTACT_DATA WHERE ID = :id`,
+      [id],
+      { autoCommit: true }
+    );
+
+    res.status(200).send('Sales Lead deleted successfully');
+  } catch (err) {
+    console.error('Error deleting data:', err);
+    res.status(500).send('Error deleting data: ' + err.message);
+  } finally {
+    if (connection) {
+      try {
+        await connection.close();
+      } catch (err) {
+        console.error('Error closing connection:', err);
+      }
+    }
+  }
+});
 
 module.exports = router;

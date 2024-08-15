@@ -18,7 +18,7 @@
   
   thead th {
     background-color: #4CAF50;
-    color: white;
+    color: rgb(31, 28, 28);
     padding: 10px;
     text-align: left;
   }
@@ -26,6 +26,7 @@
   tbody td {
     padding: 10px;
     border: 1px solid #ddd;
+    color: black;
   }
   
   tbody tr:nth-child(even) {
@@ -46,3 +47,16 @@
     color: #555;
   }
   
+  .delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .delete-button:hover {
+    background-color: #ff1a1a;
+  }
