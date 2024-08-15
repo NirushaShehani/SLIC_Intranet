@@ -110,7 +110,7 @@ const KnowledgeBase = () => {
         {/*Services Chip*/}
         <Link to="/services-page" style={{ cursor: 'pointer' }}>
         <CustomChip style={styles.label}
-          label="Policy Services & Forms"
+          label="Policies/Services/Forms"
           deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
           onDelete={() => {}}
         />
