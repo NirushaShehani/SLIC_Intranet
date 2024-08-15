@@ -3,11 +3,12 @@ import { Doughnut } from 'react-chartjs-2';
 import { CardContent, Typography, Box, Avatar } from '@mui/material';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { styled } from '@mui/system';
+import axios from 'axios'; // Import axios to make API calls
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const rec1 = require('../../assets/Rectangle1.png');
 const rec2 = require('../../assets/Rectangle2.png');
-
-ChartJS.register(ArcElement, Tooltip, Legend);
 
 const customLabelsPlugin = {
   id: 'customLabels',
@@ -159,10 +160,56 @@ const EventCard = () => {
 };
 
 const GWPChartsContainer = () => {
+  const [dataLife, setDataLife] = useState(null);
+  const [dataBranch, setDataBranch] = useState(null);
   const [showBranch, setShowBranch] = useState(false);
   const [currentCard, setCurrentCard] = useState('achievers'); // Initialize with 'achievers'
   const [achieverList, setAchieverList] = useState(0); // 0 for Top, 1 for Branch, 2 for Regional
   const [isHovering, setIsHovering] = useState(false);
+
+  const month = '07'; // Replace this with dynamic month if needed
+
+  useEffect(() => {
+    // Fetch data from the API
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://203.115.11.236:10155/LifeIntranetAPI/api/v1/Gwp/GetMonthlyCumalative?p_month=${month}`);
+        const data = response.data;
+
+        // Assuming the API returns an array with one object as you mentioned
+        if (data && data.length > 0) {
+          const lifeData = data[0];
+
+          // Update the doughnut chart data
+          setDataLife({
+            labels: ['Achievement %', 'Growth %'],
+            datasets: [
+              {
+                data: [lifeData.ach_presentage, lifeData.growth_presentage],
+                backgroundColor: ['#FFB74D', '#42A5F5'],
+                hoverBackgroundColor: ['#FFB74D', '#42A5F5'],
+              },
+            ],
+          });
+
+          setDataBranch({
+            labels: ['Achievement %', 'Growth %'],
+            datasets: [
+              {
+                data: [lifeData.ach_presentage, lifeData.growth_presentage],
+                backgroundColor: ['#4DB6AC', '#42A5F5'],
+                hoverBackgroundColor: ['#4DB6AC', '#42A5F5'],
+              },
+            ],
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching data from API:', error);
+      }
+    };
+
+    fetchData();
+  }, [month]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -182,38 +229,12 @@ const GWPChartsContainer = () => {
     setIsHovering(false);
   };
 
-  const handleClickBranch = () => {
-    setShowBranch(prev => !prev);
-  };
-
   const handleCardClick = () => {
     setCurrentCard(prev => (prev === 'achievers' ? 'event' : 'achievers')); // Toggle between 'achievers' and 'event'
   };
 
   const handleAchieverClick = () => {
     setAchieverList(prev => (prev + 1) % 3); // Cycle through Top, Branch, Regional achievers
-  };
-
-  const dataLife = {
-    labels: ['Current month', 'Last month', 'Cumulative'],
-    datasets: [
-      {
-        data: [30, 10, 60],
-        backgroundColor: ['#FFB74D', '#4DB6AC', '#42A5F5'],
-        hoverBackgroundColor: ['#FFB74D', '#4DB6AC', '#42A5F5'],
-      },
-    ],
-  };
-
-  const dataBranch = {
-    labels: ['Current month', 'Last month', 'Cumulative'],
-    datasets: [
-      {
-        data: [10, 30, 60],
-        backgroundColor: ['#FFB74D', '#4DB6AC', '#42A5F5'],
-        hoverBackgroundColor: ['#FFB74D', '#4DB6AC', '#42A5F5'],
-      },
-    ],
   };
 
   const branchLabels = [
@@ -267,10 +288,10 @@ const GWPChartsContainer = () => {
         <FlippingCard showBack={showBranch}>
           <div className="inner">
             <div className="front">
-              <GWPChart title="LIFE GWP" data={dataLife} />
+              {dataLife && <GWPChart title="LIFE GWP" data={dataLife} />}
             </div>
             <div className="back">
-              <GWPChart title="Branch GWP" data={dataBranch} customLabels={branchLabels} />
+              {dataBranch && <GWPChart title="Branch GWP" data={dataBranch} customLabels={branchLabels} />}
             </div>
           </div>
         </FlippingCard>
