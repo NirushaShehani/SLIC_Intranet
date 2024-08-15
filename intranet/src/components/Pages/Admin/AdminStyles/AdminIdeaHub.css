@@ -1,48 +1,47 @@
 .idea-hub-table {
-    width: 80%; /* Reduce table width to 80% of its container */
-    margin: 0 auto; /* Center the table horizontally */
-    border-collapse: collapse;
-  }
-  
-  /* Adjusting column widths */
-  .small-column {
-    width: 10%; /* Narrow width for smaller columns */
-  }
-  
-  .medium-column {
-    width: 15%; /* Medium width for the Name column */
-  }
-  
-  .large-column {
-    width: 55%; /* More space for the User Idea column */
-  }
-  
-  th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
+  width: 80%; /* Reduce table width to 80% of its container */
+  margin: 0 auto; /* Center the table horizontally */
+  border-collapse: collapse;
+}
 
-  .delete-button {
-    background-color: #ff4c4c; /* Red background */
-    color: white; /* White text */
-    border: none; /* Remove border */
-    padding: 8px 12px; /* Padding */
-    cursor: pointer; /* Pointer cursor on hover */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 14px; /* Font size */
-    transition: background-color 0.3s ease; /* Transition effect */
-  }
-  
-  .delete-button:hover {
-    background-color: #ff1a1a; /* Darker red on hover */
-  }
+/* Adjusting column widths */
+.small-column {
+  width: 10%; /* Narrow width for smaller columns */
+}
 
-  .bold-text {
-    font-weight: bold;
-  }
-  
+.medium-column {
+  width: 15%; /* Medium width for the Name column */
+}
+
+.large-column {
+  width: 55%; /* More space for the User Idea column */
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.delete-button {
+  background-color: #ff4c4c; /* Red background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  padding: 8px 12px; /* Padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  transition: background-color 0.3s ease; /* Transition effect */
+}
+
+.delete-button:hover {
+  background-color: #ff1a1a; /* Darker red on hover */
+}
+
+.bold-text {
+  font-weight: bold;
+}
