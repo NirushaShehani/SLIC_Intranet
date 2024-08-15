@@ -23,31 +23,27 @@ function IdeaHub() {
   }, []);
 
   const handleDelete = async (id) => {
-    // Confirm before deleting
-    const isConfirmed = window.confirm('Are you sure you want to delete this idea?');
+    const isConfirmed = window.confirm('Are you sure you want to delete this sales lead?');
+      
+      if (!isConfirmed) {
+        console.log('Deletion canceled');
+        return;
+      }
     
-    if (!isConfirmed) {
-      console.log('Deletion canceled');
-      return;
-    }
-    
-    console.log('Deleting idea with ID:', id);
-    
-    if (!id) {
-      console.error('No ID provided for deletion');
-      return;
-    }
+      console.log('Deleting sales lead with ID:', id);
+      
+      if (!id) {
+        console.error('No ID provided for deletion');
+        return;
+      }
     
     try {
-      await axios.delete(`http://localhost:3000/api/ideaHub/deleteIdeaHub/${id}`);
-      
-      // Refetch data to update the UI
-      const response = await axios.get('http://localhost:3000/api/ideaHub/fetchideas');
-      setIdeas(response.data);
-      
-      console.log('Idea deleted successfully');
-    } catch (error) {
-      console.error('Error deleting idea:', error);
+        await axios.delete(`http://localhost:3000/api/ideaHub/deleteIdeaHub/${id}`);
+        
+        setIdeas(ideas.filter((idea) => idea[0] !== id));
+        console.log(id, 'Sales lead deleted successfully');
+    } catch (err) {
+      setError(err.message);
     }
   };
   
@@ -77,7 +73,7 @@ function IdeaHub() {
               <td className="medium-column">{idea[4]}</td>
               <td className="large-column">{idea[5]}</td>
               <td className="small-column">
-                <button className="delete-button" onClick={() => handleDelete(index)}>
+              <button className="delete-button" onClick={() => handleDelete(idea[0])}>
                   DELETE
                 </button>
               </td>
