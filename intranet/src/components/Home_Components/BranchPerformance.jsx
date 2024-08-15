@@ -78,7 +78,7 @@ const BranchPerformance = () => {
       <div className="incentive-criteria">
         <div className="table-container">
           <div className="incentive-container">
-            <h2>Life Total Incentive</h2>
+            <h2>Life Incentive</h2>
             <table>
               <tbody>
                 <tr className="incentive-container-content">

@@ -1,0 +1,209 @@
+.incentive-page {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background-image: url('../assets/bgimage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.incentive-column1 {
+  padding: 10px;
+  border-radius: 5px;
+  width: 30%; /* Adjust this value as needed */
+  display: flex;
+  flex-direction: column;
+}
+
+.incentive-column2 {
+  padding: 10px;
+  border-radius: 5px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+/* Ensure that the incentive-page doesn't exceed the viewport width */
+.incentive-page {
+  display: flex;
+  overflow-x: hidden;
+}
+
+/* Adjust incentive-column2 to take up available space and allow table scrolling */
+.incentive-column2 {
+  flex-grow: 1;
+  overflow-x: auto;
+}
+
+/* Scrollable Tables Container */
+.scrollable-tables-container {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling within the container */
+}
+
+/* Scrollable Tables */
+.scrollable-tables {
+  display: flex;
+  gap: 10px; /* Space between the tables */
+}
+
+/* Static Table Wrapper */
+.static-table-wrapper {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background-color: #caf0f800;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+  flex: 0 0 auto;
+  width: 40%;
+}
+
+/* Adjust the width of the table-wrapper-scroll */
+.table-wrapper-scroll {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+table {
+  margin-bottom: 2px;
+}
+
+/* Adjust the width of the table */
+.table-wrapper-table {
+  width: auto;
+}
+
+/* Styles for the specific table */
+.table-wrapper-table th {
+  height: 28px;
+}
+
+/* Adjust the width of table cells */
+.table-wrapper-table th,
+.table-wrapper-table td {
+  padding: 5px;
+  border: 2px solid #ffffff;
+}
+
+.static-table {
+  font-size: 10px;
+  
+}
+
+.static-table th,
+.static-table td {
+  padding: 10px;
+  border: 2px solid #ffffff;
+}
+
+th,
+td {
+  border: 2px solid #ffffff;
+  text-align: center;
+  color: #ffffff;
+}
+
+th {
+  background-color: #0077b6;
+  color: #ffffff;
+}
+.Staff-Criteria th{
+  background-color: #0077b6;
+}
+
+.Staff-Criteria-collums th {
+  background-color: #00b4d8;
+  color: #ffffff;
+}
+.table-wrapper-table th{
+  background-color: #0077b6;
+}
+
+.table-wrapper-table-collums th {
+  background-color: #00b4d8;
+  color: #ffffff;
+}
+
+
+.custom-row td {
+  padding: 50px;
+  font-size: 16px;
+}
+
+.custom-row {
+  height: 50px;
+}
+
+.Payout-ratio-row {
+  background-color: #173b45;
+}
+
+.life-row {
+  font-weight: bold;
+  color: #0077b6;
+  font-size: 20px;
+  background-color: #ffdd1e;
+}
+
+.Expense-Ratio-row {
+  background-color: #379777;
+}
+
+.Total-Shareholder-surplus-row {
+  background-color: #5472a0;
+  font-weight: 400;
+}
+
+.Payout-ratio-row-data {
+  background-color: #789ea6;
+  font-weight: 500;
+  color: #000;
+}
+
+.Expense-Ratio-row-data {
+  background-color: #73bbab;
+  font-weight: 500;
+  color: #000;
+}
+
+.Total-Shareholder-surplus-row-data {
+  background-color: #85a7c4;
+  font-weight: 500;
+  color: #000;
+}
+
+.custom-row-content {
+  color: #000;
+  font-weight: 500;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.column > div {
+  background: #0077b6;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.Life-Eligible-Incentive{
+color: #0077b6;
+background-color: #ffdd1e;
+font-weight: 600;
+font-size: 20px;
+height: 60px;
+}
+.custom-row-content-2 td{
+  background-color: #ffdd1e;
+  
+}
+.custom-row-content-2 td{
+  color: #0077b6;
+  font-weight: 500;
+}
