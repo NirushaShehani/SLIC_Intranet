@@ -71,6 +71,61 @@ const DrawerMenu = () => {
         </ListItem>
       </List>
       {/** Dashboard */}
+      <Divider />
+      {/** Dashboard */}
+            <List>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon style={styles.btnsizeup}>
+              <DashboardOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <Link to="/" style={{ cursor: 'pointer' }}>
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body1"
+                  fontWeight="bold"
+                  fontSize="0.9rem"
+                  color="text.primary"
+                >
+                  Idea Hub Admin
+                </Typography>
+                </Link>
+              }
+            />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      {/** Dashboard */}
+      {/** Dashboard */}
+      <List>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon style={styles.btnsizeup}>
+              <DashboardOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <Link to="/" style={{ cursor: 'pointer' }}>
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body1"
+                  fontWeight="bold"
+                  fontSize="0.9rem"
+                  color="text.primary"
+                >
+                  Sales Lead Admin
+                </Typography>
+                </Link>
+              }
+            />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      {/** Dashboard */}
       {/** Help */}
       <List style={styles.container}>
         <ListItem disablePadding>
