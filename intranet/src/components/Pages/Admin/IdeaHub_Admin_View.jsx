@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './AdminStyles/AdminIdeaHub.css'; 
+import './AdminStyles/AdminIdeaHub.css';
 
 function IdeaHub() {
   const [ideas, setIdeas] = useState([]);
@@ -11,9 +11,15 @@ function IdeaHub() {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:3000/api/ideaHub/fetchideas');
+        // Assume response.data is an array of arrays
         const ideasWithStatus = response.data.map(idea => ({
-          ...idea,
-          read: false  // Add a read status, initially false
+          ID: idea[0],
+          USEREPF: idea[1],
+          DEPTORBRANCH: idea[2],
+          IDEADATE: idea[3],
+          NAME: idea[4],
+          USERIDEA: idea[5],
+          read: idea[6] === 1 // Assuming READ_STATUS is at index 6
         }));
         setIdeas(ideasWithStatus);
         setLoading(false);
@@ -28,38 +34,43 @@ function IdeaHub() {
 
   const handleDelete = async (id) => {
     const isConfirmed = window.confirm('Are you sure you want to delete this idea?');
-      
-    if (!isConfirmed) {
-      console.log('Deletion canceled');
-      return;
-    }
+    if (!isConfirmed) return;
 
-    console.log('Deleting idea with ID:', id);
-    
-    if (!id) {
-      console.error('No ID provided for deletion');
-      return;
-    }
-    
     try {
       await axios.delete(`http://localhost:3000/api/ideaHub/deleteIdeaHub/${id}`);
-      setIdeas(prevIdeas => prevIdeas.filter((idea) => idea[0] !== id));
-      console.log('Idea deleted successfully');
+      setIdeas(prevIdeas => prevIdeas.filter(idea => idea.ID !== id));
     } catch (err) {
       setError(err.message);
     }
   };
 
-  const handleCheckboxChange = (id) => {
-    // Update the read status locally
-    setIdeas(prevIdeas => 
-      prevIdeas.map(idea =>
-        idea[0] === id ? { ...idea, read: !idea.read } : idea
-      )
-    );
+  const handleCheckboxChange = async (id) => {
+    try {
+      // Find the current idea
+      const idea = ideas.find(idea => idea.ID === id);
+      if (!idea) return;
+  
+      // Toggle the read status
+      const updatedReadStatus = !idea.read;
+  
+      // Update the read status on the server
+      const response = await axios.patch(`http://localhost:3000/api/ideaHub/updateReadStatus/${id}`, { read: updatedReadStatus ? 1 : 0 });
+  
+      // Check if the backend update was successful
+      console.log('Update response:', response.data);
+  
+      // Update the local state with the new read status
+      setIdeas(prevIdeas =>
+        prevIdeas.map(idea =>
+          idea.ID === id ? { ...idea, read: updatedReadStatus } : idea
+        )
+      );
+    } catch (err) {
+      setError('Failed to update read status. Please try again later.');
+    }
   };
+  
 
-  // Sort ideas: unread first, then read
   const sortedIdeas = [...ideas].sort((a, b) => a.read - b.read);
 
   if (loading) return <p>Loading...</p>;
@@ -81,30 +92,36 @@ function IdeaHub() {
           </tr>
         </thead>
         <tbody>
-          {sortedIdeas.map((idea) => (
-            <tr 
-              key={idea[0]} 
-              className={idea.read ? '' : 'bold-text'}  // Apply bold-text class if not read
-            >
-              <td className="small-column">{idea[1]}</td>
-              <td className="small-column">{idea[2]}</td>
-              <td className="small-column">{idea[3]}</td>
-              <td className="medium-column">{idea[4]}</td>
-              <td className="large-column">{idea[5]}</td>
-              <td className="small-column">
-                <input 
-                  type="checkbox" 
-                  checked={idea.read} 
-                  onChange={() => handleCheckboxChange(idea[0])}
-                />
-              </td>
-              <td className="small-column">
-                <button className="delete-button" onClick={() => handleDelete(idea[0])}>
-                  DELETE
-                </button>
-              </td>
+          {sortedIdeas.length === 0 ? (
+            <tr>
+              <td colSpan="7">No ideas available</td>
             </tr>
-          ))}
+          ) : (
+            sortedIdeas.map((idea) => (
+              <tr
+                key={idea.ID}
+                className={idea.read ? '' : 'bold-text'}
+              >
+                <td className="small-column">{idea.USEREPF}</td>
+                <td className="small-column">{idea.DEPTORBRANCH}</td>
+                <td className="small-column">{idea.IDEADATE}</td>
+                <td className="medium-column">{idea.NAME}</td>
+                <td className="large-column">{idea.USERIDEA}</td>
+                <td className="small-column">
+                  <input
+                    type="checkbox"
+                    checked={idea.read}
+                    onChange={() => handleCheckboxChange(idea.ID)}
+                  />
+                </td>
+                <td className="small-column">
+                  <button className="delete-button" onClick={() => handleDelete(idea.ID)}>
+                    DELETE
+                  </button>
+                </td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>
