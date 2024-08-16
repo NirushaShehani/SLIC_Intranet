@@ -3,12 +3,13 @@ import { Doughnut } from 'react-chartjs-2';
 import { CardContent, Typography, Box, Avatar } from '@mui/material';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { styled } from '@mui/system';
-import axios from 'axios'; // Import axios to make API calls
+import axios from 'axios';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const rec1 = require('../../assets/Rectangle1.png');
 const rec2 = require('../../assets/Rectangle2.png');
+const defaultImage = require('../../assets/default-user.png'); // Path to default user image
 
 const customLabelsPlugin = {
   id: 'customLabels',
@@ -36,6 +37,26 @@ const customLabelsPlugin = {
     });
 
     ctx.restore();
+  }
+};
+
+const centerTextPlugin = {
+  id: 'centerText',
+  beforeDraw: (chart) => {
+    const { ctx, width, height } = chart;
+    const data = chart.data;
+
+    ctx.restore();
+    const fontSize = (height / 150).toFixed(2);
+    ctx.font = `${fontSize}em sans-serif`;
+    ctx.textBaseline = 'middle';
+
+    const text = data.ach_percentage ? `${data.ach_percentage}%` : 'N/A';
+    const textX = Math.round((width - ctx.measureText(text).width) / 2);
+    const textY = height / 2;
+
+    ctx.fillText(text, textX, textY);
+    ctx.save();
   }
 };
 
@@ -79,7 +100,14 @@ const GWPChart = ({ title, data, customLabels }) => (
         {title}
       </Typography>
       <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', marginLeft: '-25px'}}>
-        <Doughnut data={data} options={{ cutout: '70%', plugins: { legend: { display: false } } }} plugins={[customLabelsPlugin]} />
+        <Doughnut 
+          data={data} 
+          options={{ 
+            cutout: '70%', 
+            plugins: { legend: { display: false } } 
+          }} 
+          plugins={[customLabelsPlugin, centerTextPlugin]} 
+        />
       </Box>
       <Box sx={{ textAlign: 'center', marginTop: 2 }}>
         <Typography variant="body2" color="textSecondary">
@@ -99,25 +127,28 @@ const AchieversCard = ({ achievers }) => (
   <Box sx={{ width: 300, padding: 2, marginTop: '-35px' }}>
     <CardContent>
       <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginBottom: 2 }}>
-        MDRT Achievers
+        {achievers.title}
       </Typography>
       <DigitalNumber component="div">
-        165
+        {achievers.list.length}
       </DigitalNumber>
       <Typography variant="body2" color="textSecondary" sx={{ textAlign: 'center' }}>
         Achieved
       </Typography>
-      <Typography variant="h6" component="div" sx={{ textAlign: 'left', marginTop: 2 }}>
-        {achievers.title}
-      </Typography>
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'left', marginTop: 2 }}>
+      <Box sx={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'left', 
+        marginTop: 2, 
+        maxHeight: '150px', // Set a fixed height
+        overflowY: 'auto',  // Enable vertical scrolling
+      }}>
         {achievers.list.map((achiever, index) => (
-          <Box key={index} sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
-            <Avatar alt={achiever.name} src={achiever.image} />
-            <Box sx={{ marginLeft: 2, textAlign: 'left' }}>
-              <Typography variant="body1">{achiever.name}</Typography>
-              <Typography variant="body2" color="textSecondary">{achiever.location}</Typography>
-            </Box>
+          <Box key={index} sx={{ display: 'flex', flexDirection: 'column', marginBottom: 1 }}>
+            <Avatar alt={achiever.agent_name} src={achiever.image || defaultImage} />
+            <Typography variant="body1" fontWeight="bold">{achiever.agent_name}</Typography>
+            <Typography variant="body2" color="textSecondary">Branch: {achiever.branch_name}</Typography>
+            <Typography variant="body2" color="textSecondary">Rank: {achiever.national_rank}</Typography>
           </Box>
         ))}
       </Box>
@@ -164,59 +195,172 @@ const GWPChartsContainer = () => {
   const [dataBranch, setDataBranch] = useState(null);
   const [showBranch, setShowBranch] = useState(false);
   const [currentCard, setCurrentCard] = useState('achievers'); // Initialize with 'achievers'
-  const [achieverList, setAchieverList] = useState(0); // 0 for Top, 1 for Branch, 2 for Regional
+  const [achieverList, setAchieverList] = useState([
+    { title: 'Top Ten Achievers', list: [] },
+    { title: 'Life Members', list: [] },
+    { title: 'TOT Achievers', list: [] }
+  ]);
   const [isHovering, setIsHovering] = useState(false);
+  const [achieverIndex, setAchieverIndex] = useState(0);
 
-  const month = '07'; // Replace this with dynamic month if needed
+  // Get the current month as a number (1-12)
+  const currentMonth = new Date().getMonth() + 1;
+  const currentYear = new Date().getFullYear();
 
   useEffect(() => {
-    // Fetch data from the API
-    const fetchData = async () => {
+    // Fetch LIFE GWP data from the API
+    const fetchLifeData = async () => {
       try {
-        const response = await axios.get(`http://203.115.11.236:10155/LifeIntranetAPI/api/v1/Gwp/GetMonthlyCumalative?p_month=${month}`);
+        const response = await axios.get(`http://203.115.11.236:10155/LifeIntranetAPI/api/v1/Gwp/GetMonthlyGWP?p_month=${currentMonth}`);
         const data = response.data;
 
-        // Assuming the API returns an array with one object as you mentioned
         if (data && data.length > 0) {
           const lifeData = data[0];
+          const achievement = parseFloat(lifeData.achievement);
+          const target = parseFloat(lifeData.target);
+          const ach_percentage = target > 0 ? ((achievement / target) * 100).toFixed(2) : '0.00';
 
-          // Update the doughnut chart data
           setDataLife({
-            labels: ['Achievement %', 'Growth %'],
+            labels: ['Achievement', 'Target'],
             datasets: [
               {
-                data: [lifeData.ach_presentage, lifeData.growth_presentage],
+                data: [achievement, target],
                 backgroundColor: ['#FFB74D', '#42A5F5'],
                 hoverBackgroundColor: ['#FFB74D', '#42A5F5'],
               },
             ],
+            ach_percentage, // Add calculated percentage here
           });
+        } else {
+          console.error('LIFE GWP data not available or empty');
+        }
+      } catch (error) {
+        console.error('Error fetching LIFE GWP data from API:', error);
+      }
+    };
+
+    // Fetch Branch GWP data from the API
+    const fetchBranchData = async () => {
+      try {
+        const response = await axios.get(`http://203.115.11.236:10155/LifeIntranetAPI/api/v1/Gwp/GetMonthlyCumalative?p_month=${currentMonth}`);
+        const data = response.data;
+
+        if (data && data.length > 0) {
+          const branchData = data[0];
+          const achievement = parseFloat(branchData.achievement);
+          const target = parseFloat(branchData.target);
+          const ach_percentage = target > 0 ? ((achievement / target) * 100).toFixed(2) : '0.00';
 
           setDataBranch({
-            labels: ['Achievement %', 'Growth %'],
+            labels: ['Achievement', 'Target'],
             datasets: [
               {
-                data: [lifeData.ach_presentage, lifeData.growth_presentage],
+                data: [achievement, target],
                 backgroundColor: ['#4DB6AC', '#42A5F5'],
                 hoverBackgroundColor: ['#4DB6AC', '#42A5F5'],
               },
             ],
+            ach_percentage, // Add calculated percentage here
           });
+        } else {
+          console.error('Branch GWP data not available or empty');
         }
       } catch (error) {
-        console.error('Error fetching data from API:', error);
+        console.error('Error fetching Branch GWP data from API:', error);
       }
     };
 
-    fetchData();
-  }, [month]);
+    fetchLifeData();
+    fetchBranchData();
+  }, [currentMonth]);
+
+  useEffect(() => {
+    // Fetch Top Achievers data
+    const fetchTopAchievers = async () => {
+      try {
+        const response = await axios.get(`http://203.115.11.236:10155/LifeIntranetAPI/api/v1/Mdrt/GetIslandRankMDRT?p_year=${currentYear}`);
+        const data = response.data;
+
+        if (data && data.length > 0) {
+          setAchieverList((prev) => [
+            { title: 'Top Ten Achievers', list: data.map((item) => ({
+              agent_name: item.agent_name,
+              branch_name: item.branch_name,
+              national_rank: item.national_rank,
+              image: item.image || defaultImage // Use default image if no image is provided
+            })) },
+            prev[1],
+            prev[2],
+          ]);
+        } else {
+          console.error('Top Achievers data not available or empty');
+        }
+      } catch (error) {
+        console.error('Error fetching Top Achievers data from API:', error);
+      }
+    };
+
+    // Fetch Life Members data
+    const fetchLifeMembers = async () => {
+      try {
+        const response = await axios.get(`http://203.115.11.236:10155/LifeIntranetAPI/api/v1/Mdrt/GetLifeMemberMDRT?p_year=${currentYear}`);
+        const data = response.data;
+
+        if (data && data.length > 0) {
+          setAchieverList((prev) => [
+            prev[0],
+            { title: 'Life Members', list: data.map((item) => ({
+              agent_name: item.agent_name,
+              branch_name: item.branch_name,
+              national_rank: item.national_rank,
+              image: item.image || defaultImage // Use default image if no image is provided
+            })) },
+            prev[2],
+          ]);
+        } else {
+          console.error('Life Members data not available or empty');
+        }
+      } catch (error) {
+        console.error('Error fetching Life Members data from API:', error);
+      }
+    };
+
+    // Fetch TOT Achievers data
+    const fetchTOTAchievers = async () => {
+      try {
+        const response = await axios.get(`http://203.115.11.236:10155/LifeIntranetAPI/api/v1/Mdrt/GetTOTRankMDRT?p_year=${currentYear}`);
+        const data = response.data;
+
+        if (data && data.length > 0) {
+          setAchieverList((prev) => [
+            prev[0],
+            prev[1],
+            { title: 'TOT Achievers', list: data.map((item) => ({
+              agent_name: item.agent_name,
+              branch_name: item.branch_name,
+              national_rank: item.national_rank,
+              image: item.image || defaultImage // Use default image if no image is provided
+            })) },
+          ]);
+        } else {
+          console.error('TOT Achievers data not available or empty');
+        }
+      } catch (error) {
+        console.error('Error fetching TOT Achievers data from API:', error);
+      }
+    };
+
+    fetchTopAchievers();
+    fetchLifeMembers();
+    fetchTOTAchievers();
+  }, [currentYear]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isHovering) {
         setShowBranch(prev => !prev);
       }
-    }, 3000); // Flip every 30 seconds if not hovering
+    }, 3000); // Flip every 3 seconds if not hovering
 
     return () => clearInterval(interval);
   }, [isHovering]);
@@ -234,51 +378,8 @@ const GWPChartsContainer = () => {
   };
 
   const handleAchieverClick = () => {
-    setAchieverList(prev => (prev + 1) % 3); // Cycle through Top, Branch, Regional achievers
+    setAchieverIndex(prev => (prev + 1) % 3); // Cycle through Top, Life Members, TOT achievers
   };
-
-  const branchLabels = [
-    'NOP: 485',
-    'AMP: 150',
-    'FYP: Rs.15000'
-  ];
-
-  const topAchievers = {
-    title: 'National Top Achievers',
-    list: [
-      { name: 'A. R. C. Perera', location: 'Bandarawela', image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-      { name: 'K. Dhanushka Silva', location: 'Dehiwala', image: 'https://img.freepik.com/free-photo/smiley-man-holding-camera-front-view_23-2149915895.jpg' },
-      { name: 'N. K. Wijesiri', location: 'Colombo 04', image: 'https://media.istockphoto.com/id/1369508766/photo/beautiful-successful-latin-woman-smiling.jpg?s=612x612&w=0&k=20&c=LoznG6eGT42_rs9G1dOLumOTlAveLpuOi_U755l_fqI=' }
-    ]
-  };
-
-  const cotAchievers = {
-    title: 'COT  Achievers',
-    list: [
-      { name: 'A. B. C. Fernando', location: 'Galle', image: 'https://images.pexels.com/photos/38554/office-two-business-businessmen-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-      { name: 'D. E. F. Gamage', location: 'Kandy', image: 'https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-      { name: 'H. I. J. Silva', location: 'Negombo', image: 'https://images.pexels.com/photos/769888/pexels-photo-769888.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' }
-    ]
-  };
-  const TOTAchievers = {
-    title: 'TOT  Achievers',
-    list: [
-      { name: 'A. B. C. Fernando', location: 'Galle', image: 'https://images.pexels.com/photos/38554/office-two-business-businessmen-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-      { name: 'D. E. F. Gamage', location: 'Kandy', image: 'https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-      { name: 'H. I. J. Silva', location: 'Negombo', image: 'https://images.pexels.com/photos/769888/pexels-photo-769888.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' }
-    ]
-  };
-
-  const regionalAchievers = {
-    title: 'Regional Top Achievers',
-    list: [
-      { name: 'K. L. M. Perera', location: 'Jaffna', image: 'https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-      { name: 'N. O. P. Jayasinghe', location: 'Batticaloa', image: 'https://images.pexels.com/photos/3748221/pexels-photo-3748221.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-      { name: 'Q. R. S. Senanayake', location: 'Trincomalee', image: 'https://images.pexels.com/photos/1181649/pexels-photo-1181649.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' }
-    ]
-  };
-
-  const achieversList = [topAchievers, cotAchievers, TOTAchievers, regionalAchievers];
 
   return (
     <Box sx={{ textAlign: 'center', padding: 2 }}>
@@ -291,7 +392,7 @@ const GWPChartsContainer = () => {
               {dataLife && <GWPChart title="LIFE GWP" data={dataLife} />}
             </div>
             <div className="back">
-              {dataBranch && <GWPChart title="Branch GWP" data={dataBranch} customLabels={branchLabels} />}
+              {dataBranch && <GWPChart title="Branch GWP" data={dataBranch}  />}
             </div>
           </div>
         </FlippingCard>
@@ -300,7 +401,7 @@ const GWPChartsContainer = () => {
         <FlippingCard showBack={false} onClick={handleAchieverClick}>
           <div className="inner">
             <div className="front">
-              {currentCard === 'achievers' ? <AchieversCard achievers={achieversList[achieverList]} /> : <EventCard />}
+              {currentCard === 'achievers' ? <AchieversCard achievers={achieverList[achieverIndex]} /> : <EventCard />}
             </div>
           </div>
         </FlippingCard>
