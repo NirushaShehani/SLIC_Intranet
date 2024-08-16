@@ -61,9 +61,9 @@ const centerTextPlugin = {
 };
 
 const FlippingCard = styled(Box)(({ showBack }) => ({
-  width: 300,
-  height: 450,
-  perspective: 1000,
+  width: 250,
+  height: 375,
+  perspective: 800,
   '& .inner': {
     position: 'relative',
     width: '100%',
@@ -94,12 +94,12 @@ const DigitalNumber = styled(Typography)(({ theme }) => ({
 }));
 
 const GWPChart = ({ title, data, customLabels }) => (
-  <Box sx={{ width: 300, padding: 2, marginTop: '-35px' }}>
+  <Box sx={{ width: 250, padding: 1, marginTop: '-30px' }}>
     <CardContent>
-      <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginBottom: 2 }}>
+      <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginBottom: 1.5 }}>
         {title}
       </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', marginLeft: '-25px'}}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', marginLeft: '-20px'}}>
         <Doughnut 
           data={data} 
           options={{ 
@@ -109,7 +109,7 @@ const GWPChart = ({ title, data, customLabels }) => (
           plugins={[customLabelsPlugin, centerTextPlugin]} 
         />
       </Box>
-      <Box sx={{ textAlign: 'center', marginTop: 2 }}>
+      <Box sx={{ textAlign: 'center', marginTop: 1.5 }}>
         <Typography variant="body2" color="textSecondary">
           GWP Meter
         </Typography>
@@ -124,9 +124,9 @@ const GWPChart = ({ title, data, customLabels }) => (
 );
 
 const AchieversCard = ({ achievers }) => (
-  <Box sx={{ width: 300, padding: 2, marginTop: '-35px' }}>
+  <Box sx={{ width: 250, padding: 1, marginTop: '-30px' }}>
     <CardContent>
-      <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginBottom: 2 }}>
+      <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginBottom: 1.5 }}>
         {achievers.title}
       </Typography>
       <DigitalNumber component="div">
@@ -144,7 +144,7 @@ const AchieversCard = ({ achievers }) => (
         overflowY: 'auto',  // Enable vertical scrolling
       }}>
         {achievers.list.map((achiever, index) => (
-          <Box key={index} sx={{ display: 'flex', flexDirection: 'column', marginBottom: 1 }}>
+          <Box key={index} sx={{ display: 'flex', flexDirection: 'column', marginBottom: 1.5 }}>
             <Avatar alt={achiever.agent_name} src={achiever.image || defaultImage} />
             <Typography variant="body1" fontWeight="bold">{achiever.agent_name}</Typography>
             <Typography variant="body2" color="textSecondary">Branch: {achiever.branch_name}</Typography>
@@ -168,16 +168,16 @@ const EventCard = () => {
   }, []);
 
   const eventInfo = currentImage === rec1 
-    ? { date: 'June 9-12, 2024', location: 'Vancouver, British Columbia, Canada' }
-    : { date: 'June 22-25, 2025', location: 'Miami Beach, Florida, USA' };
+    ? { date: 'June 9-12, 2024', location: 'Vancouver, BC, Canada' }
+    : { date: 'June 22-25, 2025', location: 'Miami Beach, FL, USA' };
 
   return (
-    <Box sx={{ width: 300, padding: 2, marginTop: '-35px' }}>
+    <Box sx={{ width: 250, padding: 2, marginTop: '-32px' }}>
       <CardContent>
-        <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', height: '390px' }}>
-          <img src={currentImage} alt="Event" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 8, margin: '2px', width: '300px', marginLeft: '-66px', marginRight: '-34px' }} />
+        <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', height: '300px', overflow: 'hidden', borderRadius: 2, width: '-200px', marginLeft: '-32px'}}>
+          <img src={currentImage} alt="Event" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </Box>
-        <Box sx={{ textAlign: 'left', marginTop: 2 }}>
+        <Box sx={{ textAlign: 'center', marginTop: 2 }}>
           <Typography variant="body2" color="textSecondary" fontWeight={'bold'}>
             {eventInfo.date}
           </Typography>
