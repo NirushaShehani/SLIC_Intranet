@@ -147,21 +147,21 @@ const Life = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Internal Audit</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/circulars-online/compliance.html')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Complience</span>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://172.24.60.66/circulars-online/compliance.html')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Complience</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Acturial and risk management</span>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
+              <span className="hover-text">Acturial and risk management</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Stratergy and planning</span>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"  />
+              <span className="hover-text">Stratergy and planning</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Corporate business and reinsurance</span>
+            <div  className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+              <span className="hover-text">Corporate business and reinsurance</span>
             </div>
           </div>
 
@@ -171,46 +171,46 @@ const Life = () => {
             <span className="hrDot"></span><span className="hrLine"></span>
           </div>
           <div style={listContainer}>
-          <div style={listItemStyle}>
+          <div  className="hover-container" style={listItemStyle}>
               <Link to="/LIFE-Forms" style={{ cursor: 'pointer' }}>
-                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                <span>Life Forms</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+                <span  className="hover-text">Life Forms</span>
               </Link>
             </div>
-            <div style={listItemStyle} >
+            <div className="hover-container" style={listItemStyle} >
               <Link to="/ISO-Forms" style={{ cursor: 'pointer' }}>
-                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                <span>ISO Forms</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+                <span  className="hover-text">ISO Forms</span>
               </Link>
             </div>
-            <div style={listItemStyle}>
+            <div  className="hover-container"style={listItemStyle}>
               <Link to="/ICT-Forms" style={{ cursor: 'pointer' }}>
-                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                <span>ICT Forms</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+                <span  className="hover-text">ICT Forms</span>
               </Link>
             </div>
-            <div style={listItemStyle}>
+            <div  className="hover-container" style={listItemStyle}>
               <Link to="/Sales-Forms" style={{ cursor: 'pointer' }}>
-                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                <span>Sales Forms</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+                <span  className="hover-text">Sales Forms</span>
               </Link>
             </div>
-            <div style={listItemStyle}>
+            <div  className="hover-container" style={listItemStyle}>
               <Link to="/Common-Forms" style={{ cursor: 'pointer' }}>
-                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                <span>Common Forms</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+                <span  className="hover-text">Common Forms</span>
               </Link>
             </div>
-            <div style={listItemStyle}>
+            <div  className="hover-container" style={listItemStyle}>
               <Link to="/Membership-Forms" style={{ cursor: 'pointer' }}>
-                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                <span>Membership Forms</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+                <span  className="hover-text">Membership Forms</span>
               </Link>
             </div>
-            <div style={listItemStyle}>
+            <div  className="hover-container" style={listItemStyle}>
               <Link to="/Security-Department-Forms" style={{ cursor: 'pointer' }}>
-                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                <span>Security Department Forms</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+                <span  className="hover-text">Security Department Forms</span>
               </Link>
             </div>
            
