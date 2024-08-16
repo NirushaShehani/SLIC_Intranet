@@ -22,10 +22,8 @@ const notAchievedBranches = branches.filter(branch => branch.value < branch.targ
 const images = [image1, image2, image3];
 
 const strings = [
-  { key: "Q 1", value: "10%" },
-  { key: "Q 2", value: "10%" },
-  { key: "Q 3", value: "10%" },
-  { key: "Q 4", value: "10%" }
+  { key: "Feb and March", value: "20.0%" },
+  { key: "Q 2", value: "30.0%" },
 ];
 
 const updatedStrings = strings.filter(item => item.value !== "");
@@ -43,6 +41,31 @@ const BranchPerformance = () => {
 
   return (
     <div>
+      <div className="incentive-criteria">
+        <div className="table-container">
+          <div className="incentive-container">
+            <h2>Life Incentive</h2>
+            <table>
+              <tbody>
+                <tr className="incentive-container-content">
+                  {updatedStrings.map((item, index) => (
+                    <td key={index}>{item.key}</td>
+                  ))}
+                </tr>
+                <tr className="incentive-container-content">
+                  {updatedStrings.map((item, index) => (
+                    <td key={index}>{item.value}</td>
+                  ))}
+                </tr>
+              </tbody>
+            </table>
+            <div className="link-contain">
+              <Link to="/Incentive-Criteria-page" className="read-more">Read more...</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <div className="branch-performance">
         <h2>Branch Performance</h2>
         <div className="branch-list">
@@ -75,30 +98,7 @@ const BranchPerformance = () => {
         </div>
       </div>
 
-      <div className="incentive-criteria">
-        <div className="table-container">
-          <div className="incentive-container">
-            <h2>Life Incentive</h2>
-            <table>
-              <tbody>
-                <tr className="incentive-container-content">
-                  {updatedStrings.map((item, index) => (
-                    <td key={index}>{item.key}</td>
-                  ))}
-                </tr>
-                <tr className="incentive-container-content">
-                  {updatedStrings.map((item, index) => (
-                    <td key={index}>{item.value}</td>
-                  ))}
-                </tr>
-              </tbody>
-            </table>
-            <div className="link-contain">
-              <Link to="/Incentive-Criteria-page" className="read-more">Read more...</Link>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   );
 };

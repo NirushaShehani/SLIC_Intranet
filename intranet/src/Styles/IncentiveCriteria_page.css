@@ -79,6 +79,7 @@ table {
 /* Styles for the specific table */
 .table-wrapper-table th {
   height: 28px;
+  color: #ffffff;
 }
 
 /* Adjust the width of table cells */
@@ -112,6 +113,11 @@ th {
 }
 .Staff-Criteria th{
   background-color: #0077b6;
+
+  color: #ffffff;
+  font-weight: 500;
+
+
 }
 
 .Staff-Criteria-collums th {
@@ -138,7 +144,9 @@ th {
 }
 
 .Payout-ratio-row {
-  background-color: #173b45;
+  background-color: #1b4a59;
+  color: #ffffff;
+  font-weight: 400;
 }
 
 .life-row {
@@ -149,21 +157,26 @@ th {
 }
 
 .Expense-Ratio-row {
-  background-color: #379777;
+  background-color: #00adbb;
+  color: #ffffff;
+  font-weight: 400;
 }
 
 .Total-Shareholder-surplus-row {
   background-color: #5472a0;
   font-weight: 400;
+  color: #ffffff;
 }
 
 .Payout-ratio-row-data {
+  background-color: #b0d6de;
   background-color: #789ea6;
   font-weight: 500;
   color: #000;
 }
 
 .Expense-Ratio-row-data {
+  background-color: #79d0d6;
   background-color: #73bbab;
   font-weight: 500;
   color: #000;

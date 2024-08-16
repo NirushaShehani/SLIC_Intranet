@@ -67,23 +67,6 @@
   margin-right: 100px;
 }
 
-.incentive-criteria {
-  margin-top: 22px;
-  padding-top: 1px;
-  background-color: #31769F;
-  border-radius: 8px;
-  max-width: 300px;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-.incentive-criteria h2 {
-  font-size: 14px;
-  margin-bottom: 5px; 
-  margin-top: 5px;
-  margin-right: 100px;
-}
 
 .image-container {
   width: 100%;
@@ -102,7 +85,27 @@
   border-bottom-right-radius: 8px;
 }
 
-/* New CSS for horizontal table */
+/* New CSS for incentive criteria table */
+
+
+.incentive-criteria {
+  margin-top: 22px;
+  padding-top: 1px;
+  background-color: #31769F;
+  border-radius: 8px;
+  max-width: 300px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.incentive-criteria h2 {
+  font-size: 14px;
+  margin-bottom: 5px; 
+  margin-top: 5px;
+  margin-right: 100px;
+}
+
 .incentive-criteria .table-container {
   overflow-x: auto;
   white-space: nowrap;
@@ -112,25 +115,23 @@
   width: 100%;
   border-collapse: collapse;
   text-align: center;
-  background-color: #fff;
-  color: #000;
   border-radius: 4px;
   margin-bottom: 10px;
 }
 
 .incentive-criteria table td {
   padding: 8px;
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
 }
 
 .incentive-criteria table tr:nth-child(1) {
-  background-color: #31769F;
+  background-color: #00adbb;
   color: #fff;
 }
 
 .incentive-criteria table tr:nth-child(2) {
-  background-color: #fff;
-  color: #000;
+  background-color: #ffffff;
+
 }
 .incentive-criteria .link-contain {
   overflow: hidden;
@@ -155,7 +156,7 @@
 }
 
 .incentive-container-content td{
-  color: #000;
+  color: #000000;
   font-weight: 500;
   
 }
