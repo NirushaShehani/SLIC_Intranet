@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import * as XLSX from 'xlsx';
 import './AdminStyles/AdminSalesLead.css';
 
 function AdminSalesLead() {
@@ -50,6 +51,15 @@ function AdminSalesLead() {
       }
     };
     
+    const handleDownload = () => {
+      // Convert salesLeads data to a format suitable for Excel
+      const worksheet = XLSX.utils.json_to_sheet(salesLeads);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, 'Sales Leads');
+      
+      // Generate the Excel file
+      XLSX.writeFile(workbook, 'SalesLeadsData.xlsx');
+  };
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
@@ -94,6 +104,11 @@ function AdminSalesLead() {
           })}
         </tbody>
         </table>
+        <div className="button-container">
+                <button className="download-button" onClick={handleDownload}>
+                    Download
+                </button>
+            </div>
       </div>
     );
   }
