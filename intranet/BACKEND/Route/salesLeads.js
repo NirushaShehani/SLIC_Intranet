@@ -69,6 +69,7 @@ router.get('/fetchSalesLeads', async (req, res) => {
     const result = await connection.execute(
       `SELECT ID, CLIENTNAME, CONTACTNO1, CONTACTNO2, SLICREQUIREMENT, STAFFMEMBERNAME, STAFFCONTACTNO, EXTENSION, DEPARTMENT 
        FROM INTRANET.CLIENT_CONTACT_DATA
+       WHERE IS_ACTIVE != 0
        ORDER BY ID DESC`,
       [],
       { outFormat: oracledb.OUT_FORMAT_OBJECT } // Add this option
@@ -102,10 +103,16 @@ router.delete('/deleteSalesLead/:id', async (req, res) => {
 
     const { id } = req.params;
     const result = await connection.execute(
-      `DELETE FROM INTRANET.CLIENT_CONTACT_DATA WHERE ID = :id`,
+      `UPDATE INTRANET.CLIENT_CONTACT_DATA 
+       SET IS_ACTIVE = 0 
+       WHERE ID = :id`,
       [id],
       { autoCommit: true }
     );
+
+    if (result.rowsAffected === 0) {
+      return res.status(404).send('Sales Lead not found');
+    }
 
     res.status(200).send('Sales Lead deleted successfully');
   } catch (err) {
