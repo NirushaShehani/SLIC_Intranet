@@ -174,15 +174,15 @@ const Services = () => {
               
             </div>
             {/* Button section */}
-            <button style={buttonStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>Complaint Management Center</button>
-            <button style={buttonStyle} onClick={() => setSelectedDept('Procurement')}>Procurement</button>
-            <button style={buttonStyle} onClick={() => setSelectedDept('ICT')}>ICT</button>
+            
             <button style={buttonStyle} onClick={() => setSelectedDept('Life')}>Life</button>
             <button style={buttonStyle} onClick={() => setSelectedDept('HR')}>HR</button>
+            <button style={buttonStyle} onClick={() => setSelectedDept('ICT')}>ICT</button>
             <button style={buttonStyle} onClick={() => setSelectedDept('Finance')}>Finance</button>
+            <button style={buttonStyle} onClick={() => setSelectedDept('Life Contact Center')}>Life Contact Center</button>
             <button style={buttonStyle} onClick={() => setSelectedDept('Sales')}>Sales</button>
+            <button style={buttonStyle} onClick={() => setSelectedDept('Procrument')}>Procrument</button>
             <button style={buttonStyle} onClick={() => setSelectedDept('Transport')}>Transport</button>
-            <button style={buttonStyle} onClick={() => setSelectedDept('Life_Contact')}>Life Contact Center</button>
           </div>
         </div>
       </div>

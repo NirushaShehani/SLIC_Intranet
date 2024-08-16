@@ -31,7 +31,7 @@ const Incentive_Criteria = () => {
       },
     
       
-      
+     
 
 
     ],
@@ -46,7 +46,6 @@ const Incentive_Criteria = () => {
       </div>
       <div className="incentive-column2">
         <div className="scrollable-tables-container">
-          {/* Scrollable Tables */}
           <div className="scrollable-tables">
             <div className="table-wrapper static-table-wrapper">
               <table className="static-table">
@@ -140,7 +139,7 @@ const Incentive_Criteria = () => {
                             <th key={topicIndex}>{topic}</th>
                           ))}
                         </tr>
-                        <tr className="custom-row-content1">
+                        <tr className="custom-row-content-2">
                           {table.additionalData.map((dataItem, dataIndex) => (
                             <td key={dataIndex}>{dataItem}</td>
                           ))}

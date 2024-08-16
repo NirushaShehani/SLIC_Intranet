@@ -23,7 +23,7 @@ router.post('/submit', async (req, res) => {
 
     console.log('Executing Insert Query');
     const result = await connection.execute(
-      `INSERT INTO SLI_APPS.IDEA_HUB_TBL (ID, USEREPF, DEPTORBRANCH, IDEADATE, NAME, USERIDEA) 
+      `INSERT INTO INTRANET.IDEA_HUB_TBL (ID, USEREPF, DEPTORBRANCH, IDEADATE, NAME, USERIDEA) 
        VALUES (SLI_APPS.IDEA_HUB_TBL_SEQ.NEXTVAL,:userEPF, :deptOrBranch, TO_DATE(:ideadate, 'YYYY-MM-DD'), :name, :userIdea)`,
       { 
         userEPF: userEPF,
@@ -41,6 +41,149 @@ router.post('/submit', async (req, res) => {
   } catch (err) {
     console.error('Error inserting data:', err);
     res.status(500).send('Error inserting data: ' + err.message);
+  } finally {
+    if (connection) {
+      try {
+        await connection.close();
+      } catch (err) {
+        console.error('Error closing connection:', err);
+      }
+    }
+  }
+});
+
+// GET request to fetch all records
+router.get('/fetchideas', async (req, res) => {
+  let connection;
+  try {
+    connection = await oracledb.getConnection({
+      user: 'ais',
+      password: 'ais',
+      connectString: '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=172.24.90.20)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=BEELIFE)))'
+    });
+
+    console.log('Executing Select Query');
+    const result = await connection.execute(
+       `SELECT ID, USEREPF, DEPTORBRANCH, TO_CHAR(IDEADATE, 'YYYY-MM-DD') AS IDEADATE, NAME, USERIDEA
+       FROM INTRANET.IDEA_HUB_TBL
+       ORDER BY IDEADATE DESC`
+    );
+
+    console.log('Select Result:', result.rows);
+
+    res.status(200).json(result.rows);
+  } catch (err) {
+    console.error('Error fetching data:', err);
+    res.status(500).send('Error fetching data: ' + err.message);
+  } finally {
+    if (connection) {
+      try {
+        await connection.close();
+      } catch (err) {
+        console.error('Error closing connection:', err);
+      }
+    }
+  }
+});
+
+router.delete('/deleteIdeaHub/:id', async (req, res) => {
+  let connection;
+  try {
+    connection = await oracledb.getConnection({
+      user: 'ais',
+      password: 'ais',
+      connectString: '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=172.24.90.20)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=BEELIFE)))'
+    });
+
+    const { id } = req.params;
+    const result = await connection.execute(
+      `DELETE FROM INTRANET.IDEA_HUB_TBL WHERE ID = :id`,
+      [id],
+      { autoCommit: true }
+    );
+
+    res.status(200).send('Idea deleted successfully');
+  } catch (err) {
+    console.error('Error deleting data:', err);
+    res.status(500).send('Error deleting data: ' + err.message);
+  } finally {
+    if (connection) {
+      try {
+        await connection.close();
+      } catch (err) {
+        console.error('Error closing connection:', err);
+      }
+    }
+  }
+});
+
+// Add this route to your existing routes
+
+router.patch('/updateReadStatus/:id', async (req, res) => {
+  let connection;
+  try {
+    connection = await oracledb.getConnection({
+      user: 'ais',
+      password: 'ais',
+      connectString: '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=172.24.90.20)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=BEELIFE)))'
+    });
+
+    const { id } = req.params;
+    const { read } = req.body; // Read status should be sent in the request body
+
+    const result = await connection.execute(
+      `UPDATE INTRANET.IDEA_HUB_TBL SET READ_STATUS = :read WHERE ID = :id`,
+      { id, read },
+      { autoCommit: true }
+    );
+
+    if (result.rowsAffected === 0) {
+      return res.status(404).send('Idea not found');
+    }
+
+    res.status(200).send('Read status updated successfully');
+  } catch (err) {
+    console.error('Error updating read status:', err);
+    res.status(500).send('Error updating read status: ' + err.message);
+  } finally {
+    if (connection) {
+      try {
+        await connection.close();
+      } catch (err) {
+        console.error('Error closing connection:', err);
+      }
+    }
+  }
+});
+
+// Add this route to your existing routes
+
+router.patch('/updateReadStatus/:id', async (req, res) => {
+  let connection;
+  try {
+    connection = await oracledb.getConnection({
+      user: 'ais',
+      password: 'ais',
+      connectString: '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=172.24.90.20)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=BEELIFE)))'
+    });
+
+    const { id } = req.params;
+    const { read } = req.body; // Read status should be sent in the request body
+
+    const result = await connection.execute(
+      `UPDATE INTRANET.IDEA_HUB_TBL SET READ_STATUS = :read WHERE ID = :id`,
+      { id, read },
+      { autoCommit: true }
+    );
+
+    if (result.rowsAffected === 0) {
+      return res.status(404).send('Idea not found');
+    }
+
+    res.status(200).send('Read status updated successfully');
+  } catch (err) {
+    console.error('Error updating read status:', err);
+    res.status(500).send('Error updating read status: ' + err.message);
   } finally {
     if (connection) {
       try {

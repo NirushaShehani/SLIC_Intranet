@@ -19,7 +19,7 @@
 .incentive-column2 {
   padding: 10px;
   border-radius: 5px;
-  flex-grow: 1; /* Allow this column to take the remaining space */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
@@ -86,15 +86,18 @@ table {
 .table-wrapper-table th,
 .table-wrapper-table td {
   padding: 5px;
+  border: 2px solid #ffffff;
 }
 
 .static-table {
   font-size: 10px;
+  
 }
 
 .static-table th,
 .static-table td {
   padding: 10px;
+  border: 2px solid #ffffff;
 }
 
 th,
@@ -110,19 +113,26 @@ th {
 }
 .Staff-Criteria th{
   background-color: #0077b6;
+
   color: #ffffff;
   font-weight: 500;
+
+
 }
 
 .Staff-Criteria-collums th {
   background-color: #00b4d8;
   color: #ffffff;
 }
+.table-wrapper-table th{
+  background-color: #0077b6;
+}
 
 .table-wrapper-table-collums th {
   background-color: #00b4d8;
   color: #ffffff;
 }
+
 
 .custom-row td {
   padding: 50px;
@@ -160,12 +170,14 @@ th {
 
 .Payout-ratio-row-data {
   background-color: #b0d6de;
+  background-color: #789ea6;
   font-weight: 500;
   color: #000;
 }
 
 .Expense-Ratio-row-data {
   background-color: #79d0d6;
+  background-color: #73bbab;
   font-weight: 500;
   color: #000;
 }
@@ -200,11 +212,11 @@ font-weight: 600;
 font-size: 20px;
 height: 60px;
 }
-.custom-row-content1{
+.custom-row-content-2 td{
   background-color: #ffdd1e;
   
 }
-.custom-row-content1 td{
+.custom-row-content-2 td{
   color: #0077b6;
   font-weight: 500;
 }

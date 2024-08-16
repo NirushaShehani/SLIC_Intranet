@@ -59,17 +59,17 @@ const Life = () => {
         <div className="home-container">
          
           <div style={listContainer}>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/b-net-new/Company%20Profile%20-%20SLIC.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Company Profile</span>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/b-net-new/Company%20Profile%20-%20SLIC.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+              <span className="hover-text">Company Profile</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/corporate-values/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Coporate Values</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/corporate-values/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Coporate Values</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.89/aml/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>AML Module</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.89/aml/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">AML Module</span>
             </div>
           </div>
            {/*MANUALS*/}
@@ -79,25 +79,25 @@ const Life = () => {
             <span className="hrDot"></span><span className="hrLine"></span>
           </div>
           <div style={listContainer}>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/life/life-manual/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Life</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/life/life-manual/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Life</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/COGNOS/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>COGNOS Reports Manual</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/COGNOS/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">COGNOS Reports Manual</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://slic.intranet.com/GeneralManual/general.html')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>General Manual</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://slic.intranet.com/GeneralManual/general.html')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">General Manual</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://b-net/b-net-new/general-docs/RI%20Dept.%20Procedure%20Manual.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Reinsurance Department Procedure Manual</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://b-net/b-net-new/general-docs/RI%20Dept.%20Procedure%20Manual.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Reinsurance Department Procedure Manual</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/b-net-new/Hris-Document/HRIS-User_Guide.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>HRIS User Manual</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/b-net-new/Hris-Document/HRIS-User_Guide.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">HRIS User Manual</span>
             </div>
           </div>
           {/*MANUALS*/}
@@ -109,89 +109,89 @@ const Life = () => {
             <span className="hrDot"></span><span className="hrLine"></span>
           </div>
           <div style={listContainer}>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-phs-tracking/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Life PHS Tracking</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-phs-tracking/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Life PHS Tracking</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/system-training/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>System Training</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/system-training/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">System Training</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/online-payments-marketing-campaigns/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Online Payments & Marketing Campaigns</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/online-payments-marketing-campaigns/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Online Payments & Marketing Campaigns</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Life</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Life</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-system/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Life System</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-system/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Life System</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/hhttp://172.24.60.66/knowledgebase/index.php/knowledge-base/life-insurance-introduction/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Life Insurance Introduction</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hhttp://172.24.60.66/knowledgebase/index.php/knowledge-base/life-insurance-introduction/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Life Insurance Introduction</span>
             </div>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/insurance-and-slic-introduction/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Insurance and SLIC Introduction</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/insurance-and-slic-introduction/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Insurance and SLIC Introduction</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/call-center-introduction/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Call Center Introduction</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/call-center-introduction/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Call Center Introduction</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/ccm-and-tis-training/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>CCM and TIS Training</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/ccm-and-tis-training/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">CCM and TIS Training</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/how-to-get-medical-coordinators-contact-details/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>How to get Medical Coordinator’s Contact Details </span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/how-to-get-medical-coordinators-contact-details/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">How to get Medical Coordinator’s Contact Details </span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/how-to-log-in-to-b-call-center-system/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>How to log in to B-Call Center System</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/how-to-log-in-to-b-call-center-system/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">How to log in to B-Call Center System</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/handling-marketing-campaigns/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Handling Marketing Campaigns</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/handling-marketing-campaigns/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Handling Marketing Campaigns</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-new-business-call-process/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Life New Business Call process</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-new-business-call-process/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Life New Business Call process</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-claims-and-other-inquiries-call-process/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Life Claims and Other Inquiries Call process</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-claims-and-other-inquiries-call-process/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Life Claims and Other Inquiries Call process</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-product-policies-department-division-information-call-process/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Life Product/Policies/Department/Division/Information Call Process</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-product-policies-department-division-information-call-process/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Life Product/Policies/Department/Division/Information Call Process</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-insurance-call-process/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Life Insurance Call process</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-insurance-call-process/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Life Insurance Call process</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/call-quality-criteria/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Call Quality Criteria</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/call-quality-criteria/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Call Quality Criteria</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/functions-of-call-center-administration-department/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Functions of Call Center Administration Department </span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/functions-of-call-center-administration-department/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Functions of Call Center Administration Department </span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/call-quality-evaluating/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Call Quality Evaluating</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/call-quality-evaluating/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Call Quality Evaluating</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/training-new-agents/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Training New Agents</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/training-new-agents/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Training New Agents</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/job-role-of-a-call-center-agent/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Job Role of a Call Center Agent</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/job-role-of-a-call-center-agent/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Job Role of a Call Center Agent</span>
             </div>
             
           </div>
@@ -205,189 +205,189 @@ const Life = () => {
             <span className="hrDot"></span><span className="hrLine"></span>
           </div>
           <div style={listContainer}>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-bonus-system-training/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Life Bonus system Training</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-bonus-system-training/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Life Bonus system Training</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/workmens-compensation/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Workmen’s Compensation</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/workmens-compensation/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Workmen’s Compensation</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sri-lanka-insurance-health-plus/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Sri Lanka Insurance Health Plus</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sri-lanka-insurance-health-plus/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Sri Lanka Insurance Health Plus</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/protect-group-term-life-policy/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Protect – Group Term Life POLICY</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/protect-group-term-life-policy/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Protect – Group Term Life POLICY</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/marine-cargo-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Marine Cargo Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/marine-cargo-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Marine Cargo Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/marine-hull-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Marine Hull Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/marine-hull-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Marine Hull Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/leasing-all-risk-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Leasing All Risk Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/leasing-all-risk-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Leasing All Risk Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/machinery-loss-of-profits-insurance-mlop/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Machinery Loss of Profits Insurance (MLOP)</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/machinery-loss-of-profits-insurance-mlop/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Machinery Loss of Profits Insurance (MLOP)</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/deterioration-of-stock-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Deterioration of Stock Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/deterioration-of-stock-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Deterioration of Stock Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/contractors-plant-and-machinery-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Contractor’s Plant and Machinery Insurance </span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/contractors-plant-and-machinery-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Contractor’s Plant and Machinery Insurance </span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/machinery-breakdown-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Machinery Breakdown Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/machinery-breakdown-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Machinery Breakdown Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/electronic-equipment-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Electronic Equipment Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/electronic-equipment-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Electronic Equipment Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/erection-all-risks-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Erection All Risks Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/erection-all-risks-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Erection All Risks Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/contractors-all-risks-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Contractors’ All Risks Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/contractors-all-risks-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Contractors’ All Risks Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/hoteliers-comprehensive-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Hoteliers Comprehensive Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/hoteliers-comprehensive-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Hoteliers Comprehensive Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/tea-factory-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Tea Factory Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/tea-factory-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Tea Factory Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/trade-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Trade Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/trade-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Trade Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/insurance-for-industrial-business-premises/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Insurance for Industrial / Business Premises </span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/insurance-for-industrial-business-premises/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Insurance for Industrial / Business Premises </span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/suraksha-health-policy-for-school-children/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Suraksha Health Policy For School Children</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/suraksha-health-policy-for-school-children/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Suraksha Health Policy For School Children</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/personal-accident/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Personal Accident</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/personal-accident/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Personal Accident</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sri-lanka-insurance-gaurawa/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Sri Lanka Insurance Gaurawa</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sri-lanka-insurance-gaurawa/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Sri Lanka Insurance Gaurawa</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/globe-trotter-travel-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Globe Trotter Travel Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/globe-trotter-travel-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Globe Trotter Travel Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/home-protect/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Home Protect</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/home-protect/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Home Protect</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/home-protect-lite/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Home Protect Lite</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/home-protect-lite/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Home Protect Lite</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/burglary-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Burglary Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/burglary-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Burglary Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-suba-pathum-scholarship/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Life Suba pathum Scholarship</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-suba-pathum-scholarship/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Life Suba pathum Scholarship</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/mortgage-protection-plan/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Mortgage Protection Plan</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/mortgage-protection-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Mortgage Protection Plan</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/minimuthu-parithyaga/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Minimuthu Parithyaga</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/minimuthu-parithyaga/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Minimuthu Parithyaga</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/minimuthu-childrens-policy/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Minimuthu – Children’s Policy</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/minimuthu-childrens-policy/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Minimuthu – Children’s Policy</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/minimuthu-daayada/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Minimuthu Daayada</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/minimuthu-daayada/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Minimuthu Daayada</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-hospital-cash-plan/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>SLI Hospital Cash Plan</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-hospital-cash-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">SLI Hospital Cash Plan</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-overseas-comprehensive-plan/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>SLI Overseas Comprehensive Plan </span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-overseas-comprehensive-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">SLI Overseas Comprehensive Plan </span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-comprehensive-plan/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>SLI Comprehensive Plan</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-comprehensive-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">SLI Comprehensive Plan</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-surgical-plan/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>SLI Surgical Plan</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-surgical-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">SLI Surgical Plan</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('- http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-medi-life/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>SLI Medi-Life</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('- http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-medi-life/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">SLI Medi-Life</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-annual-medical-plan/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>SLI Annual Medical Plan</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-annual-medical-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">SLI Annual Medical Plan</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/freedom-retirement-plan/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Freedom – Retirement Plan</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/freedom-retirement-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Freedom – Retirement Plan</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/jana-diri-two-year-relief-plan/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Jana Diri Two Year Relief Plan </span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/jana-diri-two-year-relief-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Jana Diri Two Year Relief Plan </span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate(' http://172.24.60.66/knowledgebase/index.php/knowledge-base/swarna-dhaja/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Swarna Dhaja</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate(' http://172.24.60.66/knowledgebase/index.php/knowledge-base/swarna-dhaja/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Swarna Dhaja</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/yasa-isuru-advance-benefit-plan/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Yasa Isuru – Advance Benefit Plan</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/yasa-isuru-advance-benefit-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Yasa Isuru – Advance Benefit Plan</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/praguna-high-returns-policy/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Praguna – High Returns Policy</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/praguna-high-returns-policy/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Praguna – High Returns Policy</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/divi-thilina-protection-plan/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Divi Thilina – Protection Plan</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/divi-thilina-protection-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Divi Thilina – Protection Plan</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate(' http://172.24.60.66/knowledgebase/index.php/knowledge-base/slic-products/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>SLIC Products</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate(' http://172.24.60.66/knowledgebase/index.php/knowledge-base/slic-products/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">SLIC Products</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/annual-medical-plan/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Annual Medical Plan</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/annual-medical-plan/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Annual Medical Plan</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/motor-plus-motor-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Motor Plus – Motor Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/motor-plus-motor-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Motor Plus – Motor Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/fire-insurance/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Fire Insurance </span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/fire-insurance/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Fire Insurance </span>
             </div>
            
 
