@@ -162,8 +162,8 @@ const KnowledgeBase = () => {
         </style>
         <Slider {...settings} style={styles.slideshow}>
           {images.map((image, index) => (
-            <div key={index}>
-              <img src={image} alt={`Slide ${index + 1}`} style={{ width: '290px', height: '400px', borderRadius: '15px' }} />
+            <div key={index}  style={styles.imageContainer}> 
+              <img src={image} alt={`Slide ${index + 1}`} style={styles.image} />
             </div>
           ))}
         </Slider>
@@ -219,8 +219,21 @@ const styles = {
     fontSize: "19px"
   },
   slideshow: {
-    width: "290px",
-    margin: "15px 10px 10px"
+    width: "100%",
+    maxWidth:"600px",
+    margin: "15px auto 10px"
+  },
+
+  imageContainer: {
+     width: '290px', 
+     height: '400px', 
+     borderRadius: '15px'
+  },
+
+  image: {
+    width : "100%",
+    height: "auto",
+    borderRadius: "15px"
   }
   
 };
