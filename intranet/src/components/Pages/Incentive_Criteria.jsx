@@ -6,29 +6,38 @@ const Incentive_Criteria = () => {
   const [data, setData] = useState({
     tableData: [
       {
-        name: "SLICLL (For Feb and Mar 2024)",
-        rows: [["Feb-Mar 2024_Actual", "Eligible Incentive %"], ["43%", "5.00%"], ["40%", "1.00%"], ["875Mn", "4.00%"]],
+        name: "Feb and Mar 2024",
+        rows: [["Feb-Mar 2024 Actual", "Eligible Incentive %"], ["43%", "5.00%"], ["40%", "1.00%"], ["875Mn", "4.00%"]],
         additionalDataTopics: [["For Feb & Mar 2024"], ["Incentive %"]],
         additionalData: [["Life (10% x 2)"], ["20%"]],
       },
       {
-        name: "SLICLL -Apr- June 2024",
-        rows: [["Apr-June", "Eligible Incentive %"], ["44.23%", "5.00%"], ["36.60%", "2.50%"], ["990Mn", "2.50%"]],
+        name: "Apr-June 2024",
+        rows: [["Apr-June 2024 Actual", "Eligible Incentive %"], ["44.23%", "5.00%"], ["36.60%", "2.50%"], ["990Mn", "2.50%"]],
         additionalDataTopics: [["For 2nd Quarter 2024"], ["Incentive %"]],
         additionalData: [["Life (10% x 3)"], ["30%"]],
       },
       {
-        name: "SLICLL -Apr- June 2024",
-        rows: [["Apr-June", "Eligible Incentive %"], ["44.23%", "5.00%"], ["36.60%", "2.50%"], ["990Mn", "2.50%"]],
+        name: "Apr-June 2024",
+        rows: [["Apr-June 2024 Actual", "Eligible Incentive %"], ["44.23%", "5.00%"], ["36.60%", "2.50%"], ["990Mn", "2.50%"]],
         additionalDataTopics: [["For 2nd Quarter 2024"], ["Incentive %"]],
         additionalData: [["Life (10% x 3)"], ["30%"]],
       },
+      {
+        name: "Apr-June 2024",
+        rows: [["Apr-June 2024 Actual", "Eligible Incentive %"], ["44.23%", "5.00%"], ["36.60%", "2.50%"], ["990Mn", "2.50%"]],
+        additionalDataTopics: [["For 2nd Quarter 2024"], ["Incentive %"]],
+        additionalData: [["Life (10% x 3)"], ["30%"]],
+      },
+    
       
       
+
+
     ],
   });
 
-  const rowColors = ["#789ea6", "#73bbab", "#85a7c4"];
+  const rowColors = ["#789ea6", "#79d0d6", "#85a7c4"];
 
   return (
     <div className="incentive-page">
@@ -55,21 +64,21 @@ const Incentive_Criteria = () => {
                 <tbody>
                   <tr>
                     <td className='life-row' rowSpan="9">Life</td>
-                    <td className='Payout-ratio-row' rowSpan="3">Payout Ratio (Life)</td>
+                    <td className='Payout-ratio-row' rowSpan="3">Payout Ratio</td>
                     <td className='Payout-ratio-row-data'>56%</td>
                     <td className='Payout-ratio-row-data'>1.0%</td>
                   </tr>
                   <tr>
                     <td className='Payout-ratio-row-data'>51%</td>
                     <td className='Payout-ratio-row-data'>2.5%</td>
-                   
+
                   </tr>
                   <tr>
                     <td className='Payout-ratio-row-data'>&lt;48%</td>
                     <td className='Payout-ratio-row-data'>5.0%</td>
                   </tr>
                   <tr>
-                    <td className='Expense-Ratio-row' rowSpan="3">Expense Ratio (Life)</td>
+                    <td className='Expense-Ratio-row' rowSpan="3">Expense Ratio</td>
                     <td className='Expense-Ratio-row-data'>43%</td>
                     <td className='Expense-Ratio-row-data'>1.0%</td>
                   </tr>
@@ -94,8 +103,8 @@ const Incentive_Criteria = () => {
                     <td className='Total-Shareholder-surplus-row-data'>4500Mn</td>
                     <td className='Total-Shareholder-surplus-row-data'>4.0%</td>
                   </tr>
-              <br></br>
-              <br></br>
+                  <br></br>
+             
                   <tr>
                     <td colSpan="4" className='Life-Eligible-Incentive'>Life Eligible Incentive</td>
                   </tr>
@@ -123,7 +132,7 @@ const Incentive_Criteria = () => {
                         <td className="custom-row-content">{row[1]}</td>
                       </tr>
                     ))}
-                   <br></br>
+                    <br></br>
                     {table.additionalDataTopics.length > 0 && (
                       <>
                         <tr>

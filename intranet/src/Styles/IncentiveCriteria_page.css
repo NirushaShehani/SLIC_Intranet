@@ -52,7 +52,7 @@
   position: sticky;
   left: 0;
   z-index: 1;
-  background-color: #caf0f8;
+  background-color: #caf0f800;
 }
 
 /* Table Wrapper */
@@ -79,6 +79,7 @@ table {
 /* Styles for the specific table */
 .table-wrapper-table th {
   height: 28px;
+  color: #ffffff;
 }
 
 /* Adjust the width of table cells */
@@ -107,6 +108,11 @@ th {
   background-color: #0077b6;
   color: #ffffff;
 }
+.Staff-Criteria th{
+  background-color: #0077b6;
+  color: #ffffff;
+  font-weight: 500;
+}
 
 .Staff-Criteria-collums th {
   background-color: #00b4d8;
@@ -128,38 +134,44 @@ th {
 }
 
 .Payout-ratio-row {
-  background-color: #173b45;
+  background-color: #1b4a59;
+  color: #ffffff;
+  font-weight: 400;
 }
 
 .life-row {
   font-weight: bold;
   color: #0077b6;
   font-size: 20px;
+  background-color: #ffdd1e;
 }
 
 .Expense-Ratio-row {
-  background-color: #379777;
+  background-color: #00adbb;
+  color: #ffffff;
+  font-weight: 400;
 }
 
 .Total-Shareholder-surplus-row {
   background-color: #5472a0;
   font-weight: 400;
+  color: #ffffff;
 }
 
 .Payout-ratio-row-data {
-  background-color: #173b4574;
+  background-color: #b0d6de;
   font-weight: 500;
   color: #000;
 }
 
 .Expense-Ratio-row-data {
-  background-color: #37977798;
+  background-color: #79d0d6;
   font-weight: 500;
   color: #000;
 }
 
 .Total-Shareholder-surplus-row-data {
-  background-color: #5472a095;
+  background-color: #85a7c4;
   font-weight: 500;
   color: #000;
 }
@@ -186,7 +198,7 @@ color: #0077b6;
 background-color: #ffdd1e;
 font-weight: 600;
 font-size: 20px;
-height: 40px;
+height: 60px;
 }
 .custom-row-content1{
   background-color: #ffdd1e;
