@@ -12,28 +12,12 @@ const Incentive_Criteria = () => {
         additionalData: [["Life (10% x 2)"], ["20%"]],
       },
       {
-        name: "Apr-June 2024",
-        rows: [["Apr-June 2024 Actual", "Eligible Incentive %"], ["44.23%", "5.00%"], ["36.60%", "2.50%"], ["990Mn", "2.50%"]],
+        name: "Apr - June 2024",
+        rows: [["Apr - June Actual", "Eligible Incentive %"], ["44.23%", "5.00%"], ["36.60%", "2.50%"], ["990Mn", "2.50%"]],
         additionalDataTopics: [["For 2nd Quarter 2024"], ["Incentive %"]],
         additionalData: [["Life (10% x 3)"], ["30%"]],
       },
-      {
-        name: "Apr-June 2024",
-        rows: [["Apr-June 2024 Actual", "Eligible Incentive %"], ["44.23%", "5.00%"], ["36.60%", "2.50%"], ["990Mn", "2.50%"]],
-        additionalDataTopics: [["For 2nd Quarter 2024"], ["Incentive %"]],
-        additionalData: [["Life (10% x 3)"], ["30%"]],
-      },
-      {
-        name: "Apr-June 2024",
-        rows: [["Apr-June 2024 Actual", "Eligible Incentive %"], ["44.23%", "5.00%"], ["36.60%", "2.50%"], ["990Mn", "2.50%"]],
-        additionalDataTopics: [["For 2nd Quarter 2024"], ["Incentive %"]],
-        additionalData: [["Life (10% x 3)"], ["30%"]],
-      },
-    
-      
-     
-
-
+  
     ],
   });
 
@@ -103,7 +87,7 @@ const Incentive_Criteria = () => {
                     <td className='Total-Shareholder-surplus-row-data'>4.0%</td>
                   </tr>
                   <br></br>
-             
+
                   <tr>
                     <td colSpan="4" className='Life-Eligible-Incentive'>Life Eligible Incentive</td>
                   </tr>

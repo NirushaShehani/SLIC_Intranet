@@ -65,7 +65,6 @@ const BranchPerformance = () => {
           </div>
         </div>
       </div>
-      
       <div className="branch-performance">
         <h2>Branch Performance</h2>
         <div className="branch-list">
@@ -89,6 +88,8 @@ const BranchPerformance = () => {
         </div>
       </div>
 
+      
+
       <div className="branch-event">
         <h2>Branch Event</h2>
         <div className="images-container">
@@ -97,8 +98,6 @@ const BranchPerformance = () => {
           </Link>
         </div>
       </div>
-
-      
     </div>
   );
 };
