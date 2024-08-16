@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import * as XLSX from 'xlsx';
 import './AdminStyles/AdminIdeaHub.css';
 
 function IdeaHub() {
@@ -46,20 +47,15 @@ function IdeaHub() {
 
   const handleCheckboxChange = async (id) => {
     try {
-      // Find the current idea
       const idea = ideas.find(idea => idea.ID === id);
       if (!idea) return;
   
-      // Toggle the read status
       const updatedReadStatus = !idea.read;
   
-      // Update the read status on the server
       const response = await axios.patch(`http://localhost:3000/api/ideaHub/updateReadStatus/${id}`, { read: updatedReadStatus ? 1 : 0 });
   
-      // Check if the backend update was successful
       console.log('Update response:', response.data);
   
-      // Update the local state with the new read status
       setIdeas(prevIdeas =>
         prevIdeas.map(idea =>
           idea.ID === id ? { ...idea, read: updatedReadStatus } : idea
@@ -70,6 +66,15 @@ function IdeaHub() {
     }
   };
   
+  const handleDownload = () => {
+    // Convert ideas data to a format suitable for Excel
+    const worksheet = XLSX.utils.json_to_sheet(ideas);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Ideas');
+    
+    // Generate the Excel file
+    XLSX.writeFile(workbook, 'IdeaHubData.xlsx');
+  };
 
   const sortedIdeas = [...ideas].sort((a, b) => a.read - b.read);
 
@@ -124,8 +129,13 @@ function IdeaHub() {
           )}
         </tbody>
       </table>
+      <div className="button-container">
+        <button className="download-button" onClick={handleDownload}>
+          Download
+        </button>
+      </div>
     </div>
-  );
+  );  
 }
 
 export default IdeaHub;
