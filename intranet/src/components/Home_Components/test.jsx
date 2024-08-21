@@ -7,11 +7,11 @@ import axios from 'axios';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const rec1 = require('../../assets/Rectangle1.png');// MDRT Event Image record 1
-const rec2 = require('../../assets/Rectangle2.png');// MDRT Event Image record 2
+const rec1 = require('../../assets/Rectangle1.png');
+const rec2 = require('../../assets/Rectangle2.png');
 const defaultImage = require('../../assets/default-user.png'); // Path to default user image
 
-// Label plugin for doughnut chart
+// Useable plugins for doughnut chart
 const customLabelsPlugin = {
   id: 'customLabels',
   afterDatasetsDraw(chart) {
@@ -40,9 +40,7 @@ const customLabelsPlugin = {
     ctx.restore();
   }
 };
-// Label plugin for doughnut chart
 
-// Center text plugin for MDRT Achievers card
 const centerTextPlugin = {
   id: 'centerText',
   beforeDraw: (chart) => {
@@ -62,19 +60,20 @@ const centerTextPlugin = {
     ctx.save();
   }
 };
-// Center text plugin for MDRT Achievers card
+// Useable plugins for doughnut chart
 
-// Flipping card component design for GWP Charts
+// Flipping card components for GWP Charts
 const FlippingCard = styled(Box)(({ showBack }) => ({
   width: 250,
   height: 375,
   perspective: 800,
+  transition: 'transform 1s ease-in-out', // Smooth transition effect
   '& .inner': {
     position: 'relative',
     width: '100%',
     height: '100%',
     textAlign: 'center',
-    transition: 'transform 1s',
+    transition: 'transform 1s ease-in-out', // Smooth transition effect
     transformStyle: 'preserve-3d',
     transform: showBack ? 'rotateY(180deg)' : 'rotateY(0deg)',
   },
@@ -91,18 +90,19 @@ const FlippingCard = styled(Box)(({ showBack }) => ({
   },
 }));
 // Flipping card components for GWP Charts
-// Digital number component for Achievers cards
+// Digital number component
 const DigitalNumber = styled(Typography)(({ theme }) => ({
   fontFamily: 'Digital-7, monospace',
   fontSize: '5rem',
   textAlign: 'center',
   color: '#000',
 }));
-// Digital number component for Achievers cards
+// Digital number component
 
 // GWP Chart component 
 const GWPChart = ({ title, data, customLabels }) => (
-  <Box sx={{ width: 250, padding: 1, marginTop: '-30px' }}>
+  <Box sx={{ width: 250, padding: 1, marginTop: '-30px' }} onMouseEnter={handleMouseEnter} 
+  onMouseLeave={handleMouseLeave}>
     <CardContent>
       <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginBottom: 1.5 }}>
         {title}
@@ -169,64 +169,72 @@ const AchieversCard = ({ achievers }) => (
 
 // Event details card component
 const EventCard = () => {
-  const [currentMDRTImage, setCurrentMDRTImage] = useState(rec1);
-  //Event card slide show time setting
+  const [currentImage, setCurrentImage] = useState(rec1);
+  const [isHovering, setIsHovering] = useState(false);
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentMDRTImage(prevImage => (prevImage === rec1 ? rec2 : rec1));
+      if (!isHovering) {
+      setCurrentImage(prevImage => (prevImage === rec1 ? rec2 : rec1));
+      }
     }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval);
-  }, []);
-  //Event card slide show time setting
-  //MDRT Event Details Store
-  const MDRTeventInfo = currentMDRTImage === rec1 
+  }, [isHovering]);
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
+
+  const eventInfo = currentImage === rec1 
     ? { date: 'June 9-12, 2024', location: 'Vancouver, BC, Canada' }
     : { date: 'June 22-25, 2025', location: 'Miami Beach, FL, USA' };
-  //MDRT Event Details Store
+
   return (
-    //MDRT Event Photo showing view section
     <Box sx={{ width: 250, padding: 2, marginTop: '-32px' }}>
       <CardContent>
-        <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', height: '300px', overflow: 'hidden', borderRadius: 2, width: '-200px', marginLeft: '-32px'}}>
-          <img src={currentMDRTImage} alt="Event" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', height: '300px', overflow: 'hidden', borderRadius: 2, width: '-200px', marginLeft: '-32px'}} onMouseEnter={handleMouseEnter} 
+           onMouseLeave={handleMouseLeave}>
+          <img src={currentImage} alt="Event" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </Box>
         <Box sx={{ textAlign: 'center', marginTop: 2 }}>
           <Typography variant="body2" color="textSecondary" fontWeight={'bold'}>
-            {MDRTeventInfo.date}
+            {eventInfo.date}
           </Typography>
           <Typography variant="body2" color="textSecondary" fontWeight={'bold'}>
-            {MDRTeventInfo.location}
+            {eventInfo.location}
           </Typography>
         </Box>
       </CardContent>
     </Box>
-    //MDRT Event Photo showing view section
   );
 };
 // Event details card component
 // -----------------------------------------------------------------------Backend Data fetching------------------------------------------------------
-//MDRT Achievers/ TOT achievers/ Life Member card
+//MDRT Achievers/ COT Achievers/ TOT achievers/ Life Member card
 //Cumulative GWP/ Monthly GWP dougnut chart components
 const GWPChartsContainer = () => {
   const [MontlyDataBranch, setMontlyDataBranch] = useState(null);
   const [MontlyCumalativeDataBranch, setMontlyCumalativeDataBranch] = useState(null);
-  const [GWPFlipping, setGWPFlipping] = useState(false);
-  const [currentCard, setCurrentCard] = useState('achievers'); // Initialize with 'achievers'
   const [achieverList, setAchieverList] = useState([
     { title: 'MDRT Achievers', list: [] },
     { title: 'Life Members', list: [] },
-    { title: 'TOT Achievers', list: [] }
+    { title: 'TOT Achievers', list: [] },
+    { title: 'COT Achievers', list: [] }
   ]);
   const [isHovering, setIsHovering] = useState(false);
   const [achieverIndex, setAchieverIndex] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(0); // New state to track the slideshow index
+  const [showBranch, setShowBranch] = useState(false); // State to control chart flipping
 
-  // Get the current month as a number (1-12)
   const currentMonth = new Date().getMonth() + 1;
   const currentYear = new Date().getFullYear();
+
   // Fetch Life GWP data for doughnut charts
   useEffect(() => {
-    // Fetch LIFE GWP data from the API
     const fetchLifeMonthlyData = async () => {
       try {
         const response = await axios.get(`http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Gwp/GetMonthlyGWP?p_month=${currentMonth}`);
@@ -250,14 +258,13 @@ const GWPChartsContainer = () => {
             ach_percentage, // Add calculated percentage here
           });
         } else {
-          console.error('LIFE GWP data not available or empty');
+          console.error('Monthly Cumulative GWP data not available or empty');
         }
       } catch (error) {
-        console.error('Error fetching LIFE GWP data from API:', error);
+        console.error('Error fetching Monthly Cumulative GWP data from API:', error);
       }
     };
 
-    // Fetch Branch GWP data from the API
     const fetchLifeMonthlyCumulativeData = async () => {
       try {
         const response = await axios.get(`http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Gwp/GetMonthlyCumalative?p_month=${currentMonth}`);
@@ -281,17 +288,18 @@ const GWPChartsContainer = () => {
             ach_percentage, // Add calculated percentage here
           });
         } else {
-          console.error('Branch GWP data not available or empty');
+          console.error('Monthly GWP data not available or empty');
         }
       } catch (error) {
-        console.error('Error fetching Branch GWP data from API:', error);
+        console.error('Error fetching Monthly GWP data from API:', error);
       }
     };
 
     fetchLifeMonthlyData();
     fetchLifeMonthlyCumulativeData();
   }, [currentMonth]);
-// Fetch Achievers data
+
+  // Fetch Achievers data
   useEffect(() => {
     const fetchAllMDRTAchievers = async () => {
       try {
@@ -299,8 +307,8 @@ const GWPChartsContainer = () => {
         const data = response.data;
 
         if (data && data.length > 0) {
-          setAchieverList((prev) => [
-            { title: 'Top Ten Achievers', list: data.map((item) => ({
+          setAchieverList(prev => [
+            { title: 'MDRT Achievers', list: data.map(item => ({
               agent_name: item.agent_name,
               branch_name: item.branch_name,
               national_rank: item.national_rank,
@@ -308,6 +316,7 @@ const GWPChartsContainer = () => {
             })) },
             prev[1],
             prev[2],
+            prev[3]
           ]);
         } else {
           console.error('Top Achievers data not available or empty');
@@ -317,22 +326,22 @@ const GWPChartsContainer = () => {
       }
     };
 
-    // Fetch Life Members data
     const fetchLifeMembers = async () => {
       try {
         const response = await axios.get(`http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Mdrt/GetLifeMemberMDRT?p_year=${currentYear}`);
         const data = response.data;
 
         if (data && data.length > 0) {
-          setAchieverList((prev) => [
+          setAchieverList(prev => [
             prev[0],
-            { title: 'Life Members', list: data.map((item) => ({
+            { title: 'Life Members', list: data.map(item => ({
               agent_name: item.agent_name,
               branch_name: item.branch_name,
               national_rank: item.national_rank,
               image: item.image || defaultImage // Use default image if no image is provided
             })) },
             prev[2],
+            prev[3]
           ]);
         } else {
           console.error('Life Members data not available or empty');
@@ -342,22 +351,22 @@ const GWPChartsContainer = () => {
       }
     };
 
-    // Fetch TOT Achievers data
     const fetchTOTAchievers = async () => {
       try {
         const response = await axios.get(`http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Mdrt/GetTOTRankMDRT?p_year=${currentYear}`);
         const data = response.data;
 
         if (data && data.length > 0) {
-          setAchieverList((prev) => [
+          setAchieverList(prev => [
             prev[0],
             prev[1],
-            { title: 'TOT Achievers', list: data.map((item) => ({
+            { title: 'TOT Achievers', list: data.map(item => ({
               agent_name: item.agent_name,
               branch_name: item.branch_name,
               national_rank: item.national_rank,
               image: item.image || defaultImage // Use default image if no image is provided
             })) },
+            prev[3]
           ]);
         } else {
           console.error('TOT Achievers data not available or empty');
@@ -367,20 +376,60 @@ const GWPChartsContainer = () => {
       }
     };
 
+    const fetchCOTAchievers = async () => {
+      try {
+        const response = await axios.get(`http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Mdrt/GetCOTRankMDRT?p_year=${currentYear}`);
+        const data = response.data;
+
+        if (data && data.length > 0) {
+          setAchieverList(prev => [
+            prev[0],
+            prev[1],
+            prev[2],
+            { title: 'COT Achievers', list: data.map(item => ({
+              agent_name: item.agent_name,
+              branch_name: item.branch_name,
+              national_rank: item.national_rank,
+              image: item.image || defaultImage // Use default image if no image is provided
+            })) }
+          ]);
+        } else {
+          console.error('COT Achievers data not available or empty');
+        }
+      } catch (error) {
+        console.error('Error fetching COT Achievers data from API:', error);
+      }
+    };
+
     fetchAllMDRTAchievers();
     fetchLifeMembers();
     fetchTOTAchievers();
+    fetchCOTAchievers();
   }, [currentYear]);
-  // Flipping Effect Pause on Hover on GWP Monthly and cumalative 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isHovering) {
-        setGWPFlipping(prev => !prev);
-      }
-    }, 3000); // Flip every 3 seconds if not hovering
 
-    return () => clearInterval(interval);
-  }, [isHovering]);
+  // Slideshow Effect with Pause on Hover
+  useEffect(() => {
+    let interval;
+    if (!isHovering) {
+      interval = setInterval(() => {
+        setSlideIndex(prev => (prev + 1) % (achieverList.length + 1)); // Cycle through achievers and the event card
+        if (slideIndex < achieverList.length) {
+          setAchieverIndex(slideIndex); // Update achieverIndex to match slideIndex
+        }
+      }, 5000); // Change slide every 5 seconds
+    }
+
+    return () => clearInterval(interval); // Clear the interval on cleanup
+  }, [isHovering, slideIndex, achieverList.length]);
+
+  // Flipping effect for GWP charts
+  useEffect(() => {
+    const flipInterval = setInterval(() => {
+      setShowBranch(prev => !prev);
+    }, 5000); // Change chart side every 5 seconds
+
+    return () => clearInterval(flipInterval);
+  }, []);
 
   const handleMouseEnter = () => {
     setIsHovering(true);
@@ -391,40 +440,38 @@ const GWPChartsContainer = () => {
   };
 
   const handleCardClick = () => {
-    setCurrentCard(prev => (prev === 'achievers' ? 'event' : 'achievers')); // Toggle between 'achievers' and 'event'
+    setSlideIndex(prev => (prev + 1) % (achieverList.length + 1)); // Manually change slides
   };
 
-  const handleAchieverClick = () => {
-    setAchieverIndex(prev => (prev + 1) % 3); // Cycle through Top, Life Members, TOT achievers
-  };
-//GWP Monthly and cumalative target dougnut chart view component
   return (
     <Box sx={{ textAlign: 'center', padding: 2 }}>
       <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 2 }} 
            onMouseEnter={handleMouseEnter} 
            onMouseLeave={handleMouseLeave}>
-        <FlippingCard showBack={GWPFlipping}>
+        <FlippingCard showBack={showBranch}>
           <div className="inner">
             <div className="front">
-              {MontlyDataBranch && <GWPChart title="LIFE GWP" data={MontlyDataBranch} />}
+              {MontlyDataBranch && <GWPChart title="Monthly GWP" data={MontlyDataBranch} />}
             </div>
             <div className="back">
-              {MontlyCumalativeDataBranch && <GWPChart title="Branch GWP" data={MontlyCumalativeDataBranch}  />}
+              {MontlyCumalativeDataBranch && <GWPChart title="Cumulative GWP" data={MontlyCumalativeDataBranch} />}
             </div>
           </div>
         </FlippingCard>
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 2 }} onClick={handleCardClick}>
-        <FlippingCard showBack={false} onClick={handleAchieverClick}>
+
+      <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 2 }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleCardClick}>
+        <FlippingCard showBack={false}>
           <div className="inner">
             <div className="front">
-              {currentCard === 'achievers' ? <AchieversCard achievers={achieverList[achieverIndex]} /> : <EventCard />}
+              {slideIndex === achieverList.length 
+                ? <EventCard /> 
+                : <AchieversCard achievers={achieverList[achieverIndex]} />}
             </div>
           </div>
         </FlippingCard>
       </Box>
     </Box>
-  //GWP Monthly and cumalative target dougnut chart view component
   );
 };
 
