@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
-import logo from '../../assets/slicLIfe_New_1.png';
+import logo from '../../assets/IntranetLogo.png';
 
 const SalesLeadPage = () => {
   const initialFormData = {
