@@ -7,7 +7,8 @@ import DrawerMenu from '../Sub_Components/DrawerMenu';
 import Chip from "@mui/material/Chip";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { styled } from "@mui/material/styles";
-import logo from '../../assets/slicLIfe_New_1.png';
+import logo from '../../assets/IntranetLogo.png';
+import '../../Styles/logo.css';
 //Image Imports
 const imageUrl1 = require('../../assets/Services.png');
 const imageUrl2 = require('../../assets/Ideahub.png');
@@ -102,7 +103,7 @@ const KnowledgeBase = () => {
       <div className="Navbar" style={styles.navbar}>
         <DrawerMenu/>
         <div className="logo" style={styles.logo}>
-        <img src={logo} alt="Logo" style={{ width: '170px', height: '20%', marginLeft: '10px'}} />
+         <img src={logo} alt="Logo" className="logo" />
         </div>
       </div>
       

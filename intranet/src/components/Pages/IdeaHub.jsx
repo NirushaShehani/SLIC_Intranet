@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import axios from 'axios';
-import logo from '../../assets/slicLIfe_New_1.png';
+import logo from '../../assets/IntranetLogo.png';
 
 const IdeaHub = () => {
   const [formData, setFormData] = useState({
