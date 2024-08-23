@@ -7,6 +7,7 @@ const salesLeadRoutes = require('./Route/salesLeads');
 const ideaHubRoutes = require('./Route/ideaHub');
 const contactSearchRoutes = require('./Route/contactSearchRoutes'); // Import the new routes
 const branchSearchRoutes = require('./Route/branchSearchRoutes');
+const loginRoutes = require('./Route/loginRoutes'); 
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -21,6 +22,7 @@ app.use('/api/salesLead', salesLeadRoutes); // Use the salesLead routes
 app.use('/api/ideaHub', ideaHubRoutes);
 app.use('/api/contactSearch', contactSearchRoutes); // Use the new contactSearch routes
 app.use('/api/branchSearch', branchSearchRoutes);
+app.use('/api/login', loginRoutes);
 
 app.listen(port, async () => {
   console.log(`Server running on http://localhost:${port}`);
