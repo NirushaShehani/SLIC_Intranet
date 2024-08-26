@@ -72,7 +72,7 @@ const SalesLeadPage = () => {
     event.preventDefault();
     if (validateForm()) {
       try {
-        const response = await fetch('http://localhost:3000/api/salesLead/submit', {
+         const response = await fetch('http://localhost:10155/api/salesLead/submit', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
