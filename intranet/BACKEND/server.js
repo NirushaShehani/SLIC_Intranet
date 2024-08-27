@@ -9,7 +9,7 @@ const contactSearchRoutes = require('./Route/contactSearchRoutes'); // Import th
 const branchSearchRoutes = require('./Route/branchSearchRoutes');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 10155;
 
 // Middleware
 app.use(bodyParser.json());

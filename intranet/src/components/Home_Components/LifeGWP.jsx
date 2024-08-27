@@ -4,6 +4,7 @@ import { CardContent, Typography, Box, Avatar } from "@mui/material";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { styled } from "@mui/system";
 import axios from "axios";
+import { BASE_URL,ENDPOINTS } from "../../Services/ApiConfig";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -258,7 +259,7 @@ const GWPChartsContainer = () => {
     const fetchLifeMonthlyData = async () => {
       try {
         const response = await axios.get(
-          `http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Gwp/GetMonthlyGWP?p_month=${currentMonth}`
+          `${BASE_URL}/${ENDPOINTS.MONTHLYGWP}?p_month=${currentMonth}`
         );
         const data = response.data;
 
@@ -295,7 +296,7 @@ const GWPChartsContainer = () => {
     const fetchLifeMonthlyCumulativeData = async () => {
       try {
         const response = await axios.get(
-          `http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Gwp/GetMonthlyCumalative?p_month=${currentMonth}`
+          `${BASE_URL}/${ENDPOINTS.MONTHLYCUMALATIVE}?p_month=${currentMonth}`
         );
         const data = response.data;
 
@@ -333,7 +334,7 @@ const GWPChartsContainer = () => {
     const fetchAllMDRTAchievers = async () => {
       try {
         const response = await axios.get(
-          `http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Mdrt/GetIslandRankMDRT?p_year=${currentYear}`
+          `${BASE_URL}/${ENDPOINTS.ISLANDRANKMDRT}?p_year=${currentYear}`
         );
         const data = response.data;
 
@@ -363,7 +364,7 @@ const GWPChartsContainer = () => {
     const fetchLifeMembers = async () => {
       try {
         const response = await axios.get(
-          `http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Mdrt/GetLifeMemberMDRT?p_year=${currentYear}`
+          `${BASE_URL}/${ENDPOINTS.LIFEMEMBER}?p_year=${currentYear}`
         );
         const data = response.data;
 
@@ -393,7 +394,7 @@ const GWPChartsContainer = () => {
     const fetchTOTAchievers = async () => {
       try {
         const response = await axios.get(
-          `http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Mdrt/GetTOTRankMDRT?p_year=${currentYear}`
+           `${BASE_URL}/${ENDPOINTS.TOTRANK}?p_year=${currentYear}`
         );
         const data = response.data;
 
