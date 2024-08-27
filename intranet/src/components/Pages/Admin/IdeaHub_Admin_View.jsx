@@ -11,7 +11,7 @@ function IdeaHub() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/ideaHub/fetchideas');
+        const response = await axios.get('http://localhost:10155/api/ideaHub/fetchideas');
         // Assume response.data is an array of arrays
         const ideasWithStatus = response.data.map(idea => ({
           ID: idea[0],
@@ -38,7 +38,7 @@ function IdeaHub() {
     if (!isConfirmed) return;
 
     try {
-      await axios.delete(`http://localhost:3000/api/ideaHub/deleteIdeaHub/${id}`);
+      await axios.delete(`http://localhost:10155/api/ideaHub/deleteIdeaHub/${id}`);
       setIdeas(prevIdeas => prevIdeas.filter(idea => idea.ID !== id));
     } catch (err) {
       setError(err.message);
@@ -52,7 +52,7 @@ function IdeaHub() {
   
       const updatedReadStatus = !idea.read;
   
-      const response = await axios.patch(`http://localhost:3000/api/ideaHub/updateReadStatus/${id}`, { read: updatedReadStatus ? 1 : 0 });
+      const response = await axios.patch(`http://localhost:10155/api/ideaHub/updateReadStatus/${id}`, { read: updatedReadStatus ? 1 : 0 });
   
       console.log('Update response:', response.data);
   

@@ -12,7 +12,7 @@ function AdminSalesLead() {
       // Fetch data from backend
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://172.24.90.80:10155/api/salesLead/fetchSalesLeads'/*'http://localhost:3000/api/salesLead/fetchSalesLeads'*/);
+          const response = await axios.get('http://localhost:10155/api/salesLead/fetchSalesLeads'/*'http://localhost:3000/api/salesLead/fetchSalesLeads'*/);
           console.log('API response:', response.data); 
           setSalesLeads(response.data);
           setLoading(false);
@@ -42,7 +42,7 @@ function AdminSalesLead() {
       }
     
       try {
-        await axios.delete(`http://172.24.90.80:10155/api/salesLead/deleteSalesLead/${id}`/*`http://localhost:3000/api/salesLead/deleteSalesLead/${id}`*/);
+        await axios.delete(`http://localhost:10155/api/salesLead/deleteSalesLead/${id}`/*`http://localhost:3000/api/salesLead/deleteSalesLead/${id}`*/);
         // Optionally, update the salesLeads state to remove the deleted item from the list
         setSalesLeads(salesLeads.filter(lead => lead.ID !== id && lead.id !== id));
         console.log(id, 'Sales lead deleted successfully');
