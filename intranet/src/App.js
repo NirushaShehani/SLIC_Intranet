@@ -12,13 +12,14 @@ import FullBranchPerformance from './components/Pages/FullBranchPerformance';
 import ContactListPage from './components/Pages/ContactListPage';
 import FullBranchEvent from './components/Pages/FullBranchEvent';
 import UploadEvent from './components/Pages/UploadEvent';
-import ServicesPage from './components/Pages/Services'
+//import ServicesPage from './components/Pages/Services'
 import MediaUploadDetails from './components/Pages/MediaUploadDetails';
 import AllNotices from './components/Pages/AllNotices';
 import SalesLead from './components/Pages/SalesLeadPage';
 import CostCenter from './components/Pages/Cost_Center';
 import IdeaHub from './components/Pages/IdeaHub';
-import Knowledge_BasePage from './components/Pages/Knowledge_BasePage';
+//import Knowledge_BasePage from './components/Pages/Knowledge_BasePage';
+import Knowledge_BasePage_test from './components/Pages/Knowledge_BasePage_test';
 import BookHub from './components/Pages/BookHub';
 import ISO_Forms from './components/Pages/ISO_Forms';
 import ServicesTest from './components/Pages/ServicesTest';
@@ -57,7 +58,7 @@ const App =() => {
         <Route path="/sales-Lead" element={<SalesLead />} />
         <Route path="/Cost-Center" element={<CostCenter/>}/>
         <Route path="/Idea-Hub" element={<IdeaHub/>}/>
-        <Route path="/Knowledge-Base" element={<Knowledge_BasePage/>}/>
+        <Route path="/Knowledge-Base" element={<Knowledge_BasePage_test/>}/>
         <Route path="/Book-Hub" element={<BookHub/>}/>
 
         <Route path="/ISO-Forms" element={<ISO_Forms/>}/>
