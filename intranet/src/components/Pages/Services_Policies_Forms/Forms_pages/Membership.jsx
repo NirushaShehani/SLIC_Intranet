@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import DrawerMenu from '../../Sub_Components/DrawerMenu';
+import DrawerMenu from '../../../Sub_Components/DrawerMenu';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
-import '../../../Styles/services.css';
+import '../../../../Styles/services.css';
 // hr tag styles
-import '../../../Styles/serviceshrtag.css';
+import '../../../../Styles/serviceshrtag.css';
 
-const Procrument_Forms = () => {
+const Membership_Forms = () => {
   const [selectedDept, setSelectedDept] = useState(''); // State to track the selected department
 
   const openInNewWindow = (url) => {
@@ -158,7 +158,7 @@ const Procrument_Forms = () => {
           {/* Upper Left Section */}
           <div style={up}>
             <DrawerMenu />
-            <div style={ContactList}>Procurement Forms</div>
+            <div style={ContactList}>Membership Forms</div>
           </div>
           {/* Lower Left Section */}
           <div style={Down}>
@@ -183,7 +183,7 @@ const Procrument_Forms = () => {
       <div style={rightStyle}>
         <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
           <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-          <span>abc </span>
+          <span>Application for SLII membership </span>
         </div>
         
         <div>
@@ -193,6 +193,6 @@ const Procrument_Forms = () => {
 
     </div>
   );
-}
+};
 
-export default Procrument_Forms;
+export default Membership_Forms;

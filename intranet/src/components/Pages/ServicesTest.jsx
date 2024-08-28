@@ -1,10 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../Styles/servicesTest.css';
 import { useNavigate } from 'react-router-dom';
+import Procurement from './Services_Policies_Forms/Services_Pages/Procurement';
+import ICT from './Services_Policies_Forms/Services_Pages/ICT';
+import Life from './Services_Policies_Forms/Services_Pages/Life';
+import HR from './Services_Policies_Forms/Services_Pages/HR';
+import Finance from './Services_Policies_Forms/Services_Pages/Finance';
+import Sales from './Services_Policies_Forms/Services_Pages/Sales';
+import Transport from './Services_Policies_Forms/Services_Pages/Transport';
+import Life_Contact from './Services_Policies_Forms/Services_Pages/Life_Contact_Center';
+import Recent_Links from './Services_Policies_Forms/Recent_Links';
 
 const ServicesTest = () => {
   const openInNewWindow = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const [activeComponent, setActiveComponent] = useState(null);
+
+  const renderComponent = () => {
+    switch (activeComponent) {
+      case 'Life':
+        return <Life />;
+      case 'ICT':
+        return <ICT />;
+      case 'HR':
+        return <HR />;
+      case 'Finance':
+        return <Finance />;
+      // Add more cases for other components...
+      default:
+        return <div>Please select a service.</div>;
+    }
   };
 
   const navigate = useNavigate();
@@ -12,43 +39,29 @@ const ServicesTest = () => {
     <div className="services-container">
       {/* Services */}
       <h1 className="services-title">Services</h1>
-      <div className="services-cards">
-        <div className="service-card">
-          <img src="path_to_blifelogo.jpg" alt="b-Life" className="service-image" />
-          <h2 className="service-title" onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>b-Life</h2>
-        </div>
-        <div className="service-card">
-          <img src="path_to_mihcmlogo.jpg" alt="MiHCM" className="service-image" />
-          <h2 className="service-title">MiHCM</h2>
-        </div>
-        <div className="service-card">
-          <img src="path_to_digitalsignaturelogo.jpg" alt="Digital Signature" className="service-image" />
-          <h2 className="service-title">Digital Signature</h2>
-        </div>
-      </div>
+      {/* Recent links */}
+      <Recent_Links/>
+      {/* Recent links */}
       <div className="services-buttons">
-        {['ICT', 'HR', 'Finance', 'Contact Centre', 'Sales', 'Procurement', 'Transport'].map(service => (
-          <button key={service} className="service-button">
-            {service} <span>&#x2192;</span>
-          </button>
-        ))}
+        <button className="service-button" onClick={() => setActiveComponent('ICT')}>
+          ICT<span>&#x2192;</span>
+        </button>
+        <button className="service-button" onClick={() => setActiveComponent('Life')}>
+          ICT - Service B <span>&#x2192;</span>
+        </button>
+        <button className="service-button" onClick={() => setActiveComponent('Life')}>
+          HR - Service A <span>&#x2192;</span>
+        </button>
+        <button className="service-button" onClick={() => setActiveComponent('Life')}>
+          HR - Service B <span>&#x2192;</span>
+        </button>
+      </div>
+      <div className="service-content">
+        {renderComponent()}
       </div>
       {/* Policies */}
-      <h1 className="services-title">Policies</h1>
-      <div className="services-cards">
-        <div className="service-card">
-          <img src="path_to_blifelogo.jpg" alt="b-Life" className="service-image" />
-          <h2 className="service-title">b-Life</h2>
-        </div>
-        <div className="service-card">
-          <img src="path_to_mihcmlogo.jpg" alt="MiHCM" className="service-image" />
-          <h2 className="service-title">MiHCM</h2>
-        </div>
-        <div className="service-card">
-          <img src="path_to_digitalsignaturelogo.jpg" alt="Digital Signature" className="service-image" />
-          <h2 className="service-title">Digital Signature</h2>
-        </div>
-      </div>
+      <h1 className="services-title">Policies</h1> 
+      
       <div className="services-buttons">
         {['ICT', 'HR', 'Finance', 'Contact Centre', 'Sales', 'Procurement', 'Transport'].map(service => (
           <button key={service} className="service-button">
@@ -58,20 +71,7 @@ const ServicesTest = () => {
       </div>
       {/* Forms */}
       <h1 className="services-title">Forms</h1>
-      <div className="services-cards">
-        <div className="service-card">
-          <img src="path_to_blifelogo.jpg" alt="b-Life" className="service-image" />
-          <h2 className="service-title">b-Life</h2>
-        </div>
-        <div className="service-card">
-          <img src="path_to_mihcmlogo.jpg" alt="MiHCM" className="service-image" />
-          <h2 className="service-title">MiHCM</h2>
-        </div>
-        <div className="service-card">
-          <img src="path_to_digitalsignaturelogo.jpg" alt="Digital Signature" className="service-image" />
-          <h2 className="service-title">Digital Signature</h2>
-        </div>
-      </div>
+      
       <div className="services-buttons">
         {['ICT', 'HR', 'Finance', 'Contact Centre', 'Sales', 'Procurement', 'Transport'].map(service => (
           <button key={service} className="service-button">
@@ -79,7 +79,6 @@ const ServicesTest = () => {
           </button>
         ))}
       </div>
-      
     </div>
     
     

@@ -27,13 +27,13 @@ import Login_Page from './components/Pages/LoginPage';
 import Idea_Hub_Admin_View from './components/Pages/Admin/IdeaHub_Admin_View';
 import SalesLead_Admin_View from './components/Pages/Admin/SalesLead_Admin_View';
 
-import LIFE_Forms from './components/Pages/Forms_pages/Life_Forms';
-import ICT_Forms from './components/Pages/Forms_pages/ICT';
-import Common_Forms from './components/Pages/Forms_pages/Common';
-import Membership_Forms from './components/Pages/Forms_pages/Membership';
-import Sales_Forms from './components/Pages/Forms_pages/Sales';
-import Security_department_Forms from './components/Pages/Forms_pages/Security_department';
-import Life from './components/Pages/Services_Pages/Life';
+import LIFE_Forms from './components/Pages/Services_Policies_Forms/Forms_pages/Life_Forms';
+import ICT_Forms from './components/Pages/Services_Policies_Forms/Forms_pages/ICT';
+import Common_Forms from './components/Pages/Services_Policies_Forms/Forms_pages/Common';
+import Membership_Forms from './components/Pages/Services_Policies_Forms/Forms_pages/Membership';
+import Sales_Forms from './components/Pages/Services_Policies_Forms/Forms_pages/Sales';
+import Security_department_Forms from './components/Pages/Services_Policies_Forms/Forms_pages/Security_department';
+import Life from './components/Pages/Services_Policies_Forms/Services_Pages/Life';
 import Incentive_Criteria from './components/Pages/Incentive_Criteria';
 
 
