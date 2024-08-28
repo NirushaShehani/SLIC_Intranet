@@ -7,9 +7,6 @@ import { styled } from "@mui/system";
 import axios from "axios";
 import { BASE_URL,ENDPOINTS } from "../../Services/ApiConfig";
 
-
-
-
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const rec1 = require("../../assets/Rectangle1.png"); // MDRT Event Image record 1

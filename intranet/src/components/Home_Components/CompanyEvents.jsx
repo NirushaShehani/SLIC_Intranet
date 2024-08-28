@@ -24,12 +24,7 @@ const CompanyEvents = () => {
             <img src={image3} alt="Image 3" className="image image3" />
           </Link>
         </div>
-        <Link to="/full-events">
-          <img src={image4} alt="Image 1" className="image image1" />
-        </Link>
-        <Link to="/full-events">
-          <img src={image5} alt="Image 2" className="image image2" />
-        </Link>
+        
       </div>
       <h2 className="notice-head">Company Notices</h2>
       <p className="sub-notice-hd">SLICL Suba Pathum scholarship awards 2023</p>
