@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
+//import { Chart } from 'chart.js';
 import { CardContent, Typography, Box, Avatar } from "@mui/material";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { styled } from "@mui/system";
@@ -47,9 +48,30 @@ const DigitalNumber = styled(Typography)(({ theme }) => ({
   color: "#000",
 }));
 // Digital number component for Achievers cards
+// function to draw the presentage inside the doughnut chart
+function drawPercentageInDoughnut(chart, percentageText, labelText) {
+  const { ctx, width, height } = chart;
+  ctx.save();
+  // Set the font size and alignment
+  ctx.font = "24px Arial"; // Increase the font size for visibility
+  ctx.textBaseline = "middle";
+  ctx.textAlign = "center";
+  ctx.fillStyle = '#000'; // Set color if needed
+  // Calculate the center of the doughnut
+  const centerX = width / 2;
+  const centerY = height / 2;
+  //Draw the presentage text
+  ctx.fillText(percentageText, centerX, centerY);
 
+   // Draw the label text
+   
+   ctx.font = 'normal 16px Arial'; // Adjust font size and style if needed
+   ctx.fillText(labelText, centerX, centerY + 30); // Adjust the Y-position as needed
+   ctx.fillStyle = '#000'; // Set color if needed
+  ctx.restore();
+};
 // GWP Chart component
-const GWPChart = ({ title, data, customLabels }) => (
+const GWPChart = ({ title, data, customLabels, ach_presentage, growth_presentage }) => (
   <Box sx={{ width: 250, padding: 1, marginTop: "-30px" }}>
     <CardContent>
       <Typography
@@ -64,45 +86,25 @@ const GWPChart = ({ title, data, customLabels }) => (
           display: "flex",
           justifyContent: "center",
           position: "relative",
-          marginLeft: "-20px",
+          marginLeft: "80px",
+          top: "10px", right: "10px", width: 150, height: 150
         }}
       >
+        
         <Doughnut
           data={data}
           options={{
             cutout: "60%", // Reduce cutout size to give more room for text
+            responsive: true,
+        maintainAspectRatio: false,
             plugins: {
               legend: { display: false },
               beforeDraw: (chart) => {
-                const { ctx, width, height } = chart;
-                const data = chart.config.data;
-
-                console.log("Before Draw:", data); // Logging data for visibility
-
-                ctx.save();
-                ctx.font = "24px Arial"; // Increase the font size for visibility
-                ctx.textBaseline = "middle";
-                ctx.textAlign = "center";
-
-                const ach_presentage =
-                  data.ach_presentage !== undefined
-                    ? `${data.ach_presentage}%`
-                    : "N/A";
-
-                const textX = width / 2;
-                const textY = height / 2;
-
-                console.log(
-                  "Drawing text:",
-                  ach_presentage,
-                  "at",
-                  textX,
-                  textY
-                ); // Logging for confirmation
-
-                ctx.fillText(ach_presentage, textX, textY);
-
-                ctx.restore();
+                const percentageText = `${ach_presentage}%`;
+                const labelText = "Your Label";
+                drawPercentageInDoughnut(chart, percentageText, labelText);
+              
+                
               },
             },
           }}
@@ -110,7 +112,13 @@ const GWPChart = ({ title, data, customLabels }) => (
       </Box>
       <Box sx={{ textAlign: "center", marginTop: 1.5 }}>
         <Typography variant="body2" color="textSecondary">
-          GWP Meter
+          This month Achievement: {ach_presentage}%
+        </Typography>
+        <Typography variant="body2" color="textSecondary">
+          This month Growth: {growth_presentage}%
+        </Typography>
+        <Typography variant="body2" color="textSecondary">
+          Last Year: 
         </Typography>
         {customLabels &&
           customLabels.map((label, index) => (
@@ -268,8 +276,8 @@ const GWPChartsContainer = () => {
           const achievement = parseFloat(lifeData.achievement);
           const target = parseFloat(lifeData.target);
           const ach_presentage = parseFloat(lifeData.ach_presentage);
-
-          const chartData = {
+          const growth_presentage = parseFloat(lifeData.growth_presentage)
+          setMontlyDataBranch ({
             labels: ["Achievement", "Target"],
             datasets: [
               {
@@ -278,14 +286,9 @@ const GWPChartsContainer = () => {
                 hoverBackgroundColor: ["#FFB74D", "#42A5F5"],
               },
             ],
-            ach_presentage :50, // Set the achievement percentage here
-          };
-
-          console.log("Chart Data:", chartData); // Debugging log
-
-          setMontlyDataBranch(chartData);
-        } else {
-          console.error("LIFE GWP data not available or empty");
+            ach_presentage,
+            growth_presentage, // Set the achievement percentage here
+          });
         }
       } catch (error) {
         console.error("Error fetching LIFE GWP data from API:", error);
@@ -304,8 +307,8 @@ const GWPChartsContainer = () => {
           const branchData = data[0];
           const achievement = parseFloat(branchData.achievement);
           const target = parseFloat(branchData.target);
-          const ach_presentage =
-            target > 0 ? ((achievement / target) * 100).toFixed(2) : "0.00";
+          const ach_presentage = parseFloat(branchData.ach_presentage);
+          const growth_presentage = parseFloat(branchData.growth_presentage)
 
           setMontlyCumalativeDataBranch({
             labels: ["Achievement", "Target"],
@@ -316,11 +319,10 @@ const GWPChartsContainer = () => {
                 hoverBackgroundColor: ["#4DB6AC", "#42A5F5"],
               },
             ],
-            ach_presentage, // Add calculated percentage here
+            ach_presentage,
+            growth_presentage, // Add calculated percentage here
           });
-        } else {
-          console.error("Branch GWP data not available or empty");
-        }
+        } 
       } catch (error) {
         console.error("Error fetching Branch GWP data from API:", error);
       }
@@ -462,14 +464,16 @@ const GWPChartsContainer = () => {
           <div className="inner">
             <div className="front">
               {MontlyDataBranch && (
-                <GWPChart title="LIFE GWP" data={MontlyDataBranch} />
+                <GWPChart title="Monthly" data={MontlyDataBranch} ach_presentage={MontlyDataBranch.ach_presentage} growth_presentage={MontlyDataBranch.growth_presentage}/>
               )}
             </div>
             <div className="back">
               {MontlyCumalativeDataBranch && (
                 <GWPChart
-                  title="Branch GWP"
+                  title="Monthly Cumalatiuve"
                   data={MontlyCumalativeDataBranch}
+                  ach_presentage={MontlyCumalativeDataBranch.ach_presentage}
+                  growth_presentage={MontlyCumalativeDataBranch.growth_presentage}
                 />
               )}
             </div>

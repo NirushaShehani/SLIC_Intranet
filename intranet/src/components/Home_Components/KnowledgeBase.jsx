@@ -146,6 +146,12 @@ const KnowledgeBase = () => {
           label="Idea Hub"
         />
         </Link>
+        {/*Book Hub Chip*/}
+        <Link to="/Book-Hub" style={{ cursor: 'pointer' }}>
+        <CustomChip4 style={styles.label}
+          label="Book Hub"
+        />
+        </Link>
       </div>
       <div >
         <style>
@@ -168,15 +174,6 @@ const KnowledgeBase = () => {
             </div>
           ))}
         </Slider>
-      </div>
-      <br/>
-      <div style={styles.chipContainer}>
-        {/*Book Hub Chip*/}
-        <Link to="/Book-Hub" style={{ cursor: 'pointer' }}>
-        <CustomChip4 style={styles.label}
-          label="Book Hub"
-        />
-        </Link>
       </div>
     </div>
   );
