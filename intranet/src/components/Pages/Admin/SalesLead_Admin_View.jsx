@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import * as XLSX from 'xlsx';
 import './AdminStyles/AdminSalesLead.css';
 
 function AdminSalesLead() {
@@ -11,7 +12,7 @@ function AdminSalesLead() {
       // Fetch data from backend
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://localhost:3000/api/salesLead/fetchSalesLeads');
+          const response = await axios.get('http://localhost:10155/api/salesLead/fetchSalesLeads'/*'http://localhost:3000/api/salesLead/fetchSalesLeads'*/);
           console.log('API response:', response.data); 
           setSalesLeads(response.data);
           setLoading(false);
@@ -41,7 +42,7 @@ function AdminSalesLead() {
       }
     
       try {
-        await axios.delete(`http://localhost:3000/api/salesLead/deleteSalesLead/${id}`);
+        await axios.delete(`http://localhost:10155/api/salesLead/deleteSalesLead/${id}`/*`http://localhost:3000/api/salesLead/deleteSalesLead/${id}`*/);
         // Optionally, update the salesLeads state to remove the deleted item from the list
         setSalesLeads(salesLeads.filter(lead => lead.ID !== id && lead.id !== id));
         console.log(id, 'Sales lead deleted successfully');
@@ -50,6 +51,15 @@ function AdminSalesLead() {
       }
     };
     
+    const handleDownload = () => {
+      // Convert salesLeads data to a format suitable for Excel
+      const worksheet = XLSX.utils.json_to_sheet(salesLeads);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, 'Sales Leads');
+      
+      // Generate the Excel file
+      XLSX.writeFile(workbook, 'SalesLeadsData.xlsx');
+  };
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
@@ -94,6 +104,11 @@ function AdminSalesLead() {
           })}
         </tbody>
         </table>
+        <div className="button-container">
+                <button className="download-button" onClick={handleDownload}>
+                    Download
+                </button>
+            </div>
       </div>
     );
   }

@@ -1,222 +1,438 @@
-import React, { useState, useEffect } from 'react';
-import { Doughnut } from 'react-chartjs-2';
-import { CardContent, Typography, Box, Avatar } from '@mui/material';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { styled } from '@mui/system';
-import axios from 'axios'; // Import axios to make API calls
+import React, { useState, useEffect } from "react";
+import { Doughnut } from "react-chartjs-2";
+//import { Chart } from 'chart.js';
+import { CardContent, Typography, Box, Avatar } from "@mui/material";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { styled } from "@mui/system";
+import axios from "axios";
+import { BASE_URL,ENDPOINTS } from "../../Services/ApiConfig";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const rec1 = require('../../assets/Rectangle1.png');
-const rec2 = require('../../assets/Rectangle2.png');
+const rec1 = require("../../assets/Rectangle1.png"); // MDRT Event Image record 1
+const rec2 = require("../../assets/Rectangle2.png"); // MDRT Event Image record 2
+const defaultImage = require("../../assets/default-user.png"); // Path to default user image
 
-const customLabelsPlugin = {
-  id: 'customLabels',
-  afterDatasetsDraw(chart) {
-    const { ctx, data, chartArea: { top, bottom, left, right } } = chart;
-    ctx.save();
-
-    const labels = data.labels;
-    const colors = data.datasets[0].backgroundColor;
-
-    const labelBoxSize = 10;
-    const labelPadding = 5;
-    const labelFontSize = 12;
-
-    const positionX = right + 20;
-    let positionY = top + 20;
-
-    labels.forEach((label, index) => {
-      const yPos = positionY + index * (labelBoxSize + labelPadding);
-      ctx.fillStyle = colors[index];
-      ctx.fillRect(positionX, yPos, labelBoxSize, labelBoxSize);
-      ctx.font = `${labelFontSize}px Arial`;
-      ctx.fillStyle = '#000';
-      ctx.fillText(label, positionX + labelBoxSize + labelPadding, yPos + labelBoxSize);
-    });
-
-    ctx.restore();
-  }
-};
-
+// Flipping card component design for GWP Charts
 const FlippingCard = styled(Box)(({ showBack }) => ({
-  width: 300,
-  height: 450,
-  perspective: 1000,
-  '& .inner': {
-    position: 'relative',
-    width: '100%',
-    height: '100%',
-    textAlign: 'center',
-    transition: 'transform 1s',
-    transformStyle: 'preserve-3d',
-    transform: showBack ? 'rotateY(180deg)' : 'rotateY(0deg)',
+  width: 250,
+  height: 375,
+  perspective: 800,
+  "& .inner": {
+    position: "relative",
+    width: "100%",
+    height: "100%",
+    textAlign: "center",
+    transition: "transform 1s",
+    transformStyle: "preserve-3d",
+    transform: showBack ? "rotateY(180deg)" : "rotateY(0deg)",
   },
-  '& .front, & .back': {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    backfaceVisibility: 'hidden',
-    backgroundColor: '#E3F2FD',
+  "& .front, & .back": {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    backfaceVisibility: "hidden",
+    backgroundColor: "#E3F2FD",
     borderRadius: 8,
   },
-  '& .back': {
-    transform: 'rotateY(180deg)',
+  "& .back": {
+    transform: "rotateY(180deg)",
   },
 }));
-
+// Flipping card components for GWP Charts
+// Digital number component for Achievers cards
 const DigitalNumber = styled(Typography)(({ theme }) => ({
-  fontFamily: 'Digital-7, monospace',
-  fontSize: '5rem',
-  textAlign: 'center',
-  color: '#000',
+  fontFamily: "Digital-7, monospace",
+  fontSize: "5rem",
+  textAlign: "center",
+  color: "#000",
 }));
+// Digital number component for Achievers cards
+// function to draw the presentage inside the doughnut chart
+function drawPercentageInDoughnut(chart, percentageText, labelText) {
+  const { ctx, width, height } = chart;
+  ctx.save();
+  // Set the font size and alignment
+  ctx.font = "24px Arial"; // Increase the font size for visibility
+  ctx.textBaseline = "middle";
+  ctx.textAlign = "center";
+  ctx.fillStyle = '#000'; // Set color if needed
+  // Calculate the center of the doughnut
+  const centerX = width / 2;
+  const centerY = height / 2;
+  //Draw the presentage text
+  ctx.fillText(percentageText, centerX, centerY);
 
-const GWPChart = ({ title, data, customLabels }) => (
-  <Box sx={{ width: 300, padding: 2, marginTop: '-35px' }}>
+   // Draw the label text
+   
+   ctx.font = 'normal 16px Arial'; // Adjust font size and style if needed
+   ctx.fillText(labelText, centerX, centerY + 30); // Adjust the Y-position as needed
+   ctx.fillStyle = '#000'; // Set color if needed
+  ctx.restore();
+};
+// GWP Chart component
+const GWPChart = ({ title, data, customLabels, ach_presentage, growth_presentage }) => (
+  <Box sx={{ width: 250, padding: 1, marginTop: "-30px" }}>
     <CardContent>
-      <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginBottom: 2 }}>
+      <Typography
+        variant="h6"
+        component="div"
+        sx={{ textAlign: "center", marginBottom: 1.5 }}
+      >
         {title}
       </Typography>
-      <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', marginLeft: '-25px'}}>
-        <Doughnut data={data} options={{ cutout: '70%', plugins: { legend: { display: false } } }} plugins={[customLabelsPlugin]} />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          position: "relative",
+          marginLeft: "80px",
+          top: "10px", right: "10px", width: 150, height: 150
+        }}
+      >
+        
+        <Doughnut
+          data={data}
+          options={{
+            cutout: "60%", // Reduce cutout size to give more room for text
+            responsive: true,
+        maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              beforeDraw: (chart) => {
+                const percentageText = `${ach_presentage}%`;
+                const labelText = "Your Label";
+                drawPercentageInDoughnut(chart, percentageText, labelText);
+              
+                
+              },
+            },
+          }}
+        />
       </Box>
-      <Box sx={{ textAlign: 'center', marginTop: 2 }}>
+      <Box sx={{ textAlign: "center", marginTop: 1.5 }}>
         <Typography variant="body2" color="textSecondary">
-          GWP Meter
+          This month Achievement: {ach_presentage}%
         </Typography>
-        {customLabels && customLabels.map((label, index) => (
-          <Typography key={index} variant="body2" color="textSecondary">
-            {label}
-          </Typography>
-        ))}
+        <Typography variant="body2" color="textSecondary">
+          This month Growth: {growth_presentage}%
+        </Typography>
+        <Typography variant="body2" color="textSecondary">
+          Last Year: 
+        </Typography>
+        {customLabels &&
+          customLabels.map((label, index) => (
+            <Typography key={index} variant="body2" color="textSecondary">
+              {label}
+            </Typography>
+          ))}
       </Box>
     </CardContent>
   </Box>
 );
+// GWP Chart component
 
+// Achievers card component
 const AchieversCard = ({ achievers }) => (
-  <Box sx={{ width: 300, padding: 2, marginTop: '-35px' }}>
+  <Box sx={{ width: 250, padding: 1, marginTop: "-30px" }}>
     <CardContent>
-      <Typography variant="h6" component="div" sx={{ textAlign: 'center', marginBottom: 2 }}>
-        MDRT Achievers
-      </Typography>
-      <DigitalNumber component="div">
-        165
-      </DigitalNumber>
-      <Typography variant="body2" color="textSecondary" sx={{ textAlign: 'center' }}>
-        Achieved
-      </Typography>
-      <Typography variant="h6" component="div" sx={{ textAlign: 'left', marginTop: 2 }}>
+      <Typography
+        variant="h6"
+        component="div"
+        sx={{ textAlign: "center", marginBottom: 1.5 }}
+      >
         {achievers.title}
       </Typography>
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'left', marginTop: 2 }}>
+      <DigitalNumber component="div">{achievers.list.length}</DigitalNumber>
+      <Typography
+        variant="body2"
+        color="textSecondary"
+        sx={{ textAlign: "center" }}
+      >
+        Achieved
+      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "left",
+          marginTop: 2,
+          maxHeight: "150px", // Set a fixed height
+          overflowY: "auto", // Enable vertical scrolling
+        }}
+      >
         {achievers.list.map((achiever, index) => (
-          <Box key={index} sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
-            <Avatar alt={achiever.name} src={achiever.image} />
-            <Box sx={{ marginLeft: 2, textAlign: 'left' }}>
-              <Typography variant="body1">{achiever.name}</Typography>
-              <Typography variant="body2" color="textSecondary">{achiever.location}</Typography>
-            </Box>
+          <Box
+            key={index}
+            sx={{ display: "flex", flexDirection: "column", marginBottom: 1.5 }}
+          >
+            <Avatar
+              alt={achiever.agent_name}
+              src={achiever.image || defaultImage}
+            />
+            <Typography variant="body1" fontWeight="bold">
+              {achiever.agent_name}
+            </Typography>
+            <Typography variant="body2" color="textSecondary">
+              Branch: {achiever.branch_name}
+            </Typography>
+            <Typography variant="body2" color="textSecondary">
+              Rank: {achiever.national_rank}
+            </Typography>
           </Box>
         ))}
       </Box>
     </CardContent>
   </Box>
 );
+// Achievers card component
 
+// Event details card component
 const EventCard = () => {
-  const [currentImage, setCurrentImage] = useState(rec1);
-
+  const [currentMDRTImage, setCurrentMDRTImage] = useState(rec1);
+  //Event card slide show time setting
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage(prevImage => (prevImage === rec1 ? rec2 : rec1));
+      setCurrentMDRTImage((prevImage) => (prevImage === rec1 ? rec2 : rec1));
     }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval);
   }, []);
-
-  const eventInfo = currentImage === rec1 
-    ? { date: 'June 9-12, 2024', location: 'Vancouver, British Columbia, Canada' }
-    : { date: 'June 22-25, 2025', location: 'Miami Beach, Florida, USA' };
-
+  //Event card slide show time setting
+  //MDRT Event Details Store
+  const MDRTeventInfo =
+    currentMDRTImage === rec1
+      ? { date: "June 9-12, 2024", location: "Vancouver, BC, Canada" }
+      : { date: "June 22-25, 2025", location: "Miami Beach, FL, USA" };
+  //MDRT Event Details Store
   return (
-    <Box sx={{ width: 300, padding: 2, marginTop: '-35px' }}>
+    //MDRT Event Photo showing view section
+    <Box sx={{ width: 250, padding: 2, marginTop: "-32px" }}>
       <CardContent>
-        <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', height: '390px' }}>
-          <img src={currentImage} alt="Event" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 8, margin: '2px', width: '300px', marginLeft: '-66px', marginRight: '-34px' }} />
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            position: "relative",
+            height: "300px",
+            overflow: "hidden",
+            borderRadius: 2,
+            width: "-200px",
+            marginLeft: "-32px",
+          }}
+        >
+          <img
+            src={currentMDRTImage}
+            alt="Event"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
         </Box>
-        <Box sx={{ textAlign: 'left', marginTop: 2 }}>
-          <Typography variant="body2" color="textSecondary" fontWeight={'bold'}>
-            {eventInfo.date}
+        <Box sx={{ textAlign: "center", marginTop: 2 }}>
+          <Typography variant="body2" color="textSecondary" fontWeight={"bold"}>
+            {MDRTeventInfo.date}
           </Typography>
-          <Typography variant="body2" color="textSecondary" fontWeight={'bold'}>
-            {eventInfo.location}
+          <Typography variant="body2" color="textSecondary" fontWeight={"bold"}>
+            {MDRTeventInfo.location}
           </Typography>
         </Box>
       </CardContent>
     </Box>
+    //MDRT Event Photo showing view section
   );
 };
-
+// Event details card component
+// -----------------------------------------------------------------------Backend Data fetching------------------------------------------------------
+//MDRT Achievers/ TOT achievers/ Life Member card
+//Cumulative GWP/ Monthly GWP dougnut chart components
 const GWPChartsContainer = () => {
-  const [dataLife, setDataLife] = useState(null);
-  const [dataBranch, setDataBranch] = useState(null);
-  const [showBranch, setShowBranch] = useState(false);
-  const [currentCard, setCurrentCard] = useState('achievers'); // Initialize with 'achievers'
-  const [achieverList, setAchieverList] = useState(0); // 0 for Top, 1 for Branch, 2 for Regional
+  const [MontlyDataBranch, setMontlyDataBranch] = useState(null);
+  const [MontlyCumalativeDataBranch, setMontlyCumalativeDataBranch] =
+    useState(null);
+  const [GWPFlipping, setGWPFlipping] = useState(false);
+  const [currentCard, setCurrentCard] = useState("achievers"); // Initialize with 'achievers'
+  const [achieverList, setAchieverList] = useState([
+    { title: "MDRT Achievers", list: [] },
+    { title: "Life Members", list: [] },
+    { title: "TOT Achievers", list: [] },
+  ]);
   const [isHovering, setIsHovering] = useState(false);
+  const [achieverIndex, setAchieverIndex] = useState(0);
 
-  const month = '07'; // Replace this with dynamic month if needed
-
+  // Get the current month as a number (1-12)
+  const currentMonth = new Date().getMonth() + 1;
+  const currentYear = new Date().getFullYear();
+  // Fetch Life GWP data for doughnut charts
   useEffect(() => {
-    // Fetch data from the API
-    const fetchData = async () => {
+    // Fetch LIFE GWP data from the API
+    const fetchLifeMonthlyData = async () => {
       try {
-        const response = await axios.get(`http://203.115.11.236:10155/LifeIntranetAPI/api/v1/Gwp/GetMonthlyCumalative?p_month=${month}`);
+        const response = await axios.get(
+          `${BASE_URL}/${ENDPOINTS.MONTHLYGWP}?p_month=${currentMonth}`
+        );
         const data = response.data;
 
-        // Assuming the API returns an array with one object as you mentioned
         if (data && data.length > 0) {
           const lifeData = data[0];
-
-          // Update the doughnut chart data
-          setDataLife({
-            labels: ['Achievement %', 'Growth %'],
+          const achievement = parseFloat(lifeData.achievement);
+          const target = parseFloat(lifeData.target);
+          const ach_presentage = parseFloat(lifeData.ach_presentage);
+          const growth_presentage = parseFloat(lifeData.growth_presentage)
+          setMontlyDataBranch ({
+            labels: ["Achievement", "Target"],
             datasets: [
               {
-                data: [lifeData.ach_presentage, lifeData.growth_presentage],
-                backgroundColor: ['#FFB74D', '#42A5F5'],
-                hoverBackgroundColor: ['#FFB74D', '#42A5F5'],
+                data: [achievement, target - achievement],
+                backgroundColor: ["#FFB74D", "#42A5F5"],
+                hoverBackgroundColor: ["#FFB74D", "#42A5F5"],
               },
             ],
-          });
-
-          setDataBranch({
-            labels: ['Achievement %', 'Growth %'],
-            datasets: [
-              {
-                data: [lifeData.ach_presentage, lifeData.growth_presentage],
-                backgroundColor: ['#4DB6AC', '#42A5F5'],
-                hoverBackgroundColor: ['#4DB6AC', '#42A5F5'],
-              },
-            ],
+            ach_presentage,
+            growth_presentage, // Set the achievement percentage here
           });
         }
       } catch (error) {
-        console.error('Error fetching data from API:', error);
+        console.error("Error fetching LIFE GWP data from API:", error);
       }
     };
 
-    fetchData();
-  }, [month]);
+    // Fetch Branch GWP data from the API
+    const fetchLifeMonthlyCumulativeData = async () => {
+      try {
+        const response = await axios.get(
+          `${BASE_URL}/${ENDPOINTS.MONTHLYCUMALATIVE}?p_month=${currentMonth}`
+        );
+        const data = response.data;
 
+        if (data && data.length > 0) {
+          const branchData = data[0];
+          const achievement = parseFloat(branchData.achievement);
+          const target = parseFloat(branchData.target);
+          const ach_presentage = parseFloat(branchData.ach_presentage);
+          const growth_presentage = parseFloat(branchData.growth_presentage)
+
+          setMontlyCumalativeDataBranch({
+            labels: ["Achievement", "Target"],
+            datasets: [
+              {
+                data: [achievement, target],
+                backgroundColor: ["#4DB6AC", "#42A5F5"],
+                hoverBackgroundColor: ["#4DB6AC", "#42A5F5"],
+              },
+            ],
+            ach_presentage,
+            growth_presentage, // Add calculated percentage here
+          });
+        } 
+      } catch (error) {
+        console.error("Error fetching Branch GWP data from API:", error);
+      }
+    };
+
+    fetchLifeMonthlyData();
+    fetchLifeMonthlyCumulativeData();
+  }, [currentMonth]);
+  // Fetch Achievers data
+  useEffect(() => {
+    const fetchAllMDRTAchievers = async () => {
+      try {
+        const response = await axios.get(
+          `${BASE_URL}/${ENDPOINTS.ISLANDRANKMDRT}?p_year=${currentYear}`
+        );
+        const data = response.data;
+
+        if (data && data.length > 0) {
+          setAchieverList((prev) => [
+            {
+              title: "Top Ten Achievers",
+              list: data.map((item) => ({
+                agent_name: item.agent_name,
+                branch_name: item.branch_name,
+                national_rank: item.national_rank,
+                image: item.image || defaultImage, // Use default image if no image is provided
+              })),
+            },
+            prev[1],
+            prev[2],
+          ]);
+        } else {
+          console.error("Top Achievers data not available or empty");
+        }
+      } catch (error) {
+        console.error("Error fetching Top Achievers data from API:", error);
+      }
+    };
+
+    // Fetch Life Members data
+    const fetchLifeMembers = async () => {
+      try {
+        const response = await axios.get(
+          `${BASE_URL}/${ENDPOINTS.LIFEMEMBER}?p_year=${currentYear}`
+        );
+        const data = response.data;
+
+        if (data && data.length > 0) {
+          setAchieverList((prev) => [
+            prev[0],
+            {
+              title: "Life Members",
+              list: data.map((item) => ({
+                agent_name: item.agent_name,
+                branch_name: item.branch_name,
+                national_rank: item.national_rank,
+                image: item.image || defaultImage, // Use default image if no image is provided
+              })),
+            },
+            prev[2],
+          ]);
+        } else {
+          console.error("Life Members data not available or empty");
+        }
+      } catch (error) {
+        console.error("Error fetching Life Members data from API:", error);
+      }
+    };
+
+    // Fetch TOT Achievers data
+    const fetchTOTAchievers = async () => {
+      try {
+        const response = await axios.get(
+           `${BASE_URL}/${ENDPOINTS.TOTRANK}?p_year=${currentYear}`
+        );
+        const data = response.data;
+
+        if (data && data.length > 0) {
+          setAchieverList((prev) => [
+            prev[0],
+            prev[1],
+            {
+              title: "TOT Achievers",
+              list: data.map((item) => ({
+                agent_name: item.agent_name,
+                branch_name: item.branch_name,
+                national_rank: item.national_rank,
+                image: item.image || defaultImage, // Use default image if no image is provided
+              })),
+            },
+          ]);
+        } else {
+          console.error("TOT Achievers data not available or empty");
+        }
+      } catch (error) {
+        console.error("Error fetching TOT Achievers data from API:", error);
+      }
+    };
+
+    fetchAllMDRTAchievers();
+    fetchLifeMembers();
+    fetchTOTAchievers();
+  }, [currentYear]);
+  // Flipping Effect Pause on Hover on GWP Monthly and cumalative
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isHovering) {
-        setShowBranch(prev => !prev);
+        setGWPFlipping((prev) => !prev);
       }
-    }, 3000); // Flip every 30 seconds if not hovering
+    }, 3000); // Flip every 3 seconds if not hovering
 
     return () => clearInterval(interval);
   }, [isHovering]);
@@ -230,82 +446,58 @@ const GWPChartsContainer = () => {
   };
 
   const handleCardClick = () => {
-    setCurrentCard(prev => (prev === 'achievers' ? 'event' : 'achievers')); // Toggle between 'achievers' and 'event'
+    setCurrentCard((prev) => (prev === "achievers" ? "event" : "achievers")); // Toggle between 'achievers' and 'event'
   };
 
   const handleAchieverClick = () => {
-    setAchieverList(prev => (prev + 1) % 3); // Cycle through Top, Branch, Regional achievers
+    setAchieverIndex((prev) => (prev + 1) % 3); // Cycle through Top, Life Members, TOT achievers
   };
-
-  const branchLabels = [
-    'NOP: 485',
-    'AMP: 150',
-    'FYP: Rs.15000'
-  ];
-
-  const topAchievers = {
-    title: 'National Top Achievers',
-    list: [
-      { name: 'A. R. C. Perera', location: 'Bandarawela', image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-      { name: 'K. Dhanushka Silva', location: 'Dehiwala', image: 'https://img.freepik.com/free-photo/smiley-man-holding-camera-front-view_23-2149915895.jpg' },
-      { name: 'N. K. Wijesiri', location: 'Colombo 04', image: 'https://media.istockphoto.com/id/1369508766/photo/beautiful-successful-latin-woman-smiling.jpg?s=612x612&w=0&k=20&c=LoznG6eGT42_rs9G1dOLumOTlAveLpuOi_U755l_fqI=' }
-    ]
-  };
-
-  const cotAchievers = {
-    title: 'COT  Achievers',
-    list: [
-      { name: 'A. B. C. Fernando', location: 'Galle', image: 'https://images.pexels.com/photos/38554/office-two-business-businessmen-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-      { name: 'D. E. F. Gamage', location: 'Kandy', image: 'https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-      { name: 'H. I. J. Silva', location: 'Negombo', image: 'https://images.pexels.com/photos/769888/pexels-photo-769888.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' }
-    ]
-  };
-  const TOTAchievers = {
-    title: 'TOT  Achievers',
-    list: [
-      { name: 'A. B. C. Fernando', location: 'Galle', image: 'https://images.pexels.com/photos/38554/office-two-business-businessmen-38554.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-      { name: 'D. E. F. Gamage', location: 'Kandy', image: 'https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-      { name: 'H. I. J. Silva', location: 'Negombo', image: 'https://images.pexels.com/photos/769888/pexels-photo-769888.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' }
-    ]
-  };
-
-  const regionalAchievers = {
-    title: 'Regional Top Achievers',
-    list: [
-      { name: 'K. L. M. Perera', location: 'Jaffna', image: 'https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-      { name: 'N. O. P. Jayasinghe', location: 'Batticaloa', image: 'https://images.pexels.com/photos/3748221/pexels-photo-3748221.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' },
-      { name: 'Q. R. S. Senanayake', location: 'Trincomalee', image: 'https://images.pexels.com/photos/1181649/pexels-photo-1181649.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' }
-    ]
-  };
-
-  const achieversList = [topAchievers, cotAchievers, TOTAchievers, regionalAchievers];
-
+  //GWP Monthly and cumalative target dougnut chart view component
   return (
-    <Box sx={{ textAlign: 'center', padding: 2 }}>
-      <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 2 }} 
-           onMouseEnter={handleMouseEnter} 
-           onMouseLeave={handleMouseLeave}>
-        <FlippingCard showBack={showBranch}>
+    <Box sx={{ textAlign: "center", padding: 2 }}>
+      <Box
+        sx={{ display: "flex", justifyContent: "center", marginBottom: 2 }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <FlippingCard showBack={GWPFlipping}>
           <div className="inner">
             <div className="front">
-              {dataLife && <GWPChart title="LIFE GWP" data={dataLife} />}
+              {MontlyDataBranch && (
+                <GWPChart title="Monthly" data={MontlyDataBranch} ach_presentage={MontlyDataBranch.ach_presentage} growth_presentage={MontlyDataBranch.growth_presentage}/>
+              )}
             </div>
             <div className="back">
-              {dataBranch && <GWPChart title="Branch GWP" data={dataBranch} customLabels={branchLabels} />}
+              {MontlyCumalativeDataBranch && (
+                <GWPChart
+                  title="Monthly Cumalatiuve"
+                  data={MontlyCumalativeDataBranch}
+                  ach_presentage={MontlyCumalativeDataBranch.ach_presentage}
+                  growth_presentage={MontlyCumalativeDataBranch.growth_presentage}
+                />
+              )}
             </div>
           </div>
         </FlippingCard>
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 2 }} onClick={handleCardClick}>
+      <Box
+        sx={{ display: "flex", justifyContent: "center", marginBottom: 2 }}
+        onClick={handleCardClick}
+      >
         <FlippingCard showBack={false} onClick={handleAchieverClick}>
           <div className="inner">
             <div className="front">
-              {currentCard === 'achievers' ? <AchieversCard achievers={achieversList[achieverList]} /> : <EventCard />}
+              {currentCard === "achievers" ? (
+                <AchieversCard achievers={achieverList[achieverIndex]} />
+              ) : (
+                <EventCard />
+              )}
             </div>
           </div>
         </FlippingCard>
       </Box>
     </Box>
+    //GWP Monthly and cumalative target dougnut chart view component
   );
 };
 

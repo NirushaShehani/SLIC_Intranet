@@ -1,0 +1,19 @@
+.logo img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 50px; /* Set a max height to keep the logo from becoming too large */
+    margin-left: 10px;
+  } 
+  
+  @media (max-width: 768px) {
+    .logo img {
+      max-height: 40px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo img {
+      max-height: 30px;
+    }
+  }

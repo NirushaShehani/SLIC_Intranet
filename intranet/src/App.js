@@ -12,16 +12,17 @@ import FullBranchPerformance from './components/Pages/FullBranchPerformance';
 import ContactListPage from './components/Pages/ContactListPage';
 import FullBranchEvent from './components/Pages/FullBranchEvent';
 import UploadEvent from './components/Pages/UploadEvent';
-import ServicesPage from './components/Pages/Services'
+//import ServicesPage from './components/Pages/Services'
 import MediaUploadDetails from './components/Pages/MediaUploadDetails';
 import AllNotices from './components/Pages/AllNotices';
 import SalesLead from './components/Pages/SalesLeadPage';
 import CostCenter from './components/Pages/Cost_Center';
 import IdeaHub from './components/Pages/IdeaHub';
-import Knowledge_BasePage from './components/Pages/Knowledge_BasePage';
+//import Knowledge_BasePage from './components/Pages/Knowledge_BasePage';
+import Knowledge_BasePage_test from './components/Pages/Knowledge_BasePage_test';
 import BookHub from './components/Pages/BookHub';
 import ISO_Forms from './components/Pages/ISO_Forms';
-
+import ServicesTest from './components/Pages/ServicesTest';
 import Login_Page from './components/Pages/LoginPage';
 import Idea_Hub_Admin_View from './components/Pages/Admin/IdeaHub_Admin_View';
 import SalesLead_Admin_View from './components/Pages/Admin/SalesLead_Admin_View';
@@ -49,7 +50,7 @@ const App =() => {
         <Route path="/full-media" element={<FullMedia />} />
         <Route path="/full-branch-performance" element={<FullBranchPerformance />} /> 
         <Route path="/contact-list" element={<ContactListPage/>}/>
-        <Route path="/services-page" element={<ServicesPage/>}/>
+        <Route path="/services-page" element={<ServicesTest/>}/>
         <Route path="/full-branch-events" element={<FullBranchEvent />} />
         <Route path="/upload-event" element={<UploadEvent />} />
         <Route path="/media-upload-details" element={<MediaUploadDetails />} />
@@ -57,7 +58,7 @@ const App =() => {
         <Route path="/sales-Lead" element={<SalesLead />} />
         <Route path="/Cost-Center" element={<CostCenter/>}/>
         <Route path="/Idea-Hub" element={<IdeaHub/>}/>
-        <Route path="/Knowledge-Base" element={<Knowledge_BasePage/>}/>
+        <Route path="/Knowledge-Base" element={<Knowledge_BasePage_test/>}/>
         <Route path="/Book-Hub" element={<BookHub/>}/>
 
         <Route path="/ISO-Forms" element={<ISO_Forms/>}/>
