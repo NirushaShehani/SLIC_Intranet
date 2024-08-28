@@ -1,12 +1,12 @@
 import React from 'react'
-import '../../../Styles/services.css';
+import '../../../../Styles/services.css';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 // hr tag styles
-import '../../../Styles/serviceshrtag.css';
+import '../../../../Styles/serviceshrtag.css';
 
-const ICT = () => {
+const Transport = () => {
   const openInNewWindow = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
@@ -169,6 +169,7 @@ const ICT = () => {
             </div>
           </div>
 
+          
 
         </div>
       </div>
@@ -176,4 +177,4 @@ const ICT = () => {
   )
 }
 
-export default ICT
+export default Transport

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
-import Procurement from '../Pages/Services_Pages/Procurement';
-import ICT from '../Pages/Services_Pages/ICT';
-import Life from '../Pages/Services_Pages/Life';
-import HR from '../Pages/Services_Pages/HR';
-import Finance from '../Pages/Services_Pages/Finance';
-import Sales from '../Pages/Services_Pages/Sales';
-import Transport from '../Pages/Services_Pages/Transport';
-import Life_Contact from '../Pages/Services_Pages/Life_Contact_Center';
+import Procurement from './Services_Policies_Forms/Services_Pages/Procurement';
+import ICT from './Services_Policies_Forms/Services_Pages/ICT';
+import Life from './Services_Policies_Forms/Services_Pages/Life';
+import HR from './Services_Policies_Forms/Services_Pages/HR';
+import Finance from './Services_Policies_Forms/Services_Pages/Finance';
+import Sales from './Services_Policies_Forms/Services_Pages/Sales';
+import Transport from './Services_Policies_Forms/Services_Pages/Transport';
+import Life_Contact from './Services_Policies_Forms/Services_Pages/Life_Contact_Center';
 
 import '../../Styles/services.css';
 // hr tag styles

@@ -1,13 +1,12 @@
 import React from 'react'
-import '../../../Styles/services.css';
+import '../../../../Styles/services.css';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 // hr tag styles
-import '../../../Styles/serviceshrtag.css';
+import '../../../../Styles/serviceshrtag.css';
 
-const Finance = () => {
-
+const ICT = () => {
   const openInNewWindow = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
@@ -170,7 +169,6 @@ const Finance = () => {
             </div>
           </div>
 
-          
 
         </div>
       </div>
@@ -178,4 +176,4 @@ const Finance = () => {
   )
 }
 
-export default Finance
+export default ICT
