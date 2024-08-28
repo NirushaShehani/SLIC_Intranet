@@ -22,19 +22,8 @@ const Incentive_Criteria = () => {
         rows: [["Apr-June 2024 Actual", "Eligible Incentive %"], ["44.23%", "5.00%"], ["36.60%", "2.50%"], ["990Mn", "2.50%"]],
         additionalDataTopics: [["For 2nd Quarter 2024"], ["Incentive %"]],
         additionalData: [["Life (10% x 3)"], ["30%"]],
-      },
-      {
-        name: "Apr-June 2024",
-        rows: [["Apr-June 2024 Actual", "Eligible Incentive %"], ["44.23%", "5.00%"], ["36.60%", "2.50%"], ["990Mn", "2.50%"]],
-        additionalDataTopics: [["For 2nd Quarter 2024"], ["Incentive %"]],
-        additionalData: [["Life (10% x 3)"], ["30%"]],
-      },
-    
-      
-     
 
-
-    ],
+      },],
   });
 
   const rowColors = ["#789ea6", "#79d0d6", "#85a7c4"];
