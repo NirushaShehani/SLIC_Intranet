@@ -112,10 +112,10 @@ const GWPChart = ({ title, data, customLabels, ach_presentage, growth_presentage
       </Box>
       <Box sx={{ textAlign: "center", marginTop: 1.5 }}>
         <Typography variant="body2" color="textSecondary">
-         Achievement: {ach_presentage}%
+         Achievement {ach_presentage}%
         </Typography>
         <Typography variant="body2" color="textSecondary">
-          Growth: {growth_presentage}%
+          Growth {growth_presentage}%
         </Typography>
        
         {customLabels &&
