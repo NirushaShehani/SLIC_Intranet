@@ -7,6 +7,7 @@ import image3 from '../../assets/Event3.jpg';
 import { Link } from 'react-router-dom';
 
 
+
 const images = [image1, image2, image3];
 
 const strings = [
