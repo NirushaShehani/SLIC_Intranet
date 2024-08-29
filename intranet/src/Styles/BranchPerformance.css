@@ -1,53 +1,128 @@
-.branch-performance {
-  background-image: url('../assets/performance.png');
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
-  margin-top: 18px;  
+.branch-performance-container {
+  width: 250px;
+  height: 350px;
+  background-color: #0c4d72;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
   font-family: Arial, sans-serif;
+  overflow-y: auto;
 }
 
-.branch-performance h2 {
-  text-align: left;
-  font-size: 18px;
-  margin-bottom: 20px;
-  margin-top: 1px;
+h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.category-selector {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.category-button {
+  color: #ccc;
+  background: none;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.category-button.selected {
+  background-color: #00adbb;
+  color: #000;
+}
+
+.achievement-status {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.status-button {
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+
+.achieved {
+  background-color: #00b300;
   color: #fff;
 }
 
-.branch-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  margin: 5px 0;
-  background-color: #fff;
-  border-radius: 4px;
+.not-achieved {
+  background-color: #ff3333;
+  color: #fff;
 }
 
-.branch-item span {
+.performance-list {
+  overflow-y: auto;
+  max-height: 250px;
+  padding-right: 10px;
+}
+
+.performance-item {
+  margin-bottom: 10px;
+}
+
+.branch-name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.performance-details {
+  display: flex;
+  align-items: center;
+}
+
+.percentage {
   font-size: 12px;
+  width: 50px;
+  /* Fixed width for the percentage text */
+  text-align: left;
 }
 
-.branch-item.achieved {
-  color: #1fd655; 
-  background-color: #fff;
+.performance-bar-container {
+  width: 160px;
+  /* Fixed width for the performance bar */
+  background-color: grey;
+  /* Background color for the container */
+  height: 10px;
+  border-radius: 5px;
+  margin-left: 5px;
+  overflow: hidden;
+  position: relative;
 }
 
-.branch-performance .read-more {
-  margin-top: 3px;
-  padding: 5px 10px;
-  color: white;
-  text-decoration: none;
-  font-size: 15px;
-  text-align: center;
+.performance-bar {
+  height: 100%;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.branch-performance .link-contain {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+.achieved-bar {
+  background-color: #00b300;
 }
+
+.not-achieved-bar {
+  background-color: #ff3333;
+}
+
+
+
+
+
+
+
+
+
+
 
 .branch-event {
   margin-top: 22px;
@@ -62,7 +137,7 @@
 
 .branch-event h2 {
   font-size: 18px;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
   margin-top: 5px;
   margin-right: 100px;
 }
@@ -101,7 +176,7 @@
 
 .incentive-criteria h2 {
   font-size: 14px;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
   margin-top: 5px;
   margin-right: 100px;
 }
@@ -133,6 +208,7 @@
   background-color: #ffffff;
 
 }
+
 .incentive-criteria .link-contain {
   overflow: hidden;
 }
@@ -155,10 +231,8 @@
   right: 0;
 }
 
-.incentive-container-content td{
+.incentive-container-content td {
   color: #000000;
   font-weight: 500;
-  
+
 }
-
-

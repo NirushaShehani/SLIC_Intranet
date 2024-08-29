@@ -7,6 +7,7 @@ ISLANDRANKMDRT: "Mdrt/GetIslandRankMDRT",
 COTRANK: "Mdrt/GetCOTRankMDRT",
 TOTRANK: "Mdrt/GetTOTRankMDRT",
 LIFEMEMBER: "Mdrt/GetLifeMemberMDRT",
+BR_PERFORMACE_CT_WISE: "Gwp/GetBrPerformCatWise",
 };
 
 export {BASE_URL, ENDPOINTS};
