@@ -72,7 +72,7 @@ function drawPercentageInDoughnut(chart, percentageText, labelText) {
 };
 // GWP Chart component
 const GWPChart = ({ title, data, customLabels, ach_presentage, growth_presentage }) => (
-  <Box sx={{ width: 250, padding: 1, marginTop: "-30px" }}>
+  <Box sx={{ width: 25, padding: -80, marginTop: "10px" }}>
     <CardContent>
       <Typography
         variant="h6"
@@ -94,7 +94,7 @@ const GWPChart = ({ title, data, customLabels, ach_presentage, growth_presentage
         <Doughnut
           data={data}
           options={{
-            cutout: "60%", // Reduce cutout size to give more room for text
+            cutout: "70%", // Reduce cutout size to give more room for text
             responsive: true,
         maintainAspectRatio: false,
             plugins: {
@@ -112,14 +112,12 @@ const GWPChart = ({ title, data, customLabels, ach_presentage, growth_presentage
       </Box>
       <Box sx={{ textAlign: "center", marginTop: 1.5 }}>
         <Typography variant="body2" color="textSecondary">
-          This month Achievement: {ach_presentage}%
+         Achievement: {ach_presentage}%
         </Typography>
         <Typography variant="body2" color="textSecondary">
-          This month Growth: {growth_presentage}%
+          Growth: {growth_presentage}%
         </Typography>
-        <Typography variant="body2" color="textSecondary">
-          Last Year: 
-        </Typography>
+       
         {customLabels &&
           customLabels.map((label, index) => (
             <Typography key={index} variant="body2" color="textSecondary">
@@ -464,13 +462,13 @@ const GWPChartsContainer = () => {
           <div className="inner">
             <div className="front">
               {MontlyDataBranch && (
-                <GWPChart title="Monthly" data={MontlyDataBranch} ach_presentage={MontlyDataBranch.ach_presentage} growth_presentage={MontlyDataBranch.growth_presentage}/>
+                <GWPChart title="GWP Month" data={MontlyDataBranch} ach_presentage={MontlyDataBranch.ach_presentage} growth_presentage={MontlyDataBranch.growth_presentage}/>
               )}
             </div>
             <div className="back">
               {MontlyCumalativeDataBranch && (
                 <GWPChart
-                  title="Monthly Cumalatiuve"
+                  title="Cumalatiuve Year"
                   data={MontlyCumalativeDataBranch}
                   ach_presentage={MontlyCumalativeDataBranch.ach_presentage}
                   growth_presentage={MontlyCumalativeDataBranch.growth_presentage}
