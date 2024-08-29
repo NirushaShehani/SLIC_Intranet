@@ -7,7 +7,8 @@ import DrawerMenu from '../Sub_Components/DrawerMenu';
 import Chip from "@mui/material/Chip";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { styled } from "@mui/material/styles";
-import logo from '../../assets/slicLIfe_New_1.png';
+import logo from '../../assets/IntranetLogo.png';
+import '../../Styles/logo.css';
 //Image Imports
 const imageUrl1 = require('../../assets/Services.png');
 const imageUrl2 = require('../../assets/Ideahub.png');
@@ -102,7 +103,7 @@ const KnowledgeBase = () => {
       <div className="Navbar" style={styles.navbar}>
         <DrawerMenu/>
         <div className="logo" style={styles.logo}>
-        <img src={logo} alt="Logo" style={{ width: '170px', height: '20%', marginLeft: '10px'}} />
+         <img src={logo} alt="Logo" className="logo" />
         </div>
       </div>
       
@@ -110,7 +111,7 @@ const KnowledgeBase = () => {
         {/*Services Chip*/}
         <Link to="/services-page" style={{ cursor: 'pointer' }}>
         <CustomChip style={styles.label}
-          label="Policy Services & Forms"
+          label="Policies/Services/Forms"
           deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
           onDelete={() => {}}
         />
@@ -145,6 +146,12 @@ const KnowledgeBase = () => {
           label="Idea Hub"
         />
         </Link>
+        {/*Book Hub Chip*/}
+        <Link to="/Book-Hub" style={{ cursor: 'pointer' }}>
+        <CustomChip4 style={styles.label}
+          label="Book Hub"
+        />
+        </Link>
       </div>
       <div >
         <style>
@@ -162,20 +169,11 @@ const KnowledgeBase = () => {
         </style>
         <Slider {...settings} style={styles.slideshow}>
           {images.map((image, index) => (
-            <div key={index}>
-              <img src={image} alt={`Slide ${index + 1}`} style={{ width: '290px', height: '400px', borderRadius: '15px' }} />
+            <div key={index}  style={styles.imageContainer}> 
+              <img src={image} alt={`Slide ${index + 1}`} style={styles.image} />
             </div>
           ))}
         </Slider>
-      </div>
-      <br/>
-      <div style={styles.chipContainer}>
-        {/*Book Hub Chip*/}
-        <Link to="/Book-Hub" style={{ cursor: 'pointer' }}>
-        <CustomChip4 style={styles.label}
-          label="Book Hub"
-        />
-        </Link>
       </div>
     </div>
   );
@@ -219,8 +217,21 @@ const styles = {
     fontSize: "19px"
   },
   slideshow: {
-    width: "290px",
-    margin: "15px 10px 10px"
+    width: "100%",
+    maxWidth:"600px",
+    margin: "15px auto 10px"
+  },
+
+  imageContainer: {
+     width: '290px', 
+     height: '400px', 
+     borderRadius: '15px'
+  },
+
+  image: {
+    width : "100%",
+    height: "auto",
+    borderRadius: "15px"
   }
   
 };

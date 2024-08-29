@@ -11,10 +11,8 @@ import { Link } from 'react-router-dom';
 const images = [image1, image2, image3];
 
 const strings = [
-  { key: "Q 1", value: "10%" },
-  { key: "Q 2", value: "10%" },
-  { key: "Q 3", value: "10%" },
-  { key: "Q 4", value: "10%" }
+  { key: "Feb and March", value: "20.0%" },
+  { key: "Q 2", value: "30.0%" },
 ];
 
 const updatedStrings = strings.filter(item => item.value !== "");
@@ -32,20 +30,6 @@ const BranchPerformance = () => {
 
   return (
     <div>
-      <div className="branch-performance">
-        <h2>Branch Performance</h2>
-        
-      </div>
-
-      <div className="branch-event">
-        <h2>Branch Event</h2>
-        <div className="images-container">
-          <Link to="/full-branch-events">
-            <img src={images[currentImageIndex]} alt={`Event ${currentImageIndex + 1}`} />
-          </Link>
-        </div>
-      </div>
-
       <div className="incentive-criteria">
         <div className="table-container">
           <div className="incentive-container">
@@ -68,6 +52,21 @@ const BranchPerformance = () => {
               <Link to="/Incentive-Criteria-page" className="read-more">Read more...</Link>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="branch-performance">
+        <h2>Branch Performance</h2>
+        
+      </div>
+
+      
+
+      <div className="branch-event">
+        <h2>Branch Event</h2>
+        <div className="images-container">
+          <Link to="/full-branch-events">
+            <img src={images[currentImageIndex]} alt={`Event ${currentImageIndex + 1}`} />
+          </Link>
         </div>
       </div>
     </div>

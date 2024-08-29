@@ -1,0 +1,64 @@
+.services-container {
+  padding: 20px;
+  text-align: left; /* Remove if you don't want to affect the alignment of other elements */
+}
+
+.services-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: left; /* Aligns the title to the left */
+  margin-left: 0; /* Adjust margin as needed */
+}
+
+.services-cards {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.service-card {
+  width: 30%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.service-title {
+  margin-top: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.services-buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.service-button {
+  background-color: white;
+  border: 2px solid #007bff;
+  color: #007bff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-button:hover {
+  background-color: #007bff;
+  color: white;
+}

@@ -6,29 +6,22 @@ const Incentive_Criteria = () => {
   const [data, setData] = useState({
     tableData: [
       {
-        name: "SLICLL (For Feb and Mar 2024)",
-        rows: [["Feb-Mar 2024_Actual", "Eligible Incentive %"], ["43%", "5.00%"], ["40%", "1.00%"], ["875Mn", "4.00%"]],
+        name: "Feb and Mar 2024",
+        rows: [["Feb-Mar 2024 Actual", "Eligible Incentive %"], ["43%", "5.00%"], ["40%", "1.00%"], ["875Mn", "4.00%"]],
         additionalDataTopics: [["For Feb & Mar 2024"], ["Incentive %"]],
         additionalData: [["Life (10% x 2)"], ["20%"]],
       },
       {
-        name: "SLICLL -Apr- June 2024",
-        rows: [["Apr-June", "Eligible Incentive %"], ["44.23%", "5.00%"], ["36.60%", "2.50%"], ["990Mn", "2.50%"]],
+        name: "Apr - June 2024",
+        rows: [["Apr - June Actual", "Eligible Incentive %"], ["44.23%", "5.00%"], ["36.60%", "2.50%"], ["990Mn", "2.50%"]],
         additionalDataTopics: [["For 2nd Quarter 2024"], ["Incentive %"]],
         additionalData: [["Life (10% x 3)"], ["30%"]],
       },
-      {
-        name: "SLICLL -Apr- June 2024",
-        rows: [["Apr-June", "Eligible Incentive %"], ["44.23%", "5.00%"], ["36.60%", "2.50%"], ["990Mn", "2.50%"]],
-        additionalDataTopics: [["For 2nd Quarter 2024"], ["Incentive %"]],
-        additionalData: [["Life (10% x 3)"], ["30%"]],
-      },
-
-
+  
     ],
   });
 
-  const rowColors = ["#789ea6", "#73bbab", "#85a7c4"];
+  const rowColors = ["#789ea6", "#79d0d6", "#85a7c4"];
 
   return (
     <div className="incentive-page">
@@ -36,10 +29,10 @@ const Incentive_Criteria = () => {
         <DrawerMenu />
       </div>
       <div className="incentive-column2">
-        <div className="scrollable-tables-container">
-          <div className="scrollable-tables">
-            <div className="table-wrapper static-table-wrapper">
-              <table className="static-table">
+        <div className="incentive-scrollable-tables-container">
+          <div className="incentive-scrollable-tables">
+            <div className="incentive-table-wrapper incentive-static-table-wrapper">
+              <table className="incentive-static-table">
                 <thead>
                   <tr className='Staff-Criteria'>
                     <th colSpan="4">Staff Incentive Criteria</th>
@@ -54,7 +47,7 @@ const Incentive_Criteria = () => {
                 <tbody>
                   <tr>
                     <td className='life-row' rowSpan="9">Life</td>
-                    <td className='Payout-ratio-row' rowSpan="3">Payout Ratio (Life)</td>
+                    <td className='Payout-ratio-row' rowSpan="3">Payout Ratio</td>
                     <td className='Payout-ratio-row-data'>56%</td>
                     <td className='Payout-ratio-row-data'>1.0%</td>
                   </tr>
@@ -68,7 +61,7 @@ const Incentive_Criteria = () => {
                     <td className='Payout-ratio-row-data'>5.0%</td>
                   </tr>
                   <tr>
-                    <td className='Expense-Ratio-row' rowSpan="3">Expense Ratio (Life)</td>
+                    <td className='Expense-Ratio-row' rowSpan="3">Expense Ratio</td>
                     <td className='Expense-Ratio-row-data'>43%</td>
                     <td className='Expense-Ratio-row-data'>1.0%</td>
                   </tr>
@@ -94,7 +87,7 @@ const Incentive_Criteria = () => {
                     <td className='Total-Shareholder-surplus-row-data'>4.0%</td>
                   </tr>
                   <br></br>
-             
+
                   <tr>
                     <td colSpan="4" className='Life-Eligible-Incentive'>Life Eligible Incentive</td>
                   </tr>
@@ -103,13 +96,13 @@ const Incentive_Criteria = () => {
             </div>
 
             {data.tableData.map((table, index) => (
-              <div className="table-wrapper-scroll" key={index}>
-                <table className="table-wrapper-table">
+              <div className="incentive-table-wrapper-scroll" key={index}>
+                <table className="incentive-table-wrapper-table">
                   <thead>
                     <tr>
                       <th colSpan="2">{table.name}</th>
                     </tr>
-                    <tr className="table-wrapper-table-collums">
+                    <tr className="incentive-table-wrapper-table-collums">
                       {table.rows[0].map((header, idx) => (
                         <th key={idx}>{header}</th>
                       ))}
@@ -117,9 +110,9 @@ const Incentive_Criteria = () => {
                   </thead>
                   <tbody>
                     {table.rows.slice(1).map((row, rowIndex) => (
-                      <tr key={rowIndex} className="custom-row" style={{ backgroundColor: rowColors[rowIndex % rowColors.length] }}>
-                        <td className="custom-row-content">{row[0]}</td>
-                        <td className="custom-row-content">{row[1]}</td>
+                      <tr key={rowIndex} className="incentive-custom-row" style={{ backgroundColor: rowColors[rowIndex % rowColors.length] }}>
+                        <td className="incentive-custom-row-content">{row[0]}</td>
+                        <td className="incentive-custom-row-content">{row[1]}</td>
                       </tr>
                     ))}
                     <br></br>
@@ -130,7 +123,7 @@ const Incentive_Criteria = () => {
                             <th key={topicIndex}>{topic}</th>
                           ))}
                         </tr>
-                        <tr className="custom-row-content-2">
+                        <tr className="incentive-custom-row-content-2">
                           {table.additionalData.map((dataItem, dataIndex) => (
                             <td key={dataIndex}>{dataItem}</td>
                           ))}

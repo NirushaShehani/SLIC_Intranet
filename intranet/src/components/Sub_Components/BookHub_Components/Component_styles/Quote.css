@@ -1,0 +1,41 @@
+.quote-container {
+  background-image: url('');
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  text-align: left;
+  border-radius: 15px;
+  color: white;
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-text {
+  font-size: 24px;
+  font-style: italic;
+  margin: 0;
+}
+
+.quote-author {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.quote-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for better text visibility */
+  border-radius: 15px;
+}
+
+.quote-container > * {
+  position: relative;
+  z-index: 1;
+}
