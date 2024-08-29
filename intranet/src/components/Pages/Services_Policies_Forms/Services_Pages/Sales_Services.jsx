@@ -6,8 +6,7 @@ import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 // hr tag styles
 import '../../../../Styles/serviceshrtag.css';
 
-const Finance = () => {
-
+const Sales = () => {
   const openInNewWindow = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
@@ -105,77 +104,10 @@ const Finance = () => {
               <span>B-Advisor</span>
             </div>
           </div>
-
-          <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">Life-Circulars Forms</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-          </div>
-          <div style={listContainer}>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Life</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-mis')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-MIS</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/cashbook')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Cashbook</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-commission')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Commission</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Advisor</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>HRIS</span>
-            </div>
-          </div>
-
-          <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">ICT Forms</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-          </div>
-          <div style={listContainer}>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Life</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-mis')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-MIS</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/cashbook')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Cashbook</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-commission')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Commission</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>B-Advisor</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>HRIS</span>
-            </div>
-          </div>
-
-          
-
         </div>
       </div>
     </div>
   )
 }
 
-export default Finance
+export default Sales

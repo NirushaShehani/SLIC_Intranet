@@ -185,7 +185,7 @@ const styles = {
     alignItems: 'flex-start',
   },
   menuIcon: {
-    color: 'white',
+    color: 'black',
     backgroundColor: 'transparent',
     marginBottom: '-10px',
   },
