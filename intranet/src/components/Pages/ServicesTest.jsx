@@ -1,88 +1,245 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import '../../Styles/servicesTest.css';
-import { useNavigate } from 'react-router-dom';
-import Procurement from './Services_Policies_Forms/Services_Pages/Procurement';
-import ICT from './Services_Policies_Forms/Services_Pages/ICT';
-import Life from './Services_Policies_Forms/Services_Pages/Life';
-import HR from './Services_Policies_Forms/Services_Pages/HR';
-import Finance from './Services_Policies_Forms/Services_Pages/Finance';
-import Sales from './Services_Policies_Forms/Services_Pages/Sales';
-import Transport from './Services_Policies_Forms/Services_Pages/Transport';
-import Life_Contact from './Services_Policies_Forms/Services_Pages/Life_Contact_Center';
+import DrawerMenu from '../Sub_Components/DrawerMenu';
+//import Procurement from './Services_Policies_Forms/Services_Pages/Procurement';
+//import HRServices from './Services_Policies_Forms/Services_Pages/HR';
+//import Transport from './Services_Policies_Forms/Services_Pages/Transport';
+// Services_Pages Links
+import ICTServices from './Services_Policies_Forms/Services_Pages/ICT_Services';
+import LifeServices from './Services_Policies_Forms/Services_Pages/Life_Services';
+import FinanceServices from './Services_Policies_Forms/Services_Pages/Finance_Services';
+import SalesServices from './Services_Policies_Forms/Services_Pages/Sales_Services';
+// Services_Pages Links
+// Forms_Pages Links
+// Forms_Pages Links
+// Circulars_Pages Links
+import HR_Circulars from './Services_Policies_Forms/Circulars_pages/HR_Circulars';
+import ICT_Circulars from './Services_Policies_Forms/Circulars_pages/ICT_Circulars';
+import Life_Circulars from './Services_Policies_Forms/Circulars_pages/Life_Circulars';
+// Circulars_Pages Links
 import Recent_Links from './Services_Policies_Forms/Recent_Links';
 
 const ServicesTest = () => {
-  const openInNewWindow = (url) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
+  const [activeComponent, setActiveComponent] = useState(null);  // To track the active content
+  const [activeSection, setActiveSection] = useState(null);      // To track the active section (Services, Policies, etc.)
+  const [clickedButton, setClickedButton] = useState(null);      // To track the last clicked button
 
-  const [activeComponent, setActiveComponent] = useState(null);
-
-  const renderComponent = () => {
-    switch (activeComponent) {
-      case 'Life':
-        return <Life />;
-      case 'ICT':
-        return <ICT />;
-      case 'HR':
-        return <HR />;
-      case 'Finance':
-        return <Finance />;
-      // Add more cases for other components...
-      default:
-        return <div>Please select a service.</div>;
+  // Function to toggle between displaying content or hiding it
+  const toggleComponent = (componentName, sectionName, buttonName) => {
+    if (activeComponent === componentName) {
+      setActiveComponent(null);  // Hide the component if the same button is clicked again
+      setActiveSection(sectionName);  // Keep the section active to show buttons
+      setClickedButton(null);     // Reset the clicked button state
+    } else {
+      setActiveComponent(componentName);
+      setActiveSection(sectionName);  // Show only the active section's buttons and content
+      setClickedButton(buttonName);   // Set the clicked button name
     }
   };
 
-  const navigate = useNavigate();
+  const renderComponent = () => {
+    switch (activeComponent) {
+      case 'LifeServices':
+        return <LifeServices />;
+      case 'ICTServices':
+        return <ICTServices />;
+      case 'SalesServices':
+        return <SalesServices />;
+      case 'FinanceServices':
+        return <FinanceServices />;
+      case 'HR_Circulars':
+        return <HR_Circulars/>
+      case 'ICT_Circulars':
+        return <ICT_Circulars/>
+      case 'Life_Circulars':
+        return <Life_Circulars/>
+      // Add other cases as needed
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="services-container">
-      {/* Services */}
-      <h1 className="services-title">Services</h1>
-      {/* Recent links */}
-      <Recent_Links/>
-      {/* Recent links */}
-      <div className="services-buttons">
-        <button className="service-button" onClick={() => setActiveComponent('ICT')}>
-          ICT<span>&#x2192;</span>
-        </button>
-        <button className="service-button" onClick={() => setActiveComponent('Life')}>
-          ICT - Service B <span>&#x2192;</span>
-        </button>
-        <button className="service-button" onClick={() => setActiveComponent('Life')}>
-          HR - Service A <span>&#x2192;</span>
-        </button>
-        <button className="service-button" onClick={() => setActiveComponent('Life')}>
-          HR - Service B <span>&#x2192;</span>
-        </button>
-      </div>
+      
+      <DrawerMenu />
+      {/* Display section names in a horizontal layout */}
+      {!activeComponent && (
+        <div className="section-names">
+          {activeSection !== 'services' && (
+            <h1 
+              className={`services-title ${activeSection === 'services' ? 'selected' : ''}`} 
+              onClick={() => setActiveSection('services')}
+            >
+              Services
+            </h1>
+          )}
+          {activeSection !== 'policies' && (
+            <h1 
+              className={`services-title ${activeSection === 'policies' ? 'selected' : ''}`} 
+              onClick={() => setActiveSection('policies')}
+            >
+              Policies
+            </h1>
+          )}
+          {activeSection !== 'forms' && (
+            <h1 
+              className={`services-title ${activeSection === 'forms' ? 'selected' : ''}`} 
+              onClick={() => setActiveSection('forms')}
+            >
+              Forms
+            </h1>
+          )}
+          {activeSection !== 'circulars' && (
+            <h1 
+              className={`services-title ${activeSection === 'circulars' ? 'selected' : ''}`} 
+              onClick={() => setActiveSection('circulars')}
+            >
+              Circulars
+            </h1>
+          )}
+        </div>
+      )}
+      {/* Display section names in a horizontal layout */}
+
+      {/* Display only the active section's title and buttons */}
+      {activeSection === 'services' && (
+        <>
+          <h1 className="services-title selected" onClick={() => setActiveSection(null)}>
+            Services
+          </h1>
+          <Recent_Links/>
+          <div className="services-buttons">
+            <button
+              className={`service-button ${clickedButton === 'LifeServices' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('LifeServices', 'services', 'LifeServices')}
+            >
+              Life<span>&#x2192;</span>
+            </button>
+            <button
+              className={`service-button ${clickedButton === 'ICTServices' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('ICTServices', 'services', 'ICTServices')}
+            >
+              ICT<span>&#x2192;</span>
+            </button>
+            <button
+              className={`service-button ${clickedButton === 'FinanceServices' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('FinanceServices', 'services', 'FinanceServices')}
+            >
+              Finance <span>&#x2192;</span>
+            </button>
+            <button
+              className={`service-button ${clickedButton === 'SalesServices' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('SalesServices', 'services', 'SalesServices')}
+            >
+              Sales <span>&#x2192;</span>
+            </button>
+          </div>
+        </>
+      )}
+
+      {activeSection === 'policies' && (
+        <>
+          <h1 className="services-title selected" onClick={() => setActiveSection(null)}>
+            Policies
+          </h1>
+          <div className="services-buttons">
+            <button
+              className={`service-button ${clickedButton === 'Life' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('Life', 'policies', 'Life')}
+            >
+              Life <span>&#x2192;</span>
+            </button>
+            <button
+              className={`service-button ${clickedButton === 'ICT' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('ICT', 'policies', 'ICT')}
+            >
+              ICT - Service B <span>&#x2192;</span>
+            </button>
+            <button
+              className={`service-button ${clickedButton === 'HR' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('HR', 'policies', 'HR')}
+            >
+              HR - Service A <span>&#x2192;</span>
+            </button>
+            <button
+              className={`service-button ${clickedButton === 'HR_B' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('HR', 'policies', 'HR_B')}
+            >
+              HR - Service B <span>&#x2192;</span>
+            </button>
+          </div>
+        </>
+      )}
+
+      {activeSection === 'forms' && (
+        <>
+          <h1 className="services-title selected" onClick={() => setActiveSection(null)}>
+            Forms
+          </h1>
+          <div className="services-buttons">
+            <button
+              className={`service-button ${clickedButton === 'Life' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('Life', 'forms', 'Life')}
+            >
+              Life <span>&#x2192;</span>
+            </button>
+            <button
+              className={`service-button ${clickedButton === 'ICT' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('ICT', 'forms', 'ICT')}
+            >
+              ICT - Service B <span>&#x2192;</span>
+            </button>
+            <button
+              className={`service-button ${clickedButton === 'HR' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('HR', 'forms', 'HR')}
+            >
+              HR - Service A <span>&#x2192;</span>
+            </button>
+            <button
+              className={`service-button ${clickedButton === 'HR_B' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('HR', 'forms', 'HR_B')}
+            >
+              HR - Service B <span>&#x2192;</span>
+            </button>
+          </div>
+        </>
+      )}
+
+      {activeSection === 'circulars' && (
+        <>
+          <h1 className="services-title selected" onClick={() => setActiveSection(null)}>
+            Circulars
+          </h1>
+          <div className="services-buttons">
+            <button
+              className={`service-button ${clickedButton === 'HR_Circulars' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('HR_Circulars', 'circulars', 'HR_Circulars')}
+            >
+              HR <span>&#x2192;</span>
+            </button>
+            <button
+              className={`service-button ${clickedButton === 'ICT_Circulars' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('ICT_Circulars', 'circulars', 'ICT_Circulars')}
+            >
+              ICT<span>&#x2192;</span>
+            </button>
+            <button
+              className={`service-button ${clickedButton === 'Life_Circulars' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('Life_Circulars', 'circulars', 'Life_Circulars')}
+            >
+              Life<span>&#x2192;</span>
+            </button>
+          </div>
+        </>
+      )}
+
+      {/* Display the content if a component is active */}
       <div className="service-content">
         {renderComponent()}
       </div>
-      {/* Policies */}
-      <h1 className="services-title">Policies</h1> 
-      
-      <div className="services-buttons">
-        {['ICT', 'HR', 'Finance', 'Contact Centre', 'Sales', 'Procurement', 'Transport'].map(service => (
-          <button key={service} className="service-button">
-            {service} <span>&#x2192;</span>
-          </button>
-        ))}
-      </div>
-      {/* Forms */}
-      <h1 className="services-title">Forms</h1>
-      
-      <div className="services-buttons">
-        {['ICT', 'HR', 'Finance', 'Contact Centre', 'Sales', 'Procurement', 'Transport'].map(service => (
-          <button key={service} className="service-button">
-            {service} <span>&#x2192;</span>
-          </button>
-        ))}
-      </div>
     </div>
-    
-    
-  )
-}
+  );
+};
 
-export default ServicesTest
+export default ServicesTest;

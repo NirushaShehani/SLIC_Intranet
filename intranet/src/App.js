@@ -33,7 +33,7 @@ import Common_Forms from './components/Pages/Services_Policies_Forms/Forms_pages
 import Membership_Forms from './components/Pages/Services_Policies_Forms/Forms_pages/Membership';
 import Sales_Forms from './components/Pages/Services_Policies_Forms/Forms_pages/Sales';
 import Security_department_Forms from './components/Pages/Services_Policies_Forms/Forms_pages/Security_department';
-import Life from './components/Pages/Services_Policies_Forms/Services_Pages/Life';
+import Life from './components/Pages/Services_Policies_Forms/Services_Pages/Life_Services';
 import Incentive_Criteria from './components/Pages/Incentive_Criteria';
 
 
