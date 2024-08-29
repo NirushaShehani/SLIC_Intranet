@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import DrawerMenu from '../../Sub_Components/DrawerMenu';
+import DrawerMenu from '../../../Sub_Components/DrawerMenu';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
-import '../../../Styles/services.css';
+import '../../../../Styles/services.css';
 // hr tag styles
-import '../../../Styles/serviceshrtag.css';
+import '../../../../Styles/serviceshrtag.css';
 
-const Life_Forms = () => {
+const Sales_Forms = () => {
   const [selectedDept, setSelectedDept] = useState(''); // State to track the selected department
 
   const openInNewWindow = (url) => {
@@ -158,7 +158,7 @@ const Life_Forms = () => {
           {/* Upper Left Section */}
           <div style={up}>
             <DrawerMenu />
-            <div style={ContactList}>Life Forms</div>
+            <div style={ContactList}>Sales Forms</div>
           </div>
           {/* Lower Left Section */}
           <div style={Down}>
@@ -183,11 +183,11 @@ const Life_Forms = () => {
       <div style={rightStyle}>
         <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
           <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-          <span>Jana Rekuma Death Claim Form</span>
+          <span>CAPEX Formsnew</span>
         </div>
         <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
           <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-          <span>Jana Rekuma Hospitalization Claim Form</span>
+          <span>IAAF</span>
         </div>
         <div>
         
@@ -198,4 +198,4 @@ const Life_Forms = () => {
   );
 };
 
-export default Life_Forms;
+export default Sales_Forms;

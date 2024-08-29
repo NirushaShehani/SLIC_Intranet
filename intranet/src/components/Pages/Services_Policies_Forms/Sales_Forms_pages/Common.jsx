@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import DrawerMenu from '../../Sub_Components/DrawerMenu';
+import DrawerMenu from '../../../Sub_Components/DrawerMenu';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
-import '../../../Styles/services.css';
+import '../../../../Styles/services.css';
 // hr tag styles
-import '../../../Styles/serviceshrtag.css';
+import '../../../../Styles/serviceshrtag.css';
 
 const Common_Forms = () => {
   const [selectedDept, setSelectedDept] = useState(''); // State to track the selected department

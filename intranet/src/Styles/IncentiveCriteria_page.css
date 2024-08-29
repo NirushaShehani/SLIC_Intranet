@@ -36,19 +36,19 @@
 }
 
 /* Scrollable Tables Container */
-.scrollable-tables-container {
+.incentive-scrollable-tables-container {
   display: flex;
   overflow-x: auto; /* Enable horizontal scrolling within the container */
 }
 
 /* Scrollable Tables */
-.scrollable-tables {
+.incentive-scrollable-tables {
   display: flex;
   gap: 10px; /* Space between the tables */
 }
 
 /* Static Table Wrapper */
-.static-table-wrapper {
+.incentive-static-table-wrapper {
   position: sticky;
   left: 0;
   z-index: 1;
@@ -56,13 +56,13 @@
 }
 
 /* Table Wrapper */
-.table-wrapper {
+.incentive-table-wrapper {
   flex: 0 0 auto;
   width: 40%;
 }
 
 /* Adjust the width of the table-wrapper-scroll */
-.table-wrapper-scroll {
+.incentive-table-wrapper-scroll {
   flex: 0 0 auto;
   width: auto;
 }
@@ -72,31 +72,32 @@ table {
 }
 
 /* Adjust the width of the table */
-.table-wrapper-table {
+.incentive-table-wrapper-table {
   width: auto;
 }
 
 /* Styles for the specific table */
-.table-wrapper-table th {
+.incentive-table-wrapper-table th {
   height: 28px;
   color: #ffffff;
   text-align: center;
 }
 
 /* Adjust the width of table cells */
-.table-wrapper-table th,
-.table-wrapper-table td {
+.incentive-table-wrapper-table th,
+.incentive-table-wrapper-table td {
   padding: 5px;
   border: 2px solid #ffffff;
 }
 
-.static-table {
+.incentive-static-table {
+  width: 100%;
   font-size: 10px;
   
 }
 
-.static-table th,
-.static-table td {
+.incentive-static-table th,
+.incentive-static-table td {
   padding: 10px;
   border: 2px solid #ffffff;
 }
@@ -123,23 +124,23 @@ th {
   background-color: #00b4d8;
   color: #ffffff;
 }
-.table-wrapper-table th{
+.incentive-table-wrapper-table th{
   background-color: #0077b6;
 }
 
-.table-wrapper-table-collums th {
+.incentive-table-wrapper-table-collums th {
   background-color: #00b4d8;
   color: #ffffff;
   text-align: center;
 }
 
 
-.custom-row td {
+.incentive-custom-row td {
   padding: 50px;
   font-size: 16px;
 }
 
-.custom-row {
+.incentive-custom-row {
   height: 50px;
 }
 
@@ -169,7 +170,6 @@ th {
 }
 
 .Payout-ratio-row-data {
-  background-color: #b0d6de;
   background-color: #789ea6;
   font-weight: 500;
   color: #000;
@@ -187,7 +187,7 @@ th {
   color: #000;
 }
 
-.custom-row-content {
+.incentive-custom-row-content {
   color: #000;
   font-weight: 500;
 }
@@ -211,11 +211,11 @@ font-weight: 600;
 font-size: 20px;
 height: 60px;
 }
-.custom-row-content-2 td{
+.incentive-custom-row-content-2 td{
   background-color: #ffdd1e;
   
 }
-.custom-row-content-2 td{
+.incentive-custom-row-content-2 td{
   color: #0077b6;
   font-weight: 500;
 }
