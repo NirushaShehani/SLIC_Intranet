@@ -1,3 +1,5 @@
+/* New CSS for branch performance table */
+
 .branch-performance-container {
   width: 250px;
   height: 350px;
@@ -116,12 +118,7 @@ h2 {
 
 
 
-
-
-
-
-
-
+/* New CSS for branch events */
 
 .branch-event {
   margin-top: 22px;
@@ -165,7 +162,7 @@ h2 {
 .incentive-criteria {
   margin-top: 22px;
   padding-top: 1px;
-  background-color: #31769F;
+  background-color: #0c4d72;
   border-radius: 8px;
   max-width: 300px;
   color: #fff;
@@ -174,21 +171,21 @@ h2 {
 }
 
 .incentive-criteria h2 {
-  font-size: 14px;
+  text-align: left;
+  font-size: 16px;
   margin-bottom: 5px;
   margin-top: 5px;
-  margin-right: 100px;
+  margin-left: 10px;
 }
 
 .incentive-criteria .table-container {
   overflow-x: auto;
-  white-space: nowrap;
+
 }
 
 .incentive-criteria table {
   width: 100%;
   border-collapse: collapse;
-  text-align: center;
   border-radius: 4px;
   margin-bottom: 10px;
 }
@@ -205,7 +202,6 @@ h2 {
 
 .incentive-criteria table tr:nth-child(2) {
   background-color: #ffffff;
-
 }
 
 .incentive-criteria .link-contain {
@@ -233,5 +229,46 @@ h2 {
 .incentive-container-content td {
   color: #000000;
   font-weight: 500;
+}
 
+/* Responsive CSS */
+@media (max-width: 768px) {
+  .incentive-criteria {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .incentive-criteria h2 {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+
+  .incentive-criteria table td {
+    padding: 6px;
+  }
+
+  .incentive-criteria .link-contain .read-more {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .incentive-criteria {
+    margin-top: 10px;
+  }
+
+  .incentive-criteria h2 {
+    font-size: 12px;
+    margin-left: 0;
+  }
+
+  .incentive-criteria table td {
+    padding: 4px;
+  }
+
+  .incentive-criteria .link-contain .read-more {
+    padding: 3px 6px;
+    font-size: 9px;
+  }
 }
