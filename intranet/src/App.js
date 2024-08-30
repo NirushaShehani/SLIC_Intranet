@@ -21,7 +21,7 @@ import IdeaHub from './components/Pages/IdeaHub';
 //import Knowledge_BasePage from './components/Pages/Knowledge_BasePage';
 import Knowledge_BasePage_test from './components/Pages/Knowledge_BasePage_test';
 import BookHub from './components/Pages/BookHub';
-import ISO_Forms from './components/Pages/ISO_Forms';
+import ISO_Forms from './components/Pages/Services_Policies_Forms/Forms_Pages/ISO_Forms';
 import ServicesTest from './components/Pages/ServicesTest';
 import Login_Page from './components/Pages/LoginPage';
 import Idea_Hub_Admin_View from './components/Pages/Admin/IdeaHub_Admin_View';
