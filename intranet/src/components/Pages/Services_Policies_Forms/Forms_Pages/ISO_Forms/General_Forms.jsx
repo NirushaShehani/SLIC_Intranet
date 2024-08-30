@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
-import '../../../Styles/serviceshrtag.css';
+import '../../../../../Styles/serviceshrtag.css';
 const Services = () => {
   const [selectedDept, setSelectedDept] = useState('');
   const openInNewWindow = (url) => {
@@ -122,41 +122,56 @@ const Services = () => {
   const renderContent = () => {
     switch (selectedDept) {
       case '1':
-         {/* General Forms to the Policyholder */}
+         {/* General Forms  */}
         return (
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
                     
-                    <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                    <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Standing Order Instruction Form ( Form No.1209)</span>
+                    <span>Customer Feed Back Form </span>
                     </div>
-    
+                    <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Customer Complaint Register   </span>
+                    </div>
+                    
+                    
                 </div>
             </div>
         </div>
         );
-     {/*General Forms to the Policyholder  */}
+     {/* General Forms  */}
      
      case '2':
-         {/* Group Payments Forms  */}
+        {/*  Life General Forms */}
         return (
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                    
-                    <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Letter of authority-form no 155R</span>
+                    <span>Customer Feed Back Request - Life  </span>
                     </div>
-    
-                </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Customer Complaint Register - Life   </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Concession Report- Life </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Complaints and Suggestions - Life  </span>
+                    </div>
+                    </div>
             </div>
         </div>
         );
-     {/*Group Payments Forms   */}
-     
+        {/*  Life General Forms */}
+       
       default:
         return <div>Select a department to see content here.</div>;
     }
@@ -167,9 +182,9 @@ const Services = () => {
       {/* Upper Horizontal Section */}
       <div style={topStyle}>
         <div style={buttonContainerStyle}>
-          <button style={getButtonStyle('1')} onClick={() => setSelectedDept('1')}>General Forms to the Policyholder</button>
-          <button style={getButtonStyle('2')} onClick={() => setSelectedDept('2')}>Group Payments Forms </button>
-         
+          <button style={getButtonStyle('1')} onClick={() => setSelectedDept('1')}>General Forms</button>
+          <button style={getButtonStyle('2')} onClick={() => setSelectedDept('2')}>Life General Forms</button>
+          
         </div>
       </div>
       {/* Lower Horizontal Section */}

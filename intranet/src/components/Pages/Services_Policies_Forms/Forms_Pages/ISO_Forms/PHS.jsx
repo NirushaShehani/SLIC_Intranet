@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
-import '../../../Styles/serviceshrtag.css';
+import '../../../../../Styles/serviceshrtag.css';
 const Services = () => {
   const [selectedDept, setSelectedDept] = useState('');
   const openInNewWindow = (url) => {
@@ -122,250 +122,214 @@ const Services = () => {
   const renderContent = () => {
     switch (selectedDept) {
       case '1':
-         {/* Maturity Claim Forms */}
+         {/* General Forms to the Policyholder */}
         return (
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                    
                     <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Covering Letter</span>
+                    <span>Signature Verification Form ( Form No.1620)</span>
+                    </div>
+                    <div style={listItemStyle} onClick={() =>handleDownload('/LifeProposalForm')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Important Notice ( Form No.2812)  </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/LifeProposalForm')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Declaration of Continued Good Health (Form No 15C/E)  </span>
                     </div>
                     <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Discharge Form - Maturity </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Important Notice Format - Maturity</span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Payment Memo - Maturity </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Payment Voucher - Maturity</span>
+                    <span>Surrender Form ( Form No.1423)</span>
                     </div>
                     <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>New Business Letter - Maturity </span>
+                    <span>Surrender Form ( Form No.1526)</span>
                     </div>
                     <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Affidavit for Name difference</span>
-                    </div>  
+                    <span>Affidavit for Lost Policy ( Form No.1677)  </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Affidavit for Name Change ( Form No.1777)</span>
+                    </div>
+                    <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Surety Form (Form No.1630)</span>
+                    </div>
+                    <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Surety Bond (Form No.1545) ( Completed by Bank has lost the Policy) </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Assignment Form for Valuable Consideration ( Form No.1624)</span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Assignment Form for Natural Love and Affection ( Form No.1625)</span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Re-assignment Form ( Form No.1626)</span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Form Regarding Arogya / CIC inclusion for Child ( Form No.7149)</span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Nomination Form ( Form No.1809) </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Bonus Surrender Form ( Form No.1612)</span>
+                    </div>
+                    
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Loan Bond ( Form No.1595) </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Loan Application ( Form No.1728)  </span>
+                    </div>
+                  
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Declaration of Continued Good Health- child (Form No 9C/E) </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Voucher (Form No.7124)  </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Adjustment Voucher ( Form No.312)  </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Direct Adjustment ( Form No.1752)   </span>
+                    </div>
                 </div>
             </div>
         </div>
         );
-     {/*Maturity Claim Forms  */}
+        {/* General Forms to the Policyholder */}
+      case '2':
+        {/* Endorsements */}
+        return (
+        <div style={containerStyle}>
+        <div style={rightStyle}>
+                <div style={listContainer}>
+                <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Sum Assured and Rider Covers Redusing </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Include Children for Arogya  </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Remove Arogya Cover   </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Include Child Birth Cover for Arogya  </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Include Child for CIC  </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Remove CIC Cover from Child  </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Age Admission </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Special Revival  </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Change of Name  </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Correct the Name  </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Change the Name after Marriage</span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Change of Nominee </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Change the Mode of the Payment </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Term Reducing</span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Removal of Accident Benefit at Age 60 </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Desanda Inclusion </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Desanda Removal </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Health Extra Inclusion </span>
+                    </div>
+                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                    <span>Covers Removal with Health Extra  </span>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        );
+        {/* Endorsements */}
+      case '3':
+        {/* Group Payments Forms  */}
+        return (
+        <div style={containerStyle}>
+        <div style={rightStyle}>
+                <div style={listContainer}>
+                <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                  <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                  <span>Letter of authority-form no 155R</span>
+                  </div>
+                  <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                  <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                  <span>Adjustment Voucher</span>
+                  </div>
+                  
+                </div>
+            </div>
+        </div>
+        );
+        {/* Group Payments Forms  */}
+      
+      
      
-     case '2':
-        {/*  COMMON FORMS */}
-        return (
-        <div style={containerStyle}>
-        <div style={rightStyle}>
-                <div style={listContainer}>
-                <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Affidavit for Loss Policy </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Specimen Signature Form </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Certificate of Residence-7110 </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Indeminity bond  </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>death loss policy affidavit </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>power of attorny Affidavit </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Confirmation letter for power of attorney  </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Affidavit loss of policy(power of attorney holder) </span>
-                    </div>
-                    </div>
-            </div>
-        </div>
-        );
-        {/* COMMON FORMS */}
-
-        case '3':
-        {/* Stage Claim Forms */}
-        return (
-        <div style={containerStyle}>
-        <div style={rightStyle}>
-                <div style={listContainer}>
-                <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Covering Letter - 3S  </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Discharge Form - 3S  </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Important Notice Format - 3S</span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Payment Memo - 3S</span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Payment Voucher - 3S </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>New Business Letter - 3S </span>
-                    </div>
-                    </div>
-            </div>
-        </div>
-        );
-        {/* Stage Claim Forms*/}
-
-        case '4':
-        {/*Yashtiya Claim forms ISO numbers*/}
-        return (
-        <div style={containerStyle}>
-        <div style={rightStyle}>
-                <div style={listContainer}>
-                <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Covering Letter - 1st year annuities  </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Covering Letter - 2nd year and above annuities   </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Discharge Form - YC </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Important Notice Format - YC </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Agent Letter </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Certification of Residence Form (local) </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Certification of Residence Form (overseas)</span>
-                    </div>
-                    </div>
-            </div>
-        </div>
-        );
-        {/* Yashtiya Claim forms ISO numbers */}
-
-        case '5':
-        {/*  Freedom Claim forms ISO numbers */}
-        return (
-        <div style={containerStyle}>
-        <div style={rightStyle}>
-                <div style={listContainer}>
-                <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Covering Letter - 1st year annuity   </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Covering Letter - 2nd year annuity </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Discharge Form - FD </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Important Notice Format - FD</span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Agent Letter</span>
-                    </div>
-                    </div>
-            </div>
-        </div>
-        );
-        {/*Freedom Claim forms ISO numbers*/}
-
-        case '6':
-        {/*  Mindada Claim forms ISO numbers*/}
-        return (
-        <div style={containerStyle}>
-        <div style={rightStyle}>
-                <div style={listContainer}>
-                <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Covering Letter - 1st year annuity   </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Covering Letter - 2nd year annuity   </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Discharge Form - MD</span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Important Notice Format - MD </span>
-                    </div>
-                    </div>
-            </div>
-        </div>
-        );
-        {/* Mindada Claim forms ISO numbers */}
-
-        case '7':
-        {/*  Swarna Jayanthi Claim forms ISO numbers */}
-        return (
-        <div style={containerStyle}>
-        <div style={rightStyle}>
-                <div style={listContainer}>
-                <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Covering Letter </span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Discharge Form</span>
-                    </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Important Notice Format </span>
-                    </div>
-                    
-                    </div>
-            </div>
-        </div>
-        );
-        {/*Swarna Jayanthi Claim forms ISO numbers */}
+       
        
       default:
         return <div>Select a department to see content here.</div>;
@@ -377,14 +341,9 @@ const Services = () => {
       {/* Upper Horizontal Section */}
       <div style={topStyle}>
         <div style={buttonContainerStyle}>
-          <button style={getButtonStyle('1')} onClick={() => setSelectedDept('1')}>Maturity Claim Forms</button>
-          <button style={getButtonStyle('2')} onClick={() => setSelectedDept('2')}>COMMON FORMS</button>
-          <button style={getButtonStyle('3')} onClick={() => setSelectedDept('3')}>Stage Claim Forms</button>
-          <button style={getButtonStyle('4')} onClick={() => setSelectedDept('4')}>Yashtiya Claim forms ISO numbers</button>
-          <button style={getButtonStyle('5')} onClick={() => setSelectedDept('5')}>Freedom Claim forms ISO numbers</button>
-          <button style={getButtonStyle('6')} onClick={() => setSelectedDept('6')}>Mindada Claim forms ISO numbers</button>
-          <button style={getButtonStyle('7')} onClick={() => setSelectedDept('7')}>Swarna Jayanthi Claim forms ISO numbers</button>
-          
+          <button style={getButtonStyle('1')} onClick={() => setSelectedDept('1')}>General Forms to the Policyholder</button>
+          <button style={getButtonStyle('2')} onClick={() => setSelectedDept('2')}>Endorsements</button>
+          <button style={getButtonStyle('3')} onClick={() => setSelectedDept('3')}>Group Payments Forms </button>
           
         </div>
       </div>

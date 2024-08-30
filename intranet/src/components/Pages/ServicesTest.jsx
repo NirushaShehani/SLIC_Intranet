@@ -10,7 +10,12 @@ import LifeServices from './Services_Policies_Forms/Services_Pages/Life_Services
 import FinanceServices from './Services_Policies_Forms/Services_Pages/Finance_Services';
 import SalesServices from './Services_Policies_Forms/Services_Pages/Sales_Services';
 // Services_Pages Links
+// Policies_Pages Links
+import HR_Policies from './Services_Policies_Forms/Policies_Pages/HR_Policies';
+// Policies_Pages Links
 // Forms_Pages Links
+import ICT_Forms from './Services_Policies_Forms/Forms_Pages/ICT_Forms';
+import Common_Forms from './Services_Policies_Forms/Forms_Pages/Common_Forms';
 // Forms_Pages Links
 // Circulars_Pages Links
 import HR_Circulars from './Services_Policies_Forms/Circulars_pages/HR_Circulars';
@@ -18,6 +23,7 @@ import ICT_Circulars from './Services_Policies_Forms/Circulars_pages/ICT_Circula
 import Life_Circulars from './Services_Policies_Forms/Circulars_pages/Life_Circulars';
 // Circulars_Pages Links
 import Recent_Links from './Services_Policies_Forms/Recent_Links';
+import { Link } from 'react-router-dom';
 
 const ServicesTest = () => {
   const [activeComponent, setActiveComponent] = useState(null);  // To track the active content
@@ -53,6 +59,12 @@ const ServicesTest = () => {
         return <ICT_Circulars/>
       case 'Life_Circulars':
         return <Life_Circulars/>
+      case 'HR_Policies':
+        return <HR_Policies/>
+      case 'ICT_Forms':
+        return <ICT_Forms/>
+      case 'Common_Forms':
+        return <Common_Forms/>
       // Add other cases as needed
       default:
         return null;
@@ -145,12 +157,12 @@ const ServicesTest = () => {
           </h1>
           <div className="services-buttons">
             <button
-              className={`service-button ${clickedButton === 'Life' ? 'clicked' : ''}`}
-              onClick={() => toggleComponent('Life', 'policies', 'Life')}
+              className={`service-button ${clickedButton === 'HR_Policies' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('HR_Policies', 'policies', 'HR_Policies')}
             >
-              Life <span>&#x2192;</span>
+              HR <span>&#x2192;</span>
             </button>
-            <button
+            {/* <button
               className={`service-button ${clickedButton === 'ICT' ? 'clicked' : ''}`}
               onClick={() => toggleComponent('ICT', 'policies', 'ICT')}
             >
@@ -167,7 +179,7 @@ const ServicesTest = () => {
               onClick={() => toggleComponent('HR', 'policies', 'HR_B')}
             >
               HR - Service B <span>&#x2192;</span>
-            </button>
+            </button> */}
           </div>
         </>
       )}
@@ -179,29 +191,23 @@ const ServicesTest = () => {
           </h1>
           <div className="services-buttons">
             <button
-              className={`service-button ${clickedButton === 'Life' ? 'clicked' : ''}`}
-              onClick={() => toggleComponent('Life', 'forms', 'Life')}
+              className={`service-button ${clickedButton === 'ICT_Forms' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('ICT_Forms', 'forms', 'ICT_Forms')}
             >
-              Life <span>&#x2192;</span>
+              ICT <span>&#x2192;</span>
             </button>
             <button
-              className={`service-button ${clickedButton === 'ICT' ? 'clicked' : ''}`}
-              onClick={() => toggleComponent('ICT', 'forms', 'ICT')}
+              className={`service-button ${clickedButton === 'Common_Forms' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('Common_Forms', 'forms', 'Common_Forms')}
             >
-              ICT - Service B <span>&#x2192;</span>
+              Common <span>&#x2192;</span>
             </button>
-            <button
-              className={`service-button ${clickedButton === 'HR' ? 'clicked' : ''}`}
-              onClick={() => toggleComponent('HR', 'forms', 'HR')}
-            >
-              HR - Service A <span>&#x2192;</span>
+            <Link to="/ISO-Forms" style={{ cursor: 'pointer' }}>
+            <button className={`service-button ${clickedButton === 'ISO Forms' ? 'clicked' : ''}`}
+              onClick={() => toggleComponent('ISO Forms', 'forms', 'ISO Forms')}>
+              ISO Forms <span>&#x2192;</span>
             </button>
-            <button
-              className={`service-button ${clickedButton === 'HR_B' ? 'clicked' : ''}`}
-              onClick={() => toggleComponent('HR', 'forms', 'HR_B')}
-            >
-              HR - Service B <span>&#x2192;</span>
-            </button>
+            </Link>
           </div>
         </>
       )}
