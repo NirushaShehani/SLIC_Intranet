@@ -5,7 +5,7 @@ import { CardContent, Typography, Box, Avatar } from "@mui/material";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { styled } from "@mui/system";
 import axios from "axios";
-import { BASE_URL,ENDPOINTS } from "../../Services/ApiConfig";
+import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -43,88 +43,186 @@ const FlippingCard = styled(Box)(({ showBack }) => ({
 // Digital number component for Achievers cards
 const DigitalNumber = styled(Typography)(({ theme }) => ({
   fontFamily: "Digital-7, monospace",
-  fontSize: "5rem",
+  fontSize: "20px",
   textAlign: "center",
   color: "#000",
 }));
 // Digital number component for Achievers cards
-// function to draw the presentage inside the doughnut chart
-function drawPercentageInDoughnut(chart, percentageText, labelText) {
-  const { ctx, width, height } = chart;
-  ctx.save();
-  // Set the font size and alignment
-  ctx.font = "24px Arial"; // Increase the font size for visibility
-  ctx.textBaseline = "middle";
-  ctx.textAlign = "center";
-  ctx.fillStyle = '#000'; // Set color if needed
-  // Calculate the center of the doughnut
-  const centerX = width / 2;
-  const centerY = height / 2;
-  //Draw the presentage text
-  ctx.fillText(percentageText, centerX, centerY);
-
-   // Draw the label text
-   
-   ctx.font = 'normal 16px Arial'; // Adjust font size and style if needed
-   ctx.fillText(labelText, centerX, centerY + 30); // Adjust the Y-position as needed
-   ctx.fillStyle = '#000'; // Set color if needed
-  ctx.restore();
-};
 // GWP Chart component
-const GWPChart = ({ title, data, customLabels, ach_presentage, growth_presentage }) => (
-  <Box sx={{ width: 25, padding: -80, marginTop: "10px" }}>
+const GWPChart = ({
+  title,
+  data,
+  customLabels,
+  ach_presentage,
+  target,
+  achievement,
+}) => (
+  <Box
+    sx={{
+      width: 25,
+      padding: -80,
+      marginTop: "10px",
+    }}
+  >
     <CardContent>
       <Typography
         variant="h6"
         component="div"
-        sx={{ textAlign: "center", marginBottom: 1.5 }}
+        sx={{
+          textAlign: "center",
+          marginBottom: 1.5,
+          backgroundColor: "ad28bb",
+        }}
       >
         {title}
       </Typography>
+      {/* //GWP chart */}
       <Box
         sx={{
           display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
           justifyContent: "center",
-          position: "relative",
-          marginLeft: "80px",
-          top: "10px", right: "10px", width: 150, height: 150
+          width: 200, // Adjust width according to the container
+          height: 200, // Adjust height according to the container
+          backgroundColor: "ad28bb",
         }}
       >
-        
-        <Doughnut
-          data={data}
-          options={{
-            cutout: "70%", // Reduce cutout size to give more room for text
-            responsive: true,
-        maintainAspectRatio: false,
-            plugins: {
-              legend: { display: false },
-              beforeDraw: (chart) => {
-                const percentageText = `${ach_presentage}%`;
-                const labelText = "Your Label";
-                drawPercentageInDoughnut(chart, percentageText, labelText);
-              
-                
-              },
-            },
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            marginRight: -10,
+            width: 150,
+            height: 150,
+            marginTop: 1,
           }}
-        />
+        >
+          <Doughnut
+            data={data}
+            options={{
+              cutout: "70%", // Reduce cutout size to give more room for text
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: { display: false },
+              },
+            }}
+          />
+        </Box>
+        {/* Achievement percentage */}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+            marginTop: 2,
+            paddingX: 1,
+          }}
+        >
+          <Typography
+            variant="body2"
+            color="textPrimary"
+            sx={{
+              backgroundColor: "orange",
+              padding: "2px 4px",
+              borderRadius: 1,
+            }}
+          >
+            Achievement presentage
+          </Typography>
+          <Typography
+            variant="body2"
+            color="textPrimary"
+            sx={{
+              backgroundColor: "orange",
+              padding: "1px 2px",
+              borderRadius: 1,
+              marginRight: -3,
+            }}
+          >
+            {ach_presentage}%
+          </Typography>
+        </Box>
+        {/* Achievement percentage */}
+        {/* Achievement Value*/}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+            marginTop: 2,
+            paddingX: 1,
+          }}
+        >
+          <Typography
+            variant="body2"
+            color="textPrimary"
+            sx={{
+              backgroundColor: "yellow",
+              padding: "2px 4px",
+              borderRadius: 1,
+            }}
+          >
+            Achievement
+          </Typography>
+          <Typography
+            variant="body2"
+            color="textPrimary"
+            sx={{
+              backgroundColor: "yellow",
+              padding: "2px 4px",
+              borderRadius: 1,
+              marginRight: -3,
+            }}
+          >
+            {achievement}
+          </Typography>
+        </Box>
+        {/* Achievement Value*/}
+        {/* Target Value*/}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+            marginTop: 2,
+            paddingX: 1,
+          }}
+        >
+          <Typography
+            variant="body2"
+            color="textPrimary"
+            sx={{
+              backgroundColor: "red",
+              color: "white",
+              padding: "2px 4px",
+              borderRadius: 1,
+            }}
+          >
+            Target
+          </Typography>
+          <Typography
+            variant="body2"
+            color="textPrimary"
+            sx={{
+              backgroundColor: "red",
+              color: "white",
+              padding: "2px 4px",
+              marginRight: -3,
+              borderRadius: 1,
+            }}
+          >
+            {target}
+          </Typography>
+        </Box>
+        {/* Target Value*/}
       </Box>
-      <Box sx={{ textAlign: "center", marginTop: 1.5 }}>
-        <Typography variant="body2" color="textSecondary">
-         Achievement {ach_presentage}%
-        </Typography>
-        <Typography variant="body2" color="textSecondary">
-          Growth {growth_presentage}%
-        </Typography>
-       
-        {customLabels &&
-          customLabels.map((label, index) => (
-            <Typography key={index} variant="body2" color="textSecondary">
-              {label}
-            </Typography>
-          ))}
-      </Box>
+
+      {/* //GWP chart */}
     </CardContent>
   </Box>
 );
@@ -137,52 +235,126 @@ const AchieversCard = ({ achievers }) => (
       <Typography
         variant="h6"
         component="div"
-        sx={{ textAlign: "center", marginBottom: 1.5 }}
+        sx={{ textAlign: "center", marginTop: 1, marginBottom: 1.5 }}
       >
         {achievers.title}
       </Typography>
-      <DigitalNumber component="div">{achievers.list.length}</DigitalNumber>
-      <Typography
-        variant="body2"
-        color="textSecondary"
-        sx={{ textAlign: "center" }}
-      >
-        Achieved
-      </Typography>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "left",
-          marginTop: 2,
-          maxHeight: "150px", // Set a fixed height
-          overflowY: "auto", // Enable vertical scrolling
-        }}
-      >
-        {achievers.list.map((achiever, index) => (
-          <Box
-            key={index}
-            sx={{ display: "flex", flexDirection: "column", marginBottom: 1.5 }}
-          >
-            <Avatar
-              alt={achiever.agent_name}
-              src={achiever.image || defaultImage}
-            />
-            <Typography variant="body1" fontWeight="bold">
-              {achiever.agent_name}
-            </Typography>
-            <Typography variant="body2" color="textSecondary">
-              Branch: {achiever.branch_name}
-            </Typography>
-            <Typography variant="body2" color="textSecondary">
-              Rank: {achiever.national_rank}
-            </Typography>
-          </Box>
-        ))}
-      </Box>
+      <DigitalNumber component="div">
+        {
+          achievers.list.filter(
+            (achiever) => achiever.achievment === "Achieved"
+          ).length
+        }{" "}
+        Achievers
+      </DigitalNumber>
+
+      {/* Achievers and Non-Achievers List */}
+      {achievers.list.length > 0 ? (
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "left",
+            marginTop: 1,
+            marginRight: 1,
+            marginLeft: -1,
+            maxHeight: "250px", // Set a fixed height
+            overflowY: "auto", // Enable vertical scrolling
+            border: "2px solid #000", // Add border around the component
+            borderRadius: "8px", // Optional: to make the corners rounded
+            padding: "8px", // Optional: Add some padding inside the box
+            // Hide scrollbar but allow scrolling
+            scrollbarWidth: "none", // For Firefox
+            "&::-webkit-scrollbar": {
+              display: "none", // For Chrome, Safari, and Edge
+            },
+          }}
+        >
+          {achievers.list.map((achiever, index) => (
+            <Box
+              key={index}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                marginBottom: 1.5,
+              }}
+            >
+              <Avatar
+                alt={achiever.agent_name}
+                src={achiever.image || defaultImage}
+              />
+              <Typography
+                variant="body1"
+                fontWeight="bold"
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginBottom: 0.5,
+                  marginLeft: 1,
+                }}
+              >
+                {achiever.agent_name}
+              </Typography>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                fontWeight="bold"
+              >
+                Branch: {achiever.branch_name}
+              </Typography>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                fontWeight="bold"
+              >
+                Rank: {achiever.national_rank}
+              </Typography>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                sx={{
+                  backgroundColor:
+                    achiever.achievment === "Achieved"
+                      ? "green"
+                      : achiever.achievment === "Not_achieved"
+                      ? "red"
+                      : "transparent", // Green if achieved, red if not achieved
+                  color:
+                    achiever.achievment === "Achieved" ||
+                    achiever.achievment === "Not_achieved"
+                      ? "white"
+                      : "inherit", // White text for both states
+                  padding: "2px 4px",
+                  borderRadius: 1,
+                }}
+              >
+                {achiever.achievment === "Achieved"
+                  ? "Achieved"
+                  : achiever.achievment === "Not_achieved"
+                  ? "Not Achieved"
+                  : "Unknown Status"}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+      ) : (
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          sx={{
+            textAlign: "center",
+            marginTop: 15,
+            fontSize: "20px",
+            fontWeight: "bold",
+          }}
+        >
+          No data available
+        </Typography>
+      )}
     </CardContent>
   </Box>
 );
+
 // Achievers card component
 
 // Event details card component
@@ -274,8 +446,8 @@ const GWPChartsContainer = () => {
           const achievement = parseFloat(lifeData.achievement);
           const target = parseFloat(lifeData.target);
           const ach_presentage = parseFloat(lifeData.ach_presentage);
-          const growth_presentage = parseFloat(lifeData.growth_presentage)
-          setMontlyDataBranch ({
+
+          setMontlyDataBranch({
             labels: ["Achievement", "Target"],
             datasets: [
               {
@@ -285,7 +457,8 @@ const GWPChartsContainer = () => {
               },
             ],
             ach_presentage,
-            growth_presentage, // Set the achievement percentage here
+            target,
+            achievement, // Set the achievement percentage here
           });
         }
       } catch (error) {
@@ -306,7 +479,6 @@ const GWPChartsContainer = () => {
           const achievement = parseFloat(branchData.achievement);
           const target = parseFloat(branchData.target);
           const ach_presentage = parseFloat(branchData.ach_presentage);
-          const growth_presentage = parseFloat(branchData.growth_presentage)
 
           setMontlyCumalativeDataBranch({
             labels: ["Achievement", "Target"],
@@ -318,9 +490,10 @@ const GWPChartsContainer = () => {
               },
             ],
             ach_presentage,
-            growth_presentage, // Add calculated percentage here
+            target,
+            achievement, // Add calculated percentage here
           });
-        } 
+        }
       } catch (error) {
         console.error("Error fetching Branch GWP data from API:", error);
       }
@@ -341,12 +514,13 @@ const GWPChartsContainer = () => {
         if (data && data.length > 0) {
           setAchieverList((prev) => [
             {
-              title: "Top Ten Achievers",
+              title: "Top 500 Island Ranks",
               list: data.map((item) => ({
                 agent_name: item.agent_name,
                 branch_name: item.branch_name,
                 national_rank: item.national_rank,
                 image: item.image || defaultImage, // Use default image if no image is provided
+                achievment: item.achievment,
               })),
             },
             prev[1],
@@ -378,6 +552,7 @@ const GWPChartsContainer = () => {
                 branch_name: item.branch_name,
                 national_rank: item.national_rank,
                 image: item.image || defaultImage, // Use default image if no image is provided
+                achievment: item.achievment,
               })),
             },
             prev[2],
@@ -394,7 +569,7 @@ const GWPChartsContainer = () => {
     const fetchTOTAchievers = async () => {
       try {
         const response = await axios.get(
-           `${BASE_URL}/${ENDPOINTS.TOTRANK}?p_year=${currentYear}`
+          `${BASE_URL}/${ENDPOINTS.TOTRANK}?p_year=${currentYear}`
         );
         const data = response.data;
 
@@ -409,6 +584,7 @@ const GWPChartsContainer = () => {
                 branch_name: item.branch_name,
                 national_rank: item.national_rank,
                 image: item.image || defaultImage, // Use default image if no image is provided
+                achievment: item.achievment,
               })),
             },
           ]);
@@ -462,7 +638,13 @@ const GWPChartsContainer = () => {
           <div className="inner">
             <div className="front">
               {MontlyDataBranch && (
-                <GWPChart title="GWP Month" data={MontlyDataBranch} ach_presentage={MontlyDataBranch.ach_presentage} growth_presentage={MontlyDataBranch.growth_presentage}/>
+                <GWPChart
+                  title="GWP Month"
+                  data={MontlyDataBranch}
+                  ach_presentage={MontlyDataBranch.ach_presentage}
+                  target={MontlyDataBranch.target}
+                  achievement={MontlyDataBranch.achievement}
+                />
               )}
             </div>
             <div className="back">
@@ -471,7 +653,8 @@ const GWPChartsContainer = () => {
                   title="Cumalatiuve Year"
                   data={MontlyCumalativeDataBranch}
                   ach_presentage={MontlyCumalativeDataBranch.ach_presentage}
-                  growth_presentage={MontlyCumalativeDataBranch.growth_presentage}
+                  target={MontlyCumalativeDataBranch.target}
+                  achievement={MontlyCumalativeDataBranch.achievement}
                 />
               )}
             </div>
