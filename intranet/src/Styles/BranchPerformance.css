@@ -1,14 +1,13 @@
 /* New CSS for branch performance table */
 
 .branch-performance-container {
-  width: 250px;
+  width: 290px;
   height: 350px;
   background-color: #0c4d72;
   padding: 10px;
   color: white;
   border-radius: 5px;
   font-family: Arial, sans-serif;
-  overflow-y: auto;
 }
 
 h2 {

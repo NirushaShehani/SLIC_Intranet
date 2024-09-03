@@ -256,9 +256,10 @@ const AchieversCard = ({ achievers }) => (
             flexDirection: "column",
             alignItems: "left",
             marginTop: 1,
-            marginRight: 1,
-            marginLeft: -1,
-            maxHeight: "250px", // Set a fixed height
+            marginRight: -1.5,
+            marginLeft: -1.5,
+            maxHeight: "270px", // Set a fixed height
+            maxWidth: "300px",
             overflowY: "auto", // Enable vertical scrolling
             border: "2px solid #000", // Add border around the component
             borderRadius: "8px", // Optional: to make the corners rounded

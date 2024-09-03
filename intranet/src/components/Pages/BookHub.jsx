@@ -2,30 +2,38 @@ import React from 'react'
 import Quote from '../Sub_Components/BookHub_Components/Quote';
 import BookCard from '../Sub_Components/BookHub_Components/BookCard';
 import '../../Styles/BookHub.css';
+//image urls
+import image1 from '../../assets/BookHub/On_Managing_Yourself.png';
+import image2 from '../../assets/BookHub/Leading_Change.png';
+import image3 from '../../assets/BookHub/Playing_To_Win.png';
+import image4 from '../../assets/BookHub/The_Outsiders.png';
+import image5 from '../../assets/BookHub/Love+Work.png';
+
+// ../../assets/BookHub
 
 const books = [
   {
-    image: '/path/to/on-managing-yourself.jpg',
+    image: image1,
     title: 'On Managing Yourself',
     author: 'Clayton M. Christensen',
   },
   {
-    image: '/path/to/leading-change.jpg',
+    image: image2,
     title: 'Leading Change',
     author: 'John P. Kotter',
   },
   {
-    image: '/path/to/playing-to-win.jpg',
+    image: image3,
     title: 'Playing to Win',
     author: 'A. G. Lafley',
   },
   {
-    image: '/path/to/the-outsiders.jpg',
+    image: image4,
     title: 'The Outsiders',
     author: 'Will Thorndike',
   },
   {
-    image: '/path/to/love-work.jpg',
+    image: image5,
     title: 'Love + Work',
     author: 'Marcus Buckingham',
   },

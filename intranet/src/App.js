@@ -26,13 +26,6 @@ import ServicesTest from './components/Pages/ServicesTest';
 import Login_Page from './components/Pages/LoginPage';
 import Idea_Hub_Admin_View from './components/Pages/Admin/IdeaHub_Admin_View';
 import SalesLead_Admin_View from './components/Pages/Admin/SalesLead_Admin_View';
-
-import LIFE_Forms from './components/Pages/Services_Policies_Forms/Sales_Forms_pages/Life_Forms';
-import ICT_Forms from './components/Pages/Services_Policies_Forms/Sales_Forms_pages/ICT';
-import Common_Forms from './components/Pages/Services_Policies_Forms/Sales_Forms_pages/Common';
-import Membership_Forms from './components/Pages/Services_Policies_Forms/Sales_Forms_pages/Membership';
-import Sales_Forms from './components/Pages/Services_Policies_Forms/Sales_Forms_pages/Sales';
-import Security_department_Forms from './components/Pages/Services_Policies_Forms/Sales_Forms_pages/Security_department';
 import Life from './components/Pages/Services_Policies_Forms/Services_Pages/Life_Services';
 import Incentive_Criteria from './components/Pages/Incentive_Criteria';
 
@@ -67,12 +60,7 @@ const App =() => {
         <Route path="/Idea_Hub_Admin_View" element={<Idea_Hub_Admin_View/>}/>
         <Route path="/SalesLead_Admin_View" element={<SalesLead_Admin_View/>}/>
 
-        <Route path="/LIFE-Forms" element={<LIFE_Forms/>}/>
-        <Route path="/ICT-Forms" element={<ICT_Forms/>}/>
-        <Route path="/Common-Forms" element={<Common_Forms/>}/>
-        <Route path="/Membership-Forms" element={<Membership_Forms/>}/>
-        <Route path="/Sales-Forms" element={<Sales_Forms/>}/>
-        <Route path="/Security-Department-Forms" element={<Security_department_Forms/>}/>
+        
         <Route path="/Services-Life" element={<Life/>}/>
 
         <Route path="/Incentive-Criteria-page" element={<Incentive_Criteria/>}/>

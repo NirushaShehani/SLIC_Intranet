@@ -6,13 +6,15 @@ import image4 from '../../assets/SLIC_Events/super woman/1.jpg';
 import image5 from '../../assets/SLIC_Events/life call center/1-min.png';
 import image6 from '../../assets/image3.jpg';
 import '../../Styles/CompanyEvents.css';
+import '../../Styles/Event_Gallery.css';
+import '../../Styles/Responsive_Event_Gallery_css.module.css'
 import { Link } from 'react-router-dom';
 
 const CompanyEvents = () => {
   return (
     <div className="CompanyEvents">
       <h2 className="notice-hd">Events Gallery</h2>
-      <div className="image-container">
+      {/* <div className="image-container">
         <Link to="/full-events" className="image-wrapper">
           <img src={image1} alt="Image 1" className="image" />
         </Link>
@@ -28,7 +30,33 @@ const CompanyEvents = () => {
         <Link to="/full-events" className="image-wrapper">
           <img src={image1} alt="Image 5" className="image" />
         </Link>
-      </div>
+      </div> */}
+      {/* Events Galery */}
+      <div className="album">
+        <div class="responsive-container-block bg">
+          <div class="responsive-container-block img-cont">
+          <Link to="/full-events" >
+            <img src={image1} class="img" />
+            <img src={image2} class="img img-big" />
+            <img src={image3} class="img img-last"/>
+          </Link>
+          </div>
+          <div class="responsive-container-block img-cont">
+          <Link to="/full-events" >
+            <img src={image4} class="img img-big" />
+            <img src={image5} class="img img-big img-last" />
+            </Link>
+          </div>
+          <div class="responsive-container-block img-cont">
+          <Link to="/full-events" >
+            <img src={image6} class="img img-big" />
+            <img src={image1} class="img" />
+            <img src={image3} class="img img-big" />
+          </Link>
+          </div>
+        </div>
+    </div>
+      {/* Events Galery */}
       <h2 className="notice-head">Company Notices</h2>
       <p className="sub-notice-hd">SLICL Suba Pathum scholarship awards 2023</p>
       <p className='notice'>Lorem Ipsum has been the industry's standard when it dummy text ever since 1500s when an unknown have took a galley of type.</p>
