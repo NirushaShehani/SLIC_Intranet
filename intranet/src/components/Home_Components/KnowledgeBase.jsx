@@ -12,6 +12,7 @@ import '../../Styles/logo.css';
 //Image Imports
 const imageUrl1 = require('../../assets/Services.png');
 const imageUrl2 = require('../../assets/Ideahub.png');
+const imageUrl3 = require('../../assets/BookHub/IconImage.jpg');
 //For image slider
 const imageUrl01 = require('../../assets/sliderimgs/img1.jpg');
 const imageUrl02 = require('../../assets/sliderimgs/img2.jpg');
@@ -92,7 +93,7 @@ const KnowledgeBase = () => {
     margin: "8px 11px",
     height: "70px",
     width: "300px",
-    backgroundImage: `url(${imageUrl2})`, 
+    backgroundImage: `url(${imageUrl3})`, 
     backgroundSize: "cover", 
     backgroundPosition: "center", 
     backgroundRepeat: "no-repeat" 

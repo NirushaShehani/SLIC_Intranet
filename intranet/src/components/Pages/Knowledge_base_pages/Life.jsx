@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 import '../../../Styles/services.css';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 // hr tag styles
 import '../../../Styles/serviceshrtag.css';
-
+import '../../../Styles/services.css';
 const Life = () => {
   const openInNewWindow = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
@@ -13,199 +13,212 @@ const Life = () => {
 
   const navigate = useNavigate();
 
+  const handleDownload = (url) => {
+    if (window.confirm('Do you want to download this file?')) {
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = url.split('/').pop();
+      link.click();
+    }
+  };
+
   // Styles
   const containerStyle = {
-    width: '100%',
-    height: '100vh',
-    display: 'flex',
-    overflow: 'hidden'
+    width: "100%",
+    height: "100vh",
+    display: "flex",
+    overflow: "hidden",
+    flexDirection: "column",
   };
   const rightStyle = {
     flex: 1,
-    backgroundColor: '#F4F4F4',
-    padding: '20px',
-    boxSizing: 'border-box',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    overflowY: 'auto' // This will enable vertical scrolling
+    backgroundColor: "#F4F4F4",
+    padding: "20px",
+    boxSizing: "border-box",
+    overflowY: "auto", // Enable vertical scrolling
   };
 
-  const listContainer = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    width: '100%',
-    justifyContent: 'space-between'
+  const sectionWrapperStyle = {
+    display: "flex",
+    justifyContent: "space-between",
+    marginBottom: "20px",
+  };
+
+  const sectionStyle = {
+    flex: "1 1 0px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    marginRight: "20px", // Space between sections
+    backgroundColor: "#FFFFFF",
+    padding: "10px",
+    borderRadius: "8px",
+    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+  };
+
+  const titleStyle = {
+    fontSize: "16px",
+    fontWeight: "bold",
+    marginBottom: "10px",
+    borderBottom: "1px solid #e0e0e0",
+    width: "100%", // Full width for title underline
+    paddingBottom: "5px", // Space between title and underline
   };
 
   const listItemStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    cursor: 'pointer',
-    padding: '10px',
-    margin: '10px 0',
-    borderBottom: '1px solid #e0e0e0',
-    width: 'calc(50% - 10px)',  // Adjusting the width to fit two columns with space in between
-    boxSizing: 'border-box'
+    display: "flex",
+    alignItems: "center",
+    cursor: "pointer",
+    padding: "10px 0",
+    borderBottom: "1px solid #e0e0e0",
+    width: "100%", // Full width for the list item
+    boxSizing: "border-box",
   };
 
   const iconStyle = {
     marginRight: '10px',
     color: '#31769F',
   };
+
+
   return (
     <div style={containerStyle}>
       <div style={rightStyle}>
-        <div className="home-container">
-         
-          <div style={listContainer}>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/b-net-new/Company%20Profile%20-%20SLIC.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
-              <span className="hover-text">Company Profile</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/corporate-values/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Coporate Values</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.89/aml/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">AML Module</span>
-            </div>
-          </div>
-           {/*MANUALS*/}
-          <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">MANUALS</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-          </div>
-          <div style={listContainer}>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/life/life-manual/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Life</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/COGNOS/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">COGNOS Reports Manual</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://slic.intranet.com/GeneralManual/general.html')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">General Manual</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://b-net/b-net-new/general-docs/RI%20Dept.%20Procedure%20Manual.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Reinsurance Department Procedure Manual</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/b-net-new/Hris-Document/HRIS-User_Guide.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">HRIS User Manual</span>
+        <div style={sectionWrapperStyle}>
+        <div style={sectionStyle}>
+        <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/b-net-new/Company%20Profile%20-%20SLIC.pdf')}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+                <span className="hover-text">Company Profile</span>
+              </div>
+              <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/corporate-values/')}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Coporate Values</span>
+              </div>
+              <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.89/aml/')}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">AML Module</span>
+              </div>
+        </div>
+            <div style={sectionStyle}>
+             {/*MANUALS*/}
+             <div style={titleStyle}>MANUALS</div>  
+             <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/life/life-manual/')}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Life</span>
+              </div>
+              <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/COGNOS/')}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">COGNOS Reports Manual</span>
+              </div>
+              <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://slic.intranet.com/GeneralManual/general.html')}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">General Manual</span>
+              </div>
+              <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://b-net/b-net-new/general-docs/RI%20Dept.%20Procedure%20Manual.pdf')}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Reinsurance Department Procedure Manual</span>
+              </div>
+              <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/b-net-new/Hris-Document/HRIS-User_Guide.pdf')}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">HRIS User Manual</span>
+              </div>
+             {/*MANUALS*/}
             </div>
           </div>
-          {/*MANUALS*/}
-
+           
           {/* CONTACT CENTER PROCEDURES */}
-          <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">CONTACT CENTER PROCEDURES</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-          </div>
-          <div style={listContainer}>
+          <div style={sectionStyle}>
+            <div style={titleStyle}>CONTACT CENTER PROCEDURES</div> 
             <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-phs-tracking/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Life PHS Tracking</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Life PHS Tracking</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/system-training/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">System Training</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">System Training</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/online-payments-marketing-campaigns/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Online Payments & Marketing Campaigns</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Online Payments & Marketing Campaigns</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Life</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Life</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-system/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Life System</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Life System</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hhttp://172.24.60.66/knowledgebase/index.php/knowledge-base/life-insurance-introduction/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Life Insurance Introduction</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Life Insurance Introduction</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/insurance-and-slic-introduction/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Insurance and SLIC Introduction</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Insurance and SLIC Introduction</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/call-center-introduction/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Call Center Introduction</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Call Center Introduction</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/ccm-and-tis-training/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">CCM and TIS Training</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">CCM and TIS Training</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/how-to-get-medical-coordinators-contact-details/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">How to get Medical Coordinator’s Contact Details </span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">How to get Medical Coordinator’s Contact Details </span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/how-to-log-in-to-b-call-center-system/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">How to log in to B-Call Center System</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">How to log in to B-Call Center System</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/handling-marketing-campaigns/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Handling Marketing Campaigns</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Handling Marketing Campaigns</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-new-business-call-process/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Life New Business Call process</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Life New Business Call process</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-claims-and-other-inquiries-call-process/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Life Claims and Other Inquiries Call process</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Life Claims and Other Inquiries Call process</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-product-policies-department-division-information-call-process/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Life Product/Policies/Department/Division/Information Call Process</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Life Product/Policies/Department/Division/Information Call Process</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-insurance-call-process/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Life Insurance Call process</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Life Insurance Call process</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/call-quality-criteria/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Call Quality Criteria</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Call Quality Criteria</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/functions-of-call-center-administration-department/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Functions of Call Center Administration Department </span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Functions of Call Center Administration Department </span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/call-quality-evaluating/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Call Quality Evaluating</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Call Quality Evaluating</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/training-new-agents/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Training New Agents</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Training New Agents</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/job-role-of-a-call-center-agent/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Job Role of a Call Center Agent</span>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                <span className="hover-text">Job Role of a Call Center Agent</span>
             </div>
-            
           </div>
           {/* CONTACT CENTER PROCEDURES */}
-
-          
-{/* PRODUCTS AND SERVICES */}
-<div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText"> PRODUCTS AND SERVICES</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-          </div>
-          <div style={listContainer}>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-bonus-system-training/')}>
+          {/* PRODUCTS AND SERVICES */}
+          <div style={sectionStyle}>
+          <div style={titleStyle}>PRODUCTS AND SERVICES</div> 
+          <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-bonus-system-training/')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Life Bonus system Training</span>
             </div>
@@ -389,16 +402,13 @@ const Life = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Fire Insurance </span>
             </div>
-           
-
+            {/* PRODUCTS AND SERVICES */}
           </div>
-          {/* PRODUCTS AND SERVICES */}
-
-          
-
         </div>
-      </div>
     </div>
+        
+
+     
   )
 }
 
