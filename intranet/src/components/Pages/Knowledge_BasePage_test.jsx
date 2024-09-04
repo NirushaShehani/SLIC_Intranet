@@ -71,7 +71,7 @@ const Knowledge_BasePage_test = () => {
             toggleComponent("HR", "Knowledge Base", "HR")
           }
         >
-          General <span>&#x2192;</span>
+          HR <span>&#x2192;</span>
         </button>
       </div>
       <div className="service-content">{renderComponent()}</div>
