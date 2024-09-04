@@ -359,58 +359,7 @@ const AchieversCard = ({ achievers }) => (
 // Achievers card component
 
 // Event details card component
-const EventCard = () => {
-  const [currentMDRTImage, setCurrentMDRTImage] = useState(rec1);
-  //Event card slide show time setting
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentMDRTImage((prevImage) => (prevImage === rec1 ? rec2 : rec1));
-    }, 3000); // Change image every 3 seconds
 
-    return () => clearInterval(interval);
-  }, []);
-  //Event card slide show time setting
-  //MDRT Event Details Store
-  const MDRTeventInfo =
-    currentMDRTImage === rec1
-      ? { date: "June 9-12, 2024", location: "Vancouver, BC, Canada" }
-      : { date: "June 22-25, 2025", location: "Miami Beach, FL, USA" };
-  //MDRT Event Details Store
-  return (
-    //MDRT Event Photo showing view section
-    <Box sx={{ width: 250, padding: 2, marginTop: "-32px" }}>
-      <CardContent>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            position: "relative",
-            height: "300px",
-            overflow: "hidden",
-            borderRadius: 2,
-            width: "-200px",
-            marginLeft: "-32px",
-          }}
-        >
-          <img
-            src={currentMDRTImage}
-            alt="Event"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-        </Box>
-        <Box sx={{ textAlign: "center", marginTop: 2 }}>
-          <Typography variant="body2" color="textSecondary" fontWeight={"bold"}>
-            {MDRTeventInfo.date}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" fontWeight={"bold"}>
-            {MDRTeventInfo.location}
-          </Typography>
-        </Box>
-      </CardContent>
-    </Box>
-    //MDRT Event Photo showing view section
-  );
-};
 // Event details card component
 // -----------------------------------------------------------------------Backend Data fetching------------------------------------------------------
 //MDRT Achievers/ TOT achievers/ Life Member card
@@ -669,11 +618,7 @@ const GWPChartsContainer = () => {
         <FlippingCard showBack={false} onClick={handleAchieverClick}>
           <div className="inner">
             <div className="front">
-              {currentCard === "achievers" ? (
-                <AchieversCard achievers={achieverList[achieverIndex]} />
-              ) : (
-                <EventCard />
-              )}
+              <AchieversCard achievers={achieverList[achieverIndex]} />
             </div>
           </div>
         </FlippingCard>
