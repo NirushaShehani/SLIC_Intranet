@@ -1,5 +1,5 @@
 import React from 'react';
-import image1 from '../../assets/SLIC_Events/Life congress/1.JPG';
+//import image1 from 'http://172.24.90.80:10157/Images/Branches/TaxInse.jpg';
 import image2 from '../../assets/SLIC_Events/poson poya/2-min.png';
 import image3 from '../../assets/SLIC_Events/suba pathum/1-min.jpg';
 import image4 from '../../assets/SLIC_Events/super woman/1.jpg';
@@ -36,9 +36,9 @@ const CompanyEvents = () => {
         <div class="responsive-container-block bg">
           <div class="responsive-container-block img-cont">
           <Link to="/full-events" >
-            <img src={image1} class="img" />
+            <img src='http://172.24.90.80:10157/Images/Branches/TaxInse.jpg' class="img" />
             <img src={image2} class="img img-big" />
-            <img src={image3} class="img img-last"/>
+            
           </Link>
           </div>
           <div class="responsive-container-block img-cont">
@@ -50,7 +50,7 @@ const CompanyEvents = () => {
           <div class="responsive-container-block img-cont">
           <Link to="/full-events" >
             <img src={image6} class="img img-big" />
-            <img src={image1} class="img" />
+            <img src={image6} class="img" />
             <img src={image3} class="img img-big" />
           </Link>
           </div>

@@ -239,7 +239,14 @@ const AchieversCard = ({ achievers }) => (
       >
         {achievers.title}
       </Typography>
-      <DigitalNumber component="div">
+      <DigitalNumber component="div" sx={{
+    color: "#ffffff", // Text color
+    backgroundColor: "#1976d2", // Background color (blue)
+    padding: "4px 8px", // Padding around the text
+    borderRadius: "4px", // Rounded corners
+    textAlign: "center", // Center the text
+    fontWeight: "bold", // Make the text bold
+  }}>
         {
           achievers.list.filter(
             (achiever) => achiever.achievment === "Achieved"
