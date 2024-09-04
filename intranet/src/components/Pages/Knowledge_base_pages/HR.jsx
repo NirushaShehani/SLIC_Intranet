@@ -22,6 +22,7 @@ const HR = () => {
     }
   };
 
+  
   // Styles
   const containerStyle = {
     width: "100%",
