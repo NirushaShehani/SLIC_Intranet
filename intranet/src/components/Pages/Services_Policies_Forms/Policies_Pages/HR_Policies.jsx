@@ -64,6 +64,10 @@ const HR_Policies = () => {
             <span className="hrDot"></span><span className="hrLine"></span>
           </div>
           <div style={listContainer}>
+          <div style={listItemStyle} onClick={() => navigate('/performance-managment')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+              <span>Performance Management Policy</span>
+            </div>
             <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>Approved Professional Courses</span>
