@@ -16,12 +16,16 @@ import HR_Policies from "./Services_Policies_Forms/Policies_Pages/HR_Policies";
 // Forms_Pages Links
 import ICT_Forms from "./Services_Policies_Forms/Forms_Pages/ICT_Forms";
 import Common_Forms from "./Services_Policies_Forms/Forms_Pages/Common_Forms";
+import HR_Forms from "./Services_Policies_Forms/Forms_Pages/HR_Forms";
 // Forms_Pages Links
 // Circulars_Pages Links
 import HR_Circulars from "./Services_Policies_Forms/Circulars_pages/HR_Circulars";
 import ICT_Circulars from "./Services_Policies_Forms/Circulars_pages/ICT_Circulars";
 import Life_Circulars from "./Services_Policies_Forms/Circulars_pages/Life_Circulars";
 // Circulars_Pages Links
+// Common_Pages Links
+import HR_Common from "./Services_Policies_Forms/Common_pages/HR_Common";
+// Common_Pages Links
 import Recent_Links from "./Services_Policies_Forms/Recent_Links";
 import { Link } from "react-router-dom";
 
@@ -41,6 +45,10 @@ const ServicesTest = () => {
       setActiveSection(sectionName); // Show only the active section's buttons and content
       setClickedButton(buttonName); // Set the clicked button name
     }
+  };
+
+  const openInNewWindow = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   const renderComponent = () => {
@@ -65,6 +73,10 @@ const ServicesTest = () => {
         return <ICT_Forms />;
       case "Common_Forms":
         return <Common_Forms />;
+      case "HR_Forms":
+        return <HR_Forms />;
+      case "HR_Common":
+        return <HR_Common />;
       // Add other cases as needed
       default:
         return null;
@@ -115,6 +127,16 @@ const ServicesTest = () => {
               onClick={() => setActiveSection("circulars")}
             >
               Circulars
+            </h1>
+          )}
+          {activeSection !== "common" && (
+            <h1
+              className={`services-title ${
+                activeSection === "common" ? "selected" : ""
+              }`}
+              onClick={() => setActiveSection("common")}
+            >
+              Common
             </h1>
           )}
         </div>
@@ -232,6 +254,14 @@ const ServicesTest = () => {
           </h1>
           <br />
           <div className="services-buttons">
+          <button
+              className={`service-button ${
+                clickedButton === "HR_Forms" ? "clicked" : ""
+              }`}
+              onClick={() => toggleComponent("HR_Forms", "forms", "HR_Forms")}
+            >
+              HR <span>&#x2192;</span>
+            </button>
             <button
               className={`service-button ${
                 clickedButton === "ICT_Forms" ? "clicked" : ""
@@ -276,6 +306,14 @@ const ServicesTest = () => {
           </h1>
           <br />
           <div className="services-buttons">
+          <button
+              className={`service-button ${
+                clickedButton === "Life_Circulars" ? "clicked" : ""
+              }`}
+              onClick={() => openInNewWindow('http://172.24.60.66/circulars-online')}
+            >
+              Life<span>&#x2192;</span>
+            </button>
             <button
               className={`service-button ${
                 clickedButton === "HR_Circulars" ? "clicked" : ""
@@ -286,7 +324,7 @@ const ServicesTest = () => {
             >
               HR <span>&#x2192;</span>
             </button>
-            <button
+            {/* <button
               className={`service-button ${
                 clickedButton === "ICT_Circulars" ? "clicked" : ""
               }`}
@@ -295,17 +333,43 @@ const ServicesTest = () => {
               }
             >
               ICT<span>&#x2192;</span>
-            </button>
+            </button> */}
+           
+          </div>
+        </>
+      )}
+
+      {activeSection === "common" && (
+        <>
+          <h1
+            className="services-title selected"
+            onClick={() => setActiveSection(null)}
+          >
+            Common
+          </h1>
+          <br />
+          <div className="services-buttons">
             <button
               className={`service-button ${
-                clickedButton === "Life_Circulars" ? "clicked" : ""
+                clickedButton === "HR_Common" ? "clicked" : ""
               }`}
               onClick={() =>
-                toggleComponent("Life_Circulars", "circulars", "Life_Circulars")
+                toggleComponent("HR_Common", "common", "HR_Common")
               }
             >
-              Life<span>&#x2192;</span>
+              HR <span>&#x2192;</span>
             </button>
+            {/* <button
+              className={`service-button ${
+                clickedButton === "ICT_Circulars" ? "clicked" : ""
+              }`}
+              onClick={() =>
+                toggleComponent("ICT_Circulars", "circulars", "ICT_Circulars")
+              }
+            >
+              ICT<span>&#x2192;</span>
+            </button> */}
+           
           </div>
         </>
       )}

@@ -57,12 +57,8 @@ const Sales = () => {
     <div style={containerStyle}>
       <div style={rightStyle}>
         <div className="home-container">
-          <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">Services</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-          </div>
-          <div style={listContainer}>
+          
+          {/* <div style={listContainer}>
             <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>B-Life</span>
@@ -103,7 +99,7 @@ const Sales = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>B-Advisor</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 // hr tag styles
 import '../../../../Styles/serviceshrtag.css';
-
+import '../../../../Styles/ServicesTitle.css';
+import '../../../../Styles/Link.css';
 const HR_Policies = () => {
     const openInNewWindow = (url) => {
         window.open(url, '_blank', 'noopener,noreferrer');
@@ -58,15 +59,10 @@ const HR_Policies = () => {
           <div style={rightStyle}>
             <div className="home-container">
                 {/*HR Policies */}
-          <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">HR Policies</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-          </div>
           <div style={listContainer}>
-          <div style={listItemStyle} onClick={() => navigate('/performance-managment')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Performance Management Policy</span>
+          <div className="hover-container" style={listItemStyle} onClick={() => navigate('/performance-managment')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Performance Management Policy</span>
             </div>
             <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
