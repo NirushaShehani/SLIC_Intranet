@@ -10,7 +10,7 @@ const branchSearchRoutes = require('./Route/branchSearchRoutes');
 const loginRoutes = require('./Route/loginRoutes'); 
 
 const app = express();
-const port = process.env.PORT || 10155;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.json());
