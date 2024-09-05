@@ -12,7 +12,7 @@ function AdminSalesLead() {
       // Fetch data from backend
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://localhost:10155/api/salesLead/fetchSalesLeads'/*'http://localhost:3000/api/salesLead/fetchSalesLeads'*/);
+          const response = await axios.get('http://localhost:3000/api/salesLead/fetchSalesLeads'/*'http://localhost:3000/api/salesLead/fetchSalesLeads'*/);
           console.log('API response:', response.data); 
           setSalesLeads(response.data);
           setLoading(false);
