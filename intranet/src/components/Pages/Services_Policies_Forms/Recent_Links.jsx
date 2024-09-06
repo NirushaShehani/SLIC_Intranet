@@ -15,7 +15,7 @@ const Recent_Links = () => {
           <h2 className="service-title">b-Life</h2>
         </div>
         <div className="service-card">
-          <img src="path_to_mihcmlogo.jpg" alt="MiHCM" className="service-image" />
+          <img src="path_to_mihcmlogo.jpg" alt="MiHCM" className="https://app.mihcm.com/" />
           <h2 className="service-title">MiHCM</h2>
         </div>
         <div className="service-card">

@@ -143,7 +143,7 @@ const Life = () => {
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life/')}>
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-                <span className="hover-text">Life</span>
+                <span className="hover-text" >Life</span>
             </div>
             <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-system/')}>
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>

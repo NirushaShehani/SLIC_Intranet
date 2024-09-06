@@ -86,25 +86,13 @@ const IT = () => {
       <div style={rightStyle}>
         <div style={sectionWrapperStyle}>
         <div style={sectionStyle}>
-            <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>About SLIC</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('file:///C:/SLIC/Intranet%202/folder%20structure/Knowledge_Base/ICT/Guide-Lines-for-using-training-PC-New.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Guide Lines for using training PC</span>
             </div>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/b-net-new/Company%20Profile%20-%20SLIC.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Employee Handbook</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/corporate-values/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Benefits of ETF</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.89/aml/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Principles of Life Insurance</span>
-            </div>
-            <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Questions on Life Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/b-net-new/Company%20Profile%20-%20SLIC.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
+              <span className="hover-text">Reset Password</span>
             </div>
         </div>
 

@@ -86,38 +86,38 @@ const HR = () => {
       <div style={rightStyle}>
         <div style={sectionWrapperStyle}>
         <div style={sectionStyle}>
-            <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>About SLIC</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">About SLIC</span>
             </div>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/b-net-new/Company%20Profile%20-%20SLIC.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Employee Handbook</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/b-net-new/Company%20Profile%20-%20SLIC.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+              <span className="hover-text">Employee Handbook</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/corporate-values/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Benefits of ETF</span>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://172.24.60.66/corporate-values/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+              <span className="hover-text">Benefits of ETF</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.89/aml/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Principles of Life Insurance</span>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://172.24.60.89/aml/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+              <span className="hover-text">Principles of Life Insurance</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Questions on Life Insurance</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon" />
+              <span className="hover-text">Questions on Life Insurance</span>
             </div>
         </div>
 
          {/*CHAWS*/}
          <div style={sectionStyle}>
-         <div style={titleStyle}>CHAWS</div>
+         <div className="hover-container"style={titleStyle}>CHAWS</div>
             <div style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/life/life-manual/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>CHAWS - Enrolment Guide</span>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+              <span className="hover-text">CHAWS - Enrolment Guide</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('http://172.24.60.66/COGNOS/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>CHAWS - Approving Guide</span>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://172.24.60.66/COGNOS/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+              <span className="hover-text">CHAWS - Approving Guide</span>
             </div>
           </div>
          {/*CHAWS*/}
