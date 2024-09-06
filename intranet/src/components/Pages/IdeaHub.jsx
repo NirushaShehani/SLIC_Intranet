@@ -5,13 +5,10 @@ import axios from 'axios';
 import logo from '../../assets/IntranetLogo.png';
 import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
 
-
-
 const IdeaHub = () => {
   const [formData, setFormData] = useState({
     userEPF: '',
     deptOrBranch: '',
-    ideadate: '',
     name: '',
     userIdea: ''
   });
@@ -20,7 +17,6 @@ const IdeaHub = () => {
   const navigate = useNavigate();
 
   const handleNavigateToLogin = () => {
-    // Navigate to the login page with a source query parameter
     navigate('/login?redirect=/Idea_Hub_Admin_View');
   };
 
@@ -28,7 +24,6 @@ const IdeaHub = () => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
-  
 
   const validateForm = () => {
     let formErrors = {};
@@ -39,10 +34,6 @@ const IdeaHub = () => {
 
     if (!/^[a-zA-Z\s]{1,120}$/.test(formData.deptOrBranch)) {
       formErrors.deptOrBranch = 'Department/Branch should only contain letters and be up to 120 characters.';
-    }
-
-    if (!formData.ideadate) {
-      formErrors.ideadate = 'Date is required.';
     }
 
     if (!/^[a-zA-Z\s]{1,120}$/.test(formData.name)) {
@@ -61,7 +52,7 @@ const IdeaHub = () => {
     event.preventDefault();
     if (validateForm()) {
       try {
-        const response = await axios.post('http://localhost:3000/api/ideaHub/submit', formData);
+        const response = await axios.post(`${BASE_URL}${ENDPOINTS.SET_IDEAS}`, formData);
         console.log('Response:', response.data);
       } catch (error) {
         console.error('Error submitting form:', error);
@@ -235,10 +226,10 @@ const IdeaHub = () => {
             <div style={subtitle}>Welcome to the Idea Hub !!!</div>
             <div style={paragraph}>
               <p>
-              We believe your ideas are invaluable for improving our services and enhancing our company's value. 
-Your suggestions drive positive change, fostering a culture of innovation and making this a great place to work. 
-At our Idea Hub, we welcome your creative insights to help us grow and better serve our customers. 
-Thank you for your dedication and inspiration; we look forward to your valuable input.
+                We believe your ideas are invaluable for improving our services and enhancing our company's value. 
+                Your suggestions drive positive change, fostering a culture of innovation and making this a great place to work. 
+                At our Idea Hub, we welcome your creative insights to help us grow and better serve our customers. 
+                Thank you for your dedication and inspiration; we look forward to your valuable input.
               </p>
             </div>
           </div>
@@ -268,11 +259,6 @@ Thank you for your dedication and inspiration; we look forward to your valuable
                   <label>Department/Branch :</label>
                   <input type="text" name="deptOrBranch" placeholder="eg: Colombo" style={inputStyle} value={formData.deptOrBranch} onChange={handleChange} />
                   {errors.deptOrBranch && <p style={{ color: 'red' }}>{errors.deptOrBranch}</p>}
-                </div>
-                <div style={formColumnStyle}>
-                  <label>Date :</label>
-                  <input type="date" name="ideadate" style={inputStyle} value={formData.ideadate} onChange={handleChange} />
-                  {errors.ideadate && <p style={{ color: 'red' }}>{errors.ideadate}</p>}
                 </div>
               </div>
               <div style={formColumnStyle}>
