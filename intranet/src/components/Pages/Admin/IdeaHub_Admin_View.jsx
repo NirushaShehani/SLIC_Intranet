@@ -11,7 +11,7 @@ function IdeaHub() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:10155/api/ideaHub/fetchideas');
+        const response = await axios.get('http://localhost:3000/api/ideaHub/fetchideas');
         // Assume response.data is an array of arrays
         const ideasWithStatus = response.data.map(idea => ({
           ID: idea[0],
