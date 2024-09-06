@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 // hr tag styles
-import '../../../../Styles/serviceshrtag.css';
+
 
 const check = () => {
     const openInNewWindow = (url) => {
