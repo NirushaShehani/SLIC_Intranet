@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
+import axios from "axios";
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -17,25 +18,26 @@ function Login() {
       setError(''); // Clear previous error messages
   
       try {
-          // Use the CORS proxy to bypass the CORS issue
-          const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-          const apiUrl = `${proxyUrl}${BASE_URL}/${ENDPOINTS.AdminLogin}?p_un=${username}&p_pw=${password}`;
-  
+          const apiUrl = `${BASE_URL}/${ENDPOINTS.AdminLogin}`;
+          console.log("Logging in with:", { username, password });
           // Send GET request to the login API through the proxy
-          const response = await fetch(apiUrl, {
-              method: 'GET',
-              headers: {
-                  'Content-Type': 'application/json',
-              },
+          const response = await axios.get(apiUrl, {
+            params: {
+              p_un: username,
+              p_pw: password,
+            },
+            headers: {
+              "Content-Type": "application/json",
+            },
           });
   
-          const result = await response.text(); // API returns text response (1 for success)
+          const result = response.data; 
   
-          if (response.ok && result === '1') {
-              // Login successful
-              navigate(redirectPath); // Redirect user to the desired page
+          if (response.status === 200 && result.isValid === 1) {
+              console.log("Login successful");
+              navigate('/SalesLead_Admin_View'); // Redirect user to the desired page
           } else {
-              // Display error message
+              console.log("Login failed, result:", result);
               setError('Invalid username or password');
           }
       } catch (err) {
