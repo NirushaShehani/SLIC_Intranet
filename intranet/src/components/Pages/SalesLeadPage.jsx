@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import logo from '../../assets/IntranetLogo.png';
+import { BASE_URL, ENDPOINTS } from '../../Services/ApiConfig';
 
 const SalesLeadPage = () => {
   const initialFormData = {
@@ -71,16 +72,28 @@ const SalesLeadPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (validateForm()) {
+      const requestBody = {
+        clientName: formData.clientName,
+        contact1: formData.contact1,
+        contact2: formData.contact2,
+        slicRequirement: formData.slicRequirement,
+        staffmembername: formData.slicContactName,
+        staffcontactno: formData.slicMobile,
+        slicExtension: formData.slicExtension,
+        slicDepartment: formData.slicDepartment
+      };
+  
       try {
-         const response = await fetch('http://localhost:10155/api/salesLead/submit', {
+        const response = await fetch(`${BASE_URL}/${ENDPOINTS.SetSalasLeads}`, {
           method: 'POST',
+          credentials:'include',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(requestBody),
         });
   
-        const responseText = await response.text();
+        const responseText = await response.json();
   
         if (response.ok) {
           console.log('Data inserted successfully:', responseText);
