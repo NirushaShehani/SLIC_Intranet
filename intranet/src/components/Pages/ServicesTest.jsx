@@ -9,6 +9,8 @@ import ICTServices from "./Services_Policies_Forms/Services_Pages/ICT_Services";
 import LifeServices from "./Services_Policies_Forms/Services_Pages/Life_Services";
 import FinanceServices from "./Services_Policies_Forms/Services_Pages/Finance_Services";
 import SalesServices from "./Services_Policies_Forms/Services_Pages/Sales_Services";
+import common from "./Knowledge_base_pages/common";
+
 // Services_Pages Links
 // Policies_Pages Links
 import HR_Policies from "./Services_Policies_Forms/Policies_Pages/HR_Policies";
@@ -16,6 +18,9 @@ import HR_Policies from "./Services_Policies_Forms/Policies_Pages/HR_Policies";
 // Forms_Pages Links
 import ICT_Forms from "./Services_Policies_Forms/Forms_Pages/ICT_Forms";
 import Common_Forms from "./Services_Policies_Forms/Forms_Pages/Common_Forms";
+import HR_Forms from "./Services_Policies_Forms/Forms_Pages/HR";
+import procument_Forms from "./Services_Policies_Forms/Forms_Pages/procument";
+import Sales from "./Services_Policies_Forms/Forms_Pages/Sales";
 // Forms_Pages Links
 // Circulars_Pages Links
 import HR_Circulars from "./Services_Policies_Forms/Circulars_pages/HR_Circulars";
@@ -63,6 +68,12 @@ const ServicesTest = () => {
         return <HR_Policies />;
       case "ICT_Forms":
         return <ICT_Forms />;
+        case "HR":
+        return <HR_Forms />;
+        case "procument":
+        return <procument_Forms />;
+        case "Sales":
+        return <Sales />;
       case "Common_Forms":
         return <Common_Forms />;
       // Add other cases as needed
@@ -115,6 +126,16 @@ const ServicesTest = () => {
               onClick={() => setActiveSection("circulars")}
             >
               Circulars
+            </h1>
+          )}
+          {activeSection !== "common" && (
+            <h1
+              className={`services-title ${
+                activeSection === "common" ? "selected" : ""
+              }`}
+              onClick={() => setActiveSection("common")}
+            >
+              Common
             </h1>
           )}
         </div>
@@ -232,24 +253,16 @@ const ServicesTest = () => {
           </h1>
           <br />
           <div className="services-buttons">
-            <button
+
+          <button
               className={`service-button ${
-                clickedButton === "ICT_Forms" ? "clicked" : ""
+                clickedButton === "HR_Forms" ? "clicked" : ""
               }`}
-              onClick={() => toggleComponent("ICT_Forms", "forms", "ICT_Forms")}
+              onClick={() => toggleComponent("HR_Forms", "forms", "HR_Forms")}
             >
-              ICT <span>&#x2192;</span>
+              HR <span>&#x2192;</span>
             </button>
-            <button
-              className={`service-button ${
-                clickedButton === "Common_Forms" ? "clicked" : ""
-              }`}
-              onClick={() =>
-                toggleComponent("Common_Forms", "forms", "Common_Forms")
-              }
-            >
-              Common <span>&#x2192;</span>
-            </button>
+
             <Link to="/ISO-Forms" style={{ cursor: "pointer" }}>
               <button
                 className={`service-button ${
@@ -262,6 +275,47 @@ const ServicesTest = () => {
                 ISO Forms <span>&#x2192;</span>
               </button>
             </Link>
+
+            <button
+              className={`service-button ${
+                clickedButton === "ICT_Forms" ? "clicked" : ""
+              }`}
+              onClick={() => toggleComponent("ICT_Forms", "forms", "ICT_Forms")}
+            >
+              ICT <span>&#x2192;</span>
+            </button>
+            
+            
+            <button
+              className={`service-button ${
+                clickedButton === "Sales_Forms" ? "clicked" : ""
+              }`}
+              onClick={() => toggleComponent("Sales_Forms", "forms", "Sales_Forms")}
+            >
+              Sales <span>&#x2192;</span>
+            </button>
+
+            <button
+              className={`service-button ${
+                clickedButton === "procument_Forms" ? "clicked" : ""
+              }`}
+              onClick={() => toggleComponent("procument_Forms", "forms", "procument_Forms")}
+            >
+              Procument <span>&#x2192;</span>
+            </button>
+
+            <button
+              className={`service-button ${
+                clickedButton === "Common" ? "clicked" : ""
+              }`}
+              onClick={() =>
+                toggleComponent("Common", "forms", "Common")
+              }
+            >
+              Common <span>&#x2192;</span>
+            </button>
+
+
           </div>
         </>
       )}
@@ -286,16 +340,7 @@ const ServicesTest = () => {
             >
               HR <span>&#x2192;</span>
             </button>
-            <button
-              className={`service-button ${
-                clickedButton === "ICT_Circulars" ? "clicked" : ""
-              }`}
-              onClick={() =>
-                toggleComponent("ICT_Circulars", "circulars", "ICT_Circulars")
-              }
-            >
-              ICT<span>&#x2192;</span>
-            </button>
+           
             <button
               className={`service-button ${
                 clickedButton === "Life_Circulars" ? "clicked" : ""
@@ -308,6 +353,11 @@ const ServicesTest = () => {
             </button>
           </div>
         </>
+      )}
+       {activeSection === "common" && (
+        <></>
+   
+        
       )}
 
       {/* Display the content if a component is active */}

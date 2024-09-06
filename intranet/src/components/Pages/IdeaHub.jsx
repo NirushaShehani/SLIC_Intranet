@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import axios from 'axios';
 import logo from '../../assets/IntranetLogo.png';
+import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
+
+
 
 const IdeaHub = () => {
   const [formData, setFormData] = useState({
