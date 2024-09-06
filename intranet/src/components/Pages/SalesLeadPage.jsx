@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import logo from '../../assets/IntranetLogo.png';
+import { BASE_URL, ENDPOINTS } from '../../Services/ApiConfig';
+import axios from 'axios';
 
 const SalesLeadPage = () => {
   const initialFormData = {
@@ -21,7 +23,7 @@ const SalesLeadPage = () => {
 
   const handleNavigateToLogin = () => {
     // Navigate to the login page with a source query parameter
-    navigate('/login?redirect=/SalesLead_Admin_View');
+    navigate('/login');
   };
 
   const handleChange = (event) => {
@@ -71,29 +73,41 @@ const SalesLeadPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (validateForm()) {
+      const requestBody = {
+        clientName: formData.clientName,
+        contact1: formData.contact1,
+        contact2: formData.contact2,
+        slicRequirement: formData.slicRequirement,
+        staffmembername: formData.slicContactName,
+        staffcontactno: formData.slicMobile,
+        slicExtension: formData.slicExtension,
+        slicDepartment: formData.slicDepartment,
+      };
+  
       try {
-         const response = await fetch('http://localhost:10155/api/salesLead/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
+        const response = await axios.post(
+          `${BASE_URL}/${ENDPOINTS.SetSalasLeads}`, 
+          requestBody,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        );
   
-        const responseText = await response.text();
-  
-        if (response.ok) {
-          console.log('Data inserted successfully:', responseText);
+        if (response.status === 200 && response.data === 1) {
+          console.log('Data inserted successfully:', response.data);
           setFormData(initialFormData);
           setErrors({});
         } else {
-          console.error('Failed to insert data:', responseText);
+          console.error('Failed to insert data:', response.data);
         }
       } catch (error) {
         console.error('Error inserting data:', error);
       }
     }
   };
+  
 
   const containerStyle = {
     width: '100%',

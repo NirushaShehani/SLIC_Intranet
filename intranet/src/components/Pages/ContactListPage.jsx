@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import ReactDOM from 'react-dom/client';
 import axios from 'axios';
+import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
 
 const ContactListPage = () => {
   const containerStyle = {
@@ -463,14 +464,21 @@ function BranchForm({ selectStyle, buttonStyle }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/branchSearch/searchBranch', {
-        branch: Branchno
+      const response = await axios.get(`${BASE_URL}/${ENDPOINTS.GETContactBranch}`, {
+        params: {
+          p_name: Branchno
+        },
       });
-      setBranchDetails(response.data);
+      if (response.status === 200) {
+        console.log("Request successful, data received:", response.data);
+        setBranchDetails(response.data); // Store the response data
+      } else {
+        console.warn("Request completed, but not successful. Status:", response.status);
+      }
     } catch (error) {
       console.error('Error fetching branch details', error);
     }
-  };
+  }
  
 
   return (
@@ -681,87 +689,35 @@ function BranchForm({ selectStyle, buttonStyle }) {
     <h2>Branch Details:</h2>
     <table style={{ width: '100%', borderCollapse: 'collapse', margin: '20px 0', fontSize: '18px', textAlign: 'left' }}>
     <tbody>
-      {branchDetails.map((detail, index) => (
-        <React.Fragment key={index}>
-          <tr style={{ borderBottom: '2px solid #ddd', backgroundColor: '#f2f2f2' }}>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Branch Name</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[0]}</td>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Fax</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[16]}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Address</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{`${detail[1]}, ${detail[2]}, ${detail[3]}`}</td>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Intercom</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[17]}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email Address (BR)</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[4]}</td>
-          </tr>
-          <tr>  
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Sales Manager</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[5]}</td>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Mobile (SM)</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[19]}</td>
-          </tr>
-          <tr>  
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email Address (SM)</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[6]}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Admin Officer</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[25]}</td>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Mobile (BAO)</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[20]}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email Address (AO)</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[12]}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Reg. Manager Life</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[8]}</td>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Mobile (RML)</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[21]}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email Address (RML)</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[9]}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Reg. Manager General</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[10]}</td>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Mobile (RMG)</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[22]}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email Address (RMG)</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[11]}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Manager Life</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[12]}</td>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Mobile (ML)</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[23]}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email Address (ML)</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[13]}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Manager General</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[14]}</td>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Mobile (MG)</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[24]}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email Address (MG)</td>
-            <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail[15]}</td>
-          </tr>
-        </React.Fragment>
-      ))}
-    </tbody>
+              {branchDetails.map((detail, index) => (
+                <React.Fragment key={index}>
+                  <tr style={{ borderBottom: '2px solid #ddd', backgroundColor: '#f2f2f2' }}>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Branch Name</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.brname}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Address</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{`${detail.bradd1}, ${detail.bradd2}, ${detail.bradd3}`}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Branch Manager</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.brmgr || "N/A"}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Phone Numbers</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{`${detail.brtel1}, ${detail.brtel2}`}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.bremail || "N/A"}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Intercom</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.brint}</td>
+                  </tr>
+                </React.Fragment>
+              ))}
+            </tbody>
   </table>
   </div>
 )}

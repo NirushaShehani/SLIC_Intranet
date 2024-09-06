@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import * as XLSX from 'xlsx';
 import './AdminStyles/AdminIdeaHub.css';
+import { BASE_URL, ENDPOINTS } from '../../../Services/ApiConfig';
 
 function IdeaHub() {
   const [ideas, setIdeas] = useState([]);
