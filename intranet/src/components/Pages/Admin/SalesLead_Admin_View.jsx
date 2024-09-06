@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import * as XLSX from 'xlsx';
 import './AdminStyles/AdminSalesLead.css';
+import { BASE_URL, ENDPOINTS } from "../../../Services/ApiConfig";
 
 function AdminSalesLead() {
     const [salesLeads, setSalesLeads] = useState([]);
@@ -9,46 +10,47 @@ function AdminSalesLead() {
     const [error, setError] = useState(null);
   
     useEffect(() => {
-      // Fetch data from backend
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://localhost:3000/api/salesLead/fetchSalesLeads'/*'http://localhost:3000/api/salesLead/fetchSalesLeads'*/);
-          console.log('API response:', response.data); 
-          setSalesLeads(response.data);
-          setLoading(false);
+          // Define the request body as per the provided format
+          const requestBody = {
+            p_ID: "",
+            p_ACTIVE: ""
+          };
+    
+          // Use backticks for template literals
+          const response = await axios.post(
+            `${BASE_URL}/${ENDPOINTS.GetSalesLeads}`, // Correct template string usage
+            requestBody,
+            {
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            }
+          );
+    
+          // Assuming the response contains the array of sales leads
+          if (response.status === 200) {
+            setSalesLeads(response.data); // Update the state with fetched sales leads
+            setLoading(false); // Turn off loading once data is fetched
+          } else {
+            console.error("API responded with a status:", response.status);
+            setError('Failed to fetch sales leads');
+            setLoading(false);
+          }
         } catch (err) {
-          setError(err.message);
-          setLoading(false);
+          console.error('Error fetching sales leads:', err);
+          setError('An error occurred while fetching sales leads');
+          setLoading(false); // Turn off loading if there's an error
         }
       };
-  
-      fetchData();
-    }, []); // Empty dependency array means this useEffect runs once when the component mounts
+    
+      fetchData(); // Call the fetchData function
+    }, []); // Empty dependency array ensures this runs only on component mount
+    
   
     const handleDelete = async (id) => {
-      // Confirm before deleting
-      const isConfirmed = window.confirm('Are you sure you want to delete this sales lead?');
       
-      if (!isConfirmed) {
-        console.log('Deletion canceled');
-        return;
-      }
-    
-      console.log('Deleting sales lead with ID:', id);
-      
-      if (!id) {
-        console.error('No ID provided for deletion');
-        return;
-      }
-    
-      try {
-        await axios.delete(`http://localhost:10155/api/salesLead/deleteSalesLead/${id}`/*`http://localhost:3000/api/salesLead/deleteSalesLead/${id}`*/);
-        // Optionally, update the salesLeads state to remove the deleted item from the list
-        setSalesLeads(salesLeads.filter(lead => lead.ID !== id && lead.id !== id));
-        console.log(id, 'Sales lead deleted successfully');
-      } catch (error) {
-        console.error('Error deleting sales lead:', error);
-      }
     };
     
     const handleDownload = () => {
