@@ -59,74 +59,72 @@ const HR_Policies = () => {
             <div className="home-container">
                 {/*HR Policies */}
           <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">HR Policies</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
+
           </div>
           <div style={listContainer}>
-          <div style={listItemStyle} onClick={() => navigate('/performance-managment')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Performance Management Policy</span>
+          <div className="hover-container" style={listItemStyle} onClick={() => navigate('/performance-managment')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Performance Management Policy</span>
             </div>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Approved Professional Courses</span>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Approved Professional Courses</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-mis')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Code of Business Conduct & Ethics</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-mis')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Code of Business Conduct & Ethics</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/cashbook')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Corporate E-Mail Policy</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/cashbook')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Corporate E-Mail Policy</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-commission')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Desciplinary Policy</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-commission')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Desciplinary Policy</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Dress Code Policy - English</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Dress Code Policy - English</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Dress Code Policy - Sinhala</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Dress Code Policy - Sinhala</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Grievance Handling - English</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Grievance Handling - English</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Grievance Handling - Sinhala</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Grievance Handling - Sinhala</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>HR Policy Manual (English)</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">HR Policy Manual (English)</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>HR Policy Manual (Sinhala)	</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">HR Policy Manual (Sinhala)	</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Professional Development Reimbursement Scheme</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Professional Development Reimbursement Scheme</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Recruitment Policy</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Recruitment Policy</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Vehicle Loan Policy</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Vehicle Loan Policy</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Whistle Blowing Policy (English)	</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Whistle Blowing Policy (English)	</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Whistle Blowing Policy (Sinhala)</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Whistle Blowing Policy (Sinhala)</span>
             </div>
           </div>
           {/*HR Policies */}
