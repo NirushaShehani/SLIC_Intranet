@@ -12,15 +12,13 @@ function AdminSalesLead() {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          // Define the request body as per the provided format
           const requestBody = {
             p_ID: "",
-            p_ACTIVE: ""
+            p_ACTIVE: "1"
           };
     
-          // Use backticks for template literals
           const response = await axios.post(
-            `${BASE_URL}/${ENDPOINTS.GetSalesLeads}`, // Correct template string usage
+            `${BASE_URL}/${ENDPOINTS.GetSalesLeads}`, 
             requestBody,
             {
               headers: {
@@ -29,10 +27,9 @@ function AdminSalesLead() {
             }
           );
     
-          // Assuming the response contains the array of sales leads
           if (response.status === 200) {
-            setSalesLeads(response.data); // Update the state with fetched sales leads
-            setLoading(false); // Turn off loading once data is fetched
+            setSalesLeads(response.data); 
+            setLoading(false); 
           } else {
             console.error("API responded with a status:", response.status);
             setError('Failed to fetch sales leads');
@@ -41,25 +38,54 @@ function AdminSalesLead() {
         } catch (err) {
           console.error('Error fetching sales leads:', err);
           setError('An error occurred while fetching sales leads');
-          setLoading(false); // Turn off loading if there's an error
+          setLoading(false); 
         }
       };
     
-      fetchData(); // Call the fetchData function
-    }, []); // Empty dependency array ensures this runs only on component mount
+      fetchData(); 
+    }, []); 
     
   
     const handleDelete = async (id) => {
-      
+      const confirmDelete = window.confirm("Are you sure you want to delete this sales lead?");
+      if(confirmDelete){
+        try{
+          const requestBody = {
+            p_ID: id,         
+            p_ACTIVE: ""     
+          };
+          const response = await axios.put(
+            `${BASE_URL}/${ENDPOINTS.SalesLeadActive}`,
+            requestBody,
+            {
+              headers: {
+                'Content-Type': 'application/json',
+                'x-api-version': '1.0'
+            }
+          }
+          );
+
+          if(response.status === 200 && response.data === 1){
+            setSalesLeads(salesLeads.filter(lead => lead.id !== id));
+            console.log(response.data)
+            alert('Sales lead deleted successfully');
+          } else{
+            console.error("Failed to delete sales lead. Status:", response.status);
+            alert('Failed to delete sales lead');
+          }
+        }
+        catch{
+          console.error('Error deleting sales lead:', error);
+          alert('An error occurred while deleting the sales lead');
+        }
+      }
     };
     
     const handleDownload = () => {
-      // Convert salesLeads data to a format suitable for Excel
       const worksheet = XLSX.utils.json_to_sheet(salesLeads);
       const workbook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(workbook, worksheet, 'Sales Leads');
       
-      // Generate the Excel file
       XLSX.writeFile(workbook, 'SalesLeadsData.xlsx');
   };
 
@@ -85,19 +111,19 @@ function AdminSalesLead() {
           </thead>
           <tbody>
           {salesLeads.map((lead) => {
-            console.log('Lead:',lead); // Check the structure of each lead object
+            console.log('Lead:',lead); 
             return (
-              <tr key={lead.ID || lead.id}>
-                <td>{lead.CLIENTNAME}</td>
-                <td>{lead.CONTACTNO1}</td>
-                <td>{lead.CONTACTNO2}</td>
-                <td>{lead.SLICREQUIREMENT}</td>
-                <td>{lead.STAFFMEMBERNAME}</td>
-                <td>{lead.STAFFCONTACTNO}</td>
-                <td>{lead.EXTENSION}</td>
-                <td>{lead.DEPARTMENT}</td>
+              <tr key={lead.id}>
+                <td>{lead.clientName}</td>
+                <td>{lead.contact1}</td>
+                <td>{lead.contact2}</td>
+                <td>{lead.slicRequirement}</td>
+                <td>{lead.staffmembername}</td>
+                <td>{lead.staffcontactno}</td>
+                <td>{lead.slicExtension}</td>
+                <td>{lead.slicDepartment}</td>
                 <td>
-                  <button onClick={() => handleDelete(lead.ID || lead.id)} className="delete-button">
+                  <button onClick={() => handleDelete(lead.id)} className="delete-button">
                     DELETE
                   </button>
                 </td>
