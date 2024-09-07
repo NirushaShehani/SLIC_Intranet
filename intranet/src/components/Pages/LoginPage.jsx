@@ -6,6 +6,7 @@ import axios from "axios";
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [adminLevel, setAdminLevel] = useState(null);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
@@ -15,12 +16,11 @@ function Login() {
 
     const handleLogin = async (e) => {
       e.preventDefault();
-      setError(''); // Clear previous error messages
+      setError(''); 
   
       try {
           const apiUrl = `${BASE_URL}/${ENDPOINTS.AdminLogin}`;
           console.log("Logging in with:", { username, password });
-          // Send GET request to the login API through the proxy
           const response = await axios.get(apiUrl, {
             params: {
               p_un: username,
@@ -35,7 +35,7 @@ function Login() {
   
           if (response.status === 200 && result.isValid === 1) {
               console.log("Login successful");
-              navigate('/SalesLead_Admin_View'); // Redirect user to the desired page
+              setAdminLevel(result.adminLevel);
           } else {
               console.log("Login failed, result:", result);
               setError('Invalid username or password');
@@ -46,32 +46,64 @@ function Login() {
       }
   };
   
+  const renderAdminButtons = () => {
+    if (adminLevel === 1) {
+      return <button style={styles.button} onClick={handleIdeaHubClick}>IdeaHub Admin</button>;
+    } else if (adminLevel === 2) {
+      return <button style={styles.button} onClick={handleSalesLeadsClick}>SalesLeads Admin</button>;
+    } else if (adminLevel === 3) {
+      return (
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <button style={styles.button} onClick={handleIdeaHubClick}>IdeaHub Admin</button>
+          <button style={styles.button} onClick={handleSalesLeadsClick}>SalesLeads Admin</button>
+        </div>
+      );
+    }
+    return null;
+  };  
+
+  const handleIdeaHubClick = () => {
+    navigate('/Idea_Hub_Admin_View');
+  }
+
+  const handleSalesLeadsClick = () => {
+    navigate('/SalesLead_Admin_View');
+  }
 
     return (
       <div style={styles.container}>
-        <h2 style={styles.title}>Login</h2>
-        <form onSubmit={handleLogin} style={styles.form}>
-          <div style={styles.inputGroup}>
-            <label style={styles.label}>Username</label>
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              style={styles.input}
-            />
+        {adminLevel === null ? (
+          <>
+            <h2 style={styles.title}>Login</h2>
+          <form onSubmit={handleLogin} style={styles.form}>
+            <div style={styles.inputGroup}>
+              <label style={styles.label}>Username</label>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                style={styles.input}
+              />
+            </div>
+            <div style={styles.inputGroup}>
+              <label style={styles.label}>Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                style={styles.input}
+              />
+            </div>
+            {error && <p style={styles.error}>{error}</p>}
+            <button type="submit" style={styles.button}>Login</button>
+          </form>
+          </>
+        ) : (
+          <div>
+            <h2>Welcome! You are logged in as Admin Level {adminLevel}</h2>
+            {renderAdminButtons()}
           </div>
-          <div style={styles.inputGroup}>
-            <label style={styles.label}>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              style={styles.input}
-            />
-          </div>
-          {error && <p style={styles.error}>{error}</p>}
-          <button type="submit" style={styles.button}>Login</button>
-        </form>
+        )}       
       </div>
     );
 }

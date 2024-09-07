@@ -95,6 +95,7 @@ function AdminSalesLead() {
     return (
       <div>
         <h1>Sales Leads</h1>
+        <center>
         <table>
           <thead>
             <tr>
@@ -132,6 +133,7 @@ function AdminSalesLead() {
           })}
         </tbody>
         </table>
+        </center>
         <div className="button-container">
                 <button className="download-button" onClick={handleDownload}>
                     Download
