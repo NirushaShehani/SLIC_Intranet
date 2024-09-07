@@ -273,28 +273,28 @@ function PhoneBookForm({ inputStyle, selectStyle, buttonStyle }) {
         style={inputStyle2}
       />
       <label>Floor</label>
-      <select name="Floor" value={inputs.floor || ""} onChange={handleChange} style={selectStyle}>
+      <select name="floor" value={inputs.floor || ""} onChange={handleChange} style={selectStyle}>
         <option value="">All Floors</option>
-        <option value="Basement">Basement</option>
+        <option value="BASE">Basement</option>
         <option value="Ground">Ground Floor</option>
         <option value="Mezzanine">Mezzanine Floor</option>
-        <option value="01">Floor 1</option>
-        <option value="02">Floor 2</option>
-        <option value="03">Floor 3</option>
-        <option value="04">Floor 4</option>
-        <option value="05">Floor 5</option>
-        <option value="06">Floor 6</option>
-        <option value="07">Floor 7</option>
-        <option value="08">Floor 8</option>
-        <option value="09">Floor 9</option>
-        <option value="10">Floor 10</option>
-        <option value="11">Floor 11</option>
-        <option value="12">Floor 12</option>
-        <option value="13">Floor 13</option>
-        <option value="14">Floor 14</option>
+        <option value="001">Floor 1</option>
+        <option value="002">Floor 2</option>
+        <option value="003">Floor 3</option>
+        <option value="004">Floor 4</option>
+        <option value="005">Floor 5</option>
+        <option value="006">Floor 6</option>
+        <option value="007">Floor 7</option>
+        <option value="008">Floor 8</option>
+        <option value="009">Floor 9</option>
+        <option value="010">Floor 10</option>
+        <option value="011">Floor 11</option>
+        <option value="012">Floor 12</option>
+        <option value="013">Floor 13</option>
+        <option value="014">Floor 14</option>
       </select>
       <label>Department</label>
-      <select name="Department" value={inputs.department || ""} onChange={handleChange} style={selectStyle}>
+      <select name="department" value={inputs.department || ""} onChange={handleChange} style={selectStyle}>
         <option value="">All Departments</option>
         <option value="288-Trans.Workshop">288-Trans.Workshop</option>
         <option value="Abans">Abans</option>
@@ -433,11 +433,12 @@ function PhoneBookForm({ inputStyle, selectStyle, buttonStyle }) {
             <tbody>
               {results.map((result, index) => (
                 <tr key={index} style={{ border: '1px solid #ddd', backgroundColor: index % 2 === 0 ? '#f2f2f2' : 'white' }}>
-                  <td style={{ padding: '12px 15px', border: '1px solid #ddd' }}>{result.t1name}</td>
                   <td style={{ padding: '12px 15px', border: '1px solid #ddd' }}>{result.t1dpnm}</td>
                   <td style={{ padding: '12px 15px', border: '1px solid #ddd' }}>{result.t1desg}</td>
+                  <td style={{ padding: '12px 15px', border: '1px solid #ddd' }}>{result.t1name}</td>
+                  <td style={{ padding: '12px 15px', border: '1px solid #ddd' }}>{result.t1nwex}</td>
                   <td style={{ padding: '12px 15px', border: '1px solid #ddd' }}>{result.t1mbnm}</td>
-                  <td style={{ padding: '12px 15px', border: '1px solid #ddd' }}>{result.t1nwex || "N/A"}</td>
+                  <td style={{ padding: '12px 15px', border: '1px solid #ddd' }}>{result.t1olex}</td>
                 </tr>
               ))}
             </tbody>
