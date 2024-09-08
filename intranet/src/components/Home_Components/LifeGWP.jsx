@@ -16,7 +16,7 @@ const defaultImage = require("../../assets/default-user.png"); // Path to defaul
 // Flipping card component design for GWP Charts
 const FlippingCard = styled(Box)(({ showBack, cardType }) => ({
   width: 350,
-  height: cardType === "achievers" ? 475 : 250, // Conditional height
+  height: cardType === "achievers" ? 510 : 250, // Conditional height
   perspective: 800,
   "& .inner": {
     position: "relative",
@@ -71,7 +71,6 @@ const GWPChart = ({
         sx={{
           textAlign: "center",
           color: "#fff", // Text color for visibility
-
           borderRadius: "4px", // Rounded corners
         }}
       >
@@ -116,6 +115,7 @@ const GWPChart = ({
               transform: "translate(-50%, -50%)", // Ensure text stays centered
               color: "#4db6ac", // Color matching achievement color
               fontWeight: "bold",
+              marginBottom: "0px"
             }}
           >
             {ach_presentage}%
@@ -245,7 +245,7 @@ const AchieversCard = ({ achievers }) => (
             marginTop: 1,
             marginRight: -1.5,
             marginLeft: -1.5,
-            maxHeight: "375px", // Set a fixed height
+            maxHeight: "400px", // Set a fixed height
             maxWidth: "350px",
             overflowY: "auto", // Enable vertical scrolling
             border: "2px solid #000", // Add border around the component
