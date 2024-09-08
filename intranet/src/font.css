@@ -9,7 +9,7 @@
   }
   
   /* Apply the custom font to the entire website */
-  html, body, h1, h2, p, td, th {
+  html, body, h1, h2, p, td, th, table, tbody {
     font-family: 'Oxygen';
     margin: 0;
     padding: 0;
