@@ -11,16 +11,22 @@ function IdeaHub() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/ideaHub/fetchideas');
-        // Assume response.data is an array of arrays
+        // Fetch data from the new API endpoint
+        const response = await axios.post('http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Working/GetIdeaHubData', {
+          p_ID: '',      // Optionally pass ID if needed, empty string for all
+          p_ACTIVE: '',  // Optionally pass ACTIVE status if needed, empty string for all
+          p_READ: ''     // Optionally pass READ status if needed, empty string for all
+        });
+
+        // Assume response.data is an array of idea objects
         const ideasWithStatus = response.data.map(idea => ({
-          ID: idea[0],
-          USEREPF: idea[1],
-          DEPTORBRANCH: idea[2],
-          IDEADATE: idea[3],
-          NAME: idea[4],
-          USERIDEA: idea[5],
-          read: idea[6] === 1 // Assuming READ_STATUS is at index 6
+          ID: idea.ID,
+          USEREPF: idea.USEREPF,
+          DEPTORBRANCH: idea.DEPTORBRANCH,
+          IDEADATE: idea.IDEADATE,
+          NAME: idea.NAME,
+          USERIDEA: idea.USERIDEA,
+          read: idea.READ_STATUS === 1 // Assuming READ_STATUS is provided and 1 means read
         }));
         setIdeas(ideasWithStatus);
         setLoading(false);
@@ -38,7 +44,10 @@ function IdeaHub() {
     if (!isConfirmed) return;
 
     try {
-      await axios.delete(`http://localhost:10155/api/ideaHub/deleteIdeaHub/${id}`);
+      await axios.post('http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Working/IdeaRemoveorNot', {
+        p_ID: id,
+        p_ACTIVE: 0 // Assuming 0 means inactive or delete
+      });
       setIdeas(prevIdeas => prevIdeas.filter(idea => idea.ID !== id));
     } catch (err) {
       setError(err.message);
@@ -49,13 +58,14 @@ function IdeaHub() {
     try {
       const idea = ideas.find(idea => idea.ID === id);
       if (!idea) return;
-  
+
       const updatedReadStatus = !idea.read;
-  
-      const response = await axios.patch(`http://localhost:10155/api/ideaHub/updateReadStatus/${id}`, { read: updatedReadStatus ? 1 : 0 });
-  
-      console.log('Update response:', response.data);
-  
+
+      await axios.post('http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Working/IdeaReadorNot', {
+        p_ID: id,
+        p_ACTIVE: updatedReadStatus ? 1 : 0
+      });
+
       setIdeas(prevIdeas =>
         prevIdeas.map(idea =>
           idea.ID === id ? { ...idea, read: updatedReadStatus } : idea
@@ -65,13 +75,13 @@ function IdeaHub() {
       setError('Failed to update read status. Please try again later.');
     }
   };
-  
+
   const handleDownload = () => {
     // Convert ideas data to a format suitable for Excel
     const worksheet = XLSX.utils.json_to_sheet(ideas);
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, 'Ideas');
-    
+
     // Generate the Excel file
     XLSX.writeFile(workbook, 'IdeaHubData.xlsx');
   };

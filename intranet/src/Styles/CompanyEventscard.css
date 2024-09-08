@@ -20,12 +20,12 @@
   display: flex;
   flex-direction: column;
   margin: 0;
-  height: 360px; /* Fixed height for the card */
+  height: 350px; /* Fixed height for the card */
 }
 
 .event-image {
   width: 100%;
-  height: 260px; /* Increased height for the image */
+  height: 300px; /* Increased height for the image */
   object-fit: cover;
   margin-bottom: 0px;
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import * as XLSX from 'xlsx';
 import './AdminStyles/AdminSalesLead.css';
+import { BASE_URL, ENDPOINTS } from "../../../Services/ApiConfig";
 
 function AdminSalesLead() {
     const [salesLeads, setSalesLeads] = useState([]);
@@ -9,55 +10,82 @@ function AdminSalesLead() {
     const [error, setError] = useState(null);
   
     useEffect(() => {
-      // Fetch data from backend
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://localhost:3000/api/salesLead/fetchSalesLeads'/*'http://localhost:3000/api/salesLead/fetchSalesLeads'*/);
-          console.log('API response:', response.data); 
-          setSalesLeads(response.data);
-          setLoading(false);
+          const requestBody = {
+            p_ID: "",
+            p_ACTIVE: "1"
+          };
+    
+          const response = await axios.post(
+            `${BASE_URL}/${ENDPOINTS.GetSalesLeads}`, 
+            requestBody,
+            {
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            }
+          );
+    
+          if (response.status === 200) {
+            setSalesLeads(response.data); 
+            setLoading(false); 
+          } else {
+            console.error("API responded with a status:", response.status);
+            setError('Failed to fetch sales leads');
+            setLoading(false);
+          }
         } catch (err) {
-          setError(err.message);
-          setLoading(false);
+          console.error('Error fetching sales leads:', err);
+          setError('An error occurred while fetching sales leads');
+          setLoading(false); 
         }
       };
-  
-      fetchData();
-    }, []); // Empty dependency array means this useEffect runs once when the component mounts
+    
+      fetchData(); 
+    }, []); 
+    
   
     const handleDelete = async (id) => {
-      // Confirm before deleting
-      const isConfirmed = window.confirm('Are you sure you want to delete this sales lead?');
-      
-      if (!isConfirmed) {
-        console.log('Deletion canceled');
-        return;
-      }
-    
-      console.log('Deleting sales lead with ID:', id);
-      
-      if (!id) {
-        console.error('No ID provided for deletion');
-        return;
-      }
-    
-      try {
-        await axios.delete(`http://localhost:10155/api/salesLead/deleteSalesLead/${id}`/*`http://localhost:3000/api/salesLead/deleteSalesLead/${id}`*/);
-        // Optionally, update the salesLeads state to remove the deleted item from the list
-        setSalesLeads(salesLeads.filter(lead => lead.ID !== id && lead.id !== id));
-        console.log(id, 'Sales lead deleted successfully');
-      } catch (error) {
-        console.error('Error deleting sales lead:', error);
+      const confirmDelete = window.confirm("Are you sure you want to delete this sales lead?");
+      if(confirmDelete){
+        try{
+          const requestBody = {
+            p_ID: id,         
+            p_ACTIVE: ""     
+          };
+          const response = await axios.put(
+            `${BASE_URL}/${ENDPOINTS.SalesLeadActive}`,
+            requestBody,
+            {
+              headers: {
+                'Content-Type': 'application/json',
+                'x-api-version': '1.0'
+            }
+          }
+          );
+
+          if(response.status === 200 && response.data === 1){
+            setSalesLeads(salesLeads.filter(lead => lead.id !== id));
+            console.log(response.data)
+            alert('Sales lead deleted successfully');
+          } else{
+            console.error("Failed to delete sales lead. Status:", response.status);
+            alert('Failed to delete sales lead');
+          }
+        }
+        catch{
+          console.error('Error deleting sales lead:', error);
+          alert('An error occurred while deleting the sales lead');
+        }
       }
     };
     
     const handleDownload = () => {
-      // Convert salesLeads data to a format suitable for Excel
       const worksheet = XLSX.utils.json_to_sheet(salesLeads);
       const workbook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(workbook, worksheet, 'Sales Leads');
       
-      // Generate the Excel file
       XLSX.writeFile(workbook, 'SalesLeadsData.xlsx');
   };
 
@@ -67,6 +95,7 @@ function AdminSalesLead() {
     return (
       <div>
         <h1>Sales Leads</h1>
+        <center>
         <table>
           <thead>
             <tr>
@@ -83,19 +112,19 @@ function AdminSalesLead() {
           </thead>
           <tbody>
           {salesLeads.map((lead) => {
-            console.log('Lead:',lead); // Check the structure of each lead object
+            console.log('Lead:',lead); 
             return (
-              <tr key={lead.ID || lead.id}>
-                <td>{lead.CLIENTNAME}</td>
-                <td>{lead.CONTACTNO1}</td>
-                <td>{lead.CONTACTNO2}</td>
-                <td>{lead.SLICREQUIREMENT}</td>
-                <td>{lead.STAFFMEMBERNAME}</td>
-                <td>{lead.STAFFCONTACTNO}</td>
-                <td>{lead.EXTENSION}</td>
-                <td>{lead.DEPARTMENT}</td>
+              <tr key={lead.id}>
+                <td>{lead.clientName}</td>
+                <td>{lead.contact1}</td>
+                <td>{lead.contact2}</td>
+                <td>{lead.slicRequirement}</td>
+                <td>{lead.staffmembername}</td>
+                <td>{lead.staffcontactno}</td>
+                <td>{lead.slicExtension}</td>
+                <td>{lead.slicDepartment}</td>
                 <td>
-                  <button onClick={() => handleDelete(lead.ID || lead.id)} className="delete-button">
+                  <button onClick={() => handleDelete(lead.id)} className="delete-button">
                     DELETE
                   </button>
                 </td>
@@ -104,6 +133,7 @@ function AdminSalesLead() {
           })}
         </tbody>
         </table>
+        </center>
         <div className="button-container">
                 <button className="download-button" onClick={handleDownload}>
                     Download
