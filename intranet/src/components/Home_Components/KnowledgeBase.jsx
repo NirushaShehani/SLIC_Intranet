@@ -110,7 +110,7 @@ const KnowledgeBase = () => {
       
       <div style={styles.chipContainer}>
         {/*Services Chip*/}
-        <Link to="/services-page" style={{ cursor: 'pointer' }}>
+        <Link to="/services-page" style={{ cursor: 'pointer' , textDecoration: 'none'}}>
         <CustomChip style={styles.label}
           label="Policies/Services/Forms"
           deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
@@ -118,7 +118,7 @@ const KnowledgeBase = () => {
         />
         </Link>
         {/*Knowledge Base Chip*/}
-        <Link to="/Knowledge-Base" style={{ cursor: 'pointer' }}>
+        <Link to="/Knowledge-Base" style={{ cursor: 'pointer' , textDecoration: 'none'}}>
         <CustomChip style={styles.label}
           label="Our Knowledge Base"
           deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
@@ -126,7 +126,7 @@ const KnowledgeBase = () => {
         />
         </Link>
         {/*Sales Lead Chip*/}
-        <Link to="/sales-Lead" style={{ cursor: 'pointer' }}>
+        <Link to="/sales-Lead" style={{ cursor: 'pointer', textDecoration: 'none' }}>
         <CustomChip style={styles.label}
           label="Introduce a New Customer"
           deleteIcon={<BookmarkIcon style={ { color: "white" }} />}
@@ -134,7 +134,7 @@ const KnowledgeBase = () => {
         />
         </Link>
         {/*Contact List Chip*/}
-        <Link to="/contact-list" style={{ cursor: 'pointer' }}>
+        <Link to="/contact-list" style={{ cursor: 'pointer', textDecoration: 'none' }}>
         <CustomChip style={styles.label}
           label="Contact List"
           deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
@@ -142,13 +142,13 @@ const KnowledgeBase = () => {
         />
         </Link>
         {/*Idea Hub Chip*/}
-        <Link to="/Idea-Hub" style={{ cursor: 'pointer' }}>
+        <Link to="/Idea-Hub" style={{ cursor: 'pointer' , textDecoration: 'none'}}>
         <CustomChip3 style={styles.label}
           label="Idea Hub"
         />
         </Link>
         {/*Book Hub Chip*/}
-        <Link to="/Book-Hub" style={{ cursor: 'pointer' }}>
+        <Link to="/Book-Hub" style={{ cursor: 'pointer', textDecoration: 'none' }}>
         <CustomChip4 style={styles.label}
           label="Book Hub"
         />
