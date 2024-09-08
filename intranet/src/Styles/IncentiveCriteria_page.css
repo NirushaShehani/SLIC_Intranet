@@ -84,9 +84,9 @@ table {
 }
 
 /* Adjust the width of table cells */
-.incentive-table-wrapper-table th,
+
 .incentive-table-wrapper-table td {
-  padding: 5px;
+  padding: 10px;
   border: 2px solid #ffffff;
 }
 

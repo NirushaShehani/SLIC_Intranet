@@ -1,7 +1,7 @@
 /* New CSS for branch performance table */
 
 .branch-performance-container {
-  width: 290px;
+  width: 300px;
   height: 350px;
   background-color: #0c4d72;
   padding: 10px;
@@ -61,7 +61,7 @@ h2 {
 
 .performance-list {
   overflow-y: auto;
-  max-height: 250px;
+  max-height: 240px;
   padding-right: 10px;
 }
 
@@ -87,7 +87,7 @@ h2 {
 }
 
 .performance-bar-container {
-  width: 160px;
+  width: 200px;
   /* Fixed width for the performance bar */
   background-color: grey;
   /* Background color for the container */
@@ -122,7 +122,7 @@ h2 {
 .branch-event {
   margin-top: 22px;
   padding-top: 1px;
-  background-color: #31769F;
+  background-color: #0c4d72;
   border-radius: 8px;
   max-width: 300px;
   color: #fff;
@@ -131,10 +131,11 @@ h2 {
 }
 
 .branch-event h2 {
-  font-size: 18px;
+  margin-left: 10px;
+  text-align: left;
+  font-size: 16px;
   margin-bottom: 5px;
   margin-top: 5px;
-  margin-right: 100px;
 }
 
 
@@ -149,8 +150,9 @@ h2 {
 
 .images-container img {
   width: 100%;
-  height: auto;
+  height: 200px;
   display: block;
+  object-fit: cover;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }

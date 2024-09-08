@@ -16,7 +16,7 @@ const Home = () => {
         <CompanyEvents />
       </div>
       <hr />
-      <div style={{ justifyContent: 'center', marginTop: '50px' }}>
+      <div style={{ justifyContent: 'center', marginTop: '20px' }}>
       < LifeGWP/>
     </div>
       <hr />
