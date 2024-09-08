@@ -1,0 +1,18 @@
+/* fonts.css */
+
+/* Import the custom font */
+@font-face {
+    font-family: 'Oxygen';
+    src: url('intranet/src/assets/Font/Oxygen-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Apply the custom font to the entire website */
+  html, body, h1, h2, p, td, th {
+    font-family: 'Oxygen';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
