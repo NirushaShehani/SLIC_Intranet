@@ -11,8 +11,8 @@ function IdeaHub() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch data from the new API endpoint
-        const response = await axios.post('http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Working/GetIdeaHubData', {
+        // Fetch data from the API endpoint using POST method
+        const response = await axios.post('http://203.115.11.236:10155/LifeIntranetAPI/api/v1/Working/GetIdeaHubData', {
           p_ID: '',      // Optionally pass ID if needed, empty string for all
           p_ACTIVE: '',  // Optionally pass ACTIVE status if needed, empty string for all
           p_READ: ''     // Optionally pass READ status if needed, empty string for all
@@ -44,11 +44,12 @@ function IdeaHub() {
     if (!isConfirmed) return;
 
     try {
-      await axios.post('http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Working/IdeaRemoveorNot', {
+      await axios.put('http://203.115.11.236:10155/LifeIntranetAPI/api/v1/Working/IdeaRemoveorNot', {
         p_ID: id,
-        p_ACTIVE: 0 // Assuming 0 means inactive or delete
+        p_ACTIVE: '0' // Assuming '0' means inactive or delete
       });
       setIdeas(prevIdeas => prevIdeas.filter(idea => idea.ID !== id));
+      console.log('Idea deleted successfully.');
     } catch (err) {
       setError(err.message);
     }
@@ -61,9 +62,9 @@ function IdeaHub() {
 
       const updatedReadStatus = !idea.read;
 
-      await axios.post('http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Working/IdeaReadorNot', {
+      await axios.put('http://203.115.11.236:10155/LifeIntranetAPI/api/v1/Working/IdeaReadorNot', {
         p_ID: id,
-        p_ACTIVE: updatedReadStatus ? 1 : 0
+        p_ACTIVE: updatedReadStatus ? '1' : '0'
       });
 
       setIdeas(prevIdeas =>
@@ -71,6 +72,7 @@ function IdeaHub() {
           idea.ID === id ? { ...idea, read: updatedReadStatus } : idea
         )
       );
+      console.log('Read status updated successfully.');
     } catch (err) {
       setError('Failed to update read status. Please try again later.');
     }
