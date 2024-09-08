@@ -16,6 +16,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.3",
     "chart.js": "^4.4.3",
+    "cors": "^2.8.5",
     "intranet": "file:",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
@@ -26,7 +27,8 @@
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "proxy": "http://203.115.11.236:10155"
   },
   "scripts": {
     "start": "react-scripts start",

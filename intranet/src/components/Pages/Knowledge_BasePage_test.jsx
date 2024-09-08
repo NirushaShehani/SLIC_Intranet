@@ -4,6 +4,7 @@ import DrawerMenu from "../Sub_Components/DrawerMenu";
 //Knowledge base page links
 import Life from './Knowledge_base_pages/Life';
 import HR from './Knowledge_base_pages/HR';
+import IT from './Knowledge_base_pages/IT';
 
 //Knowledge base page links
 const Knowledge_BasePage_test = () => {
@@ -31,6 +32,8 @@ const Knowledge_BasePage_test = () => {
       case "HR":
         return <HR />;
       // Add other cases as needed
+      case "IT":
+        return <IT />;
       default:
         return null;
     }
@@ -73,9 +76,21 @@ const Knowledge_BasePage_test = () => {
         >
           HR <span>&#x2192;</span>
         </button>
+        <button
+          className={`service-button ${
+            clickedButton === "IT" ? "clicked" : ""
+          }`}
+          onClick={() =>
+            toggleComponent("IT", "Knowledge Base", "IT")
+          }
+        >
+          IT <span>&#x2192;</span>
+        </button>
       </div>
       <div className="service-content">{renderComponent()}</div>
     </div>
+    
+    
   );
 };
 
