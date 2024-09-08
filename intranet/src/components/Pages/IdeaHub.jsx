@@ -3,7 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import axios from 'axios';
 import logo from '../../assets/IntranetLogo.png';
-import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
+
+// Replace with your actual API base URL and endpoint
+const BASE_URL = "http://203.115.11.236:10155/LifeIntranetAPI/api/v1";
+const SET_IDEAS_ENDPOINT = "/Working/SetIdeas";
 
 const IdeaHub = () => {
   const [formData, setFormData] = useState({
@@ -29,7 +32,7 @@ const IdeaHub = () => {
     let formErrors = {};
 
     if (!/^[a-zA-Z0-9]{1,6}$/.test(formData.userEPF)) {
-      formErrors.userEPF = 'User EPF should only contain letters and numbers, and not longer than 6 characters.';
+      formErrors.userEPF = 'User EPF should only contain letters and numbers, and not be longer than 6 characters.';
     }
 
     if (!/^[a-zA-Z\s]{1,120}$/.test(formData.deptOrBranch)) {
@@ -52,8 +55,9 @@ const IdeaHub = () => {
     event.preventDefault();
     if (validateForm()) {
       try {
-        const response = await axios.post(`${BASE_URL}${ENDPOINTS.SET_IDEAS}`, formData);
+        const response = await axios.post(`${BASE_URL}${SET_IDEAS_ENDPOINT}`, formData);
         console.log('Response:', response.data);
+        console.log('Form submitted successfully!'); // Success message in the console
       } catch (error) {
         console.error('Error submitting form:', error);
       }
@@ -261,33 +265,38 @@ const IdeaHub = () => {
                   {errors.deptOrBranch && <p style={{ color: 'red' }}>{errors.deptOrBranch}</p>}
                 </div>
               </div>
-              <div style={formColumnStyle}>
-                <label>Name of the User :</label>
-                <input type="text" name="name" placeholder="Enter your name.." style={inputStyle} value={formData.name} onChange={handleChange} />
-                {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
+              <div style={formRowStyle}>
+                <div style={formColumnStyle}>
+                  <label>Name of the User :</label>
+                  <input type="text" name="name" placeholder="eg: John Doe" style={inputStyle} value={formData.name} onChange={handleChange} />
+                  {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
+                </div>
               </div>
               <div style={formColumnStyle}>
-                <label>User Idea :</label>
+                <label>Your Idea :</label>
                 <textarea
                   name="userIdea"
                   value={formData.userIdea}
                   onChange={handleChange}
-                  placeholder="Type your Idea here..."
-                  rows="10"
-                  cols="50"
-                  style={inputStyle} />
+                  style={{ ...inputStyle, resize: 'vertical', height: '100px' }}
+                  placeholder="Your idea to change the World..!"
+                />
                 {errors.userIdea && <p style={{ color: 'red' }}>{errors.userIdea}</p>}
               </div>
-              <div>
+              <div style={{ textAlign: 'center', marginTop: '20px' }}>
                 <button type="submit" style={buttonStyle}>Submit</button>
-                <button onClick={handleNavigateToLogin} style={buttonStyle}>Navigate Admin</button>
               </div>
             </form>
+          </div>
+          <div style={{ marginTop: '20px', textAlign: 'center' }}>
+            <p onClick={handleNavigateToLogin} style={{ cursor: 'pointer', color: '#2F5BDA' }}>
+              Log into Admin Panel
+            </p>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default IdeaHub;
