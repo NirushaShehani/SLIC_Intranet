@@ -1,5 +1,4 @@
 import React from 'react';
-//import image1 from 'http://172.24.90.80:10157/Images/Branches/TaxInse.jpg';
 import image2 from '../../assets/SLIC_Events/poson poya/2-min.png';
 import image3 from '../../assets/SLIC_Events/suba pathum/1-min.jpg';
 import image4 from '../../assets/SLIC_Events/super woman/1.jpg';
@@ -14,30 +13,13 @@ const CompanyEvents = () => {
   return (
     <div className="CompanyEvents">
       <h2 className="notice-hd">Events Gallery</h2>
-      {/* <div className="image-container">
-        <Link to="/full-events" className="image-wrapper">
-          <img src={image1} alt="Image 1" className="image" />
-        </Link>
-        <Link to="/full-events" className="image-wrapper">
-          <img src={image3} alt="Image 2" className="image large-image" />
-        </Link>
-        <Link to="/full-events" className="image-wrapper">
-          <img src={image1} alt="Image 3" className="image" />
-        </Link>
-        <Link to="/full-events" className="image-wrapper">
-          <img src={image3} alt="Image 4" className="image large-image" />
-        </Link>
-        <Link to="/full-events" className="image-wrapper">
-          <img src={image1} alt="Image 5" className="image" />
-        </Link>
-      </div> */}
       {/* Events Galery */}
       <div className="album">
         <div class="responsive-container-block bg">
           <div class="responsive-container-block img-cont">
           <Link to="/full-events" >
-            <img src='http://172.24.90.80:10157/Images/Branches/TaxInse.jpg' class="img" />
             <img src={image2} class="img img-big" />
+            <img src={image5} class="img img-big img-last" />
             
           </Link>
           </div>
@@ -51,11 +33,12 @@ const CompanyEvents = () => {
           <Link to="/full-events" >
             <img src={image6} class="img img-big" />
             <img src={image6} class="img" />
-            <img src={image3} class="img img-big" />
           </Link>
           </div>
         </div>
     </div>
+    <br></br>
+    <br></br>
       {/* Events Galery */}
       <h2 className="notice-head">Company Notices</h2>
       <p className="sub-notice-hd">SLICL Suba Pathum scholarship awards 2023</p>

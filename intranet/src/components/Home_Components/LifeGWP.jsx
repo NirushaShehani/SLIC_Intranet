@@ -100,7 +100,7 @@ const GWPChart = ({
               maintainAspectRatio: false, // Ensure it resizes properly
               plugins: {
                 legend: { display: false }, // Hide the legend
-                tooltip: { enabled: false }, // Disable tooltips to avoid interference
+                tooltip: { enabled: true}, // Disable tooltips to avoid interference
               },
             }}
           />

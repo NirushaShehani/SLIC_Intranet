@@ -1,126 +1,63 @@
-
+.album {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: rgb(25, 58, 87);
+  border-radius: 5px;
+  margin: 0 auto;
+}
 
 .album .responsive-container-block {
-    min-height: 75px;
-    height: fit-content;
-    width: 100%;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 0px;
-    margin-right: auto;
-    margin-bottom: 0px;
-    margin-left: auto;
-    justify-content: flex-start;
-    background-color: rgb(25, 58, 87);
-    border-radius: 5px;
-  }
-  
-  .album .responsive-container-block.bg {
-    max-width: 1320px;
-    margin: 0 0 0 0;
-    justify-content: space-between;
-  }
-  
-  .album .img {
-    width: 100%;
-    margin: 0 0 20px 0;
-  }
-  
-  .album #i9rb {
-    color: black;
-  }
-  
-  .album #ir6i {
-    color: black;
-  }
-  
-  .album #ikz3b {
-    color: black;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.album .responsive-container-block.img-cont {
+  flex-direction: column;
+  width: calc(33.33% - 20px);  /* Three images per row, accounting for margin */
+  margin: 10px;                /* Space between image containers */
+}
+
+.album .img {
+  width: 110px;                /* Full width of the container */
+  height: 130px;              /* Fixed height for all images */
+  object-fit: cover;          /* Crop the image to fit the container */
+  border-radius: 8px;         /* Rounded corners for the image itself */
+  margin-bottom: 16px;        /* Space between images */
+  display: block;             /* Ensure image is displayed as a block element */
+
+  /* Stylish border */
+  padding: 5px;              /* Space between image and border */
+  background-color: rgba(255, 255, 255, 0);    /* Background color for space between image and border */
+  border: 2px solid #d3d3d3;  /* The actual border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* A slight shadow to make the image pop */
+}
+
+.album .img.img-big {
+  /* Applies to the larger images, if any */
+  height: 130px;              /* Maintain consistent height with other images */
+}
+
+@media (max-width: 1024px) {
   .album .responsive-container-block.img-cont {
-    flex-direction: column;
-    max-width: 33.3%;
-    min-height: auto;
-    margin: 0 0 0 0;
-    height: 100%;
+    width: calc(50% - 20px);  /* Two images per row on medium screens */
   }
-  
-  .album #ipix {
-    color: black;
+}
+
+@media (max-width: 768px) {
+  .album .responsive-container-block.img-cont {
+    width: calc(50% - 20px);  /* Two images per row on small screens */
   }
-  
-  .album #ipzoh {
-    color: black;
+}
+
+@media (max-width: 500px) {
+  .album .responsive-container-block.img-cont {
+    width: 100%;              /* One image per row on the smallest screens */
+    margin: 10px 0;           /* Adjust margin for mobile view */
   }
-  
-  .album #ig5q8 {
-    color: black;
+
+  .album .img {
+    height: 200px;            /* Adjust image height for mobile screens */
   }
-  
-  .album #imtzl {
-    color: black;
-  }
-  
-  .album #i53es {
-    color: black;
-  }
-  
-  .album .img.img-big {
-    height: 50%;
-    margin: 0 0 16px 0;
-  }
-  
-  @media (max-width: 1024px) {
-    .album .img {
-      margin: 0 0 18px 0;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .album .img {
-      max-width: 32.5%;
-      margin: 0 0 0 0;
-    }
-  
-    .album .responsive-container-block.bg {
-      flex-direction: column;
-    }
-  
-    .album .responsive-container-block.img-cont {
-      max-width: 100%;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  
-    .album .img.img-big {
-      max-width: 49%;
-      margin: 0 0 0 0;
-    }
-  }
-  
-  @media (max-width: 500px) {
-    .album .img {
-      max-width: 94%;
-      margin: 0 0 25px 0;
-    }
-  
-    .album .responsive-container-block.img-cont {
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 10px 10px 10px;
-    }
-  
-    .album .img.img-big {
-      max-width: 94%;
-      margin: 0 0 25px 0;
-    }
-  
-    .album .img.img-last {
-      margin: 0 0 5px 0;
-    }
-  }
+}
