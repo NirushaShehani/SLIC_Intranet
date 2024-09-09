@@ -110,8 +110,8 @@ const HR = () => {
 
          {/*CHAWS*/}
          <div style={sectionStyle}>
-         <div className="hover-container"style={titleStyle}>CHAWS</div>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/life/life-manual/')}>
+         <div style={titleStyle}>CHAWS</div>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/life/life-manual/')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
               <span className="hover-text">CHAWS - Enrolment Guide</span>
             </div>

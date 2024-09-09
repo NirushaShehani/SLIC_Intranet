@@ -127,91 +127,91 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                    <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Signature Verification Form ( Form No.1620)</span>
+                    <span className="hover-text">Signature Verification Form ( Form No.1620)</span>
                     </div>
-                    <div style={listItemStyle} onClick={() =>handleDownload('/LifeProposalForm')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/LifeProposalForm')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Important Notice ( Form No.2812)  </span>
+                    <span className="hover-text">Important Notice ( Form No.2812)  </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/LifeProposalForm')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/LifeProposalForm')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Declaration of Continued Good Health (Form No 15C/E)  </span>
+                    <span className="hover-text">Declaration of Continued Good Health (Form No 15C/E)  </span>
                     </div>
-                    <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Surrender Form ( Form No.1423)</span>
+                    <span className="hover-text">Surrender Form ( Form No.1423)</span>
                     </div>
-                    <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Surrender Form ( Form No.1526)</span>
+                    <span className="hover-text">Surrender Form ( Form No.1526)</span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Affidavit for Lost Policy ( Form No.1677)  </span>
+                    <span className="hover-text">Affidavit for Lost Policy ( Form No.1677)  </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Affidavit for Name Change ( Form No.1777)</span>
+                    <span className="hover-text">Affidavit for Name Change ( Form No.1777)</span>
                     </div>
-                    <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Surety Form (Form No.1630)</span>
+                    <span className="hover-text">Surety Form (Form No.1630)</span>
                     </div>
-                    <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Surety Bond (Form No.1545) ( Completed by Bank has lost the Policy) </span>
+                    <span className="hover-text">Surety Bond (Form No.1545) ( Completed by Bank has lost the Policy) </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Assignment Form for Valuable Consideration ( Form No.1624)</span>
+                    <span className="hover-text">Assignment Form for Valuable Consideration ( Form No.1624)</span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Assignment Form for Natural Love and Affection ( Form No.1625)</span>
+                    <span className="hover-text">Assignment Form for Natural Love and Affection ( Form No.1625)</span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Re-assignment Form ( Form No.1626)</span>
+                    <span className="hover-text">Re-assignment Form ( Form No.1626)</span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Form Regarding Arogya / CIC inclusion for Child ( Form No.7149)</span>
+                    <span className="hover-text">Form Regarding Arogya / CIC inclusion for Child ( Form No.7149)</span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Nomination Form ( Form No.1809) </span>
+                    <span className="hover-text">Nomination Form ( Form No.1809) </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Bonus Surrender Form ( Form No.1612)</span>
+                    <span className="hover-text">Bonus Surrender Form ( Form No.1612)</span>
                     </div>
                     
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Loan Bond ( Form No.1595) </span>
+                    <span className="hover-text">Loan Bond ( Form No.1595) </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Loan Application ( Form No.1728)  </span>
+                    <span className="hover-text">Loan Application ( Form No.1728)  </span>
                     </div>
                   
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Declaration of Continued Good Health- child (Form No 9C/E) </span>
+                    <span className="hover-text">Declaration of Continued Good Health- child (Form No 9C/E) </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Voucher (Form No.7124)  </span>
+                    <span className="hover-text">Voucher (Form No.7124)  </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Adjustment Voucher ( Form No.312)  </span>
+                    <span className="hover-text">Adjustment Voucher ( Form No.312)  </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Direct Adjustment ( Form No.1752)   </span>
+                    <span className="hover-text">Direct Adjustment ( Form No.1752)   </span>
                     </div>
                 </div>
             </div>
@@ -224,81 +224,81 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Sum Assured and Rider Covers Redusing </span>
+                    <span className="hover-text">Sum Assured and Rider Covers Redusing </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Include Children for Arogya  </span>
+                    <span className="hover-text">Include Children for Arogya  </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Remove Arogya Cover   </span>
+                    <span className="hover-text">Remove Arogya Cover   </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Include Child Birth Cover for Arogya  </span>
+                    <span className="hover-text">Include Child Birth Cover for Arogya  </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Include Child for CIC  </span>
+                    <span className="hover-text">Include Child for CIC  </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Remove CIC Cover from Child  </span>
+                    <span className="hover-text">Remove CIC Cover from Child  </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Age Admission </span>
+                    <span className="hover-text">Age Admission </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Special Revival  </span>
+                    <span className="hover-text">Special Revival  </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Change of Name  </span>
+                    <span className="hover-text">Change of Name  </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Correct the Name  </span>
+                    <span className="hover-text">Correct the Name  </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Change the Name after Marriage</span>
+                    <span className="hover-text">Change the Name after Marriage</span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Change of Nominee </span>
+                    <span className="hover-text">Change of Nominee </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Change the Mode of the Payment </span>
+                    <span className="hover-text">Change the Mode of the Payment </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Term Reducing</span>
+                    <span className="hover-text">Term Reducing</span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Removal of Accident Benefit at Age 60 </span>
+                    <span className="hover-text">Removal of Accident Benefit at Age 60 </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Desanda Inclusion </span>
+                    <span className="hover-text">Desanda Inclusion </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Desanda Removal </span>
+                    <span className="hover-text">Desanda Removal </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Health Extra Inclusion </span>
+                    <span className="hover-text">Health Extra Inclusion </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Covers Removal with Health Extra  </span>
+                    <span className="hover-text">Covers Removal with Health Extra  </span>
                     </div>
                    
                 </div>
@@ -312,13 +312,13 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                  <span>Letter of authority-form no 155R</span>
+                  <span className="hover-text">Letter of authority-form no 155R</span>
                   </div>
-                  <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                  <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                  <span>Adjustment Voucher</span>
+                  <span className="hover-text">Adjustment Voucher</span>
                   </div>
                   
                 </div>
