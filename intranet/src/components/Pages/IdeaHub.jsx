@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import axios from 'axios';
 import logo from '../../assets/IntranetLogo.png';
-import { BASE_URL,ENDPOINTS } from "../../Services/ApiConfig";
 
 // Replace with your actual API base URL and endpoint
-
+const BASE_URL = "http://203.115.11.236:10155/LifeIntranetAPI/api/v1";
+const SET_IDEAS_ENDPOINT = "/Working/SetIdeas";
 
 const IdeaHub = () => {
   const [formData, setFormData] = useState({
@@ -55,7 +55,7 @@ const IdeaHub = () => {
     event.preventDefault();
     if (validateForm()) {
       try {
-        const response = await axios.post(`${BASE_URL}${ENDPOINTS.SetIdeas}`, formData);
+        const response = await axios.post(`${BASE_URL}${SET_IDEAS_ENDPOINT}`, formData);
         console.log('Response:', response.data);
         console.log('Form submitted successfully!'); // Success message in the console
       } catch (error) {
