@@ -8,8 +8,8 @@ import axios from 'axios';
 const SalesLeadPage = () => {
   const initialFormData = {
     clientName: '',
-    contact1: '',
-    contact2: '',
+    contactno1: '',
+    contactno2: '',
     slicRequirement: '',
     slicContactName: '',
     slicMobile: '',
@@ -34,15 +34,18 @@ const SalesLeadPage = () => {
   const validateForm = () => {
     let formErrors = {};
 
+    const trimmedContactno1 = formData.contactno1.trim();
+    const trimmedContactno2 = formData.contactno2.trim();
+
     if (!/^[a-zA-Z\s]+$/.test(formData.clientName)) {
       formErrors.clientName = 'Client name should only contain letters and spaces.';
     }
 
-    if (!/^\d{10}$/.test(formData.contact1)) {
+    if (!/^\d{10}$/.test(trimmedContactno1)) {
       formErrors.contactNo1 = 'Contact No 1 should only contain 10 digits.';
     }
 
-    if (!/^\d{10}$/.test(formData.contact2)) {
+    if (!/^\d{10}$/.test(trimmedContactno2)) {
       formErrors.contactNo2 = 'Contact No 2 should only contain 10 digits.';
     }
 
@@ -75,14 +78,17 @@ const SalesLeadPage = () => {
     if (validateForm()) {
       const requestBody = {
         clientName: formData.clientName,
-        contact1: formData.contact1,
-        contact2: formData.contact2,
+        contactno1: formData.contactno1,  // Make sure it's contactno1, not contact1
+        contactno2: formData.contactno2,  // Same here, contactno2
         slicRequirement: formData.slicRequirement,
         staffmembername: formData.slicContactName,
         staffcontactno: formData.slicMobile,
         slicExtension: formData.slicExtension,
         slicDepartment: formData.slicDepartment,
       };
+  
+      // Log the request body before sending it
+      console.log("Request Body:", requestBody);
   
       try {
         const response = await axios.post(
@@ -107,6 +113,7 @@ const SalesLeadPage = () => {
       }
     }
   };
+  
   
 
   const containerStyle = {
@@ -303,13 +310,13 @@ Keep up the great work!
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
                   <label>Contact No 1:</label>
-                  <input type="text" name="contact1" placeholder="0704561233" style={inputStyle} value={formData.contact1}
+                  <input type="text" name="contactno1" placeholder="0704561233" style={inputStyle} value={formData.contactno1}
                     onChange={handleChange}/>
                     {errors.contactNo1 && <p style={{color: 'red'}}>{errors.contactNo1}</p>}
                 </div>
                 <div style={formColumnStyle}>
                   <label>Contact No 2:</label>
-                  <input type="text" name="contact2" placeholder="0785642350" style={inputStyle} value={formData.contact2}
+                  <input type="text" name="contactno2" placeholder="0785642350" style={inputStyle} value={formData.contactno2}
                     onChange={handleChange}/>
                     {errors.contactNo2 && <p style={{color: 'red'}}>{errors.contactNo2}</p>}
                 </div>
