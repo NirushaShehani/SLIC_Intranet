@@ -128,9 +128,9 @@ const Services = () => {
         <div style={rightStyle}>
                 <div style={listContainer}>
                     
-                    <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Standing Order Instruction Form ( Form No.1209)</span>
+                    <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                    <span className="hover-text">Standing Order Instruction Form ( Form No.1209)</span>
                     </div>
     
                 </div>
@@ -146,9 +146,9 @@ const Services = () => {
         <div style={rightStyle}>
                 <div style={listContainer}>
                     
-                    <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Letter of authority-form no 155R</span>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                    <span className="hover-text">Letter of authority-form no 155R</span>
                     </div>
     
                 </div>
