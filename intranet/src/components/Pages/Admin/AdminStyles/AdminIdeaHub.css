@@ -68,3 +68,31 @@ th {
 .download-button:hover {
   background-color: #45a049;
 }
+
+/* AdminIdeaHub.css */
+
+.filter-button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.filter-button.green {
+  background-color: green;
+}
+
+.filter-button.orange {
+  background-color: orange;
+}
+
+.filter-button.red {
+  background-color: red;
+}
+
+.filter-button:hover {
+  opacity: 0.8;
+}
