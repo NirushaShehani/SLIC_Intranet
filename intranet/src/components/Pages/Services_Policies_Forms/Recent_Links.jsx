@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import '../../../Styles/servicesTest.css';
 import { useNavigate } from 'react-router-dom';
+import BlifeImg from '../../../assets/Blife_img.png';
+import MiHCMImg from '../../../assets/MIHCM_logo.png';
+import Digital_SignatureImg from '../../../assets/Digitel_signature_img.png';
+
 
 const Recent_Links = () => {
     const openInNewWindow = (url) => {
@@ -11,15 +15,15 @@ const Recent_Links = () => {
     <div className="services-container">
       <div className="services-cards">
         <div className="service-card" onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
-          <img src="path_to_blifelogo.jpg" alt="b-Life" className="service-image" />
+        <img src={BlifeImg} alt="b-Life" className="service-image" />
           <h2 className="service-title">b-Life</h2>
         </div>
         <div className="service-card">
-          <img src="path_to_mihcmlogo.jpg" alt="MiHCM" className="https://app.mihcm.com/" />
+          <img src={MiHCMImg} alt="MiHCM" className="service-image" />
           <h2 className="service-title">MiHCM</h2>
         </div>
         <div className="service-card">
-          <img src="path_to_digitalsignaturelogo.jpg" alt="Digital Signature" className="service-image" />
+          <img src={Digital_SignatureImg} alt="Digital Signature" className="service-image" />
           <h2 className="service-title">Digital Signature</h2>
         </div>
       </div>

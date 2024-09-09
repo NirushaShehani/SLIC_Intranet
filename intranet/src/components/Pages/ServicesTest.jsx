@@ -83,6 +83,7 @@ const ServicesTest = () => {
   };
 
   return (
+    <div className="services-full-Page">
     <div className="services-container">
       <DrawerMenu />
       {/* Display section names in a horizontal layout */}
@@ -353,6 +354,7 @@ const ServicesTest = () => {
 
       {/* Display the content if a component is active */}
       <div className="service-content">{renderComponent()}</div>
+    </div>
     </div>
   );
 };

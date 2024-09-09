@@ -110,7 +110,7 @@ const KnowledgeBase = () => {
       
       <div style={styles.chipContainer}>
         {/*Services Chip*/}
-        <Link to="/services-page" style={{ cursor: 'pointer' , textDecoration: 'none'}}>
+        <Link to="/services-page" style={{ cursor: 'pointer' , textDecoration: 'none',}}>
         <CustomChip style={styles.label}
           label="Policies/Services/Forms"
           deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
