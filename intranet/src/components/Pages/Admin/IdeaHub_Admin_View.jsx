@@ -20,13 +20,13 @@ function IdeaHub() {
 
         // Assume response.data is an array of idea objects
         const ideasWithStatus = response.data.map(idea => ({
-          ID: idea.ID,
-          USEREPF: idea.USEREPF,
-          DEPTORBRANCH: idea.DEPTORBRANCH,
-          IDEADATE: idea.IDEADATE,
-          NAME: idea.NAME,
-          USERIDEA: idea.USERIDEA,
-          read: idea.READ_STATUS === 1 // Assuming READ_STATUS is provided and 1 means read
+          ID: idea.id,
+          USEREPF: idea.userEPF,
+          DEPTORBRANCH: idea.deptOrBranch,
+          IDEADATE: idea.ideadate,
+          NAME: idea.name,
+          USERIDEA: idea.userIdea,
+          read: idea.read_status === 1 // Assuming READ_STATUS is provided and 1 means read
         }));
         setIdeas(ideasWithStatus);
         setLoading(false);
