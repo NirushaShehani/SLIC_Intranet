@@ -116,8 +116,8 @@ function AdminSalesLead() {
             return (
               <tr key={lead.id}>
                 <td>{lead.clientName}</td>
-                <td>{lead.contact1}</td>
-                <td>{lead.contact2}</td>
+                <td>{lead.contactno1}</td>
+                <td>{lead.contactno2}</td>
                 <td>{lead.slicRequirement}</td>
                 <td>{lead.staffmembername}</td>
                 <td>{lead.staffcontactno}</td>

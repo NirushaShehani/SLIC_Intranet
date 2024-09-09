@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import * as XLSX from 'xlsx';
 import './AdminStyles/AdminIdeaHub.css';
+import { BASE_URL, ENDPOINTS } from "../../../Services/ApiConfig";
 
 function IdeaHub() {
   const [ideas, setIdeas] = useState([]);
@@ -12,7 +13,7 @@ function IdeaHub() {
     const fetchData = async () => {
       try {
         // Fetch data from the API endpoint using POST method
-        const response = await axios.post('http://203.115.11.236:10155/LifeIntranetAPI/api/v1/Working/GetIdeaHubData', {
+        const response = await axios.post(`${BASE_URL}/${ENDPOINTS.IdeaHubData}`, {
           p_ID: '',      // Optionally pass ID if needed, empty string for all
           p_ACTIVE: '',  // Optionally pass ACTIVE status if needed, empty string for all
           p_READ: ''     // Optionally pass READ status if needed, empty string for all
@@ -20,13 +21,13 @@ function IdeaHub() {
 
         // Assume response.data is an array of idea objects
         const ideasWithStatus = response.data.map(idea => ({
-          ID: idea.ID,
-          USEREPF: idea.USEREPF,
-          DEPTORBRANCH: idea.DEPTORBRANCH,
-          IDEADATE: idea.IDEADATE,
-          NAME: idea.NAME,
-          USERIDEA: idea.USERIDEA,
-          read: idea.READ_STATUS === 1 // Assuming READ_STATUS is provided and 1 means read
+          ID: idea.id,
+          USEREPF: idea.userEPF,
+          DEPTORBRANCH: idea.deptOrBranch,
+          IDEADATE: idea.ideadate,
+          NAME: idea.name,
+          USERIDEA: idea.userIdea,
+          read: idea.read_status === 1 // Assuming READ_STATUS is provided and 1 means read
         }));
         setIdeas(ideasWithStatus);
         setLoading(false);
@@ -44,7 +45,7 @@ function IdeaHub() {
     if (!isConfirmed) return;
 
     try {
-      await axios.put('http://203.115.11.236:10155/LifeIntranetAPI/api/v1/Working/IdeaRemoveorNot', {
+      await axios.put(`${BASE_URL}/${ENDPOINTS.IdeaRemoveorNot}`, {
         p_ID: id,
         p_ACTIVE: '0' // Assuming '0' means inactive or delete
       });
@@ -62,7 +63,7 @@ function IdeaHub() {
 
       const updatedReadStatus = !idea.read;
 
-      await axios.put('http://203.115.11.236:10155/LifeIntranetAPI/api/v1/Working/IdeaReadorNot', {
+      await axios.put(`${BASE_URL}/${ENDPOINTS. IdeaReadorNot}`, {
         p_ID: id,
         p_ACTIVE: updatedReadStatus ? '1' : '0'
       });
