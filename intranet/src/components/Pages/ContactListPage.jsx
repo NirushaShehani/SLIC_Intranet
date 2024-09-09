@@ -691,26 +691,92 @@ function BranchForm({ selectStyle, buttonStyle }) {
                   <tr style={{ borderBottom: '2px solid #ddd', backgroundColor: '#f2f2f2' }}>
                     <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Branch Name</td>
                     <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.brname}</td>
+
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Fax</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.brtel2}</td>
                   </tr>
                   <tr>
                     <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Address</td>
                     <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{`${detail.bradd1}, ${detail.bradd2}, ${detail.bradd3}`}</td>
+
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Intercom</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.brint}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Telephone</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.brtel1}</td>
+                    
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Branch Email</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.bremail || "N/A"}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Sales Manager</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.brsmg}</td>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Mobile (SM)</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.smmobil}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email Address (SM)</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.smemail}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Admin Officer</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.brmgr}</td>
                   </tr>
                   <tr>
                     <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Branch Manager</td>
                     <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.brmgr || "N/A"}</td>
+
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Mobile (BAO)</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.bao_mob_phone_nos}</td>
                   </tr>
                   <tr>
-                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Phone Numbers</td>
-                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{`${detail.brtel1}, ${detail.brtel2}`}</td>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email Address (AO)</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.braoem}</td>
                   </tr>
                   <tr>
-                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email</td>
-                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.bremail || "N/A"}</td>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Reg. Manager Life</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.bmmgrl}</td>
+
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Mobile (RML)</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.rmmlmo}</td>
                   </tr>
                   <tr>
-                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Intercom</td>
-                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.brint}</td>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email Address (RML)</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.rmemil}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Reg. Manager General</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.rmmgrg}</td>
+
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Mobile (RMG)</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.rmmgmo}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email Address (RMG)</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.rmemig}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Manager Life</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.bmmgrl}</td>
+
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Mobile (ML)</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.bmmlmo}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email Address (ML)</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.bmemil}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Manager General</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.bmmgrg}</td>
+
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Mobile (MG)</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.bmmgmo}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '12px 15px', fontWeight: 'bold', border: '1px solid #ddd', textAlign: 'left' }}>Email Address (MG)</td>
+                    <td style={{ padding: '12px 15px', border: '1px solid #ddd', textAlign: 'left' }}>{detail.bmemig}</td>
                   </tr>
                 </React.Fragment>
               ))}
