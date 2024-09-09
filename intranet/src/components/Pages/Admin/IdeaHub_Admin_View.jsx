@@ -15,7 +15,7 @@ function IdeaHub() {
         // Fetch data from the API endpoint using POST method
         const response = await axios.post(`${BASE_URL}/${ENDPOINTS.IdeaHubData}`, {
           p_ID: '',      // Optionally pass ID if needed, empty string for all
-          p_ACTIVE: '',  // Optionally pass ACTIVE status if needed, empty string for all
+          p_ACTIVE: '1',  // Fetch only active ideas
           p_READ: ''     // Optionally pass READ status if needed, empty string for all
         });
 
@@ -63,7 +63,7 @@ function IdeaHub() {
 
       const updatedReadStatus = !idea.read;
 
-      await axios.put(`${BASE_URL}/${ENDPOINTS. IdeaReadorNot}`, {
+      await axios.put(`${BASE_URL}/${ENDPOINTS.IdeaReadorNot}`, {
         p_ID: id,
         p_ACTIVE: updatedReadStatus ? '1' : '0'
       });
