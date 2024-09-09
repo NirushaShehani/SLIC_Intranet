@@ -67,10 +67,7 @@ const Life = () => {
             <span className="hrDot"></span><span className="hrLine"></span>
           </div>
           <div style={listContainer}>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text" >B-Life</span>
-            </div>
+            
             <div className="hover-container" style={listItemStyle} onClick={() => navigate(' http://insurance-app/secworks/signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">B-Insurance</span>

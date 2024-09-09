@@ -71,11 +71,11 @@ const Life_Circulars = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Finance</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/b-commission')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">ICT</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Human resource Development</span>
             </div>
@@ -83,11 +83,7 @@ const Life_Circulars = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Personal Lines</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Internal Audit</span>
-            </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/hris')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Internal Audit</span>
             </div>
@@ -95,15 +91,15 @@ const Life_Circulars = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Complience</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/hris')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
               <span className="hover-text">Acturial and risk management</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/hris')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"  />
               <span className="hover-text">Stratergy and planning</span>
             </div>
-            <div  className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+            <div  className="hover-container"style={listItemStyle} onClick={() => navigate('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
               <span className="hover-text">Corporate business and reinsurance</span>
             </div>
