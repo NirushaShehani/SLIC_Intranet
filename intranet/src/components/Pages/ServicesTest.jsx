@@ -128,16 +128,7 @@ const ServicesTest = () => {
               Circulars
             </h1>
           )}
-          {activeSection !== "common" && (
-            <h1
-              className={`services-title ${
-                activeSection === "common" ? "selected" : ""
-              }`}
-              onClick={() => setActiveSection("common")}
-            >
-              Common
-            </h1>
-          )}
+         
         </div>
       )}
       {/* Display section names in a horizontal layout */}
