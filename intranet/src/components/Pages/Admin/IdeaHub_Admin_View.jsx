@@ -9,6 +9,7 @@ function IdeaHub() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [filter, setFilter] = useState('unread'); // 'unread', 'read', 'removed'
+  const [searchQuery, setSearchQuery] = useState(''); // State for search input
   const [currentPage, setCurrentPage] = useState(1); // Pagination state
   const pageSize = 20; // Number of rows per page
 
@@ -95,9 +96,18 @@ function IdeaHub() {
     setCurrentPage(prevPage => prevPage + direction);
   };
 
-  const currentIdeas = ideas.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    setCurrentPage(1); // Reset to first page when search query changes
+  };
 
-  const totalPages = Math.ceil(ideas.length / pageSize);
+  const filteredIdeas = ideas.filter(idea =>
+    idea.USEREPF.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const currentIdeas = filteredIdeas.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+
+  const totalPages = Math.ceil(filteredIdeas.length / pageSize);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -125,6 +135,13 @@ function IdeaHub() {
           Removed
         </button>
       </div>
+      <input
+        type="text"
+        className="search-bar"
+        placeholder="Search by User EPF..."
+        value={searchQuery}
+        onChange={handleSearchChange}
+      />
       <table className="idea-hub-table">
         <thead>
           <tr>
@@ -180,7 +197,7 @@ function IdeaHub() {
         </button>
         <span>Page {currentPage} of {totalPages}</span>
         <button
-          className="pagination-button"
+          classname="pagination-button"
           onClick={() => handlePageChange(1)}
           disabled={currentPage === totalPages}
         >
