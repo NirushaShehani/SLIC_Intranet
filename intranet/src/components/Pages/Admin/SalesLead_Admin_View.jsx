@@ -187,7 +187,7 @@ function AdminSalesLead() {
                     </tbody>
                 </table>
             </center>
-            <div className="pagination-container">
+            <div className="pagination-controls">
                 <button 
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
