@@ -121,6 +121,10 @@
     background-color: #e0e0e0; /* Slightly darker background on hover */
 }
 
-
+.pagination-controls {
+  display: flex;
+  justify-content: center; /* Centers the pagination controls */
+  margin: 20px 0;
+}
   
   
