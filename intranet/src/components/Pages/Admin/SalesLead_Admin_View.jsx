@@ -8,13 +8,14 @@ function AdminSalesLead() {
     const [salesLeads, setSalesLeads] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [filter, setFilter] = useState('active'); 
   
     useEffect(() => {
       const fetchData = async () => {
         try {
           const requestBody = {
             p_ID: "",
-            p_ACTIVE: "1"
+            p_ACTIVE: filter === 'removed' ? "0" : "1"
           };
     
           const response = await axios.post(
@@ -43,7 +44,7 @@ function AdminSalesLead() {
       };
     
       fetchData(); 
-    }, []); 
+    }, [filter]); 
     
   
     const handleDelete = async (id) => {
@@ -52,7 +53,7 @@ function AdminSalesLead() {
         try{
           const requestBody = {
             p_ID: id,         
-            p_ACTIVE: ""     
+            p_ACTIVE: "0"     
           };
           const response = await axios.put(
             `${BASE_URL}/${ENDPOINTS.SalesLeadActive}`,
@@ -86,8 +87,12 @@ function AdminSalesLead() {
       const workbook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(workbook, worksheet, 'Sales Leads');
       
-      XLSX.writeFile(workbook, 'SalesLeadsData.xlsx');
+      XLSX.writeFile(workbook, `${filter === 'removed' ? 'RemovedSalesLeads' : 'ActiveSalesLeads'}.xlsx`);
   };
+
+    const handleFilterChange = (newFilter) => {
+      setFilter(newFilter);
+    };
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
@@ -95,6 +100,12 @@ function AdminSalesLead() {
     return (
       <div>
         <h1>Sales Leads</h1>
+        <div className="button-group">
+          <button className={`filter-button ${filter === 'removed' ? 'active' : ''}`} 
+            onClick={() => handleFilterChange('removed')}>
+            Removed Leads
+          </button>
+        </div>
         <center>
         <table>
           <thead>
@@ -124,9 +135,11 @@ function AdminSalesLead() {
                 <td>{lead.slicExtension}</td>
                 <td>{lead.slicDepartment}</td>
                 <td>
-                  <button onClick={() => handleDelete(lead.id)} className="delete-button">
-                    DELETE
-                  </button>
+                  {filter === 'active' && (
+                    <button onClick={() => handleDelete(lead.id)} className="delete-button">
+                      DELETE
+                    </button>
+                  )}
                 </td>
               </tr>
             );
