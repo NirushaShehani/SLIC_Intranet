@@ -57,11 +57,7 @@ const Life_Circulars = () => {
     <div style={containerStyle}>
       <div style={rightStyle}>
         <div className="home-container">
-        <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">Circulars</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-          </div>
+        
           <div style={listContainer}>
           <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://slic.intranet.com/circular_new/Life/Life.html')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
@@ -75,11 +71,11 @@ const Life_Circulars = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Finance</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/b-commission')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">ICT</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Human resource Development</span>
             </div>
@@ -87,11 +83,7 @@ const Life_Circulars = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Personal Lines</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Internal Audit</span>
-            </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/hris')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Internal Audit</span>
             </div>
@@ -99,15 +91,15 @@ const Life_Circulars = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Complience</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/hris')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
               <span className="hover-text">Acturial and risk management</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/hris')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"  />
               <span className="hover-text">Stratergy and planning</span>
             </div>
-            <div  className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+            <div  className="hover-container"style={listItemStyle} onClick={() => navigate('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
               <span className="hover-text">Corporate business and reinsurance</span>
             </div>

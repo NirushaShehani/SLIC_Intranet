@@ -2,32 +2,36 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import * as XLSX from 'xlsx';
 import './AdminStyles/AdminIdeaHub.css';
+import { BASE_URL, ENDPOINTS } from "../../../Services/ApiConfig";
 
 function IdeaHub() {
   const [ideas, setIdeas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [filter, setFilter] = useState('unread'); // 'unread', 'read', 'removed'
+  const [searchQuery, setSearchQuery] = useState(''); // State for search input
+  const [currentPage, setCurrentPage] = useState(1); // Pagination state
+  const pageSize = 20; // Number of rows per page
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch data from the new API endpoint
-        const response = await axios.post('http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Working/GetIdeaHubData', {
-          p_ID: '',      // Optionally pass ID if needed, empty string for all
-          p_ACTIVE: '',  // Optionally pass ACTIVE status if needed, empty string for all
-          p_READ: ''     // Optionally pass READ status if needed, empty string for all
+        const response = await axios.post(`${BASE_URL}/${ENDPOINTS.IdeaHubData}`, {
+          p_ID: '',
+          p_ACTIVE: filter === 'removed' ? '0' : '1', // Active ideas or removed ideas
+          p_READ: filter === 'read' ? '1' : '0' // Read or unread ideas
         });
 
-        // Assume response.data is an array of idea objects
         const ideasWithStatus = response.data.map(idea => ({
-          ID: idea.ID,
-          USEREPF: idea.USEREPF,
-          DEPTORBRANCH: idea.DEPTORBRANCH,
-          IDEADATE: idea.IDEADATE,
-          NAME: idea.NAME,
-          USERIDEA: idea.USERIDEA,
-          read: idea.READ_STATUS === 1 // Assuming READ_STATUS is provided and 1 means read
+          ID: idea.id,
+          USEREPF: idea.userEPF,
+          DEPTORBRANCH: idea.deptOrBranch,
+          IDEADATE: idea.ideadate,
+          NAME: idea.name,
+          USERIDEA: idea.userIdea,
+          read: idea.read_status === 1
         }));
+
         setIdeas(ideasWithStatus);
         setLoading(false);
       } catch (err) {
@@ -37,18 +41,19 @@ function IdeaHub() {
     };
 
     fetchData();
-  }, []);
+  }, [filter]);
 
   const handleDelete = async (id) => {
     const isConfirmed = window.confirm('Are you sure you want to delete this idea?');
     if (!isConfirmed) return;
 
     try {
-      await axios.post('http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Working/IdeaRemoveorNot', {
+      await axios.put(`${BASE_URL}/${ENDPOINTS.IdeaRemoveorNot}`, {
         p_ID: id,
-        p_ACTIVE: 0 // Assuming 0 means inactive or delete
+        p_ACTIVE: '0'
       });
       setIdeas(prevIdeas => prevIdeas.filter(idea => idea.ID !== id));
+      console.log('Idea deleted successfully.');
     } catch (err) {
       setError(err.message);
     }
@@ -61,32 +66,48 @@ function IdeaHub() {
 
       const updatedReadStatus = !idea.read;
 
-      await axios.post('http://192.168.101.21:10155/LifeIntranetAPI/api/v1/Working/IdeaReadorNot', {
+      await axios.put(`${BASE_URL}/${ENDPOINTS.IdeaReadorNot}`, {
         p_ID: id,
-        p_ACTIVE: updatedReadStatus ? 1 : 0
+        p_ACTIVE: updatedReadStatus ? '1' : '0'
       });
 
       setIdeas(prevIdeas =>
-        prevIdeas.map(idea =>
-          idea.ID === id ? { ...idea, read: updatedReadStatus } : idea
-        )
+        prevIdeas.filter(idea => idea.ID !== id)
       );
+      console.log('Read status updated successfully.');
     } catch (err) {
       setError('Failed to update read status. Please try again later.');
     }
   };
 
   const handleDownload = () => {
-    // Convert ideas data to a format suitable for Excel
     const worksheet = XLSX.utils.json_to_sheet(ideas);
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, 'Ideas');
-
-    // Generate the Excel file
     XLSX.writeFile(workbook, 'IdeaHubData.xlsx');
   };
 
-  const sortedIdeas = [...ideas].sort((a, b) => a.read - b.read);
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+    setCurrentPage(1); // Reset to first page when filter changes
+  };
+
+  const handlePageChange = (direction) => {
+    setCurrentPage(prevPage => prevPage + direction);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    setCurrentPage(1); // Reset to first page when search query changes
+  };
+
+  const filteredIdeas = ideas.filter(idea =>
+    idea.USEREPF.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const currentIdeas = filteredIdeas.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+
+  const totalPages = Math.ceil(filteredIdeas.length / pageSize);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -94,6 +115,33 @@ function IdeaHub() {
   return (
     <div>
       <h1>Idea Hub</h1>
+      <div className="button-group">
+        <button
+          className="filter-button green"
+          onClick={() => handleFilterChange('unread')}
+        >
+          Unread
+        </button>
+        <button
+          className="filter-button orange"
+          onClick={() => handleFilterChange('read')}
+        >
+          Read
+        </button>
+        <button
+          className="filter-button red"
+          onClick={() => handleFilterChange('removed')}
+        >
+          Removed
+        </button>
+      </div>
+      <input
+        type="text"
+        className="search-bar"
+        placeholder="Search by User EPF..."
+        value={searchQuery}
+        onChange={handleSearchChange}
+      />
       <table className="idea-hub-table">
         <thead>
           <tr>
@@ -107,16 +155,13 @@ function IdeaHub() {
           </tr>
         </thead>
         <tbody>
-          {sortedIdeas.length === 0 ? (
+          {currentIdeas.length === 0 ? (
             <tr>
               <td colSpan="7">No ideas available</td>
             </tr>
           ) : (
-            sortedIdeas.map((idea) => (
-              <tr
-                key={idea.ID}
-                className={idea.read ? '' : 'bold-text'}
-              >
+            currentIdeas.map((idea) => (
+              <tr key={idea.ID} className={idea.read ? '' : 'bold-text'}>
                 <td className="small-column">{idea.USEREPF}</td>
                 <td className="small-column">{idea.DEPTORBRANCH}</td>
                 <td className="small-column">{idea.IDEADATE}</td>
@@ -127,25 +172,45 @@ function IdeaHub() {
                     type="checkbox"
                     checked={idea.read}
                     onChange={() => handleCheckboxChange(idea.ID)}
+                    disabled={filter === 'removed'} // Disable checkbox for removed ideas
                   />
                 </td>
                 <td className="small-column">
-                  <button className="delete-button" onClick={() => handleDelete(idea.ID)}>
-                    DELETE
-                  </button>
+                  {filter !== 'removed' && (
+                    <button className="delete-button" onClick={() => handleDelete(idea.ID)}>
+                      DELETE
+                    </button>
+                  )}
                 </td>
               </tr>
             ))
           )}
         </tbody>
       </table>
+      <div className="pagination-controls">
+        <button
+          className="pagination-button"
+          onClick={() => handlePageChange(-1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        <span>Page {currentPage} of {totalPages}</span>
+        <button
+          classname="pagination-button"
+          onClick={() => handlePageChange(1)}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </button>
+      </div>
       <div className="button-container">
         <button className="download-button" onClick={handleDownload}>
           Download
         </button>
       </div>
     </div>
-  );  
+  );
 }
 
 export default IdeaHub;

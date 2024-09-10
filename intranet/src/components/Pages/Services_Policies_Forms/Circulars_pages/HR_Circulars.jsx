@@ -57,55 +57,51 @@ const HR_Circulars = () => {
     <div style={containerStyle}>
       <div style={rightStyle}>
         <div className="home-container">
-        <div className="hrContainer">
-            <span className="hrLine"></span><span className="hrDot"></span>
-            <span className="hrText">HR Circulars</span>
-            <span className="hrDot"></span><span className="hrLine"></span>
-          </div>
+        
           <div style={listContainer}>
-            <div style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>18 Month Loan/Distress Loan</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+              <span className="hover-text">18 Month Loan/Distress Loan</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-mis')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Approved No Pay Leave to Travel Overseas</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-mis')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+              <span className="hover-text">Approved No Pay Leave to Travel Overseas</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/cashbook')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Circuit Bungalows & Busses Price List	</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/cashbook')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+              <span className="hover-text">Circuit Bungalows & Busses Price List	</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-commission')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Guidlines on using Staff Canteen</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-commission')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+              <span className="hover-text">Guidlines on using Staff Canteen</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Re-imbursement of Examination Expenses (English)	</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+              <span className="hover-text">Re-imbursement of Examination Expenses (English)	</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Re-imbursement of Examination Expenses (Sinhala)</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+              <span className="hover-text">Re-imbursement of Examination Expenses (Sinhala)</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Revised Medical Scheme (CHAWS) - English</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+              <span className="hover-text">Revised Medical Scheme (CHAWS) - English</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Revised Medical Scheme (CHAWS) - Sinhala</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+              <span className="hover-text">Revised Medical Scheme (CHAWS) - Sinhala</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Service Extension Circular (English)</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+              <span className="hover-text">Service Extension Circular (English)</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Service Extension Circular (Sinhala)	</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+              <span className="hover-text">Service Extension Circular (Sinhala)	</span>
             </div>
-            <div style={listItemStyle} onClick={() => navigate('/hris')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Study Leave Procedure</span>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+              <span className="hover-text">Study Leave Procedure</span>
             </div>
           </div>
         </div>

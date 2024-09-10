@@ -100,7 +100,7 @@ const GWPChart = ({
               maintainAspectRatio: false, // Ensure it resizes properly
               plugins: {
                 legend: { display: false }, // Hide the legend
-                tooltip: { enabled: true}, // Disable tooltips to avoid interference
+                tooltip: { enabled: true }, // Disable tooltips to avoid interference
               },
             }}
           />
@@ -115,7 +115,7 @@ const GWPChart = ({
               transform: "translate(-50%, -50%)", // Ensure text stays centered
               color: "#4db6ac", // Color matching achievement color
               fontWeight: "bold",
-              marginBottom: "0px"
+              marginBottom: "0px",
             }}
           >
             {ach_presentage}%
@@ -395,9 +395,24 @@ const AchieversCard = ({ achievers }) => (
                 Branch: {achiever.branch_name}
               </Typography>
 
+              <Typography variant="body2" color="textSecondary">
+                FYP: {new Intl.NumberFormat("en-US").format(achiever.fyp)} /=
+              </Typography>
+
               <Typography
                 variant="body2"
                 color="textSecondary"
+                title={
+                  achiever.achievment === "Achieved"
+                    ? `Above Target : ${new Intl.NumberFormat("en-US").format(
+                        achiever.over
+                      )}`
+                    : achiever.achievment === "Not_achieved"
+                    ? `Due : ${new Intl.NumberFormat("en-US").format(
+                        achiever.due
+                      )}`
+                    : "Unknown status"
+                }
                 sx={{
                   backgroundColor:
                     achiever.achievment === "Achieved"
@@ -617,6 +632,9 @@ const GWPChartsContainer = () => {
                 national_rank: item.national_rank,
                 image: item.image || defaultImage, // Use default image if no image is provided
                 achievment: item.achievment,
+                fyp: item.fyp,
+                over: item.fyp - item.target,
+                due: item.balanceDue,
               })),
             },
             prev[1],

@@ -68,3 +68,66 @@ th {
 .download-button:hover {
   background-color: #45a049;
 }
+
+/* AdminIdeaHub.css */
+
+.filter-button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.filter-button.green {
+  background-color: green;
+}
+
+.filter-button.orange {
+  background-color: orange;
+}
+
+.filter-button.red {
+  background-color: red;
+}
+
+.filter-button:hover {
+  opacity: 0.8;
+}
+
+.search-bar {
+  display: block;
+  margin: 20px auto; /* Centers the search bar horizontally */
+  padding: 8px;
+  width: 50%; /* Adjust the width as needed */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center; /* Centers the button group */
+  margin-bottom: 20px;
+}
+
+.idea-hub-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center; /* Centers the pagination controls */
+  margin: 20px 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Centers the download button */
+  margin-top: 20px;
+}
+

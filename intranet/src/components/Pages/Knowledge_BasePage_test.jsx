@@ -39,6 +39,7 @@ const Knowledge_BasePage_test = () => {
     }
   };
   return (
+    <div className="services-full-Page">
     <div className="services-container">
       <DrawerMenu/>
       <h1
@@ -89,7 +90,7 @@ const Knowledge_BasePage_test = () => {
       </div>
       <div className="service-content">{renderComponent()}</div>
     </div>
-    
+    </div>
     
   );
 };

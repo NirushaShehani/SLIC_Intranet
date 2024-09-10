@@ -83,6 +83,7 @@ const ServicesTest = () => {
   };
 
   return (
+    <div className="services-full-Page">
     <div className="services-container">
       <DrawerMenu />
       {/* Display section names in a horizontal layout */}
@@ -128,16 +129,7 @@ const ServicesTest = () => {
               Circulars
             </h1>
           )}
-          {activeSection !== "common" && (
-            <h1
-              className={`services-title ${
-                activeSection === "common" ? "selected" : ""
-              }`}
-              onClick={() => setActiveSection("common")}
-            >
-              Common
-            </h1>
-          )}
+         
         </div>
       )}
       {/* Display section names in a horizontal layout */}
@@ -362,6 +354,7 @@ const ServicesTest = () => {
 
       {/* Display the content if a component is active */}
       <div className="service-content">{renderComponent()}</div>
+    </div>
     </div>
   );
 };

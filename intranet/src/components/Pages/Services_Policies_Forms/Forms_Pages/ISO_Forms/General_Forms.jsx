@@ -128,13 +128,13 @@ const Services = () => {
         <div style={rightStyle}>
                 <div style={listContainer}>
                     
-                    <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Customer Feed Back Form </span>
+                    <div className="hover-container"style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                    <span className="hover-text">Customer Feed Back Form </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Customer Complaint Register   </span>
+                    <div className="hover-container"style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                    <span className="hover-text">Customer Complaint Register   </span>
                     </div>
                     
                     
@@ -150,21 +150,21 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Customer Feed Back Request - Life  </span>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                    <span className="hover-text">Customer Feed Back Request - Life  </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Customer Complaint Register - Life   </span>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                    <span className="hover-text">Customer Complaint Register - Life   </span>
                     </div>
-                    <div style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Concession Report- Life </span>
+                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                    <span className="hover-text">Concession Report- Life </span>
                     </div>
-                    <div style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                    <span>Complaints and Suggestions - Life  </span>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                    <span className="hover-text">Complaints and Suggestions - Life  </span>
                     </div>
                     </div>
             </div>
