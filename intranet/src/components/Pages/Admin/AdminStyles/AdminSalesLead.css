@@ -83,5 +83,18 @@
     background-color: #e2442f; 
     color: #fff; 
   }
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.search-bar {
+    padding: 0.5rem;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
   
   
