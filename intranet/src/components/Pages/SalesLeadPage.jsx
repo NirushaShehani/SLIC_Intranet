@@ -104,7 +104,6 @@ const SalesLeadPage = () => {
           console.log('Data inserted successfully:', response.data);
           setFormData(initialFormData);
           setErrors({});
-          
           alert('Sales lead submitted successfully!');
         } else {
           console.error('Failed to insert data:', response.data);
