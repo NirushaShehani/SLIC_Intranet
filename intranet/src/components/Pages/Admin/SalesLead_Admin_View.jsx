@@ -10,6 +10,8 @@ function AdminSalesLead() {
     const [error, setError] = useState(null);
     const [filter, setFilter] = useState('active');
     const [search, setSearch] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
+    const [rowsPerPage] = useState(20); // Number of rows per page
 
     useEffect(() => {
         const fetchData = async () => {
@@ -92,16 +94,30 @@ function AdminSalesLead() {
 
     const handleFilterChange = (newFilter) => {
         setFilter(newFilter);
+        setCurrentPage(1); // Reset to the first page when filter changes
     };
 
     const handleSearchChange = (e) => {
         setSearch(e.target.value);
+        setCurrentPage(1); // Reset to the first page when search changes
     };
 
     // Filter sales leads based on the search input
     const filteredSalesLeads = salesLeads.filter(lead => 
         (lead.contactno1 || '').toLowerCase().includes(search.toLowerCase())
     );
+
+    // Pagination logic
+    const indexOfLastLead = currentPage * rowsPerPage;
+    const indexOfFirstLead = indexOfLastLead - rowsPerPage;
+    const currentLeads = filteredSalesLeads.slice(indexOfFirstLead, indexOfLastLead);
+    const totalPages = Math.ceil(filteredSalesLeads.length / rowsPerPage);
+
+    const handlePageChange = (pageNumber) => {
+        if (pageNumber > 0 && pageNumber <= totalPages) {
+            setCurrentPage(pageNumber);
+        }
+    };
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
@@ -110,13 +126,20 @@ function AdminSalesLead() {
         <div>
             <h1>Sales Leads</h1>
             <div className="button-group">
-                <button 
-                    className={`filter-button ${filter === 'removed' ? 'active' : ''}`} 
-                    onClick={() => handleFilterChange('removed')}
-                >
-                    Removed Leads
-                </button>
-            </div>
+    <button 
+        className={`filter-button ${filter === 'removed' ? 'active' : ''}`} 
+        onClick={() => handleFilterChange('removed')}
+    >
+        Removed Leads
+    </button>
+    <button 
+        className={`filter-button ${filter === 'active' ? 'active' : ''}`} 
+        onClick={() => handleFilterChange('active')}
+    >
+        Active Leads
+    </button>
+</div>
+
             <div className="search-container">
                 <input
                     type="text"
@@ -142,7 +165,7 @@ function AdminSalesLead() {
                         </tr>
                     </thead>
                     <tbody>
-                        {filteredSalesLeads.map((lead) => (
+                        {currentLeads.map((lead) => (
                             <tr key={lead.id}>
                                 <td>{lead.clientName}</td>
                                 <td>{lead.contactno1}</td>
@@ -164,6 +187,21 @@ function AdminSalesLead() {
                     </tbody>
                 </table>
             </center>
+            <div className="pagination-container">
+                <button 
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1}
+                >
+                    Previous
+                </button>
+                <span> Page {currentPage} of {totalPages} </span>
+                <button 
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                >
+                    Next
+                </button>
+            </div>
             <div className="button-container">
                 <button className="download-button" onClick={handleDownload}>
                     Download

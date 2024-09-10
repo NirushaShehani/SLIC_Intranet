@@ -95,6 +95,32 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+/* Add these styles to AdminSalesLead.css */
+
+.button-group {
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    background-color: #f31212; /* Default background color */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-button.active {
+    background-color: #28a745; /* Green color for active button */
+    color: white;
+    border-color: #28a745;
+}
+
+.filter-button:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
+}
+
 
   
   
