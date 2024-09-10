@@ -78,8 +78,8 @@ const SalesLeadPage = () => {
     if (validateForm()) {
       const requestBody = {
         clientName: formData.clientName,
-        contactno1: formData.contactno1,  // Make sure it's contactno1, not contact1
-        contactno2: formData.contactno2,  // Same here, contactno2
+        contactno1: formData.contactno1,  
+        contactno2: formData.contactno2,  
         slicRequirement: formData.slicRequirement,
         staffmembername: formData.slicContactName,
         staffcontactno: formData.slicMobile,
@@ -87,7 +87,6 @@ const SalesLeadPage = () => {
         slicDepartment: formData.slicDepartment,
       };
   
-      // Log the request body before sending it
       console.log("Request Body:", requestBody);
   
       try {
@@ -105,6 +104,8 @@ const SalesLeadPage = () => {
           console.log('Data inserted successfully:', response.data);
           setFormData(initialFormData);
           setErrors({});
+          
+          alert('Sales lead submitted successfully!');
         } else {
           console.error('Failed to insert data:', response.data);
         }
@@ -245,7 +246,7 @@ const SalesLeadPage = () => {
   };
 
   const buttonStyle = {
-    backgroundColor: '#2F5BDA',  // Blue color for the button
+    backgroundColor: '#2F5BDA',  
     color: '#FFFFFF',
     padding: '10px 20px',
     border: 'none',
