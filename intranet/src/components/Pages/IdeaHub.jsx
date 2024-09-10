@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DrawerMenu from '../Sub_Components/DrawerMenu';
 import axios from 'axios';
@@ -16,31 +16,7 @@ const IdeaHub = () => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  const [typedText, setTypedText] = useState(""); // State to hold typed text
-  const fullText = `We believe your ideas are invaluable for improving our services and enhancing our company's value. 
-                Your suggestions drive positive change, fostering a culture of innovation and making this a great place to work. 
-                At our Idea Hub, we welcome your creative insights to help us grow and better serve our customers. 
-                Thank you for your dedication and inspiration; we look forward to your valuable input.`; // Full text to be typed
 
-  // Function to auto-type text
-  useEffect(() => {
-    let index = 0;
-    const intervalId = setInterval(() => {
-      setTypedText((prev) => prev + fullText[index]);
-      index++;
-      if (index === fullText.length) {
-        clearInterval(intervalId);
-      }
-    }, 50); // Speed of typing (lower value = faster typing)
-
-    return () => clearInterval(intervalId); // Clear interval when component unmounts
-  }, []);
-
-
-
-  const handleNavigateToLogin = () => {
-    navigate('/login?redirect=/Idea_Hub_Admin_View');
-  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -163,6 +139,7 @@ const IdeaHub = () => {
   };
 
   const contactList = {
+    fontFamily: '"Gloock", serif',
     fontWeight: 500,
     fontSize: '48px',
     fontStyle: 'normal',
@@ -172,7 +149,7 @@ const IdeaHub = () => {
   };
 
   const subtitle = {
-    fontWeight: "700",
+    fontFamily: '"Onest", sans-serif',
     fontSize: '17px',
     fontStyle: 'normal',
     color: '#161616',
@@ -181,6 +158,7 @@ const IdeaHub = () => {
   };
 
   const paragraph = {
+    fontFamily: '"Onest", sans-serif',
     fontSize: '15px',
     fontStyle: 'normal',
     color: '#585858',
@@ -261,8 +239,14 @@ const IdeaHub = () => {
           <div style={down}>
             <div style={subtitle}>Welcome to the Idea Hub !!!</div>
             <div style={paragraph}>
-            <p>{typedText}</p>
+              <p>
+                We believe your ideas are invaluable for improving our services and enhancing our company's value. 
+                Your suggestions drive positive change, fostering a culture of innovation and making this a great place to work. 
+                At our Idea Hub, we welcome your creative insights to help us grow and better serve our customers. 
+                Thank you for your dedication and inspiration; we look forward to your valuable input.
+              </p>
             </div>
+           
           </div>
         </div>
       </div>
@@ -306,9 +290,6 @@ const IdeaHub = () => {
               <br />
               <div style={buttonContainerStyle}>
                 <button type="submit" style={buttonStyle}>Submit</button>
-                <button onClick={handleNavigateToLogin} style={adminButtonStyle}>
-                  Log into Admin Panel
-                </button>
               </div>
             </form>
           </div>
