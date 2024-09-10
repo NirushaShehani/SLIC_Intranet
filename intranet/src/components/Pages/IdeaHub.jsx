@@ -5,10 +5,6 @@ import axios from 'axios';
 import logo from '../../assets/IntranetLogo.png';
 import { BASE_URL, ENDPOINTS } from '../../Services/ApiConfig';
 
-// Replace with your actual API base URL and endpoint
-//const BASE_URL = "http://203.115.11.236:10155/LifeIntranetAPI/api/v1";
-//const SET_IDEAS_ENDPOINT = "/Working/SetIdeas";
-
 const IdeaHub = () => {
   const [formData, setFormData] = useState({
     userEPF: '',
@@ -58,7 +54,8 @@ const IdeaHub = () => {
       try {
         const response = await axios.post(`${BASE_URL}/${ENDPOINTS.SetIdeas}`, formData);
         console.log('Response:', response.data);
-        console.log('Form submitted successfully!'); // Success message in the console
+        console.log('Form submitted successfully!');
+        alert('Submitted Successfully'); // Show the pop-up message
       } catch (error) {
         console.error('Error submitting form:', error);
       }
@@ -90,6 +87,7 @@ const IdeaHub = () => {
     padding: '20px',
     boxSizing: 'border-box',
     display: 'flex',
+    flexDirection: 'column', // Ensure vertical alignment
     justifyContent: 'center',
     alignItems: 'center',
   };
@@ -204,6 +202,12 @@ const IdeaHub = () => {
     width: '171px',
   };
 
+  const adminButtonStyle = {
+    ...buttonStyle,
+    marginLeft: '10px', // Add spacing between the buttons
+    width: 'auto', // Adjust width if needed
+  };
+
   const formRowStyle = {
     display: 'flex',
     justifyContent: 'space-between',
@@ -217,6 +221,13 @@ const IdeaHub = () => {
     flex: 1,
     marginLeft: '10px',
     marginRight: '10px',
+  };
+
+  const buttonContainerStyle = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginTop: '20px',
+    width: '100%',
   };
 
   return (
@@ -237,6 +248,7 @@ const IdeaHub = () => {
                 Thank you for your dedication and inspiration; we look forward to your valuable input.
               </p>
             </div>
+            <button onClick={handleNavigateToLogin} style={adminButtonStyle}>Admin Login</button>
           </div>
         </div>
       </div>
@@ -266,33 +278,25 @@ const IdeaHub = () => {
                   {errors.deptOrBranch && <p style={{ color: 'red' }}>{errors.deptOrBranch}</p>}
                 </div>
               </div>
-              <div style={formRowStyle}>
-                <div style={formColumnStyle}>
-                  <label>Name of the User :</label>
-                  <input type="text" name="name" placeholder="eg: John Doe" style={inputStyle} value={formData.name} onChange={handleChange} />
-                  {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
-                </div>
-              </div>
               <div style={formColumnStyle}>
-                <label>Your Idea :</label>
-                <textarea
-                  name="userIdea"
-                  value={formData.userIdea}
-                  onChange={handleChange}
-                  style={{ ...inputStyle, resize: 'vertical', height: '100px' }}
-                  placeholder="Your idea to change the World..!"
-                />
+                <label>Name of the User :</label>
+                <input type="text" name="name" placeholder="eg: John Smith" style={inputStyle} value={formData.name} onChange={handleChange} />
+                {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
+              </div>
+              <br />
+              <div style={formColumnStyle}>
+                <label>Share Your Idea :</label>
+                <input type="text" name="userIdea" placeholder="Your Idea" style={inputStyle} value={formData.userIdea} onChange={handleChange} />
                 {errors.userIdea && <p style={{ color: 'red' }}>{errors.userIdea}</p>}
               </div>
-              <div style={{ textAlign: 'center', marginTop: '20px' }}>
+              <br />
+              <div style={buttonContainerStyle}>
                 <button type="submit" style={buttonStyle}>Submit</button>
+                <button onClick={handleNavigateToLogin} style={adminButtonStyle}>
+                  Log into Admin Panel
+                </button>
               </div>
             </form>
-          </div>
-          <div style={{ marginTop: '20px', textAlign: 'center' }}>
-            <p onClick={handleNavigateToLogin} style={{ cursor: 'pointer', color: '#2F5BDA' }}>
-              Log into Admin Panel
-            </p>
           </div>
         </div>
       </div>
