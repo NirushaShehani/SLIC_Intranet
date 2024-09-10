@@ -16,9 +16,7 @@ const IdeaHub = () => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  const handleNavigateToLogin = () => {
-    navigate('/login?redirect=/Idea_Hub_Admin_View');
-  };
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -248,7 +246,7 @@ const IdeaHub = () => {
                 Thank you for your dedication and inspiration; we look forward to your valuable input.
               </p>
             </div>
-            <button onClick={handleNavigateToLogin} style={adminButtonStyle}>Admin Login</button>
+           
           </div>
         </div>
       </div>
@@ -292,9 +290,6 @@ const IdeaHub = () => {
               <br />
               <div style={buttonContainerStyle}>
                 <button type="submit" style={buttonStyle}>Submit</button>
-                <button onClick={handleNavigateToLogin} style={adminButtonStyle}>
-                  Log into Admin Panel
-                </button>
               </div>
             </form>
           </div>

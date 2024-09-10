@@ -8,14 +8,9 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
-import MenuIcon from "@mui/icons-material/Menu";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
-import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import { Link } from "react-router-dom";
 import 'intranet/src/font.css'; 
 
@@ -45,7 +40,7 @@ const DrawerMenu = () => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      {/** User Details */}
+      {/* User Details */}
       <List>
         <ListItem>
           <img
@@ -60,28 +55,28 @@ const DrawerMenu = () => {
           />
         </ListItem>
       </List>
-      {/** User Details */}
       <Divider />
-      {/** Dashboard */}
+
+      {/* Idea Hub Admin Login */}
       <List>
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton style={styles.blueButton}>
             <ListItemIcon style={styles.btnsizeup}>
-              <DashboardOutlinedIcon />
+              <DashboardOutlinedIcon style={styles.iconColor} />
             </ListItemIcon>
             <ListItemText
               primary={
-                <Link to="/" style={{ cursor: "pointer" }}>
+                <Link to="/login?redirect=/Idea_Hub_Admin_View" style={{ textDecoration: 'none' }}>
                   <Typography
                     sx={{ display: "inline" }}
                     component="span"
                     variant="body1"
                     fontWeight="bold"
                     fontSize="16px"
-                    color="text.primary"
+                    color="white"
                     fontFamily={"Oxygen"}
                   >
-                    Dashboard
+                    Idea Admin Login
                   </Typography>
                 </Link>
               }
@@ -89,18 +84,47 @@ const DrawerMenu = () => {
           </ListItemButton>
         </ListItem>
       </List>
-      {/** Dashboard */}
+
+      {/* Navigate Admin */}
+      <List>
+        <ListItem disablePadding>
+          <ListItemButton style={styles.blueButton}>
+            <ListItemIcon style={styles.btnsizeup}>
+              <DashboardOutlinedIcon style={styles.iconColor} />
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <Link to="/login?redirect=/Sales_Lead_Admin_View" style={{ textDecoration: 'none' }}>
+                  <Typography
+                    sx={{ display: "inline" }}
+                    component="span"
+                    variant="body1"
+                    fontWeight="bold"
+                    fontSize="16px"
+                    color="white"
+                    fontFamily={"Oxygen"}
+                  >
+                    Navigate Admin
+                  </Typography>
+                </Link>
+              }
+            />
+          </ListItemButton>
+        </ListItem>
+      </List>
+
       <Divider />
-      {/** Dashboard */}
+
+      {/* Additional Links */}
       <List>
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon style={styles.btnsizeup}>
-              <DashboardOutlinedIcon />
+              <HelpOutlineOutlinedIcon />
             </ListItemIcon>
             <ListItemText
               primary={
-                <Link to="/" style={{ cursor: "pointer" }}>
+                <Link to="/login?redirect=/Admin_Sales_Lead" style={{ cursor: "pointer" }}>
                   <Typography
                     sx={{ display: "inline" }}
                     component="span"
@@ -110,7 +134,7 @@ const DrawerMenu = () => {
                     color="text.primary"
                     fontFamily={"Oxygen"}
                   >
-                    Idea Hub Admin
+                    Help
                   </Typography>
                 </Link>
               }
@@ -118,70 +142,15 @@ const DrawerMenu = () => {
           </ListItemButton>
         </ListItem>
       </List>
-      {/** Dashboard */}
-      {/** Dashboard */}
-      <List>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon style={styles.btnsizeup}>
-              <DashboardOutlinedIcon />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Link to="/" style={{ cursor: "pointer" }}>
-                  <Typography
-                    sx={{ display: "inline" }}
-                    component="span"
-                    variant="body1"
-                    fontWeight="bold"
-                    fontSize="16px"
-                    color="text.primary"
-                    fontFamily={"Oxygen"}
-                  >
-                    Sales Lead Admin
-                  </Typography>
-                </Link>
-              }
-            />
-          </ListItemButton>
-        </ListItem>
-      </List>
-      {/** Dashboard */}
-      {/** Help */}
-      <List style={{ ...styles.btnsizeup, position: 'absolute', bottom: 0, width: '100%' }}>
-    <ListItem disablePadding>
-      <ListItemButton>
-        <ListItemIcon style={styles.btnsize}>
-          <HelpOutlineOutlinedIcon fontSize="small" />
-        </ListItemIcon>
-        <ListItemText
-          primary={
-            <Typography
-              sx={{ display: "inline" }}
-              component="span"
-              variant="body1"
-              fontWeight="bold"
-              fontSize="16px"
-              color="text.primary"
-              fontFamily={"Oxygen"}
-            >
-              Help
-            </Typography>
-          }
-        />
-      </ListItemButton>
-    </ListItem>
-    {/** Help */}
-  </List>
     </Box>
   );
 
   return (
     <div>
-      <div className="Navbar" style={styles.navbar}>
-        <MenuIcon
-          style={styles.menuIcon}
+      <React.Fragment>
+        <DashboardOutlinedIcon
           onClick={toggleDrawer("left", true)}
+          style={styles.btnsize}
         />
         <Drawer
           anchor={"left"}
@@ -190,43 +159,37 @@ const DrawerMenu = () => {
         >
           {list("left")}
         </Drawer>
-      </div>
+      </React.Fragment>
     </div>
   );
 };
 
-export default DrawerMenu;
-
 const styles = {
-  navbar: {
-    position: "relative",
-    backgroundColor: "transparent",
-    padding: "10px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-start",
-  },
-  menuIcon: {
-    color: "white",
-    backgroundColor: "transparent",
-    marginBottom: "-10px",
-  },
-  container: {
-    display: "flex",
-    height: "600px",
-    flexWrap: "wrap",
-    alignContent: "flex-end",
-  },
   btnsize: {
-    minHeight: "15px",
-    minWidth: "32px",
+    fontSize: "25px",
+    cursor: "pointer",
+    alignItems: "center",
+    justifyContent: "center",
+    justifyItems: "center",
   },
   btnsizeup: {
-    minHeight: "25px",
-    minWidth: "32px",
+    fontSize: "20px",
+    cursor: "pointer",
+    alignItems: "center",
+    justifyContent: "center",
+    justifyItems: "center",
   },
-  label: {
-    fontSize: "19px",
-    fontFamily: "Oxygen"
+  blueButton: {
+    backgroundColor: "#1E90FF", // Dodger Blue color
+    color: "white",
+    marginBottom: "10px",
+    '&:hover': {
+      backgroundColor: "#1C86EE", // Slightly darker blue on hover
+    }
+  },
+  iconColor: {
+    color: "white",
   },
 };
+
+export default DrawerMenu;

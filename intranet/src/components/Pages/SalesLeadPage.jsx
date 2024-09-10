@@ -21,10 +21,7 @@ const SalesLeadPage = () => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  const handleNavigateToLogin = () => {
-    // Navigate to the login page with a source query parameter
-    navigate('/login');
-  };
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -369,7 +366,7 @@ Keep up the great work!
               </div>
               <div>
                 <button type="submit" style={buttonStyle}>Submit</button>
-                <button onClick={handleNavigateToLogin} style={buttonStyle}>Navigate Admin</button>
+              
               </div>
             </form>
           </div>
