@@ -67,7 +67,6 @@ const ContactListPage = () => {
   };
 
   const ContactList = {
-    fontFamily: '"Gloock", serif',
     fontWeight: 500,
     fontSize: '48px',
     fontStyle: 'normal',
@@ -77,7 +76,6 @@ const ContactListPage = () => {
   };
 
   const subtitle = {
-    fontFamily: '"Onest", sans-serif',
     fontSize: '17px',
     fontStyle: 'normal',
     color: '#161616',
@@ -86,7 +84,6 @@ const ContactListPage = () => {
   };
 
   const paragraph = {
-    fontFamily: '"Onest", sans-serif',
     fontSize: '15px',
     fontStyle: 'normal',
     color: '#585858',
