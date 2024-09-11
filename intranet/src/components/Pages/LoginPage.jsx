@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
 import axios from "axios";
+import '../../Styles/Home.css';
 
 function Login() {
     const [username, setUsername] = useState('');
