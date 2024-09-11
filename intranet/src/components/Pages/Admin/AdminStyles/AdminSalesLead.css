@@ -62,3 +62,69 @@
   .delete-button:hover {
     background-color: #ff1a1a;
   }
+
+  .button-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-button {
+    background-color: #e2442f; 
+    border: 1px solid #ccc;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .filter-button.active {
+    background-color: #e2442f; 
+    color: #fff; 
+  }
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.search-bar {
+    padding: 0.5rem;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/* Add these styles to AdminSalesLead.css */
+
+.button-group {
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    background-color: #f31212; /* Default background color */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-button.active {
+    background-color: #28a745; /* Green color for active button */
+    color: white;
+    border-color: #28a745;
+}
+
+.filter-button:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center; /* Centers the pagination controls */
+  margin: 20px 0;
+}
+  
+  

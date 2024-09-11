@@ -5,7 +5,6 @@
   background-size: cover; /* Cover the entire area */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent image from repeating */
-  overflow: hidden; /* Optional: hide overflow if needed */
  
 }
 
