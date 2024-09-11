@@ -9,7 +9,6 @@ function IdeaHub() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [filter, setFilter] = useState('unread'); // 'unread', 'read', 'removed'
-  const [searchQuery, setSearchQuery] = useState(''); // State for search input
   const [currentPage, setCurrentPage] = useState(1); // Pagination state
   const pageSize = 20; // Number of rows per page
 
@@ -96,18 +95,9 @@ function IdeaHub() {
     setCurrentPage(prevPage => prevPage + direction);
   };
 
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
-    setCurrentPage(1); // Reset to first page when search query changes
-  };
+  const currentIdeas = ideas.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
-  const filteredIdeas = ideas.filter(idea =>
-    idea.USEREPF.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
-  const currentIdeas = filteredIdeas.slice((currentPage - 1) * pageSize, currentPage * pageSize);
-
-  const totalPages = Math.ceil(filteredIdeas.length / pageSize);
+  const totalPages = Math.ceil(ideas.length / pageSize);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -135,13 +125,6 @@ function IdeaHub() {
           Removed
         </button>
       </div>
-      <input
-        type="text"
-        className="search-bar"
-        placeholder="Search by User EPF..."
-        value={searchQuery}
-        onChange={handleSearchChange}
-      />
       <table className="idea-hub-table">
         <thead>
           <tr>
@@ -150,7 +133,7 @@ function IdeaHub() {
             <th className="small-column">Idea Date</th>
             <th className="medium-column">Name</th>
             <th className="large-column">User Idea</th>
-            <th className="small-column">Read</th>
+            {filter !== 'read' && filter !== 'removed' && <th className="small-column">Read</th>}
             <th className="small-column">Action</th>
           </tr>
         </thead>
@@ -167,16 +150,22 @@ function IdeaHub() {
                 <td className="small-column">{idea.IDEADATE}</td>
                 <td className="medium-column">{idea.NAME}</td>
                 <td className="large-column">{idea.USERIDEA}</td>
+                {filter !== 'read' && filter !== 'removed' && (
+                  <td className="small-column">
+                    <input
+                      type="checkbox"
+                      checked={idea.read}
+                      onChange={() => handleCheckboxChange(idea.ID)}
+                      disabled={filter === 'removed'}
+                    />
+                  </td>
+                )}
                 <td className="small-column">
-                  <input
-                    type="checkbox"
-                    checked={idea.read}
-                    onChange={() => handleCheckboxChange(idea.ID)}
-                    disabled={filter === 'removed'} // Disable checkbox for removed ideas
-                  />
-                </td>
-                <td className="small-column">
-                  {filter !== 'removed' && (
+                  {filter === 'removed' ? (
+                    <span className="removed-text">Removed</span> // Show "Removed" text in red for removed filter
+                  ) : filter === 'read' ? (
+                    <span className="read-text">Read</span> // Show "Read" text in red for read filter
+                  ) : (
                     <button className="delete-button" onClick={() => handleDelete(idea.ID)}>
                       DELETE
                     </button>
@@ -197,7 +186,7 @@ function IdeaHub() {
         </button>
         <span>Page {currentPage} of {totalPages}</span>
         <button
-          classname="pagination-button"
+          className="pagination-button"
           onClick={() => handlePageChange(1)}
           disabled={currentPage === totalPages}
         >
