@@ -1,3 +1,11 @@
+.full-page {
+  background-image: url(''); /* Corrected background-image syntax */
+  background-size: cover; 
+  background-position: center; 
+  min-height: 100vh; 
+  overflow: auto;
+}
+
 .idea-hub-table {
   width: 80% !important; 
   max-width: 80%;
