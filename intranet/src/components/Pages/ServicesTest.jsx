@@ -14,6 +14,7 @@ import common from "./Knowledge_base_pages/common";
 // Services_Pages Links
 // Policies_Pages Links
 import HR_Policies from "./Services_Policies_Forms/Policies_Pages/HR_Policies";
+import ICT_Policies from "./Services_Policies_Forms/Policies_Pages/ICT_Policies";
 // Policies_Pages Links
 // Forms_Pages Links
 import ICT_Forms from "./Services_Policies_Forms/Forms_Pages/ICT_Forms";
@@ -66,6 +67,8 @@ const ServicesTest = () => {
         return <Life_Circulars />;
       case "HR_Policies":
         return <HR_Policies />;
+        case "ICT_Policies":
+        return <ICT_Policies />;
       case "ICT_Forms":
         return <ICT_Forms />;
         case "HR":
@@ -213,6 +216,17 @@ const ServicesTest = () => {
             >
               HR <span>&#x2192;</span>
             </button>
+            <button
+              className={`service-button ${
+                clickedButton === "ICT_Policies" ? "clicked" : ""
+              }`}
+              onClick={() =>
+                toggleComponent("ICT_Policies", "policies", "ICT_Policies")
+              }
+            >
+              ICT <span>&#x2192;</span>
+            </button>
+            
             {/* <button
               className={`service-button ${clickedButton === 'ICT' ? 'clicked' : ''}`}
               onClick={() => toggleComponent('ICT', 'policies', 'ICT')}
