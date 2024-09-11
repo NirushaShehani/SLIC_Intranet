@@ -3,6 +3,7 @@ import axios from 'axios';
 import * as XLSX from 'xlsx';
 import './AdminStyles/AdminIdeaHub.css';
 import { BASE_URL, ENDPOINTS } from "../../../Services/ApiConfig";
+import DrawerMenu from '../../Sub_Components/DrawerMenu';
 
 function IdeaHub() {
   const [ideas, setIdeas] = useState([]);
@@ -104,6 +105,7 @@ function IdeaHub() {
 
   return (
     <div>
+      <DrawerMenu/>
       <h1>Idea Hub</h1>
       <div className="button-group">
         <button

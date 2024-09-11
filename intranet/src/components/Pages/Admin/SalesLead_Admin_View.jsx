@@ -3,6 +3,7 @@ import axios from 'axios';
 import * as XLSX from 'xlsx';
 import './AdminStyles/AdminSalesLead.css';
 import { BASE_URL, ENDPOINTS } from "../../../Services/ApiConfig";
+import DrawerMenu from '../../Sub_Components/DrawerMenu';
 
 function AdminSalesLead() {
     const [salesLeads, setSalesLeads] = useState([]);
@@ -124,6 +125,7 @@ function AdminSalesLead() {
 
     return (
         <div>
+            <DrawerMenu/>
             <h1>Sales Leads</h1>
             <div className="button-group">
     <button 
