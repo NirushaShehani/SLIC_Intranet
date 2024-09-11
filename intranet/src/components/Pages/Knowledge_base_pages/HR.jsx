@@ -76,23 +76,23 @@ const HR = () => {
       <div style={rightStyle}>
         <div style={sectionWrapperStyle}>
           <div style={sectionStyle}>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+            <div className="hover-container" style={listItemStyle} onClick={() =>  openInNewWindow('/aboutSlic')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">About SLIC</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/b-net-new/Company%20Profile%20-%20SLIC.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/EMPLOYEE_HAND_BOOK_Eversion.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Employee Handbook</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/corporate-values/')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/Benifits_of_ETF.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Benefits of ETF</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.89/aml/')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/Principles_of_Life.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Principles of Life Insurance</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+            <div className="hover-container" style={listItemStyle} onClick={() =>  openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/IC33_English_Woorkbook.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
               <span className="hover-text">Questions on Life Insurance</span>
             </div>
@@ -101,11 +101,11 @@ const HR = () => {
           {/* CHAWS Section */}
           <div style={sectionStyle}>
             <div style={titleStyle}>CHAWS</div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/life/life-manual/')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Enrolment_to_CHAWS.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">CHAWS - Enrolment Guide</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/COGNOS/')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Approving_in_CHAWS.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">CHAWS - Approving Guide</span>
             </div>
