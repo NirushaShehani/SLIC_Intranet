@@ -163,6 +163,8 @@ function IdeaHub() {
                 <td className="small-column">
                   {filter === 'removed' ? (
                     <span className="removed-text">Removed</span> // Show "Removed" text in red for removed filter
+                  ) : filter === 'read' ? (
+                    <span className="read-text">Read</span> // Show "Read" text in red for read filter
                   ) : (
                     <button className="delete-button" onClick={() => handleDelete(idea.ID)}>
                       DELETE

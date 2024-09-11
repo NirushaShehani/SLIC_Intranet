@@ -1,21 +1,20 @@
 .idea-hub-table {
-  width: 80% !important; /* Adjust this value to control the table's width */
+  width: 80% !important; 
   max-width: 80%;
-  margin: 0 auto; /* Center the table horizontally */
+  margin: 0 auto; 
   border-collapse: collapse;
 }
 
-/* Adjusting column widths */
 .small-column {
-  width: 10%; /* Narrow width for smaller columns */
+  width: 10%; 
 }
 
 .medium-column {
-  width: 15%; /* Medium width for the Name column */
+  width: 15%; 
 }
 
 .large-column {
-  width: 55%; /* More space for the User Idea column */
+  width: 55%; 
 }
 
 th, td {
@@ -29,20 +28,20 @@ th {
 }
 
 .delete-button {
-  background-color: #ff4c4c; /* Red background */
-  color: white; /* White text */
-  border: none; /* Remove border */
-  padding: 6px 10px; /* Padding */
-  cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 4px; /* Rounded corners */
-  font-size: 12px; /* Font size */
-  transition: background-color 0.3s ease; /* Transition effect */
-  width: 65px; /* Set a fixed width if needed */
-  height: 30px;
+  background-color: #ff4c4c; 
+  color: white; 
+  border: none; 
+  padding: 6px 10px; 
+  cursor: pointer; 
+  border-radius: 4px; 
+  font-size: 11px; 
+  transition: background-color 0.3s ease; 
+  width: 70px; 
+  height: 25px;
 }
 
 .delete-button:hover {
-  background-color: #ff1a1a; /* Darker red on hover */
+  background-color: #ff1a1a; 
 }
 
 .bold-text {
@@ -52,7 +51,7 @@ th {
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px; /* Adjust margin as needed */
+  margin-top: 20px; 
 }
 
 .download-button {
@@ -71,8 +70,6 @@ th {
 .download-button:hover {
   background-color: #45a049;
 }
-
-/* AdminIdeaHub.css */
 
 .filter-button {
   padding: 10px 20px;
@@ -102,9 +99,9 @@ th {
 
 .search-bar {
   display: block;
-  margin: 20px auto; /* Centers the search bar horizontally */
+  margin: 20px auto; 
   padding: 8px;
-  width: 50%; /* Adjust the width as needed */
+  width: 50%; 
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -112,7 +109,7 @@ th {
 
 .button-group {
   display: flex;
-  justify-content: center; /* Centers the button group */
+  justify-content: center; 
   margin-bottom: 20px;
 }
 
@@ -124,13 +121,23 @@ th {
 
 .pagination-controls {
   display: flex;
-  justify-content: center; /* Centers the pagination controls */
+  justify-content: center; 
   margin: 20px 0;
 }
 
 .button-container {
   display: flex;
-  justify-content: center; /* Centers the download button */
+  justify-content: center; 
   margin-top: 20px;
+}
+
+.removed-text {
+  color: red;
+  font-size: 12px;
+}
+
+.read-text {
+  color: rgb(81, 104, 211);
+  font-size: 12px;
 }
 
