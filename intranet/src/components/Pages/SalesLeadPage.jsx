@@ -5,6 +5,7 @@ import logo from "../../assets/IntranetLogo.png";
 import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
 import axios from "axios";
 import { height } from "@mui/system";
+import ToastNotification from "../Sub_Components/ToastNotification";
 
 const SalesLeadPage = () => {
   const initialFormData = {
@@ -21,6 +22,9 @@ const SalesLeadPage = () => {
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+
+  const [showToast, setShowToast] = useState(false); // State to control toast visibility
+  const [toastMessage, setToastMessage] = useState(""); // State to store the toast message
 
   const [typedText, setTypedText] = useState(""); // State to hold typed text
   const fullText = `As the nation’s first choice for Risk Protection and Life Investment, this initiative not only helps our customers and their loved ones but also contributes significantly to the growth of our company. 
@@ -127,6 +131,8 @@ Keep up the great work!`; // Full text to be typed
 
         if (response.status === 200 && response.data === 1) {
           console.log("Data inserted successfully:", response.data);
+          setToastMessage("Submitted Successfully!"); // Set the toast message
+          setShowToast(true); // Show the toast
           setFormData(initialFormData);
           setErrors({});
         } else {
@@ -168,14 +174,14 @@ Keep up the great work!`; // Full text to be typed
     display: "flex",
     justifyContent: "center",
     alignItems: "flex-start", // Start aligning from the top
-    position: "relative",     // Allow relative positioning for the form box
+    position: "relative", // Allow relative positioning for the form box
   };
-  
+
   const border = {
     border: "2px solid #0000002B",
     borderRadius: "20px",
     boxShadow: "0 10px 8px rgba(0, 0, 0, 0.1)",
-    width: "90%", 
+    width: "90%",
     height: "auto",
     display: "flex",
     flexDirection: "column",
@@ -184,7 +190,7 @@ Keep up the great work!`; // Full text to be typed
     boxSizing: "border-box",
     position: "relative", // Ensure it stays in position
   };
-  
+
   const formContainerStyle = {
     backgroundColor: "#F4F4F4",
     width: "100%",
@@ -192,14 +198,12 @@ Keep up the great work!`; // Full text to be typed
     boxSizing: "border-box",
     flexGrow: 1, // Allow the form to grow within the flexbox container
   };
-  
+
   const container = {
     display: "flex",
     flexDirection: "column",
     height: "auto",
   };
-
- 
 
   const contentStyle = {
     display: "flex",
@@ -303,6 +307,11 @@ Keep up the great work!`; // Full text to be typed
 
   return (
     <div style={containerStyle}>
+      <ToastNotification
+        message={toastMessage}
+        show={showToast}
+        onClose={() => setShowToast(false)} // Hide the toast after timeout
+      />
       <div style={leftStyle}>
         <div style={container}>
           <div style={up}>
@@ -330,10 +339,10 @@ Keep up the great work!`; // Full text to be typed
           <div style={formContainerStyle}>
             <form onSubmit={handleSubmit}>
               <div style={formColumnStyle}>
-              <div style={formColumnStyle}>
-                  <h4 style={{margin: "0px"}}>Client Details :</h4>
+                <div style={formColumnStyle}>
+                  <h4 style={{ margin: "0px" }}>Client Details :</h4>
                 </div>
-                <label style={{marginTop: "10px"}}>Name of the client:</label>
+                <label style={{ marginTop: "10px" }}>Name of the client:</label>
                 <input
                   type="text"
                   name="clientName"
@@ -356,7 +365,10 @@ Keep up the great work!`; // Full text to be typed
                     style={inputStyle}
                     value={formData.contactno1}
                     onChange={handleChange}
+                    maxLength={10}
+                    pattern="[0-9]*" // Allow only numbers in this field
                   />
+
                   {errors.contactNo1 && (
                     <p style={{ color: "red" }}>{errors.contactNo1}</p>
                   )}
@@ -370,6 +382,8 @@ Keep up the great work!`; // Full text to be typed
                     style={inputStyle}
                     value={formData.contactno2}
                     onChange={handleChange}
+                    maxLength={10}
+                    pattern="[0-9]*" // Allow only numbers in this field
                   />
                   {errors.contactNo2 && (
                     <p style={{ color: "red" }}>{errors.contactNo2}</p>
@@ -390,11 +404,10 @@ Keep up the great work!`; // Full text to be typed
                 {errors.clientRequirement && (
                   <p style={{ color: "red" }}>{errors.clientRequirement}</p>
                 )}
-               
               </div>
               <div style={formRowStyle}>
                 <div style={formColumnStyle}>
-                  <h4 style={{margin: "0px"}}>Your Contact :</h4>
+                  <h4 style={{ margin: "0px" }}>Your Contact :</h4>
                 </div>
               </div>
               <div style={formRowStyle}>
@@ -421,6 +434,8 @@ Keep up the great work!`; // Full text to be typed
                     style={inputStyle}
                     value={formData.slicMobile}
                     onChange={handleChange}
+                    maxLength={10}
+                    pattern="[0-9]*" // Allow only numbers in this field
                   />
                   {errors.mobileNumber && (
                     <p style={{ color: "red" }}>{errors.mobileNumber}</p>
