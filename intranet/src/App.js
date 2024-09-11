@@ -28,6 +28,8 @@ import Idea_Hub_Admin_View from './components/Pages/Admin/IdeaHub_Admin_View';
 import SalesLead_Admin_View from './components/Pages/Admin/SalesLead_Admin_View';
 import Life from './components/Pages/Services_Policies_Forms/Services_Pages/Life_Services';
 import Incentive_Criteria from './components/Pages/Incentive_Criteria';
+import HR from './components/Pages/Knowledge_base_pages/HR';
+import AboutSLIC from './components/Pages/Knowledge_base_pages/AboutSLIC';
 
 
 
@@ -64,8 +66,11 @@ const App =() => {
         <Route path="/Services-Life" element={<Life/>}/>
 
         <Route path="/Incentive-Criteria-page" element={<Incentive_Criteria/>}/>
-
-
+        
+        <Route path="/" element={<HR />} />
+        <Route path="/aboutSlic" element={<AboutSLIC />} />
+        {/* Add other routes here */}
+   
 
       </Routes>
     </Router>
