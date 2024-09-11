@@ -94,6 +94,7 @@ const IT = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
               <span className="hover-text">Reset Password</span>
             </div>
+
         </div>
 
    

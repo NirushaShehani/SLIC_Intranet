@@ -86,7 +86,7 @@ const Life = () => {
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://blife-mis-agent/Secworks/Signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">B-MIS </span>
+              <span className="hover-text">B-MIS Life </span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => navigate('https://cognoslife.srilankainsurance.com:9300/bi/')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
