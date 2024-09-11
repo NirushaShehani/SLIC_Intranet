@@ -56,6 +56,35 @@ const DrawerMenu = () => {
         </ListItem>
       </List>
       <Divider />
+      {/** Dashboard */}
+      <List>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon style={styles.btnsizeup}>
+              <DashboardOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary={
+                <Link to="/" style={{ cursor: "pointer" }}>
+                  <Typography
+                    sx={{ display: "inline" }}
+                    component="span"
+                    variant="body1"
+                    fontWeight="bold"
+                    fontSize="16px"
+                    color="text.primary"
+                    fontFamily={"Oxygen"}
+                  >
+                    Dashboard
+                  </Typography>
+                </Link>
+              }
+            />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      {/** Dashboard */}
+      <Divider />
 
       {/* Idea Hub Admin Login */}
       <List>
