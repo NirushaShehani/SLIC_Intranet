@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import '../../../Styles/services.css';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,16 +13,6 @@ const HR = () => {
 
   const navigate = useNavigate();
 
-  const handleDownload = (url) => {
-    if (window.confirm('Do you want to download this file?')) {
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = url.split('/').pop();
-      link.click();
-    }
-  };
-
-  
   // Styles
   const containerStyle = {
     width: "100%",
@@ -85,47 +75,47 @@ const HR = () => {
     <div style={containerStyle}>
       <div style={rightStyle}>
         <div style={sectionWrapperStyle}>
-        <div style={sectionStyle}>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+          <div style={sectionStyle}>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">About SLIC</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/b-net-new/Company%20Profile%20-%20SLIC.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/b-net-new/Company%20Profile%20-%20SLIC.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Employee Handbook</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://172.24.60.66/corporate-values/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/corporate-values/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Benefits of ETF</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://172.24.60.89/aml/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.89/aml/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Principles of Life Insurance</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon" />
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
               <span className="hover-text">Questions on Life Insurance</span>
             </div>
-        </div>
+          </div>
 
-         {/*CHAWS*/}
-         <div style={sectionStyle}>
-         <div style={titleStyle}>CHAWS</div>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/life/life-manual/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+          {/* CHAWS Section */}
+          <div style={sectionStyle}>
+            <div style={titleStyle}>CHAWS</div>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/life/life-manual/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">CHAWS - Enrolment Guide</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://172.24.60.66/COGNOS/')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/COGNOS/')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">CHAWS - Approving Guide</span>
             </div>
           </div>
-         {/*CHAWS*/}
-
+          {/* End CHAWS Section */}
+          
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default HR;

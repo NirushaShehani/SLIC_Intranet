@@ -76,7 +76,7 @@ const DrawerMenu = () => {
                     color="white"
                     fontFamily={"Oxygen"}
                   >
-                    Idea Admin Login
+                    Admin Login
                   </Typography>
                 </Link>
               }
@@ -85,33 +85,7 @@ const DrawerMenu = () => {
         </ListItem>
       </List>
 
-      {/* Navigate Admin */}
-      <List>
-        <ListItem disablePadding>
-          <ListItemButton style={styles.blueButton}>
-            <ListItemIcon style={styles.btnsizeup}>
-              <DashboardOutlinedIcon style={styles.iconColor} />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Link to="/login?redirect=/Sales_Lead_Admin_View" style={{ textDecoration: 'none' }}>
-                  <Typography
-                    sx={{ display: "inline" }}
-                    component="span"
-                    variant="body1"
-                    fontWeight="bold"
-                    fontSize="16px"
-                    color="white"
-                    fontFamily={"Oxygen"}
-                  >
-                    Navigate Admin
-                  </Typography>
-                </Link>
-              }
-            />
-          </ListItemButton>
-        </ListItem>
-      </List>
+     
 
       <Divider />
 
