@@ -1,5 +1,6 @@
 .idea-hub-table {
-  width: 80%; /* Reduce table width to 80% of its container */
+  width: 80% !important; /* Adjust this value to control the table's width */
+  max-width: 80%;
   margin: 0 auto; /* Center the table horizontally */
   border-collapse: collapse;
 }
@@ -31,11 +32,13 @@ th {
   background-color: #ff4c4c; /* Red background */
   color: white; /* White text */
   border: none; /* Remove border */
-  padding: 8px 12px; /* Padding */
+  padding: 6px 10px; /* Padding */
   cursor: pointer; /* Pointer cursor on hover */
   border-radius: 4px; /* Rounded corners */
-  font-size: 14px; /* Font size */
+  font-size: 12px; /* Font size */
   transition: background-color 0.3s ease; /* Transition effect */
+  width: 65px; /* Set a fixed width if needed */
+  height: 30px;
 }
 
 .delete-button:hover {
