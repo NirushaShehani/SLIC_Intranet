@@ -86,11 +86,11 @@ const IT = () => {
       <div style={rightStyle}>
         <div style={sectionWrapperStyle}>
         <div style={sectionStyle}>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('file:///C:/SLIC/Intranet%202/folder%20structure/Knowledge_Base/ICT/Guide-Lines-for-using-training-PC-New.pdf')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/ICT/GuideLinesforusingtrainingPCNew.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Guide Lines for using training PC</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/b-net-new/Company%20Profile%20-%20SLIC.pdf')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/ICT/ResetPassword.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
               <span className="hover-text">Reset Password</span>
             </div>
