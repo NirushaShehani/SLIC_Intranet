@@ -82,7 +82,8 @@ function IdeaHub() {
   };
 
   const handleDownload = () => {
-    const worksheet = XLSX.utils.json_to_sheet(ideas);
+    const ideasWithoutRead = ideas.map(({ read, ...rest }) => rest);
+    const worksheet = XLSX.utils.json_to_sheet(ideasWithoutRead);
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, 'Ideas');
     XLSX.writeFile(workbook, 'IdeaHubData.xlsx');
