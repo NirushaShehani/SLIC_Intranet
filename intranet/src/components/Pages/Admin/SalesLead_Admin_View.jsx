@@ -78,8 +78,8 @@ function AdminSalesLead() {
                     alert('Failed to delete sales lead');
                 }
             }
-            catch{
-                console.error('Error deleting sales lead:', error);
+            catch(err){
+                console.error('Error deleting sales lead:', err);
                 alert('An error occurred while deleting the sales lead');
             }
         }
@@ -125,23 +125,23 @@ function AdminSalesLead() {
     if (error) return <p>Error: {error}</p>;
 
     return (
-        <div>
+        <div className="admin-sales-lead-container">
             <DrawerMenu/>
             <h1>Sales Leads</h1>
             <div className="button-group">
-    <button 
-        className={`filter-button ${filter === 'removed' ? 'active' : ''}`} 
-        onClick={() => handleFilterChange('removed')}
-    >
-        Removed Leads
-    </button>
-    <button 
-        className={`filter-button ${filter === 'active' ? 'active' : ''}`} 
-        onClick={() => handleFilterChange('active')}
-    >
-        Active Leads
-    </button>
-</div>
+                <button 
+                    className={`filter-button ${filter === 'removed' ? 'active-removed' : ''}`} 
+                    onClick={() => handleFilterChange('removed')}
+                >
+                    Removed Leads
+                </button>
+                <button 
+                    className={`filter-button1 ${filter === 'active' ? 'active-active' : ''}`} 
+                    onClick={() => handleFilterChange('active')}
+                >
+                    Active Leads
+                </button>
+            </div>
 
             <div className="search-container">
                 <input
