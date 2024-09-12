@@ -252,3 +252,14 @@ button {
   cursor: pointer;
 }
 
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem; /* Space between search bar and table */
+}
+
+.search-bar {
+  width: 300px; /* Adjust the width as needed */
+  padding: 0.5rem;
+  font-size: 1rem;
+}
