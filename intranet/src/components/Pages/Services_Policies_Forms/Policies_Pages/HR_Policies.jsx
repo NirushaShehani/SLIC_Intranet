@@ -62,67 +62,63 @@ const HR_Policies = () => {
 
           </div>
           <div style={listContainer}>
-          <div className="hover-container" style={listItemStyle} onClick={() => navigate('/performance-managment')}>
+          <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('/performance-managment')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Performance Management Policy</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Approved_Courses_of_Study_new_eddition.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Approved Professional Courses</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-mis')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Code_of_Business_Conduct.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Code of Business Conduct & Ethics</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/cashbook')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Corporate_Email_Policy_%20SLIC.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Corporate E-Mail Policy</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-commission')}>
+            <div className="hover-container"style={listItemStyle} onClick={() =>openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Disciplinary_Policy.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Desciplinary Policy</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Dress_Code_Policy_English.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Dress Code Policy - English</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Dress_Code_Policy_%20Sinhala.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Dress Code Policy - Sinhala</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Grievance_Handling_Policy_English.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Grievance Handling - English</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Gravences_Policy_sinhala.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Grievance Handling - Sinhala</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/HR_Manual_English.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">HR Policy Manual (English)</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/HR_policy_manual_Sinhala.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">HR Policy Manual (Sinhala)	</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Prof_Dev_Scheme.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Professional Development Reimbursement Scheme</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Recruitment Policy</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Vehicle_Loan_Policy_27_05_2020.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Vehicle Loan Policy</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/WB_PolicyEnglish.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Whistle Blowing Policy (English)	</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/WB_PolicySinhala.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Whistle Blowing Policy (Sinhala)</span>
             </div>

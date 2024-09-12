@@ -90,11 +90,11 @@ const Life = () => {
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
                 <span className="hover-text">Company Profile</span>
               </div>
-              <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/corporate-values/')}>
+              <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/corporate-values/')}>
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                 <span className="hover-text">Coporate Values</span>
               </div>
-              <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.89/aml/')}>
+              <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.89/aml/')}>
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                 <span className="hover-text">AML Module</span>
               </div>
@@ -149,7 +149,7 @@ const Life = () => {
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                 <span className="hover-text">Life System</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() =>  openInNewWindow('/hhttp://172.24.60.66/knowledgebase/index.php/knowledge-base/life-insurance-introduction/')}>
+            <div className="hover-container"style={listItemStyle} onClick={() =>  openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-insurance-introduction/')}>
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                 <span className="hover-text">Life Insurance Introduction</span>
             </div>
@@ -169,7 +169,7 @@ const Life = () => {
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                 <span className="hover-text">How to get Medical Coordinator’s Contact Details </span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/how-to-log-in-to-b-call-center-system/')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/how-to-log-in-to-b-call-center-system/')}>
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                 <span className="hover-text">How to log in to B-Call Center System</span>
             </div>
@@ -354,7 +354,7 @@ const Life = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">SLI Surgical Plan</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('- http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-medi-life/')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/sli-medi-life/')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">SLI Medi-Life</span>
             </div>
