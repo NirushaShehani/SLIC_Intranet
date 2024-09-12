@@ -86,12 +86,13 @@ function AdminSalesLead() {
     };
 
     const handleDownload = () => {
-        const worksheet = XLSX.utils.json_to_sheet(salesLeads);
+        const salesLeadsWithoutActive = salesLeads.map(({ is_active, ...rest }) => rest);
+        const worksheet = XLSX.utils.json_to_sheet(salesLeadsWithoutActive);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Sales Leads');
-        
         XLSX.writeFile(workbook, `${filter === 'removed' ? 'RemovedSalesLeads' : 'ActiveSalesLeads'}.xlsx`);
     };
+    
 
     const handleFilterChange = (newFilter) => {
         setFilter(newFilter);
