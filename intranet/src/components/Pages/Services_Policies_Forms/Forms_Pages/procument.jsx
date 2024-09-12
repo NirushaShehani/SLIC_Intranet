@@ -69,11 +69,10 @@ const ProcurementForms = () => {
             <div style={rightStyle}>
                 <div className="home-container">
                     <div style={listContainer}>
-                        <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-                            <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-                            <span>Device Access Request Form</span>
-                        </div>
-                        
+                            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.60/stock_reservation/page_download_Form.html')}>
+                            <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                            <span className="hover-text">Procurement Forms</span>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -82,3 +81,6 @@ const ProcurementForms = () => {
 }
 
 export default ProcurementForms;
+
+
+
