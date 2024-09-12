@@ -136,8 +136,9 @@ function AdminSalesLead() {
                     Removed Leads
                 </button>
                 <button 
-                    className={`filter-button1 ${filter === 'active' ? 'active-active' : ''}`} 
+                    className={`filter-button ${filter === 'active' ? 'active-active' : ''}`} 
                     onClick={() => handleFilterChange('active')}
+                    style={{ backgroundColor: filter === 'removed' ? '#28a745' : '#4CAF50' }}
                 >
                     Active Leads
                 </button>
@@ -179,10 +180,12 @@ function AdminSalesLead() {
                                 <td>{lead.slicExtension}</td>
                                 <td>{lead.slicDepartment}</td>
                                 <td>
-                                    {filter === 'active' && (
+                                    {filter === 'active' ? (
                                         <button onClick={() => handleDelete(lead.id)} className="delete-button">
                                             DELETE
                                         </button>
+                                    ) : (
+                                        <span style={{ color: 'red' }}>Removed</span>  // Display "Removed" in red
                                     )}
                                 </td>
                             </tr>
