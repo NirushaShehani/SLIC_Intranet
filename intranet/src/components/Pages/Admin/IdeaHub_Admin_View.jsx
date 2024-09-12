@@ -12,6 +12,7 @@ function IdeaHub() {
   const [error, setError] = useState(null);
   const [filter, setFilter] = useState('unread'); // 'unread', 'read', 'removed'
   const [currentPage, setCurrentPage] = useState(1); // Pagination state
+  const [searchQuery, setSearchQuery] = useState(''); // Search query state
   const pageSize = 20; // Number of rows per page
 
   useEffect(() => {
@@ -82,8 +83,8 @@ function IdeaHub() {
   };
 
   const handleDownload = () => {
-    const ideasWithoutRead = ideas.map(({ read, ...rest }) => rest);
-    const worksheet = XLSX.utils.json_to_sheet(ideasWithoutRead);
+    const ideasWithoutRead = ideas.map(({ read, ...rest})=> rest);
+    const worksheet = XLSX.utils.json_to_sheet(ideasWithoutRead );
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, 'Ideas');
     XLSX.writeFile(workbook, 'IdeaHubData.xlsx');
@@ -98,114 +99,126 @@ function IdeaHub() {
     setCurrentPage(prevPage => prevPage + direction);
   };
 
-  const currentIdeas = ideas.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  // Filter ideas based on the search query
+  const filteredIdeas = ideas.filter(idea =>
+    idea.USEREPF.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
-  const totalPages = Math.ceil(ideas.length / pageSize);
+  const currentIdeas = filteredIdeas.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  const totalPages = Math.ceil(filteredIdeas.length / pageSize);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
     <div className='full-page'>
-
-    
-    <div>
-      <DrawerMenu/>
-      <h1>Idea Hub</h1>
-      <div className="button-group">
-        <button
-          className="filter-button green"
-          onClick={() => handleFilterChange('unread')}
-        >
-          Unread
-        </button>
-        <button
-          className="filter-button orange"
-          onClick={() => handleFilterChange('read')}
-        >
-          Read
-        </button>
-        <button
-          className="filter-button red"
-          onClick={() => handleFilterChange('removed')}
-        >
-          Removed
-        </button>
-      </div>
-      <table className="idea-hub-table">
-        <thead>
-          <tr>
-            <th className="small-column">User EPF</th>
-            <th className="small-column">Dept or Branch</th>
-            <th className="small-column">Idea Date</th>
-            <th className="medium-column">Name</th>
-            <th className="large-column">User Idea</th>
-            {filter !== 'read' && filter !== 'removed' && <th className="small-column">Read</th>}
-            <th className="small-column">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentIdeas.length === 0 ? (
+      <div>
+        <DrawerMenu/>
+        <h1>Idea Hub</h1>
+        <div className="button-group">
+          <button
+            className="filter-button green"
+            onClick={() => handleFilterChange('unread')}
+          >
+            Unread
+          </button>
+          <button
+            className="filter-button orange"
+            onClick={() => handleFilterChange('read')}
+          >
+            Read
+          </button>
+          <button
+            className="filter-button red"
+            onClick={() => handleFilterChange('removed')}
+          >
+            Removed
+          </button>
+        </div>
+        {/* Search Bar */}
+        <div className="search-bar-container">
+          <input
+            type="text"
+            placeholder="Search by User EPF"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-bar"
+          />
+        </div>
+        <table className="idea-hub-table">
+          <thead>
             <tr>
-              <td colSpan="7">No ideas available</td>
+              <th className="small-column">User EPF</th>
+              <th className="small-column">Dept or Branch</th>
+              <th className="small-column">Idea Date</th>
+              <th className="medium-column">Name</th>
+              <th className="large-column">User Idea</th>
+              {filter !== 'read' && filter !== 'removed' && <th className="small-column">Read</th>}
+              <th className="small-column">Action</th>
             </tr>
-          ) : (
-            currentIdeas.map((idea) => (
-              <tr key={idea.ID} className={idea.read ? '' : 'bold-text'}>
-                <td className="small-column">{idea.USEREPF}</td>
-                <td className="small-column">{idea.DEPTORBRANCH}</td>
-                <td className="small-column">{idea.IDEADATE}</td>
-                <td className="medium-column">{idea.NAME}</td>
-                <td className="large-column">{idea.USERIDEA}</td>
-                {filter !== 'read' && filter !== 'removed' && (
-                  <td className="small-column">
-                    <input
-                      type="checkbox"
-                      checked={idea.read}
-                      onChange={() => handleCheckboxChange(idea.ID)}
-                      disabled={filter === 'removed'}
-                    />
-                  </td>
-                )}
-                <td className="small-column">
-                  {filter === 'removed' ? (
-                    <span className="removed-text">Removed</span> // Show "Removed" text in red for removed filter
-                  ) : filter === 'read' ? (
-                    <span className="read-text">Read</span> // Show "Read" text in red for read filter
-                  ) : (
-                    <button className="delete-button" onClick={() => handleDelete(idea.ID)}>
-                      DELETE
-                    </button>
-                  )}
-                </td>
+          </thead>
+          <tbody>
+            {currentIdeas.length === 0 ? (
+              <tr>
+                <td colSpan="7">No ideas available</td>
               </tr>
-            ))
-          )}
-        </tbody>
-      </table>
-      <div className="pagination-controls">
-        <button
-          className="pagination-button"
-          onClick={() => handlePageChange(-1)}
-          disabled={currentPage === 1}
-        >
-          Previous
-        </button>
-        <span>Page {currentPage} of {totalPages}</span>
-        <button
-          className="pagination-button"
-          onClick={() => handlePageChange(1)}
-          disabled={currentPage === totalPages}
-        >
-          Next
-        </button>
+            ) : (
+              currentIdeas.map((idea) => (
+                <tr key={idea.ID} className={idea.read ? '' : 'bold-text'}>
+                  <td className="small-column">{idea.USEREPF}</td>
+                  <td className="small-column">{idea.DEPTORBRANCH}</td>
+                  <td className="small-column">{idea.IDEADATE}</td>
+                  <td className="medium-column">{idea.NAME}</td>
+                  <td className="large-column">{idea.USERIDEA}</td>
+                  {filter !== 'read' && filter !== 'removed' && (
+                    <td className="small-column">
+                      <input
+                        type="checkbox"
+                        checked={idea.read}
+                        onChange={() => handleCheckboxChange(idea.ID)}
+                        disabled={filter === 'removed'}
+                      />
+                    </td>
+                  )}
+                  <td className="small-column">
+                    {filter === 'removed' ? (
+                      <span className="removed-text">Removed</span>
+                    ) : filter === 'read' ? (
+                      <span className="read-text">Read</span>
+                    ) : (
+                      <button className="delete-button" onClick={() => handleDelete(idea.ID)}>
+                        DELETE
+                      </button>
+                    )}
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+        <div className="pagination-controls">
+          <button
+            className="pagination-button"
+            onClick={() => handlePageChange(-1)}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          <span>Page {currentPage} of {totalPages}</span>
+          <button
+            className="pagination-button"
+            onClick={() => handlePageChange(1)}
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
+        </div>
+        <div className="button-container">
+          <button className="download-button" onClick={handleDownload}>
+            Download
+          </button>
+        </div>
       </div>
-      <div className="button-container">
-        <button className="download-button" onClick={handleDownload}>
-          Download
-        </button>
-      </div>
-    </div>
     </div>
   );
 }
