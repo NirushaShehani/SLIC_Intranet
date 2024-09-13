@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../../Styles/BranchPerformance.css';
-import image1 from '../../assets/Event1.jpg';
+// import image1 from '../../assets/Event1.jpg';
 import image2 from '../../assets/Event2.jpg';
 import image3 from '../../assets/Event3.jpg';
 import { Link } from 'react-router-dom';
 import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
 
-const images = [image1, image2, image3];
+const images = ['http://172.24.90.80:10157/Images/Events/EasyClaim.jpg', image2, image3];
 const categories = ['a', 'b', 'c', 'd', 'e'];
 
 const strings = [
