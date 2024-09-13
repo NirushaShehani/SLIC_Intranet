@@ -67,46 +67,115 @@ const handleDownload = (url) => {
           <div style={rightStyle}>
           <div style={listContainer}>
               <div className="hover-container" style={listContainer}>
-              <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">18 Month Loan Covering Letter </span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">APPLICATION FORM - ENGLISH </span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">E-Mail Facility Access Request Form</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span>Internet Access Request Form New</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">Multifunction Printer Facility Request Form</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">Secure Intranet Access Request Form</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">Tsplus Form</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">User Account Application Form</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">User Backup Shared Folder Access Request Form</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">VPN Request Form</span>
-        </div>
+              <div style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/18_Month_Loan_Covering_Letter.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">18 Months Loan Covering Letter </span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Distress_Loan_Form.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">18 Months Loan/One month Loan Application </span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/SLIC_BOC_LOAN_APPLICATION_FORM.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">BOC Loan Application Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Booking_of_SLIC_Bus.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span>Booking of SLIC Bus</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Buddhist_Assocoation.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Buddhist Association Membership Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/CHAWS_Claim_Form.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">CHAWS Claim Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/SLIC_Circuit_Bungalows.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Circuit Bunglow Booking Information</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/ID_CARD_APPLICATION_FORM.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Company ID Request Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Death_Claim_Form.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Death Claim Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/DUTY_LEAVE_REQUEST_FORM.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Duty Leave Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/APPLICATION_FORM_ENGLISH.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Examination Expense Reimbursement Application</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/olicies_Services_Forms/Forms/HR/Gate_Pass%20Form.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Gate Pass Application</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Grievance_application_english.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Greivance Handling - English Application Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Grievance_application_Sinhala.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Grievance Handling - Sinhala Application Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Group_Term_Life_Assurance_Form_(GTLA).pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Group Term Life Assurance Form (GTLA)</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Gym_Application_&_Rules.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Gym Application</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Medical.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Medical Treatment Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/PROFESSIONAL_DEVELOPMENT_SCHEME_POST%20EXAM.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Reimbursment Application-Post Exam</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Professional_Development_Scheme_Pre%20exam.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Reimbursment Application-Pre Exam</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/employee_application_English.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Service Extension - Employee Application (English)</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Employee_Application_Sinhala.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Service Extension - Employee Application (Sinhala)</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/overseas_english.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Travel Overseas - Official</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Travel_Overseas_Private.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Travel Overseas - Private</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/VEHICLE_LOAN_APPLICATION_FORM.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Vehicle Loan - Application</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/VEHICLE_LOAN_GUARANTOR’S_STATEMENT.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Vehicle Loan - Guarantor''s Statement</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Visting Card Application</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Request_Form.pdf')}>
+                      <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                      <span className="hover-text">Weddings and Funerals - Bus booking & Leave form</span>
+                    </div>
+
               </div>
     
               

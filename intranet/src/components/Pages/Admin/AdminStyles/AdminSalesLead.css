@@ -1,130 +1,215 @@
-/* AdminSalesLead.css */
-
+/* General Container Styling */
 .container {
-    margin: 20px;
-    max-width: 500px; /* Adjust this value to decrease the overall table width */
-    padding: 0 15px; 
-    font-family: Arial, sans-serif;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #333;
-  }
-  
-  table {
-    width: 80%;
-    border-collapse: collapse;
-    margin: 20px 0;
-  }
-  
-  thead th {
-    background-color: #4CAF50;
-    color: rgb(31, 28, 28);
-    padding: 10px;
-    text-align: left;
-  }
-  
-  tbody td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    color: black;
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  tbody tr:hover {
-    background-color: #ddd;
-  }
-  
-  .error {
-    color: red;
-    text-align: center;
-  }
-  
-  .loading {
-    text-align: center;
-    color: #555;
-  }
-  
-  .delete-button {
-    background-color: #ff4d4d;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .delete-button:hover {
-    background-color: #ff1a1a;
-  }
-
-  .button-group {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .filter-button {
-    background-color: #e2442f; 
-    border: 1px solid #ccc;
-    color: #fff;
-    padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  .filter-button.active {
-    background-color: #e2442f; 
-    color: #fff; 
-  }
-  .search-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
+  margin: 20px;
+  padding: 0 15px;
+  font-family: Arial, sans-serif;
+  max-width: 100%; /* Make the container responsive */
 }
 
-.search-bar {
-    padding: 0.5rem;
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+h1 {
+  text-align: center;
+  color: #333;
 }
-/* Add these styles to AdminSalesLead.css */
 
+/* Table Styling */
+table {
+  width: 100%; /* Set table width to 100% for responsiveness */
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+thead th {
+  background-color: #4CAF50;
+  color: rgb(31, 28, 28);
+  padding: 10px;
+  text-align: left;
+}
+
+tbody td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  color: black;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #c1eeff;
+}
+
+tbody tr:hover {
+  background-color: #ffffff;
+}
+
+/* Delete Button Styling */
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-button:hover {
+  background-color: #ff1a1a;
+}
+
+/* Button Group Styling */
 .button-group {
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: nowrap; /* Prevent wrapping for Active and Removed buttons */
 }
 
-.filter-button {
-    background-color: #f31212; /* Default background color */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+/* Active and Removed Buttons - Preserve Original Styling */
+.filter-button, .filter-button1 {
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: #e2442f; /* Original button colors */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 .filter-button.active {
-    background-color: #28a745; /* Green color for active button */
-    color: white;
-    border-color: #28a745;
+  background-color: #28a745; /* Green color for Active button */
+  color: white;
 }
 
-.filter-button:hover {
-    background-color: #e0e0e0; /* Slightly darker background on hover */
+.filter-button1.active {
+  background-color: #01579b; /* Dark blue for Removed button */
 }
 
+.filter-button:hover, .filter-button1:hover {
+  background-color: #d32f2f; /* Hover effect for Active and Removed */
+}
+
+/* Search Container Styling */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.search-bar {
+  padding: 0.5rem;
+  width: 100%; /* Make search bar full-width on small screens */
+  max-width: 400px; /* Ensure max-width on larger screens */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Pagination Controls */
 .pagination-controls {
   display: flex;
-  justify-content: center; /* Centers the pagination controls */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Enable wrapping for small screens */
   margin: 20px 0;
 }
-  
-  
+
+.pagination-controls button {
+  padding: 10px;
+  margin: 5px; /* Adjusted margin for small screens */
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Download Button */
+.download-button {
+  padding: 10px 20px;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Admin Container */
+.admin-sales-lead-container {
+  background-color: #e0f7fa;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  table {
+      font-size: 14px; /* Adjust table font size on smaller screens */
+  }
+
+  thead th, tbody td {
+      padding: 8px; /* Reduce padding for smaller screens */
+  }
+
+  /* Center table within the container on smaller screens */
+  table {
+      width: 100%;
+      margin: 0 auto;
+  }
+
+  .delete-button {
+      font-size: 12px; /* Smaller button text */
+  }
+
+  .search-bar {
+      width: 100%; /* Make search bar full width */
+  }
+
+  /* Adjust pagination buttons for small screens */
+  .pagination-controls {
+      flex-direction: column;
+  }
+
+  .pagination-controls button {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Stack the buttons on top of each other */
+  .button-group {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  /* Keep Active and Removed buttons separate from other styling */
+  .filter-button, .filter-button1 {
+      width: auto; /* Don't make them full width */
+      margin-bottom: 10px;
+  }
+
+  .search-bar {
+      width: 100%; /* Full width for mobile */
+  }
+
+  .pagination-controls {
+      flex-direction: column;
+  }
+
+  /* Decrease padding on buttons for mobile screens */
+  .pagination-controls button, .download-button {
+      padding: 8px;
+  }
+
+  /* Adjust table columns for small screens */
+  table, thead, tbody, th, td, tr {
+      display: block; /* Stack table rows for mobile */
+      width: 100%;
+  }
+
+  th, td {
+      box-sizing: border-box;
+      padding: 10px;
+      text-align: left;
+  }
+}

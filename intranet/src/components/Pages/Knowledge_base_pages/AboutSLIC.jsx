@@ -109,23 +109,23 @@ const HR = () => {
       <h2 style={{ marginBottom: '15px', fontSize: '24px' }}>
         ABOUT SLIC <span style={{ fontSize: '18px', color: '#888' }}>( 5 Articles)</span>
       </h2>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/introduction/')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Introduction</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/352/')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Branch List</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/strengths-of-the-organization/')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Strengths of the organization</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/day-to-day-business-activities-of-sri-lanka-insurance/')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Day to day business activities of Sri Lanka Insurance</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/company-vision-mission-statements/')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
               <span className="hover-text">Company Vision & Mission Statements</span>
             </div>
