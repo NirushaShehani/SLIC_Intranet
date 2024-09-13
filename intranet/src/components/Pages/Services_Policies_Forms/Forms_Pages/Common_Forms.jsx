@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../../../Styles/services.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
-// hr tag styles
-import "../../../../Styles/serviceshrtag.css";
 
 const Common_Forms = () => {
+  const [expandedForms, setExpandedForms] = useState(false);
+  const [expandedSports, setExpandedSports] = useState(false);
+
   const handleDownload = (url) => {
     if (window.confirm('Do you want to download this file?')) {
       const link = document.createElement('a');
@@ -13,6 +12,14 @@ const Common_Forms = () => {
       link.download = url.split('/').pop();
       link.click();
     }
+  };
+
+  const toggleExpandForms = () => {
+    setExpandedForms(!expandedForms);
+  };
+
+  const toggleExpandSports = () => {
+    setExpandedSports(!expandedSports);
   };
 
   // Styles
@@ -43,10 +50,7 @@ const Common_Forms = () => {
     flexDirection: "column",
     alignItems: "flex-start",
     marginRight: "10px", // Space between columns
-    backgroundColor: "#FFFFFF",
     padding: "10px",
-    borderRadius: "8px",
-    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
   };
 
   const listItemStyle = {
@@ -59,9 +63,10 @@ const Common_Forms = () => {
     boxSizing: "border-box",
   };
 
-  const iconStyle = {
+  const dotStyle = {
     marginRight: "10px",
-    color: "#31769F",
+    marginLeft: "20px", // Add left margin for additional forms
+    fontSize: "12px", // Smaller dot size
   };
 
   return (
@@ -72,49 +77,89 @@ const Common_Forms = () => {
           {/* Left Column */}
           <div style={columnStyle}>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Complaint_Lodging_Application.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Complaint Lodging Application</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Change_management_for_SW_V3.1.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Change Request</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/IAAF.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Advisor Application</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Door_Access_Approval_Form.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Door Access</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Certify_-Id_-No.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">NIC Number</span>
             </div>
+
+            {/* Expandable Forms Section */}
+            <div className="hover-container" style={listItemStyle} onClick={toggleExpandForms}>
+              <span className="hover-text">Additional Forms</span>
+            </div>
+
+            {/* Conditionally render extra forms if expandedForms is true */}
+            {expandedForms && (
+              <div>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://example.com/additional-form-1.pdf')}>
+                  <span style={dotStyle}>•</span>
+                  <span className="hover-text">Additional Form 1</span>
+                </div>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://example.com/additional-form-2.pdf')}>
+                  <span style={dotStyle}>•</span>
+                  <span className="hover-text">Additional Form 2</span>
+                </div>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://example.com/additional-form-2.pdf')}>
+                  <span style={dotStyle}>•</span>
+                  <span className="hover-text">Additional Form 2</span>
+                </div>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://example.com/additional-form-2.pdf')}>
+                  <span style={dotStyle}>•</span>
+                  <span className="hover-text">Additional Form 2</span>
+                </div>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://example.com/additional-form-2.pdf')}>
+                  <span style={dotStyle}>•</span>
+                  <span className="hover-text">Additional Form 2</span>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Right Column */}
           <div style={columnStyle}>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://slic.intranet.com/Thrift_society/thrift-society.html')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Thrift Society App</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/subapathum_application.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Suba Pethum</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.60.66/b-net-new/suraksha/suraksha.html')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Suraksha</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Pinnacle%20Form.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Pinnacle</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Combank Credit Card</span>
             </div>
+
+            {/* Expandable Sports Section */}
+            <div className="hover-container" style={listItemStyle} onClick={toggleExpandSports}>
+              <span className="hover-text">Sports</span>
+            </div>
+
+            {/* Conditionally render extra sports forms if expandedSports is true */}
+            {expandedSports && (
+              <div>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://example.com/additional-form-1.pdf')}>
+                  <span style={dotStyle}>•</span>
+                  <span className="hover-text">Additional Form 1</span>
+                </div>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://example.com/additional-form-2.pdf')}>
+                  <span style={dotStyle}>•</span>
+                  <span className="hover-text">Additional Form 2</span>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
