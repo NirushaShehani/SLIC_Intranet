@@ -35,28 +35,18 @@ const Common_Forms = () => {
   const sectionWrapperStyle = {
     display: "flex",
     justifyContent: "space-between",
-    marginBottom: "20px",
   };
 
-  const sectionStyle = {
-    flex: "1 1 0px",
+  const columnStyle = {
+    flex: "1 1 45%", // Two columns, each taking up 45% of the width
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
-    marginRight: "20px", // Space between sections
+    marginRight: "10px", // Space between columns
     backgroundColor: "#FFFFFF",
     padding: "10px",
     borderRadius: "8px",
     boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
-  };
-
-  const titleStyle = {
-    fontSize: "16px",
-    fontWeight: "bold",
-    marginBottom: "10px",
-    borderBottom: "1px solid #e0e0e0",
-    width: "100%", // Full width for title underline
-    paddingBottom: "5px", // Space between title and underline
   };
 
   const listItemStyle = {
@@ -77,67 +67,51 @@ const Common_Forms = () => {
   return (
     <div style={containerStyle}>
       <div style={rightStyle}>
-        <div style={sectionWrapperStyle}>
-          {/* Membership Forms Section */}
-          <div style={sectionStyle}>
-            <div style={titleStyle}>Membership Forms</div>
-            <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Application for SLII membership</span>
-            </div>
-          </div>
-
-          {/* Security Department Forms Section */}
-          <div style={sectionStyle}>
-            <div style={titleStyle}>Security Department Forms</div>
-            <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>abc</span>
-            </div>
-          </div>
-        </div>
-
         {/* Common Forms Section */}
         <div style={sectionWrapperStyle}>
-          <div style={sectionStyle}>
-            <div style={titleStyle}>Common Forms</div>
-            <div  className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Complaint_Lodging_Application.pdf')}>
+          {/* Left Column */}
+          <div style={columnStyle}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Complaint_Lodging_Application.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Complaint Lodging Application</span>
             </div>
-            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Change_management_for_SW_V3.1.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Change_management_for_SW_V3.1.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Change Request</span>
             </div>
-            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/IAAF.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/IAAF.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Advisor Application</span>
             </div>
-            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Door_Access_Approval_Form.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Door_Access_Approval_Form.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Door Access</span>
             </div>
-            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Certify_-Id_-No.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Certify_-Id_-No.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">NIC Number</span>
             </div>
-            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://slic.intranet.com/Thrift_society/thrift-society.html')}>
+          </div>
+
+          {/* Right Column */}
+          <div style={columnStyle}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://slic.intranet.com/Thrift_society/thrift-society.html')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Thrift Society App</span>
             </div>
-            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/subapathum_application.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/subapathum_application.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Suba Pethum</span>
             </div>
-            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.60.66/b-net-new/suraksha/suraksha.html')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.60.66/b-net-new/suraksha/suraksha.html')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Suraksha</span>
             </div>
-            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Pinnacle%20Form.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Pinnacle%20Form.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Pinnacle</span>
             </div>
-            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Combank Credit Card</span>
             </div>

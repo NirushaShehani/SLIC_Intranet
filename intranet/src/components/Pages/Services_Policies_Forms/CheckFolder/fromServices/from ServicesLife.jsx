@@ -201,18 +201,8 @@ const Life = () => {
                 <span  className="hover-text">Common Forms</span>
               </Link>
             </div>
-            <div  className="hover-container" style={listItemStyle}>
-              <Link to="/Membership-Forms" style={{ cursor: 'pointer' }}>
-                <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
-                <span  className="hover-text">Membership Forms</span>
-              </Link>
-            </div>
-            <div  className="hover-container" style={listItemStyle}>
-              <Link to="/Security-Department-Forms" style={{ cursor: 'pointer' }}>
-                <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
-                <span  className="hover-text">Security Department Forms</span>
-              </Link>
-            </div>
+            
+            
            
           </div>
 
