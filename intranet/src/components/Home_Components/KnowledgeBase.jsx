@@ -84,13 +84,13 @@ const KnowledgeBase = () => {
 
   //Custom chip design for Book Hub
   const CustomChip4 = styled(Chip)(({ theme }) => ({
+
     display: "flex",
     justifyContent: "space-between",
     backgroundColor: "",
     color: "white",
     borderRadius: "5px",
     paddingRight: theme.spacing(1),
-    margin: "8px 11px",
     height: "70px",
     width: "300px",
     backgroundImage: `url(${imageUrl3})`, 
@@ -110,7 +110,7 @@ const KnowledgeBase = () => {
       
       <div style={styles.chipContainer}>
         {/*Services Chip*/}
-        <Link to="/services-page" style={{ cursor: 'pointer' , textDecoration: 'none',}}>
+        <Link to="/services-page" style={{ cursor: 'pointer' , textDecoration: 'none', margin: 0}}>
         <CustomChip style={styles.label}
           label="Policies/Services/Forms"
           deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
@@ -215,7 +215,10 @@ const styles = {
     minWidth: "32px",
   },
   label: {
-    fontSize: "19px"
+    fontSize: "19px",
+    margin: "0 0 10px 0",
+    padding: 0,
+
   },
   slideshow: {
     width: "100%",

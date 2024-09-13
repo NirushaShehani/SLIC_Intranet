@@ -20,7 +20,7 @@
 }
 
 .album .img {
-  width: 110px;                /* Full width of the container */
+  width: 100%;                /* Full width of the container */
   height: 130px;              /* Fixed height for all images */
   object-fit: cover;          /* Crop the image to fit the container */
   border-radius: 8px;         /* Rounded corners for the image itself */

@@ -3,15 +3,17 @@
   flex-direction: row;
   padding: 20px;
   background-image: url('../assets/bgimage.png');
-  background-size: cover; 
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; 
+  background-size: cover;  /* Ensures the image covers the container */
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;  /* Ensures the background covers the entire height */
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
 }
 
 .home-column1 {
   padding: 10px;
   border-radius: 5px;
-  width: 22.5%;
+  width: 21%;
   display: flex;
   flex-direction: column;
 }
@@ -19,7 +21,7 @@
 .home-column2 {
   padding: 10px;
   border-radius: 5px;
-  width: 30%;
+  width: 31%;
   display: flex;
   flex-direction: column;
 }
@@ -65,4 +67,28 @@
   height: 1px;
   background-color: #ccc; /* Adjust color as needed */
 }
+
+
+/* Media Query for small screens (max-width: 768px) */
+@media (max-width: 900px) {
+  .home {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .home-column1, .home-column2, .home-column3, .home-column4 {
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: center !important;
+  }
+
+  .column {
+    gap: 5px;
+  }
+
+  .column > div {
+    padding: 8px;
+  }
+}
+
 

@@ -123,7 +123,7 @@ h2 {
   padding-top: 1px;
   background-color: #0c4d72;
   border-radius: 8px;
-  max-width: 300px;
+  width: 300px;
   color: #fff;
   font-family: Arial, sans-serif;
   text-align: center;
@@ -164,7 +164,7 @@ h2 {
   padding-top: 1px;
   background-color: #0c4d72;
   border-radius: 8px;
-  max-width: 300px;
+  width: 300px;
   color: #fff;
   font-family: Arial, sans-serif;
   text-align: center;
@@ -234,7 +234,7 @@ h2 {
 /* Responsive CSS */
 @media (max-width: 768px) {
   .incentive-criteria {
-    max-width: 100%;
+    width: 300px;
     padding: 10px;
   }
 
