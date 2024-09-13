@@ -5,45 +5,34 @@ import '../../Styles/CompanyEventscard.css';
 const eventsData = [
   {
     id: 1,
-    image: require('../../assets/SLIC_Events/Life congress/themenight/1.JPG'),
+    image: 'http://localhost:3001/images/slot1/1.jpg',
     likes: 26,
   },
   {
     id: 2,
-    image: require('../../assets/SLIC_Events/Life congress/Day1/1.JPG'),
+    image: 'http://localhost:3001/images/slot1/2.jpg',
     likes: 85,
   },
   {
     id: 3,
-    image: require('../../assets/SLIC_Events/Life congress/1.JPG'),
+    image: 'http://localhost:3001/images/slot1/3.jpg',
     likes: 85,
   },
   {
     id: 4,
-    image: require('../../assets/SLIC_Events/poson poya/1-min.png'),
+    image: 'http://localhost:3001/images/slot1/4.jpg',
     likes: 85,
   },
   {
     id: 5,
-    image: require('../../assets/SLIC_Events/suba pathum/1-min.jpg'),
+    image: 'http://localhost:3001/images/slot1/5.jpg',
     likes: 85,
   },
   {
     id: 6,
-    image: require('../../assets/SLIC_Events/super woman/1.jpg'),
+    image: 'http://localhost:3001/images/slot1/6.jpg',
     likes: 85,
-  },
-  {
-    id: 7,
-    image: require('../../assets/SLIC_Events/life call center/1-min.png'),
-    likes: 85,
-  },
-  {
-    id: 8,
-    image: require('../../assets/SLIC_Events/flood donation/1-min.jpg'),
-    likes: 85,
-  },
-  // Add more event data here...
+  }
 ];
 
 const EventCard = ({ id, image, title, likes, onLike }) => {
