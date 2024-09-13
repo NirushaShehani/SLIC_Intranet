@@ -21,13 +21,7 @@ h1 {
 }
 
 /* Table Styling */
-table {
-  width: 80%; /* Adjust table width to ensure responsiveness */
-  border-collapse: collapse;
-  margin: 20px 0;
-  overflow-x: auto; /* Make table scrollable on smaller screens */
-  display: block;
-}
+
 
 thead th {
   background-color: #4CAF50;
