@@ -21,7 +21,7 @@ const eventsData = [
   },
   {
     id: 4,
-    image: 'http://localhost:3001/images/slot4/4.png',
+    image: 'http://172.24.90.80:10157/Images/Branches/TaxInse.jpg',
     likes: 85,
   },
   {
@@ -42,9 +42,7 @@ const EventCard = ({ id, image, title, likes, onLike }) => {
       
       <div className="company-events-container">
       <div className="event-card">
-      <Link to={`/detailed-events/${id}`}>
         <img src={image} alt={title} className="event-image" />
-      </Link>
       <div className="event-info">
         <div className="event-likes">
           <span className="like-icon" onClick={onLike}>👍</span>

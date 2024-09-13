@@ -42,9 +42,7 @@ const EventCard = ({ id, image, title, likes, onLike }) => {
       
       <div className="company-events-container">
       <div className="event-card">
-      <Link to={`/detailed-events/${id}`}>
         <img src={image} alt={title} className="event-image" />
-      </Link>
       <div className="event-info">
         <div className="event-likes">
           <span className="like-icon" onClick={onLike}>👍</span>
