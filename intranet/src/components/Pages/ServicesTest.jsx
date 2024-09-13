@@ -25,6 +25,7 @@ import procument_Forms from "./Services_Policies_Forms/Forms_Pages/procument";
 import Sales from "./Services_Policies_Forms/Forms_Pages/Sales";
 import Security from "./Services_Policies_Forms/Forms_Pages/Security";
 import Membership from "./Services_Policies_Forms/Forms_Pages/Membership";
+import Life from "./Services_Policies_Forms/Forms_Pages/Life_Forms";
 
 // Forms_Pages Links
 
@@ -36,6 +37,7 @@ import Life_Circulars from "./Services_Policies_Forms/Circulars_pages/Life_Circu
 
 import Recent_Links from "./Services_Policies_Forms/Recent_Links";
 import { Link } from "react-router-dom";
+import Life_Forms from "./Services_Policies_Forms/Forms_Pages/Life_Forms";
 
 const ServicesTest = () => {
   const [activeComponent, setActiveComponent] = useState(null); // To track the active content
@@ -77,6 +79,8 @@ const ServicesTest = () => {
         return <ICT_Policies />;
       case "ICT_Forms":
         return <ICT_Forms />;
+        case "Life_Forms":
+        return <Life_Forms/>;
       case "HR_Forms":
         return <HR_Forms />;
       case "procument_Forms":
