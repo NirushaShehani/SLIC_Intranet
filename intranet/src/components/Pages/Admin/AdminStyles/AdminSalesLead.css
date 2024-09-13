@@ -11,11 +11,22 @@ h1 {
   color: #333;
 }
 
+/* Table Centering */
+.table-container {
+  display: flex;
+  justify-content: center; /* Centers the table horizontally */
+  align-items: center; /* Vertically center if needed */
+  width: 100%;
+  margin: 20px 0;
+}
+
 /* Table Styling */
 table {
-  width: 100%; /* Set table width to 100% for responsiveness */
+  width: 80%; /* Adjust table width to ensure responsiveness */
   border-collapse: collapse;
   margin: 20px 0;
+  overflow-x: auto; /* Make table scrollable on smaller screens */
+  display: block;
 }
 
 thead th {
@@ -62,12 +73,12 @@ tbody tr:hover {
   flex-wrap: nowrap; /* Prevent wrapping for Active and Removed buttons */
 }
 
-/* Active and Removed Buttons - Preserve Original Styling */
+/* Filter Buttons */
 .filter-button, .filter-button1 {
   padding: 10px 20px;
   margin-right: 10px;
   cursor: pointer;
-  background-color: #e2442f; /* Original button colors */
+  background-color: #e2442f;
   color: white;
   border: none;
   border-radius: 4px;
@@ -84,7 +95,7 @@ tbody tr:hover {
 }
 
 .filter-button:hover, .filter-button1:hover {
-  background-color: #d32f2f; /* Hover effect for Active and Removed */
+  background-color: #d32f2f;
 }
 
 /* Search Container Styling */
@@ -142,7 +153,7 @@ tbody tr:hover {
 }
 
 /* Media Queries for Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   table {
       font-size: 14px; /* Adjust table font size on smaller screens */
   }
@@ -150,22 +161,34 @@ tbody tr:hover {
   thead th, tbody td {
       padding: 8px; /* Reduce padding for smaller screens */
   }
+}
 
-  /* Center table within the container on smaller screens */
+@media (max-width: 768px) {
   table {
       width: 100%;
-      margin: 0 auto;
+      display: block; /* Ensure the table is scrollable on small screens */
+      overflow-x: auto;
+  }
+
+  thead, tbody, th, td, tr {
+      display: block;
+  }
+
+  th, td {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      text-align: left;
   }
 
   .delete-button {
-      font-size: 12px; /* Smaller button text */
+      font-size: 12px;
   }
 
   .search-bar {
-      width: 100%; /* Make search bar full width */
+      width: 100%; 
   }
 
-  /* Adjust pagination buttons for small screens */
   .pagination-controls {
       flex-direction: column;
   }
@@ -173,37 +196,41 @@ tbody tr:hover {
   .pagination-controls button {
       width: 100%;
   }
-}
 
-@media (max-width: 480px) {
-  /* Stack the buttons on top of each other */
   .button-group {
       flex-direction: column;
       align-items: center;
   }
 
-  /* Keep Active and Removed buttons separate from other styling */
   .filter-button, .filter-button1 {
-      width: auto; /* Don't make them full width */
+      width: 100%;
       margin-bottom: 10px;
   }
+}
 
-  .search-bar {
-      width: 100%; /* Full width for mobile */
+@media (max-width: 480px) {
+  /* Stack the buttons and adjust padding */
+  .button-group {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .filter-button, .filter-button1 {
+      width: 100%;
+      margin-bottom: 10px;
   }
 
   .pagination-controls {
       flex-direction: column;
   }
 
-  /* Decrease padding on buttons for mobile screens */
   .pagination-controls button, .download-button {
       padding: 8px;
+      width: 100%;
   }
 
-  /* Adjust table columns for small screens */
   table, thead, tbody, th, td, tr {
-      display: block; /* Stack table rows for mobile */
+      display: block; /* Stack table rows */
       width: 100%;
   }
 
@@ -211,5 +238,10 @@ tbody tr:hover {
       box-sizing: border-box;
       padding: 10px;
       text-align: left;
+  }
+
+  /* Hide unnecessary columns on smaller screens */
+  tbody td:nth-child(3), tbody td:nth-child(4), tbody td:nth-child(5) {
+      display: none;
   }
 }

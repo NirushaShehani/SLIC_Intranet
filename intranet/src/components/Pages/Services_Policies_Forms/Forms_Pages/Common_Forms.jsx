@@ -101,13 +101,45 @@ const Common_Forms = () => {
         <div style={sectionWrapperStyle}>
           <div style={sectionStyle}>
             <div style={titleStyle}>Common Forms</div>
-            <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Complaint Lodging Application</span>
+            <div  className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Complaint_Lodging_Application.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Complaint Lodging Application</span>
             </div>
-            <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
-              <span>Change management for SW V3.1</span>
+            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Change_management_for_SW_V3.1.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Change Request</span>
+            </div>
+            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/IAAF.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Advisor Application</span>
+            </div>
+            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Door_Access_Approval_Form.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Door Access</span>
+            </div>
+            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Certify_-Id_-No.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">NIC Number</span>
+            </div>
+            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://slic.intranet.com/Thrift_society/thrift-society.html')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Thrift Society App</span>
+            </div>
+            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/subapathum_application.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Suba Pethum</span>
+            </div>
+            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.60.66/b-net-new/suraksha/suraksha.html')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Suraksha</span>
+            </div>
+            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Pinnacle%20Form.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Pinnacle</span>
+            </div>
+            <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Combank Credit Card</span>
             </div>
           </div>
         </div>

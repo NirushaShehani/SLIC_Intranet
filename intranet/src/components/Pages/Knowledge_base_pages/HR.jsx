@@ -96,6 +96,14 @@ const HR = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
               <span className="hover-text">Questions on Life Insurance</span>
             </div>
+            <div className="hover-container" style={listItemStyle} onClick={() =>  openInNewWindow('http://172.24.60.60/e-Learning/learning.asp')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
+              <span className="hover-text">E-Learning</span>
+            </div>
+            <div className="hover-container" style={listItemStyle} onClick={() =>  openInNewWindow('http://172.24.60.66/b-net-new/hr-training/hr-training.html')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
+              <span className="hover-text">HR Training</span>
+            </div>
           </div>
 
           {/* CHAWS Section */}
