@@ -78,20 +78,21 @@ function AdminSalesLead() {
                     alert('Failed to delete sales lead');
                 }
             }
-            catch{
-                console.error('Error deleting sales lead:', error);
+            catch(err){
+                console.error('Error deleting sales lead:', err);
                 alert('An error occurred while deleting the sales lead');
             }
         }
     };
 
     const handleDownload = () => {
-        const worksheet = XLSX.utils.json_to_sheet(salesLeads);
+        const salesLeadsWithoutActive = salesLeads.map(({ is_active, ...rest }) => rest);
+        const worksheet = XLSX.utils.json_to_sheet(salesLeadsWithoutActive);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Sales Leads');
-        
         XLSX.writeFile(workbook, `${filter === 'removed' ? 'RemovedSalesLeads' : 'ActiveSalesLeads'}.xlsx`);
     };
+    
 
     const handleFilterChange = (newFilter) => {
         setFilter(newFilter);
@@ -124,23 +125,24 @@ function AdminSalesLead() {
     if (error) return <p>Error: {error}</p>;
 
     return (
-        <div>
+        <div className="admin-sales-lead-container">
             <DrawerMenu/>
             <h1>Sales Leads</h1>
             <div className="button-group">
-    <button 
-        className={`filter-button ${filter === 'removed' ? 'active' : ''}`} 
-        onClick={() => handleFilterChange('removed')}
-    >
-        Removed Leads
-    </button>
-    <button 
-        className={`filter-button ${filter === 'active' ? 'active' : ''}`} 
-        onClick={() => handleFilterChange('active')}
-    >
-        Active Leads
-    </button>
-</div>
+                <button 
+                    className={`filter-button ${filter === 'removed' ? 'active-removed' : ''}`} 
+                    onClick={() => handleFilterChange('removed')}
+                >
+                    Removed Leads
+                </button>
+                <button 
+                    className={`filter-button ${filter === 'active' ? 'active-active' : ''}`} 
+                    onClick={() => handleFilterChange('active')}
+                    style={{ backgroundColor: filter === 'removed' ? '#28a745' : '#4CAF50' }}
+                >
+                    Active Leads
+                </button>
+            </div>
 
             <div className="search-container">
                 <input
@@ -178,10 +180,12 @@ function AdminSalesLead() {
                                 <td>{lead.slicExtension}</td>
                                 <td>{lead.slicDepartment}</td>
                                 <td>
-                                    {filter === 'active' && (
+                                    {filter === 'active' ? (
                                         <button onClick={() => handleDelete(lead.id)} className="delete-button">
                                             DELETE
                                         </button>
+                                    ) : (
+                                        <span style={{ color: 'red' }}>Removed</span>  // Display "Removed" in red
                                     )}
                                 </td>
                             </tr>

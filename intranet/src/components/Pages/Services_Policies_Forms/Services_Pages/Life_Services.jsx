@@ -68,39 +68,39 @@ const Life = () => {
           </div>
           <div style={listContainer}>
             
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate(' http://insurance-app/secworks/signin.asp')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(' http://insurance-app/secworks/signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">B-Insurance</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://blife-comm/UI/Home.aspx')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://blife-comm/UI/Home.aspx')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">B-Commission Life</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://callc-app/secworks/signin.asp')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://callc-app/secworks/signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">B-Call center</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://blife-edomas.slic1.com/Secworks/Signin.asp')}>
+            <div className="hover-container" style={listItemStyle} onClick={() =>openInNewWindow('http://blife-edomas.slic1.com/Secworks/Signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">E-Domas Life </span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://blife-mis-agent/Secworks/Signin.asp')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://blife-mis-agent/Secworks/Signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">B-MIS Life </span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('https://cognoslife.srilankainsurance.com:9300/bi/')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('https://cognoslife.srilankainsurance.com:9300/bi/')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Cognos Analytics </span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://blife-app.slic1.com/cashbook_web/Login.aspx')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/cashbook_web/Login.aspx')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">CashBook</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://slic.intranet.com/PGIWORKS/signin.asp')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://slic.intranet.com/PGIWORKS/signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">PEGI Online</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('https://apps.srilankainsurance.com/agenworks/Signin.asp')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('https://apps.srilankainsurance.com/agenworks/Signin.asp')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">B-Advisor</span>
             </div>   

@@ -1,151 +1,226 @@
+/* Full-page layout and background */
 .full-page {
-  background-image: url(''); /* Corrected background-image syntax */
-  background-size: cover; 
-  background-position: center; 
-  min-height: 100vh; 
-  overflow: auto;
+  background-color: #e0f7fa; /* Light blue background */
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  min-height: 100vh; /* Ensure the background covers the full viewport */
 }
 
-.idea-hub-table {
-  width: 80% !important; 
-  max-width: 80%;
-  margin: 0 auto; 
-  border-collapse: collapse;
-}
-
-.small-column {
-  width: 10%; 
-}
-
-.medium-column {
-  width: 15%; 
-}
-
-.large-column {
-  width: 55%; 
-}
-
-th, td {
-  border: 1px solid black;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
-}
-
-.delete-button {
-  background-color: #ff4c4c; 
-  color: white; 
-  border: none; 
-  padding: 6px 10px; 
-  cursor: pointer; 
-  border-radius: 4px; 
-  font-size: 11px; 
-  transition: background-color 0.3s ease; 
-  width: 70px; 
-  height: 25px;
-}
-
-.delete-button:hover {
-  background-color: #ff1a1a; 
-}
-
-.bold-text {
-  font-weight: bold;
-}
-
-.button-container {
+/* Button Group Styling */
+.button-group {
   display: flex;
   justify-content: center;
-  margin-top: 20px; 
-}
-
-.download-button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.download-button:hover {
-  background-color: #45a049;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allow wrapping of buttons on small screens */
 }
 
 .filter-button {
   padding: 10px 20px;
   margin: 5px;
   border: none;
+  border-radius: 4px;
   color: white;
   cursor: pointer;
-  border-radius: 5px;
   font-size: 16px;
 }
 
 .filter-button.green {
-  background-color: green;
+  background-color: #388e3c; /* Green for Unread */
 }
 
 .filter-button.orange {
-  background-color: orange;
+  background-color: #f57c00; /* Orange for Read */
 }
 
 .filter-button.red {
-  background-color: red;
+  background-color: #d32f2f; /* Red for Removed */
 }
 
 .filter-button:hover {
   opacity: 0.8;
 }
 
-.search-bar {
-  display: block;
-  margin: 20px auto; 
-  padding: 8px;
-  width: 50%; 
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.button-group {
-  display: flex;
-  justify-content: center; 
-  margin-bottom: 20px;
-}
-
+/* Table Styling */
 .idea-hub-table {
   width: 100%;
   margin-top: 20px;
   border-collapse: collapse;
 }
 
-.pagination-controls {
-  display: flex;
-  justify-content: center; 
-  margin: 20px 0;
+.idea-hub-table th,
+.idea-hub-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
 }
 
-.button-container {
-  display: flex;
-  justify-content: center; 
-  margin-top: 20px;
+.small-column {
+  width: 10%;
 }
 
-.removed-text {
-  color: red;
-  font-size: 12px;
+.medium-column {
+  width: 20%;
+}
+
+.large-column {
+  width: 40%;
+}
+
+.bold-text {
+  font-weight: bold;
 }
 
 .read-text {
-  color: rgb(81, 104, 211);
-  font-size: 12px;
+  color: #4caf50; /* Green for Read */
 }
 
+.removed-text {
+  color: #d32f2f; /* Red for Removed */
+}
+
+.delete-button {
+  padding: 5px 10px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 11px; /* Adjust button font size for smaller screens */
+}
+
+.delete-button:hover {
+  background-color: #ff1a1a;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-button {
+  padding: 10px;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.download-button {
+  padding: 10px 20px;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.download-button:hover {
+  background-color: #45a049;
+}
+
+/* Search Bar */
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.search-bar {
+  width: 300px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Tablet screens (up to 768px) */
+@media (max-width: 768px) {
+  .small-column, .medium-column, .large-column {
+    width: 100%; /* Make columns full width */
+    display: block; /* Stack columns on top of each other */
+    text-align: left; /* Align text to the left */
+  }
+
+  .button-group {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    align-items: center;
+  }
+
+  .filter-button {
+    width: 100%; /* Make buttons full width */
+    margin: 5px 0;
+  }
+
+  .idea-hub-table {
+    font-size: 14px; /* Adjust table font size for tablets */
+  }
+
+  .pagination-controls {
+    flex-direction: column;
+  }
+
+  .pagination-button {
+    width: 100%; /* Full width pagination buttons for mobile */
+    margin: 5px 0;
+  }
+}
+
+/* Mobile screens (up to 480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem; /* Adjust heading size */
+    text-align: center;
+  }
+
+  .search-bar {
+    width: 100%; /* Full width search bar on mobile */
+    margin-bottom: 10px;
+  }
+
+  .idea-hub-table {
+    font-size: 12px; /* Reduce table font size for small screens */
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .filter-button {
+    padding: 8px 15px; /* Reduce padding for smaller buttons */
+    margin: 5px 0;
+    font-size: 14px; /* Reduce button font size */
+  }
+
+  .delete-button {
+    padding: 5px 8px; /* Smaller delete button for mobile */
+    font-size: 10px;
+  }
+
+  .pagination-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pagination-button {
+    width: 100%; /* Full width for pagination buttons */
+  }
+
+  .download-button {
+    width: 100%; /* Full width for the download button */
+    font-size: 14px;
+  }
+}

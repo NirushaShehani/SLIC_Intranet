@@ -59,47 +59,47 @@ const HR_Circulars = () => {
         <div className="home-container">
         
           <div style={listContainer}>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/18MONTHS_DISTRESS_LOAN.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">18 Month Loan/Distress Loan</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-mis')}>
+            <div className="hover-container"style={listItemStyle} onClick={() =>openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Approved_No_Pay_Leave_to_travel_overseas.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Approved No Pay Leave to Travel Overseas</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/cashbook')}>
+            <div className="hover-container"style={listItemStyle} onClick={() =>openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CircuitBungalowsandBussesPriceList.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Circuit Bungalows & Busses Price List	</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-commission')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/NOTICE_Canteen.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Guidlines on using Staff Canteen</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/b-advisor')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CIRCULAR_NO-HRD_26_2016_ENGLISH.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Re-imbursement of Examination Expenses (English)	</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CIRCULAR_NO-HRD_26_2016_SINHALA.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Re-imbursement of Examination Expenses (Sinhala)</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CHAWS_NOTICE_ENGLISH.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Revised Medical Scheme (CHAWS) - English</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CHAWS_NOTICE_SINHALA.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Revised Medical Scheme (CHAWS) - Sinhala</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Service_Extension_Circular_(English).pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Service Extension Circular (English)</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+            <div className="hover-container"style={listItemStyle} onClick={() =>openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Service_Extension_Circular_(Sinhala).pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Service Extension Circular (Sinhala)	</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hris')}>
+            <div className="hover-container"style={listItemStyle} onClick={() =>openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Study_Leave_Procedure_PD_12A_2010.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Study Leave Procedure</span>
             </div>

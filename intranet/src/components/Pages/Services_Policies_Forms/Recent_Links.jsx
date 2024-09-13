@@ -18,11 +18,11 @@ const Recent_Links = () => {
         <img src={BlifeImg} alt="b-Life" className="service-image" />
           <h2 className="service-title">b-Life</h2>
         </div>
-        <div className="service-card">
+        <div className="service-card"onClick={() => openInNewWindow('https://app.mihcm.com')}>
           <img src={MiHCMImg} alt="MiHCM" className="service-image" />
           <h2 className="service-title">MiHCM</h2>
         </div>
-        <div className="service-card">
+        <div className="service-card"onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
           <img src={Digital_SignatureImg} alt="Digital Signature" className="service-image" />
           <h2 className="service-title">Digital Signature</h2>
         </div>

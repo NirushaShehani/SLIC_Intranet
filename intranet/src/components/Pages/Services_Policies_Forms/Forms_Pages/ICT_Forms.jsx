@@ -67,50 +67,48 @@ const handleDownload = (url) => {
           <div style={rightStyle}>
             <div className="home-container">
               <div style={listContainer}>
-              <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">Device Access Request Form</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">Direct Dial out Facility Access Request Form</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">E-Mail Facility Access Request Form</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">Internet Access Request Form New</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">Multifunction Printer Facility Request Form</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">Secure Intranet Access Request Form</span>
-        </div>
-        <div style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">Tsplus Form</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">User Account Application Form</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">User Backup Shared Folder Access Request Form</span>
-        </div>
-        <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-          <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-          <span className="hover-text">VPN Request Form</span>
-        </div>
+              <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/Device_Access_Request_Form.pdf')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                    <span className="hover-text">Device Access Request Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/Direct_Dial_out_Facility_Access_Request_Form.pdf')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                    <span className="hover-text">Direct Dial out Facility Access Request Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/EMail_Facility_Access_Request_Form.pdf')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                    <span className="hover-text">E-Mail Facility Access Request Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/Internet_Access_Request_Form_New.pdf')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                    <span className="hover-text">Internet Access Request Form New</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/Multifunction_Printer_Facility_Request_Form.pdf')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                    <span className="hover-text">Multifunction Printer Facility Request Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/Secure_Intranet_Access_Request_Form.pdf')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                    <span className="hover-text">Secure Intranet Access Request Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/Tsplus_Form.pdf')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                    <span className="hover-text">Tsplus Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/User_Account_Application_Form.pdf')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                    <span className="hover-text">User Account Application Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/User_Backup_Shared_Folder_Access_Request_Form.pdf')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                    <span className="hover-text">User Backup Shared Folder Access Request Form</span>
+                    </div>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/VPN_Request_%20Form.pdf')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                    <span className="hover-text">VPN Request Form</span>
+                    </div>
               </div>
-    
-              
-    
+
     
             </div>
           </div>
