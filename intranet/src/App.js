@@ -6,7 +6,6 @@ import Home from './components/Home';
 import FullNoticesPage from './components/Pages/FullNoticesPage';
 import DetailedEventsPage from './components/Pages/DetailedEventsPage';
 import DetailedNoticePage from './components/Pages/DetailedNoticePage';
-import EventsPage from './components/Pages/EventsPage';
 import FullMedia from './components/Pages/FullMedia';
 import FullBranchPerformance from './components/Pages/FullBranchPerformance';
 import ContactListPage from './components/Pages/ContactListPage';
@@ -31,6 +30,13 @@ import Incentive_Criteria from './components/Pages/Incentive_Criteria';
 import HR from './components/Pages/Knowledge_base_pages/HR';
 import AboutSLIC from './components/Pages/Knowledge_base_pages/AboutSLIC';
 
+//Event pages
+import Slot1 from './components/Pages/SLIC_Events/Slot1';
+import Slot2 from './components/Pages/SLIC_Events/Slot2';
+import Slot3 from './components/Pages/SLIC_Events/Slot3';
+import Slot4 from './components/Pages/SLIC_Events/Slot4';
+import Slot5 from './components/Pages/SLIC_Events/Slot5';
+import Slot6 from './components/Pages/SLIC_Events/Slot6';
 
 
 const App =() => {
@@ -41,7 +47,6 @@ const App =() => {
         <Route path="/full-notices" element={<FullNoticesPage />} />
         <Route path="/detailed-notice/:id" element={<DetailedNoticePage />} />
         <Route path="/detailed-events/:id" element={<DetailedEventsPage />} />
-        <Route path="/full-events" element={<EventsPage />} />
         <Route path="/full-media" element={<FullMedia />} />
         <Route path="/full-branch-performance" element={<FullBranchPerformance />} /> 
         <Route path="/contact-list" element={<ContactListPage/>}/>
@@ -70,8 +75,12 @@ const App =() => {
         <Route path="/" element={<HR />} />
         <Route path="/aboutSlic" element={<AboutSLIC />} />
         {/* Add other routes here */}
-   
-
+        <Route path="/Slot1" element={<Slot1 />} />
+        <Route path="/Slot2" element={<Slot2/>}/>
+        <Route path="/Slot3" element={<Slot3/>}/>
+        <Route path="/Slot4" element={<Slot4/>}/>
+        <Route path="/Slot5" element={<Slot5/>}/>
+        <Route path="/Slot6" element={<Slot6/>}/>
       </Routes>
     </Router>
   );
