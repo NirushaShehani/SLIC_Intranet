@@ -360,7 +360,7 @@ const HR_Policies = () => {
                   }
                 >
                   <span style={dotStyle}>•</span>
-                  <span className="hover-text">KPIs SETTING FORM – 2024</span>
+                  <span className="hover-text">KPIs setting form– 2024</span>
                 </div>
                 <div
                   className="hover-container"
@@ -370,7 +370,7 @@ const HR_Policies = () => {
                   }
                 >
                   <span style={dotStyle}>•</span>
-                  <span className="hover-text">PERFORMANCE APPRAISAL AND DEVELOPMENT REVIEW</span>
+                  <span className="hover-text">Performance appraisal and development review</span>
                 </div>
                 <div
                   className="hover-container"
@@ -380,7 +380,7 @@ const HR_Policies = () => {
                   }
                 >
                   <span style={dotStyle}>•</span>
-                  <span className="hover-text">PERFORMANCE EVALUATION FORM – PROBATION</span>
+                  <span className="hover-text">Performance evaluation form – probation</span>
                 </div>
                 <div
                   className="hover-container"
@@ -390,7 +390,7 @@ const HR_Policies = () => {
                   }
                 >
                   <span style={dotStyle}>•</span>
-                  <span className="hover-text">POLICY ON PERFORMANCE MANAGEMENT</span>
+                  <span className="hover-text">Policy on performance management</span>
                 </div>
               </>
             )}

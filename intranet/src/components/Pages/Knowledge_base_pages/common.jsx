@@ -86,7 +86,7 @@ const Common = () => {
       <div style={rightStyle}>
         <div style={sectionWrapperStyle}>
         <div style={sectionStyle}>
-        <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/b-net-new/Company%20Profile%20-%20SLIC.pdf')}>
+        <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/Life/CompanyProfileSLIC.pdf')}>
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
                 <span className="hover-text">Company Profile</span>
               </div>
@@ -114,11 +114,11 @@ const Common = () => {
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                 <span className="hover-text">General Manual</span>
               </div>
-              <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://b-net/b-net-new/general-docs/RI%20Dept.%20Procedure%20Manual.pdf')}>
+              <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.90.80:10157/Documents/Knowledge_Base/Life/Manuals/RI_Dept_Procedure_Manual.pdf')}>
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                 <span className="hover-text">Reinsurance Department Procedure Manual</span>
               </div>
-              <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.60.66/b-net-new/Hris-Document/HRIS-User_Guide.pdf')}>
+              <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.90.80:10157/Documents/Knowledge_Base/Life/Manuals/HRIS_User_Guide.pdf')}>
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                 <span className="hover-text">HRIS User Manual</span>
               </div>
