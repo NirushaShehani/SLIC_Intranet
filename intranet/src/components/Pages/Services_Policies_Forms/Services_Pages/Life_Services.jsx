@@ -104,6 +104,18 @@ const Life = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">B-Advisor</span>
             </div>   
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(' http://receipt-app/secworks/signin.asp')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">B-Receipts</span>
+            </div>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://insurance-app/Beegeneral/MIS/SLI01D.asp')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">B-SalesM</span>
+            </div>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://commission-app/Trans/Sessiontrans.aspx')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Transport</span>
+            </div>
           </div>
         </div>
       </div>

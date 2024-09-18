@@ -94,31 +94,31 @@ const Common_Forms = () => {
 
             {/* Expandable Forms Section */}
             <div className="hover-container" style={listItemStyle} onClick={toggleExpandForms}>
-              <span className="hover-text">Additional Forms</span>
+              <span className="hover-text">ComBank-CC-Forms</span>
             </div>
 
             {/* Conditionally render extra forms if expandedForms is true */}
             {expandedForms && (
               <div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://example.com/additional-form-1.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank-CC-Forms/ComBank-Circular.pdf')}>
                   <span style={dotStyle}>•</span>
-                  <span className="hover-text">Additional Form 1</span>
+                  <span className="hover-text">ComBank-Circular</span>
                 </div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://example.com/additional-form-2.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank-CC-Forms/ComBank-KYC_Form.pdf')}>
                   <span style={dotStyle}>•</span>
-                  <span className="hover-text">Additional Form 2</span>
+                  <span className="hover-text">ComBank-KYC Form</span>
                 </div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://example.com/additional-form-2.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank-CC-Forms/E-ComBank_SLIC-Credit_Card_Application.pdf')}>
                   <span style={dotStyle}>•</span>
-                  <span className="hover-text">Additional Form 2</span>
+                  <span className="hover-text">E-ComBank SLIC Credit Card Application</span>
                 </div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://example.com/additional-form-2.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank-CC-Forms/EPP_Instruction_DMS.pdf')}>
                   <span style={dotStyle}>•</span>
-                  <span className="hover-text">Additional Form 2</span>
+                  <span className="hover-text">EPP Instruction DMS</span>
                 </div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://example.com/additional-form-2.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank-CC-Forms/POS-_Operating_Instructions.pdf')}>
                   <span style={dotStyle}>•</span>
-                  <span className="hover-text">Additional Form 2</span>
+                  <span className="hover-text">POS Operating Instructions</span>
                 </div>
               </div>
             )}
@@ -150,13 +150,13 @@ const Common_Forms = () => {
             {/* Conditionally render extra sports forms if expandedSports is true */}
             {expandedSports && (
               <div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://example.com/additional-form-1.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Sport/Membership_Application_of_SLIC_Sports_Club_English.pdf')}>
                   <span style={dotStyle}>•</span>
-                  <span className="hover-text">Additional Form 1</span>
+                  <span className="hover-text">Membership Application Form - English</span>
                 </div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://example.com/additional-form-2.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Sport/Membership_Application_of_SLIC_Sports_Club_Sinhala.pdf')}>
                   <span style={dotStyle}>•</span>
-                  <span className="hover-text">Additional Form 2</span>
+                  <span className="hover-text">Membership Application Form -  Sinhala</span>
                 </div>
               </div>
             )}

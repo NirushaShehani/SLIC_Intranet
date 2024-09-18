@@ -345,21 +345,52 @@ const HR_Policies = () => {
                   className="hover-container"
                   style={{ ...listItemStyle, width: "100%" }} // Set to full width
                   onClick={() =>
-                    handleDownload("http://example.com/additional-form-1.pdf")
+                    handleDownload("http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Policy%20managment/Annexure1_Charter_Technical_Committee_on_KPIs&PA.pdf")
                   }
                 >
                   <span style={dotStyle}>•</span>
-                  <span className="hover-text">Additional Form 1</span>
+                  <span className="hover-text">Charter for Technical Committee on Recommendations for setting KPIS and 
+                  PA</span>
                 </div>
                 <div
                   className="hover-container"
                   style={{ ...listItemStyle, width: "100%" }} // Set to full width
                   onClick={() =>
-                    handleDownload("http://example.com/additional-form-2.pdf")
+                    handleDownload("http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Policy%20managment/Annexure2_KPI_Form_2024.pdf")
                   }
                 >
                   <span style={dotStyle}>•</span>
-                  <span className="hover-text">Additional Form 2</span>
+                  <span className="hover-text">KPIs SETTING FORM – 2024</span>
+                </div>
+                <div
+                  className="hover-container"
+                  style={{ ...listItemStyle, width: "100%" }} // Set to full width
+                  onClick={() =>
+                    handleDownload("http://172.24.90.80:10157/Documents//Policies_Services_Forms/Policies/HR/Policy%20managment/Annexure3_Performance_Evaluation_Form.pdf")
+                  }
+                >
+                  <span style={dotStyle}>•</span>
+                  <span className="hover-text">PERFORMANCE APPRAISAL AND DEVELOPMENT REVIEW</span>
+                </div>
+                <div
+                  className="hover-container"
+                  style={{ ...listItemStyle, width: "100%" }} // Set to full width
+                  onClick={() =>
+                    handleDownload("http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Policy%20managment/Annexure4%20EvaluationFormProbation.pdf")
+                  }
+                >
+                  <span style={dotStyle}>•</span>
+                  <span className="hover-text">PERFORMANCE EVALUATION FORM – PROBATION</span>
+                </div>
+                <div
+                  className="hover-container"
+                  style={{ ...listItemStyle, width: "100%" }} // Set to full width
+                  onClick={() =>
+                    handleDownload("http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies_Services_Forms/Policies/HR/Policy%20managment/Performance_Management_Policy_SLICLL%20.pdf")
+                  }
+                >
+                  <span style={dotStyle}>•</span>
+                  <span className="hover-text">POLICY ON PERFORMANCE MANAGEMENT</span>
                 </div>
               </>
             )}
