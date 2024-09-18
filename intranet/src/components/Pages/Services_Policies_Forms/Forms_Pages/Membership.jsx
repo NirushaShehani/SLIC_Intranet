@@ -71,8 +71,6 @@ const handleDownload = (url) => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">SLII Application</span>
                     </div>
-
-        
               </div>
             </div>
           </div>
