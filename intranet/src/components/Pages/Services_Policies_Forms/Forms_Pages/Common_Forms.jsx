@@ -104,18 +104,12 @@ const Common_Forms = () => {
             <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">NIC Number</span>
             </div>
-
-            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/CAPEX_Formsnew')}>
-              <span className="hover-text">CAPEX Form</span>
-            </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Mobile%20Phone%20Entitlement%20Request.pdf')}>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Certify_-Id_-No.pdf')}>
             <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">CAPEX Form</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('Policies_Services_Forms/Forms/Common/Mobile%20Phone%20Entitlement%20Request.pdf')}>
             <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-
               <span className="hover-text">Mobile Phone Entitlement Request</span>
             </div>
 
