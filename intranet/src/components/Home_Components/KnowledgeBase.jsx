@@ -14,7 +14,7 @@ const imageUrl1 = require('../../assets/Services.png');
 const imageUrl2 = require('../../assets/Ideahub.png');
 const imageUrl3 = require('../../assets/BookHub/IconImage.jpg');
 //For image slider
-const imageUrl01 = require('../../assets/sliderimgs/img1.jpg');
+const imageUrl01 = 'http://172.24.90.80:10157/Images/Events/EasyClaim.jpg';
 const imageUrl02 = require('../../assets/sliderimgs/img2.jpg');
 const imageUrl03 = require('../../assets/sliderimgs/img3.jpg');
 

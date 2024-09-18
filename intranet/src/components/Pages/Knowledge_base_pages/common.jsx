@@ -149,7 +149,7 @@ const Common = () => {
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                 <span className="hover-text">Life System</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/hhttp://172.24.60.66/knowledgebase/index.php/knowledge-base/life-insurance-introduction/')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => navigate('/http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-insurance-introduction/')}>
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                 <span className="hover-text">Life Insurance Introduction</span>
             </div>
