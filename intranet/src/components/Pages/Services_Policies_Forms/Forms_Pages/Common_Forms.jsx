@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../../../../Styles/services.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Common_Forms = () => {
   const [expandedForms, setExpandedForms] = useState(false);
@@ -68,6 +70,10 @@ const Common_Forms = () => {
     marginLeft: "20px", // Add left margin for additional forms
     fontSize: "12px", // Smaller dot size
   };
+  const iconStyle = {
+    marginRight: '10px',
+    color: '#31769F',
+  };
 
   return (
     <div style={containerStyle}>
@@ -77,24 +83,29 @@ const Common_Forms = () => {
           {/* Left Column */}
           <div style={columnStyle}>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Complaint_Lodging_Application.pdf')}>
+            <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Complaint Lodging Application</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Change_management_for_SW_V3.1')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Change_management_for_SW_V3.1.pdf')}>
+            <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Change Request</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/IAAF.pdf')}>
+            <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Advisor Application</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Door_Access_Approval_Form.pdf')}>
+            <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Door Access</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Certify_-Id_-No.pdf')}>
+            <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">NIC Number</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/CAPEX_Formsnew')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Certify_-Id_-No.pdf')}>
               <span className="hover-text">CAPEX Form</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Mobile_Phone_Entitlement_Request')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('Policies_Services_Forms/Forms/Common/Mobile%20Phone%20Entitlement%20Request.pdf')}>
               <span className="hover-text">Mobile Phone Entitlement Request</span>
             </div>
 
@@ -134,23 +145,29 @@ const Common_Forms = () => {
           {/* Right Column */}
           <div style={columnStyle}>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://slic.intranet.com/Thrift_society/thrift-society.html')}>
+            <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Thrift Society App</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/subapathum_application.pdf')}>
+            <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Suba Pethum</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.60.66/b-net-new/suraksha/suraksha.html')}>
+            <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Suraksha</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Pinnacle%20Form.pdf')}>
+            <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Pinnacle</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+            <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Combank Credit Card</span>
             </div>
 
             {/* Expandable Sports Section */}
             <div className="hover-container" style={listItemStyle} onClick={toggleExpandSports}>
+            <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Sports</span>
             </div>
 
