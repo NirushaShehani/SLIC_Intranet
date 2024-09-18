@@ -92,6 +92,10 @@ const Life = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Cognos Analytics </span>
             </div>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://cognosbi.slic1.com/cognos/cgi-bin/cognos.cgi?b_action=xts.run&m=portal/main.xts&startwel=yes')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Cognos BI Sales </span>
+            </div>
             <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/cashbook_web/Login.aspx')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">CashBook</span>
