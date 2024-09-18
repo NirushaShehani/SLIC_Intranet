@@ -129,11 +129,11 @@ const HR = () => {
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HR_Recruitment/ProcessFlowChart.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">ProcessFlowChart</span>
+              <span className="hover-text">Process Flow Chart</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HR_Recruitment/QualificationMatrix.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">ualificationMatrix</span>
+              <span className="hover-text">Qualification Matrix</span>
             </div>
           </div>
           {/* End CHAWS Section */}
