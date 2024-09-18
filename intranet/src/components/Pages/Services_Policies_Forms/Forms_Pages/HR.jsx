@@ -480,7 +480,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/VEHICLE_LOAN_GUARANTOR’S_STATEMENT.pdf"
+                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/VEHICLE_LOAN_GUARANTORS_STATEMENT.pdf"
                 )
               }
             >
@@ -490,7 +490,7 @@ const HR_Forms = () => {
                 className="hover-icon"
               />
               <span className="hover-text">
-                Vehicle Loan - Guarantor''s Statement
+                Vehicle Loan - Guarantor's Statement
               </span>
             </div>
             <div

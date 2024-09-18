@@ -91,6 +91,13 @@ const Common_Forms = () => {
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Certify_-Id_-No.pdf')}>
               <span className="hover-text">NIC Number</span>
             </div>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Certify_-Id_-No.pdf')}>
+              <span className="hover-text">CAPEX Form</span>
+            </div>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('Policies_Services_Forms/Forms/Common/Mobile%20Phone%20Entitlement%20Request.pdf')}>
+              <span className="hover-text">Mobile Phone Entitlement Request</span>
+            </div>
+
 
             {/* Expandable Forms Section */}
             <div className="hover-container" style={listItemStyle} onClick={toggleExpandForms}>
@@ -100,23 +107,23 @@ const Common_Forms = () => {
             {/* Conditionally render extra forms if expandedForms is true */}
             {expandedForms && (
               <div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank-CC-Forms/ComBank-Circular.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_CC_Forms/ComBank-Circular.pdf')}>
                   <span style={dotStyle}>•</span>
                   <span className="hover-text">ComBank-Circular</span>
                 </div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank-CC-Forms/ComBank-KYC_Form.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_CC_Forms/ComBank-KYC_Form.pdf')}>
                   <span style={dotStyle}>•</span>
                   <span className="hover-text">ComBank-KYC Form</span>
                 </div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank-CC-Forms/E-ComBank_SLIC-Credit_Card_Application.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_CC_Forms/E-ComBank_SLIC-Credit_Card_Application.pdf')}>
                   <span style={dotStyle}>•</span>
                   <span className="hover-text">E-ComBank SLIC Credit Card Application</span>
                 </div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank-CC-Forms/EPP_Instruction_DMS.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_CC_Forms/EPP_Instruction_DMS.pdf')}>
                   <span style={dotStyle}>•</span>
                   <span className="hover-text">EPP Instruction DMS</span>
                 </div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank-CC-Forms/POS-_Operating_Instructions.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_CC_Forms/POS-_Operating_Instructions.pdf')}>
                   <span style={dotStyle}>•</span>
                   <span className="hover-text">POS Operating Instructions</span>
                 </div>

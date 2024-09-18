@@ -62,11 +62,11 @@ const ICT_Policies = () => {
 
           </div>
           <div style={listContainer}>
-          <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/ICT/ICT%20Cybersecurity%20Security%20Policy%20-%20V2.4.2%20.pdf')}>
+          <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/ICT/ICT_Cybersecurity_Security_Policy_V2.4.2.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">ICT Cybersecurity Security Policy - V2.4.2 </span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/ICT/Information%20Security%20Policy-V2.5.1.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/ICT/Information_Security_Policy_V2.5.1.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Information Security Policy-V2.5.1</span>
             </div>
