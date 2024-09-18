@@ -625,7 +625,7 @@ const GWPChartsContainer = () => {
         if (data && data.length > 0) {
           setAchieverList((prev) => [
             {
-              title: "Top 500 Island Ranks",
+              title: "MDRT",
               list: data.map((item) => ({
                 agent_name: item.agent_name,
                 branch_name: item.branch_name,
@@ -761,7 +761,7 @@ const GWPChartsContainer = () => {
                       whiteSpace: "nowrap",
                     }}
                   >
-                    {`GWP ${currentMonthInText}`}
+                    {`Life GWP ${currentMonthInText}`}
                   </div>
                   <GWPChart
                     data={MontlyDataBranch}
@@ -783,7 +783,7 @@ const GWPChartsContainer = () => {
                       whiteSpace: "nowrap",
                     }}
                   >
-                    {`Cumulative ${currentYear}`}
+                    {`Life Cumulative ${currentYear}`}
                   </div>
                   <GWPChart
                     data={MontlyCumalativeDataBranch}
