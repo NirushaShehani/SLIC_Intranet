@@ -1,5 +1,5 @@
-//const BASE_URL = "http://192.168.101.21:10155/LifeIntranetAPI/api/v1";
-const BASE_URL = "http://203.115.11.236:10155/LifeIntranetAPI/api/v1";
+const BASE_URL = "http://192.168.101.21:10155/LifeIntranetAPI/api/v1";
+//const BASE_URL = "http://203.115.11.236:10155/LifeIntranetAPI/api/v1";
 
 const ENDPOINTS = {
   MONTHLYGWP: "Gwp/GetMonthlyGWP",
@@ -18,7 +18,8 @@ const ENDPOINTS = {
   GetSalesLeads: "Working/GetSalesLead",
   IdeaReadorNot: "Working/IdeaReadorNot",
   IdeaRemoveorNot: "Working/IdeaRemoveorNot",
-  SalesLeadActive: "Working/SalesLeadActive"
+  SalesLeadActive: "Working/SalesLeadActive",
+  CompanyNotices: "Working/GetCompanyNotice"
 
 };
 

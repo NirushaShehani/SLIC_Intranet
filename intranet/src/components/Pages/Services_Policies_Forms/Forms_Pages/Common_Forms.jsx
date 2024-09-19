@@ -20,6 +20,8 @@ const Common_Forms = () => {
     setExpandedForms(!expandedForms);
   };
 
+  //.
+
   const toggleExpandSports = () => {
     setExpandedSports(!expandedSports);
   };
@@ -106,6 +108,10 @@ const Common_Forms = () => {
               <span className="hover-text">CAPEX Form</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('Policies_Services_Forms/Forms/Common/Mobile%20Phone%20Entitlement%20Request.pdf')}>
+<<<<<<< HEAD
+=======
+            <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+>>>>>>> 14617c36dfd86e435f2a6eaddcab3d2f828ed5d6
               <span className="hover-text">Mobile Phone Entitlement Request</span>
             </div>
 
