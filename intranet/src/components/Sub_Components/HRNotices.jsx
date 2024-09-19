@@ -1,73 +1,58 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// eslint-disable-next-line
 import Container from '@mui/material/Container';
-// eslint-disable-next-line
 import Box from '@mui/material/Box';
+import axios from 'axios';
 import '../../Styles/HRNotices.css';
-import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
+import { BASE_URL, ENDPOINTS } from '../../Services/ApiConfig'; // Ensure this path is correct based on your setup
 
 const HRNotices = () => {
   const navigate = useNavigate();
+  const [notices, setNotices] = useState([]);
 
-  const todayNotices = [
-    { id: 1, topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' },
-    { id: 2, topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' }
-  ];
+  // Fetch all active notices
+  useEffect(() => {
+    const fetchNotices = async () => {
+      try {
+        const response = await axios.post(`${BASE_URL}/${ENDPOINTS.CompanyNotices}`, {
+          p_id: "",
+          p_active: "Y", // Fetch only active notices
+          n_title: "",
+          n_desc: "",
+          n_date: "",
+        });
 
-  const restOfWeekNotices = [
-    { id: 3, topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' },
-    { id: 4, topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' }
-  ];
+        if (response.status === 200) {
+          // Sort notices by date, assuming `n_date` is a valid date string
+          const sortedNotices = (response.data || []).sort((a, b) => new Date(b.n_date) - new Date(a.n_date));
+          setNotices(sortedNotices);
+        } else {
+          console.error('Failed to fetch notices');
+        }
+      } catch (error) {
+        console.error('Error fetching notices:', error);
+      }
+    };
 
-  const lastWeekNotices = [
-    { id: 5, topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' }
-  ];
-
- 
+    fetchNotices();
+  }, []);
 
   return (
     <div>
-      <h2 className="hr-notice-head">Notices</h2>
+      <h2 className="hr-notice-head">Active Notices</h2>
       <Container className="transparent-container">
         <Box className="box-content">
-          <div className="aa">
-            <h2 className="sub-notice-head">Today :</h2>
-            <ul className="notice-list">
-              {todayNotices.map((notice) => (
-                <li key={notice.id} className="notice-item">
-                  <button className="notice-button" >
-                    <h3 className="notice-topic">{notice.topic}</h3>
-                    <p className="notice-content">{notice.content}</p>
-                  </button>
-                </li>
-              ))}
-            </ul>
-
-            <h2 className="sub-notice-head">Rest of Week :</h2>
-            <ul className="notice-list">
-              {restOfWeekNotices.map((notice) => (
-                <li key={notice.id} className="notice-item">
-                  <button className="notice-button" >
-                    <h3 className="notice-topic">{notice.topic}</h3>
-                    <p className="notice-content">{notice.content}</p>
-                  </button>
-                </li>
-              ))}
-            </ul>
-
-            <h2 className="sub-notice-head">Last Week :</h2>
-            <ul className="notice-list">
-              {lastWeekNotices.map((notice) => (
-                <li key={notice.id} className="notice-item">
-                  <button className="notice-button" >
-                    <h3 className="notice-topic">{notice.topic}</h3>
-                    <p className="notice-content">{notice.content}</p>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="notice-list">
+            {notices.map((notice) => (
+              <li key={notice.p_id} className="notice-item">
+                <button className="notice-button">
+                  <h3 className="notice-topic">{notice.n_title}</h3>
+                  <p className="notice-content">{notice.n_desc}</p>
+                  <p className="notice-date">{new Date(notice.n_date).toLocaleDateString()}</p>
+                </button>
+              </li>
+            ))}
+          </ul>
         </Box>
       </Container>
     </div>
