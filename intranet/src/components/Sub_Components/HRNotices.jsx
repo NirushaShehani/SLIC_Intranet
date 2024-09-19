@@ -5,6 +5,7 @@ import Container from '@mui/material/Container';
 // eslint-disable-next-line
 import Box from '@mui/material/Box';
 import '../../Styles/HRNotices.css';
+import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
 
 const HRNotices = () => {
   const navigate = useNavigate();
@@ -23,9 +24,7 @@ const HRNotices = () => {
     { id: 5, topic: 'SLICL Suba Pathum scholarship awards 2023', content: 'Lorem Ipsum has been the industrys standard when it dummy text ever since 1500s took a galley of type when an unknown have' }
   ];
 
-  const handleNoticeClick = (id) => {
-    navigate(`/detailed-notice/${id}`);
-  };
+ 
 
   return (
     <div>
@@ -37,7 +36,7 @@ const HRNotices = () => {
             <ul className="notice-list">
               {todayNotices.map((notice) => (
                 <li key={notice.id} className="notice-item">
-                  <button className="notice-button" onClick={() => handleNoticeClick(notice.id)}>
+                  <button className="notice-button" >
                     <h3 className="notice-topic">{notice.topic}</h3>
                     <p className="notice-content">{notice.content}</p>
                   </button>
@@ -49,7 +48,7 @@ const HRNotices = () => {
             <ul className="notice-list">
               {restOfWeekNotices.map((notice) => (
                 <li key={notice.id} className="notice-item">
-                  <button className="notice-button" onClick={() => handleNoticeClick(notice.id)}>
+                  <button className="notice-button" >
                     <h3 className="notice-topic">{notice.topic}</h3>
                     <p className="notice-content">{notice.content}</p>
                   </button>
@@ -61,7 +60,7 @@ const HRNotices = () => {
             <ul className="notice-list">
               {lastWeekNotices.map((notice) => (
                 <li key={notice.id} className="notice-item">
-                  <button className="notice-button" onClick={() => handleNoticeClick(notice.id)}>
+                  <button className="notice-button" >
                     <h3 className="notice-topic">{notice.topic}</h3>
                     <p className="notice-content">{notice.content}</p>
                   </button>

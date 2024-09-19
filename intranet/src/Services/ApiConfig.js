@@ -18,7 +18,8 @@ const ENDPOINTS = {
   GetSalesLeads: "Working/GetSalesLead",
   IdeaReadorNot: "Working/IdeaReadorNot",
   IdeaRemoveorNot: "Working/IdeaRemoveorNot",
-  SalesLeadActive: "Working/SalesLeadActive"
+  SalesLeadActive: "Working/SalesLeadActive",
+  CompanyNotices: "Working/GetCompanyNotice"
 
 };
 
