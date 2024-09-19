@@ -22,3 +22,28 @@
     margin: 5px 0;
   }
   
+  /* Adjust the font sizes */
+.event-details-header h1 {
+  font-size: 24px; /* Adjust title font size */
+  margin-bottom: 10px;
+}
+
+.event-details-header p {
+  font-size: 16px; /* Adjust description font size */
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Optional: Adjust the font size of event info inside event cards */
+.event-card .event-info {
+  font-size: 14px; /* Adjust font size inside event cards */
+}
+
+.event-likes {
+  font-size: 14px;
+}
+
+/* Ensure the event details are displayed at the top */
+.event-details-header {
+  margin-bottom: 30px; /* Add margin below the event details */
+}
