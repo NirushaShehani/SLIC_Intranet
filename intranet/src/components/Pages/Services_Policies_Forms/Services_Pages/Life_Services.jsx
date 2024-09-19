@@ -68,10 +68,7 @@ const Life = () => {
           </div>
           <div style={listContainer}>
             
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(' http://insurance-app/secworks/signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">B-Insurance</span>
-            </div>
+           
             <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://blife-comm/UI/Home.aspx')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">B-Commission Life</span>
@@ -92,10 +89,6 @@ const Life = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Cognos Analytics </span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://cognosbi.slic1.com/cognos/cgi-bin/cognos.cgi?b_action=xts.run&m=portal/main.xts&startwel=yes')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Cognos BI Sales </span>
-            </div>
             <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://blife-app.slic1.com/cashbook_web/Login.aspx')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">CashBook</span>
@@ -108,14 +101,6 @@ const Life = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">B-Advisor</span>
             </div>   
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(' http://receipt-app/secworks/signin.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">B-Receipts</span>
-            </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://insurance-app/Beegeneral/MIS/SLI01D.asp')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">B-SalesM</span>
-            </div>
             <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://commission-app/Trans/Sessiontrans.aspx')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Transport</span>
