@@ -3,6 +3,9 @@ import DrawerMenu from '../../Sub_Components/DrawerMenu';
 import '../../../Styles/FullNoticesPage.css';
 import { Link } from 'react-router-dom';
 import '../../../Styles/CompanyEventscard.css'
+import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
+import axios from 'axios'; 
+
 const eventsData = [
   {
     id: 1,
@@ -53,7 +56,7 @@ const EventCard = ({ id, image, title, likes, onLike }) => {
       </div>
     </div>
   );
-};
+}
 
 const CompanyEvents = () => {
 
