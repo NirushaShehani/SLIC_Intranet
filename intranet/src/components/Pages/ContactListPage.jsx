@@ -112,26 +112,7 @@ const ContactListPage = () => {
               Contact List
             </div>
           </div>
-          <div style={Down}>
-              <div style={subtitle}>
-              ADD NAMES TO YOUR PHONE BOOK
-              </div>
-              <div style={paragraph}>
-              You can add the numbers you need most to your Personal Phone Book by clicking the link 
-            "Add" next to the name in the SLIC phone directory. 
-            Now your Personal Phone Book is ready to give your most needed numbers instantly.
-              </div>
-              <br/>
-              <br/>
-              <div style={subtitle}>
-              LOCATE YOUR PHONE BOOK
-              </div>
-              <div style={paragraph}>
-              If you are away from your own computer, by typing your Computer No. 
-            (IP No.) you can still access your address book from any other computer.
-              </div>
-              <PCnumberForm/>
-          </div>
+          
         </div>
       </div>
       <div style={verticalLineStyle}></div>
