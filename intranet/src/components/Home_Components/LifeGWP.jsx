@@ -714,7 +714,7 @@ const GWPChartsContainer = () => {
     fetchCOTAchievers();
     fetchTOTAchievers();
   }, [currentYear]);
-  // Flipping Effect Pause on Hover on GWP Monthly and cumalative
+  // Flipping Effect Pause on Hover on GWP Monthl
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isHovering) {
@@ -748,6 +748,7 @@ const GWPChartsContainer = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
+  
         <FlippingCard showBack={GWPFlipping} cardType="gwp">
           <div className="inner">
             <div className="front">
