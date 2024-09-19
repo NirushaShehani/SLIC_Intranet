@@ -395,11 +395,24 @@ const AchieversCard = ({ achievers }) => (
                 Branch: {achiever.branch_name}
               </Typography>
 
+              <Typography variant="body2" color="textSecondary">
+                FYP: {new Intl.NumberFormat("en-US").format(achiever.fyp)} /=
+              </Typography>
 
               <Typography
                 variant="body2"
                 color="textSecondary"
-                
+                title={
+                  achiever.achievment === "Achieved"
+                    ? `Above Target : ${new Intl.NumberFormat("en-US").format(
+                        achiever.over
+                      )}`
+                    : achiever.achievment === "Not_achieved"
+                    ? `Due : ${new Intl.NumberFormat("en-US").format(
+                        achiever.due
+                      )}`
+                    : "Unknown status"
+                }
                 sx={{
                   backgroundColor:
                     achiever.achievment === "Achieved"
@@ -619,6 +632,7 @@ const GWPChartsContainer = () => {
                 national_rank: item.national_rank,
                 image: item.image || defaultImage, // Use default image if no image is provided
                 achievment: item.achievment,
+                fyp: item.fyp,
                 over: item.fyp - item.target,
                 due: item.balanceDue,
               })),
@@ -700,7 +714,7 @@ const GWPChartsContainer = () => {
     fetchCOTAchievers();
     fetchTOTAchievers();
   }, [currentYear]);
-  // Flipping Effect Pause on Hover on GWP Monthly and cumalative
+  // Flipping Effect Pause on Hover on GWP Monthl
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isHovering) {
@@ -734,6 +748,7 @@ const GWPChartsContainer = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
+  
         <FlippingCard showBack={GWPFlipping} cardType="gwp">
           <div className="inner">
             <div className="front">
@@ -802,6 +817,5 @@ const GWPChartsContainer = () => {
     </Box>
   );
 };
-//aa
 
 export default GWPChartsContainer;
