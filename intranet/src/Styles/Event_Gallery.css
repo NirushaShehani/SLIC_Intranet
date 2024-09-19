@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  background-color: rgb(25, 58, 87);
+  background-color: #0c4d72;
   border-radius: 5px;
   margin: 0 auto;
 }

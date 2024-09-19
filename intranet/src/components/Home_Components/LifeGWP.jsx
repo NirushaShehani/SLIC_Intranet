@@ -660,7 +660,7 @@ const GWPChartsContainer = () => {
           setAchieverList((prev) => [
             prev[0],
             {
-              title: "COT Achievers",
+              title: "COT",
               list: data.map((item) => ({
                 agent_name: item.agent_name,
                 branch_name: item.branch_name,
@@ -692,7 +692,7 @@ const GWPChartsContainer = () => {
             prev[0],
             prev[1],
             {
-              title: "TOT Achievers",
+              title: "TOT",
               list: data.map((item) => ({
                 agent_name: item.agent_name,
                 branch_name: item.branch_name,
