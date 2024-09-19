@@ -123,17 +123,17 @@ const HR = () => {
           {/* CHAWS Section */}
           <div style={sectionStyle}>
             <div style={titleStyle}>Recruitment</div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Enrolment_to_CHAWS.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HR_Recruitment/PRF(Amend).pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">option 1</span>
+              <span className="hover-text">PRF(Amend)</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Approving_in_CHAWS.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HR_Recruitment/ProcessFlowChart.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">option 2</span>
+              <span className="hover-text">Process Flow Chart</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Approving_in_CHAWS.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HR_Recruitment/QualificationMatrix.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">option 3</span>
+              <span className="hover-text">Qualification Matrix</span>
             </div>
           </div>
           {/* End CHAWS Section */}
@@ -141,42 +141,23 @@ const HR = () => {
           {/* CHAWS Section */}
           <div style={sectionStyle}>
             <div style={titleStyle}>T & D</div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Approving_in_CHAWS.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HRTandD/Application(2).pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">option 3</span>
+              <span className="hover-text">Application</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Approving_in_CHAWS.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HRTandD/DIP_APPLICATION(1).pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">option 3</span>
+              <span className="hover-text">DIP APPLICATION</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Approving_in_CHAWS.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HRTandD/IFC_Application(1).pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">option 3</span>
+              <span className="hover-text">IFC Application</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Approving_in_CHAWS.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HRTandD/SLIIMembershipApplicationForm.pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">option 3</span>
+              <span className="hover-text">SLII Membership Application</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Approving_in_CHAWS.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">option 3</span>
-            </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Approving_in_CHAWS.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">option 3</span>
-            </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Approving_in_CHAWS.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">option 3</span>
-            </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Approving_in_CHAWS.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">option 3</span>
-            </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Approving_in_CHAWS.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">option 3</span>
-            </div>
+            
           </div>
           {/* End CHAWS Section */}
           
