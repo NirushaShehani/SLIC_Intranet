@@ -38,7 +38,6 @@ const eventsData = [
     likes: 85,
   }
 ];
-
 const EventCard = ({ id, image, title, likes, onLike }) => {
   return (
     <div className="full-notices-page">
