@@ -69,7 +69,7 @@ const CompanyEvents = () => {
 
   // Check if data is still loading
   if (loadingNotices || loadingEvents) {
-    return <p>Loading Data...</p>;
+    return <p style={{color: 'white', fontFamily: "Oxygen"}}>Loading Data...</p>;
   }
 
   return (
