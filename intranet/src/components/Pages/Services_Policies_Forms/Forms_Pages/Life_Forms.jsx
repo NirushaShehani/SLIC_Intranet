@@ -67,58 +67,9 @@ const Life_Forms = () => {
       <div style={rightStyle}>
         <div className="home-container">
           <div style={listContainer}>
-            <div
-              className="hover-container"
-              style={listItemStyle}
-              onClick={() =>
-                handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Life/Jana_Rekuma_Death_Claim_Form.pdf"
-                )
-              }
-            >
-              <FontAwesomeIcon
-                icon={faFileAlt}
-                style={iconStyle}
-                className="hover-icon"
-              />
-              <span className="hover-text">Jana Rekuma Death Claim Form</span>
-            </div>
-            <div
-              className="hover-container"
-              style={listItemStyle}
-              onClick={() =>
-                handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Life/Jana_Rekuma_Hospitalization_Claim_Form.pdf"
-                )
-              }
-            >
-              <FontAwesomeIcon
-                icon={faFileAlt}
-                style={iconStyle}
-                className="hover-icon"
-              />
-              <span className="hover-text">
-              Jana Rekuma Hospitalization Claim Form
-              </span>
-            </div>
-            <div
-              className="hover-container"
-              style={listItemStyle}
-              onClick={() =>
-                handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Life/Treatment_Form_Final_Life.pdf"
-                )
-              }
-            >
-              <FontAwesomeIcon
-                icon={faFileAlt}
-                style={iconStyle}
-                className="hover-icon"
-              />
-              <span className="hover-text">
-               Life - Medical Treatment Form
-              </span>
-            </div>
+            
+           
+           
           </div>
         </div>
       </div>

@@ -112,6 +112,10 @@ const Common_Forms = () => {
             <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Mobile Phone Entitlement Request</span>
             </div>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload("http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Life/Treatment_Form_Final_Life.pdf")}>
+            <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text"> Life - Medical Treatment Form </span>
+            </div>
 
 
             {/* Expandable Forms Section */}
