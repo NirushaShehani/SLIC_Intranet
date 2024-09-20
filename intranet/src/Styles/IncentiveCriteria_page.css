@@ -118,7 +118,7 @@ th {
   background-color: #0077b6;
   color: #ffffff;
   text-align: center;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .Staff-Criteria-collums th {
@@ -172,25 +172,25 @@ th {
 
 .Payout-ratio-row-data {
   background-color: #789ea6;
-  font-weight: 500;
+  font-weight: bold;
   color: #000;
 }
 
 .Expense-Ratio-row-data {
   background-color: #79d0d6;
-  font-weight: 500;
+  font-weight: bold;
   color: #000;
 }
 
 .Total-Shareholder-surplus-row-data {
   background-color: #85a7c4;
-  font-weight: 500;
+  font-weight: bold;
   color: #000;
 }
 
 .incentive-custom-row-content {
   color: #000;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .column {
@@ -218,5 +218,5 @@ height: 90px;
 }
 .incentive-custom-row-content-2 td{
   color: #0077b6;
-  font-weight: 500;
+  font-weight: bold;
 }
