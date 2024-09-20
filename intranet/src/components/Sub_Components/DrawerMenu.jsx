@@ -59,20 +59,20 @@ const DrawerMenu = () => {
       {/** Dashboard */}
       <List>
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton style={styles.Button}>
             <ListItemIcon style={styles.btnsizeup}>
-              <DashboardOutlinedIcon />
+              <DashboardOutlinedIcon style={styles.iconColor} />
             </ListItemIcon>
             <ListItemText
               primary={
-                <Link to="/" style={{ cursor: "pointer" }}>
+                <Link to="/" style={{ cursor: "pointer", textDecoration: 'none' }}>
                   <Typography
                     sx={{ display: "inline" }}
                     component="span"
                     variant="body1"
                     fontWeight="bold"
                     fontSize="16px"
-                    color="text.primary"
+                    color="black"
                     fontFamily={"Oxygen"}
                   >
                     Dashboard
@@ -89,7 +89,7 @@ const DrawerMenu = () => {
       {/* Idea Hub Admin Login */}
       <List>
         <ListItem disablePadding>
-          <ListItemButton style={styles.blueButton}>
+          <ListItemButton style={styles.Button}>
             <ListItemIcon style={styles.btnsizeup}>
               <DashboardOutlinedIcon style={styles.iconColor} />
             </ListItemIcon>
@@ -102,7 +102,7 @@ const DrawerMenu = () => {
                     variant="body1"
                     fontWeight="bold"
                     fontSize="16px"
-                    color="white"
+                    color={"black"}
                     fontFamily={"Oxygen"}
                   >
                     Admin Login
@@ -123,18 +123,18 @@ const DrawerMenu = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon style={styles.btnsizeup}>
-              <HelpOutlineOutlinedIcon />
+              <HelpOutlineOutlinedIcon style={styles.iconColor}/>
             </ListItemIcon>
             <ListItemText
               primary={
-                <Link to="/login?redirect=/Admin_Sales_Lead" style={{ cursor: "pointer" }}>
+                <Link to="/login?redirect=/Admin_Sales_Lead" style={{ cursor: "pointer", textDecoration: 'none' }}>
                   <Typography
                     sx={{ display: "inline" }}
                     component="span"
                     variant="body1"
                     fontWeight="bold"
                     fontSize="16px"
-                    color="text.primary"
+                    color="black"
                     fontFamily={"Oxygen"}
                   >
                     Help
@@ -182,16 +182,14 @@ const styles = {
     justifyContent: "center",
     justifyItems: "center",
   },
-  blueButton: {
-    backgroundColor: "#1E90FF", // Dodger Blue color
-    color: "white",
+  Button: {
     marginBottom: "10px",
     '&:hover': {
       backgroundColor: "#1C86EE", // Slightly darker blue on hover
     }
   },
   iconColor: {
-    color: "white",
+    color: "black",
   },
 };
 
