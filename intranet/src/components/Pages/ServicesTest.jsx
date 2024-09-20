@@ -23,7 +23,7 @@ import ICT_Policies from "./Services_Policies_Forms/Policies_Pages/ICT_Policies"
 import ICT_Forms from "./Services_Policies_Forms/Forms_Pages/ICT_Forms";
 import Common_Forms from "./Services_Policies_Forms/Forms_Pages/Common_Forms";
 import HR_Forms from "./Services_Policies_Forms/Forms_Pages/HR";
-import procument_Forms from "./Services_Policies_Forms/Forms_Pages/procument";
+import Procument_Forms from "./Services_Policies_Forms/Forms_Pages/procument";
 import Sales from "./Services_Policies_Forms/Forms_Pages/Sales";
 import Security from "./Services_Policies_Forms/Forms_Pages/Security";
 import Membership from "./Services_Policies_Forms/Forms_Pages/Membership";
@@ -85,8 +85,8 @@ const ServicesTest = () => {
         return <Life_Forms/>;
       case "HR_Forms":
         return <HR_Forms />;
-      case "procument_Forms":
-        return <procument_Forms />;
+      case "Procument_Forms":
+        return <Procument_Forms />;
       case "Sales_Forms":
         return <Sales />;
       case "Common_Forms":
@@ -330,10 +330,10 @@ const ServicesTest = () => {
 
               <button
                 className={`service-button ${
-                  clickedButton === "procument_Forms" ? "clicked" : ""
+                  clickedButton === "Procument_Forms" ? "clicked" : ""
                 }`}
                 onClick={() =>
-                  toggleComponent("procument_Forms", "forms", "procument_Forms")
+                  toggleComponent("Procument_Forms", "forms", "Procument_Forms")
                 }
               >
                 Procurement <span>&#x2192;</span>

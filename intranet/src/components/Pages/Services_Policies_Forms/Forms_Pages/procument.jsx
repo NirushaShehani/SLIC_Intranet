@@ -64,6 +64,8 @@ const ProcurementForms = () => {
         color: '#31769F',
     };
 
+    //
+
     return (
         <div style={containerStyle}>
             <div style={rightStyle}>
