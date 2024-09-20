@@ -11,8 +11,10 @@ import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import SvgIcon from '@mui/material/SvgIcon';
+import { IconButton } from '@mui/material';
 import { Link } from "react-router-dom";
-import 'intranet/src/font.css'; 
+import 'intranet/src/font.css';
 
 const DrawerMenu = () => {
   const [state, setState] = React.useState({
@@ -61,7 +63,9 @@ const DrawerMenu = () => {
         <ListItem disablePadding>
           <ListItemButton style={styles.Button}>
             <ListItemIcon style={styles.btnsizeup}>
-              <DashboardOutlinedIcon style={styles.iconColor} />
+              <SvgIcon sx={{ color: 'black' }}>
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+              </SvgIcon>
             </ListItemIcon>
             <ListItemText
               primary={
@@ -91,7 +95,11 @@ const DrawerMenu = () => {
         <ListItem disablePadding>
           <ListItemButton style={styles.Button}>
             <ListItemIcon style={styles.btnsizeup}>
-              <DashboardOutlinedIcon style={styles.iconColor} />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+              </svg>
+
             </ListItemIcon>
             <ListItemText
               primary={
@@ -113,17 +121,13 @@ const DrawerMenu = () => {
           </ListItemButton>
         </ListItem>
       </List>
-
-     
-
       <Divider />
-
       {/* Additional Links */}
       <List>
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon style={styles.btnsizeup}>
-              <HelpOutlineOutlinedIcon style={styles.iconColor}/>
+              <HelpOutlineOutlinedIcon style={styles.iconColor} />
             </ListItemIcon>
             <ListItemText
               primary={
@@ -151,10 +155,14 @@ const DrawerMenu = () => {
   return (
     <div>
       <React.Fragment>
-        <DashboardOutlinedIcon
+        <SvgIcon 
+          sx={{ color: 'white' }} 
           onClick={toggleDrawer("left", true)}
           style={styles.btnsize}
-        />
+        >
+           <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+        </SvgIcon>
+  
         <Drawer
           anchor={"left"}
           open={state["left"]}
@@ -165,11 +173,13 @@ const DrawerMenu = () => {
       </React.Fragment>
     </div>
   );
+  
+  
 };
 
 const styles = {
   btnsize: {
-    fontSize: "25px",
+    fontSize: "30px",
     cursor: "pointer",
     alignItems: "center",
     justifyContent: "center",

@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
 import '../../../../Styles/services.css';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
-// hr tag styles
 import '../../../../Styles/serviceshrtag.css';
 
 const HR_Circulars = () => {
@@ -18,7 +17,7 @@ const HR_Circulars = () => {
     width: '100%',
     height: '100vh',
     display: 'flex',
-    overflow: 'hidden'
+    overflow: 'hidden',
   };
   const rightStyle = {
     flex: 1,
@@ -28,14 +27,14 @@ const HR_Circulars = () => {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    overflowY: 'auto' // This will enable vertical scrolling
+    overflowY: 'auto',
   };
 
   const listContainer = {
     display: 'flex',
     flexWrap: 'wrap',
     width: '100%',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   };
 
   const listItemStyle = {
@@ -45,69 +44,141 @@ const HR_Circulars = () => {
     padding: '10px',
     margin: '10px 0',
     borderBottom: '1px solid #e0e0e0',
-    width: 'calc(50% - 10px)',  // Adjusting the width to fit two columns with space in between
-    boxSizing: 'border-box'
+    width: 'calc(50% - 10px)', // Adjusting the width to fit two columns with space in between
+    boxSizing: 'border-box',
   };
 
   const iconStyle = {
     marginRight: '10px',
     color: '#31769F',
   };
+
+  const smallFontStyle = {
+    fontSize: '14px', // Smaller font size
+    color: '#31769F', // Optional: color for language links
+    cursor: 'pointer',
+    padding: '0',
+  };
+
+  const items = [
+    {
+      title: "18 Month Loan/Distress Loan",
+      links: {
+        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/18MONTHS_DISTRESS_LOAN.pdf',
+        Sinhala: 'http://example.com/sinhala-link-1',
+        Tamil: 'http://example.com/tamil-link-1',
+      },
+    },
+    {
+      title: "Approved No Pay Leave to Travel Overseas",
+      links: {
+        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Approved_No_Pay_Leave_to_travel_overseas.pdf',
+        Sinhala: 'http://example.com/sinhala-link-2',
+        Tamil: 'http://example.com/tamil-link-2',
+      },
+    },
+    {
+      title: "Circuit Bungalows & Busses Price List",
+      links: {
+        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CircuitBungalowsandBussesPriceList.pdf',
+        Sinhala: 'http://example.com/sinhala-link-3',
+        Tamil: 'http://example.com/tamil-link-3',
+      },
+    },
+    {
+      title: "Guidelines on using Staff Canteen",
+      links: {
+        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/NOTICE_Canteen.pdf',
+        Sinhala: 'http://example.com/sinhala-link-4',
+        Tamil: 'http://example.com/tamil-link-4',
+      },
+    },
+    {
+      title: "Re-imbursement of Examination Expenses",
+      links: {
+        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CIRCULAR_NO-HRD_26_2016_ENGLISH.pdf',
+        Sinhala: 'http://example.com/sinhala-link-5',
+        Tamil: 'http://example.com/tamil-link-5',
+      },
+    },
+    {
+      title: "Re-imbursement of Examination Expenses",
+      links: {
+        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CIRCULAR_NO-HRD_26_2016_SINHALA.pdf',
+        Sinhala: 'http://example.com/sinhala-link-6',
+        Tamil: 'http://example.com/tamil-link-6',
+      },
+    },
+    {
+      title: "Revised Medical Scheme (CHAWS)",
+      links: {
+        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CHAWS_NOTICE_ENGLISH.pdf',
+        Sinhala: 'http://example.com/sinhala-link-7',
+        Tamil: 'http://example.com/tamil-link-7',
+      },
+    },
+    {
+      title: "Revised Medical Scheme (CHAWS)",
+      links: {
+        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CHAWS_NOTICE_SINHALA.pdf',
+        Sinhala: 'http://example.com/sinhala-link-8',
+        Tamil: 'http://example.com/tamil-link-8',
+      },
+    },
+    {
+      title: "Service Extension Circular",
+      links: {
+        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Service_Extension_Circular_(English).pdf',
+        Sinhala: 'http://example.com/sinhala-link-9',
+        Tamil: 'http://example.com/tamil-link-9',
+      },
+    },
+    {
+      title: "Service Extension Circular",
+      links: {
+        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Service_Extension_Circular_(Sinhala).pdf',
+        Sinhala: 'http://example.com/sinhala-link-10',
+        Tamil: 'http://example.com/tamil-link-10',
+      },
+    },
+    {
+      title: "Study Leave Procedure",
+      links: {
+        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Study_Leave_Procedure_PD_12A_2010.pdf',
+        Sinhala: 'http://example.com/sinhala-link-11',
+        Tamil: 'http://example.com/tamil-link-11',
+      },
+    },
+  ];
+
   return (
     <div style={containerStyle}>
       <div style={rightStyle}>
         <div className="home-container">
-        
           <div style={listContainer}>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/18MONTHS_DISTRESS_LOAN.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-              <span className="hover-text">18 Month Loan/Distress Loan</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() =>openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Approved_No_Pay_Leave_to_travel_overseas.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-              <span className="hover-text">Approved No Pay Leave to Travel Overseas</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() =>openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CircuitBungalowsandBussesPriceList.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-              <span className="hover-text">Circuit Bungalows & Busses Price List	</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/NOTICE_Canteen.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-              <span className="hover-text">Guidlines on using Staff Canteen</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CIRCULAR_NO-HRD_26_2016_ENGLISH.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-              <span className="hover-text">Re-imbursement of Examination Expenses (English)	</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CIRCULAR_NO-HRD_26_2016_SINHALA.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-              <span className="hover-text">Re-imbursement of Examination Expenses (Sinhala)</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CHAWS_NOTICE_ENGLISH.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-              <span className="hover-text">Revised Medical Scheme (CHAWS) - English</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CHAWS_NOTICE_SINHALA.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-              <span className="hover-text">Revised Medical Scheme (CHAWS) - Sinhala</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Service_Extension_Circular_(English).pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-              <span className="hover-text">Service Extension Circular (English)</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() =>openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Service_Extension_Circular_(Sinhala).pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-              <span className="hover-text">Service Extension Circular (Sinhala)	</span>
-            </div>
-            <div className="hover-container"style={listItemStyle} onClick={() =>openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Study_Leave_Procedure_PD_12A_2010.pdf')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-              <span className="hover-text">Study Leave Procedure</span>
-            </div>
+            {items.map((item, index) => (
+              <div key={index} style={listItemStyle}>
+                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
+                <span className="hover-text">{item.title} (</span>
+                <span className="hover-text" onClick={() => openInNewWindow(item.links.English)} style={smallFontStyle}>
+                  English
+                </span>
+                <span className="hover-text">/</span>
+                <span className="hover-text" onClick={() => openInNewWindow(item.links.Sinhala)} style={smallFontStyle}>
+                  Sinhala
+                </span>
+                <span className="hover-text">/</span>
+                <span className="hover-text" onClick={() => openInNewWindow(item.links.Tamil)} style={smallFontStyle}>
+                  Tamil
+                </span>
+                <span className="hover-text">)</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HR_Circulars
+export default HR_Circulars;
