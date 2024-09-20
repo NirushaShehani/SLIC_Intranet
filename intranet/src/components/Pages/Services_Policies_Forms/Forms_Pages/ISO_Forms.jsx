@@ -64,7 +64,7 @@ const ISO_Forms = () => {
         className="services-title selected"
         onClick={() => setActiveSection(null)}
       >
-        ISO Forms (Claims)
+        ISO Forms
       </h1>
       <br />
       <div
@@ -73,27 +73,21 @@ const ISO_Forms = () => {
       >
         <button
           className={`service-button ${
-            clickedButton === "Death_Claims_Dept" ? "clicked" : ""
+            clickedButton === "Underwriting" ? "clicked" : ""
           }`}
           onClick={() =>
-            toggleComponent(
-              "Death_Claims_Dept",
-              "ISO Forms",
-              "Death_Claims_Dept"
-            )
+            toggleComponent("Underwriting", "ISO Forms", "Underwriting")
           }
         >
-          Death/Disability/Group <span>&#x2192;</span>
+          Underwriting <span>&#x2192;</span>
         </button>
         <button
           className={`service-button ${
-            clickedButton === "General_Forms" ? "clicked" : ""
+            clickedButton === "PHS" ? "clicked" : ""
           }`}
-          onClick={() =>
-            toggleComponent("General_Forms", "ISO Forms", "General_Forms")
-          }
+          onClick={() => toggleComponent("PHS", "ISO Forms", "PHS")}
         >
-          General <span>&#x2192;</span>
+          Policy Holder Services <span>&#x2192;</span>
         </button>
         <button
           className={`service-button ${
@@ -109,6 +103,21 @@ const ISO_Forms = () => {
         >
           Health <span>&#x2192;</span>
         </button>
+        <button
+          className={`service-button ${
+            clickedButton === "Maturity_Claims_Dept" ? "clicked" : ""
+          }`}
+          onClick={() =>
+            toggleComponent(
+              "Maturity_Claims_Dept",
+              "ISO Forms",
+              "Maturity_Claims_Dept"
+            )
+          }
+        >
+          Maturity Services<span>&#x2192;</span>
+        </button>
+        <br />
         <button
           className={`service-button ${
             clickedButton === "Life_Group_Business" ? "clicked" : ""
@@ -141,36 +150,27 @@ const ISO_Forms = () => {
         <br />
         <button
           className={`service-button ${
-            clickedButton === "Maturity_Claims_Dept" ? "clicked" : ""
+            clickedButton === "General_Forms" ? "clicked" : ""
+          }`}
+          onClick={() =>
+            toggleComponent("General_Forms", "ISO Forms", "General_Forms")
+          }
+        >
+          General <span>&#x2192;</span>
+        </button>
+        <button
+          className={`service-button ${
+            clickedButton === "Death_Claims_Dept" ? "clicked" : ""
           }`}
           onClick={() =>
             toggleComponent(
-              "Maturity_Claims_Dept",
+              "Death_Claims_Dept",
               "ISO Forms",
-              "Maturity_Claims_Dept"
+              "Death_Claims_Dept"
             )
           }
         >
-          Maturity Services<span>&#x2192;</span>
-        </button>
-        <br />
-        <button
-          className={`service-button ${
-            clickedButton === "PHS" ? "clicked" : ""
-          }`}
-          onClick={() => toggleComponent("PHS", "ISO Forms", "PHS")}
-        >
-          Policy Holder Services <span>&#x2192;</span>
-        </button>
-        <button
-          className={`service-button ${
-            clickedButton === "Underwriting" ? "clicked" : ""
-          }`}
-          onClick={() =>
-            toggleComponent("Underwriting", "ISO Forms", "Underwriting")
-          }
-        >
-          Underwriting <span>&#x2192;</span>
+          Death <span>&#x2192;</span>
         </button>
       </div>
       <div className="service-content">{renderComponent()}</div>

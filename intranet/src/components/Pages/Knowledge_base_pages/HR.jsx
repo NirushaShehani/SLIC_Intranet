@@ -140,7 +140,7 @@ const HR = () => {
 
           {/* CHAWS Section */}
           <div style={sectionStyle}>
-            <div style={titleStyle}>T & D</div>
+            <div style={titleStyle}>Training and Development</div>
             <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HRTandD/Application(2).pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Application</span>

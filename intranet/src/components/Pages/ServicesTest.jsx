@@ -410,7 +410,7 @@ const ServicesTest = () => {
                   )
                 }
               >
-                Life<span>&#x2192;</span>
+                Other<span>&#x2192;</span>
               </button>
             </div>
           </>

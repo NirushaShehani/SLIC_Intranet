@@ -101,10 +101,7 @@ const Life = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">B-Advisor</span>
             </div>   
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://commission-app/Trans/Sessiontrans.aspx')}>
-              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Transport</span>
-            </div>
+            
           </div>
         </div>
       </div>
