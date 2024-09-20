@@ -378,7 +378,7 @@ const Services = () => {
       <div style={topStyle}>
         <div style={buttonContainerStyle}>
           <button style={getButtonStyle('1')} onClick={() => setSelectedDept('1')}>Maturity Claim Forms</button>
-          <button style={getButtonStyle('2')} onClick={() => setSelectedDept('2')}>COMMON FORMS</button>
+          <button style={getButtonStyle('2')} onClick={() => setSelectedDept('2')}>Common Forms</button>
           <button style={getButtonStyle('3')} onClick={() => setSelectedDept('3')}>Stage Claim Forms</button>
           <button style={getButtonStyle('4')} onClick={() => setSelectedDept('4')}>Yashtiya Claim forms ISO numbers</button>
           <button style={getButtonStyle('5')} onClick={() => setSelectedDept('5')}>Freedom Claim forms ISO numbers</button>

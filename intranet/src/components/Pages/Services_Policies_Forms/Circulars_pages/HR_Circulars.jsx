@@ -80,16 +80,16 @@ const HR_Circulars = () => {
     {
       title: "Circuit Bungalows & Busses Price List",
       links: {
-        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CircuitBungalowsandBussesPriceList.pdf',
-        Sinhala: 'http://example.com/sinhala-link-3',
+        English: 'http://example.com/tamil-link-3',
+        Sinhala: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CircuitBungalowsandBussesPriceList.pdf',
         Tamil: 'http://example.com/tamil-link-3',
       },
     },
     {
       title: "Guidelines on using Staff Canteen",
       links: {
-        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/NOTICE_Canteen.pdf',
-        Sinhala: 'http://example.com/sinhala-link-4',
+        English: 'http://example.com/tamil-link-4',
+        Sinhala: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/NOTICE_Canteen.pdf',
         Tamil: 'http://example.com/tamil-link-4',
       },
     },
@@ -97,50 +97,29 @@ const HR_Circulars = () => {
       title: "Re-imbursement of Examination Expenses",
       links: {
         English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CIRCULAR_NO-HRD_26_2016_ENGLISH.pdf',
-        Sinhala: 'http://example.com/sinhala-link-5',
+        Sinhala: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CIRCULAR_NO-HRD_26_2016_SINHALA.pdf',
         Tamil: 'http://example.com/tamil-link-5',
       },
     },
-    {
-      title: "Re-imbursement of Examination Expenses",
-      links: {
-        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CIRCULAR_NO-HRD_26_2016_SINHALA.pdf',
-        Sinhala: 'http://example.com/sinhala-link-6',
-        Tamil: 'http://example.com/tamil-link-6',
-      },
-    },
+    
     {
       title: "Revised Medical Scheme (CHAWS)",
       links: {
         English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CHAWS_NOTICE_ENGLISH.pdf',
-        Sinhala: 'http://example.com/sinhala-link-7',
+        Sinhala: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CHAWS_NOTICE_SINHALA.pdf',
         Tamil: 'http://example.com/tamil-link-7',
       },
     },
-    {
-      title: "Revised Medical Scheme (CHAWS)",
-      links: {
-        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CHAWS_NOTICE_SINHALA.pdf',
-        Sinhala: 'http://example.com/sinhala-link-8',
-        Tamil: 'http://example.com/tamil-link-8',
-      },
-    },
+    
     {
       title: "Service Extension Circular",
       links: {
         English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Service_Extension_Circular_(English).pdf',
-        Sinhala: 'http://example.com/sinhala-link-9',
+        Sinhala: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Service_Extension_Circular_(Sinhala).pdf',
         Tamil: 'http://example.com/tamil-link-9',
       },
     },
-    {
-      title: "Service Extension Circular",
-      links: {
-        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Service_Extension_Circular_(Sinhala).pdf',
-        Sinhala: 'http://example.com/sinhala-link-10',
-        Tamil: 'http://example.com/tamil-link-10',
-      },
-    },
+   
     {
       title: "Study Leave Procedure",
       links: {

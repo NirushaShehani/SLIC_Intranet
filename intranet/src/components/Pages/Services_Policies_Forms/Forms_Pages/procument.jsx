@@ -71,11 +71,11 @@ const ProcurementForms = () => {
             <div style={rightStyle}>
                 <div className="home-container">
                     <div style={listContainer}>
-                        <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.60.60/stock_reservation/page_download_Form.html')}>
-                            <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-                            <span className="hover-text">Procurement</span>
-                        </div>
                         
+                        <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.60/stock_reservation/page_download_Form.html')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">Procurement</span>
+            </div>
                     </div>
                 </div>
             </div>

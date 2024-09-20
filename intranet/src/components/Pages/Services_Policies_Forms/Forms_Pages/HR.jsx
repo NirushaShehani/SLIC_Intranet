@@ -344,7 +344,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Medical.pdf"
+                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Professional_Development_Scheme_Pre%20exam.pdf"
                 )
               }
             >
@@ -353,7 +353,9 @@ const HR_Forms = () => {
                 style={iconStyle}
                 className="hover-icon"
               />
-              <span className="hover-text">Medical Treatment Form</span>
+              <span className="hover-text">
+                Reimbursment Application-Pre Exam
+              </span>
             </div>
             <div
               className="hover-container"
@@ -371,24 +373,6 @@ const HR_Forms = () => {
               />
               <span className="hover-text">
                 Reimbursment Application-Post Exam
-              </span>
-            </div>
-            <div
-              className="hover-container"
-              style={listItemStyle}
-              onClick={() =>
-                handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Professional_Development_Scheme_Pre%20exam.pdf"
-                )
-              }
-            >
-              <FontAwesomeIcon
-                icon={faFileAlt}
-                style={iconStyle}
-                className="hover-icon"
-              />
-              <span className="hover-text">
-                Reimbursment Application-Pre Exam
               </span>
             </div>
             <div
@@ -432,6 +416,22 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
+                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Travel_Overseas_Private.pdf"
+                )
+              }
+            >
+              <FontAwesomeIcon
+                icon={faFileAlt}
+                style={iconStyle}
+                className="hover-icon"
+              />
+              <span className="hover-text">Travel Overseas - Private</span>
+            </div>
+            <div
+              className="hover-container"
+              style={listItemStyle}
+              onClick={() =>
+                handleDownload(
                   "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/overseas_english.pdf"
                 )
               }
@@ -448,7 +448,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Travel_Overseas_Private.pdf"
+                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Medical.pdf"
                 )
               }
             >
@@ -457,7 +457,7 @@ const HR_Forms = () => {
                 style={iconStyle}
                 className="hover-icon"
               />
-              <span className="hover-text">Travel Overseas - Private</span>
+              <span className="hover-text">Medical Treatment Form</span>
             </div>
             <div
               className="hover-container"
