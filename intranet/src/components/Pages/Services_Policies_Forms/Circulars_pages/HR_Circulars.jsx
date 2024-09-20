@@ -159,7 +159,8 @@ const HR_Circulars = () => {
             {items.map((item, index) => (
               <div key={index} style={listItemStyle}>
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
-                <span className="hover-text">{item.title} (</span>
+                <span className="hover-text">{item.title} </span>
+                <span className="hover-text">(</span>
                 <span className="hover-text" onClick={() => openInNewWindow(item.links.English)} style={smallFontStyle}>
                   English
                 </span>
