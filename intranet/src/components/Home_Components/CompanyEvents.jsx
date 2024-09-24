@@ -80,7 +80,7 @@ const CompanyEvents = () => {
         <div className="responsive-container-block bg">
           <div className="responsive-container-block img-cont">
             <Link to="/Slot1">
-              <img src="/images/slot1/1.jpg" className="img img-big" alt="Event Slot 1" title={getEventTitleBySlot('001')} />
+              <img src="http://172.24.90.80:10157/Images/Events/slot1/1.jpg" className="img img-big" alt="Event Slot 1" title={getEventTitleBySlot('001')} />
             </Link>
             <Link to="/Slot2">
               <img src="/images/slot2/1.jpg" className="img img-big img-last" alt="Event Slot 2" title={getEventTitleBySlot('002')} />
