@@ -40,18 +40,14 @@ const eventsData = [
 ];
 
 // EventCard Component
-const EventCard = ({ id, image, title, likes, onLike }) => {
+const EventCard = ({ id, image, likes, onLike }) => {
   return (
-    <div className="full-notices-page">
-      <div className="company-events-container">
-        <div className="event-card">
-          <img src={image} alt={title} className="event-image" />
-          <div className="event-info">
-            <div className="event-likes">
-              <span className="like-icon" onClick={onLike}>👍</span>
-              <span className="like-count">{likes}</span>
-            </div>
-          </div>
+    <div className="event-card">
+      <img src={image} alt={`Event ${id}`} className="event-image" />
+      <div className="event-info">
+        <div className="event-likes">
+          <span className="like-icon" onClick={onLike}>👍</span>
+          <span className="like-count">{likes}</span>
         </div>
       </div>
     </div>
@@ -60,31 +56,28 @@ const EventCard = ({ id, image, title, likes, onLike }) => {
 
 // CompanyEvents Component
 const CompanyEvents = () => {
-  const [events, setEvents] = useState(eventsData); // Keep your event cards as it is
-  const [loading, setLoading] = useState(true); // Loading state for API
-  const [error, setError] = useState(null); // Error state
-  const [eventTitle, setEventTitle] = useState(''); // State to hold the event title from API
-  const [eventDesc, setEventDesc] = useState(''); // State to hold the event description from API
+  const [events, setEvents] = useState(eventsData);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [eventTitle, setEventTitle] = useState('');
+  const [eventDesc, setEventDesc] = useState('');
 
   useEffect(() => {
-    // Fetch title and description from the API for slot_no: "001"
     const fetchEventDetails = async () => {
       try {
         const response = await axios.post(`${BASE_URL}/${ENDPOINTS.EventGallery}`, {
-          p_id: '001', // Request body for fetching event with slot_no: "001"
+          p_id: '001',
           p_active: 'Y'
         });
 
         if (response.status === 200 && response.data.length > 0) {
-          const eventData = response.data[0]; // Assuming the first item in the response is the event we need
-          setEventTitle(eventData.e_title); // Set event title
-          setEventDesc(eventData.e_desc); // Set event description
+          const eventData = response.data[0];
+          setEventTitle(eventData.e_title);
+          setEventDesc(eventData.e_desc);
         } else {
-          console.error('No event data found');
           setError('No event data found');
         }
       } catch (error) {
-        console.error('Error fetching event data:', error);
         setError('Error fetching event data');
       } finally {
         setLoading(false);
@@ -94,14 +87,8 @@ const CompanyEvents = () => {
     fetchEventDetails();
   }, []);
 
-  // Define handleLike function to increment the like count
   const handleLike = (id) => {
-    const updatedEvents = events.map(event => {
-      if (event.id === id) {
-        return { ...event, likes: event.likes + 1 };
-      }
-      return event;
-    });
+    const updatedEvents = events.map(event => event.id === id ? { ...event, likes: event.likes + 1 } : event);
     setEvents(updatedEvents);
   };
 
@@ -114,21 +101,22 @@ const CompanyEvents = () => {
   }
 
   return (
-    <div className="company-events">
-      {/* Display the event title and description at the top */}
+    <div className="company-events-page">
+      {/* Centered Header Section */}
       <div className="event-details-header">
-        <h1>{eventTitle}</h1>
-        <p>{eventDesc}</p>
+        <h1 className="event-title">{eventTitle}</h1>
+        <p className="event-description">{eventDesc}</p>
       </div>
 
-      {/* Display the 6 EventCards as they are */}
-      {events.map(event => (
-        <EventCard
-          key={event.id}
-          {...event}
-          onLike={() => handleLike(event.id)} // Passing handleLike to EventCard
-        />
-      ))}
+      <div className="company-events">
+        {events.map(event => (
+          <EventCard
+            key={event.id}
+            {...event}
+            onLike={() => handleLike(event.id)}
+          />
+        ))}
+      </div>
     </div>
   );
 };
