@@ -143,7 +143,7 @@ const HR = () => {
             <div style={titleStyle}>Training and Development</div>
             <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HRTandD/Application(2).pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-              <span className="hover-text">Application</span>
+              <span className="hover-text">SLII/CII Application</span>
             </div>
             <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HRTandD/DIP_APPLICATION(1).pdf')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>

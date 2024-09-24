@@ -171,10 +171,6 @@ const Services = () => {
                     </div>
                     <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-                    <span className="hover-text">Voucher</span>
-                    </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
-                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Cheque/Slip Covering Letter</span>
                     </div>
                 </div>
