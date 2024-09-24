@@ -81,8 +81,8 @@ const ServicesTest = () => {
         return <ICT_Policies />;
       case "ICT_Forms":
         return <ICT_Forms />;
-        case "Life_Forms":
-        return <Life_Forms/>;
+        // case "Life_Forms":
+        // return <Life_Forms/>;
       case "HR_Forms":
         return <HR_Forms />;
       case "Procument_Forms":
@@ -275,14 +275,14 @@ const ServicesTest = () => {
             </h1>
             <br />
             <div className="services-buttons">
-            <button
+            {/* <button
                 className={`service-button ${
                   clickedButton === "Life_Forms" ? "clicked" : ""
                 }`}
                 onClick={() => toggleComponent("Life_Forms", "forms", "Life_Forms")}
               >
                 Life <span>&#x2192;</span>
-              </button>
+              </button> */}
 
               <button
                 className={`service-button ${
@@ -302,7 +302,7 @@ const ServicesTest = () => {
                     toggleComponent("ISO Forms", "forms", "ISO Forms")
                   }
                 >
-                  ISO Forms <span>&#x2192;</span>
+                  Life ISO Forms <span>&#x2192;</span>
                 </button>
               </Link>
 
@@ -344,7 +344,7 @@ const ServicesTest = () => {
                   clickedButton === "Security_Forms" ? "clicked" : ""
                 }`}
                 onClick={() =>
-                  toggleComponent("Security_Forms", "forms", "Security_Forms")
+                  toggleComponent("Security", "forms", "Security")
                 }
               >
                 Security <span>&#x2192;</span>

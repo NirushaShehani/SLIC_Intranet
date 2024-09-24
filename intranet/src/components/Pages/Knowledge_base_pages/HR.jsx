@@ -120,7 +120,7 @@ const HR = () => {
           </div>
           {/* End CHAWS Section */}
 
-          {/* CHAWS Section */}
+          {/* Recruitment */}
           <div style={sectionStyle}>
             <div style={titleStyle}>Recruitment</div>
             <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HR_Recruitment/PRF(Amend).pdf')}>
@@ -135,10 +135,14 @@ const HR = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Qualification Matrix</span>
             </div>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('https://172.24.80.82:8080/s/zsZS6xDcC7xeeXN')}>
+              <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+              <span className="hover-text">RFID Cards</span>
+            </div>
           </div>
-          {/* End CHAWS Section */}
+          {/* End Recruitment */}
 
-          {/* CHAWS Section */}
+          {/* Training and Development */}
           <div style={sectionStyle}>
             <div style={titleStyle}>Training and Development</div>
             <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HRTandD/Application(2).pdf')}>
@@ -159,7 +163,7 @@ const HR = () => {
             </div>
             
           </div>
-          {/* End CHAWS Section */}
+          {/* End Training and Development */}
           
         </div>
       </div>
