@@ -64,7 +64,7 @@ const ISO_Forms = () => {
         className="services-title selected"
         onClick={() => setActiveSection(null)}
       >
-        ISO Forms
+        Life ISO Forms
       </h1>
       <br />
       <div
