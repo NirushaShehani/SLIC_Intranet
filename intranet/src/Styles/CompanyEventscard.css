@@ -7,7 +7,6 @@
 }
 
 .event-details-header {
-  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -43,7 +42,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: 300px;
 }
 
 .event-image {

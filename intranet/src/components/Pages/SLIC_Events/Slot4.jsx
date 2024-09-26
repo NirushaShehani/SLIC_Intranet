@@ -43,12 +43,6 @@ const EventCard = ({ id, image, likes, onLike }) => {
   return (
     <div className="event-card">
       <img src={image} alt={`Event ${id}`} className="event-image" />
-      <div className="event-info">
-        <div className="event-likes">
-          <span className="like-icon" onClick={onLike}>👍</span>
-          <span className="like-count">{likes}</span>
-        </div>
-      </div>
     </div>
   );
 };
