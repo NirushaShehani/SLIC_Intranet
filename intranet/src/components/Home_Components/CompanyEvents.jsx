@@ -88,10 +88,10 @@ const CompanyEvents = () => {
           </div>
           <div className="responsive-container-block img-cont">
             <Link to="/Slot3">
-              <img src="http://172.24.90.80:10157/Images/Events/slot3/1.jpg" className="img img-big" alt="Event Slot 3" title={getEventTitleBySlot('003')} />
+              <img src="http://172.24.90.80:10157/Images/Events/slot3/1.png" className="img img-big" alt="Event Slot 3" title={getEventTitleBySlot('003')} />
             </Link>
             <Link to="/Slot4">
-              <img src="http://172.24.90.80:10157/Images/Events/slot4/1.jpg" className="img img-big img-last" alt="Event Slot 4" title={getEventTitleBySlot('004')} />
+              <img src="http://172.24.90.80:10157/Images/Events/slot4/1.png" className="img img-big img-last" alt="Event Slot 4" title={getEventTitleBySlot('004')} />
             </Link>
           </div>
           <div className="responsive-container-block img-cont">
