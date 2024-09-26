@@ -3,11 +3,14 @@ import Quote from '../Sub_Components/BookHub_Components/Quote';
 import BookCard from '../Sub_Components/BookHub_Components/BookCard';
 import '../../Styles/BookHub.css';
 //image urls
-import image1 from '../../assets/BookHub/On_Managing_Yourself.png';
-import image2 from '../../assets/BookHub/Leading_Change.png';
-import image3 from '../../assets/BookHub/Playing_To_Win.png';
-import image4 from '../../assets/BookHub/The_Outsiders.png';
-import image5 from '../../assets/BookHub/Love+Work.png';
+import image1 from '../../assets/BookHub/bookhub1.png';
+import image2 from '../../assets/BookHub/bookhub2.png';
+import image3 from '../../assets/BookHub/bookhub3.png';
+import image4 from '../../assets/BookHub/bookhub4.png';
+import image5 from '../../assets/BookHub/bookhub5.png';
+import image6 from '../../assets/BookHub/bookhub6.png';
+import image7 from '../../assets/BookHub/bookhub7.png';
+import image8 from '../../assets/BookHub/bookhub8.jpg';
 
 // ../../assets/BookHub
 const pdfUrls = [
@@ -47,17 +50,17 @@ const books = [
     author: 'NICK BOSTROM',
   },
   {
-    image: image5,
+    image: image6,
     title: 'The Innovators Dilemma',
     author: 'Clayton M. Christensen',
   },
   {
-    image: image5,
+    image: image7,
     title: 'The Power of Your Subconscious Mind',
     author: 'CJoseph Murphy',
   },
   {
-    image: image5,
+    image: image8,
     title: 'The Toyota Way',
     author: 'Jeffrey K. Licker',
   },
