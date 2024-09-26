@@ -9,32 +9,32 @@ import axios from 'axios';
 const eventsData = [
   {
     id: 1,
-    image: 'http://172.24.90.80:10157/Images/Events/EasyClaim.jpg',
+    image: 'http://172.24.90.80:10157/Images/Events/slot5/1.jpg',
     likes: 26,
   },
   {
     id: 2,
-    image: 'http://localhost:3001/images/slot5/2.jpg',
+    image: 'http://172.24.90.80:10157/Images/Events/slot5/2.jpg',
     likes: 85,
   },
   {
     id: 3,
-    image: 'http://localhost:3001/images/slot5/3.jpg',
+    image: 'http://172.24.90.80:10157/Images/Events/slot5/3.jpg',
     likes: 85,
   },
   {
     id: 4,
-    image: 'http://localhost:3001/images/slot5/4.jpg',
+    image: 'http://172.24.90.80:10157/Images/Events/slot5/4.jpg',
     likes: 85,
   },
   {
     id: 5,
-    image: 'http://localhost:3001/images/slot5/5.jpg',
+    image: 'http://172.24.90.80:10157/Images/Events/slot5/5.jpg',
     likes: 85,
   },
   {
     id: 6,
-    image: 'http://localhost:3001/images/slot5/6.jpg',
+    image: 'http://172.24.90.80:10157/Images/Events/slot5/6.jpg',
     likes: 85,
   }
 ];

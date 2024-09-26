@@ -3,38 +3,38 @@ import DrawerMenu from '../../Sub_Components/DrawerMenu';
 import '../../../Styles/FullNoticesPage.css';
 import { Link } from 'react-router-dom';
 import '../../../Styles/CompanyEventscard.css';
-import { BASE_URL, ENDPOINTS } from "../../../Services/ApiConfig"; // Importing API config
+import { BASE_URL, ENDPOINTS } from "../../../Services/ApiConfig"; 
 import axios from 'axios';
 
 const eventsData = [
   {
     id: 1,
-    image: 'http://172.24.90.80:10157/Images/Events/EasyClaim.jpg',
+    image: 'http://172.24.90.80:10157/Images/Events/slot6/1.jpg',
     likes: 26,
   },
   {
     id: 2,
-    image: 'http://localhost:3001/images/slot6/2.jpg',
+    image: 'http://172.24.90.80:10157/Images/Events/slot6/2.jpg',
     likes: 85,
   },
   {
     id: 3,
-    image: 'http://localhost:3001/images/slot6/3.jpg',
+    image: 'http://172.24.90.80:10157/Images/Events/slot6/3.jpg',
     likes: 85,
   },
   {
     id: 4,
-    image: 'http://localhost:3001/images/slot6/4.jpg',
+    image: 'http://172.24.90.80:10157/Images/Events/slot6/4.jpg',
     likes: 85,
   },
   {
     id: 5,
-    image: 'http://localhost:3001/images/slot6/5.jpg',
+    image: 'http://172.24.90.80:10157/Images/Events/slot6/5.jpg',
     likes: 85,
   },
   {
     id: 6,
-    image: 'http://localhost:3001/images/slot6/6.jpg',
+    image: 'http://172.24.90.80:10157/Images/Events/slot6/6.jpg',
     likes: 85,
   }
 ];
