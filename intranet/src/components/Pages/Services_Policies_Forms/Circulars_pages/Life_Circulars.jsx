@@ -59,47 +59,47 @@ const Life_Circulars = () => {
         <div className="home-container">
         
           <div style={listContainer}>
-          <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://slic.intranet.com/circular_new/Life/Life.html')}>
+          <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://slic.intranet.com/circular_new/Life/Life.html')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Life</span>
             </div>   
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://172.24.60.66/circulars-online/legal.html')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/circulars-online/legal.html')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Legal</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://172.24.60.66/circulars-online/finance.html')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/circulars-online/finance.html')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Finance</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">ICT</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Human resource Development</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://172.24.60.66/circulars-online/personal-lines.html')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/circulars-online/personal-lines.html')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Personal Lines</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Internal Audit</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://172.24.60.66/circulars-online/compliance.html')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/circulars-online/compliance.html')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Complience</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
               <span className="hover-text">Acturial and risk management</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('/-')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"  />
               <span className="hover-text">Stratergy and planning</span>
             </div>
-            <div  className="hover-container"style={listItemStyle} onClick={() => navigate('/-')}>
+            <div  className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('/-')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
               <span className="hover-text">Corporate business and reinsurance</span>
             </div>

@@ -125,7 +125,7 @@ const HR = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Day to day business activities of Sri Lanka Insurance</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => navigate('http://172.24.60.66/knowledgebase/index.php/knowledge-base/company-vision-mission-statements/')}>
+            <div className="hover-container" style={listItemStyle} onClick={() =>  openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/company-vision-mission-statements/')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
               <span className="hover-text">Company Vision & Mission Statements</span>
             </div>
