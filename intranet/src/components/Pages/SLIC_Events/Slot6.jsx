@@ -58,7 +58,7 @@ const CompanyEvents = () => {
     const fetchEventDetails = async () => {
       try {
         const response = await axios.post(`${BASE_URL}/${ENDPOINTS.EventGallery}`, {
-          p_id: '001',
+          p_id: '006',
           p_active: 'Y'
         });
 
