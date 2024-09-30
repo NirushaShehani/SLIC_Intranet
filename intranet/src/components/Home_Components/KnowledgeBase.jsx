@@ -16,7 +16,7 @@ const imageUrl3 = require('../../assets/BookHub/IconImage.jpg');
 //For image slider
 const imageUrl01 = 'http://172.24.90.80:10157/Images/Products/img1.jpg';
 const imageUrl02 = 'http://172.24.90.80:10157/Images/Products/img2.jpg';
-const imageUrl03 = 'http://172.24.90.80:10157/Images/Products/img3.png';
+const imageUrl03 = 'http://172.24.90.80:10157/Images/Products/img3.jpg';
 
 
 

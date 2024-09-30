@@ -9,32 +9,32 @@ import axios from 'axios';
 const eventsData = [
   {
     id: 1,
-    image: 'http://172.24.90.80:10157/Images/Events/slot3/1.png',
+    image: 'http://172.24.90.80:10157/Images/Events/slot3/1.jpg',
     likes: 26,
   },
   {
     id: 2,
-    image: 'http://172.24.90.80:10157/Images/Events/slot3/2.png',
+    image: 'http://172.24.90.80:10157/Images/Events/slot3/2.jpg',
     likes: 85,
   },
   {
     id: 3,
-    image: 'http://172.24.90.80:10157/Images/Events/slot3/3.png',
+    image: 'http://172.24.90.80:10157/Images/Events/slot3/3.jpg',
     likes: 85,
   },
   {
     id: 4,
-    image: 'http://172.24.90.80:10157/Images/Events/slot3/4.png',
+    image: 'http://172.24.90.80:10157/Images/Events/slot3/4.jpg',
     likes: 85,
   },
   {
     id: 5,
-    image: 'http://172.24.90.80:10157/Images/Events/slot3/5.png',
+    image: 'http://172.24.90.80:10157/Images/Events/slot3/5.jpg',
     likes: 85,
   },
   {
     id: 6,
-    image: 'http://172.24.90.80:10157/Images/Events/slot3/6.png',
+    image: 'http://172.24.90.80:10157/Images/Events/slot3/6.jpg',
     likes: 85,
   }
 ];
