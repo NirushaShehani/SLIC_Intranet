@@ -48,7 +48,7 @@ const HRNotices = () => {
                 <button className="notice-button">
                   <h3 className="notice-topic">{notice.n_title}</h3>
                   <p className="notice-content">{notice.n_desc}</p>
-                  <p className="notice-date">{new Date(notice.n_date).toLocaleDateString()}</p>
+                  <p className="notice-date" style={{ color: "black" }}>{new Date(notice.n_date).toLocaleDateString()}</p>
                 </button>
               </li>
             ))}

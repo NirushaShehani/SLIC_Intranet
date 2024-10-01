@@ -10,7 +10,6 @@ function Login() {
     const [password, setPassword] = useState('');
     const [adminLevel, setAdminLevel] = useState(null);
     const [error, setError] = useState('');
-    const [isRememberMeChecked, setIsRememberMeChecked] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -21,10 +20,7 @@ function Login() {
         e.preventDefault();
         setError(''); 
 
-        if (!isRememberMeChecked) {
-            setError('You must check "Remember me" to log in.');
-            return;
-        }
+        
 
         try {
             const apiUrl = `${BASE_URL}/${ENDPOINTS.AdminLogin}`;
@@ -50,7 +46,7 @@ function Login() {
             }
         } catch (err) {
             console.error('Error during login:', err);
-            setError('An unexpected error occurred');
+            setError('Invalid username or password');
         }
     };
 
@@ -94,7 +90,7 @@ function Login() {
                                     placeholder="Username"
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}
-                                    style={styles.input}
+                                    style={styles.input} required
                                 />
                             </div>
                             <div style={styles.inputGroup}>
@@ -104,24 +100,15 @@ function Login() {
                                     placeholder="Password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    style={styles.input}
+                                    style={styles.input} required
                                 />
                             </div>
-                            <div style={styles.options}>
-                                <label style={styles.rememberMe}>
-                                    <input 
-                                        type="checkbox" 
-                                        checked={isRememberMeChecked} 
-                                        onChange={() => setIsRememberMeChecked(!isRememberMeChecked)} 
-                                    /> Remember me
-                                </label>
-                             
-                            </div>
+                            
                             {error && <p style={styles.error}>{error}</p>}
                             <button 
                                 type="submit" 
                                 style={styles.button}
-                                disabled={!isRememberMeChecked}
+                               
                             >
                                 LOGIN
                             </button>
@@ -194,9 +181,7 @@ const styles = {
         justifyContent: 'space-between',
         marginBottom: '20px',
     },
-    rememberMe: {
-        fontSize: '14px',
-    },
+    
     forgotPassword: {
         fontSize: '14px',
         color: '#007bff',

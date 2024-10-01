@@ -122,33 +122,7 @@ const DrawerMenu = () => {
         </ListItem>
       </List>
       <Divider />
-      {/* Additional Links */}
-      <List>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon style={styles.btnsizeup}>
-              <HelpOutlineOutlinedIcon style={styles.iconColor} />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Link to="/login?redirect=/Admin_Sales_Lead" style={{ cursor: "pointer", textDecoration: 'none' }}>
-                  <Typography
-                    sx={{ display: "inline" }}
-                    component="span"
-                    variant="body1"
-                    fontWeight="bold"
-                    fontSize="16px"
-                    color="black"
-                    fontFamily={"Oxygen"}
-                  >
-                    Help
-                  </Typography>
-                </Link>
-              }
-            />
-          </ListItemButton>
-        </ListItem>
-      </List>
+      
     </Box>
   );
 
