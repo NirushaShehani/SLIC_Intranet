@@ -72,6 +72,14 @@ const BranchPerformance = () => {
     }
   };
 
+  const sortedPerformance = branchNames[selectedCategory]
+    .map((name, index) => ({
+      name,
+      percentage: achPercentages[selectedCategory][index],
+    }))
+    .sort((a, b) => b.percentage - a.percentage); 
+
+
   return (
     <div>
       <div className="incentive-criteria">
@@ -123,27 +131,28 @@ const BranchPerformance = () => {
         </div>
 
         <div className="performance-list" ref={performanceListRef}>
-          {achPercentages[selectedCategory].map((percentage, index) => (
+          {sortedPerformance.map((item, index) => (
             <div key={index} className="performance-item">
-              <div className="branch-name">{branchNames[selectedCategory][index]}</div>
+              <div className="branch-name">{item.name}</div>
               <div className="performance-details">
-                <span className="percentage">{percentage}%</span>
+                <span className="percentage">{item.percentage}%</span>
                 <div className="performance-bar-container">
                   <div
-                    className={`performance-bar ${percentage >= 100 ? 'achieved-bar' : 'not-achieved-bar'}`}
-                    style={{ width: `${Math.min(percentage, 100)}%` }}
+                    className={`performance-bar ${item.percentage >= 100 ? 'achieved-bar' : 'not-achieved-bar'}`}
+                    style={{ width: `${Math.min(item.percentage, 100)}%` }}
                   />
                 </div>
               </div>
             </div>
           ))}
+
         </div>
       </div>
 
       <div className="branch-event">
         <h2>Branch Events</h2>
         <div className="images-container">
-            <img src={images[currentImageIndex]} alt={`Event ${currentImageIndex + 1}`} />
+          <img src={images[currentImageIndex]} alt={`Event ${currentImageIndex + 1}`} />
         </div>
       </div>
     </div>
