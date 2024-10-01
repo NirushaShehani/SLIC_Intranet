@@ -331,27 +331,27 @@ const Services = () => {
           <div style={containerStyle}>
             <div style={rightStyle}>
               <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => navigate('/-')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Medical Report- Disability</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => navigate('/-')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Claimant Statement - Group Term   </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => navigate('/-')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Claimant Statement- DTA</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => navigate('/-')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Last Medical Attendant report </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => navigate('/-')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Certificate of discharge</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => navigate('/aboutSlic')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => navigate('/-')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Important notice </span>
                 </div>
