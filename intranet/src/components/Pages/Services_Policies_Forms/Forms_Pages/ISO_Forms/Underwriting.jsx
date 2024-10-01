@@ -127,7 +127,7 @@ const Services = () => {
           <div style={containerStyle}>
             <div style={rightStyle}>
               <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
                   <span className="hover-text">Life Proposal Form (Sinhala)</span>
                 </div>
