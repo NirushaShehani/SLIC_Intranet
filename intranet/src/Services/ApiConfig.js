@@ -1,5 +1,5 @@
-//const BASE_URL = "http://192.168.101.21:10155/LifeIntranetAPI/api/v1";
-const BASE_URL = "http://203.115.11.236:10155/LifeIntranetAPI/api/v1";
+const BASE_URL = "http://192.168.101.21:10155/LifeIntranetAPI/api/v1";
+//const BASE_URL = "http://203.115.11.236:10155/LifeIntranetAPI/api/v1";
 
 const ENDPOINTS = {
   MONTHLYGWP: "Gwp/GetMonthlyGWP",
@@ -24,4 +24,3 @@ const ENDPOINTS = {
 };
 
 export { BASE_URL, ENDPOINTS };
-///hiiiiii
