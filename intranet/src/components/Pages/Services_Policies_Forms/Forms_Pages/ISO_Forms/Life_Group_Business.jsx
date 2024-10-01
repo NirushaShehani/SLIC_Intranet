@@ -128,35 +128,35 @@ const Services = () => {
         <div style={rightStyle}>
                 <div style={listContainer}>
                     
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Group Term Quotation Request Form</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Affinity Questioneer </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Group term proposal form</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Declaration of Good health-Long form-English</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Declaration of Good health-Long form-Sinhala</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Declaration of Good health-Short form-English</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Declaration of Good health-Short form-Sinhala</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Group DTA Proposal Form</span>
                     </div>
