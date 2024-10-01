@@ -128,31 +128,31 @@ const Services = () => {
         <div style={rightStyle}>
                 <div style={listContainer}>
                     
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Covering Letter</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Discharge Form - Maturity </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Important Notice Format - Maturity</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Payment Memo - Maturity </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Payment Voucher - Maturity</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">New Business Letter - Maturity </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Affidavit for Name difference</span>
                     </div>  
@@ -168,35 +168,35 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Affidavit for Loss Policy </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Specimen Signature Form </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Certificate of Residence-7110 </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Indeminity bond  </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">death loss policy affidavit </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">power of attorny Affidavit </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Confirmation letter for power of attorney  </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Affidavit loss of policy(power of attorney holder) </span>
                     </div>
@@ -212,27 +212,27 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Covering Letter - 3S  </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Discharge Form - 3S  </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Important Notice Format - 3S</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Payment Memo - 3S</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Payment Voucher - 3S </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">New Business Letter - 3S </span>
                     </div>
@@ -248,31 +248,31 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Covering Letter - 1st year annuities  </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Covering Letter - 2nd year and above annuities   </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Discharge Form - YC </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Important Notice Format - YC </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Agent Letter </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Certification of Residence Form (local) </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Certification of Residence Form (overseas)</span>
                     </div>
@@ -288,23 +288,23 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Covering Letter - 1st year annuity   </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Covering Letter - 2nd year annuity </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Discharge Form - FD </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Important Notice Format - FD</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Agent Letter</span>
                     </div>
@@ -320,19 +320,19 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Covering Letter - 1st year annuity   </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Covering Letter - 2nd year annuity   </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Discharge Form - MD</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Important Notice Format - MD </span>
                     </div>
@@ -348,15 +348,15 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Covering Letter </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Discharge Form</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/aboutSlic')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Important Notice Format </span>
                     </div>
