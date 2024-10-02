@@ -72,9 +72,8 @@ const ISO_Forms = () => {
         style={{ width: "calc(100% + 10px)" }} // OR use sx={{ width: "calc(50% - 10px)" }} if using MUI's sx prop
       >
         <button
-          className={`service-button ${
-            clickedButton === "Underwriting" ? "clicked" : ""
-          }`}
+          className={`service-button ${clickedButton === "Underwriting" ? "clicked" : ""
+            }`}
           onClick={() =>
             toggleComponent("Underwriting", "ISO Forms", "Underwriting")
           }
@@ -82,17 +81,15 @@ const ISO_Forms = () => {
           Underwriting <span>&#x2192;</span>
         </button>
         <button
-          className={`service-button ${
-            clickedButton === "PHS" ? "clicked" : ""
-          }`}
+          className={`service-button ${clickedButton === "PHS" ? "clicked" : ""
+            }`}
           onClick={() => toggleComponent("PHS", "ISO Forms", "PHS")}
         >
           Policy Holder Services <span>&#x2192;</span>
         </button>
         <button
-          className={`service-button ${
-            clickedButton === "Health_Claims_Dept" ? "clicked" : ""
-          }`}
+          className={`service-button ${clickedButton === "Health_Claims_Dept" ? "clicked" : ""
+            }`}
           onClick={() =>
             toggleComponent(
               "Health_Claims_Dept",
@@ -104,9 +101,8 @@ const ISO_Forms = () => {
           Health <span>&#x2192;</span>
         </button>
         <button
-          className={`service-button ${
-            clickedButton === "Maturity_Claims_Dept" ? "clicked" : ""
-          }`}
+          className={`service-button ${clickedButton === "Maturity_Claims_Dept" ? "clicked" : ""
+            }`}
           onClick={() =>
             toggleComponent(
               "Maturity_Claims_Dept",
@@ -119,9 +115,8 @@ const ISO_Forms = () => {
         </button>
         <br />
         <button
-          className={`service-button ${
-            clickedButton === "Life_Group_Business" ? "clicked" : ""
-          }`}
+          className={`service-button ${clickedButton === "Life_Group_Business" ? "clicked" : ""
+            }`}
           onClick={() =>
             toggleComponent(
               "Life_Group_Business",
@@ -134,9 +129,8 @@ const ISO_Forms = () => {
         </button>
         <br />
         <button
-          className={`service-button ${
-            clickedButton === "Life_Group_Payment" ? "clicked" : ""
-          }`}
+          className={`service-button ${clickedButton === "Life_Group_Payment" ? "clicked" : ""
+            }`}
           onClick={() =>
             toggleComponent(
               "Life_Group_Payment",
@@ -149,9 +143,8 @@ const ISO_Forms = () => {
         </button>
         <br />
         <button
-          className={`service-button ${
-            clickedButton === "General_Forms" ? "clicked" : ""
-          }`}
+          className={`service-button ${clickedButton === "General_Forms" ? "clicked" : ""
+            }`}
           onClick={() =>
             toggleComponent("General_Forms", "ISO Forms", "General_Forms")
           }
@@ -159,9 +152,8 @@ const ISO_Forms = () => {
           General <span>&#x2192;</span>
         </button>
         <button
-          className={`service-button ${
-            clickedButton === "Death_Claims_Dept" ? "clicked" : ""
-          }`}
+          className={`service-button ${clickedButton === "Death_Claims_Dept" ? "clicked" : ""
+            }`}
           onClick={() =>
             toggleComponent(
               "Death_Claims_Dept",
@@ -172,6 +164,38 @@ const ISO_Forms = () => {
         >
           Death <span>&#x2192;</span>
         </button>
+
+        <a
+          href="http://slic.intranet.com/ISO/new_web/index.htm"  
+          className="service-button"   
+          style={{ textDecoration: 'none', marginTop: "10px" }}    
+          target="_blank"                
+          rel="noopener noreferrer"       
+        >
+          ISO 9001 <span>&#x2192;</span>
+        </a>
+
+        <a
+          href="http://172.24.60.66/iso14064/"  
+          className="service-button"   
+          style={{ textDecoration: 'none', marginTop: "10px" }}    
+          target="_blank"                
+          rel="noopener noreferrer"       
+        >
+          ISO 14064 <span>&#x2192;</span>
+        </a>
+
+        <a
+          href="http://172.24.60.66/iso/"  
+          className="service-button"   
+          style={{ textDecoration: 'none', marginTop: "10px" }}    
+          target="_blank"                
+          rel="noopener noreferrer"       
+        >
+          ISO 27001 <span>&#x2192;</span>
+        </a>
+
+
       </div>
       <div className="service-content">{renderComponent()}</div>
     </div>
