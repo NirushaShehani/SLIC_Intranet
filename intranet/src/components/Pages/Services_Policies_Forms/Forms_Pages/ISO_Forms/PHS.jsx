@@ -196,8 +196,8 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Loan Application ( Form No.1728)  </span>
                     </div>
-                  
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-14')}>
+                  http://172.24.90.80:10157/Documents/
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-20')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Declaration of Continued Good Health- child (Form No 9C/E) </span>
                     </div>
@@ -312,14 +312,19 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
+                <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GroupPaymentsForms/LI%20GRP%20FO%20S%2001.pdf')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                   <span className="hover-text">Letter of authority-form no 155R</span>
                   </div>
-                  <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
+                  <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GroupPaymentsForms/LI%20GRP%20FO%20SE%2002.pdf')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                   <span className="hover-text">Adjustment Voucher</span>
                   </div>
+                  <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/PolicyHolderServices/GroupPaymentsForms/LI-PHS-FO-E-19.pdf')}>
+                  <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
+                  <span className="hover-text">Standing Order Instruction Form ( Form No.1209)</span>
+                  </div>
+                  
                   
                 </div>
             </div>
