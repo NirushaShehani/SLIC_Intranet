@@ -128,7 +128,7 @@ const Services = () => {
         <div style={rightStyle}>
                 <div style={listContainer}>
                     
-                    <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('/-')}>
+                    <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/LifeGroupPayment/GeneralFormsToThePolicyFolder/LI-PHS-FO-E-19.pdf')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Standing Order Instruction Form ( Form No.1209)</span>
                     </div>
@@ -146,7 +146,7 @@ const Services = () => {
         <div style={rightStyle}>
                 <div style={listContainer}>
                     
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/LifeGroupPayment/GroupPaymentForms/LI%20GRP%20FO%20S%2001.pdf')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Letter of authority-form no 155R</span>
                     </div>

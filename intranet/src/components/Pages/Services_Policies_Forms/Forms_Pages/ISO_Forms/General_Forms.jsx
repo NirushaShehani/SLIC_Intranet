@@ -150,19 +150,19 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/GeneralForms/LifeGeneralForms/Customer_satisfaction_index_Life')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Customer Feed Back Request - Life  </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/GeneralForms/LifeGeneralForms/Life_Claims_Customer_Complaint_Register_2014')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Customer Complaint Register - Life   </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/-')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/GeneralForms/LifeGeneralForms/Concession_record_LIGNFO03')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Concession Report- Life </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/GeneralForms/LifeGeneralForms/Complaints_and_SuggestionsLIGNFOE04')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Complaints and Suggestions - Life  </span>
                     </div>
