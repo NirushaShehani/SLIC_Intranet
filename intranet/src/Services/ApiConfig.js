@@ -1,5 +1,10 @@
-//const BASE_URL = "http://192.168.101.21:10155/LifeIntranetAPI/api/v1";
-const BASE_URL = "http://203.115.11.236:10155/LifeIntranetAPI/api/v1";
+//For Test Development
+
+//const BASE_URL = "http://192.168.101.102:10155/LifeIntranetAPI/api/v1"; // Internal
+//const BASE_URL = "http://122.255.4.187:10155/LifeIntranetAPI/api/v1"; // External
+
+//For Live Development,
+const BASE_URL = "http://192.168.101.111:10455/LifeIntranetAPI/api/v1"; // Internal
 
 const ENDPOINTS = {
   MONTHLYGWP: "Gwp/GetMonthlyGWP",

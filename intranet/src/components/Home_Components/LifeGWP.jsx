@@ -405,24 +405,24 @@ const AchieversCard = ({ achievers }) => (
                 title={
                   achiever.achievment === "Achieved"
                     ? `Above Target : ${new Intl.NumberFormat("en-US").format(
-                        achiever.over
-                      )}`
+                      achiever.over
+                    )}`
                     : achiever.achievment === "Not_achieved"
-                    ? `Due : ${new Intl.NumberFormat("en-US").format(
+                      ? `Due : ${new Intl.NumberFormat("en-US").format(
                         achiever.due
                       )}`
-                    : "Unknown status"
+                      : "Unknown status"
                 }
                 sx={{
                   backgroundColor:
                     achiever.achievment === "Achieved"
                       ? "#00b300"
                       : achiever.achievment === "Not_achieved"
-                      ? "red"
-                      : "transparent", // Green if achieved, red if not achieved
+                        ? "red"
+                        : "transparent", // Green if achieved, red if not achieved
                   color:
                     achiever.achievment === "Achieved" ||
-                    achiever.achievment === "Not_achieved"
+                      achiever.achievment === "Not_achieved"
                       ? "white"
                       : "inherit", // White text for both states
                   padding: "2px 4px",
@@ -432,8 +432,8 @@ const AchieversCard = ({ achievers }) => (
                 {achiever.achievment === "Achieved"
                   ? "Achieved"
                   : achiever.achievment === "Not_achieved"
-                  ? "Not Achieved"
-                  : "Unknown Status"}
+                    ? "Not Achieved"
+                    : "Unknown Status"}
               </Typography>
             </Box>
           ))}
@@ -534,9 +534,11 @@ const GWPChartsContainer = () => {
     "November",
     "December",
   ];
-  const currentMonth = new Date().getMonth();
+  const monthNames = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+  const currentMonth = monthNames[new Date().getMonth()];
   const currentYear = new Date().getFullYear();
   const currentMonthInText = months[currentMonth];
+
   // Fetch Life GWP data for doughnut charts
   useEffect(() => {
     // Fetch LIFE GWP data from the API
@@ -544,6 +546,7 @@ const GWPChartsContainer = () => {
       try {
         const response = await axios.get(
           `${BASE_URL}/${ENDPOINTS.MONTHLYGWP}?p_month=${currentMonth}`
+
         );
         const data = response.data;
 
@@ -748,7 +751,7 @@ const GWPChartsContainer = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-  
+
         <FlippingCard showBack={GWPFlipping} cardType="gwp">
           <div className="inner">
             <div className="front">
