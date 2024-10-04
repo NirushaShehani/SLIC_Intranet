@@ -17,13 +17,15 @@
   }
   
   .full-notices-column2 {
-    width: 100px;
+    height: 120vh;
     padding: 10px;
     border-radius: 5px;
-    flex-grow: 1; /* Allow this column to take the remaining space */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-  }
+    overflow-y: auto; /* This will enable scrolling when content exceeds height */
+}
+
   
   .full-notices-column4 {
     padding: 10px;
