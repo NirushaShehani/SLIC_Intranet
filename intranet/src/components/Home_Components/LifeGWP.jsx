@@ -765,6 +765,7 @@ const GWPChartsContainer = () => {
                       paddingTop: 5,
                       fontSize: "20px",
                       whiteSpace: "nowrap",
+                      fontWeight: "bold"
                     }}
                   >
                     {`Life GWP ${currentMonthInText}`}
@@ -787,6 +788,7 @@ const GWPChartsContainer = () => {
                       paddingTop: 5,
                       fontSize: "20px",
                       whiteSpace: "nowrap",
+                      fontWeight: "bold"
                     }}
                   >
                     {`Life Cumulative ${currentYear}`}

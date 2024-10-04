@@ -17,6 +17,7 @@
   }
   
   .full-notices-column2 {
+    width: 100px;
     padding: 10px;
     border-radius: 5px;
     flex-grow: 1; /* Allow this column to take the remaining space */

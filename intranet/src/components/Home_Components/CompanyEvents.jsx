@@ -141,7 +141,7 @@ const CompanyEvents = () => {
       {notices.slice(0, 3).map((notice) => (
         <div key={notice.p_id}>
           <p className="sub-notice-hd">{notice.n_title}</p>
-          <p className="notice">{notice.n_desc}</p>
+         
           <p className="notice-date">{new Date(notice.n_date).toLocaleDateString()}</p>
           <hr />
         </div>
