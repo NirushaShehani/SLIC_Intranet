@@ -13,16 +13,6 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>LIFE NET</title>
 
-    <!-- Cache-busting script -->
-    <script>
-      window.onload = function () {
-        // Clear the cache on page reload
-        if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
-          window.location.href =
-            window.location.href.split("?")[0] + "?cache-buster=" + new Date().getTime();
-        }
-      };
-    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
