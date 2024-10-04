@@ -12,6 +12,8 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const rec1 = require("../../assets/Rectangle1.png"); // MDRT Event Image record 1
 const rec2 = require("../../assets/Rectangle2.png"); // MDRT Event Image record 2
 const defaultImage = require("../../assets/default-user.png"); // Path to default user image
+const color2 = "#ebab13";
+const color1 = "#00adbb";
 
 // Flipping card component design for GWP Charts
 const FlippingCard = styled(Box)(({ showBack, cardType }) => ({
@@ -113,7 +115,7 @@ const GWPChart = ({
               top: "50%", // Center vertically
               left: "50%", // Center horizontally
               transform: "translate(-50%, -50%)", // Ensure text stays centered
-              color: "#4db6ac", // Color matching achievement color
+              color: color1, // Color matching achievement color
               fontWeight: "bold",
               marginBottom: "0px",
             }}
@@ -145,7 +147,7 @@ const GWPChart = ({
             <Typography
               variant="body2"
               sx={{
-                color: "#42a5f5",
+                color: color2,
                 padding: "2px 4px",
                 borderRadius: 1,
                 fontWeight: "bold",
@@ -157,7 +159,7 @@ const GWPChart = ({
             <Typography
               variant="body2"
               sx={{
-                color: "#42a5f5",
+                color: color2,
                 padding: "2px 4px",
                 borderRadius: 1,
                 fontWeight: "bold",
@@ -177,7 +179,7 @@ const GWPChart = ({
             <Typography
               variant="body2"
               sx={{
-                color: "#4db6ac",
+                color: color1,
                 padding: "2px 4px",
                 borderRadius: 1,
                 fontWeight: "bold",
@@ -189,7 +191,7 @@ const GWPChart = ({
             <Typography
               variant="body2"
               sx={{
-                color: "#4db6ac",
+                color: color1,
                 padding: "2px 4px",
                 borderRadius: 1,
                 fontWeight: "bold",
@@ -212,7 +214,7 @@ const AchieversCard = ({ achievers }) => (
       <Typography
         variant="h6"
         component="div"
-        sx={{ textAlign: "center", marginTop: 1, marginBottom: 1.5 }}
+        sx={{ textAlign: "center", marginTop: 1, marginBottom: 1.5, fontWeight: "bold" }}
       >
         {achievers.title}
       </Typography>
@@ -512,9 +514,9 @@ const GWPChartsContainer = () => {
   const [GWPFlipping, setGWPFlipping] = useState(false);
   const [currentCard, setCurrentCard] = useState("achievers"); // Initialize with 'achievers'
   const [achieverList, setAchieverList] = useState([
-    { title: "MDRT Achievers", list: [] },
-    { title: "COT Achievers", list: [] },
-    { title: "TOT Achievers", list: [] },
+    { title: "MDRT", list: [] },
+    { title: "COT", list: [] },
+    { title: "TOT", list: [] },
   ]);
   const [isHovering, setIsHovering] = useState(false);
   const [achieverIndex, setAchieverIndex] = useState(0);
@@ -564,8 +566,8 @@ const GWPChartsContainer = () => {
             datasets: [
               {
                 data: [achievement, remaining],
-                backgroundColor: ["#4DB6AC", "#42A5F5"],
-                hoverBackgroundColor: ["#4DB6AC", "#42A5F5"],
+                backgroundColor: [color1, color2],
+                hoverBackgroundColor: [color1, color2],
               },
             ],
             ach_presentage, // Set the achievement percentage
@@ -598,8 +600,8 @@ const GWPChartsContainer = () => {
             datasets: [
               {
                 data: [achievement, remaining],
-                backgroundColor: ["#4DB6AC", "#42A5F5"],
-                hoverBackgroundColor: ["#4DB6AC", "#42A5F5"],
+                backgroundColor: [color1, color2],
+                hoverBackgroundColor: [color1, color2],
               },
             ],
             text: "showData",
@@ -670,9 +672,6 @@ const GWPChartsContainer = () => {
                 national_rank: item.national_rank,
                 image: item.image || defaultImage, // Use default image if no image is provided
                 achievment: item.achievment,
-                fyp: item.fyp,
-                over: item.fyp - item.target,
-                due: item.balanceDue,
               })),
             },
             prev[2],
