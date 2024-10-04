@@ -94,10 +94,7 @@ const Life = () => {
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                 <span className="hover-text">Coporate Values</span>
               </div>
-              <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.89/aml/')}>
-                <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-                <span className="hover-text">AML Module</span>
-              </div>
+              
         </div>
             <div style={sectionStyle}>
              {/*MANUALS*/}

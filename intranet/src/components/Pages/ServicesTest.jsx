@@ -17,6 +17,7 @@ import SalesServices from "./Services_Policies_Forms/Services_Pages/Sales_Servic
 // Policies_Pages Links
 import HR_Policies from "./Services_Policies_Forms/Policies_Pages/HR_Policies";
 import ICT_Policies from "./Services_Policies_Forms/Policies_Pages/ICT_Policies";
+import Compliance_Policies from "./Services_Policies_Forms/Policies_Pages/Compliance_Policies";
 // Policies_Pages Links
 
 //Forms_Pages Links
@@ -79,10 +80,12 @@ const ServicesTest = () => {
         return <HR_Policies />;
       case "ICT_Policies":
         return <ICT_Policies />;
+      case "Compliance_Policies":
+        return <Compliance_Policies />;
       case "ICT_Forms":
         return <ICT_Forms />;
-        // case "Life_Forms":
-        // return <Life_Forms/>;
+      // case "Life_Forms":
+      // return <Life_Forms/>;
       case "HR_Forms":
         return <HR_Forms />;
       case "Procument_Forms":
@@ -234,6 +237,20 @@ const ServicesTest = () => {
               </button>
               <button
                 className={`service-button ${
+                  clickedButton === "Compliance_Policies" ? "clicked" : ""
+                }`}
+                onClick={() =>
+                  toggleComponent(
+                    "Compliance_Policies",
+                    "policies",
+                    "Compliance_Policies"
+                  )
+                }
+              >
+                Compliance <span>&#x2192;</span>
+              </button>
+              <button
+                className={`service-button ${
                   clickedButton === "ICT_Policies" ? "clicked" : ""
                 }`}
                 onClick={() =>
@@ -275,7 +292,7 @@ const ServicesTest = () => {
             </h1>
             <br />
             <div className="services-buttons">
-            {/* <button
+              {/* <button
                 className={`service-button ${
                   clickedButton === "Life_Forms" ? "clicked" : ""
                 }`}
@@ -343,9 +360,7 @@ const ServicesTest = () => {
                 className={`service-button ${
                   clickedButton === "Security_Forms" ? "clicked" : ""
                 }`}
-                onClick={() =>
-                  toggleComponent("Security", "forms", "Security")
-                }
+                onClick={() => toggleComponent("Security", "forms", "Security")}
               >
                 Security <span>&#x2192;</span>
               </button>
@@ -355,8 +370,7 @@ const ServicesTest = () => {
                   clickedButton === "Membership" ? "clicked" : ""
                 }`}
                 onClick={() =>
-                  toggleComponent("Membership","forms","Membership"
-                  )
+                  toggleComponent("Membership", "forms", "Membership")
                 }
               >
                 Membership <span>&#x2192;</span>
@@ -367,8 +381,7 @@ const ServicesTest = () => {
                   clickedButton === "Common_Forms" ? "clicked" : ""
                 }`}
                 onClick={() =>
-                  toggleComponent("Common_Forms","forms","Common_Forms"
-                  )
+                  toggleComponent("Common_Forms", "forms", "Common_Forms")
                 }
               >
                 Common <span>&#x2192;</span>
