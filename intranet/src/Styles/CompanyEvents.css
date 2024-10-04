@@ -72,7 +72,7 @@
 .sub-notice-hd {
   margin-left: 5px;
   text-align: left;
-  font-size: 18px;
+  font-size: 14px;
   color: white;
 }
 
@@ -84,6 +84,7 @@
 }
 
 .notice-date{
+  font-size: 14px;
   margin-left: 5px;
   color: white;
   font-family: "Oxygen";

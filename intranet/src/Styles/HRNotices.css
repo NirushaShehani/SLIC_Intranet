@@ -82,12 +82,18 @@
 }
 
 .notice-topic {
+  font-family: "Oxygen";
   margin-top: 5px; 
   margin-bottom: 5px;
   font-size: 16px;
 }
 
 .notice-content {
+  text-align: justify;
+  white-space: pre-wrap;
+  line-height: 20px;
+  font-family: "Oxygen";
   padding-right: 60px;
   font-size: 14px;
+  
 }
