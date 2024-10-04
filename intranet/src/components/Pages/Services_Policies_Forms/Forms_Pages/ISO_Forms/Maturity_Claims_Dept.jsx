@@ -128,7 +128,7 @@ const Services = () => {
         <div style={rightStyle}>
                 <div style={listContainer}>
                     
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/MaturityServices/MaturityClaimForms/LIMAFOSE01')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Covering Letter</span>
                     </div>
@@ -136,7 +136,7 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Discharge Form - Maturity </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/MaturityServices/MaturityClaimForms/LIMAFOSE03')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Important Notice Format - Maturity</span>
                     </div>
@@ -148,11 +148,11 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Payment Voucher - Maturity</span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('/-')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/MaturityServices/MaturityClaimForms/LI%20MA%20FO%20SE%2006.pdf')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">New Business Letter - Maturity </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Affidavit for Name difference</span>
                     </div>  
@@ -212,7 +212,7 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/MaturityServices/StageClaimForms/LI3SFOSE01')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Covering Letter - 3S  </span>
                     </div>
@@ -220,7 +220,7 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Discharge Form - 3S  </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/MaturityServices/StageClaimForms//LIMAFOSE03')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Important Notice Format - 3S</span>
                     </div>
@@ -232,7 +232,7 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Payment Voucher - 3S </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents//Policies_Services_Forms/Forms/ISO/MaturityServices/StageClaimForms/LI%203S%20FO%20SE%2006.pdf')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">New Business Letter - 3S </span>
                     </div>

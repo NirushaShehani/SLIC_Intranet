@@ -196,7 +196,7 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Loan Application ( Form No.1728)  </span>
                     </div>
-                  http://172.24.90.80:10157/Documents/
+                  
                     <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-20')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Declaration of Continued Good Health- child (Form No 9C/E) </span>
