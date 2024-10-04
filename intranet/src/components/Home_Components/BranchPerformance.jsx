@@ -7,7 +7,12 @@ import image3 from '../../assets/Event3.jpg';
 import { Link } from 'react-router-dom';
 import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
 
-const images = ['http://172.24.90.80:10157/Images/Branches/Event1.jpg', 'http://172.24.90.80:10157/Images/Branches/Event2.jpg', 'http://172.24.90.80:10157/Images/Branches/Event3.jpg'];
+const images = [
+  `http://172.24.90.80:10157/Images/Branches/Event1.jpg?cacheBust=${Date.now()}`,
+  `http://172.24.90.80:10157/Images/Branches/Event2.jpg?cacheBust=${Date.now()}`,
+  `http://172.24.90.80:10157/Images/Branches/Event3.jpg?cacheBust=${Date.now()}`
+];
+
 const categories = ['a', 'b', 'c', 'd', 'e'];
 
 const strings = [
@@ -77,7 +82,7 @@ const BranchPerformance = () => {
       name,
       percentage: achPercentages[selectedCategory][index],
     }))
-    .sort((a, b) => b.percentage - a.percentage); 
+    .sort((a, b) => b.percentage - a.percentage);
 
 
   return (
