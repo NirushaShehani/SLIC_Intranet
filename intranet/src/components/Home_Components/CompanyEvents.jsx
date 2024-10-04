@@ -4,7 +4,7 @@ import '../../Styles/Event_Gallery.css';
 import '../../Styles/Responsive_Event_Gallery_css.module.css';
 import { Link } from 'react-router-dom';
 import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
-import axios from 'axios'; 
+import axios from 'axios';
 
 const CompanyEvents = () => {
   const [notices, setNotices] = useState([]);
@@ -69,7 +69,7 @@ const CompanyEvents = () => {
 
   // Check if data is still loading
   if (loadingNotices || loadingEvents) {
-    return <p style={{color: 'white', fontFamily: "Oxygen"}}>Loading Data...</p>;
+    return <p style={{ color: 'white', fontFamily: "Oxygen" }}>Loading Data...</p>;
   }
 
   return (
@@ -80,26 +80,56 @@ const CompanyEvents = () => {
         <div className="responsive-container-block bg">
           <div className="responsive-container-block img-cont">
             <Link to="/Slot1">
-              <img src="http://172.24.90.80:10157/Images/Events/slot1/1.jpg" className="img img-big" alt="Event Slot 1" title={getEventTitleBySlot('001')} />
+              <img
+                src={`http://172.24.90.80:10157/Images/Events/slot1/1.jpg?cacheBust=${Date.now()}`}
+                className="img img-big"
+                alt="Event Slot 1"
+                title={getEventTitleBySlot('001')}
+              />
             </Link>
             <Link to="/Slot2">
-              <img src="http://172.24.90.80:10157/Images/Events/slot2/1.png" className="img img-big img-last" alt="Event Slot 2" title={getEventTitleBySlot('002')} />
+              <img
+                src={`http://172.24.90.80:10157/Images/Events/slot2/1.png?cacheBust=${Date.now()}`}
+                className="img img-big img-last"
+                alt="Event Slot 2"
+                title={getEventTitleBySlot('002')}
+              />
             </Link>
           </div>
           <div className="responsive-container-block img-cont">
             <Link to="/Slot3">
-              <img src="http://172.24.90.80:10157/Images/Events/slot3/1.jpg" className="img img-big" alt="Event Slot 3" title={getEventTitleBySlot('003')} />
+              <img
+                src={`http://172.24.90.80:10157/Images/Events/slot3/1.jpg?cacheBust=${Date.now()}`}
+                className="img img-big"
+                alt="Event Slot 3"
+                title={getEventTitleBySlot('003')}
+              />
             </Link>
             <Link to="/Slot4">
-              <img src="http://172.24.90.80:10157/Images/Events/slot4/1.jpg" className="img img-big img-last" alt="Event Slot 4" title={getEventTitleBySlot('004')} />
+              <img
+                src={`http://172.24.90.80:10157/Images/Events/slot4/1.jpg?cacheBust=${Date.now()}`}
+                className="img img-big img-last"
+                alt="Event Slot 4"
+                title={getEventTitleBySlot('004')}
+              />
             </Link>
           </div>
           <div className="responsive-container-block img-cont">
             <Link to="/Slot5">
-              <img src="http://172.24.90.80:10157/Images/Events/slot5/1.png" className="img" alt="Event Slot 5" title={getEventTitleBySlot('005')} />
+              <img
+                src={`http://172.24.90.80:10157/Images/Events/slot5/1.png?cacheBust=${Date.now()}`}
+                className="img"
+                alt="Event Slot 5"
+                title={getEventTitleBySlot('005')}
+              />
             </Link>
             <Link to="/Slot6">
-              <img src="http://172.24.90.80:10157/Images/Events/slot6/1.jpg" className="img img-big" alt="Event Slot 6" title={getEventTitleBySlot('006')} />
+              <img
+                src={`http://172.24.90.80:10157/Images/Events/slot6/1.jpg?cacheBust=${Date.now()}`}
+                className="img img-big"
+                alt="Event Slot 6"
+                title={getEventTitleBySlot('006')}
+              />
             </Link>
           </div>
         </div>
@@ -121,6 +151,7 @@ const CompanyEvents = () => {
       </div>
     </div>
   );
+
 };
 
 export default CompanyEvents;
