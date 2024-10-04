@@ -76,11 +76,6 @@ const Compliance_Policies = () => {
               </div>
             
           </div>
-          
-
-    
-              
-    
     
             </div>
           </div>
