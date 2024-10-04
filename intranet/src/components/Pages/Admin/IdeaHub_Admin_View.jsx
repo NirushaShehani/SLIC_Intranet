@@ -37,7 +37,12 @@ function IdeaHub() {
         setIdeas(ideasWithStatus);
         setLoading(false);
       } catch (err) {
-        setError(err.message);
+        if (err.response && err.response.status === 400) {
+          // Handle case where no data is available by setting ideas to an empty array
+          setIdeas([]);
+        } else {
+          setError(err.message);
+        }
         setLoading(false);
       }
     };

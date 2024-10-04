@@ -16,6 +16,7 @@ function AdminSalesLead() {
 
     useEffect(() => {
         const fetchData = async () => {
+            setLoading(true);
             try {
                 const requestBody = {
                     p_ID: "",
@@ -37,14 +38,17 @@ function AdminSalesLead() {
                     setLoading(false); 
                 } else {
                     console.error("API responded with a status:", response.status);
-                    setError('Failed to fetch sales leads');
+                    setSalesLeads([]);
                     setLoading(false);
                 }
             } catch (err) {
                 console.error('Error fetching sales leads:', err);
                 setError('An error occurred while fetching sales leads');
-                setLoading(false); 
+                //setLoading(false); 
+            }finally {
+                setLoading(false); // Set loading to false after the request is completed
             }
+            
         };
 
         fetchData(); 
@@ -95,8 +99,11 @@ function AdminSalesLead() {
     
 
     const handleFilterChange = (newFilter) => {
-        setFilter(newFilter);
-        setCurrentPage(1); // Reset to the first page when filter changes
+        if (filter !== newFilter) {
+            setFilter(newFilter); // Change filter if it's different
+            setSalesLeads([]); // Reset sales leads when filter changes
+            setCurrentPage(1); // Reset to the first page when filter changes
+        }
     };
 
     const handleSearchChange = (e) => {
@@ -122,7 +129,7 @@ function AdminSalesLead() {
     };
 
     if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
+    // if (error) return <p>Error: {error}</p>
 
     return (
         <div className="admin-sales-lead-container">
@@ -169,27 +176,35 @@ function AdminSalesLead() {
                         </tr>
                     </thead>
                     <tbody>
-                        {currentLeads.map((lead) => (
-                            <tr key={lead.id}>
-                                <td>{lead.clientName}</td>
-                                <td>{lead.contactno1}</td>
-                                <td>{lead.contactno2}</td>
-                                <td>{lead.slicRequirement}</td>
-                                <td>{lead.staffmembername}</td>
-                                <td>{lead.staffcontactno}</td>
-                                <td>{lead.slicExtension}</td>
-                                <td>{lead.slicDepartment}</td>
-                                <td>
-                                    {filter === 'active' ? (
-                                        <button onClick={() => handleDelete(lead.id)} className="delete-button">
-                                            DELETE
-                                        </button>
-                                    ) : (
-                                        <span style={{ color: 'red' }}>Removed</span>  // Display "Removed" in red
-                                    )}
+                        {currentLeads.length > 0 ? (
+                            currentLeads.map((lead) => (
+                                <tr key={lead.id}>
+                                    <td>{lead.clientName}</td>
+                                    <td>{lead.contactno1}</td>
+                                    <td>{lead.contactno2}</td>
+                                    <td>{lead.slicRequirement}</td>
+                                    <td>{lead.staffmembername}</td>
+                                    <td>{lead.staffcontactno}</td>
+                                    <td>{lead.slicExtension}</td>
+                                    <td>{lead.slicDepartment}</td>
+                                    <td>
+                                        {filter === 'active' ? (
+                                            <button onClick={() => handleDelete(lead.id)} className="delete-button">
+                                                DELETE
+                                            </button>
+                                        ) : (
+                                            <span style={{ color: 'red' }}>Removed</span>
+                                        )}
+                                    </td>
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan="9" style={{ textAlign: 'center' }}>
+                                    No data available
                                 </td>
                             </tr>
-                        ))}
+                        )}
                     </tbody>
                 </table>
             </center>
