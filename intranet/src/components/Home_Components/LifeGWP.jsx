@@ -212,7 +212,7 @@ const AchieversCard = ({ achievers }) => (
       <Typography
         variant="h6"
         component="div"
-        sx={{ textAlign: "center", marginTop: 1, marginBottom: 1.5 }}
+        sx={{ textAlign: "center", marginTop: 1, marginBottom: 1.5, fontWeight: "bold" }}
       >
         {achievers.title}
       </Typography>
@@ -512,9 +512,9 @@ const GWPChartsContainer = () => {
   const [GWPFlipping, setGWPFlipping] = useState(false);
   const [currentCard, setCurrentCard] = useState("achievers"); // Initialize with 'achievers'
   const [achieverList, setAchieverList] = useState([
-    { title: "MDRT Achievers", list: [] },
-    { title: "COT Achievers", list: [] },
-    { title: "TOT Achievers", list: [] },
+    { title: "MDRT", list: [] },
+    { title: "COT", list: [] },
+    { title: "TOT", list: [] },
   ]);
   const [isHovering, setIsHovering] = useState(false);
   const [achieverIndex, setAchieverIndex] = useState(0);
@@ -670,9 +670,6 @@ const GWPChartsContainer = () => {
                 national_rank: item.national_rank,
                 image: item.image || defaultImage, // Use default image if no image is provided
                 achievment: item.achievment,
-                fyp: item.fyp,
-                over: item.fyp - item.target,
-                due: item.balanceDue,
               })),
             },
             prev[2],
