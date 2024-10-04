@@ -667,6 +667,9 @@ const GWPChartsContainer = () => {
                 national_rank: item.national_rank,
                 image: item.image || defaultImage, // Use default image if no image is provided
                 achievment: item.achievment,
+                fyp: item.fyp,
+                over: item.fyp - item.target,
+                due: item.balanceDue,
               })),
             },
             prev[2],
