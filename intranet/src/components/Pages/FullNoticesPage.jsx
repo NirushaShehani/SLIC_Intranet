@@ -14,7 +14,7 @@ const FullNoticesPage = () => {
       <div className="full-notices-column2">
         <CompanyEvents />
       </div>
-      <hr />
+      
       <div className="full-notices-column4">
         <BranchPerformance />
       </div>
