@@ -27,12 +27,13 @@ const pdfUrls = [
 const books = [
   {
     image: image1,
-    title: 'Atomic Habits',
-    author: 'James Clear',
+    title: 'Life Marketing NEWSLETTER',
+    author: 'volume II 2024',
   },
   {
     image: image2,
     title: 'Bee News',
+    author: 'volume I 2024',
   },
   {
     image: image3,

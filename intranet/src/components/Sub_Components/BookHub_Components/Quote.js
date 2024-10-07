@@ -39,8 +39,8 @@ const Quote = () => {
 
   return (
     <div className="quote-container" style={{backgroundImage: image1}}>
-      <p className="quote-text">“{quotes[currentQuoteIndex].text}”</p>
-      <p className="quote-author">- {quotes[currentQuoteIndex].author} -</p>
+      <p className="quote-text">“{quotes[currentQuoteIndex].text}” </p>
+      <p className="quote-author" style={{marginLeft: "10px"}}> {quotes[currentQuoteIndex].author}  </p>
     </div>
   );
 };
