@@ -11,18 +11,16 @@
   .full-notices-column1 {
     padding: 10px;
     border-radius: 5px;
-    width: 30%; /* Adjust this value as needed */
+    width: 21%;
     display: flex;
     flex-direction: column;
   }
   
   .full-notices-column2 {
-    width: 100px;
-    padding: 10px;
-    border-radius: 5px;
-    flex-grow: 1; /* Allow this column to take the remaining space */
-    display: flex;
+    overflow-y: auto;
+    flex-grow: 1;
     flex-direction: column;
+    height: 110vh;
   }
   
   .full-notices-column4 {
