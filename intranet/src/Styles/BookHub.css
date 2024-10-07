@@ -1,5 +1,9 @@
 .book-hub-container {
     padding: 20px;
+    background-image: url('../assets/bgimage.png');
+    background-size: cover;  /* Ensures the image covers the container */
+    background-repeat: no-repeat;
+    background-position: center;
   }
   
   .book-list {
