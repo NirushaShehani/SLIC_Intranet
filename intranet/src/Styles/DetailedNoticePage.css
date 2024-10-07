@@ -11,21 +11,16 @@
   .full-notices-column1 {
     padding: 10px;
     border-radius: 5px;
-    width: 30%; /* Adjust this value as needed */
+    width: 21%;
     display: flex;
     flex-direction: column;
   }
   
   .full-notices-column2 {
-    height: 120vh;
-    padding: 10px;
-    border-radius: 5px;
+    overflow-y: auto;
     flex-grow: 1;
-    display: flex;
     flex-direction: column;
-    overflow-y: auto; /* This will enable scrolling when content exceeds height */
-}
-
+  }
   
   .full-notices-column4 {
     padding: 10px;
