@@ -13,6 +13,24 @@ const images = [
   `http://172.24.90.80:10157/Images/Branches/Event3.jpg?cacheBust=${Date.now()}`
 ];
 
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+const monthNames = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+const currentMonth = monthNames[new Date().getMonth()];
+const currentMonthInText = months[currentMonth-1];
+
 const categories = ['a', 'b', 'c', 'd', 'e'];
 
 const strings = [
@@ -113,7 +131,7 @@ const BranchPerformance = () => {
       </div>
       <br></br>
       <div className="branch-performance-container">
-        <h2>Branch Performance (FYP)</h2>
+        <h2>Branch Performance (FYP) - {currentMonthInText}</h2>
         <div className="category-selector">
           {categories.map(category => (
             <button

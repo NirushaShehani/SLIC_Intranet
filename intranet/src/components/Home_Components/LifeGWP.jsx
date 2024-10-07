@@ -151,7 +151,7 @@ const GWPChart = ({
                 padding: "2px 4px",
                 borderRadius: 1,
                 fontWeight: "bold",
-                fontSize: 15,
+                fontSize: 13,
               }}
             >
               Target
@@ -166,7 +166,7 @@ const GWPChart = ({
                 fontSize: 13,
               }}
             >
-              {target}
+              {target+" M"}
             </Typography>
           </Box>
           <Box
@@ -183,7 +183,7 @@ const GWPChart = ({
                 padding: "2px 4px",
                 borderRadius: 1,
                 fontWeight: "bold",
-                fontSize: 15,
+                fontSize: 13,
               }}
             >
               Achievement
@@ -198,7 +198,7 @@ const GWPChart = ({
                 fontSize: 13,
               }}
             >
-              {achievement}
+              {achievement+" M"}
             </Typography>
           </Box>
         </Box>
@@ -672,6 +672,9 @@ const GWPChartsContainer = () => {
                 national_rank: item.national_rank,
                 image: item.image || defaultImage, // Use default image if no image is provided
                 achievment: item.achievment,
+                fyp: item.fyp,
+                over: item.fyp - item.target,
+                due: item.balanceDue,
               })),
             },
             prev[2],
@@ -704,6 +707,9 @@ const GWPChartsContainer = () => {
                 national_rank: item.national_rank,
                 image: item.image || defaultImage, // Use default image if no image is provided
                 achievment: item.achievment,
+                fyp: item.fyp,
+                over: item.fyp - item.target,
+                due: item.balanceDue,
               })),
             },
           ]);
