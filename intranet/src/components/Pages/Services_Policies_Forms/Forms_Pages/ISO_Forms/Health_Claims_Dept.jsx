@@ -141,19 +141,19 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Doctors declaration form for hospitalization benifit</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LIAGFOE04')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LIAGFOE04.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Arogya working sheet</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LIAGFOE05')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LIAGFOE05.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-                    <span className="hover-text">Voucher </span>
+                    <span className="hover-text">Voucher  </span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LIAGFOE06')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LIAGFOE06.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-                    <span className="hover-text">Cheque/Slip Covering Letter</span>
+                    <span className="hover-text">Cheque/Slip Covering Letter </span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LIAGFOSE01(System)')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LIAGFOSE01(System).doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Requirement Calling Letter</span>
                     </div>
@@ -161,25 +161,29 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Health Product Claim Form</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LifeDoctorsdeclaration')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LifeDoctorsdeclaration.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-                    <span className="hover-text">Doctors declaration form for hospitalization benefit</span>
+                    <span className="hover-text">Doctors declaration form for hospitalization benefit(Health Product Claims)</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/Life(Acknowledgementletter)')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/Life(Acknowledgementletter).doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Acknowledgement letter</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LifeActionSheet')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LifeActionSheet.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Health product working sheet</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LifeVoucher')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LifeVoucher.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-                    <span className="hover-text">Voucher </span>
+                    <span className="hover-text">Voucher(Health Product Claims) </span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LifePaymentcoveringletter')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LifePaymentcoveringletter.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
-                    <span className="hover-text">Cheque/Slip Covering Letter</span>
+                    <span className="hover-text">Cheque/Slip Covering Letter(Health Product Claims)</span>
+                    </div>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LifeRequirement_Calling _Letter.doc')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
+                    <span className="hover-text">Requirement Calling Letter(Health Product Claims)</span>
                     </div>
                 </div>
             </div>

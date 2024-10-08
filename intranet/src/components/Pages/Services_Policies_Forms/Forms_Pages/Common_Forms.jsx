@@ -105,7 +105,7 @@ const Common_Forms = () => {
             <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">CAPEX Form</span>
             </div> */}
-            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('Policies_Services_Forms/Forms/Common/Mobile%20Phone%20Entitlement%20Request.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Mobile_Phone_Entitlement_Request.doc')}>
             <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Mobile Phone Entitlement Request</span>
             </div>
@@ -113,34 +113,38 @@ const Common_Forms = () => {
             <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text"> Life - Medical Treatment Form </span>
             </div>
+            <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Membership/Application_for_SLII_membership.pdf')}>
+                    <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
+                    <span className="hover-text">SLII Application</span>
+                    </div>
 
 
             {/* Expandable Forms Section */}
             <div className="hover-container" style={listItemStyle} onClick={toggleExpandForms}>
             <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
-              <span className="hover-text">ComBank-CC-Forms</span>
+              <span className="hover-text">Combank Credit Card</span>
             </div>
 
             {/* Conditionally render extra forms if expandedForms is true */}
             {expandedForms && (
               <div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_CC_Forms/ComBank-Circular.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_Credit_Card/ComBank-Circular.pdf')}>
                   <span style={dotStyle}>•</span>
                   <span className="hover-text">ComBank-Circular</span>
                 </div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_CC_Forms/ComBank-KYC_Form.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_Credit_Card/ComBank-KYC_Form.pdf')}>
                   <span style={dotStyle}>•</span>
                   <span className="hover-text">ComBank-KYC Form</span>
                 </div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_CC_Forms/E-ComBank_SLIC-Credit_Card_Application.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_Credit_Card/E-ComBank_SLIC-Credit_Card_Application.pdf')}>
                   <span style={dotStyle}>•</span>
                   <span className="hover-text">E-ComBank SLIC Credit Card Application</span>
                 </div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_CC_Forms/EPP_Instruction_DMS.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_Credit_Card/EPP_Instruction_DMS.pdf')}>
                   <span style={dotStyle}>•</span>
                   <span className="hover-text">EPP Instruction DMS</span>
                 </div>
-                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_CC_Forms/POS-_Operating_Instructions.pdf')}>
+                <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/ComBank_Credit_Card/POS-_Operating_Instructions.pdf')}>
                   <span style={dotStyle}>•</span>
                   <span className="hover-text">POS Operating Instructions</span>
                 </div>
@@ -166,10 +170,10 @@ const Common_Forms = () => {
             <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Pinnacle</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
+            {/* <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('/pdfs/ISO-Pdf/1.pdf')}>
             <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Combank Credit Card</span>
-            </div>
+            </div> */}
 
             {/* Expandable Sports Section */}
             <div className="hover-container" style={listItemStyle} onClick={toggleExpandSports}>

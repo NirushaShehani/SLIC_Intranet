@@ -365,7 +365,7 @@ const ServicesTest = () => {
                 Security <span>&#x2192;</span>
               </button>
 
-              <button
+              {/* <button
                 className={`service-button ${
                   clickedButton === "Membership" ? "clicked" : ""
                 }`}
@@ -374,7 +374,7 @@ const ServicesTest = () => {
                 }
               >
                 Membership <span>&#x2192;</span>
-              </button>
+              </button> */}
 
               <button
                 className={`service-button ${

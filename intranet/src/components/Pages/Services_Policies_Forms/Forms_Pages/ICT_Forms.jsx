@@ -243,7 +243,7 @@ const ICT_Forms = () => {
              style={listItemStyle}
              onClick={() =>
               handleDownload(
-                'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Common/Change_management_for_SW_V3.1.pdf'
+                'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/Change_management_for_SW_V3.1.doc'
                 )
               }>
             <FontAwesomeIcon

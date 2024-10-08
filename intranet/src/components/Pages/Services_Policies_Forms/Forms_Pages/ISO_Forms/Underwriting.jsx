@@ -179,7 +179,7 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
                   <span className="hover-text">School Fee Protector Proposal Form (Sinhala)</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/DocumentsPolicies_Services_Forms/Forms/ISO/Underwriting/ProposalForms/LI%20UW%20PF%20E%2007.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/Underwriting/ProposalForms/LI%20UW%20PF%20E%2007.pdf')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
                   <span className="hover-text">School Fee Protector Proposal Form (English)</span>
                 </div>
@@ -267,7 +267,7 @@ const Services = () => {
           <div style={containerStyle}>
             <div style={rightStyle}>
               <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/DocumentsPolicies_Services_Forms/Forms/ISO/Underwriting/Letters&GeneralFormsToCustomer/Inform%20the%20declinnig-%20LI%20UW%20LE%20S%2001.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/Underwriting/Letters&GeneralFormsToCustomer/Inform%20the%20declinnig-%20LI%20UW%20LE%20S%2001.pdf')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
                   <span className="hover-text">Inform the Declining of Proposal</span>
                 </div>

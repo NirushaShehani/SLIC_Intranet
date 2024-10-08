@@ -160,11 +160,11 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span className="hover-text">Minimuthu Discharge Form </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-SE-09')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-SE-09.doc')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span className="hover-text">Important Notice  </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-E-10')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-E-10.doc')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span className="hover-text">Medical Report - TPD  </span>
                 </div>
@@ -172,7 +172,7 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span className="hover-text">Disability Benefits Covering Letter  </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-E-12')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-E-12.doc')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span className="hover-text">Medical Certificate - PPDB </span>
                 </div>
@@ -271,7 +271,7 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Yashtiya Policy Discharge Form</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-17')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-17.doc')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Bond for Lost Policy (Companies) </span>
                 </div>
@@ -356,15 +356,15 @@ const Services = () => {
           <div style={containerStyle}>
             <div style={rightStyle}>
               <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE01')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE01.doc')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Medical Report- Disability</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE02')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE02.doc')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Claimant Statement - Group Term   </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE03')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE03.doc')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Claimant Statement- DTA</span>
                 </div>
@@ -372,11 +372,11 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Last Medical Attendant report </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE05')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE05.doc')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Certificate of discharge</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE06')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE06.doc')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Important notice </span>
                 </div>

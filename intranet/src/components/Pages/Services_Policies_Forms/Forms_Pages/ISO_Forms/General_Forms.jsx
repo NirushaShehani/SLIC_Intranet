@@ -150,19 +150,19 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/GeneralForms/LifeGeneralForms/Customer_satisfaction_index_Life')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/GeneralForms/LifeGeneralForms/Customer_satisfaction_index_Life.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Customer Feed Back Request - Life  </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/GeneralForms/LifeGeneralForms/Life_Claims_Customer_Complaint_Register_2014')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/GeneralForms/LifeGeneralForms/Life_Claims_Customer_Complaint_Register_2014.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Customer Complaint Register - Life   </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/GeneralForms/LifeGeneralForms/Concession_record_LIGNFO03')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() =>handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/GeneralForms/LifeGeneralForms/Concession_record_LIGNFO03.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Concession Report- Life </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/GeneralForms/LifeGeneralForms/Complaints_and_SuggestionsLIGNFOE04')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/GeneralForms/LifeGeneralForms/Complaints_and_SuggestionsLIGNFOE04.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Complaints and Suggestions - Life  </span>
                     </div>
