@@ -82,6 +82,7 @@
 }
 
 .notice-topic {
+  max-width: 90%;
   font-family: "Oxygen";
   margin-top: 5px; 
   margin-bottom: 5px;
