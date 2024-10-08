@@ -128,7 +128,7 @@ const Services = () => {
         <div style={rightStyle}>
                 <div style={listContainer}>
                     
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/MaturityServices/MaturityClaimForms/LIMAFOSE01')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/MaturityServices/MaturityClaimForms/LIMAFOSE01.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Covering Letter</span>
                     </div>
@@ -136,7 +136,7 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Discharge Form - Maturity </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/MaturityServices/MaturityClaimForms/LIMAFOSE03')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/MaturityServices/MaturityClaimForms/LIMAFOSE03.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Important Notice Format - Maturity</span>
                     </div>
@@ -212,7 +212,7 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/MaturityServices/StageClaimForms/LI3SFOSE01')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/MaturityServices/StageClaimForms/LI3SFOSE01.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Covering Letter - 3S  </span>
                     </div>
@@ -220,7 +220,7 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Discharge Form - 3S  </span>
                     </div>
-                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/MaturityServices/StageClaimForms//LIMAFOSE03')}>
+                    <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/MaturityServices/StageClaimForms//LIMAFOSE03.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
                     <span className="hover-text">Important Notice Format - 3S</span>
                     </div>
