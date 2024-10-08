@@ -7,7 +7,7 @@
   border-radius: 15px;
   color: white;
   position: relative;
-  height: 200px;
+  height: 170px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,7 +31,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for better text visibility */
+  background-color: #0c4d72;
   border-radius: 15px;
 }
 

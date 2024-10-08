@@ -32,7 +32,8 @@ const books = [
   },
   {
     image: image2,
-    title: 'Bee News',
+    title: 'Life Marketing NEWSLETTER',
+    author: 'volume II 2024',
   },
   {
     image: image3,
