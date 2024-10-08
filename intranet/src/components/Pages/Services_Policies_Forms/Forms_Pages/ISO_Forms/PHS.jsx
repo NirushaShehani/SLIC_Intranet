@@ -147,11 +147,11 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Surrender Form ( Form No.1526)</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-06.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-06.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Affidavit for Lost Policy ( Form No.1677)  </span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-07.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-07.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Affidavit for Name Change ( Form No.1777)</span>
                     </div>
@@ -179,7 +179,7 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Form Regarding Arogya / CIC inclusion for Child ( Form No.7149)</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-14.doc                            ')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-14.doc')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Nomination Form ( Form No.1809) </span>
                     </div>
@@ -320,7 +320,7 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                   <span className="hover-text">Adjustment Voucher</span>
                   </div>
-                  <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents//Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GroupPaymentsForms/LI-PHS-FO-E-19.pdff')}>
+                  <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GroupPaymentsForms/LI-PHS-FO-E-19.pdf')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                   <span className="hover-text">Standing Order Instruction Form ( Form No.1209)</span>
                   </div>

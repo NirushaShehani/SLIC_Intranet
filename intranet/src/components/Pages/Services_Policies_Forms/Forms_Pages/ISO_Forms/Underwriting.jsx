@@ -309,7 +309,7 @@ const Services = () => {
                 </div>
                 <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/Underwriting/Letters&GeneralFormsToCustomer/LI%20UW%20LE%20S%2012.pdf')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
-                  <span>Queries Regarding Occupation (Sinhala)</span>
+                  <span className="hover-text">Queries Regarding Occupation (Sinhala)</span>
                 </div>
                 <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/Underwriting/Letters&GeneralFormsToCustomer/LI%20UW%20LE%20E%2012.pdf')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
@@ -327,9 +327,9 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
                   <span className="hover-text">Backing Sheet</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/Underwriting/Letters&GeneralFormsToCustomer/LIUWLESE15.pd')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/Underwriting/Letters&GeneralFormsToCustomer/LIUWLESE15.pdf')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
-                  <span>Inclusion of Arogya/CIC covers to Children</span>
+                  <span className="hover-text">Inclusion of Arogya/CIC covers to Children</span>
                 </div>
                 <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/Underwriting/Letters&GeneralFormsToCustomer/LIUWLESET16.pdf')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
@@ -367,7 +367,7 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
                   <span className="hover-text">Sport ( Boxing ) Questionnaire</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/Underwriting/Letters&GeneralFormsToCustomer/LI-UW-LE-E-25.pd')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/Underwriting/Letters&GeneralFormsToCustomer/LI-UW-LE-E-25.pdf')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
                   <span className="hover-text">Aviation Questionnaire</span>
                 </div>
@@ -431,7 +431,7 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
                   <span className="hover-text">Assignment form for Valuble Consideration (Form no. 1624)</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/DocumentsPolicies_Services_Forms/Forms/ISO/Underwriting/Letters&GeneralFormsToCustomer/LI_UW_LE_E_41.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/Underwriting/Letters&GeneralFormsToCustomer/LI_UW_LE_E_41.pdf')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
                   <span className="hover-text">Consent Letter of Foreign Citizenship</span>
                 </div>
@@ -591,7 +591,7 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
                   <span className="hover-text">Poliomyelitis Questionnaire (1051)</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => navigate('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/Underwriting/MedicalFormsAndQuestionnaire/Ex%20of%20Blood%20-%20LI%20UW%20MF%20E%2023.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/Underwriting/MedicalFormsAndQuestionnaire/Ex%20of%20Blood%20-%20LI%20UW%20MF%20E%2023.pdf')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
                   <span className="hover-text">Examination of Blood ( 1304-A) </span>
                 </div>
@@ -714,7 +714,7 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
                   <span  className="hover-text">Assignment Letter for Other Funds</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('/-')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('')}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle}  className="hover-icon"/>
                   <span  className="hover-text">Authority Letter & Assignment Letter for ESPS</span>
                 </div>

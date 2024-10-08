@@ -258,7 +258,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/olicies_Services_Forms/Forms/HR/Gate_Pass%20Form.pdf"
+                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Gate_Pass%20Form.pdf"
                 )
               }
             >
@@ -496,7 +496,7 @@ const HR_Forms = () => {
             <div
               className="hover-container"
               style={listItemStyle}
-              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf")}
+              onClick={() => handleDownload("/-")}
             >
               <FontAwesomeIcon
                 icon={faFileAlt}

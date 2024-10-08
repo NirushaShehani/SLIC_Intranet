@@ -386,7 +386,7 @@ const HR_Policies = () => {
                   className="hover-container"
                   style={{ ...listItemStyle, width: "100%" }} // Set to full width
                   onClick={() =>
-                    handleDownload("http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies_Services_Forms/Policies/HR/Policy%20managment/Performance_Management_Policy_SLICLL%20.pdf")
+                    handleDownload("http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Policy%20managment/Performance_Management_Policy_SLICLL%20.pdf")
                   }
                 >
                   <span style={dotStyle}>•</span>
