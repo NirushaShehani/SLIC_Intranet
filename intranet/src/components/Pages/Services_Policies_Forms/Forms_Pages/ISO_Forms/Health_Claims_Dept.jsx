@@ -145,11 +145,11 @@ const Services = () => {
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Arogya working sheet</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LIAGFOE05.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LIAGFOE05.docX')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Voucher  </span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LIAGFOE06.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/HealthForms/ArogyaClaimForms/LIAGFOE06.docX')}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                     <span className="hover-text">Cheque/Slip Covering Letter </span>
                     </div>
