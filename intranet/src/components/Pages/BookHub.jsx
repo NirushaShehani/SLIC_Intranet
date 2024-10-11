@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Quote from '../Sub_Components/BookHub_Components/Quote';
 import BookCard from '../Sub_Components/BookHub_Components/BookCard';
-import Swal from 'sweetalert2';
 import '../../Styles/BookHub.css';
 import { Find_And_Replace} from "../../Services/ApiConfig";
 import image1 from '../../assets/BookHub/bookhub1.png';
