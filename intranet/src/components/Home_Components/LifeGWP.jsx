@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
 //import { Chart } from 'chart.js';
-import { CardContent, Typography, Box, Avatar } from "@mui/material";
+import { CardContent, Typography, Box } from "@mui/material";
+import { Star, StarOutline } from "@mui/icons-material";
+import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { styled } from "@mui/system";
 import axios from "axios";
@@ -166,7 +168,7 @@ const GWPChart = ({
                 fontSize: 13,
               }}
             >
-              {target+" M"}
+              {target + " M"}
             </Typography>
           </Box>
           <Box
@@ -198,7 +200,7 @@ const GWPChart = ({
                 fontSize: 13,
               }}
             >
-              {achievement+" M"}
+              {achievement + " M"}
             </Typography>
           </Box>
         </Box>
@@ -214,7 +216,7 @@ const AchieversCard = ({ achievers }) => (
       <Typography
         variant="h6"
         component="div"
-        sx={{ textAlign: "center", marginTop: 1, marginBottom: 1.5, fontWeight: "bold" }}
+        sx={{ textAlign: "center", marginTop: 1, marginBottom: 1.5, fontWeight: "bold", fontFamily: "Oxygen" }}
       >
         {achievers.title}
       </Typography>
@@ -355,30 +357,74 @@ const AchieversCard = ({ achievers }) => (
                   flexDirection: "row",
                   alignItems: "center",
                   justifyContent: "center", // Center the agent name
-                  position: "relative", // Allows positioning the rank circle
+                  position: "relative",
                 }}
               >
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    minWidth: 40, // Fixed width for the circle
-                    maxWidth: 40,
-                    height: 40, // Fixed height for the circle
-                    borderRadius: "50%", // Makes the box circular
-                    backgroundColor: "#1976d2", // Background color of the circle
-                    color: "#fff", // Text color inside the circle
-                    fontWeight: "bold",
-                    fontSize: 20, // Text size inside the circle
-                    textAlign: "center", // Centers text horizontally
-                    position: "absolute", // Keeps the circle fixed
-                    left: 0, // Aligns the circle to the left
-                    top: -1.5,
-                  }}
-                >
-                  {achiever.national_rank}
+                <Box>
+                  {achiever.achievment === "Not_achieved" ? (
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        width: 40, // Fixed width for the circle
+                        height: 40, // Fixed height for the circle
+                        borderRadius: "50%", // Makes the box circular
+                        backgroundColor: "red", // Background color of the circle
+                        color: "#fff", // Text color inside the circle
+                        fontWeight: "bold",
+                        fontSize: 20, // Text size inside the circle
+                        textAlign: "center", // Centers text horizontally
+                        position: "absolute", // Keeps the circle fixed
+                        marginLeft: "5px",
+
+                        top: 0, // Aligns the circle to the top
+                      }}
+                    >
+                      {achiever.national_rank}
+                    </Box>
+                  ) : (
+                    <Box
+                      sx={{
+                        position: "absolute", // To position text over the star
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        width: 50, // Fixed width for the star
+                        height: 35, // Fixed height for the star
+                        left: 0, // Aligns the star to the left
+                        top: 0, // Aligns the star to the top
+                      }}
+                    >
+                      {/* Star for Achieved */}
+                      {achiever.national_rank === 1 ? (
+                        <Star sx={{ fontSize: 60, color: "#ebab13" }} /> // Gold star for 1st place
+                      ) : achiever.national_rank === 2 ? (
+                        <Star sx={{ fontSize: 60, color: "#b1a7a6" }} /> // Silver star for 2nd place
+                      ) : achiever.national_rank === 3 ? (
+                        <Star sx={{ fontSize: 60, color: "#ce8946" }} /> // Bronze star for 3rd place
+                      ) : (
+                        <Star sx={{ fontSize: 60, color: "#00b300" }} /> // Green star for others
+                      )}
+
+                      {/* Rank Overlay inside the star */}
+                      <Box
+                        sx={{
+                          position: "absolute", // Overlay the text
+                          top: "50%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)", // Center the text inside the star
+                          color: "#fff", // Text color
+                          fontSize: "20px", // Adjust text size
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {achiever.national_rank}
+                      </Box>
+                    </Box>
+                  )}
                 </Box>
+
                 <Typography
                   variant="body1"
                   fontWeight="bold"
@@ -397,24 +443,9 @@ const AchieversCard = ({ achievers }) => (
                 Branch: {achiever.branch_name}
               </Typography>
 
-              <Typography variant="body2" color="textSecondary">
-                FYP: {new Intl.NumberFormat("en-US").format(achiever.fyp)} /=
-              </Typography>
-
               <Typography
                 variant="body2"
                 color="textSecondary"
-                title={
-                  achiever.achievment === "Achieved"
-                    ? `Above Target : ${new Intl.NumberFormat("en-US").format(
-                      achiever.over
-                    )}`
-                    : achiever.achievment === "Not_achieved"
-                      ? `Due : ${new Intl.NumberFormat("en-US").format(
-                        achiever.due
-                      )}`
-                      : "Unknown status"
-                }
                 sx={{
                   backgroundColor:
                     achiever.achievment === "Achieved"
@@ -439,6 +470,8 @@ const AchieversCard = ({ achievers }) => (
               </Typography>
             </Box>
           ))}
+
+
         </Box>
       ) : (
         <Typography
@@ -458,43 +491,39 @@ const AchieversCard = ({ achievers }) => (
         sx={{
           position: "absolute",
           left: "50%",
-          bottom: 10, // Adjust this to position the arrow
+          bottom: 10, // Adjust this to position the text
           transform: "translateX(-50%)",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           padding: "4px",
           borderRadius: "4px",
-          zIndex: 1, // Ensure it's on top of other content
+          zIndex: 1,
+          color: "#000",
+          fontWeight: "bold",
         }}
       >
-        <Box
-          sx={{
-            width: 0,
-            height: 0,
-            borderLeft: "15px solid transparent",
-            borderRight: "15px solid transparent",
-            borderTop: "30px solid rgba(0, 0, 0, 0.7)", // Arrow color
-            animation: "bounce 3s infinite",
-          }}
-        />
+        <Typography variant="body2" sx={{ animation: "bounce 3s infinite" }}>
+          Scroll Down
+        </Typography>
         {/* Add the CSS animation */}
         <style>
           {`
-              @keyframes bounce {
-                0%, 20%, 50%, 80%, 100% {
-                  transform: translateY(0);
-                }
-                40% {
-                  transform: translateY(-10px);
-                }
-                60% {
-                  transform: translateY(-5px);
-                }
-              }
-            `}
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+    `}
         </style>
       </Box>
+
     </CardContent>
   </Box>
 );
@@ -539,7 +568,7 @@ const GWPChartsContainer = () => {
   const monthNames = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
   const currentMonth = monthNames[new Date().getMonth()];
   const currentYear = new Date().getFullYear();
-  const currentMonthInText = months[currentMonth-1];
+  const currentMonthInText = months[currentMonth - 1];
 
   // Fetch Life GWP data for doughnut charts
   useEffect(() => {
