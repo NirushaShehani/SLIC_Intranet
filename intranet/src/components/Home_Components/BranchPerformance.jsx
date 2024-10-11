@@ -6,11 +6,12 @@ import image2 from '../../assets/Event2.jpg';
 import image3 from '../../assets/Event3.jpg';
 import { Link } from 'react-router-dom';
 import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
+import { Find_And_Replace} from "../../Services/ApiConfig";
 
 const images = [
-  `http://172.24.90.80:10157/Images/Branches/Event1.jpg?cacheBust=${Date.now()}`,
-  `http://172.24.90.80:10157/Images/Branches/Event2.jpg?cacheBust=${Date.now()}`,
-  `http://172.24.90.80:10157/Images/Branches/Event3.jpg?cacheBust=${Date.now()}`
+  `${Find_And_Replace}/Images/Branches/Event1.jpg?cacheBust=${Date.now()}`,
+  `${Find_And_Replace}/Images/Branches/Event2.jpg?cacheBust=${Date.now()}`,
+  `${Find_And_Replace}/Images/Branches/Event3.jpg?cacheBust=${Date.now()}`
 ];
 
 const months = [

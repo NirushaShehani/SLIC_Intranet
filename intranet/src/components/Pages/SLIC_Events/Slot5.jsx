@@ -4,37 +4,38 @@ import '../../../Styles/FullNoticesPage.css';
 import { Link } from 'react-router-dom';
 import '../../../Styles/CompanyEventscard.css';
 import { BASE_URL, ENDPOINTS } from "../../../Services/ApiConfig"; // Importing API config
+import { Find_And_Replace} from "../../../Services/ApiConfig";
 import axios from 'axios';
 
 const eventsData = [
   {
     id: 1,
-    image: 'http://172.24.90.80:10157/Images/Events/slot5/1.png',
+    image: `${Find_And_Replace}/Images/Events/slot5/1.png`,
     likes: 26,
   },
   {
     id: 2,
-    image: 'http://172.24.90.80:10157/Images/Events/slot5/2.png',
+    image: `${Find_And_Replace}/Images/Events/slot5/2.png`,
     likes: 85,
   },
   {
     id: 3,
-    image: 'http://172.24.90.80:10157/Images/Events/slot5/3.png',
+    image: `${Find_And_Replace}/Images/Events/slot5/3.png`,
     likes: 85,
   },
   {
     id: 4,
-    image: 'http://172.24.90.80:10157/Images/Events/slot5/4.png',
+    image: `${Find_And_Replace}/Images/Events/slot5/4.png`,
     likes: 85,
   },
   {
     id: 5,
-    image: 'http://172.24.90.80:10157/Images/Events/slot5/5.png',
+    image: `${Find_And_Replace}/Images/Events/slot5/5.png`,
     likes: 85,
   },
   {
     id: 6,
-    image: 'http://172.24.90.80:10157/Images/Events/slot5/6.png',
+    image: `${Find_And_Replace}/Images/Events/slot5/6.png`,
     likes: 85,
   }
 ];

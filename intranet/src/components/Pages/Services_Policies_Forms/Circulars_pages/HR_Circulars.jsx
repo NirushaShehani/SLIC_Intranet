@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import '../../../../Styles/serviceshrtag.css';
+import { Find_And_Replace} from "../../../../Services/ApiConfig";
 
 const HR_Circulars = () => {
   const openInNewWindow = (url) => {
@@ -64,7 +65,7 @@ const HR_Circulars = () => {
     {
       title: "18 Month Loan/Distress Loan",
       links: {
-        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/18MONTHS_DISTRESS_LOAN.pdf',
+        English: `${Find_And_Replace}/Documents/Policies_Services_Forms/Circulars/HR/18MONTHS_DISTRESS_LOAN.pdf`,
         Sinhala: 'http://example.com/sinhala-link-1',
         Tamil: 'http://example.com/tamil-link-1',
       },
@@ -72,7 +73,7 @@ const HR_Circulars = () => {
     {
       title: "Approved No Pay Leave to Travel Overseas",
       links: {
-        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Approved_No_Pay_Leave_to_travel_overseas.pdf',
+        English: `${Find_And_Replace}/Documents/Policies_Services_Forms/Circulars/HR/Approved_No_Pay_Leave_to_travel_overseas.pdf`,
         Sinhala: 'http://example.com/sinhala-link-2',
         Tamil: 'http://example.com/tamil-link-2',
       },
@@ -81,7 +82,7 @@ const HR_Circulars = () => {
       title: "Circuit Bungalows & Busses Price List",
       links: {
         English: 'http://example.com/tamil-link-3',
-        Sinhala: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CircuitBungalowsandBussesPriceList.pdf',
+        Sinhala: `${Find_And_Replace}/Documents/Policies_Services_Forms/Circulars/HR/CircuitBungalowsandBussesPriceList.pdf`,
         Tamil: 'http://example.com/tamil-link-3',
       },
     },
@@ -89,15 +90,15 @@ const HR_Circulars = () => {
       title: "Guidelines on using Staff Canteen",
       links: {
         English: 'http://example.com/tamil-link-4',
-        Sinhala: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/NOTICE_Canteen.pdf',
+        Sinhala: `${Find_And_Replace}/Documents/Policies_Services_Forms/Circulars/HR/NOTICE_Canteen.pdf`,
         Tamil: 'http://example.com/tamil-link-4',
       },
     },
     {
       title: "Re-imbursement of Examination Expenses",
       links: {
-        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CIRCULAR_NO-HRD_26_2016_ENGLISH.pdf',
-        Sinhala: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CIRCULAR_NO-HRD_26_2016_SINHALA.pdf',
+        English: `${Find_And_Replace}/Documents/Policies_Services_Forms/Circulars/HR/CIRCULAR_NO-HRD_26_2016_ENGLISH.pdf`,
+        Sinhala: `${Find_And_Replace}/Documents/Policies_Services_Forms/Circulars/HR/CIRCULAR_NO-HRD_26_2016_SINHALA.pdf`,
         Tamil: 'http://example.com/tamil-link-5',
       },
     },
@@ -105,8 +106,8 @@ const HR_Circulars = () => {
     {
       title: "Revised Medical Scheme (CHAWS)",
       links: {
-        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CHAWS_NOTICE_ENGLISH.pdf',
-        Sinhala: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/CHAWS_NOTICE_SINHALA.pdf',
+        English: `${Find_And_Replace}/Documents/Policies_Services_Forms/Circulars/HR/CHAWS_NOTICE_ENGLISH.pdf`,
+        Sinhala: `${Find_And_Replace}/Documents/Policies_Services_Forms/Circulars/HR/CHAWS_NOTICE_SINHALA.pdf`,
         Tamil: 'http://example.com/tamil-link-7',
       },
     },
@@ -114,8 +115,8 @@ const HR_Circulars = () => {
     {
       title: "Service Extension Circular",
       links: {
-        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Service_Extension_Circular_(English).pdf',
-        Sinhala: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Service_Extension_Circular_(Sinhala).pdf',
+        English: `${Find_And_Replace}/Documents/Policies_Services_Forms/Circulars/HR/Service_Extension_Circular_(English).pdf`,
+        Sinhala: `${Find_And_Replace}/Documents/Policies_Services_Forms/Circulars/HR/Service_Extension_Circular_(Sinhala).pdf`,
         Tamil: 'http://example.com/tamil-link-9',
       },
     },
@@ -123,7 +124,7 @@ const HR_Circulars = () => {
     {
       title: "Study Leave Procedure",
       links: {
-        English: 'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Circulars/HR/Study_Leave_Procedure_PD_12A_2010.pdf',
+        English: `${Find_And_Replace}/Documents/Policies_Services_Forms/Circulars/HR/Study_Leave_Procedure_PD_12A_2010.pdf`,
         Sinhala: 'http://example.com/sinhala-link-11',
         Tamil: 'http://example.com/tamil-link-11',
       },

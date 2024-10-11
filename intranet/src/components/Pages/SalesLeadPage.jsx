@@ -316,7 +316,7 @@ Keep up the great work!`; // Full text to be typed
         <div style={container}>
           <div style={up}>
             <DrawerMenu />
-            <div style={contactList}>New Customer Introducing</div>
+            <div style={contactList}>Introducing New Customers</div>
           </div>
           <div style={down}>
             <div style={subtitle}>

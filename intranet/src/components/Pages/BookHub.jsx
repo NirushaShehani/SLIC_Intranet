@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Quote from '../Sub_Components/BookHub_Components/Quote';
 import BookCard from '../Sub_Components/BookHub_Components/BookCard';
+import Swal from 'sweetalert2';
 import '../../Styles/BookHub.css';
+import { Find_And_Replace} from "../../Services/ApiConfig";
 import image1 from '../../assets/BookHub/bookhub1.png';
 import image2 from '../../assets/BookHub/bookhub2.png';
 import image3 from '../../assets/BookHub/bookhub3.png';
@@ -12,14 +14,14 @@ import image7 from '../../assets/BookHub/bookhub7.png';
 import image8 from '../../assets/BookHub/bookhub8.jpg';
 
 const pdfUrls = [
-  'http://172.24.90.80:10157/BookHub/1.pdf', 
-  'http://172.24.90.80:10157/BookHub/2.pdf',
-  'http://172.24.90.80:10157/BookHub/3.pdf',
-  'http://172.24.90.80:10157/BookHub/4.pdf',
-  'http://172.24.90.80:10157/BookHub/5.pdf',
-  'http://172.24.90.80:10157/BookHub/6.pdf',
-  'http://172.24.90.80:10157/BookHub/7.pdf',
-  'http://172.24.90.80:10157/BookHub/8.pdf',
+  `${Find_And_Replace}/BookHub/1.pdf`, 
+  `${Find_And_Replace}/BookHub/2.pdf`,
+  `${Find_And_Replace}/BookHub/3.pdf`,
+  `${Find_And_Replace}/BookHub/4.pdf`,
+  `${Find_And_Replace}/BookHub/5.pdf`,
+  `${Find_And_Replace}/BookHub/6.pdf`,
+  `${Find_And_Replace}/BookHub/7.pdf`,
+  `${Find_And_Replace}/BookHub/8.pdf`,
 ];
 
 const books = [
@@ -81,17 +83,17 @@ const BookHub = () => {
   };
 
   // Function to check if the current time is restricted (8:30 AM - 12:30 PM or 2:00 PM - 4:45 PM)
-  const isTimeRestricted = () => {
-    const currentHour = currentTime.getHours();
-    const currentMinutes = currentTime.getMinutes();
+  // const isTimeRestricted = () => {
+  //   const currentHour = currentTime.getHours();
+  //   const currentMinutes = currentTime.getMinutes();
     
-    return (currentHour === 8 && currentMinutes > 30) ||
-           (currentHour >= 9 && currentHour < 12) ||
-           (currentHour === 12 && currentMinutes < 30) ||
-           (currentHour === 14 && currentMinutes > 0) ||
-           (currentHour > 14 && currentHour < 16) ||
-           (currentHour === 16 && currentMinutes <= 45);
-  };
+  //   return (currentHour === 8 && currentMinutes > 30) ||
+  //          (currentHour >= 9 && currentHour < 12) ||
+  //          (currentHour === 12 && currentMinutes < 30) ||
+  //          (currentHour === 14 && currentMinutes > 0) ||
+  //          (currentHour > 14 && currentHour < 16) ||
+  //          (currentHour === 16 && currentMinutes <= 45);
+  // };
 
   // Update the current time every minute
   useEffect(() => {
@@ -99,12 +101,21 @@ const BookHub = () => {
     return () => clearInterval(timer);
   }, []);
 
+  // const handleBookClick = (e) => {
+  //   if (!isBookAccessible() && isTimeRestricted()) {
+  //     e.preventDefault();
+  //     Swal.fire({
+  //       icon: 'warning',
+  //       title: 'Access Restricted',
+  //       text: 'This book can be read from 7:00 A.M to 8:30 A.M or 12:30 P.M to 2:00 P.M or after 4.45 P.M.',
+  //       confirmButtonText: 'OK'
+  //     });
+  //   }
+  // };
+
   const handleBookClick = (e) => {
-    if (!isBookAccessible() && isTimeRestricted()) {
-      e.preventDefault();
-      alert('This book can be read from 7:00 A.M to 8:30 A.M or 12:30 P.M to 2:00 P.M');
-    }
-  };
+    
+  }
 
   return (
     <div className="book-hub-container">

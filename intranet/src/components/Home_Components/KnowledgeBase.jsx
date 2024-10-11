@@ -9,14 +9,15 @@ import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { styled } from "@mui/material/styles";
 import logo from '../../assets/IntranetLogo.png';
 import '../../Styles/logo.css';
+import { Find_And_Replace} from "../../Services/ApiConfig";
 //Image Imports
 const imageUrl1 = require('../../assets/Services.png');
 const imageUrl2 = require('../../assets/Ideahub.png');
 const imageUrl3 = require('../../assets/BookHub/IconImage.jpg');
 //For image slider
-const imageUrl01 = `http://172.24.90.80:10157/Images/Products/img1.jpg?cacheBust=${Date.now()}`;
-const imageUrl02 = `http://172.24.90.80:10157/Images/Products/img2.jpg?cacheBust=${Date.now()}`;
-const imageUrl03 = `http://172.24.90.80:10157/Images/Products/img3.jpg?cacheBust=${Date.now()}`;
+const imageUrl01 = `${Find_And_Replace}/Images/Products/img1.jpg?cacheBust=${Date.now()}`;
+const imageUrl02 = `${Find_And_Replace}/Images/Products/img2.jpg?cacheBust=${Date.now()}`;
+const imageUrl03 = `${Find_And_Replace}/Images/Products/img3.jpg?cacheBust=${Date.now()}`;
 
 
 

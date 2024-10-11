@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
 // hr tag styles
 import "../../../../Styles/serviceshrtag.css";
-
+import { Find_And_Replace} from "../../../../Services/ApiConfig";
 const HR_Forms = () => {
   const openInNewWindow = (url) => {
     window.open(url, "_blank", "noopener,noreferrer");
@@ -72,7 +72,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/18_Month_Loan_Covering_Letter.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/18_Month_Loan_Covering_Letter.pdf`
                 )
               }
             >
@@ -90,7 +90,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Distress_Loan_Form.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/Distress_Loan_Form.pdf`
                 )
               }
             >
@@ -108,7 +108,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/SLIC_BOC_LOAN_APPLICATION_FORM.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/SLIC_BOC_LOAN_APPLICATION_FORM.pdf`
                 )
               }
             >
@@ -124,7 +124,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Booking_of_SLIC_Bus.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/Booking_of_SLIC_Bus.pdf`
                 )
               }
             >
@@ -140,7 +140,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Buddhist_Assocoation.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/Buddhist_Assocoation.pdf`
                 )
               }
             >
@@ -158,7 +158,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/CHAWS_Claim_Form.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/CHAWS_Claim_Form.pdf`
                 )
               }
             >
@@ -174,7 +174,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/SLIC_Circuit_Bungalows.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/SLIC_Circuit_Bungalows.pdf`
                 )
               }
             >
@@ -192,7 +192,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/ID_CARD_APPLICATION_FORM.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/ID_CARD_APPLICATION_FORM.pdf`
                 )
               }
             >
@@ -208,7 +208,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Death_Claim_Form.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/Death_Claim_Form.pdf`
                 )
               }
             >
@@ -224,7 +224,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/DUTY_LEAVE_REQUEST_FORM.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/DUTY_LEAVE_REQUEST_FORM.pdf`
                 )
               }
             >
@@ -240,7 +240,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/APPLICATION_FORM_ENGLISH.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/APPLICATION_FORM_ENGLISH.pdf`
                 )
               }
             >
@@ -258,7 +258,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Gate_Pass%20Form.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/Gate_Pass%20Form.pdf`
                 )
               }
             >
@@ -274,7 +274,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Grievance_application_english.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/Grievance_application_english.pdf`
                 )
               }
             >
@@ -292,7 +292,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Grievance_application_Sinhala.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/Grievance_application_Sinhala.pdf`
                 )
               }
             >
@@ -310,7 +310,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Group_Term_Life_Assurance_Form_(GTLA).pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/Group_Term_Life_Assurance_Form_(GTLA).pdf`
                 )
               }
             >
@@ -328,7 +328,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Gym_Application_&_Rules.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/Gym_Application_&_Rules.pdf`
                 )
               }
             >
@@ -344,7 +344,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Professional_Development_Scheme_Pre%20exam.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/Professional_Development_Scheme_Pre%20exam.pdf`
                 )
               }
             >
@@ -362,7 +362,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/PROFESSIONAL_DEVELOPMENT_SCHEME_POST%20EXAM.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/PROFESSIONAL_DEVELOPMENT_SCHEME_POST%20EXAM.pdf`
                 )
               }
             >
@@ -380,7 +380,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/employee_application_English.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/employee_application_English.pdf`
                 )
               }
             >
@@ -398,7 +398,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Employee_Application_Sinhala.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/Employee_Application_Sinhala.pdf`
                 )
               }
             >
@@ -416,7 +416,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Travel_Overseas_Private.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/Travel_Overseas_Private.pdf`
                 )
               }
             >
@@ -432,7 +432,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/overseas_english.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/overseas_english.pdf`
                 )
               }
             >
@@ -448,7 +448,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Medical.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/Medical.pdf`
                 )
               }
             >
@@ -464,7 +464,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/VEHICLE_LOAN_APPLICATION_FORM.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/VEHICLE_LOAN_APPLICATION_FORM.pdf`
                 )
               }
             >
@@ -480,7 +480,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/VEHICLE_LOAN_GUARANTORS_STATEMENT.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/VEHICLE_LOAN_GUARANTORS_STATEMENT.pdf`
                 )
               }
             >
@@ -510,7 +510,7 @@ const HR_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/HR/Request_Form.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/HR/Request_Form.pdf`
                 )
               }
             >

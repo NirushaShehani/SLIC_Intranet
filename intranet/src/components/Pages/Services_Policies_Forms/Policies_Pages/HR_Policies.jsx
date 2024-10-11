@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 // hr tag styles
 import "../../../../Styles/serviceshrtag.css";
+import { Find_And_Replace} from "../../../../Services/ApiConfig";
 
 const HR_Policies = () => {
   const [expandedforms, setexpandedforms] = useState(false);
@@ -94,7 +95,7 @@ const HR_Policies = () => {
               style={listItemStyle}
               onClick={() =>
                 openInNewWindow(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Approved_Courses_of_Study_new_eddition.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/Approved_Courses_of_Study_new_eddition.pdf`
                 )
               }
             >
@@ -110,7 +111,7 @@ const HR_Policies = () => {
               style={listItemStyle}
               onClick={() =>
                 openInNewWindow(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Code_of_Business_Conduct.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/Code_of_Business_Conduct.pdf`
                 )
               }
             >
@@ -128,7 +129,7 @@ const HR_Policies = () => {
               style={listItemStyle}
               onClick={() =>
                 openInNewWindow(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Corporate_Email_Policy_%20SLIC.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/Corporate_Email_Policy_%20SLIC.pdf`
                 )
               }
             >
@@ -144,7 +145,7 @@ const HR_Policies = () => {
               style={listItemStyle}
               onClick={() =>
                 openInNewWindow(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Disciplinary_Policy.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/Disciplinary_Policy.pdf`
                 )
               }
             >
@@ -160,7 +161,7 @@ const HR_Policies = () => {
               style={listItemStyle}
               onClick={() =>
                 openInNewWindow(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Dress_Code_Policy_English.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/Dress_Code_Policy_English.pdf`
                 )
               }
             >
@@ -176,7 +177,7 @@ const HR_Policies = () => {
               style={listItemStyle}
               onClick={() =>
                 openInNewWindow(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Dress_Code_Policy_%20Sinhala.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/Dress_Code_Policy_%20Sinhala.pdf`
                 )
               }
             >
@@ -192,7 +193,7 @@ const HR_Policies = () => {
               style={listItemStyle}
               onClick={() =>
                 openInNewWindow(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Grievance_Handling_Policy_English.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/Grievance_Handling_Policy_English.pdf`
                 )
               }
             >
@@ -208,7 +209,7 @@ const HR_Policies = () => {
               style={listItemStyle}
               onClick={() =>
                 openInNewWindow(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Gravences_Policy_sinhala.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/Gravences_Policy_sinhala.pdf`
                 )
               }
             >
@@ -224,7 +225,7 @@ const HR_Policies = () => {
               style={listItemStyle}
               onClick={() =>
                 openInNewWindow(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/HR_Manual_English.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/HR_Manual_English.pdf`
                 )
               }
             >
@@ -240,7 +241,7 @@ const HR_Policies = () => {
               style={listItemStyle}
               onClick={() =>
                 openInNewWindow(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/HR_policy_manual_Sinhala.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/HR_policy_manual_Sinhala.pdf`
                 )
               }
             >
@@ -256,7 +257,7 @@ const HR_Policies = () => {
               style={listItemStyle}
               onClick={() =>
                 openInNewWindow(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Prof_Dev_Scheme.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/Prof_Dev_Scheme.pdf`
                 )
               }
             >
@@ -275,7 +276,7 @@ const HR_Policies = () => {
               style={listItemStyle}
               onClick={() =>
                 openInNewWindow(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Vehicle_Loan_Policy_27_05_2020.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/Vehicle_Loan_Policy_27_05_2020.pdf`
                 )
               }
             >
@@ -291,7 +292,7 @@ const HR_Policies = () => {
               style={listItemStyle}
               onClick={() =>
                 openInNewWindow(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/WB_PolicyEnglish.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/WB_PolicyEnglish.pdf`
                 )
               }
             >
@@ -310,7 +311,7 @@ const HR_Policies = () => {
               style={listItemStyle}
               onClick={() =>
                 openInNewWindow(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/WB_PolicySinhala.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/WB_PolicySinhala.pdf`
                 )
               }
             >
@@ -345,7 +346,7 @@ const HR_Policies = () => {
                   className="hover-container"
                   style={{ ...listItemStyle, width: "100%" }} // Set to full width
                   onClick={() =>
-                    handleDownload("http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Policy%20managment/Annexure1_Charter_Technical_Committee_on_KPIs&PA.pdf")
+                    handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/Policy%20managment/Annexure1_Charter_Technical_Committee_on_KPIs&PA.pdf`)
                   }
                 >
                   <span style={dotStyle}>•</span>
@@ -356,7 +357,7 @@ const HR_Policies = () => {
                   className="hover-container"
                   style={{ ...listItemStyle, width: "100%" }} // Set to full width
                   onClick={() =>
-                    handleDownload("http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Policy%20managment/Annexure2_KPI_Form_2024.pdf")
+                    handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/Policy%20managment/Annexure2_KPI_Form_2024.pdf`)
                   }
                 >
                   <span style={dotStyle}>•</span>
@@ -366,7 +367,7 @@ const HR_Policies = () => {
                   className="hover-container"
                   style={{ ...listItemStyle, width: "100%" }} // Set to full width
                   onClick={() =>
-                    handleDownload("http://172.24.90.80:10157/Documents//Policies_Services_Forms/Policies/HR/Policy%20managment/Annexure3_Performance_Evaluation_Form.pdf")
+                    handleDownload(`${Find_And_Replace}/Documents//Policies_Services_Forms/Policies/HR/Policy%20managment/Annexure3_Performance_Evaluation_Form.pdf`)
                   }
                 >
                   <span style={dotStyle}>•</span>
@@ -376,7 +377,7 @@ const HR_Policies = () => {
                   className="hover-container"
                   style={{ ...listItemStyle, width: "100%" }} // Set to full width
                   onClick={() =>
-                    handleDownload("http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Policy%20managment/Annexure4%20EvaluationFormProbation.pdf")
+                    handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/Policy%20managment/Annexure4%20EvaluationFormProbation.pdf`)
                   }
                 >
                   <span style={dotStyle}>•</span>
@@ -386,7 +387,7 @@ const HR_Policies = () => {
                   className="hover-container"
                   style={{ ...listItemStyle, width: "100%" }} // Set to full width
                   onClick={() =>
-                    handleDownload("http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/HR/Policy%20managment/Performance_Management_Policy_SLICLL%20.pdf")
+                    handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/HR/Policy%20managment/Performance_Management_Policy_SLICLL%20.pdf`)
                   }
                 >
                   <span style={dotStyle}>•</span>

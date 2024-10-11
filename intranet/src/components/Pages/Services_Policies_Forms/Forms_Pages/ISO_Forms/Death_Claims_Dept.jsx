@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import '../../../../../Styles/serviceshrtag.css';
+import { Find_And_Replace} from "../../../../../Services/ApiConfig";
 const Services = () => {
   const [selectedDept, setSelectedDept] = useState('');
   const openInNewWindow = (url) => {
@@ -128,11 +129,11 @@ const Services = () => {
             <div style={rightStyle}>
               <div style={listContainer}>
 
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-SE-01.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-SE-01.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span className="hover-text">TPD Claim Form - Accident </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-SE-02.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-SE-02.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span className="hover-text">Permanent Partial Disability Claim Form  </span>
                 </div>
@@ -160,11 +161,11 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span className="hover-text">Minimuthu Discharge Form </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-SE-09.doc')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-SE-09.doc`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span className="hover-text">Important Notice  </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-E-10.doc')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-E-10.doc`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span className="hover-text">Medical Report - TPD  </span>
                 </div>
@@ -172,11 +173,11 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span className="hover-text">Disability Benefits Covering Letter  </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-E-12.doc')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-E-12.doc`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span className="hover-text">Medical Certificate - PPDB </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-SE-13.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DisabilityClaimForms/LI-DI-FO-SE-13.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span className="hover-text">TPD claim form - Sikness </span>
                 </div>
@@ -198,24 +199,24 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Death Detail Summary Report </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-02.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-02.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Death Claim Intimation Form </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-02.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-02.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Claimant's Statement(English) </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.S.03.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.S.03.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Claimant's Statement(Sinhala) </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.E.04.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.E.04.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Certificate to Hospital Treatment </span>
                 </div>
 
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.SE.05.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.SE.05.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Covering Letter to Insured (Document calling memo) </span>
                 </div>
@@ -223,63 +224,63 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Payment Memo  </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-07.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-07.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Letter of Admitted </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-08.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-08.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Discharge Form</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-09.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-09.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Important Notice </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-10.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-10.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Discharge Form - Minimuthu(English) </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-S-10.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-S-10.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Discharge Form - Minimuthu(Sinhala) </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-11.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-11.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Certificate of Residence  </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-12.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-12.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Indemnity Form B - Bond for Loss Policy </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-13.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-13.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Affidavit Form A </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-14.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-14.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Refund Minimuthu Death of Child (Discharge Form-English) </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-S-14.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-S-14.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Refund Minimuthu Death of Child (Discharge Form-Sinhala) </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-15.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-15.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Refund of Premium Discharge </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-16.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-16.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Yashtiya Policy Discharge Form</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-17.doc')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-17.doc`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Bond for Lost Policy (Companies) </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.SE.18.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.SE.18.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Affidavit - Legal </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.SE.19.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.SE.19.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Forces Agreement and covering letter</span>
                 </div>
@@ -287,59 +288,59 @@ const Services = () => {
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Payment Breakup  </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.SE.21.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.SE.21.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Covering Letter to Leave Particulars </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.SE.22.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.SE.22.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Leave Particulars Form</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.E.23.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.E.23.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Employee Service Certification- English</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.S.23.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI.DC.FO.S.23.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Employee Service Certification - Sinhala</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-24.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-24.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Assignee Statement -  English</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-S-24.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-S-24.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Assignee Statement - Sinhala</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-25.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-25.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Letter of Indemnity</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-26.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-26.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Lost of Assignment  </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-27.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-27.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Loss Policy Affidavit </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-28.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-28.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Signature Form</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-29.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-29.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span className="hover-text">ADB Discharge</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-30.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-SE-30.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">DTA Discharge</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-31.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-E-31.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Assignee Statment Table22 Form -English</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-S-31.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/DeathClaimForms/LI-DC-FO-S-31.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Assignee Statment Table22 Form - Sinhala</span>
                 </div>
@@ -356,27 +357,27 @@ const Services = () => {
           <div style={containerStyle}>
             <div style={rightStyle}>
               <div style={listContainer}>
-                <div className="hover-container"style={listItemStyle} onClick={() =>  handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE01.doc')}>
+                <div className="hover-container"style={listItemStyle} onClick={() =>  handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE01.doc`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Medical Report- Disability</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() =>  handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE02.doc')}>
+                <div className="hover-container"style={listItemStyle} onClick={() =>  handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE02.doc`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Claimant Statement - Group Term   </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() =>  handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE03.doc')}>
+                <div className="hover-container"style={listItemStyle} onClick={() =>  handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE03.doc`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Claimant Statement- DTA</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() =>  handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LI-DC-FO-E-04.pdf')}>
+                <div className="hover-container"style={listItemStyle} onClick={() =>  handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LI-DC-FO-E-04.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Last Medical Attendant report </span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() =>  handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE05.doc')}>
+                <div className="hover-container"style={listItemStyle} onClick={() =>  handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE05.doc`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Certificate of discharge</span>
                 </div>
-                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE06.doc')}>
+                <div className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/DeathClaimForms/GroupClaimForms/LIGRFOE06.doc`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                   <span  className="hover-text">Important notice </span>
                 </div>

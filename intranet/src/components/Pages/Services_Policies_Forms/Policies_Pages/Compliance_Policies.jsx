@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 // hr tag styles
 import '../../../../Styles/serviceshrtag.css';
+import { Find_And_Replace} from "../../../../Services/ApiConfig";
 
 const Compliance_Policies = () => {
     const openInNewWindow = (url) => {
@@ -62,11 +63,11 @@ const Compliance_Policies = () => {
 
           </div>
           <div style={listContainer}>
-          <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/Compliance/AML%20Policy%20SLICLL%202024-%20Board%20Approved%2027.03.2024.pdf')}>
+          <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/Compliance/AML%20Policy%20SLICLL%202024-%20Board%20Approved%2027.03.2024.pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">AML Policy SLICLL 2024</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Policies/Compliance/AML%20Procedure%20SLIC%20LIFE%202024%20-%20Board%20Approved%2027.03.2024.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Policies_Services_Forms/Policies/Compliance/AML%20Procedure%20SLIC%20LIFE%202024%20-%20Board%20Approved%2027.03.2024.pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Information Security Policy-V2.5.1</span>
             </div>

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 // hr tag styles
 import '../../../Styles/serviceshrtag.css';
+import { Find_And_Replace} from "../../../Services/ApiConfig";
 
 const IT = () => {
   const openInNewWindow = (url) => {
@@ -86,11 +87,11 @@ const IT = () => {
       <div style={rightStyle}>
         <div style={sectionWrapperStyle}>
         <div style={sectionStyle}>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/ICT/GuideLinesforusingtrainingPCNew.pdf')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/ICT/GuideLinesforusingtrainingPCNew.pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Guide Lines for using training PC</span>
             </div>
-            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/ICT/ResetPassword.pdf')}>
+            <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/ICT/ResetPassword.pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
               <span className="hover-text">Reset Password</span>
             </div>
