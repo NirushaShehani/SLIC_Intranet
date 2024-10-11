@@ -83,17 +83,17 @@ const BookHub = () => {
   };
 
   // Function to check if the current time is restricted (8:30 AM - 12:30 PM or 2:00 PM - 4:45 PM)
-  // const isTimeRestricted = () => {
-  //   const currentHour = currentTime.getHours();
-  //   const currentMinutes = currentTime.getMinutes();
+  const isTimeRestricted = () => {
+    const currentHour = currentTime.getHours();
+    const currentMinutes = currentTime.getMinutes();
     
-  //   return (currentHour === 8 && currentMinutes > 30) ||
-  //          (currentHour >= 9 && currentHour < 12) ||
-  //          (currentHour === 12 && currentMinutes < 30) ||
-  //          (currentHour === 14 && currentMinutes > 0) ||
-  //          (currentHour > 14 && currentHour < 16) ||
-  //          (currentHour === 16 && currentMinutes <= 45);
-  // };
+    return (currentHour === 8 && currentMinutes > 30) ||
+           (currentHour >= 9 && currentHour < 12) ||
+           (currentHour === 12 && currentMinutes < 30) ||
+           (currentHour === 14 && currentMinutes > 0) ||
+           (currentHour > 14 && currentHour < 16) ||
+           (currentHour === 16 && currentMinutes <= 45);
+  };
 
   // Update the current time every minute
   useEffect(() => {
@@ -101,21 +101,21 @@ const BookHub = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // const handleBookClick = (e) => {
-  //   if (!isBookAccessible() && isTimeRestricted()) {
-  //     e.preventDefault();
-  //     Swal.fire({
-  //       icon: 'warning',
-  //       title: 'Access Restricted',
-  //       text: 'This book can be read from 7:00 A.M to 8:30 A.M or 12:30 P.M to 2:00 P.M or after 4.45 P.M.',
-  //       confirmButtonText: 'OK'
-  //     });
-  //   }
-  // };
-
   const handleBookClick = (e) => {
+    if (!isBookAccessible() && isTimeRestricted()) {
+      e.preventDefault();
+      Swal.fire({
+        icon: 'warning',
+        title: 'Access Restricted',
+        text: 'This book can be read from 7:00 A.M to 8:30 A.M or 12:30 P.M to 2:00 P.M or after 4.45 P.M.',
+        confirmButtonText: 'OK'
+      });
+    }
+  };
+
+  // const handleBookClick = (e) => {
     
-  }
+  // }
 
   return (
     <div className="book-hub-container">
