@@ -6,6 +6,8 @@
 //For Live Development,
 const BASE_URL = "http://192.168.101.111:10455/LifeIntranetAPI/api/v1"; // Internal
 
+const Find_And_Replace = "http://lifenet:8081";
+
 const ENDPOINTS = {
   MONTHLYGWP: "Gwp/GetMonthlyGWP",
   MONTHLYCUMALATIVE: "Gwp/GetMonthlyCumalative",
@@ -28,4 +30,4 @@ const ENDPOINTS = {
   EventGallery: "Working/GetEventGallery"
 };
 
-export { BASE_URL, ENDPOINTS };
+export { BASE_URL, ENDPOINTS, Find_And_Replace };

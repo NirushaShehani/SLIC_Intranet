@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import '../../../../../Styles/serviceshrtag.css';
+import { Find_And_Replace} from "../../../../../Services/ApiConfig";
 const Services = () => {
   const [selectedDept, setSelectedDept] = useState('');
   const openInNewWindow = (url) => {
@@ -127,77 +128,77 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-01.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-01.doc`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Signature Verification Form ( Form No.1620)</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-02.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-02.doc`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Important Notice ( Form No.2812)  </span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-03.pdf')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-03.pdf`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Declaration of Continued Good Health (Form No 15C/E)  </span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-04.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-04.doc`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Surrender Form ( Form No.1423)</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-05.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-05.doc`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Surrender Form ( Form No.1526)</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-06.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-06.doc`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Affidavit for Lost Policy ( Form No.1677)  </span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-07.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-07.doc`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Affidavit for Name Change ( Form No.1777)</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-08.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-08.doc`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Surety Form (Form No.1630)</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-09.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() =>handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-09.doc`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Surety Bond (Form No.1545) ( Completed by Bank has lost the Policy) </span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-10.pdf')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-10.pdf`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Assignment Form for Valuable Consideration ( Form No.1624)</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-11.pdf')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-11.pdf`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Assignment Form for Natural Love and Affection ( Form No.1625)</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-12.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-12.doc`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Re-assignment Form ( Form No.1626)</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-UW-FO-SE-13.pdf')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-UW-FO-SE-13.pdf`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Form Regarding Arogya / CIC inclusion for Child ( Form No.7149)</span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-14.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-14.doc`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Nomination Form ( Form No.1809) </span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-15.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-E-15.doc`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Bonus Surrender Form ( Form No.1612)</span>
                     </div>
                     
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-17.pdf')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-17.pdf`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Loan Bond ( Form No.1595) </span>
                     </div>
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-18.pdf')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-18.pdf`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Loan Application ( Form No.1728)  </span>
                     </div>
                   
-                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-20.doc')}>
+                    <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GeneralFormsToPolicyholder/LI-PHS-FO-SE-20.doc`)}>
                     <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                     <span className="hover-text">Declaration of Continued Good Health- child (Form No 9C/E) </span>
                     </div>
@@ -312,15 +313,15 @@ const Services = () => {
         <div style={containerStyle}>
         <div style={rightStyle}>
                 <div style={listContainer}>
-                <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GroupPaymentsForms/LI%20GRP%20FO%20S%2001.pdf')}>
+                <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GroupPaymentsForms/LI%20GRP%20FO%20S%2001.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                   <span className="hover-text">Letter of authority-form no 155R</span>
                   </div>
-                  <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GroupPaymentsForms/LI%20GRP%20FO%20SE%2002.pdf')}>
+                  <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GroupPaymentsForms/LI%20GRP%20FO%20SE%2002.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                   <span className="hover-text">Adjustment Voucher</span>
                   </div>
-                  <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GroupPaymentsForms/LI-PHS-FO-E-19.pdf')}>
+                  <div  className="hover-container"style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ISO/PolicyHolderServices/GroupPaymentsForms/LI-PHS-FO-E-19.pdf`)}>
                   <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
                   <span className="hover-text">Standing Order Instruction Form ( Form No.1209)</span>
                   </div>

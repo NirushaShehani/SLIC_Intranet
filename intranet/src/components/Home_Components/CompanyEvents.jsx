@@ -4,6 +4,7 @@ import '../../Styles/Event_Gallery.css';
 import '../../Styles/Responsive_Event_Gallery_css.module.css';
 import { Link } from 'react-router-dom';
 import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
+import { Find_And_Replace} from "../../Services/ApiConfig";
 import axios from 'axios';
 
 const CompanyEvents = () => {
@@ -81,7 +82,7 @@ const CompanyEvents = () => {
           <div className="responsive-container-block img-cont">
             <Link to="/Slot1">
               <img
-                src={`http://172.24.90.80:10157/Images/Events/slot1/1.jpg?cacheBust=${Date.now()}`}
+                src={`${Find_And_Replace}/Images/Events/slot1/1.jpg?cacheBust=${Date.now()}`}
                 className="img img-big"
                 alt="Event Slot 1"
                 title={getEventTitleBySlot('001')}
@@ -89,7 +90,7 @@ const CompanyEvents = () => {
             </Link>
             <Link to="/Slot2">
               <img
-                src={`http://172.24.90.80:10157/Images/Events/slot2/1.png?cacheBust=${Date.now()}`}
+                src={`${Find_And_Replace}/Images/Events/slot2/1.png?cacheBust=${Date.now()}`}
                 className="img img-big img-last"
                 alt="Event Slot 2"
                 title={getEventTitleBySlot('002')}
@@ -99,7 +100,7 @@ const CompanyEvents = () => {
           <div className="responsive-container-block img-cont">
             <Link to="/Slot3">
               <img
-                src={`http://172.24.90.80:10157/Images/Events/slot3/1.jpg?cacheBust=${Date.now()}`}
+                src={`${Find_And_Replace}/Images/Events/slot3/1.jpg?cacheBust=${Date.now()}`}
                 className="img img-big"
                 alt="Event Slot 3"
                 title={getEventTitleBySlot('003')}
@@ -107,7 +108,7 @@ const CompanyEvents = () => {
             </Link>
             <Link to="/Slot4">
               <img
-                src={`http://172.24.90.80:10157/Images/Events/slot4/1.jpg?cacheBust=${Date.now()}`}
+                src={`${Find_And_Replace}/Images/Events/slot4/1.jpg?cacheBust=${Date.now()}`}
                 className="img img-big img-last"
                 alt="Event Slot 4"
                 title={getEventTitleBySlot('004')}
@@ -117,7 +118,7 @@ const CompanyEvents = () => {
           <div className="responsive-container-block img-cont">
             <Link to="/Slot5">
               <img
-                src={`http://172.24.90.80:10157/Images/Events/slot5/1.png?cacheBust=${Date.now()}`}
+                src={`${Find_And_Replace}/Images/Events/slot5/1.png?cacheBust=${Date.now()}`}
                 className="img"
                 alt="Event Slot 5"
                 title={getEventTitleBySlot('005')}
@@ -125,7 +126,7 @@ const CompanyEvents = () => {
             </Link>
             <Link to="/Slot6">
               <img
-                src={`http://172.24.90.80:10157/Images/Events/slot6/1.jpg?cacheBust=${Date.now()}`}
+                src={`${Find_And_Replace}/Images/Events/slot6/1.jpg?cacheBust=${Date.now()}`}
                 className="img img-big"
                 alt="Event Slot 6"
                 title={getEventTitleBySlot('006')}

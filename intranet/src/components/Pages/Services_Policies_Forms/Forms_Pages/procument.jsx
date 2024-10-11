@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 // hr tag styles
 import '../../../../Styles/serviceshrtag.css';
+import { Find_And_Replace} from "../../../../Services/ApiConfig";
 
 const ProcurementForms = () => {
     const openInNewWindow = (url) => {
@@ -76,7 +77,7 @@ const ProcurementForms = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Procurement</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/Procurement/CAPEX_Formsnew.xlsx')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/Procurement/CAPEX_Formsnew.xlsx`)}>
             <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">CAPEX Form</span>
             </div>
