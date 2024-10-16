@@ -14,10 +14,7 @@ const Recent_Links = () => {
   return (
     <div className="services-container">
       <div className="services-cards">
-        <div className="service-card" onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')}>
-        <img src={BlifeImg} alt="b-Life" className="service-image" />
-          <h2 className="service-title">b-Life</h2>
-        </div>
+        
         <div className="service-card"onClick={() => openInNewWindow('https://app.mihcm.com')}>
           <img src={MiHCMImg} alt="MiHCM" className="service-image" />
           <h2 className="service-title">MiHCM</h2>
