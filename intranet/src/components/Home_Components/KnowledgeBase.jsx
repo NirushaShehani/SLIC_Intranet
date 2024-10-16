@@ -37,6 +37,10 @@ const settings = {
 
 const KnowledgeBase = () => {
 
+  const openInNewWindow = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   //Custom chip design for Knowledge Base,Sales Leads,Contact lists
   const CustomChip = styled(Chip)(({ theme }) => ({
     display: "flex",
@@ -111,6 +115,24 @@ const KnowledgeBase = () => {
       </div>
 
       <div style={styles.chipContainer}>
+        {/*Contact List Chip*/}
+        <Link onClick={() => openInNewWindow('http://blife-app.slic1.com/secworks/signin.asp')} style={{ cursor: 'pointer', textDecoration: 'none' }}>
+          <CustomChip style={styles.label}
+            label="b-Life"
+            deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
+            onDelete={() => { }}
+          />
+        </Link>
+
+    
+        {/*Contact List Chip*/}
+        <Link to="/contact-list" style={{ cursor: 'pointer', textDecoration: 'none' }}>
+          <CustomChip style={styles.label}
+            label="Contact List"
+            deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
+            onDelete={() => { }}
+          />
+        </Link>
         {/*Services Chip*/}
         <Link to="/services-page" style={{ cursor: 'pointer', textDecoration: 'none', margin: 0 }}>
           <CustomChip style={styles.label}
@@ -131,14 +153,6 @@ const KnowledgeBase = () => {
         <Link to="/sales-Lead" style={{ cursor: 'pointer', textDecoration: 'none' }}>
           <CustomChip style={styles.label}
             label="Introduce a New Customer"
-            deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
-            onDelete={() => { }}
-          />
-        </Link>
-        {/*Contact List Chip*/}
-        <Link to="/contact-list" style={{ cursor: 'pointer', textDecoration: 'none' }}>
-          <CustomChip style={styles.label}
-            label="Contact List"
             deleteIcon={<BookmarkIcon style={{ color: "white" }} />}
             onDelete={() => { }}
           />
@@ -236,7 +250,7 @@ const styles = {
 
   image: {
     width: "100%",
-    height: "auto",
+    height: "340px",
     borderRadius: "15px"
   }
 
