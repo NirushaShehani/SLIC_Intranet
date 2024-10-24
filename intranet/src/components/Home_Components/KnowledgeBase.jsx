@@ -11,8 +11,7 @@ import logo from '../../assets/IntranetLogo.png';
 import '../../Styles/logo.css';
 import { Find_And_Replace} from "../../Services/ApiConfig";
 //Image Imports
-const imageUrl1 = require('../../assets/Services.png');
-const imageUrl2 = require('../../assets/Ideahub.png');
+const imageUrl2 = require('../../assets/Ideahub.jpg');
 const imageUrl3 = require('../../assets/BookHub/IconImage.jpg');
 //For image slider
 const imageUrl01 = `${Find_And_Replace}/Images/Products/img1.jpg?cacheBust=${Date.now()}`;

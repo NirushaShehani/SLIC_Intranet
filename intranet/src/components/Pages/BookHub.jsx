@@ -4,13 +4,13 @@ import BookCard from '../Sub_Components/BookHub_Components/BookCard';
 import '../../Styles/BookHub.css';
 import Swal from 'sweetalert2';
 import { Find_And_Replace} from "../../Services/ApiConfig";
-import image1 from '../../assets/BookHub/bookhub1.png';
-import image2 from '../../assets/BookHub/bookhub2.png';
-import image3 from '../../assets/BookHub/bookhub3.png';
-import image4 from '../../assets/BookHub/bookhub4.png';
-import image5 from '../../assets/BookHub/bookhub5.png';
-import image6 from '../../assets/BookHub/bookhub6.png';
-import image7 from '../../assets/BookHub/bookhub7.png';
+import image1 from '../../assets/BookHub/bookhub1.jpg';
+import image2 from '../../assets/BookHub/bookhub2.jpg';
+import image3 from '../../assets/BookHub/bookhub3.jpg';
+import image4 from '../../assets/BookHub/bookhub4.jpg';
+import image5 from '../../assets/BookHub/bookhub5.jpg';
+import image6 from '../../assets/BookHub/bookhub6.jpg';
+import image7 from '../../assets/BookHub/bookhub7.jpg';
 import image8 from '../../assets/BookHub/bookhub8.jpg';
 
 const pdfUrls = [

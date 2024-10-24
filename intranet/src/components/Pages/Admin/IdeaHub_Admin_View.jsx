@@ -4,7 +4,7 @@ import * as XLSX from 'xlsx';
 import './AdminStyles/AdminIdeaHub.css';
 import { BASE_URL, ENDPOINTS } from "../../../Services/ApiConfig";
 import DrawerMenu from '../../Sub_Components/DrawerMenu';
-import backgroundImage from '../../../assets/bgimage.png'; 
+import backgroundImage from '../../../assets/bgimage.jpg'; 
 
 function IdeaHub() {
   const [ideas, setIdeas] = useState([]);

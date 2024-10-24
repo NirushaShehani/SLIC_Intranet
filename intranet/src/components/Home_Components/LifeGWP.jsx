@@ -11,9 +11,7 @@ import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const rec1 = require("../../assets/Rectangle1.png"); // MDRT Event Image record 1
-const rec2 = require("../../assets/Rectangle2.png"); // MDRT Event Image record 2
-const defaultImage = require("../../assets/default-user.png"); // Path to default user image
+const defaultImage = require("../../assets/default-user.png"); 
 const color2 = "#ebab13";
 const color1 = "#00adbb";
 

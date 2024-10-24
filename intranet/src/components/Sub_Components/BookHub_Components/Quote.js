@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import '../BookHub_Components/Component_styles/Quote.css';
-//image urls
-import image1 from '../../../assets/BookHub/oprah-winfrey.png';
 const quotes = [
   {
     
@@ -38,7 +36,7 @@ const Quote = () => {
   }, []);
 
   return (
-    <div className="quote-container" style={{backgroundImage: image1}}>
+    <div className="quote-container" >
       <p className="quote-text">“{quotes[currentQuoteIndex].text}” </p>
       <p className="quote-author" style={{marginLeft: "10px"}}> {quotes[currentQuoteIndex].author}  </p>
     </div>
