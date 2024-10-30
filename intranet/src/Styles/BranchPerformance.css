@@ -1,7 +1,7 @@
 /* New CSS for branch performance table */
 
 .branch-performance-container {
-  height: 350px;
+  height: 500px;
   background-color: #0c4d72;
   padding: 10px;
   color: white;
@@ -67,7 +67,7 @@ h2 {
 
 .performance-list {
   overflow-y: auto;
-  max-height: 240px;
+  max-height: 380px;
   padding-right: 10px;
 }
 

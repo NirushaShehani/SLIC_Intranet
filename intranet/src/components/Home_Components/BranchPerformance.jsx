@@ -1,18 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../../Styles/BranchPerformance.css';
-import image1 from '../../assets/Event1.jpg';
-import image2 from '../../assets/Event2.jpg';
-import image3 from '../../assets/Event3.jpg';
 import { Link } from 'react-router-dom';
 import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
 import { Find_And_Replace} from "../../Services/ApiConfig";
 
-const images = [
-  `${Find_And_Replace}/Images/Branches/Event1.jpg?cacheBust=${Date.now()}`,
-  `${Find_And_Replace}/Images/Branches/Event2.jpg?cacheBust=${Date.now()}`,
-  `${Find_And_Replace}/Images/Branches/Event3.jpg?cacheBust=${Date.now()}`
-];
+// const images = [
+//   `${Find_And_Replace}/Images/Branches/Event1.jpg?cacheBust=${Date.now()}`,
+//   `${Find_And_Replace}/Images/Branches/Event2.jpg?cacheBust=${Date.now()}`,
+//   `${Find_And_Replace}/Images/Branches/Event3.jpg?cacheBust=${Date.now()}`
+// ];
 
 const months = [
   "January",
@@ -42,19 +39,19 @@ const strings = [
 const updatedStrings = strings.filter(item => item.value !== "");
 
 const BranchPerformance = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  //const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('a');
   const [branchNames, setBranchNames] = useState({ a: [], b: [], c: [], d: [], e: [] });
   const [achPercentages, setAchPercentages] = useState({ a: [], b: [], c: [], d: [], e: [] });
   const performanceListRef = useRef(null);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  //   }, 2000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   useEffect(() => {
     categories.forEach((category) => {
@@ -173,12 +170,12 @@ const BranchPerformance = () => {
         </div>
       </div>
 
-      <div className="branch-event">
+      {/* <div className="branch-event">
         <h2>Branch Events</h2>
         <div className="images-container">
           <img src={images[currentImageIndex]} alt={`Event ${currentImageIndex + 1}`} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

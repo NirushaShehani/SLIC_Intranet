@@ -29,6 +29,8 @@ import Life from './components/Pages/Services_Policies_Forms/Services_Pages/Life
 import Incentive_Criteria from './components/Pages/Incentive_Criteria';
 import HR from './components/Pages/Knowledge_base_pages/HR';
 import AboutSLIC from './components/Pages/Knowledge_base_pages/AboutSLIC';
+import ImageSlider from './components/Pages/NewProducts_display';
+import BranchEvents from './components/Pages/BrancheEvents';
 
 //Event pages
 import Slot1 from './components/Pages/SLIC_Events/Slot1';
@@ -81,6 +83,9 @@ const App =() => {
         <Route path="/Slot4" element={<Slot4/>}/>
         <Route path="/Slot5" element={<Slot5/>}/>
         <Route path="/Slot6" element={<Slot6/>}/>
+
+        <Route path="/NewProducts" element={<ImageSlider/>}/>
+        <Route path="/BranchEvents" element={<BranchEvents/>}/>
       </Routes>
     </Router>
   );
