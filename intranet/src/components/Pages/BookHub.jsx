@@ -5,7 +5,7 @@ import '../../Styles/BookHub.css';
 import Swal from 'sweetalert2';
 import { Find_And_Replace} from "../../Services/ApiConfig";
 import image1 from '../../assets/BookHub/bookhub1.jpg';
-import image2 from '../../assets/BookHub/bookhub2.jpg';
+//import image2 from '../../assets/BookHub/bookhub2.jpg';
 import image3 from '../../assets/BookHub/bookhub3.jpg';
 import image4 from '../../assets/BookHub/bookhub4.jpg';
 import image5 from '../../assets/BookHub/bookhub5.jpg';
@@ -30,11 +30,11 @@ const books = [
     title: 'Atomic Habits',
     author: 'James Clear',
   },
-  {
-    image: image2,
-    title: 'Life Marketing NEWSLETTER',
-    author: 'volume II 2024',
-  },
+  // {
+  //   image: image2,
+  //   title: 'Life Marketing NEWSLETTER',
+  //   author: 'volume II 2024',
+  // },
   {
     image: image3,
     title: 'Hit Refresh',

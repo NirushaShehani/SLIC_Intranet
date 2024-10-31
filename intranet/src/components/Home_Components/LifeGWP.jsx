@@ -787,7 +787,7 @@ const GWPChartsContainer = () => {
         onMouseLeave={handleMouseLeave}
       >
 
-        <FlippingCard showBack={GWPFlipping} cardType="gwp">
+        <FlippingCard showBack={GWPFlipping} cardType="gwp" style={{height: "220px"}}>
           <div className="inner">
             <div className="front">
               {MontlyDataBranch && (

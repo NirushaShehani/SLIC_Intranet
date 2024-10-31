@@ -1,18 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../../Styles/BranchPerformance.css';
-import image1 from '../../assets/Event1.jpg';
-import image2 from '../../assets/Event2.jpg';
-import image3 from '../../assets/Event3.jpg';
 import { Link } from 'react-router-dom';
 import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
-import { Find_And_Replace} from "../../Services/ApiConfig";
-
-const images = [
-  `${Find_And_Replace}/Images/Branches/Event1.jpg?cacheBust=${Date.now()}`,
-  `${Find_And_Replace}/Images/Branches/Event2.jpg?cacheBust=${Date.now()}`,
-  `${Find_And_Replace}/Images/Branches/Event3.jpg?cacheBust=${Date.now()}`
-];
+import { Find_And_Replace } from "../../Services/ApiConfig";
 
 const months = [
   "January",
@@ -30,7 +21,7 @@ const months = [
 ];
 const monthNames = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
 const currentMonth = monthNames[new Date().getMonth()];
-const currentMonthInText = months[currentMonth-1];
+const currentMonthInText = months[currentMonth - 1];
 
 const categories = ['a', 'b', 'c', 'd', 'e'];
 
@@ -42,19 +33,10 @@ const strings = [
 const updatedStrings = strings.filter(item => item.value !== "");
 
 const BranchPerformance = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('a');
   const [branchNames, setBranchNames] = useState({ a: [], b: [], c: [], d: [], e: [] });
   const [achPercentages, setAchPercentages] = useState({ a: [], b: [], c: [], d: [], e: [] });
   const performanceListRef = useRef(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     categories.forEach((category) => {
@@ -103,7 +85,6 @@ const BranchPerformance = () => {
     }))
     .sort((a, b) => b.percentage - a.percentage);
 
-
   return (
     <div>
       <div className="incentive-criteria">
@@ -130,7 +111,7 @@ const BranchPerformance = () => {
           </div>
         </div>
       </div>
-      <br></br>
+      <br />
       <div className="branch-performance-container">
         <h2>Branch Performance (FYP) - {currentMonthInText}</h2>
         <div className="category-selector">
@@ -169,16 +150,19 @@ const BranchPerformance = () => {
               </div>
             </div>
           ))}
-
         </div>
       </div>
 
-      <div className="branch-event">
-        <h2>Branch Events</h2>
-        <div className="images-container">
-          <img src={images[currentImageIndex]} alt={`Event ${currentImageIndex + 1}`} />
+      <div>
+        <div className="images-container-branch-performance" style={{marginTop: "20px"}}>
+          <img
+            src={`${Find_And_Replace}/Images/HomePageImage/1.jpg`}
+            alt="Event Image"
+            style={{width: "100%", borderRadius: "10px", boxShadow: "0 4px 15px rgba(255, 255, 255, 0.5)" }}
+          />
         </div>
       </div>
+
     </div>
   );
 };
