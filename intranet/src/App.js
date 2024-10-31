@@ -86,6 +86,7 @@ const App =() => {
 
         <Route path="/NewProducts" element={<ImageSlider/>}/>
         <Route path="/BranchEvents" element={<BranchEvents/>}/>
+        
       </Routes>
     </Router>
   );
