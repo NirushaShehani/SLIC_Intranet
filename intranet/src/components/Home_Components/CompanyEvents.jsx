@@ -4,8 +4,9 @@ import '../../Styles/Event_Gallery.css';
 import '../../Styles/Responsive_Event_Gallery_css.module.css';
 import { Link } from 'react-router-dom';
 import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
-import { Find_And_Replace} from "../../Services/ApiConfig";
+import { Find_And_Replace } from "../../Services/ApiConfig";
 import axios from 'axios';
+import recent_notice_image from '../../assets/recent_notices.png'
 
 const CompanyEvents = () => {
   const [notices, setNotices] = useState([]);
@@ -139,14 +140,28 @@ const CompanyEvents = () => {
       {/* Company Notices */}
       <br />
       <h2 className="notice-head">Company Notices</h2>
-      {notices.slice(0, 3).map((notice) => (
-        <div key={notice.p_id}>
-          <p className="sub-notice-hd">{notice.n_title}</p>
-         
-          <p className="notice-date">{new Date(notice.n_date).toLocaleDateString()}</p>
-          <hr />
-        </div>
-      ))}
+      {notices.slice(0, 3).map((notice) => {
+        const noticeDate = new Date(notice.n_date);
+        const currentDate = new Date();
+        const differenceInDays = Math.floor((currentDate - noticeDate) / (1000 * 60 * 60 * 24));
+
+        return (
+          <div key={notice.p_id}>
+            <p className="sub-notice-hd">{notice.n_title}</p>
+
+            <p className="notice-date">
+              <span>{noticeDate.toLocaleDateString()}</span>
+              {differenceInDays <= 3 && (
+                <img src={recent_notice_image} width={'25%'} ></img>
+              )}
+            </p>
+
+            <hr />
+          </div>
+        );
+      })}
+
+
       <div className="link-container">
         <Link to="/full-notices" className="read-more-link">Read more...</Link>
       </div>
