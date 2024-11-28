@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import '../../../../../Styles/serviceshrtag.css';
+import { Find_And_Replace} from "../../../../../Services/ApiConfig";
 const Services = () => {
   const [selectedDept, setSelectedDept] = useState('');
   const openInNewWindow = (url) => {

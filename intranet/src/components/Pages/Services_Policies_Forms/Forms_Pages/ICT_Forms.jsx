@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
 // hr tag styles
 import "../../../../Styles/serviceshrtag.css";
+import { Find_And_Replace} from "../../../../Services/ApiConfig";
 
 const ICT_Forms = () => {
   const openInNewWindow = (url) => {
@@ -72,7 +73,7 @@ const ICT_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/Device_Access_Request_Form.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ICT/Device_Access_Request_Form.pdf`
                 )
               }
             >
@@ -88,7 +89,7 @@ const ICT_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/Direct_Dial_out_Facility_Access_Request_Form.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ICT/Direct_Dial_out_Facility_Access_Request_Form.pdf`
                 )
               }
             >
@@ -106,7 +107,7 @@ const ICT_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/EMail_Facility_Access_Request_Form.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ICT/EMail_Facility_Access_Request_Form.pdf`
                 )
               }
             >
@@ -124,7 +125,7 @@ const ICT_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/Internet_Access_Request_Form_New.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ICT/Internet_Access_Request_Form_New.pdf`
                 )
               }
             >
@@ -142,7 +143,7 @@ const ICT_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/Multifunction_Printer_Facility_Request_Form.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ICT/Multifunction_Printer_Facility_Request_Form.pdf`
                 )
               }
             >
@@ -160,7 +161,7 @@ const ICT_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/Secure_Intranet_Access_Request_Form.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ICT/Secure_Intranet_Access_Request_Form.pdf`
                 )
               }
             >
@@ -178,7 +179,7 @@ const ICT_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/Tsplus_Form.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ICT/Tsplus_Form.pdf`
                 )
               }
             >
@@ -194,7 +195,7 @@ const ICT_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/User_Account_Application_Form.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ICT/User_Account_Application_Form.pdf`
                 )
               }
             >
@@ -210,7 +211,7 @@ const ICT_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/User_Backup_Shared_Folder_Access_Request_Form.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ICT/User_Backup_Shared_Folder_Access_Request_Form.pdf`
                 )
               }
             >
@@ -228,7 +229,7 @@ const ICT_Forms = () => {
               style={listItemStyle}
               onClick={() =>
                 handleDownload(
-                  "http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/VPN_Request_%20Form.pdf"
+                  `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ICT/VPN_Request_%20Form.pdf`
                 )
               }
             >
@@ -243,7 +244,7 @@ const ICT_Forms = () => {
              style={listItemStyle}
              onClick={() =>
               handleDownload(
-                'http://172.24.90.80:10157/Documents/Policies_Services_Forms/Forms/ICT/Change_management_for_SW_V3.1.docx'
+                `${Find_And_Replace}/Documents/Policies_Services_Forms/Forms/ICT/Change_management_for_SW_V3.1.docX`
                 )
               }>
             <FontAwesomeIcon

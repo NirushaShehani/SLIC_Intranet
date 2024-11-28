@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
 // hr tag styles
 import "../../../../Styles/serviceshrtag.css";
+import { Find_And_Replace} from "../../../../Services/ApiConfig";
 
 const Sales_Forms = () => {
   const openInNewWindow = (url) => {
@@ -69,70 +70,70 @@ const Sales_Forms = () => {
           <div style={listContainer}>
             {/* <div
               style={listItemStyle}
-              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf")}
+              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf`)}
             >
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>Device Access Request Form</span>
             </div>
             <div
               style={listItemStyle}
-              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf")}
+              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf`)}
             >
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>Direct Dial out Facility Access Request Form</span>
             </div>
             <div
               style={listItemStyle}
-              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf")}
+              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf`)}
             >
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>E-Mail Facility Access Request Form</span>
             </div>
             <div
               style={listItemStyle}
-              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf")}
+              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf`)}
             >
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>Internet Access Request Form New</span>
             </div>
             <div
               style={listItemStyle}
-              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf")}
+              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf`)}
             >
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>Multifunction Printer Facility Request Form</span>
             </div>
             <div
               style={listItemStyle}
-              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf")}
+              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf`)}
             >
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>Secure Intranet Access Request Form</span>
             </div>
             <div
               style={listItemStyle}
-              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf")}
+              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf`)}
             >
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>Tsplus Form</span>
             </div>
             <div
               style={listItemStyle}
-              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf")}
+              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf`)}
             >
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>User Account Application Form</span>
             </div>
             <div
               style={listItemStyle}
-              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf")}
+              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf`)}
             >
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>User Backup Shared Folder Access Request Form</span>
             </div>
             <div
               style={listItemStyle}
-              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf")}
+              onClick={() => handleDownload("/pdfs/ISO-Pdf/1.pdf`)}
             >
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} />
               <span>VPN Request Form</span>

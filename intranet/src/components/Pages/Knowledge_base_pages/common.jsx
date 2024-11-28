@@ -6,6 +6,7 @@ import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 // hr tag styles
 import '../../../Styles/serviceshrtag.css';
 import '../../../Styles/services.css';
+import { Find_And_Replace} from "../../../Services/ApiConfig";
 const Common = () => {
   const openInNewWindow = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');

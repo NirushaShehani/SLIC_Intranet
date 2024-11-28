@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 // hr tag styles
 import '../../../../Styles/serviceshrtag.css';
+import { Find_And_Replace} from "../../../../Services/ApiConfig";
 
 const SecurityForms = () => {
     const openInNewWindow = (url) => {
@@ -72,7 +73,7 @@ const SecurityForms = () => {
                 <div className="home-container">
                     <div style={listContainer}>
                         
-                    <div className="hover-container" style={listItemStyle} onClick={() => handleDownload('http://172.24.90.80:10157/Documents//Policies_Services_Forms/Forms/SecurityDepartment/Door_Access_Approval_Form.pdf')}>
+                    <div className="hover-container" style={listItemStyle} onClick={() => handleDownload(`${Find_And_Replace}/Documents//Policies_Services_Forms/Forms/SecurityDepartment/Door_Access_Approval_Form.pdf`)}>
             <FontAwesomeIcon icon={faFileAlt} style={iconStyle}className="hover-icon" />
               <span className="hover-text">Door Access</span>
             </div>

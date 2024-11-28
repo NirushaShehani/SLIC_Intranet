@@ -1,5 +1,5 @@
 import React from "react";
-import usericon from "../../assets/slicLIfe_New_1.png";
+import usericon from "../../assets/SLIC-Life-logo.png";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";

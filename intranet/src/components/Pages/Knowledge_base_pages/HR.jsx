@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 // hr tag styles
 import '../../../Styles/serviceshrtag.css';
+import { Find_And_Replace} from "../../../Services/ApiConfig";
 
 const HR = () => {
   const openInNewWindow = (url) => {
@@ -80,19 +81,19 @@ const HR = () => {
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">About SLIC</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/EMPLOYEE_HAND_BOOK_Eversion.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/HR/EMPLOYEE_HAND_BOOK_Eversion.pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Employee Handbook</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/Benifits_of_ETF.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/HR/Benifits_of_ETF.pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Benefits of ETF</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/Principles_of_Life.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/HR/Principles_of_Life.pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Principles of Life Insurance</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() =>  openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/IC33_English_Woorkbook.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() =>  openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/HR/IC33_English_Woorkbook.pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon" />
               <span className="hover-text">Questions on Life Insurance</span>
             </div>
@@ -109,11 +110,11 @@ const HR = () => {
           {/* CHAWS Section */}
           <div style={sectionStyle}>
             <div style={titleStyle}>CHAWS</div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Enrolment_to_CHAWS.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/HR/CHAWS/Enrolment_to_CHAWS.pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">CHAWS - Enrolment Guide</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/CHAWS/Approving_in_CHAWS.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/HR/CHAWS/Approving_in_CHAWS.pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">CHAWS - Approving Guide</span>
             </div>
@@ -123,15 +124,15 @@ const HR = () => {
           {/* Recruitment */}
           <div style={sectionStyle}>
             <div style={titleStyle}>Recruitment</div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HR_Recruitment/PRF(Amend).pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/HR/HR_Recruitment/PRF(Amend).pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">PRF(Amend)</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HR_Recruitment/ProcessFlowChart.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/HR/HR_Recruitment/ProcessFlowChart.pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Process Flow Chart</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HR_Recruitment/QualificationMatrix.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/HR/HR_Recruitment/QualificationMatrix.pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">Qualification Matrix</span>
             </div>
@@ -145,19 +146,19 @@ const HR = () => {
           {/* Training and Development */}
           <div style={sectionStyle}>
             <div style={titleStyle}>Training and Development</div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HRTandD/Application(2).pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/HR/HRTandD/Application(2).pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">SLII/CII Application</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HRTandD/DIP_APPLICATION(1).pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/HR/HRTandD/DIP_APPLICATION(1).pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">DIP APPLICATION</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HRTandD/IFC_Application(1).pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/HR/HRTandD/IFC_Application(1).pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">IFC Application</span>
             </div>
-            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow('http://172.24.90.80:10157/Documents/Knowledge_Base/HR/HRTandD/SLIIMembershipApplicationForm.pdf')}>
+            <div className="hover-container" style={listItemStyle} onClick={() => openInNewWindow(`${Find_And_Replace}/Documents/Knowledge_Base/HR/HRTandD/SLIIMembershipApplicationForm.pdf`)}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
               <span className="hover-text">SLII Membership Application</span>
             </div>

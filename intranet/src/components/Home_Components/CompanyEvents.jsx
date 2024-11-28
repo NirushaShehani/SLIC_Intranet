@@ -4,7 +4,9 @@ import '../../Styles/Event_Gallery.css';
 import '../../Styles/Responsive_Event_Gallery_css.module.css';
 import { Link } from 'react-router-dom';
 import { BASE_URL, ENDPOINTS } from "../../Services/ApiConfig";
+import { Find_And_Replace } from "../../Services/ApiConfig";
 import axios from 'axios';
+import recent_notice_image from '../../assets/recent_notices.png'
 
 const CompanyEvents = () => {
   const [notices, setNotices] = useState([]);
@@ -81,7 +83,7 @@ const CompanyEvents = () => {
           <div className="responsive-container-block img-cont">
             <Link to="/Slot1">
               <img
-                src={`http://172.24.90.80:10157/Images/Events/slot1/1.jpg?cacheBust=${Date.now()}`}
+                src={`${Find_And_Replace}/Images/Events/slot1/1.jpg?cacheBust=${Date.now()}`}
                 className="img img-big"
                 alt="Event Slot 1"
                 title={getEventTitleBySlot('001')}
@@ -89,7 +91,7 @@ const CompanyEvents = () => {
             </Link>
             <Link to="/Slot2">
               <img
-                src={`http://172.24.90.80:10157/Images/Events/slot2/1.png?cacheBust=${Date.now()}`}
+                src={`${Find_And_Replace}/Images/Events/slot2/1.png?cacheBust=${Date.now()}`}
                 className="img img-big img-last"
                 alt="Event Slot 2"
                 title={getEventTitleBySlot('002')}
@@ -99,7 +101,7 @@ const CompanyEvents = () => {
           <div className="responsive-container-block img-cont">
             <Link to="/Slot3">
               <img
-                src={`http://172.24.90.80:10157/Images/Events/slot3/1.jpg?cacheBust=${Date.now()}`}
+                src={`${Find_And_Replace}/Images/Events/slot3/1.jpg?cacheBust=${Date.now()}`}
                 className="img img-big"
                 alt="Event Slot 3"
                 title={getEventTitleBySlot('003')}
@@ -107,7 +109,7 @@ const CompanyEvents = () => {
             </Link>
             <Link to="/Slot4">
               <img
-                src={`http://172.24.90.80:10157/Images/Events/slot4/1.jpg?cacheBust=${Date.now()}`}
+                src={`${Find_And_Replace}/Images/Events/slot4/1.jpg?cacheBust=${Date.now()}`}
                 className="img img-big img-last"
                 alt="Event Slot 4"
                 title={getEventTitleBySlot('004')}
@@ -117,7 +119,7 @@ const CompanyEvents = () => {
           <div className="responsive-container-block img-cont">
             <Link to="/Slot5">
               <img
-                src={`http://172.24.90.80:10157/Images/Events/slot5/1.png?cacheBust=${Date.now()}`}
+                src={`${Find_And_Replace}/Images/Events/slot5/1.png?cacheBust=${Date.now()}`}
                 className="img"
                 alt="Event Slot 5"
                 title={getEventTitleBySlot('005')}
@@ -125,7 +127,7 @@ const CompanyEvents = () => {
             </Link>
             <Link to="/Slot6">
               <img
-                src={`http://172.24.90.80:10157/Images/Events/slot6/1.jpg?cacheBust=${Date.now()}`}
+                src={`${Find_And_Replace}/Images/Events/slot6/1.jpg?cacheBust=${Date.now()}`}
                 className="img img-big"
                 alt="Event Slot 6"
                 title={getEventTitleBySlot('006')}
@@ -138,14 +140,28 @@ const CompanyEvents = () => {
       {/* Company Notices */}
       <br />
       <h2 className="notice-head">Company Notices</h2>
-      {notices.slice(0, 3).map((notice) => (
-        <div key={notice.p_id}>
-          <p className="sub-notice-hd">{notice.n_title}</p>
-         
-          <p className="notice-date">{new Date(notice.n_date).toLocaleDateString()}</p>
-          <hr />
-        </div>
-      ))}
+      {notices.slice(0, 3).map((notice) => {
+        const noticeDate = new Date(notice.n_date);
+        const currentDate = new Date();
+        const differenceInDays = Math.floor((currentDate - noticeDate) / (1000 * 60 * 60 * 24));
+
+        return (
+          <div key={notice.p_id}>
+            <p className="sub-notice-hd">{notice.n_title}</p>
+
+            <p className="notice-date">
+              <span>{noticeDate.toLocaleDateString()}</span>
+              {differenceInDays <= 3 && (
+                <img src={recent_notice_image} width={'25%'} ></img>
+              )}
+            </p>
+
+            <hr />
+          </div>
+        );
+      })}
+
+
       <div className="link-container">
         <Link to="/full-notices" className="read-more-link">Read more...</Link>
       </div>

@@ -1,7 +1,7 @@
 .services-full-Page {
   width: 100vw; /* Full viewport width */
   height: 100vh; /* Full viewport height */
-  background-image: url('../assets/bgimage.png'); /* Replace with your image path */
+  background-image: url('../assets/bgimage.jpg'); /* Replace with your image path */
   background-size: cover; /* Cover the entire area */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent image from repeating */

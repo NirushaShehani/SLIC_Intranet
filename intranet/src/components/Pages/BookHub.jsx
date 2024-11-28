@@ -2,24 +2,26 @@ import React, { useState, useEffect } from 'react';
 import Quote from '../Sub_Components/BookHub_Components/Quote';
 import BookCard from '../Sub_Components/BookHub_Components/BookCard';
 import '../../Styles/BookHub.css';
-import image1 from '../../assets/BookHub/bookhub1.png';
-import image2 from '../../assets/BookHub/bookhub2.png';
-import image3 from '../../assets/BookHub/bookhub3.png';
-import image4 from '../../assets/BookHub/bookhub4.png';
-import image5 from '../../assets/BookHub/bookhub5.png';
-import image6 from '../../assets/BookHub/bookhub6.png';
-import image7 from '../../assets/BookHub/bookhub7.png';
+import Swal from 'sweetalert2';
+import { Find_And_Replace} from "../../Services/ApiConfig";
+import image1 from '../../assets/BookHub/bookhub1.jpg';
+//import image2 from '../../assets/BookHub/bookhub2.jpg';
+import image3 from '../../assets/BookHub/bookhub3.jpg';
+import image4 from '../../assets/BookHub/bookhub4.jpg';
+import image5 from '../../assets/BookHub/bookhub5.jpg';
+import image6 from '../../assets/BookHub/bookhub6.jpg';
+import image7 from '../../assets/BookHub/bookhub7.jpg';
 import image8 from '../../assets/BookHub/bookhub8.jpg';
 
 const pdfUrls = [
-  'http://172.24.90.80:10157/BookHub/1.pdf', 
-  'http://172.24.90.80:10157/BookHub/2.pdf',
-  'http://172.24.90.80:10157/BookHub/3.pdf',
-  'http://172.24.90.80:10157/BookHub/4.pdf',
-  'http://172.24.90.80:10157/BookHub/5.pdf',
-  'http://172.24.90.80:10157/BookHub/6.pdf',
-  'http://172.24.90.80:10157/BookHub/7.pdf',
-  'http://172.24.90.80:10157/BookHub/8.pdf',
+  `${Find_And_Replace}/BookHub/1.pdf`, 
+  `${Find_And_Replace}/BookHub/2.pdf`,
+  `${Find_And_Replace}/BookHub/3.pdf`,
+  `${Find_And_Replace}/BookHub/4.pdf`,
+  `${Find_And_Replace}/BookHub/5.pdf`,
+  `${Find_And_Replace}/BookHub/6.pdf`,
+  `${Find_And_Replace}/BookHub/7.pdf`,
+  `${Find_And_Replace}/BookHub/8.pdf`,
 ];
 
 const books = [
@@ -28,11 +30,11 @@ const books = [
     title: 'Atomic Habits',
     author: 'James Clear',
   },
-  {
-    image: image2,
-    title: 'Life Marketing NEWSLETTER',
-    author: 'volume II 2024',
-  },
+  // {
+  //   image: image2,
+  //   title: 'Life Marketing NEWSLETTER',
+  //   author: 'volume II 2024',
+  // },
   {
     image: image3,
     title: 'Hit Refresh',
@@ -102,9 +104,18 @@ const BookHub = () => {
   const handleBookClick = (e) => {
     if (!isBookAccessible() && isTimeRestricted()) {
       e.preventDefault();
-      alert('This book can be read from 7:00 A.M to 8:30 A.M or 12:30 P.M to 2:00 P.M');
+      Swal.fire({
+        icon: 'warning',
+        title: 'Access Restricted',
+        text: 'This book can be read from 7:00 A.M to 8:30 A.M or 12:30 P.M to 2:00 P.M or after 4.45 P.M.',
+        confirmButtonText: 'OK'
+      });
     }
   };
+
+  // const handleBookClick = (e) => {
+    
+  // }
 
   return (
     <div className="book-hub-container">
