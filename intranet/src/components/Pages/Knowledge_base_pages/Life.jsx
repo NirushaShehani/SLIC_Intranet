@@ -125,7 +125,7 @@ const Life = () => {
           </div>
            
           {/* CONTACT CENTER PROCEDURES */}
-          <div style={sectionStyle}>
+          {/* <div style={sectionStyle}>
             <div style={titleStyle}>CONTACT CENTER PROCEDURES</div> 
             <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-phs-tracking/')}>
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
@@ -211,10 +211,10 @@ const Life = () => {
                 <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
                 <span className="hover-text">Job Role of a Call Center Agent</span>
             </div>
-          </div>
+          </div> */}
           {/* CONTACT CENTER PROCEDURES */}
           {/* PRODUCTS AND SERVICES */}
-          <div style={sectionStyle}>
+          {/* <div style={sectionStyle}>
           <div style={titleStyle}>PRODUCTS AND SERVICES</div> 
           <div className="hover-container"style={listItemStyle} onClick={() => openInNewWindow('http://172.24.60.66/knowledgebase/index.php/knowledge-base/life-bonus-system-training/')}>
               <FontAwesomeIcon icon={faFileAlt} style={iconStyle} className="hover-icon"/>
@@ -401,7 +401,7 @@ const Life = () => {
               <span className="hover-text">Fire Insurance </span>
             </div>
             {/* PRODUCTS AND SERVICES */}
-          </div>
+          
         </div>
     </div>
         
