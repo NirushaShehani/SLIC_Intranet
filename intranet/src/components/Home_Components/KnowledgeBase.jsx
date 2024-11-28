@@ -165,6 +165,12 @@ const KnowledgeBase = () => {
             label="Introduce a New Customer"
             />
         </Link>
+        {/*Sales Lead Chip*/}
+        <Link  onClick={() => window.open("http://172.24.60.89/lifecms/")} style={{ cursor: 'pointer', textDecoration: 'none' }}>
+          <CustomChip style={styles.label}
+            label="Customer Complaints"
+            />
+        </Link>
 
        
         {/*Idea Hub Chip*/}
@@ -238,7 +244,7 @@ const styles = {
   },
   label: {
     fontSize: "19px",
-    margin: "0 0 15px 0",
+    margin: "0 0 10px 0",
     padding: 0,
 
   },
