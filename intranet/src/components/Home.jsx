@@ -28,7 +28,7 @@ const Home = () => {
       </div>
       <div className="footer">
         <p>2024 All right reserved. Sri Lanka Insurance Corporation Life LTD.</p>
-        <p>Version 1.1.0</p>
+        <p>Version 1.2.0</p>
       </div>
     </div>
   );
