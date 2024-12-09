@@ -3,7 +3,7 @@ import Quote from '../Sub_Components/BookHub_Components/Quote';
 import BookCard from '../Sub_Components/BookHub_Components/BookCard';
 import '../../Styles/BookHub.css';
 import Swal from 'sweetalert2';
-import { Find_And_Replace} from "../../Services/ApiConfig";
+import { Find_And_Replace } from "../../Services/ApiConfig";
 import image1 from '../../assets/BookHub/bookhub1.jpg';
 //import image2 from '../../assets/BookHub/bookhub2.jpg';
 import image3 from '../../assets/BookHub/bookhub3.jpg';
@@ -14,8 +14,7 @@ import image7 from '../../assets/BookHub/bookhub7.jpg';
 import image8 from '../../assets/BookHub/bookhub8.jpg';
 
 const pdfUrls = [
-  `${Find_And_Replace}/BookHub/1.pdf`, 
-  `${Find_And_Replace}/BookHub/2.pdf`,
+  `${Find_And_Replace}/BookHub/1.pdf`,
   `${Find_And_Replace}/BookHub/3.pdf`,
   `${Find_And_Replace}/BookHub/4.pdf`,
   `${Find_And_Replace}/BookHub/5.pdf`,
@@ -30,11 +29,6 @@ const books = [
     title: 'Atomic Habits',
     author: 'James Clear',
   },
-  // {
-  //   image: image2,
-  //   title: 'Life Marketing NEWSLETTER',
-  //   author: 'volume II 2024',
-  // },
   {
     image: image3,
     title: 'Hit Refresh',
@@ -74,7 +68,7 @@ const BookHub = () => {
   const isBookAccessible = () => {
     const currentHour = currentTime.getHours();
     const currentMinutes = currentTime.getMinutes();
-    
+
     // Define allowed time ranges (7:00 - 8:30 AM, 12:30 - 2:00 PM)
     const isMorningAllowed = (currentHour === 7 || (currentHour === 8 && currentMinutes <= 30));
     const isAfternoonAllowed = (currentHour === 12 && currentMinutes >= 30) || (currentHour === 13) || (currentHour === 14 && currentMinutes <= 0);
@@ -86,13 +80,13 @@ const BookHub = () => {
   const isTimeRestricted = () => {
     const currentHour = currentTime.getHours();
     const currentMinutes = currentTime.getMinutes();
-    
+
     return (currentHour === 8 && currentMinutes > 30) ||
-           (currentHour >= 9 && currentHour < 12) ||
-           (currentHour === 12 && currentMinutes < 30) ||
-           (currentHour === 14 && currentMinutes > 0) ||
-           (currentHour > 14 && currentHour < 16) ||
-           (currentHour === 16 && currentMinutes <= 45);
+      (currentHour >= 9 && currentHour < 12) ||
+      (currentHour === 12 && currentMinutes < 30) ||
+      (currentHour === 14 && currentMinutes > 0) ||
+      (currentHour > 14 && currentHour < 16) ||
+      (currentHour === 16 && currentMinutes <= 45);
   };
 
   // Update the current time every minute
@@ -114,7 +108,7 @@ const BookHub = () => {
   };
 
   // const handleBookClick = (e) => {
-    
+
   // }
 
   return (
@@ -123,26 +117,26 @@ const BookHub = () => {
       <div className="book-list">
         {books.map((book, index) => (
           pdfUrls[index] ? (
-            <a 
-              key={index} 
-              href={pdfUrls[index]} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              key={index}
+              href={pdfUrls[index]}
+              target="_blank"
+              rel="noopener noreferrer"
               className="book-link"
               onClick={handleBookClick}
             >
-              <BookCard 
-                image={book.image} 
-                title={book.title} 
-                author={book.author} 
+              <BookCard
+                image={book.image}
+                title={book.title}
+                author={book.author}
               />
             </a>
           ) : (
-            <BookCard 
-              key={index} 
-              image={book.image} 
-              title={book.title} 
-              author={book.author} 
+            <BookCard
+              key={index}
+              image={book.image}
+              title={book.title}
+              author={book.author}
             />
           )
         ))}
