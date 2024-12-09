@@ -86,7 +86,7 @@ const HRNotices = () => {
                   </p>
 
                   {/* Show video player for the first two notices */}
-                  {index < 2 && (
+                  {index == 0 && (
                     <>
                       {!videoState[index] ? (
                         <p
